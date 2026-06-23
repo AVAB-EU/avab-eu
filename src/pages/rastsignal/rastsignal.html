@@ -1,0 +1,458 @@
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rastsignalsystem &amp; Skolklockor – Automatiserade system | AVAB</title>
+  <meta name="description" content="Spara tid och personal med våra smarta rastsignalsystem. Enkelt att uppgradera äldre system. Vi projekterar och installerar tidsstyrda lösningar.">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vad är ett rastsignalsystem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ett rastsignalsystem är ett automatiserat system som används för att hantera och övervaka elever under rasttid på skolan. Det består av en inspelningsenhet (centralur) och högtalare som är placerade runt omkring skolan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Är rastsignalsystemet ett godkänt brandlarm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nej. Notera att detta bara är ett rastsignalsystem och informationssystem. Det är inte ett talat utrymningslarm (TUL/UTM) och är heller inte certifierat som det."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan vi använda våra gamla högtalare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Har ni ett föråldrat system men fungerande högtalare är det en perfekt uppgradering. Ni kopplar enkelt in systemet där det gamla satt med industristandard-kontakter (XLR, USB-C)."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  
+  <style>
+    /* ============================================================
+       NÖDRAKETEN: Tvingar fullbredd i Astra
+       ============================================================ */
+    .single-post .site-content .ast-container, 
+    .single-post .entry-content,
+    .single-post .post-content { max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
+    .single-post .site-content { padding: 0 !important; }
+
+    /* ============================================================
+       AVAB DESIGN SYSTEM V13
+       ============================================================ */
+    :root {
+      --avab-green: #8FC025;
+      --avab-green-glow: rgba(143, 192, 37, 0.4);
+      --avab-dark: #1A1E1B;
+      --avab-dark-muted: #3A433D;
+      --avab-light: #F4F6F4;
+      --avab-white: #ffffff;
+      --avab-border: rgba(26, 30, 27, 0.08);
+      --avab-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --avab-shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.08);
+      --avab-radius: 24px;
+      --avab-radius-sm: 16px;
+      --avab-max: 1280px;
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; color: var(--avab-dark); background: var(--avab-light); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; transition: var(--transition-smooth); }
+    img { max-width: 100%; height: auto; display: block; }
+    
+    .container { width: min(calc(100% - 48px), var(--avab-max)); margin: 0 auto; }
+    .section { padding: 64px 0; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-in { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    h1, h2, h3, h4 { margin: 0 0 16px; line-height: 1.15; letter-spacing: -0.02em; color: var(--avab-dark); }
+    h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; max-width: 22ch; margin-bottom: 24px; }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; }
+    h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); font-weight: 700; }
+    p { margin: 0 0 20px; font-size: 1.1rem; color: var(--avab-dark-muted); }
+    
+    .lead { font-size: 1.25rem; max-width: 68ch; color: rgba(255,255,255,0.9); }
+    .lead-dark { font-size: 1.25rem; max-width: 68ch; color: var(--avab-dark-muted) !important; }
+
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: var(--avab-green); color: #1A1E1B; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #ffffff; box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); }
+
+    /* Hero */
+    .hero { 
+      position: relative; overflow: hidden; padding: 140px 0 100px; 
+      background: linear-gradient(135deg, rgba(17, 20, 18, 0.65) 0%, rgba(26, 30, 27, 0.65) 100%), 
+                  url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1920') center/cover;
+      color: #ffffff !important; 
+    }
+    .hero h1, .hero p { color: #ffffff !important; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 40px; }
+
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; border-radius: 999px; font-weight: 700; font-size: 1.05rem; transition: var(--transition-smooth); cursor: pointer; }
+    .button-primary { background: var(--avab-green); color: var(--avab-dark); box-shadow: 0 16px 32px var(--avab-green-glow); }
+    .button-primary:hover { box-shadow: 0 20px 40px var(--avab-green-glow); transform: translateY(-2px); }
+    .button-secondary { background: rgba(255, 255, 255, 0.05); color: var(--avab-white); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); }
+    .button-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.3); }
+
+    .card { background: var(--avab-white); border: 1px solid var(--avab-border); border-radius: var(--avab-radius); padding: 40px; box-shadow: var(--avab-shadow-sm); transition: var(--transition-smooth); display: flex; flex-direction: column; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: stretch; }
+
+    .summary-list { display: grid; gap: 16px; list-style: none; }
+    .summary-list li { padding: 24px 20px; border-radius: var(--avab-radius-sm); background: var(--avab-white); box-shadow: var(--avab-shadow-sm); font-size: 1.05rem; color: var(--avab-dark-muted); border: 1px solid var(--avab-border); }
+    .summary-list strong { display: block; margin-bottom: 8px; color: var(--avab-green); font-size: 1.15rem; font-weight: 700; }
+    
+    .bullet-list { list-style: none; }
+    .bullet-list li { position: relative; padding-left: 32px; margin-bottom: 12px; color: var(--avab-dark-muted); font-weight: 500; }
+    .bullet-list li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--avab-green); color: var(--avab-dark); font-size: 0.7rem; font-weight: bold; }
+
+    /* ============================================================
+       SMOOTH EXPANDABLE CARDS (Ryckfri CSS)
+       ============================================================ */
+    .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+    .solution-card { padding: 36px; border-radius: var(--avab-radius); background: var(--avab-white); border: 1px solid var(--avab-border); transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; display: flex; flex-direction: column; position: relative; }
+    .solution-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--avab-green); opacity: 0; border-radius: var(--avab-radius) var(--avab-radius) 0 0; transition: opacity 0.4s ease; }
+    .solution-card:hover { transform: translateY(-8px); box-shadow: var(--avab-shadow-lg); border-color: rgba(143, 192, 37, 0.4); }
+    .solution-card:hover::before { opacity: 1; }
+    
+    .solution-top { margin-bottom: 12px; }
+    .solution-content { flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-start; }
+    
+    .solution-expandable { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    .solution-expand-inner { overflow: hidden; opacity: 0; transition: opacity 0.3s ease; }
+    .solution-expand-inner-content { padding-top: 20px; }
+    
+    .solution-card:hover .solution-expandable { grid-template-rows: 1fr; }
+    .solution-card:hover .solution-expand-inner { opacity: 1; }
+
+    .hover-indicator { margin-top: 24px; display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1), margin-top 0.4s ease; }
+    .hover-indicator-inner { overflow: hidden; font-size: 0.95rem; font-weight: 700; color: var(--avab-green); opacity: 1; transition: opacity 0.2s ease; }
+    
+    .solution-card:hover .hover-indicator { grid-template-rows: 0fr; margin-top: 0; }
+    .solution-card:hover .hover-indicator-inner { opacity: 0; }
+
+    /* ============================================================ */
+
+    /* Referenser */
+    .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-top: 32px; align-items: stretch; }
+    .ref-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%; border-radius: var(--avab-radius); background: var(--avab-white); border: 1px solid var(--avab-border); transition: var(--transition-smooth); }
+    .ref-card:hover { transform: translateY(-5px); box-shadow: var(--avab-shadow-lg); border-color: var(--avab-green); }
+    .ref-card img { width: 100%; height: 260px; object-fit: cover; border-bottom: 1px solid var(--avab-border); }
+    .ref-content { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; }
+    .ref-content h3 { font-size: 1.4rem; margin-bottom: 12px; min-height: 3.5rem; } 
+    .ref-content p { font-size: 1.05rem; margin-bottom: 0; flex-grow: 1; }
+
+    /* PRISKORT */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; align-items: stretch; }
+    .pricing-card { padding: 40px 32px; border-radius: var(--avab-radius); background: var(--avab-white); border: 1px solid var(--avab-border); text-align: center; box-shadow: var(--avab-shadow-sm); transition: var(--transition-smooth); display: flex; flex-direction: column; justify-content: center; }
+    .pricing-card:hover { transform: translateY(-5px); box-shadow: var(--avab-shadow-lg); }
+    .pricing-card.highlight { border: 2px solid var(--avab-green); box-shadow: var(--avab-shadow-lg); position: relative; }
+    .pricing-card.highlight::before { content: "Mest vald"; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--avab-green); color: var(--avab-dark); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; padding: 4px 16px; border-radius: 999px; letter-spacing: 0.05em; }
+    .pricing-price { font-size: 3rem; font-weight: 800; color: var(--avab-green); margin: 16px 0 8px; letter-spacing: -0.03em; line-height: 1; }
+
+    /* Internlänkning */
+    .link-pills { display: flex; flex-wrap: wrap; gap: 16px 20px; margin-top: 24px; }
+    .link-pills a { display: inline-flex; align-items: center; background: var(--avab-white); color: var(--avab-dark); border: 1px solid var(--avab-border); font-weight: 600; padding: 12px 24px; border-radius: 12px; font-size: 0.95rem; transition: var(--transition-smooth); }
+    .link-pills a:hover { background: var(--avab-green); border-color: var(--avab-green); color: var(--avab-dark); transform: translateY(-2px); }
+
+    /* FAQ */
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item { padding-top: 16px; border-top: 1px solid var(--avab-border); }
+    .faq-item:first-child { border-top: 0; padding-top: 0; }
+    .faq-item h3 { font-size: 1.25rem; margin-bottom: 8px; color: var(--avab-dark); }
+    .faq-item p { margin-bottom: 8px; }
+
+    /* Varning/Notis ruta */
+    .warning-box { background: rgba(255, 60, 60, 0.05); border-left: 4px solid #ff4444; padding: 24px; border-radius: 0 12px 12px 0; margin-bottom: 40px; box-shadow: var(--avab-shadow-sm); }
+    .warning-box strong { color: #cc0000; display: block; margin-bottom: 8px; font-size: 1.15rem; }
+
+    .practical-box { background: #fff; padding: 40px; border-radius: var(--avab-radius); border: 1px solid var(--avab-border); margin: 40px 0; box-shadow: var(--avab-shadow-sm); }
+
+    @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .section { padding: 48px 0; } }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; } .hero { padding: 100px 0 60px; } .card, .solution-card { padding: 24px; } .solutions-grid { grid-template-columns: 1fr; } .button { width: 100%; } 
+      .solution-expandable { grid-template-rows: 1fr; } .hover-indicator { display: none; } .solution-expand-inner { opacity: 1; } .solution-expand-inner-content { padding-top: 16px; }
+    }
+  </style>
+
+
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content animate-in">
+        <div class="eyebrow">Smart styrning</div>
+        <h1>Rastsignalsystem som underlättar skolmiljön</h1>
+        <p class="lead">Spara tid och personal med våra smarta system! Nu kan ni ropa in era elever säkert. Vi projekterar och installerar tidsstyrda lösningar för skolor och industrier som kräver exakthet.</p>
+        
+        <div class="hero-actions">
+          <a class="button button-primary" href="/kontakt/">Få en kostnadsfri offert</a>
+          <a class="button button-secondary" href="/#priser">Se våra prisexempel</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="oversikt">
+      <div class="container" style="max-width: 900px;">
+        <div class="animate-in">
+          <p class="lead-dark">Att ha ett välorganiserat rastsignalsystem i skolan är viktigt för att säkerställa en säker och effektiv skolmiljö. Ett automatiserat rastsignalsystem kan ge lärare och elever en mängd olika fördelar. Några fördelar är effektivisering av övervakning och snabbare och säkrare larm vid eventuella problem. I denna artikel kommer vi att titta närmare på rastsignalsystem och dess fördelar.</p>
+
+          <h2 style="margin-top: 60px;">Vad är ett rastsignalsystem?</h2>
+          <p>Ett rastsignalsystem är ett automatiserat system som används för att hantera och övervaka elever under rasttid på skolan. Det består av en inspelningsenhet och högtalare som är placerade runt omkring skolan. Om så önskas kan vi installera en anläggning i flera zoner, vilket ger fler möjligheter – ifall man vill till exempel vill ropa in lågstadiet på ena sidan huset, och mellanstadiet på andra. Vår inspelningsenhet kan programmeras med olika meddelanden och instruktioner för att varna elever och lärare om eventuella problem.</p>
+          <p>När rasten börjar spelas meddelanden och instruktioner automatiskt upp vid bestämda tider och dagar. Det kan vara allt från en signal om att rasten är slut till instruktioner om hur man ska bete sig under rasttiden.</p>
+          
+          <div style="margin: 30px 0; padding: 25px; border-left: 4px solid var(--avab-green); background: #fff; border-radius: 0 12px 12px 0; box-shadow: var(--avab-shadow-sm);">
+            <strong>Inspireras från verkligheten:</strong> <br>
+            <a href="/L%C3%84NK_TILL_SKOLAN_H%C3%84R" style="color: var(--avab-green); font-weight: 700; text-decoration: underline;">Titta lite på en av de skolor vi monterat rastsignalsystem på!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--avab-light); border-top: 1px solid var(--avab-border);">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 40px;">Fördelar för skolmiljön</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">Ett automatiserat rastsignalsystem ger flera fördelar för skolmiljön. Här är några av de viktigaste fördelarna:</p>
+        
+        <ul class="summary-list" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <li>
+            <strong>Effektivisering av övervakning</strong>
+            Ett rastsignalsystem gör det enklare för lärare att övervaka eleverna under rasttiden. Det ger dem möjlighet att fokusera på att hantera eventuella problem snarare än att hålla koll på tiden.
+          </li>
+          <li>
+            <strong>Snabbt och säkert larm</strong>
+            Om det skulle uppstå en nödsituation på skolan, kan rastsignalsystemet snabbt varna elever och lärare om problemet. Detta minskar risken för skador och ger personalen mer tid att agera snabbt.
+          </li>
+          <li>
+            <strong>Anpassningsbarhet</strong>
+            Med ett automatiserat rastsignalsystem kan man programmera in vad som helst. Det kan användas för att spela musik, meddela elever och lärare om speciella händelser, eller för att varna om oväder. Systemet kan anpassas efter skolans specifika behov.
+          </li>
+          <li>
+            <strong>Mindre stress</strong>
+            Ett rastsignalsystem kan minska stressen på både elever och lärare eftersom de inte behöver oroa sig över tiden, eller hur de ska hantera eventuella problem som kan uppstå under rasttiden.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--avab-white); border-top: 1px solid var(--avab-border); border-bottom: 1px solid var(--avab-border);">
+      <div class="container">
+        <div class="section-header animate-in">
+          <div class="eyebrow">Teknisk Prestanda</div>
+          <h2>Smarta funktioner under ytan</h2>
+          <p class="lead-dark">Våra system bygger på modern teknik som gör dem helt underhållsfria, otroligt flexibla och extremt lätta att installera.</p>
+        </div>
+
+        <div class="solutions-grid">
+          
+          <article class="solution-card">
+            <div class="solution-content">
+              <div class="solution-top"><h3>Schoolbell &amp; Förladdade filer</h3></div>
+              <p>Systemet kommer redo att användas med färdiga ljudfiler och möjlighet att spela upp egna melodier.</p>
+              
+              <div class="hover-indicator">
+                <div class="hover-indicator-inner">Läs mer ↓</div>
+              </div>
+              
+              <div class="solution-expandable">
+                <div class="solution-expand-inner">
+                  <div class="solution-expand-inner-content">
+                    <ul class="bullet-list">
+                      <li>Schoolbell kommer laddad med ljudfiler</li>
+                      <li>Dela upp skolan i flexibla ljudzoner</li>
+                      <li>Enkel app/touch-panel för schemaläggning</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-content">
+              <div class="solution-top"><h3>Enkel Retrofit &amp; Uppgradering</h3></div>
+              <p>Har ni ett föråldrat system men fungerande högtalare? Uppgradera smart utan att riva kablar.</p>
+              
+              <div class="hover-indicator">
+                <div class="hover-indicator-inner">Läs mer ↓</div>
+              </div>
+              
+              <div class="solution-expandable">
+                <div class="solution-expand-inner">
+                  <div class="solution-expand-inner-content">
+                    <ul class="bullet-list">
+                      <li>Koppla in utrustningen där den gamla satt</li>
+                      <li>Utrustad med industristandard (USB-C &amp; XLR)</li>
+                      <li>Återanvänd befintliga ljudkablar och högtalare</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-content">
+              <div class="solution-top"><h3>Automatisk Tidsomställning</h3></div>
+              <p>Säg adjö till manuell hantering. Schoolbell sköter tidsomställningen helt av sig självt.</p>
+              
+              <div class="hover-indicator">
+                <div class="hover-indicator-inner">Läs mer ↓</div>
+              </div>
+              
+              <div class="solution-expandable">
+                <div class="solution-expand-inner">
+                  <div class="solution-expand-inner-content">
+                    <ul class="bullet-list">
+                      <li>Synkronisering via nätverk (NTP) eller GPS</li>
+                      <li>Sömlöst byte mellan sommar- och vintertid</li>
+                      <li>Exakt på sekunden, dygnet runt</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="praktiken">
+      <div class="container" style="max-width: 900px;">
+        <h2>Rastsignalsystem i praktiken</h2>
+        
+        <div class="practical-box">
+          <h3 style="color: var(--avab-green);">Vid nödsituationer</h3>
+          <p>Ett exempel på hur ett rastsignalsystem kan användas i praktiken är vid en nödsituation. Om en elev går vilse eller skadar sig under rasttiden kan lärarna aktivera larmsignalen genom att trycka på en knapp. Då spelas ett meddelande upp som instruerar eleverna att stanna där de är. Detta gör att lärarna snabbare kommer till hjälp för att hitta, eller ta hand om den saknade eleven.</p>
+          
+          <h3 style="color: var(--avab-green); margin-top: 40px;">Information och aktiviteter</h3>
+          <p>Ett annat exempel på hur rastsignalsystem kan användas är för att ge eleverna information om speciella händelser eller aktiviteter. Om skolan planerar en utflykt eller en extra rastaktivitet kan lärarna läsa upp eller programmera in ett meddelande. Detta programmeras att spelas upp under rasttiden för att meddela eleverna om den kommande händelsen. Detta gör det enklare för lärarna att kommunicera med eleverna och garanterar att alla elever får samma information.</p>
+        </div>
+
+        <h2 style="margin-top: 60px;">Slutsats</h2>
+        <p>Ett automatiserat rastsignalsystem kan göra en stor skillnad för skolmiljön genom att effektivisera övervakningen. Det minskar stressen på elever och lärare och säkerställer snabbare och säkrare larm vid eventuella problem. Med en anpassningsbarhet kan systemet programmeras efter skolans specifika behov.</p>
+        <p>Detta kan användas för att ge eleverna information om speciella händelser eller aktiviteter. Genom att investera i ett rastsignalsystem kan skolorna garantera en säker och effektiv skolmiljö för alla elever.</p>
+      </div>
+    </section>
+
+    <section class="section" id="priser" style="background: var(--avab-light); border-top: 1px solid var(--avab-border);">
+      <div class="container">
+        <div class="section-header align-center" style="text-align: center; margin-bottom: 16px;">
+          <div class="eyebrow">Investering</div>
+          <h2>Vad kostar ett rastsignalsystem?</h2>
+          <p class="lead-dark" style="margin: 0 auto;">Vi skräddarsyr alltid lösningen efter skolans specifika behov och förutsättningar, men här är en generell prisuppskattning för kompletta system.</p>
+        </div>
+
+        <div class="pricing-grid animate-in">
+          <div class="pricing-card">
+            <h3 style="color: var(--avab-dark); margin-bottom: 0;">Mindre skola</h3>
+            <div class="pricing-price">25–35 kkr</div>
+            <p style="margin-bottom: 0;">Passar mindre friskolor. Inkluderar centralenhet, app-styrning och ett fåtal strategiskt placerade högtalare för en skolgård.</p>
+          </div>
+          
+          <div class="pricing-card highlight">
+            <h3 style="color: var(--avab-dark); margin-bottom: 0;">Normalstor skola</h3>
+            <div class="pricing-price">35–50 kkr</div>
+            <p style="margin-bottom: 0;">Vår vanligaste lösning. Ger er möjlighet till flera ljudzoner (t.ex. olika stadier), touchskärm och integration med befintligt högtalarsystem.</p>
+          </div>
+          
+          <div class="pricing-card">
+            <h3 style="color: var(--avab-dark); margin-bottom: 0;">Större skola</h3>
+            <div class="pricing-price">50 kkr +</div>
+            <p style="margin-bottom: 0;">För stora campus och nybyggnationer med krav på avancerad integration, IP-högtalare, GPS-tid och koppling till överordnade system.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="referenser" style="background: var(--avab-white); border-top: 1px solid var(--avab-border);">
+      <div class="container">
+        <div class="section-header animate-in">
+          <div class="eyebrow">Referensprojekt</div>
+          <h2>Teknik som presterar i verkligheten</h2>
+          <p class="lead-dark">Vi har projekterat och installerat tidsstyrt ljud på flera stora skolor. Här är två exempel på hur vi har löst utmaningarna.</p>
+        </div>
+        
+        <div class="ref-grid animate-in" style="animation-delay: 0.1s;">
+          <article class="ref-card">
+            <img src="/wp-content/uploads/L%C3%84NK_TILL_STOCKFALLET.jpg" alt="Stockfallets skola Karlstad byggnad">
+            <div class="ref-content">
+              <h3>Stockfallets skola, Karlstad</h3>
+              <p>Tidsstyrt rastsignalsystem i 2 zoner. Installation av vädertåliga högtalare på skolfasad samt på sporthallen. Personalen kan prata enkelt i mikrofonen inifrån expeditionen för att höras tydligt över hela skolgården.</p>
+            </div>
+          </article>
+
+          <article class="ref-card">
+            <img src="/wp-content/uploads/L%C3%84NK_TILL_SKOLHAGEN_TOUCH_APP.jpg" alt="Schoolbell touchskärm och app interface">
+            <div class="ref-content">
+              <h3>Skolhagenskolan, Stockholm</h3>
+              <p>Installation av det avancerade Schoolbell-systemet med en intuitiv touchpanel på väggen. Systemet tillåter extremt enkel konfigurering av schemat via app, möjlighet att pausa hela systemet med knappen "Lovläge", och snabbfunktion för att påkalla uppmärksamhet i miken.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--avab-light); border-top: 1px solid var(--avab-border);">
+      <div class="container two-col" style="align-items: start;">
+        
+        <div>
+          <div class="warning-box">
+            <strong>Viktig information om utrymning</strong>
+            Notera att detta bara är ett rastsignalsystem och informationssystem. Det är <strong>inte</strong> ett talat utrymningslarm (TUL/UTM), och är heller inte certifierat som det enligt gällande brandnormer (EN-54).
+          </div>
+
+          <div class="eyebrow">Vanliga Frågor</div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Har ni ett föråldrat system men fungerande högtalare?</h3>
+              <p>Då är Schoolbell perfekt! Koppla enkelt in mikrofon, elkabel och ljudkablar där de gamla satt. Schoolbell är utrustad med industristandard-kontakter, så som USB-C och XLR, för en extremt enkel retrofit.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Kommer systemet med färdiga ljud?</h3>
+              <p>Ja, Schoolbell kommer förladdad med ljudfiler för olika scenarier. Givetvis kan ni även ladda upp egna melodier eller talade röstmeddelanden.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Kan systemet användas vid inrymning (PDV)?</h3>
+              <p>Ja, systemen är ofta utrustade med snabbknappar ("Alla in" / "Alla ut") som kan användas av personalen för att snabbt kalla in elever vid en farlig situation utomhus.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <div class="eyebrow">Synergi &amp; Teknikområden</div>
+          <h2>Utforska fler lösningar för skolan</h2>
+          <p>Rastsignaler fungerar allra bäst när de är en del av ett ekosystem. Utforska våra övergripande tjänster och se hur vi bygger en tryggare skola.</p>
+          
+          <div class="link-pills" style="margin-top: 0; padding-top: 16px;">
+            <a href="/kameraovervakning/skola/">Kamerasystem för Skola</a>
+            <a href="/ljudsystem/skola/">Ljud &amp; Bild för Skola</a>
+            <a href="/utrymninglarm/skola/">Utrymningslarm</a>
+            <a href="/styrsystem/">Smart Styrning &amp; IT</a>
+          </div>
+
+          <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--avab-border);">
+            <h3 style="margin-bottom: 16px;">Redo att boka ett möte?</h3>
+            <a class="button button-primary" href="/kontakt/" style="width: 100%;">Kontakta oss idag</a>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ljud & Teknik för Hotell – Upplevelse och smidig drift | AVAB</title>
+  <meta name="description" content="AVAB integrerar teknik för hotell. Från rätt atmosfär i lobby och restaurang till driftsäker konferensteknik och styrsystem som förenklar för personalen." />
+  
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
+        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljoer/" },
+        { "@type": "ListItem", "position": 3, "name": "Hotell", "item": "https://avab.eu/miljoer/hotell/" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hur får man rätt ljud i både restaurang och bar när de ligger bredvid varandra?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Svaret ligger i zonindelning. Vi designar systemet så att restaurangen kan ha dämpat bakgrundsljud för samtal, medan baren har högre energi och djupare bas. Personalen styr volym och spellistor för varje zon separat via en enkel touchpanel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Varför strular konferenstekniken så ofta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vanliga problem uppstår när systemen är för komplexa, kopplingar glappar eller när tekniken installerats utan en tanke på slutanvändaren. Vi bygger konferensrum med fokus på enkelhet – det ska räcka med att ansluta en kabel eller trycka på en knapp så startar skärm, ljud och kamera automatiskt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Går det att integrera befintlig teknik i ett nytt styrsystem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ofta, ja. Det verksamheten egentligen behöver är sällan en total utrensning av all hårdvara, utan rätt styrsystem (t.ex. Crestron) som binder ihop de befintliga delarna till en fungerande och lättanvänd helhet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan jag snabbt hitta ett bortsprunget barn som är någonstans på hotellet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, med vår Exakt sökning kan ni på sekunder få fram alla kamerors inspelning – från det att barnet anlände, till exakt var det befinner sig just nu. Helt i enlighet med GDPR."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* NÖDRAKETEN */
+    .single-post .site-content .ast-container, .single-post .entry-content, .single-post .post-content { max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
+    .single-post .site-content { padding: 0 !important; }
+
+    :root {
+      --avab-green: #8FC025; 
+      --avab-green-glow: rgba(143, 192, 37, 0.4);
+      --avab-dark: #282E29;  
+      --avab-dark-muted: #3A433D;
+      --avab-grey: #E9EAE9;
+      --avab-light: #F4F5F4;
+      --avab-white: #ffffff; 
+      --avab-border: rgba(40, 46, 42, 0.1);
+      --avab-shadow-sm: 0 4px 12px rgba(40, 46, 42, 0.05);
+      --avab-shadow-lg: 0 24px 48px rgba(40, 46, 42, 0.12);
+      --avab-radius: 24px;
+      --avab-radius-sm: 16px;
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; color: var(--avab-dark); background: var(--avab-white); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .container { width: min(calc(100% - 48px), 1280px); margin: 0 auto; }
+    .section { padding: 56px 0; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-in { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* Hero */
+    .hero { 
+      position: relative; padding: 120px 0 80px; 
+      background: linear-gradient(135deg, rgba(40, 46, 42, 0.65) 0%, rgba(40, 46, 42, 0.65) 100%), 
+                  url('https://images.unsplash.com/photo-1542314831-c53cd4b85ca4?auto=format&fit=crop&q=80&w=1920') center/cover;
+      color: #ffffff !important; 
+    }
+    .hero h1 { color: #ffffff !important; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; max-width: 22ch; }
+    .hero p { color: #ffffff !important; font-size: 1.25rem; max-width: 68ch; opacity: 0.95; margin-bottom: 0; line-height: 1.6; }
+
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: var(--avab-green); color: var(--avab-dark); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #ffffff; box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); }
+
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 16px; line-height: 1.15; }
+    .lead-dark { font-size: 1.15rem; max-width: 68ch; color: var(--avab-dark-muted); margin-bottom: 20px; line-height: 1.6; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    
+    .summary-list { display: grid; gap: 16px; list-style: none; margin-top: 62px; }
+    .summary-list li { padding: 24px 20px; border-radius: var(--avab-radius-sm); background: var(--avab-white); box-shadow: var(--avab-shadow-sm); font-size: 1rem; color: var(--avab-dark-muted); border: 1px solid var(--avab-border); line-height: 1.5; }
+    .summary-list strong { display: block; margin-bottom: 8px; color: var(--avab-dark); font-size: 1.15rem; line-height: 1.2; }
+
+    /* Solutions Grid */
+    .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 24px; }
+    .solution-card { 
+      padding: 40px; border-radius: var(--avab-radius); background: var(--avab-white); 
+      border: 1px solid var(--avab-border); box-shadow: var(--avab-shadow-sm); transition: var(--transition-smooth); 
+      display: flex; flex-direction: column; position: relative; 
+    }
+    .solution-card:hover { transform: translateY(-8px); box-shadow: var(--avab-shadow-lg); border-color: var(--avab-green); }
+    
+    .solution-card-top { flex-grow: 1; display: flex; flex-direction: column; }
+    .solution-card h3 { font-weight: 800; margin-bottom: 16px; font-size: 1.5rem; color: var(--avab-dark); line-height: 1.2; min-height: 3.6rem; display: flex; align-items: flex-start; }
+    
+    .solution-card .intro-text { margin-bottom: 24px; font-size: 1.05rem; color: var(--avab-dark-muted); line-height: 1.6; }
+
+    .solution-card-bottom { margin-top: auto; }
+    .solution-expandable { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    .solution-expand-inner { overflow: hidden; opacity: 0; transition: opacity 0.3s ease; }
+    .solution-card:hover .solution-expandable { grid-template-rows: 1fr; }
+    .solution-card:hover .solution-expand-inner { opacity: 1; }
+
+    .hover-indicator { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s ease, padding 0.4s ease; border-top: 1px solid var(--avab-border); padding-top: 20px; }
+    .solution-card:hover .hover-indicator { grid-template-rows: 0fr; padding-top: 0; border-top-color: transparent; }
+    .solution-card:hover .hover-indicator div { opacity: 0; }
+
+    .bullet-list { list-style: none; margin-top: 20px; }
+    .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; line-height: 1.5; color: var(--avab-dark-muted); }
+    .bullet-list li::before { content: "✓"; position: absolute; left: 0; color: var(--avab-green); font-weight: 800; }
+    .cat-link { color: var(--avab-dark); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--avab-green); transition: var(--transition-smooth); margin-right: 4px; }
+    .cat-link:hover { background: var(--avab-green); color: #fff; }
+    .kw-link { color: var(--avab-green); font-weight: 700; text-decoration: none; }
+    .kw-link:hover { text-decoration: underline; }
+
+    /* Synergy Flow Grid */
+    .flow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 40px; }
+    .flow-card { padding: 24px; border-radius: var(--avab-radius-sm); background: var(--avab-white); border: 1px solid var(--avab-border); box-shadow: var(--avab-shadow-sm); display: flex; flex-direction: column; }
+    .flow-card strong { display: block; min-height: 3.2rem; margin-bottom: 12px; font-size: 1.05rem; color: var(--avab-green); line-height: 1.4; }
+    .flow-card span { font-size: 0.95rem; color: var(--avab-dark-muted); line-height: 1.5; display: block; min-height: 4.5rem; }
+
+    /* Pricing Grid */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; text-align: left; }
+    .pricing-card { padding: 40px; border-radius: var(--avab-radius); background: var(--avab-white); border: 1px solid var(--avab-border); box-shadow: var(--avab-shadow-sm); display: flex; flex-direction: column; align-items: flex-start; transition: var(--transition-smooth); }
+    .pricing-card:hover { transform: translateY(-5px); box-shadow: var(--avab-shadow-lg); border-color: var(--avab-green); }
+    .pricing-card.highlight { border: 2px solid var(--avab-green); box-shadow: var(--avab-shadow-lg); position: relative; }
+    .pricing-card h3 { font-size: 2.2rem; font-weight: 800; color: var(--avab-dark); margin: 16px 0; min-height: auto; }
+    .pricing-card p { color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; font-size: 1.05rem; }
+
+    /* Referenser Grid */
+    .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-top: 40px; align-items: stretch; }
+    .ref-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%; background: var(--avab-white); border-radius: var(--avab-radius); border: 1px solid var(--avab-border); box-shadow: var(--avab-shadow-sm); transition: var(--transition-smooth); }
+    .ref-card:hover { transform: translateY(-5px); box-shadow: var(--avab-shadow-lg); border-color: var(--avab-green); }
+    .ref-card img { width: 100%; height: 240px; object-fit: cover; }
+    .ref-content { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; }
+    .ref-content h3 { font-size: 1.4rem; margin-bottom: 12px; min-height: auto; } 
+    .ref-content p { font-size: 1rem; color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; }
+
+    /* FAQ & CTA */
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item { padding-top: 16px; border-top: 1px solid var(--avab-border); }
+    .faq-item:first-child { border-top: 0; padding-top: 0; }
+    .faq-item h3 { font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; color: var(--avab-dark); line-height: 1.15; }
+    .faq-item p { color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
+    
+    .cta-card { 
+      background: linear-gradient(135deg, var(--avab-dark) 0%, #2A332C 50%, var(--avab-green) 100%); 
+      color: var(--avab-white); padding: 48px; border-radius: var(--avab-radius); 
+      display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;
+    }
+    @media (min-width: 1081px) {
+      #faq .cta-card { margin-top: 62px; }
+    }
+    .cta-card h2, .cta-card p, .cta-card .eyebrow, .cta-card .guarantee-list, .cta-card .hero-actions { position: relative; z-index: 1; }
+    .cta-card h2 { color: var(--avab-white); margin-bottom: 16px; }
+    .cta-card p { color: var(--avab-white); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
+    
+    .guarantee-list { margin: 24px 0 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .guarantee-list li { display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--avab-white); font-size: 1rem; }
+    .guarantee-list li::before { content: "✓"; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: var(--avab-green); color: var(--avab-dark); font-size: 0.8rem; }
+
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; border-radius: 999px; font-weight: 700; background: var(--avab-green); color: var(--avab-dark); text-decoration: none; transition: var(--transition-smooth); font-size: 1.05rem; }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px var(--avab-green-glow); }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 40px; }
+    .cta-card .button-light { background: #fff; color: var(--avab-dark); }
+    .cta-card .button-light:hover { background: #fff; box-shadow: 0 16px 32px rgba(0,0,0,0.2); }
+
+    @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
+    @media (max-width: 768px) {
+      .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
+      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; } .hover-indicator { display: none; } .solution-expand-inner { opacity: 1; }
+      .flow-card strong, .flow-card span { min-height: auto; } 
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container animate-in">
+      <div class="eyebrow">Miljö: Hotell & Konferens</div>
+      <h1>Teknik som skapar upplevelse, kontroll och smidig drift</h1>
+      <p>På ett hotell ska tekniken aldrig ta plats. Vi skapar integrerade system för ljud, bild och säkerhet som fungerar osynligt i bakgrunden, men som höjer upplevelsen för gästerna och förenklar vardagen för er personal.</p>
+      <div class="hero-actions">
+        <a class="button" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="border-bottom: 1px solid var(--avab-border);">
+      <div class="container two-col">
+        <div class="animate-in">
+          <div class="eyebrow">Verkligheten</div>
+          <h2>En dynamisk miljö med höga förväntningar</h2>
+          <p class="lead-dark">Ett hotell är inte en enhetlig miljö – det är en samling av helt olika zoner. Lobbyn, restaurangen, baren, spa-avdelningen och konferensytorna har alla sina unika krav på teknik. Samtidigt förändras behoven under dygnet; en lugn frukostmatsal ska snabbt kunna ställas om till en pulserande bar.</p>
+          <p class="lead-dark">När dessa miljöer byggs med separata, ointegrerade system blir resultatet krånglig hantering för personalen och teknik som inte utnyttjas. Vår lösning? Rätt teknik för rätt zon, knuten samman i ett och samma lättanvända gränssnitt.</p>
+        </div>
+
+        <aside class="animate-in" style="animation-delay: 0.1s;">
+          <ul class="summary-list">
+            <li>
+              <strong>Personalen i fokus</strong>
+              Driften måste vara enkel. Personalen ska kunna byta ljud och ljus snabbt utan teknisk kunskap. Om ett system upplevs som krångligt kommer det förr eller senare att sluta användas.
+            </li>
+            <li>
+              <strong>Konferensen är en intäktsmotor</strong>
+              Det finns inget utrymme för fel under konferenser. Tekniken måste starta direkt och kopplingar ska fungera utan krångel. Strulande teknik här kostar omedelbart pengar och förtroende.
+            </li>
+            <li>
+              <strong>Atmosfär genom zonindelning</strong>
+              Det handlar inte om att använda samma ljudlösning överallt. Det handlar om att skapa rätt känsla – dämpat i restaurangen och energi i baren – med total kontroll centralt.
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header animate-in">
+          <div class="eyebrow">Våra lösningar</div>
+          <h2 style="margin-bottom: 16px;">Det digitala ekosystemet</h2>
+          <p class="lead-dark">Här är de fyra pelarna som skapar en professionell upplevelse över hela hotellet.</p>
+        </div>
+
+        <div class="solutions-grid">
+          <article class="solution-card">
+            <div class="solution-card-top">
+              <h3>Ljud & Atmosfär</h3>
+              <p class="intro-text">Rätt musik på rätt plats. Vi zonindelar hotellet så att restaurang, lobby, bar och spa får exakt rätt akustisk miljö för tidpunkten på dygnet.</p>
+            </div>
+            <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om ljudsystem ↓</div></div>
+              <div class="solution-expandable">
+                <div class="solution-expand-inner">
+                  <ul class="bullet-list">
+                    <li><a href="/ljudsystem/" class="cat-link">Zoner:</a> Diskret bakgrundsljud eller DJ-tryck</li>
+                    <li><a href="/styrsystem/" class="kw-link">Automatisering:</a> Ljudnivåer som följer klockan</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Design:</a> Högtalare som smälter in i inredningen</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-card-top">
+              <h3>Konferens & Möten</h3>
+              <p class="intro-text">Konferensteknik där inget lämnas åt slumpen. Vi bygger rum där ljud, bild och kamera startar sömlöst så fort gästen ansluter sin dator.</p>
+            </div>
+            <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om bild & möten ↓</div></div>
+              <div class="solution-expandable">
+                <div class="solution-expand-inner">
+                  <ul class="bullet-list">
+                    <li><a href="/bild/" class="cat-link">Bild:</a> Ljusstarka skärmar och projektorer</li>
+                    <li><a href="/styrsystem/" class="kw-link">Enkelhet:</a> "Plug and Play" utan strul</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Hybrid:</a> Perfekt ljud för Teams och Zoom</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-card-top">
+              <h3>Information & Signage</h3>
+              <p class="intro-text">Guida gästerna rätt och stärk ert varumärke. Digitala infoskärmar visar dagens konferenser, restaurangmenyer och events.</p>
+            </div>
+            <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Se skärmlösningar ↓</div></div>
+              <div class="solution-expandable">
+                <div class="solution-expand-inner">
+                  <ul class="bullet-list">
+                    <li><a href="/bild/" class="cat-link">Signage:</a> Digital vägvisning i lobbyn</li>
+                    <li><a href="/losningar/systemintegration/" class="kw-link">Uppdatering:</a> Ändra innehåll centralt på sekunder</li>
+                    <li><a href="/bild/" class="cat-link">Design:</a> Skärmar som passar hotellets estetik</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-card-top">
+              <h3>Styrsystem & Säkerhet</h3>
+              <p class="intro-text">Knyt ihop allt till en helhet. Vi integrerar styrsystem som förenklar driften samt säkerhetssystem som ger full kontroll över anläggningen.</p>
+            </div>
+            <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om integration ↓</div></div>
+              <div class="solution-expandable">
+                <div class="solution-expand-inner">
+                  <ul class="bullet-list">
+                    <li><a href="/styrsystem/" class="cat-link">Styrning:</a> En touchpanel för hela hotellet</li>
+                    <li><a href="/kameraovervakning/" class="cat-link">Trygghet:</a> Kameraövervakning i publika ytor</li>
+                    <li><a href="/losningar/systemintegration/" class="cat-link">Integration:</a> Binder samman befintlig teknik</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="flow-grid animate-in">
+          <div class="flow-card"><strong>Zonindelning → Atmosfär</strong><span>Skapar rätt känsla i frukostmatsalen samtidigt som baren laddar för kvällen.</span></div>
+          <div class="flow-card"><strong>Integration → Enkelhet</strong><span>Receptionisten slipper ringa IT-supporten och styr allt från sin iPad.</span></div>
+          <div class="flow-card"><strong>Pålitlig teknik → Intäkter</strong><span>Konferensgäster som slipper teknikstrul bokar garanterat nästa möte hos er igen.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-top: 1px solid var(--avab-border);">
+      <div class="container animate-in">
+        <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto;">
+          <div class="eyebrow">Investering</div>
+          <h2 style="margin-bottom: 16px;">Vad kostar hotellteknik?</h2>
+          <p class="lead-dark" style="margin-bottom: 40px;">Priset styrs av hotellets storlek, antalet konferensrum och kravet på ljudkvalitet i restaurangen. Här är en grov uppskattning för att hjälpa er budgetera.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Mindre system</div>
+            <h3>100–300 kkr</h3>
+            <p>Passar perfekt för det mindre boutiquehotellet. Inkluderar kvalitativt bakgrundsljud för lobby och restaurang samt grundläggande mötesteknik i ett fåtal zoner.</p>
+          </div>
+          
+          <div class="pricing-card highlight">
+            <div class="eyebrow">Vanligaste lösningen</div>
+            <h3>300–800 kkr</h3>
+            <p>För hotell med tydlig konferensverksamhet, restaurang, bar och spa. Integrerade styrsystem, digitala infoskärmar (Signage) och premiumljud i flera zoner.</p>
+          </div>
+
+          <div class="pricing-card">
+            <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Större system</div>
+            <h3>800 kkr +</h3>
+            <p>Storskaliga anläggningar med stora konferenssalar. Kräver hög integreringsnivå av befintlig teknik, kameraövervakning och extrem driftsäkerhet dygnet runt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-top: 1px solid var(--avab-border);">
+      <div class="container">
+        <div class="eyebrow">Hotellreferenser</div>
+        <h2>Teknik som stärker varumärket</h2>
+        <div class="ref-grid animate-in">
+          <article class="ref-card">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800" alt="Hotell restaurang bar ljudsystem teknik">
+            <div class="ref-content">
+              <h3>[Platshållare: Centralt Boutiquehotell]</h3>
+              <p>Vi integrerade ett zonstyrt ljudsystem där lobbyn fick ett dämpat, välkomnande ljud medan restaurang och bar kunde växla över till pulserande energi framåt kvällen, allt styrt från receptionen.</p>
+            </div>
+          </article>
+          <article class="ref-card">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Hotell konferensrum teknik bildskärm">
+            <div class="ref-content">
+              <h3>[Platshållare: Stort Konferenshotell]</h3>
+              <p>Totalrenovering av hotellets 12 konferensrum och stora eventyta. Vi säkrade driftsäkerheten med "plug-and-play"-bildteknik och installerade digital vägvisning (Signage) i alla allmänna utrymmen.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" style="border-top: 1px solid var(--avab-border);">
+      <div class="container two-col" style="align-items: start;">
+        <div>
+          <div class="eyebrow">Kunskap</div>
+          <h2 style="margin-bottom: 32px;">Vanliga frågor om hotellteknik</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Hur får man rätt ljud i både restaurang och bar bredvid varandra?</h3>
+              <p>Svaret ligger i zonindelning och rätt riktade högtalare. Restaurangen kan ha dämpat ljud för samtal, medan baren har högre energi. Personalen styr volym och spellistor separat via en touchpanel.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Varför strular konferenstekniken så ofta?</h3>
+              <p>Vanliga problem uppstår när systemen är för komplexa eller när tekniken installerats utan en tanke på slutanvändaren. Vi bygger konferensrum med fokus på enkelhet – en kabel eller knapp räcker för att starta allt.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Går det att integrera befintlig teknik i ett nytt system?</h3>
+              <p>Ofta, ja. Det verksamheten behöver är sällan en total utrensning, utan rätt styrsystem (t.ex. Crestron) som binder ihop de befintliga delarna till en fungerande och lättanvänd helhet.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Kan jag snabbt hitta ett bortsprunget barn som är någonstans på hotellet?</h3>
+              <p>Ja, med vår Exakt sökning kan ni på sekunder få fram alla kamerors inspelning – från det att barnet anlände, till exakt var det befinner sig just nu. Allt sker helt i enlighet med GDPR.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="cta-card">
+          <div class="eyebrow" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">Trygghet sedan 1990</div>
+          <h2>Ska vi rita upp ert hotell?</h2>
+          <p>Att komma in tidigt i planeringen är avgörande. Låt oss säkerställa helheten, så ni slipper kompromisser i driften senare.</p>
+          <ul class="guarantee-list">
+            <li>Rätt dimensionerat från början</li>
+            <li>Extremt enkelt handhavande</li>
+            <li>Driftsäkra konferensytor</li>
+          </ul>
+          <div class="hero-actions" style="margin-top: 32px; flex-direction: column; align-items: flex-start; width: 100%;">
+            <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

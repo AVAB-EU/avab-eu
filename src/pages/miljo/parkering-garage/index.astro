@@ -1,0 +1,398 @@
+---
+import "../../../styles/miljo.css";
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ljud, Bild & Säkerhet för Parkeringshus & Garage | AVAB</title>
+  <meta name="description" content="Vi skapar smarta parkeringshus. Integrerade system med ANPR-kameror, platsindikering, gobo-projektion och trygghetsskapande ljud för optimalt flöde." />
+  
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
+        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljoer/" },
+        { "@type": "ListItem", "position": 3, "name": "Parkering", "item": "https://avab.eu/miljoer/parkering-och-parkeringsgarage/" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kan vi slippa pappersbiljetter och köer vid bommarna?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolut. Genom att installera ANPR-kameror (automatisk nummerplåtsigenkänning) läser systemet av bilen redan innan den stannat. Bommen öppnas direkt och parkeringen kopplas automatiskt till besökarens digitala betalsystem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hur hjälper systemet kunden att hitta sin bil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I större anläggningar knyter vi ihop kameraövervakningen med bilens registreringsnummer. Besökaren kan knappa in sitt nummer på en skärm i trapphuset och direkt få se en karta med exakt var bilen står parkerad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Varför ska man installera ljudsystem i ett parkeringshus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En tyst betongkällare upplevs ofta som otrygg. Ett dämpat, väl valt bakgrundsljud i gångstråk och trapphus maskerar obehagliga ekon och ökar trygghetskänslan markant. Samma system används även för viktiga informationsutrop."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* NÖDRAKETEN */
+    .single-post .site-content .ast-container, .single-post .entry-content, .single-post .post-content { max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
+    .single-post .site-content { padding: 0 !important; }
+
+    :root {
+      --avab-green: #8FC025; 
+      --avab-green-glow: rgba(143, 192, 37, 0.4);
+      --avab-dark: #282E29;  
+      --avab-dark-muted: #3A433D;
+      --avab-grey: #E9EAE9;
+      --avab-light: #F4F5F4;
+      --avab-white: #ffffff; 
+      --avab-border: rgba(40, 46, 42, 0.1);
+      --avab-shadow-sm: 0 4px 12px rgba(40, 46, 42, 0.05);
+      --avab-shadow-lg: 0 24px 48px rgba(40, 46, 42, 0.12);
+      --avab-radius: 24px;
+      --avab-radius-sm: 16px;
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--avab-dark); background: var(--avab-white); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .container { width: min(calc(100% - 48px), 1280px); margin: 0 auto; }
+    .section { padding: 56px 0; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-in { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* Hero */
+    .hero { 
+      position: relative; padding: 120px 0 80px; 
+      background: linear-gradient(135deg, rgba(40, 46, 42, 0.8) 0%, rgba(40, 46, 42, 0.6) 100%), 
+                  url('https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?auto=format&fit=crop&q=80&w=1920') center/cover;
+      color: #ffffff !important; 
+    }
+    .hero h1 { color: #ffffff !important; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; max-width: 25ch; }
+    .hero p { color: #ffffff !important; font-size: 1.25rem; max-width: 68ch; opacity: 0.95; margin-bottom: 0; }
+
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: var(--avab-green); color: var(--avab-dark); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #ffffff; }
+
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; margin-bottom: 16px; line-height: 1.15; }
+    .lead-dark { font-size: 1.15rem; max-width: 68ch; color: var(--avab-dark-muted); margin-bottom: 20px; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    
+    .summary-list { display: grid; gap: 16px; list-style: none; margin-top: 62px; }
+    .summary-list li { padding: 24px 20px; border-radius: var(--avab-radius-sm); background: var(--avab-white); box-shadow: var(--avab-shadow-sm); border: 1px solid var(--avab-border); }
+    .summary-list strong { display: block; margin-bottom: 8px; color: var(--avab-dark); font-size: 1.15rem; }
+
+    /* Solutions Grid med Expand/Collapse */
+    .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 24px; }
+    .solution-card { padding: 40px; border-radius: var(--avab-radius); background: var(--avab-white); border: 1px solid var(--avab-border); transition: var(--transition-smooth); display: flex; flex-direction: column; position: relative; }
+    .solution-card:hover { transform: translateY(-8px); box-shadow: var(--avab-shadow-lg); border-color: var(--avab-green); }
+    
+    .solution-card-top { flex-grow: 1; display: flex; flex-direction: column; }
+    .solution-card h3 { font-weight: 800; margin-bottom: 16px; font-size: 1.5rem; min-height: 3.6rem; }
+    .solution-card .intro-text { margin-bottom: 24px; color: var(--avab-dark-muted); font-size: 1.05rem; line-height: 1.6; }
+
+    .solution-card-bottom { margin-top: auto; }
+    .solution-expandable { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    .solution-expand-inner { overflow: hidden; min-height: 0; opacity: 0; transition: opacity 0.3s ease; }
+    .solution-card:hover .solution-expandable { grid-template-rows: 1fr; }
+    .solution-card:hover .solution-expand-inner { opacity: 1; }
+
+    .hover-indicator { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s ease, padding 0.4s ease; border-top: 1px solid var(--avab-border); padding-top: 20px; }
+    .hover-indicator div { overflow: hidden; min-height: 0; transition: opacity 0.3s ease; }
+    .solution-card:hover .hover-indicator { grid-template-rows: 0fr; padding-top: 0; border-top-color: transparent; }
+    .solution-card:hover .hover-indicator div { opacity: 0; }
+
+    .bullet-list { list-style: none; margin-top: 20px; }
+    .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; color: var(--avab-dark-muted); }
+    .bullet-list li::before { content: "✓"; position: absolute; left: 0; color: var(--avab-green); font-weight: 800; }
+    .cat-link { color: var(--avab-dark); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--avab-green); }
+
+    /* Flow / Pris / Ref */
+    .flow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 40px; }
+    .flow-card { padding: 24px; border-radius: var(--avab-radius-sm); background: var(--avab-white); border: 1px solid var(--avab-border); }
+    .flow-card strong { display: block; min-height: 3.2rem; color: var(--avab-green); font-size: 1.05rem; margin-bottom: 12px; line-height: 1.4; }
+    .flow-card span { font-size: 0.95rem; color: var(--avab-dark-muted); min-height: 4.5rem; display: block; line-height: 1.5; }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; text-align: left; }
+    .pricing-card { padding: 40px; border-radius: var(--avab-radius); background: var(--avab-white); border: 1px solid var(--avab-border); transition: var(--transition-smooth); display: flex; flex-direction: column; align-items: flex-start; }
+    .pricing-card h3 { font-size: 2.2rem; font-weight: 800; margin: 16px 0; color: var(--avab-dark); }
+    .pricing-card p { color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; font-size: 1.05rem; }
+    .pricing-card.highlight { border: 2px solid var(--avab-green); position: relative; box-shadow: var(--avab-shadow-lg); }
+
+    .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-top: 40px; align-items: stretch; }
+    .ref-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%; background: var(--avab-white); border-radius: var(--avab-radius); border: 1px solid var(--avab-border); box-shadow: var(--avab-shadow-sm); transition: var(--transition-smooth); }
+    .ref-card:hover { transform: translateY(-5px); box-shadow: var(--avab-shadow-lg); border-color: var(--avab-green); }
+    .ref-card img { width: 100%; height: 240px; object-fit: cover; }
+    .ref-content { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; }
+    .ref-content h3 { font-size: 1.4rem; margin-bottom: 12px; min-height: auto; } 
+    .ref-content p { font-size: 1rem; color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; }
+
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item { padding-top: 16px; border-top: 1px solid var(--avab-border); }
+    .faq-item:first-child { border-top: 0; padding-top: 0; }
+    .faq-item h3 { font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; }
+    .faq-item p { color: var(--avab-dark-muted); line-height: 1.6; font-size: 1.1rem; margin-bottom: 0; }
+
+    .cta-card { background: linear-gradient(135deg, var(--avab-dark) 0%, #2A332C 50%, var(--avab-green) 100%); color: var(--avab-white); padding: 48px; border-radius: var(--avab-radius); display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+    .cta-card h2 { color: var(--avab-white); }
+    .cta-card p { color: var(--avab-white); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
+    @media (min-width: 1081px) { #faq .cta-card { margin-top: 62px; } }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; border-radius: 999px; font-weight: 700; background: var(--avab-green); color: var(--avab-dark); text-decoration: none; transition: var(--transition-smooth); font-size: 1.05rem; }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px var(--avab-green-glow); }
+    .cta-card .button-light { background: #fff; color: var(--avab-dark); }
+    .cta-card .button-light:hover { background: #fff; box-shadow: 0 16px 32px rgba(0,0,0,0.2); }
+    
+    @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
+    @media (max-width: 768px) {
+      .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
+      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; } .hover-indicator { display: none; } .solution-expand-inner { opacity: 1; }
+      .flow-card strong, .flow-card span { min-height: auto; } 
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container animate-in">
+      <div class="eyebrow">Miljö: Parkering & Garage</div>
+      <h1>Teknik som skapar flöde, trygghet och full kontroll</h1>
+      <p>Parkeringshuset är besökarens första och sista intryck. Vi integrerar smarta kameror, gobo-vägvisning och platsindikering som gör en annars anonym miljö smidig och välkomnande.</p>
+      <div style="margin-top: 40px;"><a class="button" href="/kontakt/">Boka kostnadsfri rådgivning</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="border-bottom: 1px solid var(--avab-border);">
+      <div class="container two-col">
+        <div class="animate-in">
+          <div class="eyebrow">Verkligheten</div>
+          <h2>Det första och sista intrycket</h2>
+          <p class="lead-dark">Ett parkeringshus är sällan prioriterat – tills problemen uppstår. Långa köer vid infarten, stress över att hitta en ledig plats och en allmän känsla av otrygghet färgar hela upplevelsen av er fastighet.</p>
+          <p class="lead-dark">Ofta beror detta på fragmenterad teknik. Ett system för bommar, ett för betalning och ett tredje för övervakning. Vi bygger en integrerad helhet där kameror, skyltar och ljud samverkar för att optimera trafikflödet och radera frustrationen för besökaren.</p>
+        </div>
+        <aside class="animate-in" style="animation-delay: 0.1s;">
+          <ul class="summary-list">
+            <li><strong>Friktion dödar flödet</strong> Pappersbiljetter är ett minne blott. Med ANPR (nummerplåtsavläsning) öppnas bommar automatiskt och betalning sker digitalt.</li>
+            <li><strong>Överblick är avgörande</strong> Smarta kameror hanterar inte bara säkerhet, de analyserar beläggningen och hjälper er agera innan trängsel uppstår.</li>
+            <li><strong>Känslan av trygghet</strong> Tydlig gobo-projektion på marken och trygghetsskapande bakgrundsljud förvandlar en mörk källare till en inbjudande entré.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header animate-in">
+          <div class="eyebrow">Våra lösningar</div>
+          <h2 style="margin-bottom: 16px;">Det digitala P-ekosystemet</h2>
+        </div>
+        <div class="solutions-grid">
+          
+          <article class="solution-card">
+            <div class="solution-card-top">
+              <h3>ANPR & Kameraövervakning</h3>
+              <p class="intro-text">Läs av registreringsskyltar för omedelbar bomöppning. Använd exakt sökning för att hitta specifika fordon eller utreda incidenter på sekunder.</p>
+            </div>
+            <div class="solution-card-bottom">
+              <div class="hover-indicator">
+                <div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om säkerhet ↓</div>
+              </div>
+              <div class="solution-expandable">
+                <div class="solution-expand-inner">
+                  <ul class="bullet-list">
+                    <li><a href="/kameraovervakning/" class="cat-link">ANPR:</a> Blixtsnabb avläsning av registreringsskyltar</li>
+                    <li><a href="/losningar/systemintegration/" class="cat-link">Integration:</a> Direktkoppling till betalsystem</li>
+                    <li><a href="/kameraovervakning/" class="cat-link">Trygghet:</a> AI-sökning vid skadegörelse</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-card-top">
+              <h3>Platsindikering & Vägvisning</h3>
+              <p class="intro-text">Gröna och röda lampor i taket leder kunden direkt till en ledig plats. Integrerade skärmar i trapphusen hjälper dem sedan att hitta tillbaka till bilen.</p>
+            </div>
+            <div class="solution-card-bottom">
+              <div class="hover-indicator">
+                <div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om system ↓</div>
+              </div>
+              <div class="solution-expandable">
+                <div class="solution-expand-inner">
+                  <ul class="bullet-list">
+                    <li><a href="/kameraovervakning/" class="cat-link">Sensorer:</a> Realtidsdata över lediga platser</li>
+                    <li><a href="/bild/" class="cat-link">Wayfinding:</a> "Hitta min bil"-funktion via skärm</li>
+                    <li><a href="/losningar/systemintegration/" class="cat-link">Data:</a> Analys av hur anläggningen utnyttjas</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-card-top">
+              <h3>Gobo & Digital Signage</h3>
+              <p class="intro-text">Förstärk guidningen i den mörka miljön. Gobo-projektorer lyser upp körriktningar och elbilsplatser direkt på asfalten, medan skärmar informerar.</p>
+            </div>
+            <div class="solution-card-bottom">
+              <div class="hover-indicator">
+                <div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om bild ↓</div>
+              </div>
+              <div class="solution-expandable">
+                <div class="solution-expand-inner">
+                  <ul class="bullet-list">
+                    <li><a href="/bild/" class="cat-link">Gobo:</a> Slitstark och snygg projicering på mark/vägg</li>
+                    <li><a href="/bild/" class="cat-link">Signage:</a> Dynamiska skärmar med utfartshänvisning</li>
+                    <li><a href="/bild/" class="cat-link">Elbilar:</a> Tydlig markering för EV-laddning</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-card-top">
+              <h3>Ljud & Utrymning</h3>
+              <p class="intro-text">Ett tyst garage upplevs otryggt. Ett välkalibrerat, dämpat bakgrundsljud ökar tryggheten, och systemet dubblerar som utrymningslarm vid fara.</p>
+            </div>
+            <div class="solution-card-bottom">
+              <div class="hover-indicator">
+                <div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om ljud ↓</div>
+              </div>
+              <div class="solution-expandable">
+                <div class="solution-expand-inner">
+                  <ul class="bullet-list">
+                    <li><a href="/ljudsystem/" class="cat-link">Atmosfär:</a> Trygghetsskapande ljud i trapphus</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Utrop:</a> Tydliga informationsmeddelanden</li>
+                    <li><a href="/losningar/utrymningslarm/" class="cat-link">TUL:</a> Integrerat talat utrymningslarm</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="flow-grid animate-in">
+          <div class="flow-card"><strong>ANPR-kameror → Flöde</strong><span>Bilar rullar in utan att stanna vid bommen, vilket eliminerar köer som blockerar gatan.</span></div>
+          <div class="flow-card"><strong>Platsindikering → Miljö</strong><span>Att direkt leda besökaren till en grön lampa minskar drastiskt utsläpp från cirkulerande bilar.</span></div>
+          <div class="flow-card"><strong>Gobo & Ljud → Trygghet</strong><span>Visuell guidning och musik gör en annars mörk och anonym miljö trygg och välkomnande.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
+      <div class="container animate-in">
+        <div class="section-header">
+          <div class="eyebrow">Investering</div>
+          <h2 style="margin-bottom: 16px;">Vad kostar ett modernt p-system?</h2>
+          <p class="lead-dark" style="margin-bottom: 40px;">Priset styrs av antalet in/utfarter, om ni önskar platsdetektering vid varje ruta och kravet på säkerhetskameror. Här är en grov uppskattning för budgetering.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Mindre garage / BRF</div>
+            <h3>30–100 kkr</h3>
+            <p>Passar bostadsrättsföreningar och mindre garage. Inkluderar högupplösta säkerhetskameror, smidiga infoskärmar vid in- och utfart samt grundläggande bakgrundsljud och utrop.</p>
+          </div>
+          <div class="pricing-card highlight">
+            <div class="eyebrow">Mellanstort P-hus</div>
+            <h3>100–250 kkr</h3>
+            <p>För det kommersiella parkeringshuset. Komplett ANPR-integration kopplat till betalsystem, utökad kameraövervakning, digital wayfinding och trygghetsskapande ljud i trapphus.</p>
+          </div>
+          <div class="pricing-card">
+            <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Stora anläggningar</div>
+            <h3>250 kkr +</h3>
+            <p>För de riktigt stora anläggningarna. Fullständig platsdetektering med kameror per ruta som även ger djupgående statistik, avancerad dataanalys och integrerad gobo-projektion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-top: 1px solid var(--avab-border);">
+      <div class="container">
+        <div class="eyebrow">P-hus Referenser</div>
+        <h2>Teknik som eliminerar köerna</h2>
+        <div class="ref-grid animate-in">
+          <article class="ref-card">
+            <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&q=80&w=800" alt="Mindre parkeringsgarage övervakning och ljud">
+            <div class="ref-content">
+              <h3>Mindre parkeringsgarage</h3>
+              <p>I samarbete med ett ledande parkeringsbolag utrustade vi detta garage med ett integrerat säkerhetssystem. Vi installerade högupplöst kameraövervakning, trygghetsskapande bakgrundsljud och strategiskt placerade infoskärmar vid in- och utfart för att ge besökarna tydlig guidning och ett tryggt helhetsintryck från första stund.</p>
+            </div>
+          </article>
+          <article class="ref-card">
+            <img src="https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?auto=format&fit=crop&q=80&w=800" alt="Större parkeringsanläggning med platsindikering och skärmar">
+            <div class="ref-content">
+              <h3>Större parkeringsanläggning</h3>
+              <p>En komplett lösning med integrerad kameraövervakning och dynamiska infoskärmar både vid portarna och inne i anläggningen. Här sitter även smarta platsindikerande kameror som inte bara guidar föraren till en ledig ruta med grön lampa, utan även levererar ovärderlig besöksstatistik för optimering av driften.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" style="border-top: 1px solid var(--avab-border);">
+      <div class="container two-col">
+        <div>
+          <div class="eyebrow">Kunskap</div>
+          <h2 style="margin-bottom: 32px;">Vanliga frågor om parkeringssystem</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Kan vi slippa pappersbiljetter och köer vid bommarna?</h3>
+              <p>Absolut. Genom att installera ANPR-kameror läser systemet av bilen redan innan den stannat. Bommen öppnas direkt och parkeringen kopplas automatiskt till besökarens digitala betalsystem.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Hur hjälper systemet kunden att hitta sin bil?</h3>
+              <p>I större anläggningar knyter vi ihop kameraövervakningen med bilens registreringsnummer. Besökaren knappar in sitt nummer på en skärm i trapphuset och får se en karta med exakt var bilen står.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Varför ska man installera ljudsystem i ett parkeringshus?</h3>
+              <p>En tyst betongkällare upplevs ofta som otrygg. Ett dämpat, väl valt bakgrundsljud i gångstråk och trapphus maskerar obehagliga ekon och ökar trygghetskänslan markant.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="cta-card">
+          <div class="eyebrow" style="background: rgba(255,255,255,0.1); color: #fff;">Trygghet sedan 1990</div>
+          <h2>Ska vi optimera ert parkeringshus?</h2>
+          <p>Rätt system minskar köerna, ökar tryggheten och ger er personal full kontroll över driften.</p>
+          <ul class="guarantee-list">
+            <li>ANPR för automatiskt in/utsläpp</li>
+            <li>Gobo-projektion för vägvisning</li>
+            <li>Trygghetsskapande ljudsystem</li>
+          </ul>
+          <div style="margin-top: 32px;"><a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

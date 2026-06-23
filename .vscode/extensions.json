@@ -1,0 +1,7 @@
+﻿{
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "naumovs.color-highlight",
+    "pkief.material-icon-theme"
+  ]
+}

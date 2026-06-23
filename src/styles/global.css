@@ -1,0 +1,988 @@
+/* ============================================================
+   AVAB – Delad designsystem-CSS
+   ------------------------------------------------------------
+   Denna fil innehåller BASEN + SIGNATURKOMPONENTERNA som ska
+   vara identiska på varje sida (förstasida + alla undersidor).
+   Sidspecifika komponenter (t.ex. .expert-card, .byod-banner,
+   .compact-faq, .calculator-band) ligger kvar i respektive sidas
+   egna <style>-block eller per-sid-fil.
+
+   Kanoniska beslut (enade efter diff mellan förstasida & undersida):
+     • .button  : 700 / 1.05rem
+     • .eyebrow : 0.85rem
+     • h3       : 1.5rem
+     • Punkttecken i strip : ●
+     • bullet-list-pil     : →
+     • Hero : flexbox-teknik (inga absoluta top-px)
+     • scroll-padding-top  : styrs av --avab-nav-height
+
+   Typsnitt laddas i <head> (preconnect + preload), inte via @import:
+     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+   ============================================================ */
+
+
+/* ---- 1. Designtokens ------------------------------------- */
+:root {
+  /* Färg */
+  --avab-green: #8FC025;
+  --avab-green-hover: #9ed229;
+  --avab-green-soft: rgba(143, 192, 37, 0.12);
+  --avab-green-glow: rgba(143, 192, 37, 0.4);
+  --avab-dark: #282E29;
+  --avab-dark-muted: #3A433D;
+  --avab-grey: #E9EAE9;
+  --avab-light: #F4F5F4;
+  --avab-white: #ffffff;
+  --avab-border: rgba(40, 46, 42, 0.1);
+
+  /* Skuggor */
+  --avab-shadow-sm: 0 4px 12px rgba(40, 46, 42, 0.05);
+  --avab-shadow-lg: 0 24px 48px rgba(40, 46, 42, 0.12);
+
+  /* Form */
+  --avab-radius: 24px;
+  --avab-radius-sm: 16px;
+  --avab-max: 1280px;
+
+  /* Rörelse */
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout-system */
+  --avab-nav-height: 72px;
+
+  /* Tillgänglighet */
+  --avab-focus: 3px solid var(--avab-green);
+}
+
+
+/* ---- 2. Reset & bas -------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--avab-nav-height);
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  color: var(--avab-dark);
+  background: var(--avab-white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ---- 3. Tillgänglighet ----------------------------------- */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 200;
+  background: var(--avab-dark);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  box-shadow: var(--avab-shadow-lg);
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 16px; }
+
+a:focus-visible,
+.button:focus-visible,
+summary:focus-visible,
+button:focus-visible {
+  outline: var(--avab-focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-in { animation: none; opacity: 1; transform: none; }
+}
+
+
+/* ---- 4. Typografi ---------------------------------------- */
+h1, h2, h3 {
+  color: var(--avab-dark);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+p {
+  margin: 0 0 20px;
+  font-size: 1.15rem;
+  color: var(--avab-dark-muted);
+}
+
+.lead-dark {
+  font-size: 1.25rem;
+  max-width: 68ch;
+  color: var(--avab-dark-muted);
+  margin-bottom: 24px;
+}
+
+.text-link {
+  text-decoration: underline;
+  text-decoration-color: rgba(143, 192, 37, 0.55);
+  text-underline-offset: 4px;
+}
+.text-link:hover {
+  color: var(--avab-dark);
+  text-decoration-color: var(--avab-green);
+}
+
+
+/* ---- 5. Layout-hjälpare ---------------------------------- */
+.avab-container {
+  width: min(calc(100% - 48px), var(--avab-max));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--avab-border);
+}
+.section:last-child { border-bottom: none; }
+
+/* Hjälpklass i stället för inline style="background:var(--avab-light)" */
+.section--light { background: var(--avab-light); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 56px;
+  align-items: stretch;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 42px;
+  max-width: 980px;
+}
+
+
+/* ---- 6. Navigation --------------------------------------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--avab-border);
+}
+.site-nav .avab-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: var(--avab-nav-height);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.01em;
+  color: var(--avab-dark);
+}
+.brand .brand-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--avab-green);
+  box-shadow: 0 0 0 4px var(--avab-green-soft);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+}
+.nav-links a {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--avab-dark-muted);
+}
+.nav-links a:hover { color: var(--avab-dark); }
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav-phone {
+  font-weight: 800;
+  color: var(--avab-dark);
+  white-space: nowrap;
+}
+.nav-phone span { color: var(--avab-green); }
+
+.nav-button {
+  min-height: 44px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--avab-green);
+  color: var(--avab-dark);
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 8px 18px var(--avab-green-glow);
+}
+.nav-button:hover {
+  transform: translateY(-2px);
+  background: var(--avab-green-hover);
+}
+
+
+/* ---- 7. Breadcrumbs -------------------------------------- */
+.breadcrumbs {
+  background: var(--avab-white);
+  border-bottom: 1px solid var(--avab-border);
+}
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  padding: 14px 0;
+  font-size: 0.9rem;
+  color: var(--avab-dark-muted);
+}
+.breadcrumbs li { display: inline-flex; align-items: center; gap: 8px; }
+.breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  color: var(--avab-border);
+}
+.breadcrumbs a { font-weight: 700; }
+.breadcrumbs a:hover { color: var(--avab-green); }
+.breadcrumbs [aria-current="page"] {
+  font-weight: 800;
+  color: var(--avab-dark);
+}
+
+
+/* ---- 8. Hero (kanonisk flexbox-version) ------------------ */
+/* Varje sida sätter sin egen bild:
+   <section class="hero" style="--hero-image:url('...')"> ...     */
+.hero {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: stretch;
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.32) 58%, rgba(40, 46, 41, 0.66) 100%),
+    var(--hero-image, linear-gradient(135deg, var(--avab-dark), #1f241f)) center / cover no-repeat;
+}
+
+.hero-inner {
+  min-height: inherit;
+  max-width: 1040px;
+  padding: 70px 0 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero .eyebrow { margin-bottom: 26px; }
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(2.55rem, 4.8vw, 4.05rem);
+  font-weight: 800;
+  line-height: 1.08;
+  margin-bottom: 18px;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+
+.hero .lead {
+  max-width: 66ch;
+  color: #fff;
+  font-size: 1.22rem;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  margin-bottom: 0;
+}
+
+.hero-bottom {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+.hero-pills a {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--avab-dark);
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.hero-pills a:hover {
+  background: #fff;
+  color: var(--avab-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---- 9. Strips (procurement + trust) --------------------- */
+.procurement-strip {
+  background: var(--avab-dark);
+  color: #fff;
+  padding: 16px 0;
+  border-bottom: 4px solid var(--avab-green);
+}
+.procurement-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  opacity: 0.94;
+}
+.procurement-item::before {
+  content: "●";
+  color: var(--avab-green);
+  margin-right: 8px;
+}
+
+.trust-strip {
+  background: var(--avab-light);
+  padding: 32px 0;
+  border-bottom: 1px solid var(--avab-border);
+}
+.trust-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: var(--avab-white);
+  border: 1px solid var(--avab-border);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--avab-dark);
+  box-shadow: var(--avab-shadow-sm);
+  white-space: nowrap;
+}
+.trust-item::before {
+  content: "✓";
+  color: var(--avab-green);
+  font-weight: 800;
+}
+
+
+/* ---- 10. Knappar ----------------------------------------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 32px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.button-primary {
+  background: var(--avab-green);
+  color: var(--avab-dark);
+  box-shadow: 0 16px 32px var(--avab-green-glow);
+}
+.button-primary:hover {
+  transform: translateY(-2px);
+  background: var(--avab-green-hover);
+  box-shadow: 0 20px 40px var(--avab-green-glow);
+}
+
+.button-secondary {
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--avab-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.button-secondary:hover {
+  background: #fff;
+  color: var(--avab-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+}
+
+/* För mörka ytor (hero, CTA-block) */
+.button-quiet {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+}
+.button-quiet:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-2px);
+}
+
+.button-light {
+  background: var(--avab-white);
+  color: var(--avab-dark);
+  box-shadow: 0 16px 32px var(--avab-green-glow);
+}
+.button-light:hover {
+  background: var(--avab-light);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px var(--avab-green-glow);
+}
+
+
+/* ---- 11. Eyebrow ----------------------------------------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--avab-green);
+  color: var(--avab-dark);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+  align-self: flex-start;
+}
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+.eyebrow-dark {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* ---- 12. Kort & listor ----------------------------------- */
+.card {
+  background: var(--avab-white);
+  border: 1px solid var(--avab-border);
+  border-radius: var(--avab-radius);
+  padding: 40px;
+  box-shadow: var(--avab-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Mörkt kort med grön kant (BYOD/CTA-liknande block) */
+.dark-card {
+  background: linear-gradient(135deg, var(--avab-dark), #1f241f);
+  color: #fff;
+  border-left: 8px solid var(--avab-green);
+  box-shadow: var(--avab-shadow-lg);
+}
+.dark-card h2,
+.dark-card h3 { color: #fff; }
+.dark-card p,
+.dark-card li { color: rgba(255, 255, 255, 0.86); }
+
+/* Bildomslag med rundade hörn */
+.image-wrapper {
+  border-radius: var(--avab-radius-sm);
+  overflow: hidden;
+  position: relative;
+  background: var(--avab-dark);
+  box-shadow: var(--avab-shadow-sm);
+}
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Punktlista med grön pil */
+.bullet-list {
+  list-style: none;
+  display: grid;
+  gap: 18px;
+  margin: 20px 0 0;
+}
+.bullet-list li {
+  position: relative;
+  padding-left: 34px;
+  font-weight: 600;
+  color: var(--avab-dark);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.bullet-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--avab-green);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+.bullet-list-light li { color: rgba(255, 255, 255, 0.9); }
+
+/* Värdekort med ikon (icon + titel + text) */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+.value-card {
+  background: var(--avab-white);
+  border: 1px solid var(--avab-border);
+  border-radius: var(--avab-radius-sm);
+  padding: 24px;
+  box-shadow: var(--avab-shadow-sm);
+  height: 100%;
+}
+.value-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.value-card p {
+  color: var(--avab-dark-muted);
+  font-size: 0.96rem;
+  margin-bottom: 0;
+}
+.value-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--avab-green-soft);
+  color: var(--avab-green);
+  margin-bottom: 14px;
+}
+.value-icon svg { width: 24px; height: 24px; }
+
+/* Statistik-/bevisrad */
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.proof-item {
+  padding: 18px 20px;
+  border-radius: var(--avab-radius-sm);
+  background: var(--avab-white);
+  border: 1px solid var(--avab-border);
+  box-shadow: var(--avab-shadow-sm);
+}
+.proof-item strong {
+  display: block;
+  color: var(--avab-dark);
+  font-size: 1.08rem;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.proof-item span {
+  display: block;
+  color: var(--avab-dark-muted);
+  font-size: 0.92rem;
+}
+
+/* Processteg (numrerat) – kanonisk "flow-card" */
+.flow-card {
+  padding: 22px;
+  border-radius: var(--avab-radius-sm);
+  background: var(--avab-white);
+  border: 1px solid var(--avab-border);
+  box-shadow: var(--avab-shadow-sm);
+}
+.flow-card strong {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  color: var(--avab-dark);
+}
+.flow-card strong em {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: var(--avab-green);
+  color: var(--avab-dark);
+  font-style: normal;
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.flow-card span {
+  display: block;
+  color: var(--avab-dark-muted);
+  font-size: 0.96rem;
+}
+
+
+/* ---- 13. Referenskort ------------------------------------ */
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.ref-card {
+  background: var(--avab-white);
+  border: 1px solid var(--avab-border);
+  border-radius: var(--avab-radius-sm);
+  box-shadow: var(--avab-shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+.ref-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--avab-shadow-lg);
+  border-color: rgba(143, 192, 37, 0.42);
+}
+.ref-card:hover h3 { color: var(--avab-green); }
+.ref-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--avab-border);
+}
+.ref-content {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.ref-content p {
+  font-size: 1.02rem;
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
+
+/* ---- 14. FAQ-dragspel ------------------------------------ */
+.faq-list { margin-top: 32px; }
+
+details.faq-item {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--avab-border);
+  transition: var(--transition-smooth);
+}
+details.faq-item:first-child {
+  border-top: 1px solid var(--avab-border);
+  margin-top: 0;
+}
+
+details.faq-item summary {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--avab-dark);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+details.faq-item summary::-webkit-details-marker { display: none; }
+
+details.faq-item summary::after {
+  content: "+";
+  color: var(--avab-green);
+  font-size: 1.8rem;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+  margin-left: 20px;
+  flex: 0 0 auto;
+}
+details.faq-item[open] summary::after {
+  content: "−";
+  transform: rotate(180deg);
+}
+
+details.faq-item p {
+  margin-top: 16px;
+  margin-bottom: 0;
+  padding-right: 40px;
+  font-size: 1.05rem;
+}
+
+
+/* ---- 15. Fullbredds-CTA ---------------------------------- */
+.fullwidth-cta-wrap { padding: 80px 0 0; }
+
+.fullwidth-cta {
+  background: linear-gradient(135deg, var(--avab-dark) 0%, #1c221e 40%, var(--avab-green) 120%);
+  padding: 64px 48px;
+  border-radius: var(--avab-radius);
+  box-shadow: var(--avab-shadow-lg);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+.fullwidth-cta h2 {
+  color: #fff;
+  margin-bottom: 16px;
+  max-width: 16ch;
+}
+.fullwidth-cta p {
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0;
+  font-size: 1.15rem;
+}
+.fullwidth-cta .eyebrow {
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.fullwidth-cta .eyebrow::before {
+  background: var(--avab-green);
+  box-shadow: none;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+/* Checklista i CTA (kallas både .cta-points och .calc-list) */
+.cta-points,
+.calc-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+}
+.cta-points li,
+.calc-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.cta-points li::before,
+.calc-list li::before {
+  content: "✓";
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--avab-green);
+  color: var(--avab-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  flex: 0 0 24px;
+}
+
+
+/* ---- 16. Footer ------------------------------------------ */
+.site-footer {
+  background: var(--avab-dark);
+  color: rgba(255, 255, 255, 0.82);
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.site-footer h2 { color: #fff; font-size: 1.15rem; margin-bottom: 16px; }
+.site-footer .brand { color: #fff; margin-bottom: 16px; }
+.site-footer p { color: rgba(255, 255, 255, 0.72); font-size: 0.98rem; }
+
+.footer-links { list-style: none; display: grid; gap: 10px; }
+.footer-links a { color: rgba(255, 255, 255, 0.82); font-weight: 600; }
+.footer-links a:hover { color: var(--avab-green); }
+
+.footer-contact { display: grid; gap: 10px; font-size: 0.98rem; }
+.footer-contact a { color: #fff; font-weight: 700; }
+.footer-contact a:hover { color: var(--avab-green); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* ---- 17. Responsivt -------------------------------------- */
+@media (max-width: 1120px) {
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 1024px) {
+  .two-col,
+  .grid-2,
+  .fullwidth-cta,
+  .section-heading {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .card { padding: 32px; }
+}
+
+@media (max-width: 900px) {
+  /* Navigationen fäller ihop till logotyp + CTA */
+  .nav-links,
+  .nav-phone { display: none; }
+}
+
+@media (max-width: 768px) {
+  .avab-container { width: min(calc(100% - 32px), var(--avab-max)); }
+  .section { padding: 56px 0; }
+
+  /* Hero stackar och blir naturligt flöde */
+  .hero { min-height: auto; padding: 72px 0 56px; }
+  .hero-inner { min-height: auto; padding: 0; }
+  .hero h1 {
+    font-size: clamp(2.45rem, 10vw, 3.7rem);
+    line-height: 1.04;
+    margin-bottom: 22px;
+    max-width: 100%;
+  }
+  .hero .lead {
+    max-width: 100%;
+    font-size: 1.06rem;
+    margin-bottom: 28px;
+  }
+  .hero-actions,
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+  .hero-actions .button,
+  .cta-actions .button { width: 100%; }
+
+  .procurement-container,
+  .trust-container { gap: 12px; }
+  .trust-item { white-space: normal; }
+
+  .grid-3 { grid-template-columns: 1fr; }
+
+  .fullwidth-cta { padding: 48px 28px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+}

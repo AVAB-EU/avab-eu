@@ -1,0 +1,34 @@
+﻿{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#282E29",
+    "activityBar.foreground": "#ffffff",
+    "activityBarBadge.background": "#8FC025",
+    "activityBarBadge.foreground": "#282E29",
+    "statusBar.background": "#8FC025",
+    "statusBar.foreground": "#282E29",
+    "statusBar.debuggingBackground": "#3A433D",
+    "statusBar.debuggingForeground": "#ffffff",
+    "titleBar.activeBackground": "#282E29",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveBackground": "#3A433D",
+    "titleBar.inactiveForeground": "#E9EAE9",
+    "editorGroupHeader.tabsBackground": "#F4F5F4",
+    "tab.activeBorderTop": "#8FC025",
+    "tab.activeForeground": "#282E29",
+    "tab.inactiveForeground": "#3A433D"
+  },
+  "workbench.tree.indent": 18,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, astro.config.mjs, tsconfig.json",
+    "index.astro": "*.html, *.txt"
+  },
+  "files.associations": {
+    "*.astro": "astro"
+  },
+  "editor.rulers": [100],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.indentation": true,
+  "css.lint.unknownAtRules": "ignore"
+}
