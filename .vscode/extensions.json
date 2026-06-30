@@ -1,6 +1,7 @@
 ﻿{
   "recommendations": [
     "astro-build.astro-vscode",
+    "natizyskunk.sftp",
     "naumovs.color-highlight",
     "pkief.material-icon-theme"
   ]
