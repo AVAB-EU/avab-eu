@@ -1,5 +1,8 @@
 ---
+import heroHomeSaffleSimhall from "../assets/hero-hem-saffle-simhall.webp";
 import "../styles/global.css";
+
+const heroImage = heroHomeSaffleSimhall.src;
 ---
 
 <!DOCTYPE html>
@@ -214,7 +217,7 @@ import "../styles/global.css";
 
   <!-- Preload av hero-bilden (LCP) -->
   <link rel="preload" as="image" fetchpriority="high"
-    href="https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-50m-hogt-palm-vatten-parkering-2-1536x864.webp">
+    href={heroImage}>
 
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -461,7 +464,7 @@ import "../styles/global.css";
     </div>
   </header>
 
-  <section class="hero" style="--hero-image:url('https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-50m-hogt-palm-vatten-parkering-2-1536x864.webp');">
+  <section class="hero" style={`--hero-image:url('${heroImage}');`}>
     <div class="avab-container">
       <div class="hero-inner animate-in">
         <div class="eyebrow">Helhetslösningar för AV-teknik</div>
