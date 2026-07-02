@@ -1,10 +1,13 @@
+---
+import avabLogo from "../assets/AVAB_logotyp_pos.png";
+---
+
 <a class="skip-link" href="#main">Hoppa till innehåll</a>
 
 <header class="site-nav">
   <div class="avab-container">
     <a class="brand" href="/" aria-label="AVAB - till startsidan">
-      <span class="brand-dot" aria-hidden="true"></span>
-      AVAB
+      <img src={avabLogo.src} alt="AVAB" width="154" height="43" />
     </a>
     <nav aria-label="Huvudmeny">
       <ul class="nav-links">
@@ -64,12 +67,24 @@
             </ul>
           </div>
         </li>
-        <li><a class="nav-link hover-underline" href="#losningar">Tjänster</a></li>
+        <li class="nav-dropdown nav-dropdown--services">
+          <button class="nav-link hover-underline nav-dropdown-trigger" type="button" aria-haspopup="true">
+            Tjänster
+            <span class="nav-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="service-menu" aria-label="Tjänster">
+            <ul class="service-menu-list">
+              <li><a href="/rastsignal/">Rastsignal</a></li>
+              <li><a href="/tjanster/horslinga/">Hörslinga</a></li>
+              <li><a href="/tjanster/kameraovervakning/">Kameraövervakning</a></li>
+            </ul>
+          </div>
+        </li>
         <li><a class="nav-link hover-underline" href="#projektering">Projektering</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
-      <a class="nav-phone" href="tel:+46548202080"><span>☎</span> 054-8202080</a>
+      <a class="nav-phone" href="tel:+46548202080"><span>☎</span> 054-820 20 80</a>
       <a class="nav-button" href="/kontakt/">Boka rådgivning</a>
     </div>
   </div>

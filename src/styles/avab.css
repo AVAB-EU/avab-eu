@@ -302,6 +302,11 @@ p {
   letter-spacing: 0.01em;
   color: var(--avab-dark);
 }
+.brand img {
+  width: auto;
+  height: 34px;
+  object-fit: contain;
+}
 .brand .brand-dot {
   width: 14px;
   height: 14px;
@@ -496,6 +501,50 @@ p {
   transform: translateX(4px);
 }
 
+.service-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 120;
+  width: min(320px, calc(100vw - 48px));
+  overflow: hidden;
+  background: var(--avab-white);
+  border-top: 3px solid var(--avab-green);
+  border-radius: 0 0 var(--avab-radius-sm) var(--avab-radius-sm);
+  box-shadow: 0 28px 60px rgba(40, 46, 42, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+.nav-dropdown:hover .service-menu,
+.nav-dropdown:focus-within .service-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.service-menu-list {
+  display: grid;
+  gap: 0;
+  list-style: none;
+  padding: 18px 0;
+}
+.service-menu-list a {
+  display: flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 0 28px;
+  color: var(--avab-dark);
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.service-menu-list a:hover,
+.service-menu-list a:focus-visible {
+  color: var(--avab-green);
+  background: var(--avab-light);
+}
+
 .nav-cta {
   display: inline-flex;
   align-items: center;
@@ -663,6 +712,38 @@ p {
   flex-wrap: wrap;
   align-items: center;
   gap: 16px;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.hero-pills a,
+.hero-pills span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.2;
+  backdrop-filter: blur(8px);
+}
+
+.hero-pills a:hover,
+.hero-pills a:focus-visible {
+  background: var(--avab-green);
+  border-color: var(--avab-green);
+  color: var(--avab-dark);
+  transform: translateY(-2px);
 }
 
 /* ---- 9. Strips (procurement + trust) --------------------- */
@@ -1154,6 +1235,7 @@ details.faq-item p {
 }
 .site-footer h2 { color: #fff; font-size: 1.15rem; margin-bottom: 16px; }
 .site-footer .brand { color: #fff; margin-bottom: 16px; }
+.site-footer .brand img { height: 38px; }
 .site-footer p { color: rgba(255, 255, 255, 0.72); font-size: 0.98rem; }
 
 .footer-links { list-style: none; display: grid; gap: 10px; }
@@ -2177,7 +2259,7 @@ h2.snabbt-svar-title::before {
     .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
     .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
     .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
+    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 20px; max-width: 760px; }
 
     .compact-faq {
       display: grid;
