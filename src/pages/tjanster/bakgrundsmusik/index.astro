@@ -1,0 +1,429 @@
+---
+import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import "../../../styles/avab.css";
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bakgrundsmusik | Styrd musik i lokaler | AVAB</title>
+  <meta name="description" content="AVAB projekterar och installerar styrd bakgrundsmusik för butik, restaurang, hotell, spa, gym och publika lokaler med zoner och scheman." />
+  <link rel="canonical" href="https://www.avab.eu/tjanster/bakgrundsmusik/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content="Bakgrundsmusik | Styrd musik i lokaler | AVAB" />
+  <meta property="og:description" content="Styrd bakgrundsmusik för butik, restaurang, hotell, spa, gym och publika lokaler. Rätt musik, volym och tempo efter tid, dag och zon." />
+  <meta property="og:image" content="https://www.avab.eu/assets/avab-referens-hundfjallshotellet-salen-1200x800.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="800" />
+  <meta property="og:image:alt" content="Hotellmiljö med ljudsystem och bakgrundsmusik från AVAB" />
+  <meta property="og:url" content="https://www.avab.eu/tjanster/bakgrundsmusik/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bakgrundsmusik | Styrd musik i lokaler | AVAB" />
+  <meta name="twitter:description" content="Styrd bakgrundsmusik för butik, restaurang, hotell, spa, gym och publika lokaler. Rätt musik, volym och tempo efter tid, dag och zon." />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/avab-referens-hundfjallshotellet-salen-1200x800.webp" />
+  <meta name="twitter:image:alt" content="Hotellmiljö med ljudsystem och bakgrundsmusik från AVAB" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Bakgrundsmusik för butik, restaurang och hotell",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "AVAB",
+      "url": "https://www.avab.eu/",
+      "logo": "https://www.avab.eu/logo.png",
+      "image": "https://www.avab.eu/assets/avab-referens-hundfjallshotellet-salen-1200x800.webp",
+      "telephone": "+46-54-8202080",
+      "email": "info@avab.eu",
+      "sameAs": [
+        "https://www.linkedin.com/company/avab",
+        "https://www.facebook.com/avab"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Skraggevägen 4",
+        "postalCode": "663 41",
+        "addressLocality": "Hammarö",
+        "addressRegion": "Värmland",
+        "addressCountry": "SE"
+      }
+    },
+    "areaServed": "Sverige",
+    "serviceType": [
+      "Bakgrundsmusik företag",
+      "Musiksystem butik",
+      "Bakgrundsmusik restaurang",
+      "Ljudzoner hotell",
+      "Zonstyrd musik",
+      "Musiktjänst företag",
+      "Ljudsystem för publika lokaler"
+    ],
+    "description": "AVAB projekterar, installerar och driftsätter styrd bakgrundsmusik för butik, restaurang, hotell, spa, gym och publika lokaler med zoner, scheman, enkel styrning och professionellt ljud."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Kan vi använda Spotify i vår butik eller restaurang?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Privata musikkonton är normalt inte avsedda för kommersiell eller offentlig användning. För verksamheter bör man använda en musiktjänst och licensmodell som är anpassad för företag."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Behöver vi både Stim och SAMI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ofta behöver verksamheter hantera båda, eftersom de ersätter olika rättighetshavare. Exakt vad som gäller beror på verksamhet, lokal, användning och musiktyp."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan musiken ändras automatiskt under dagen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Vi kan bygga system där spellistor, tempo, volym och zoner ändras automatiskt efter schema."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan olika delar av lokalen ha olika musik?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Med zonstyrning kan exempelvis reception, restaurang, lounge, spa och toaletter ha olika ljudnivåer eller olika musik."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan systemet även användas för mikrofon och utrop?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Vi kan kombinera bakgrundsmusik med mikrofoner, utrop, eventljud och andra ljudkällor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ni hjälpa oss med befintlig ljudanläggning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Vi kan felsöka, komplettera, bygga om eller modernisera befintliga ljudsystem."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Start",
+        "item": "https://www.avab.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tjänster",
+        "item": "https://www.avab.eu/#tjanster"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Bakgrundsmusik",
+        "item": "https://www.avab.eu/tjanster/bakgrundsmusik/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.avab.eu/tjanster/bakgrundsmusik/#webpage",
+    "url": "https://www.avab.eu/tjanster/bakgrundsmusik/",
+    "name": "Bakgrundsmusik | Styrd musik i lokaler | AVAB",
+    "description": "AVAB projekterar och installerar styrd bakgrundsmusik för butik, restaurang, hotell, spa, gym och publika lokaler med zoner och scheman.",
+    "inLanguage": "sv-SE",
+    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
+    "datePublished": "2026-07-02",
+    "dateModified": "2026-07-02",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".lead", ".compact-faq"]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preload" as="image" fetchpriority="high"
+    href="/assets/avab-referens-hundfjallshotellet-salen-1200x800.webp"
+    imagesrcset="/assets/avab-referens-hundfjallshotellet-salen-1200x800.webp 1200w"
+    imagesizes="100vw">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="https://www.avab.eu/">Start</a></li>
+        <li><a href="https://www.avab.eu/#tjanster">Tjänster</a></li>
+        <li><span aria-current="page">Bakgrundsmusik</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero" style="--hero-image:url('/assets/avab-referens-hundfjallshotellet-salen-1200x800.webp');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Tjänster / Bakgrundsmusik</div>
+
+        <h1>Bakgrundsmusik som styr känslan i lokalen</h1>
+
+        <p class="lead">
+          AVAB projekterar och installerar styrd bakgrundsmusik för butik, restaurang, hotell, spa, gym och publika miljöer.
+          Rätt musik, volym och tempo efter tid, dag, zon och verksamhet.
+        </p>
+
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/kontakt/">Boka genomgång</a>
+            <a class="button button-secondary" href="#referenser">Se miljöer</a>
+            <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band" aria-label="Snabbfakta bakgrundsmusik">
+    <div class="fact-grid">
+      <div class="fact"><span>Tjänst</span><strong>Bakgrundsmusik</strong></div>
+      <div class="fact"><span>Miljöer</span><strong>Butik, restaurang, hotell</strong></div>
+      <div class="fact"><span>Styrning</span><strong>Tid, dag, zon och läge</strong></div>
+      <div class="fact"><span>Zoner</span><strong>Entré, lounge, spa och gym</strong></div>
+      <div class="fact"><span>Drift</span><strong>Scheman och enkla knappar</strong></div>
+      <div class="fact"><span>Musik</span><strong>Företagsanpassade tjänster</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section section--light" id="far-du">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Det här får du</div>
+            <h2>Musik som följer lokalen under hela dagen</h2>
+            <p class="lead-dark">En professionell lösning för bakgrundsmusik gör att lokalen kan kännas lugn på morgonen, tydlig vid lunch, varm på kvällen och anpassad vid event utan att personalen behöver byta spellistor manuellt.</p>
+          </div>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
+            <h3>Rätt musikprofil</h3>
+            <p>Musik som passar lokalen, kundgruppen och känslan ni vill skapa.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+            <h3>Zoner i lokalen</h3>
+            <p>Olika nivåer och musiklägen i entré, bar, lounge, spa, gym eller butik.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg></span>
+            <h3>Automatiska scheman</h3>
+            <p>Spellistor, tempo och volym som ändras efter tid, dag och säsong.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span>
+            <h3>Enkel styrning</h3>
+            <p>Förinställda lägen, volym per zon och kontroll via panel, app eller styrsystem.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span>
+            <h3>Jämnt ljud</h3>
+            <p>Högtalarplacering, förstärkare och akustik anpassade för verklig drift.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Lösning</div>
+          <h2>Bakgrundsmusik handlar om mer än en spellista</h2>
+          <p>Rätt musik kan göra att en lokal upplevs mer genomtänkt, levande och trygg i sitt uttryck. I en <a class="text-link" href="/miljo/butik-retail/">butik</a> kan musiken stödja kundflödet. I en <a class="text-link" href="/miljo/restaurang-bar-klubb/">restaurang</a> kan den bidra till samtalsnivå och stämning. I ett <a class="text-link" href="/miljo/hotell/">hotell</a> kan olika delar av verksamheten behöva helt olika ljudmiljöer.</p>
+          <p>Musik i kommersiella och offentliga miljöer behöver också hanteras på rätt sätt. Privata musikkonton är normalt avsedda för privat bruk, och många verksamheter behöver hantera både Stim och SAMI. AVAB ger inte juridisk rådgivning, men hjälper er välja teknik och musiktjänster som är gjorda för företagsbruk.</p>
+        </div>
+
+        <aside class="card solution-card">
+          <h3>Därför bygger vi systemet runt verksamheten</h3>
+          <ul class="bullet-list">
+            <li>Musikprofil, volym och tempo efter målgrupp och lokal.</li>
+            <li>Zonstyrning för exempelvis entré, lounge, restaurang, spa och toaletter.</li>
+            <li>Scheman för vardag, helg, lunch, kväll, säsong och event.</li>
+            <li>Teknik som kan kombineras med mikrofon, utrop och presentationer.</li>
+            <li>Lösningar för <a class="text-link" href="/miljo/kopcentrum-galleria/">köpcentrum och gallerior</a> där många ytor har olika behov.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--light" id="referenser">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Miljöer</div>
+            <h2>Byggd för platser där människor rör sig</h2>
+            <p class="lead-dark">Bakgrundsmusik används i många typer av publika miljöer. Gemensamt är att ljudet ska vara jämnt, lätt att styra och anpassat efter verksamhetens rytm.</p>
+          </div>
+        </div>
+
+        <div class="proof-strip">
+          <div class="proof-item"><strong>Rätt känsla</strong><span>Musikprofil efter varumärke och målgrupp.</span></div>
+          <div class="proof-item"><strong>Zon per yta</strong><span>Olika ljudnivåer där lokalen kräver det.</span></div>
+          <div class="proof-item"><strong>Företagsbruk</strong><span>Teknik och tjänster anpassade för verksamheter.</span></div>
+          <div class="proof-item"><strong>Service och support</strong><span>Fjärrhjälp, utbildning och justering vid behov.</span></div>
+        </div>
+
+        <div class="grid-3">
+          <article class="ref-card">
+            <img src="/assets/hundfjallshotellet_spa.webp" alt="Bakgrundsmusik i hotell spa och relaxmiljö" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Hotell, lobby och spa</h3>
+              <p>Lugnare ljud i spa och relax, tydligare närvaro i lobby och anpassade profiler för frukost, konferens och kväll.</p>
+              <a href="/miljo/hotell/">Läs om hotellmiljöer</a>
+            </div>
+          </article>
+
+          <article class="ref-card">
+            <img src="/assets/Galleria Duvan 1200x900.webp" alt="Bakgrundsmusik i butik köpcentrum och galleria" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Butik och köpcentrum</h3>
+              <p>Musik som följer besöksflöde, öppettider och zoner i butik, gångstråk, torgytor och publika ytor.</p>
+              <a href="/miljo/butik-retail/">Läs om butik och retail</a>
+            </div>
+          </article>
+
+          <article class="ref-card">
+            <img src="/assets/Fortnox interior med match 1200x900.webp" alt="Bakgrundsmusik i restaurang lounge och publik lokal" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Restaurang, lounge och event</h3>
+              <p>Schema för lunch och kväll, manuella lägen för after work och möjlighet att växla till mikrofon, DJ eller eventljud.</p>
+              <a href="/miljo/restaurang-bar-klubb/">Läs om restaurang och bar</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="arbetssatt">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Hur vi jobbar</div>
+            <h2>Från musikidé till färdig vardagsstyrning</h2>
+            <p class="lead-dark">Vi börjar med hur lokalen används, inte med en produktlista. Därefter projekterar vi högtalare, zoner, styrning och ljudnivåer så att systemet fungerar i vardagen.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="flow-card"><strong><em>1</em> Genomgång</strong><span>Vi går igenom lokal, öppettider, zoner, målgrupp, ljudnivåer, befintlig teknik och hur personalen ska använda systemet.</span></div>
+          <div class="flow-card"><strong><em>2</em> Projektering</strong><span>Vi tar fram lösning för högtalare, förstärkare, musikspelare, scheman, volymstyrning, styrpaneler och integration med övrig AV.</span></div>
+          <div class="flow-card"><strong><em>3</em> Leverans</strong><span>Vi installerar, injusterar, testar zoner och lägen, utbildar personalen och kan hjälpa till med service, support och fjärrhjälp.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bakgrundsmusik-faq-cta" id="cta">
+      <div class="avab-container">
+        <div class="faq-heading">
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Snabba svar om bakgrundsmusik</h2>
+          <p>Korta svar för butiker, restauranger, hotell, gym, spa och publika lokaler som vill ha musik med bättre kontroll.</p>
+        </div>
+
+        <div class="compact-faq">
+          <details class="faq-item">
+            <summary>Kan vi använda Spotify i vår butik eller restaurang?</summary>
+            <p>Privata musikkonton är normalt inte avsedda för kommersiell eller offentlig användning. För verksamheter bör man använda en musiktjänst och licensmodell som är anpassad för företag.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Behöver vi både Stim och SAMI?</summary>
+            <p>Ofta behöver verksamheter hantera båda, eftersom de ersätter olika rättighetshavare. Exakt vad som gäller beror på verksamhet, lokal, användning och musiktyp.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan musiken ändras automatiskt under dagen?</summary>
+            <p>Ja. Vi kan bygga system där spellistor, tempo, volym och zoner ändras automatiskt efter schema.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan olika delar av lokalen ha olika musik?</summary>
+            <p>Ja. Med zonstyrning kan exempelvis reception, restaurang, lounge, spa och toaletter ha olika ljudnivåer eller olika musik.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan systemet även användas för mikrofon och utrop?</summary>
+            <p>Ja. Vi kan kombinera bakgrundsmusik med mikrofoner, utrop, eventljud och andra ljudkällor.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan ni hjälpa oss med befintlig ljudanläggning?</summary>
+            <p>Ja. Vi kan felsöka, komplettera, bygga om eller modernisera befintliga ljudsystem.</p>
+          </details>
+        </div>
+
+        <div class="fullwidth-cta">
+          <div>
+            <div class="eyebrow">Bakgrundsmusik med kontroll</div>
+            <h2>Vill ni att lokalen ska kännas rätt hela dagen?</h2>
+            <p>AVAB hjälper er med bakgrundsmusik, zonstyrning, ljudsystem och enkel kontroll för personalen. Vi bygger lösningen efter lokalen, verksamheten och känslan ni vill skapa.</p>
+            <div class="cta-actions">
+              <a class="button button-light" href="/kontakt/">Boka genomgång</a>
+              <a class="button button-secondary" href="#arbetssatt">Se hur vi jobbar</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+            </div>
+          </div>
+
+          <ul class="calc-list">
+            <li>Musikprofil efter verksamhet, tid och zon.</li>
+            <li>Högtalarplacering, förstärkare och jämn ljudnivå.</li>
+            <li>Scheman, lägen och enkel styrning för personal.</li>
+            <li>Musiktjänst för företagsbruk och möjlighet till support.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</body>
+</html>
