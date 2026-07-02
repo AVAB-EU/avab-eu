@@ -56,8 +56,6 @@ npm run preview
     - 🟦 [`kameraovervakning/index.astro`](src/pages/tjanster/kameraovervakning/index.astro)
 - 🟩 [`src/styles/`](src/styles/) - gemensam design
   - 🟩 [`avab.css`](src/styles/avab.css) - enda aktiva gemensamma stylesheet
-  - ⬜ [`global.css`](src/styles/global.css) - arkiv/äldre referens, ska inte importeras
-  - ⬜ [`miljo.css`](src/styles/miljo.css) - arkiv/äldre referens, ska inte importeras
 - 🟨 Sidmaterial och textkällor
   - 🟨 [`src/pages/miljo/**/Avab-hub-*.txt`](src/pages/miljo/) - gamla/externa underlag per miljösida
 - 🟪 [`public/assets/`](public/assets/) - publika bilder som används med `/assets/filnamn.webp`
@@ -70,6 +68,5 @@ npm run preview
 
 - `src/styles/avab.css` är projektets enda aktiva gemensamma CSS-fil.
 - Nya sidor ska importera `avab.css` med rätt relativ sökväg, till exempel `import "../../../styles/avab.css";`.
-- `src/styles/global.css` och `src/styles/miljo.css` är endast arkiv/referens tills de tas bort i ett separat städsteg.
 - Undvik dubbla bildkopior när du kan. För publika bildvägar räcker `public/assets`.
 - Skriv svenska tecken direkt i UTF-8.
