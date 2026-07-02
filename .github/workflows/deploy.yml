@@ -28,9 +28,10 @@ jobs:
       - name: Deploy dist via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
+          server: ftp.avab.eu
+          username: test2@avab.eu
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
+          port: 21
+          protocol: ftps
           local-dir: dist/
           server-dir: /

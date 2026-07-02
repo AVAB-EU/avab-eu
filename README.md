@@ -28,25 +28,42 @@ npm run preview
 4. Lägg bilder som ska användas med `/assets/...` i `public/assets`.
 5. Kör `npm run build` innan du anser sidan klar.
 
-## Nuvarande struktur
+## Snabbnavigering i projektträdet
 
-```text
-src/
-  pages/
-    index.astro
-    miljo/
-      simhall/index.astro
-      sporthall/index.astro
-      ...
-    tjanster/
-      horslinga/index.astro
-      kameraovervakning/index.astro
-  styles/
-    global.css
-    miljo.css
-public/
-  assets/
-```
+> Färgikonerna följer projektkartan ovan. Klicka på filnamn eller mappar för att hoppa direkt dit.
+
+- 🟦 [`src/pages/`](src/pages/) - publika sidor och URL:er
+  - 🟦 [`index.astro`](src/pages/index.astro) - startsidan
+  - 🟦 [`miljo/`](src/pages/miljo/) - miljösidor
+    - 🟦 [`butik-retail/index.astro`](src/pages/miljo/butik-retail/index.astro)
+    - 🟦 [`hotell/index.astro`](src/pages/miljo/hotell/index.astro)
+    - 🟦 [`industri/index.astro`](src/pages/miljo/industri/index.astro)
+    - 🟦 [`ishall/index.astro`](src/pages/miljo/ishall/index.astro)
+    - 🟦 [`kontor-konferens/index.astro`](src/pages/miljo/kontor-konferens/index.astro)
+    - 🟦 [`kopcentrum-galleria/index.astro`](src/pages/miljo/kopcentrum-galleria/index.astro)
+    - 🟦 [`kyrka/index.astro`](src/pages/miljo/kyrka/index.astro)
+    - 🟦 [`parkering-garage/index.astro`](src/pages/miljo/parkering-garage/index.astro)
+    - 🟦 [`restaurang-bar-klubb/index.astro`](src/pages/miljo/restaurang-bar-klubb/index.astro)
+    - 🟦 [`simhall/index.astro`](src/pages/miljo/simhall/index.astro)
+    - 🟦 [`skola/index.astro`](src/pages/miljo/skola/index.astro)
+    - 🟦 [`sporthall/index.astro`](src/pages/miljo/sporthall/index.astro)
+    - 🟦 [`utomhusidrott/index.astro`](src/pages/miljo/utomhusidrott/index.astro)
+    - 🟦 [`vard/index.astro`](src/pages/miljo/vard/index.astro)
+  - 🟦 [`rastsignal/index.astro`](src/pages/rastsignal/index.astro)
+  - 🟦 [`referenser/saffle-simhall/index.astro`](src/pages/referenser/saffle-simhall/index.astro)
+  - 🟦 [`tjanster/`](src/pages/tjanster/) - tjänstesidor
+    - 🟦 [`horslinga/index.astro`](src/pages/tjanster/horslinga/index.astro)
+    - 🟦 [`kameraovervakning/index.astro`](src/pages/tjanster/kameraovervakning/index.astro)
+- 🟩 [`src/styles/`](src/styles/) - gemensam design
+  - 🟩 [`global.css`](src/styles/global.css) - global bas och återkommande komponenter
+  - 🟩 [`miljo.css`](src/styles/miljo.css) - bas och komponenter för miljösidor
+- 🟨 Sidmaterial och textkällor
+  - 🟨 [`src/pages/miljo/**/Avab-hub-*.txt`](src/pages/miljo/) - gamla/externa underlag per miljösida
+- 🟪 [`public/assets/`](public/assets/) - publika bilder som används med `/assets/filnamn.webp`
+- ⚙️ Projektkonfiguration
+  - ⚙️ [`astro.config.mjs`](astro.config.mjs)
+  - ⚙️ [`package.json`](package.json)
+  - ⚙️ [`tsconfig.json`](tsconfig.json)
 
 ## Viktiga principer
 

@@ -17,11 +17,26 @@
     "tab.activeForeground": "#282E29",
     "tab.inactiveForeground": "#3A433D"
   },
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.tree.indent": 18,
+  "explorer.compactFolders": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "package.json": "package-lock.json, astro.config.mjs, tsconfig.json",
+    "README.md": ".gitignore",
     "index.astro": "*.html, *.txt"
+  },
+  "files.exclude": {
+    "**/.astro": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/.astro-dev.err.log": true,
+    "**/.astro-dev.out.log": true
+  },
+  "search.exclude": {
+    "**/.astro": true,
+    "**/dist": true,
+    "**/node_modules": true
   },
   "files.associations": {
     "*.astro": "astro"
