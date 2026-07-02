@@ -10,6 +10,9 @@ node_modules/
 # local VS Code FTP config
 .vscode/sftp.json
 
+# local legacy stylesheet reference
+src/styles/avab.css
+
 # logs
 npm-debug.log*
 yarn-debug.log*
