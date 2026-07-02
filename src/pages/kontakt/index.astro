@@ -1,0 +1,498 @@
+---
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import "../../styles/avab.css";
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt | Skicka ritningar eller boka genomgång | AVAB</title>
+  <meta name="description" content="Kontakta AVAB om ljud, bild och säkerhet i offentliga miljöer. Ring 054-8202080, mejla info@avab.eu eller skicka ritningar och FFU för en kostnadsfri genomgång." />
+  <link rel="canonical" href="https://www.avab.eu/kontakt/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content="Kontakt | Skicka ritningar eller boka genomgång | AVAB" />
+  <meta property="og:description" content="Ring, mejla eller skicka ritningar och FFU. AVAB projekterar, installerar och driftsätter ljud, bild och säkerhet i hela Sverige." />
+  <meta property="og:image" content="https://www.avab.eu/assets/Hanza%20konf%201200x900.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="900" />
+  <meta property="og:image:alt" content="Konferensrum med AV-teknik installerad av AVAB" />
+  <meta property="og:url" content="https://www.avab.eu/kontakt/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kontakt | Skicka ritningar eller boka genomgång | AVAB" />
+  <meta name="twitter:description" content="Ring, mejla eller skicka ritningar och FFU. AVAB projekterar, installerar och driftsätter ljud, bild och säkerhet i hela Sverige." />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/Hanza%20konf%201200x900.webp" />
+  <meta name="twitter:image:alt" content="Konferensrum med AV-teknik installerad av AVAB" />
+
+  <!-- Favicon (byt sökväg till AVAB:s riktiga ikonfiler) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "AVAB",
+    "url": "https://www.avab.eu/",
+    "logo": "https://www.avab.eu/logo.png",
+    "image": "https://www.avab.eu/assets/Hanza%20konf%201200x900.webp",
+    "telephone": "+46-54-8202080",
+    "email": "info@avab.eu",
+    "sameAs": [
+      "https://www.linkedin.com/company/avab",
+      "https://www.facebook.com/avab"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Skraggevägen 4",
+      "postalCode": "663 41",
+      "addressLocality": "Hammarö",
+      "addressRegion": "Värmland",
+      "addressCountry": "SE"
+    },
+    "areaServed": "Sverige",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+46-54-8202080",
+      "email": "info@avab.eu",
+      "availableLanguage": "Swedish",
+      "areaServed": "SE"
+    },
+    "description": "AVAB projekterar, installerar och driftsätter ljud, bild och säkerhet för offentliga miljöer: sporthallar, simhallar, skolor, hotell, butiker och industri. Kontakta oss med ritningar, FFU eller frågor."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vad ska jag skicka med när jag kontaktar AVAB?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skicka gärna ritningar, planlösning, FFU eller kravtext och en kort beskrivning av miljön. Saknas underlag går det lika bra att ringa och beskriva projektet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Arbetar AVAB i hela Sverige?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. AVAB utgår från Hammarö i Värmland och tar uppdrag i hela Sverige, från projektering till installation och driftsättning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kostar en första genomgång något?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nej. En första genomgång av ritningar, behov och förutsättningar är kostnadsfri och utan förpliktelser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan AVAB enbart projektera, utan att installera?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. AVAB kan projektera och driftsätta medan elektriker installerar efter underlag. AVAB kan också ta hela leveransen från ritning till drift."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jobbar AVAB med offentlig upphandling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. AVAB tar fram underlag för FFU och arbetar med kommuner, upphandlare och byggbolag enligt AB 04 och ABT 06."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vem vänder sig AVAB till?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kommuner, skolor, byggbolag, elektriker, fastighetsägare och verksamheter som behöver ljud, bild eller säkerhet i publika miljöer."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Start",
+        "item": "https://www.avab.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Kontakt",
+        "item": "https://www.avab.eu/kontakt/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://www.avab.eu/kontakt/#webpage",
+    "url": "https://www.avab.eu/kontakt/",
+    "name": "Kontakt | Skicka ritningar eller boka genomgång | AVAB",
+    "description": "Kontakta AVAB om ljud, bild och säkerhet i offentliga miljöer. Ring 054-8202080, mejla info@avab.eu eller skicka ritningar och FFU för en kostnadsfri genomgång.",
+    "inLanguage": "sv-SE",
+    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
+    "datePublished": "2026-07-02",
+    "dateModified": "2026-07-02",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".lead", ".compact-faq"]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload av hero-bilden för snabbare LCP -->
+  <link rel="preload" as="image" fetchpriority="high"
+    href="/assets/Hanza konf 1200x900.webp"
+    imagesrcset="/assets/Hanza konf 1200x900.webp 1200w"
+    imagesizes="100vw">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Sidspecifika komponenter -->
+  <style>
+    /* ---- Kontaktkort: klickbar rad i value-card ---- */
+    .contact-card-link {
+      display: inline-block;
+      margin-top: 6px;
+      font-weight: 800;
+      color: var(--avab-dark);
+      text-decoration: none;
+    }
+    .contact-card-link:hover,
+    .contact-card-link:focus-visible { color: var(--avab-green); }
+    .contact-card-link::after { content: " →"; color: var(--avab-green); }
+
+    /* ---- Lösningskort (grön ram, accentkant) ---- */
+    .solution-card {
+      border: 2px solid rgba(143, 192, 37, 0.62);
+      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      background: var(--avab-green);
+    }
+    .solution-card h3,
+    .solution-card .bullet-list { position: relative; z-index: 1; }
+
+    /* ---- Inre länk i referenskort ---- */
+    .ref-content a {
+      margin-top: auto;
+      font-weight: 800;
+      color: var(--avab-dark);
+    }
+    .ref-content a:hover { color: var(--avab-green); }
+    .ref-content a::after { content: " →"; color: var(--avab-green); }
+
+    /* ---- FAQ: vänsterställd rubrik + tvåkolumnslayout ---- */
+    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
+    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
+    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
+    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
+
+    .compact-faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 0;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .compact-faq details.faq-item { padding: 20px 0; }
+    .compact-faq summary { font-size: 1.05rem; }
+    .compact-faq details.faq-item p { font-size: 0.98rem; }
+    .compact-faq details.faq-item:nth-child(1),
+    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
+
+    .kontakt-faq-cta {
+      padding-top: 48px;
+      padding-bottom: 96px;
+    }
+    .kontakt-faq-cta .compact-faq {
+      margin-bottom: 64px;
+    }
+
+    /* ---- Responsivt (sidspecifikt) ---- */
+    @media (max-width: 768px) {
+      .compact-faq { grid-template-columns: 1fr; }
+      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
+      .kontakt-faq-cta {
+        padding-top: 40px;
+        padding-bottom: 72px;
+      }
+      .kontakt-faq-cta .compact-faq {
+        margin-bottom: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="/">Start</a></li>
+        <li><span aria-current="page">Kontakt</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero" style="--hero-image:url('/assets/Hanza konf 1200x900.webp');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Kontakt</div>
+
+        <h1>Prata med oss om ert projekt</h1>
+
+        <p class="lead">
+          Ring, mejla eller skicka ritningar och FFU. Vi återkopplar med en kostnadsfri genomgång av behov, förutsättningar och möjliga lösningar.
+          För kommuner, byggbolag, elektriker, upphandlare och fastighetsägare i hela Sverige.
+        </p>
+
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:info@avab.eu">Mejla info@avab.eu</a>
+            <a class="button button-secondary" href="#sa-nar-du-oss">Så når du oss</a>
+            <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band" aria-label="Snabbfakta kontakt">
+    <div class="fact-grid">
+      <div class="fact"><span>Telefon</span><strong>054-8202080</strong></div>
+      <div class="fact"><span>E-post</span><strong>info@avab.eu</strong></div>
+      <div class="fact"><span>Besöksadress</span><strong>Skraggevägen 4, Hammarö</strong></div>
+      <div class="fact"><span>Arbetsområde</span><strong>Hela Sverige</strong></div>
+      <div class="fact"><span>Underlag</span><strong>Ritningar, FFU, AB 04</strong></div>
+      <div class="fact"><span>Leverans</span><strong>Projektering till drift</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section section--light" id="sa-nar-du-oss">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Så når du oss</div>
+            <h2>Välj den väg som passar ert projekt</h2>
+            <p class="lead-dark">Det spelar ingen roll om projektet är i tidig ritningsfas eller om anläggningen redan är i drift. Hör av dig så tar vi det därifrån.</p>
+          </div>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></span>
+            <h3>Ring oss</h3>
+            <p>Snabbaste vägen till svar på tekniska frågor och tidiga projekt.</p>
+            <a class="contact-card-link" href="tel:+46548202080">Ring 054-8202080</a>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+            <h3>Mejla oss</h3>
+            <p>Beskriv projektet kort så återkommer vi med nästa steg.</p>
+            <a class="contact-card-link" href="mailto:info@avab.eu">info@avab.eu</a>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span>
+            <h3>Skicka underlag</h3>
+            <p>Ritningar, planlösning, FFU eller kravtext ger oss rätt utgångsläge direkt.</p>
+            <a class="contact-card-link" href="mailto:info@avab.eu">Mejla underlaget</a>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <h3>Besök oss</h3>
+            <p>Skraggevägen 4, 663 41 Hammarö. Boka gärna tid i förväg så vi finns på plats.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vagen-framat">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Vägen framåt</div>
+          <h2>Det här händer när du hört av dig</h2>
+          <p>Vi börjar alltid med en genomgång av behov och förutsättningar. Gäller det en <a class="text-link" href="/miljo/sporthall/">sporthall</a>, <a class="text-link" href="/miljo/simhall/">simhall</a> eller <a class="text-link" href="/miljo/skola/">skola</a> tittar vi på ritningar, zoner, tillgänglighetskrav och gränsdragning mot el. Gäller det säkerhet går vi igenom befintlig anläggning och behov av <a class="text-link" href="/tjanster/kameraovervakning/">kameraövervakning</a>.</p>
+          <p>Efter genomgången får du ett konkret förslag: lösning, omfattning och nästa steg. AVAB kan ta hela leveransen från projektering till drift, eller ta fram underlag som elektriker installerar efter. Behöver upphandlingen stöd hjälper vi till med kravtext och FFU.</p>
+        </div>
+
+        <aside class="card solution-card">
+          <h3>Skicka gärna med</h3>
+          <ul class="bullet-list">
+            <li>Ritningar eller planlösning, även i tidigt skede.</li>
+            <li>FFU, kravtext eller funktionsbeskrivning om sådan finns.</li>
+            <li>Typ av miljö och användning, till exempel <a class="text-link" href="/rastsignal/">rastsignal</a> i skola.</li>
+            <li>Tillgänglighetskrav som <a class="text-link" href="/tjanster/horslinga/">hörslinga</a> eller STI.</li>
+            <li>Tidplan och om projektet ska upphandlas.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--light" id="referenser">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Referenser</div>
+            <h2>Miljöer där tekniken används varje dag</h2>
+            <p class="lead-dark">AVAB arbetar med publika miljöer där ljud, styrning och säkerhet måste fungera i drift, år efter år. Här är några exempel på vad ett första samtal kan leda till.</p>
+          </div>
+        </div>
+
+        <div class="proof-strip">
+          <div class="proof-item"><strong>35+ års erfarenhet</strong><span>Ljud, bild och installation.</span></div>
+          <div class="proof-item"><strong>Kommuner och skolor</strong><span>Offentlig miljö, FFU och upphandling.</span></div>
+          <div class="proof-item"><strong>Från ritning till drift</strong><span>Projektering, installation och inmätning.</span></div>
+          <div class="proof-item"><strong>AVAB eller elektriker</strong><span>Vi installerar eller samordnar.</span></div>
+        </div>
+
+        <div class="grid-3">
+          <article class="ref-card">
+            <img src="/assets/avab-referens-saffle-simhall-1350x900.webp" alt="Säffle simhall med ljudsystem och DMX-styrning från AVAB" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Säffle simhall</h3>
+              <p>Ljud, styrning och belysningsstyrning i krävande simhallsmiljö med tävling, undervisning och allmänhetens bad.</p>
+              <a href="/referenser/saffle-simhall/">Se referensprojektet</a>
+            </div>
+          </article>
+
+          <article class="ref-card">
+            <img src="/assets/avab-referens-sorby-sporthall-kumla-1200x900.webp" alt="Sörby sporthall i Kumla med ljudanläggning från AVAB" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Sörby sporthall</h3>
+              <p>Ljudanläggning och projektering för sporthallsmiljö med fokus på tydligt tal, robust montage och enkel användning.</p>
+              <a href="/miljo/sporthall/">Läs mer om sporthallar</a>
+            </div>
+          </article>
+
+          <article class="ref-card">
+            <img src="/assets/avab-referens-minnebergsskolan-arvika-1200x800.webp" alt="Minnebergsskolan i Arvika med rastsignal och ljudsystem" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Minnebergsskolan</h3>
+              <p>Skolmiljö där ljud, rastsignal och utrymningsfunktioner samordnas i en anläggning som personalen hanterar själv.</p>
+              <a href="/miljo/skola/">Läs mer om skolmiljöer</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="arbetssatt">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Hur vi jobbar</div>
+            <h2>Från första samtalet till färdig anläggning</h2>
+            <p class="lead-dark">Ju tidigare vi kommer in, desto enklare blir projektet. Helst innan kabelvägar, rackplats och upphandlingskrav är låsta.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="flow-card"><strong><em>1</em> Genomgång</strong><span>Vi går igenom ritningar, FFU, miljö, användning, tillgänglighetskrav och tekniska förutsättningar. Kostnadsfritt och utan förpliktelser.</span></div>
+          <div class="flow-card"><strong><em>2</em> Projektering</strong><span>Vi tar fram lösning, omfattning och underlag: ljud, bild, säkerhet, styrning, kabelvägar och gränsdragning mot el.</span></div>
+          <div class="flow-card"><strong><em>3</em> Leverans</strong><span>AVAB installerar hela lösningen eller samarbetar med elektriker. Vi ansvarar för driftsättning, inmätning, dokumentation och överlämning.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section kontakt-faq-cta" id="cta">
+      <div class="avab-container">
+        <div class="faq-heading">
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Snabba svar innan du hör av dig</h2>
+          <p>Korta svar för dig som vill veta hur ett samarbete med AVAB börjar och vad som är bra att ha med.</p>
+        </div>
+
+        <div class="compact-faq">
+          <details class="faq-item">
+            <summary>Vad ska jag skicka med när jag kontaktar AVAB?</summary>
+            <p>Skicka gärna ritningar, planlösning, FFU eller kravtext och en kort beskrivning av miljön. Saknas underlag går det lika bra att ringa och beskriva projektet.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Arbetar AVAB i hela Sverige?</summary>
+            <p>Ja. AVAB utgår från Hammarö i Värmland och tar uppdrag i hela Sverige, från projektering till installation och driftsättning.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kostar en första genomgång något?</summary>
+            <p>Nej. En första genomgång av ritningar, behov och förutsättningar är kostnadsfri och utan förpliktelser.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan AVAB enbart projektera, utan att installera?</summary>
+            <p>Ja. AVAB kan projektera och driftsätta medan elektriker installerar efter underlag. AVAB kan också ta hela leveransen från ritning till drift.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Jobbar AVAB med offentlig upphandling?</summary>
+            <p>Ja. AVAB tar fram underlag för FFU och arbetar med kommuner, upphandlare och byggbolag enligt AB 04 och ABT 06.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vem vänder sig AVAB till?</summary>
+            <p>Kommuner, skolor, byggbolag, elektriker, fastighetsägare och verksamheter som behöver ljud, bild eller säkerhet i publika miljöer.</p>
+          </details>
+        </div>
+
+        <div class="fullwidth-cta">
+          <div>
+            <div class="eyebrow">Ta första steget</div>
+            <h2>Redo att prata om ert projekt?</h2>
+            <p>Skicka ritningar och FFU eller ring direkt. Vi återkopplar med en kostnadsfri genomgång och ett konkret förslag på nästa steg.</p>
+            <div class="cta-actions">
+              <a class="button button-light" href="mailto:info@avab.eu">Mejla info@avab.eu</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+            </div>
+          </div>
+
+          <ul class="calc-list">
+            <li>Kostnadsfri genomgång av ritningar, behov och krav.</li>
+            <li>Underlag för kommun, upphandlare, byggbolag och elektriker.</li>
+            <li>Ljud, bild, säkerhet, styrning och tillgänglighet i en leverans.</li>
+            <li>Projektering, installation, driftsättning och dokumentation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</body>
+</html>
