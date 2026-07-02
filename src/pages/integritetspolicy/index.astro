@@ -181,6 +181,162 @@ import "../../styles/avab.css";
   >
 
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    .policy-hero {
+      min-height: 460px;
+    }
+
+    .policy-section {
+      padding: 72px 0 96px;
+      background:
+        linear-gradient(180deg, var(--avab-white) 0%, var(--avab-light) 100%);
+      border-bottom: 1px solid var(--avab-border);
+    }
+
+    .policy-intro {
+      max-width: 860px;
+      margin-bottom: 36px;
+    }
+
+    .policy-intro h2 {
+      max-width: 760px;
+    }
+
+    .policy-layout {
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+      gap: 40px;
+      align-items: start;
+    }
+
+    .policy-toc {
+      position: sticky;
+      top: calc(var(--avab-nav-height) + 24px);
+      padding: 22px;
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius-sm);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: var(--avab-shadow-sm);
+    }
+
+    .policy-toc strong {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--avab-dark);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .policy-toc ol {
+      display: grid;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .policy-toc a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--avab-dark-muted);
+      font-size: 0.95rem;
+      font-weight: 750;
+      line-height: 1.25;
+      text-decoration: none;
+    }
+
+    .policy-toc a:hover,
+    .policy-toc a:focus-visible {
+      background: var(--avab-green-soft);
+      color: var(--avab-dark);
+    }
+
+    .policy-document {
+      max-width: 900px;
+      padding: clamp(28px, 5vw, 64px);
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-white);
+      box-shadow: var(--avab-shadow-lg);
+    }
+
+    .policy-chapter {
+      padding: 0 0 42px;
+      margin-bottom: 42px;
+      border-bottom: 1px solid var(--avab-border);
+      scroll-margin-top: calc(var(--avab-nav-height) + 32px);
+    }
+
+    .policy-chapter:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .policy-chapter h2 {
+      margin-bottom: 18px;
+      font-size: clamp(1.45rem, 2.4vw, 2.05rem);
+    }
+
+    .policy-chapter h3 {
+      margin-top: 28px;
+    }
+
+    .policy-chapter p,
+    .policy-chapter li {
+      font-size: 1.02rem;
+    }
+
+    .policy-chapter a {
+      color: var(--avab-dark);
+      font-weight: 800;
+      text-decoration: underline;
+      text-decoration-color: rgba(143, 192, 37, 0.55);
+      text-underline-offset: 4px;
+    }
+
+    .policy-contact-card {
+      height: auto;
+      margin-top: 18px;
+      padding: 26px;
+      font-style: normal;
+    }
+
+    .policy-updated {
+      margin-top: 30px;
+    }
+
+    @media (max-width: 980px) {
+      .policy-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .policy-toc {
+        position: static;
+      }
+
+      .policy-toc ol {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .policy-section {
+        padding: 56px 0 72px;
+      }
+
+      .policy-toc ol {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-document {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -195,7 +351,7 @@ import "../../styles/avab.css";
     </div>
   </nav>
 
-  <section class="hero">
+  <section class="hero policy-hero">
     <img
       class="hero-image"
       src="/assets/avab hogtalare installerade.webp"
@@ -252,9 +408,9 @@ import "../../styles/avab.css";
   </section>
 
   <main id="main">
-    <section class="section section--light">
+    <section class="policy-section">
       <div class="avab-container">
-        <div class="section-heading">
+        <div class="policy-intro">
           <div>
             <span class="eyebrow">Policy</span>
             <h2>Så hanterar AVAB personuppgifter</h2>
@@ -266,19 +422,23 @@ import "../../styles/avab.css";
           </div>
         </div>
 
-        <nav class="link-pills" aria-label="Innehållsförteckning">
-          <a href="#personuppgifter">Personuppgifter</a>
-          <a href="#andamal">Ändamål</a>
-          <a href="#rattslig-grund">Rättslig grund</a>
-          <a href="#lagringstid">Lagringstid</a>
-          <a href="#delning">Delning</a>
-          <a href="#rattigheter">Rättigheter</a>
-          <a href="#kontakt">Kontakt</a>
-          <a href="#cookies">Cookies</a>
-        </nav>
+        <div class="policy-layout">
+          <nav class="policy-toc" aria-label="Innehållsförteckning">
+            <strong>På sidan</strong>
+            <ol>
+              <li><a href="#personuppgifter">Personuppgifter</a></li>
+              <li><a href="#andamal">Ändamål</a></li>
+              <li><a href="#rattslig-grund">Rättslig grund</a></li>
+              <li><a href="#lagringstid">Lagringstid</a></li>
+              <li><a href="#delning">Delning</a></li>
+              <li><a href="#rattigheter">Rättigheter</a></li>
+              <li><a href="#kontakt">Kontakt</a></li>
+              <li><a href="#cookies">Cookies</a></li>
+            </ol>
+          </nav>
 
-        <div class="grid-2">
-            <section id="personuppgifter" class="card">
+          <article class="policy-document">
+            <section id="personuppgifter" class="policy-chapter">
               <h2>1. Personuppgifter vi behandlar</h2>
               <p>
                 AVAB behandlar personuppgifter som behövs för att kunna hantera
@@ -305,7 +465,7 @@ import "../../styles/avab.css";
               </p>
             </section>
 
-            <section id="andamal" class="card">
+            <section id="andamal" class="policy-chapter">
               <h2>2. Ändamål med behandlingen</h2>
               <p>
                 Personuppgifter används för att AVAB ska kunna bedriva sin verksamhet,
@@ -326,7 +486,7 @@ import "../../styles/avab.css";
               </ul>
             </section>
 
-            <section id="rattslig-grund" class="card">
+            <section id="rattslig-grund" class="policy-chapter">
               <h2>3. Rättslig grund</h2>
               <p>
                 AVAB behandlar personuppgifter med stöd av olika rättsliga grunder
@@ -354,7 +514,7 @@ import "../../styles/avab.css";
               </ul>
             </section>
 
-            <section id="lagringstid" class="card">
+            <section id="lagringstid" class="policy-chapter">
               <h2>4. Lagringstid</h2>
               <p>
                 AVAB sparar personuppgifter så länge de behövs för det ändamål de
@@ -370,7 +530,7 @@ import "../../styles/avab.css";
               </p>
             </section>
 
-            <section id="delning" class="card">
+            <section id="delning" class="policy-chapter">
               <h2>5. Delning av uppgifter</h2>
               <p>
                 AVAB säljer aldrig personuppgifter vidare. Uppgifter kan däremot
@@ -395,7 +555,7 @@ import "../../styles/avab.css";
               </p>
             </section>
 
-            <section id="rattigheter" class="card">
+            <section id="rattigheter" class="policy-chapter">
               <h2>6. Dina rättigheter</h2>
               <p>
                 Du har rätt att få information om hur dina personuppgifter behandlas.
@@ -421,14 +581,14 @@ import "../../styles/avab.css";
               </p>
             </section>
 
-            <section id="kontakt" class="card">
+            <section id="kontakt" class="policy-chapter">
               <h2>7. Kontakt</h2>
               <p>
                 Har du frågor om hur AVAB hanterar personuppgifter är du välkommen
                 att kontakta oss.
               </p>
 
-              <address class="card card--light">
+              <address class="card card--light policy-contact-card">
                 <p><strong>AVAB</strong></p>
                 <p>Skraggevägen 4</p>
                 <p>663 41 Hammarö</p>
@@ -437,7 +597,7 @@ import "../../styles/avab.css";
               </address>
             </section>
 
-            <section id="cookies" class="card">
+            <section id="cookies" class="policy-chapter">
               <h2>8. Cookies</h2>
               <p>
                 AVAB:s webbplats kan använda cookies och liknande tekniker för att
@@ -468,13 +628,14 @@ import "../../styles/avab.css";
                 blockeras.
               </p>
 
-              <div class="snabbt-svar">
+              <div class="snabbt-svar policy-updated">
                 <p>
                   Denna policy gäller från 25 juni 2025 och uppdaterades senast
                   2 juli 2026.
                 </p>
               </div>
             </section>
+          </article>
         </div>
       </div>
     </section>
