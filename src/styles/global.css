@@ -947,6 +947,10 @@ details.faq-item p {
 .footer-contact { display: grid; gap: 10px; font-size: 0.98rem; }
 .footer-contact a { color: #fff; font-weight: 700; }
 .footer-contact a:hover { color: var(--avab-green); }
+.footer-privacy {
+  color: inherit;
+  text-decoration: underline;
+}
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
