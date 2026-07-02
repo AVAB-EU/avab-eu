@@ -1,4 +1,5 @@
----
+﻿---
+import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/miljo.css";
 ---
 
@@ -281,28 +282,7 @@ import "../../../styles/miljo.css";
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Hoppa till innehåll</a>
-
-  <header class="site-nav">
-    <div class="avab-container">
-      <a class="brand" href="/" aria-label="AVAB – till startsidan">
-        <span class="brand-dot" aria-hidden="true"></span>
-        AVAB
-      </a>
-      <nav aria-label="Huvudmeny">
-        <ul class="nav-links">
-          <li><a href="#utmaning">Utmaningen</a></li>
-          <li><a href="#losningar">Lösningar</a></li>
-          <li><a href="#referenser">Referenser</a></li>
-          <li><a href="#faq">Vanliga frågor</a></li>
-        </ul>
-      </nav>
-      <div class="nav-cta">
-        <a class="nav-phone" href="tel:+4654820280"><span>☎</span> 054-820 280</a>
-        <a class="nav-button" href="/kontakt/">Boka genomgång</a>
-      </div>
-    </div>
-  </header>
+  <SiteHeader />
 
   <nav class="breadcrumbs" aria-label="Brödsmulor">
     <div class="avab-container">
@@ -329,7 +309,7 @@ import "../../../styles/miljo.css";
           <div class="hero-actions">
             <a class="button button-primary" href="/kontakt/">Boka kostnadsfri rådgivning</a>
             <a class="button button-secondary" href="#losningar">Se lösningarna</a>
-            <a class="button button-quiet" href="tel:+4654820280">Ring 054-820 280</a>
+            <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
           </div>
         </div>
       </div>
@@ -570,7 +550,7 @@ import "../../../styles/miljo.css";
         <div>
           <h2>Kontakt</h2>
           <address class="footer-contact" style="font-style: normal;">
-            <a href="tel:+4654820280">054-820 280</a>
+            <a href="tel:+46548202080">054-8202080</a>
             <a href="mailto:info@avab.eu">info@avab.eu</a>
             <span>Skraggevägen 4<br>663 41 Hammarö, Värmland</span>
           </address>
