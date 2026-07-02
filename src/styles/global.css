@@ -311,22 +311,24 @@ p {
   color: var(--avab-green);
 }
 .nav-chevron {
-  color: currentColor;
-  font-size: 1.05rem;
-  line-height: 1;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
   transition: transform 0.25s ease;
 }
 .nav-dropdown:hover .nav-chevron,
 .nav-dropdown:focus-within .nav-chevron {
-  transform: rotate(180deg);
+  transform: rotate(225deg) translateY(-2px);
 }
 .nav-dropdown {
   position: relative;
 }
 .mega-menu {
   position: absolute;
-  left: 50%;
-  top: calc(100% + 18px);
+  left: 0;
+  top: calc(100% + 16px);
   z-index: 120;
   width: min(720px, calc(100vw - 48px));
   min-height: 298px;
@@ -336,7 +338,7 @@ p {
   box-shadow: 0 28px 60px rgba(40, 46, 42, 0.18);
   opacity: 0;
   visibility: hidden;
-  transform: translate(-50%, 8px);
+  transform: translateY(8px);
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .mega-menu::before {
@@ -351,7 +353,7 @@ p {
 .nav-dropdown:focus-within .mega-menu {
   opacity: 1;
   visibility: visible;
-  transform: translate(-50%, 0);
+  transform: translateY(0);
 }
 .mega-categories,
 .mega-submenu {
@@ -378,10 +380,14 @@ p {
   font-size: 1.35rem;
   font-weight: 600;
 }
-.mega-category-link span:last-child {
+.mega-arrow {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
   color: var(--avab-green);
-  font-size: 1.55rem;
-  line-height: 1;
+  flex: 0 0 auto;
 }
 .mega-category:hover > .mega-category-link,
 .mega-category:focus-within > .mega-category-link {
@@ -403,16 +409,10 @@ p {
   visibility: hidden;
   transition: opacity 0.15s ease, visibility 0.15s ease;
 }
-.mega-category:first-child .mega-submenu,
 .mega-category:hover .mega-submenu,
 .mega-category:focus-within .mega-submenu {
   opacity: 1;
   visibility: visible;
-}
-.mega-categories:has(.mega-category:hover) .mega-category:first-child:not(:hover) .mega-submenu,
-.mega-categories:has(.mega-category:focus-within) .mega-category:first-child:not(:focus-within) .mega-submenu {
-  opacity: 0;
-  visibility: hidden;
 }
 .mega-submenu a {
   display: block;
