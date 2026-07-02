@@ -68,6 +68,6 @@ npm run preview
 ## Viktiga principer
 
 - `src/styles/miljo.css` är basen för miljösidorna.
-- Undvik att länka till gamla `avab.css` om filen inte finns i `public`.
+- Använd `src/styles/global.css` och `src/styles/miljo.css` som aktiva designfiler.
 - Undvik dubbla bildkopior när du kan. För publika bildvägar räcker `public/assets`.
 - Skriv svenska tecken direkt i UTF-8.
