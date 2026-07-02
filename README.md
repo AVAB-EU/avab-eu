@@ -14,7 +14,7 @@ npm run preview
 
 | Färg | Område | Var det ligger | Regel |
 | --- | --- | --- | --- |
-| Grön | Designsystem | `src/styles/global.css`, `src/styles/miljo.css` | Ändra här när flera sidor ska se likadana ut. |
+| Grön | Designsystem | `src/styles/avab.css` | Ändra här när flera sidor ska se likadana ut. |
 | Blå | Sidor | `src/pages/**/index.astro` | En publik URL per `index.astro`. |
 | Gul | Sidmaterial | `src/pages/**/**/*.txt`, gamla `.html` | Använd som källa, men bygg nya sidor i `.astro`. |
 | Rosa | Bilder | `public/assets` | Använd i HTML som `/assets/filnamn.webp`. |
@@ -24,7 +24,7 @@ npm run preview
 
 1. Välj sidan du jobbar med i `src/pages`.
 2. Lägg sidans unika text och HTML i sidans `index.astro`.
-3. Lägg återkommande design i `src/styles/miljo.css` eller `src/styles/global.css`.
+3. Lägg återkommande design i `src/styles/avab.css`.
 4. Lägg bilder som ska användas med `/assets/...` i `public/assets`.
 5. Kör `npm run build` innan du anser sidan klar.
 
@@ -55,8 +55,9 @@ npm run preview
     - 🟦 [`horslinga/index.astro`](src/pages/tjanster/horslinga/index.astro)
     - 🟦 [`kameraovervakning/index.astro`](src/pages/tjanster/kameraovervakning/index.astro)
 - 🟩 [`src/styles/`](src/styles/) - gemensam design
-  - 🟩 [`global.css`](src/styles/global.css) - global bas och återkommande komponenter
-  - 🟩 [`miljo.css`](src/styles/miljo.css) - bas och komponenter för miljösidor
+  - 🟩 [`avab.css`](src/styles/avab.css) - enda aktiva gemensamma stylesheet
+  - ⬜ [`global.css`](src/styles/global.css) - arkiv/äldre referens, ska inte importeras
+  - ⬜ [`miljo.css`](src/styles/miljo.css) - arkiv/äldre referens, ska inte importeras
 - 🟨 Sidmaterial och textkällor
   - 🟨 [`src/pages/miljo/**/Avab-hub-*.txt`](src/pages/miljo/) - gamla/externa underlag per miljösida
 - 🟪 [`public/assets/`](public/assets/) - publika bilder som används med `/assets/filnamn.webp`
@@ -67,7 +68,8 @@ npm run preview
 
 ## Viktiga principer
 
-- `src/styles/miljo.css` är basen för miljösidorna.
-- Använd `src/styles/global.css` och `src/styles/miljo.css` som aktiva designfiler.
+- `src/styles/avab.css` är projektets enda aktiva gemensamma CSS-fil.
+- Nya sidor ska importera `avab.css` med rätt relativ sökväg, till exempel `import "../../../styles/avab.css";`.
+- `src/styles/global.css` och `src/styles/miljo.css` är endast arkiv/referens tills de tas bort i ett separat städsteg.
 - Undvik dubbla bildkopior när du kan. För publika bildvägar räcker `public/assets`.
 - Skriv svenska tecken direkt i UTF-8.

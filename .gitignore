@@ -10,8 +10,8 @@ node_modules/
 # local VS Code FTP config
 .vscode/sftp.json
 
-# local legacy stylesheet reference
-src/styles/avab.css
+# local source snapshots that should not become public routes
+*.source.txt
 
 # logs
 npm-debug.log*
