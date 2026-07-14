@@ -1067,6 +1067,113 @@ p {
   margin-bottom: 0;
 }
 
+/* Helt klickbara destinationskort
+   Huvudlänkens ::before-lager täcker kortet utan att skapa nästlade länkar. */
+.clickable-card,
+a.ref-card,
+.ref-card:has(.ref-content > a),
+.env-card:has(h3 > a:only-child) {
+  position: relative;
+  isolation: isolate;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.clickable-card .card-primary-link {
+  position: static;
+}
+
+.ref-card:has(.ref-content > a) a {
+  position: relative;
+  z-index: 2;
+}
+
+.ref-card:has(.ref-content > a) .ref-content > a,
+.env-card:has(h3 > a:only-child) h3 > a:only-child {
+  position: static;
+}
+
+.clickable-card .card-primary-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.ref-card:has(.ref-content > a) .ref-content > a::before,
+.env-card:has(h3 > a:only-child) h3 > a:only-child::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.clickable-card a:not(.card-primary-link),
+.clickable-card button {
+  position: relative;
+  z-index: 2;
+}
+
+.clickable-card:hover,
+.clickable-card:focus-within,
+a.ref-card:hover,
+a.ref-card:focus-within,
+.ref-card:has(.ref-content > a):hover,
+.ref-card:has(.ref-content > a):focus-within,
+.env-card:has(h3 > a:only-child):hover,
+.env-card:has(h3 > a:only-child):focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(143, 192, 37, 0.55);
+  box-shadow: var(--avab-shadow-lg);
+}
+
+.clickable-card:focus-visible,
+.clickable-card:focus-within,
+a.ref-card:focus-visible,
+.ref-card:has(.ref-content > a):focus-within,
+.env-card:has(h3 > a:only-child):focus-within {
+  outline: 3px solid var(--avab-green);
+  outline-offset: 3px;
+}
+
+.clickable-card .card-primary-link:focus-visible {
+  outline: none;
+}
+
+.ref-card:has(.ref-content > a) .ref-content > a:focus-visible,
+.env-card:has(h3 > a:only-child) h3 > a:only-child:focus-visible {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clickable-card,
+  .clickable-card img,
+  a.ref-card,
+  a.ref-card img,
+  .ref-card:has(.ref-content > a),
+  .ref-card:has(.ref-content > a) img,
+  .env-card:has(h3 > a:only-child) {
+    transition: none !important;
+  }
+
+  .clickable-card:hover,
+  .clickable-card:focus-within,
+  .clickable-card:hover img,
+  a.ref-card:hover,
+  a.ref-card:focus-within,
+  a.ref-card:hover img,
+  .ref-card:has(.ref-content > a):hover,
+  .ref-card:has(.ref-content > a):focus-within,
+  .ref-card:has(.ref-content > a):hover img,
+  .env-card:has(h3 > a:only-child):hover,
+  .env-card:has(h3 > a:only-child):focus-within {
+    transform: none !important;
+  }
+}
+
 
 /* ---- 14. FAQ-dragspel ------------------------------------ */
 .faq-list { margin-top: 32px; }
@@ -2248,7 +2355,7 @@ h2.snabbt-svar-title::before {
 .flow-card strong { display: block; min-height: 3rem; margin-bottom: 12px; color: var(--avab-green); font-size: 1.05rem; line-height: 1.4; }
 .flow-card span { color: var(--avab-dark-muted); font-size: 0.95rem; }
 
-.video-text-layout { grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; align-items: stretch; }
+.video-text-layout { grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; align-items: start; }
 .video-text-box,
 .video-wrapper { border: 1px solid var(--avab-border); border-radius: var(--avab-radius); background: var(--avab-white); box-shadow: var(--avab-shadow-sm); }
 .video-text-box { display: flex; flex-direction: column; justify-content: center; padding: 32px; }
