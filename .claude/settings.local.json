@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($PSVersionTable.OS; \"--- winget ---\"; try { winget --version } catch { \"saknas\" }; \"--- choco ---\"; try { choco --version } catch { \"saknas\" }; \"--- git ---\"; try { git --version } catch { \"saknas\" }; \"--- node ---\"; try { node --version } catch { \"saknas\" }; \"--- npm ---\"; try { npm --version } catch { \"saknas\" }; \"--- gh ---\"; try { gh --version } catch { \"saknas\" }; \"--- code ---\"; try { code --version } catch { \"saknas\" })",
+      "PowerShell(winget install --id OpenJS.NodeJS.LTS -e --source winget --accept-package-agreements --accept-source-agreements --silent)"
+    ]
+  }
+}
