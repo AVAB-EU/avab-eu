@@ -17,9 +17,9 @@ import "../../../styles/avab.css";
 
   <meta property="og:title" content="Hörslinga, SLS, PLS och Auracast | Tillgängligt ljud | AVAB" />
   <meta property="og:description" content="Tillgängligt ljud för hörapparater, cochleaimplantat, T-spole och Auracast-mottagare. PLS, SLS, diskslinga, projektering, mätning, certifiering och upphandlingsstöd." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1588667554904-4c4f3cc690ce?auto=format&fit=crop&q=80&w=1600" />
-  <meta property="og:image:width" content="1600" />
-  <meta property="og:image:height" content="1067" />
+  <meta property="og:image" content="https://www.avab.eu/assets/vad är en hörslinga 1200x900.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="900" />
   <meta property="og:image:alt" content="Publik lokal där tillgängligt ljud och hörslinga gör att fler kan delta" />
   <meta property="og:url" content="https://avab.eu/tjanster/horslinga/" />
   <meta property="og:type" content="website" />
@@ -30,7 +30,7 @@ import "../../../styles/avab.css";
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hörslinga, SLS, PLS och Auracast | AVAB" />
   <meta name="twitter:description" content="Projektering, installation, mätning och certifiering av hörslingor, PLS, SLS, diskslinga och Auracast för publika lokaler i hela Sverige." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1588667554904-4c4f3cc690ce?auto=format&fit=crop&q=80&w=1600" />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/vad är en hörslinga 1200x900.webp" />
   <meta name="twitter:image:alt" content="Publik lokal där tillgängligt ljud och hörslinga gör att fler kan delta" />
 
   <!-- Favicon (byt sökväg till AVAB:s riktiga ikonfiler) -->
@@ -231,7 +231,9 @@ import "../../../styles/avab.css";
 
   <!-- Preload av hero-bilden (LCP) -->
   <link rel="preload" as="image" fetchpriority="high"
-    href="https://images.unsplash.com/photo-1588667554904-4c4f3cc690ce?auto=format&fit=crop&q=80&w=1800">
+    href="/assets/vad är en hörslinga 1200x900.webp"
+    imagesrcset="/assets/vad är en hörslinga 1200x900.webp 1200w"
+    imagesizes="100vw">
 
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -367,7 +369,7 @@ import "../../../styles/avab.css";
     </div>
   </nav>
 
-  <section class="hero" style="--hero-image:url('https://images.unsplash.com/photo-1588667554904-4c4f3cc690ce?auto=format&fit=crop&q=80&w=1800');">
+  <section class="hero" style="--hero-image:url('/assets/vad är en hörslinga 1200x900.webp');">
     <div class="avab-container">
       <div class="hero-inner animate-in">
         <div class="eyebrow">Hörslinga &amp; tillgängligt ljud</div>
@@ -389,14 +391,16 @@ import "../../../styles/avab.css";
     </div>
   </section>
 
-  <div class="procurement-strip">
-    <div class="avab-container procurement-container">
-      <span class="procurement-item">Projektering, installation, mätning &amp; certifiering</span>
-      <span class="procurement-item">PLS, SLS och lågläckande lösningar</span>
-      <span class="procurement-item">Hörapparat, cochleaimplantat &amp; telespole</span>
-      <span class="procurement-item">Auracast, halsslinga &amp; flera ljudzoner</span>
+  <section class="fact-band" aria-label="Snabbfakta tjänst">
+    <div class="fact-grid">
+      <div class="fact"><span>Tjänst</span><strong>Hörslinga</strong></div>
+      <div class="fact"><span>System</span><strong>PLS, SLS och diskslinga</strong></div>
+      <div class="fact"><span>Alternativ</span><strong>Auracast</strong></div>
+      <div class="fact"><span>Mottagare</span><strong>T-spole och CI</strong></div>
+      <div class="fact"><span>Underlag</span><strong>FFU och ritning</strong></div>
+      <div class="fact"><span>Leverans</span><strong>Mätning och dokumentation</strong></div>
     </div>
-  </div>
+  </section>
 
   <main id="main">
 
