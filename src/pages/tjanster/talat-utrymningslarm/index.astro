@@ -1,0 +1,745 @@
+---
+import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import "../../../styles/avab.css";
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talat utrymningslarm | EN 54, SBF 502:1 & STI | AVAB</title>
+  <meta name="description" content="Talat utrymningslarm och inrymningslarm enligt EN 54 och SBF 502:1: projektering, installation, driftsättning, STI/STIPA-mätning, dokumentation och service." />
+  <link rel="canonical" href="https://www.avab.eu/tjanster/talat-utrymningslarm/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content="Talat utrymningslarm | EN 54, SBF 502:1 & STI | AVAB" />
+  <meta property="og:description" content="En siren uppmärksammar, ett talat meddelande förklarar vad man ska göra. AVAB projekterar, installerar, mäter och dokumenterar talade utrymningslarm och inrymningslarm." />
+  <meta property="og:image" content="https://www.avab.eu/assets/talat utrymningslarm 1200x900.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="900" />
+  <meta property="og:image:alt" content="Talat utrymningslarm projekterat och installerat av AVAB" />
+  <meta property="og:url" content="https://www.avab.eu/tjanster/talat-utrymningslarm/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Talat utrymningslarm | EN 54, SBF 502:1 & STI | AVAB" />
+  <meta name="twitter:description" content="En siren uppmärksammar, ett talat meddelande förklarar vad man ska göra. AVAB projekterar, installerar, mäter och dokumenterar talade utrymningslarm och inrymningslarm." />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/talat utrymningslarm 1200x900.webp" />
+  <meta name="twitter:image:alt" content="Talat utrymningslarm projekterat och installerat av AVAB" />
+
+  <!-- Favicon (byt sökväg till AVAB:s riktiga ikonfiler) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Talat utrymningslarm och inrymningslarm",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "AVAB",
+      "url": "https://www.avab.eu/",
+      "logo": "https://www.avab.eu/logo.png",
+      "image": "https://www.avab.eu/assets/talat utrymningslarm 1200x900.webp",
+      "telephone": "+46-54-8202080",
+      "email": "info@avab.eu",
+      "sameAs": [
+        "https://www.linkedin.com/company/avab",
+        "https://www.facebook.com/avab"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Skraggevägen 4",
+        "postalCode": "663 41",
+        "addressLocality": "Hammarö",
+        "addressRegion": "Värmland",
+        "addressCountry": "SE"
+      }
+    },
+    "areaServed": "Sverige",
+    "serviceType": [
+      "Talat utrymningslarm TUL",
+      "Utrymningslarm med talat meddelande UTM",
+      "Inrymningslarm",
+      "EN 54 utrymningslarm",
+      "SBF 502:1 projektering",
+      "STI STIPA mätning",
+      "Brandlarmsintegration ljud",
+      "Service utrymningslarm"
+    ],
+    "description": "AVAB projekterar, installerar, driftsätter, mäter och dokumenterar talade utrymningslarm (UTM/TUL) och inrymningslarm enligt EN 54, SBF 502:1 och SS-EN 60268-16, med STI/STIPA-verifiering, brandlarmsintegration, dokumentation för besiktning och certifiering samt långsiktig service."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vad är skillnaden mellan talat utrymningslarm och brandlarm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brandlarmet detekterar brand och initierar föreskrivna funktioner. Det talade utrymningslarmet förmedlar instruktioner till människorna i byggnaden. Systemen samverkar ofta men har olika uppgifter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad är skillnaden mellan TUL och UTM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TUL är en vanlig förkortning för talat utrymningslarm. UTM betyder utrymningslarm med talat meddelande och är benämningen som används i Boverkets nya regler och i SBF 502:1."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ett rastsignalsystem ersätta ett talat utrymningslarm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nej, inte när brandskyddsbeskrivningen kräver UTM. Rastsignal är avsett för vardagen och saknar normalt säkerhetssystemets övervakning, reservkraft, prioritering och verifiering."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "När behöver vi inrymningslarm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Behovet avgörs av verksamhetens riskanalys och beredskapsplan. Systemet används när människor snabbt behöver instrueras att söka skydd, stanna kvar eller undvika vissa områden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan den vanliga ljudanläggningen användas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Endast om lösningen projekteras och verifieras för säkerhetsfunktionen. Vardagsljud får aldrig kunna blockera eller försämra utrymningsmeddelandet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hur verifieras taluppfattbarheten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "När lokalen är färdigställd mäts STI eller STIPA enligt SS-EN 60268-16 och projektets krav. Mätpunkter, bakgrundsljud, ljudnivå och resultat dokumenteras."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vem avgör om talat utrymningslarm krävs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kravet fastställs normalt i brandskyddsbeskrivningen av projektets brandkonsult. AVAB omsätter kraven till en projekterad, installerad, driftsatt, uppmätt och dokumenterad teknisk lösning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan en elektriker installera efter AVAB:s ritningar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. AVAB kan utföra hela installationen eller projektera så att projektets elektriker installerar efter våra handlingar. Därefter konfigurerar, driftsätter, mäter och dokumenterar vi systemet."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Start",
+        "item": "https://www.avab.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tjänster",
+        "item": "https://www.avab.eu/#tjanster"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Talat utrymningslarm",
+        "item": "https://www.avab.eu/tjanster/talat-utrymningslarm/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.avab.eu/tjanster/talat-utrymningslarm/#webpage",
+    "url": "https://www.avab.eu/tjanster/talat-utrymningslarm/",
+    "name": "Talat utrymningslarm | EN 54, SBF 502:1 & STI | AVAB",
+    "description": "Talat utrymningslarm och inrymningslarm enligt EN 54 och SBF 502:1: projektering, installation, driftsättning, STI/STIPA-mätning, dokumentation och service.",
+    "inLanguage": "sv-SE",
+    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
+    "datePublished": "2026-07-07",
+    "dateModified": "2026-07-07",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".lead", ".compact-faq"]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload av hero-bilden för snabbare LCP -->
+  <link rel="preload" as="image" fetchpriority="high"
+    href="/assets/talat utrymningslarm 1200x900.webp"
+    imagesrcset="/assets/talat utrymningslarm 1200x900.webp 1200w"
+    imagesizes="100vw">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Sidspecifika komponenter -->
+  <style>
+    /* ---- Lösningskort (grön ram, accentkant) ---- */
+    .solution-card {
+      border: 2px solid rgba(143, 192, 37, 0.62);
+      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      background: var(--avab-green);
+    }
+    .solution-card h3,
+    .solution-card .bullet-list,
+    .solution-card .signal-flow { position: relative; z-index: 1; }
+
+    /* ---- AEO-svarsruta (snippet-box) ---- */
+    .snippet-box {
+      padding: 24px 28px;
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-left: 8px solid var(--avab-green);
+      box-shadow: var(--avab-shadow-sm);
+      margin-top: 28px;
+    }
+    .snippet-box strong { display: flex; align-items: center; gap: 8px; font-size: 1.1rem; margin-bottom: 8px; color: var(--avab-dark); }
+    .snippet-box strong::before { content: "⚡"; font-size: 1.05rem; }
+    .snippet-box p { margin-bottom: 0; font-size: 1.05rem; }
+
+    /* ---- Systemvalskort (rastsignal/utrymning/inrymning) ---- */
+    .decision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
+    .decision-card {
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius);
+      padding: 32px;
+      box-shadow: var(--avab-shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    .decision-card.featured { border: 2px solid var(--avab-green); }
+    .decision-label {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--avab-light);
+      border: 1px solid var(--avab-border);
+      color: var(--avab-dark-muted);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .decision-card.featured .decision-label { background: var(--avab-green); color: var(--avab-dark); border-color: var(--avab-green); }
+    .decision-card h3 { margin-bottom: 10px; }
+    .decision-card .bullet-list { margin-top: 14px; margin-bottom: 18px; }
+    .decision-card .card-link { margin-top: auto; font-weight: 800; color: var(--avab-dark); }
+    .decision-card .card-link:hover { color: var(--avab-green); }
+    .decision-card .card-link::after { content: " →"; color: var(--avab-green); }
+
+    /* ---- Händelseförlopp (numrerad kedja) ---- */
+    .signal-flow { list-style: none; display: grid; gap: 16px; margin-top: 8px; padding: 0; }
+    .signal-flow li { display: flex; gap: 14px; align-items: flex-start; }
+    .signal-flow li span {
+      flex: none;
+      width: 34px; height: 34px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      background: var(--avab-green);
+      color: var(--avab-dark);
+      font-weight: 800;
+    }
+    .signal-flow strong { display: block; color: var(--avab-dark); }
+    .signal-flow small { color: var(--avab-dark-muted); font-size: 0.95rem; line-height: 1.5; }
+
+    /* ---- Standardkort (EN 54-serien) ---- */
+    .standards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 8px; }
+    .standard-card {
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius-sm);
+      padding: 22px 24px;
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .standard-card strong { display: block; color: var(--avab-dark); font-size: 1.1rem; margin-bottom: 6px; }
+    .standard-card span { color: var(--avab-dark-muted); font-size: 0.95rem; line-height: 1.5; }
+
+    /* ---- Mätpunkter (STI/STIPA) ---- */
+    .measure-points { display: grid; gap: 14px; margin: 24px 0; }
+    .measure-points > div {
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-left: 6px solid var(--avab-green);
+      border-radius: var(--avab-radius-sm);
+      padding: 16px 20px;
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .measure-points strong { display: block; color: var(--avab-dark); margin-bottom: 2px; }
+    .measure-points span { color: var(--avab-dark-muted); font-size: 0.95rem; }
+
+    /* ---- Bild med bildtext ---- */
+    .image-wrapper { border-radius: var(--avab-radius); overflow: hidden; border: 1px solid var(--avab-border); box-shadow: var(--avab-shadow-sm); background: var(--avab-white); }
+    .image-wrapper img { display: block; width: 100%; height: auto; }
+    .image-wrapper .image-caption { padding: 14px 18px; font-size: 0.92rem; color: var(--avab-dark-muted); background: var(--avab-light); }
+
+    /* ---- FAQ: vänsterställd rubrik + tvåkolumnslayout ---- */
+    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
+    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
+    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
+    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
+
+    .compact-faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 0;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .compact-faq details.faq-item { padding: 20px 0; }
+    .compact-faq summary { font-size: 1.05rem; }
+    .compact-faq details.faq-item p { font-size: 0.98rem; }
+    .compact-faq details.faq-item:nth-child(1),
+    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
+
+    .tul-faq-cta {
+      padding-top: 48px;
+      padding-bottom: 96px;
+    }
+    .tul-faq-cta .compact-faq {
+      margin-bottom: 64px;
+    }
+
+    /* ---- Responsivt (sidspecifikt) ---- */
+    @media (max-width: 1080px) {
+      .decision-grid, .standards-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .compact-faq { grid-template-columns: 1fr; }
+      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
+      .tul-faq-cta {
+        padding-top: 40px;
+        padding-bottom: 72px;
+      }
+      .tul-faq-cta .compact-faq {
+        margin-bottom: 44px;
+      }
+    }
+
+  <style>
+    /* ---- Processteg (vi gör hela jobbet) ---- */
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .process-step {
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-top: 4px solid var(--avab-green);
+      border-radius: var(--avab-radius-sm);
+      padding: 22px 20px;
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .process-step b { display: block; color: var(--avab-green); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .process-step span { color: var(--avab-dark); font-weight: 700; font-size: 1.02rem; }
+
+    /* ---- Kompetensmiljöer (grid av taggar) ---- */
+    .competence-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px; }
+    .competence-grid a {
+      display: block;
+      padding: 18px 20px;
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius-sm);
+      box-shadow: var(--avab-shadow-sm);
+      font-weight: 700;
+      color: var(--avab-dark);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .competence-grid a:hover { border-color: var(--avab-green); color: var(--avab-green); }
+
+    /* ---- Checklista (skicka underlaget) ---- */
+    .checklist { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 28px; }
+    .checklist li { position: relative; padding-left: 28px; color: var(--avab-dark-muted); font-size: 0.98rem; }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--avab-green); font-weight: 800; }
+
+    @media (max-width: 1024px) {
+      .process-steps, .competence-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .process-steps, .competence-grid, .checklist { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="https://www.avab.eu/">Start</a></li>
+        <li><a href="https://www.avab.eu/#tjanster">Tjänster</a></li>
+        <li><span aria-current="page">Talat utrymningslarm</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero" style="--hero-image:url('/assets/talat utrymningslarm 1200x900.webp');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Tjänst: Talat utrymningslarm &amp; inrymningslarm</div>
+        <h1>Talat utrymningslarm och inrymningslarm, från projektering till verifierad anläggning</h1>
+        <p class="lead">
+          Ett talat utrymningslarm ska ge rätt besked, till rätt personer, i rätt ögonblick, och fungera även när annat slutar fungera. AVAB projekterar, installerar, driftsätter, mäter och dokumenterar talade utrymningslarm och inrymningslarm för publika miljöer i hela Sverige.
+        </p>
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/kontakt/#ladda-upp-underlag">Skicka projektunderlag</a>
+            <a class="button button-secondary" href="#standarder">EN 54 och SBF 502:1</a>
+            <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band" aria-label="Snabbfakta talat utrymningslarm">
+    <div class="fact-grid">
+      <div class="fact"><span>Tjänst</span><strong>Talat utrymningslarm (UTM/TUL)</strong></div>
+      <div class="fact"><span>Regelverk</span><strong>EN 54 och SBF 502:1</strong></div>
+      <div class="fact"><span>Verifiering</span><strong>STI/STIPA, SS-EN 60268-16</strong></div>
+      <div class="fact"><span>Även</span><strong>Inrymningslarm</strong></div>
+      <div class="fact"><span>Drift</span><strong>Övervakning och reservkraft</strong></div>
+      <div class="fact"><span>Leverans</span><strong>Projektering till anläggarintyg</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section section--light" id="helhet">
+      <div class="avab-container two-col align-start">
+        <div>
+          <div class="eyebrow">Svar direkt</div>
+          <h2>Vi gör hela jobbet</h2>
+          <p class="lead-dark">Talat utrymningslarm är mer än högtalare och en centralenhet. Projektering, brandlarmsintegration, akustik, reservkraft, installation, styrningar och dokumentation måste fungera tillsammans.</p>
+          <p>AVAB tar ansvar från första kravgenomgången till en installerad, driftsatt, uppmätt och dokumenterad anläggning. Vi kan leverera hela entreprenaden eller projektera så att projektets elektriker installerar efter våra ritningar, varefter vi driftsätter, mäter och dokumenterar.</p>
+          <div class="process-steps">
+            <div class="process-step"><b>01</b><span>Krav- och systemprojektering</span></div>
+            <div class="process-step"><b>02</b><span>Installation och inkoppling</span></div>
+            <div class="process-step"><b>03</b><span>STI/STIPA och provning</span></div>
+            <div class="process-step"><b>04</b><span>Intyg, besiktning och service</span></div>
+          </div>
+        </div>
+        <aside class="snippet-box">
+          <strong>Vad är ett talat utrymningslarm?</strong>
+          <p>Utrymningslarm med talat meddelande (UTM) använder övervakade högtalare för att ge tydliga instruktioner vid brand eller annan fara. TUL, talat utrymningslarm, är den vanliga benämningen i branschen. En siren säger att något hänt, ett talat meddelande förklarar vad människor ska göra och vart de ska gå.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="vilket-system">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Vilket system behöver ni?</div>
+            <h2>Rastsignal, utrymning och inrymning har olika uppgifter</h2>
+            <p class="lead-dark">En skola eller publik verksamhet kan behöva ett, två eller alla tre systemen. De kan samverka, men ett vanligt rastsignalsystem ersätter inte ett föreskrivet säkerhetssystem.</p>
+          </div>
+        </div>
+        <div class="decision-grid">
+          <article class="decision-card">
+            <div class="decision-label">Vardag</div>
+            <h3>Rastsignalsystem</h3>
+            <p>För schemalagda signaler, musik, lektionsstart och vanliga informationsutrop.</p>
+            <ul class="bullet-list">
+              <li>Kalender och tidsscheman.</li>
+              <li>Zoner och vardagsutrop.</li>
+              <li>Inte normalt ett säkerhetssystem.</li>
+            </ul>
+            <p><a class="text-link" href="/rastsignal/">Läs om rastsignal</a></p>
+          </article>
+          <article class="decision-card featured">
+            <div class="decision-label">Utrym</div>
+            <h3>Talat utrymningslarm</h3>
+            <p>För tydliga instruktioner om att lämna byggnaden vid brand eller annan fara.</p>
+            <ul class="bullet-list">
+              <li>Aktivering från brandlarm och manuellt.</li>
+              <li>Övervakning, reservkraft och prioritet.</li>
+              <li>Projekterad och verifierad funktion.</li>
+            </ul>
+            <p><a class="text-link" href="#handelseforlopp">Så fungerar UTM/TUL</a></p>
+          </article>
+          <article class="decision-card">
+            <div class="decision-label">Sök skydd</div>
+            <h3>Inrymningslarm</h3>
+            <p>För instruktioner om att söka skydd, stanna kvar eller undvika vissa områden.</p>
+            <ul class="bullet-list">
+              <li>Utgår från risk- och beredskapsplan.</li>
+              <li>Skyddad aktivering och tydliga scenarier.</li>
+              <li>Zoner, meddelanden och övning.</li>
+            </ul>
+            <p><a class="text-link" href="#inrymning">Läs om inrymning</a></p>
+          </article>
+        </div>
+        <div class="snippet-box">
+          <strong>Räcker rastsignalen?</strong>
+          <p>Ett rastsignalsystem räcker för vardagskommunikation, men ersätter aldrig ett talat utrymningslarm när det krävs i brandskyddsbeskrivningen. Behovet av ett särskilt inrymningslarm avgörs av verksamhetens riskanalys och beredskapsplan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="vad-ar-utm">
+      <div class="avab-container two-col align-start">
+        <div>
+          <div class="eyebrow">UTM och TUL</div>
+          <h2>Vad är ett talat utrymningslarm?</h2>
+          <p class="lead-dark">Utrymningslarm med talat meddelande, UTM, använder övervakade högtalare för att ge tydliga instruktioner vid brand eller annan fara. TUL, talat utrymningslarm, är den vanliga benämningen i branschen.</p>
+          <p>En siren uppmärksammar människor på att något har hänt. Ett talat meddelande förklarar om de ska lämna byggnaden, vilken väg de ska använda och om någon del ska undvikas. Det minskar tvekan och kan förkorta tiden innan människor börjar agera.</p>
+          <ul class="bullet-list">
+            <li>Förinspelade meddelanden för definierade händelser.</li>
+            <li>Direktsända instruktioner från behörig mikrofon.</li>
+            <li>Olika meddelanden i olika larmdonsområden.</li>
+            <li>Automatisk prioritet över musik, PA och rastsignal.</li>
+            <li>Funktion även vid strömavbrott och övervakade fel.</li>
+          </ul>
+        </div>
+        <div id="handelseforlopp">
+          <div class="eyebrow">Händelseförlopp</div>
+          <h3>Från detektering till tydligt besked</h3>
+          <ol class="signal-flow">
+            <li><span>1</span><div><strong>Brand upptäcks</strong><small>Brandlarm eller manuell aktivering initierar rätt funktion.</small></div></li>
+            <li><span>2</span><div><strong>Vardagsljud tystas</strong><small>Musik, matchljud och vanliga utrop lämnar plats åt larmet.</small></div></li>
+            <li><span>3</span><div><strong>Rätt zon aktiveras</strong><small>Hela byggnaden eller valda områden får föreskrivet meddelande.</small></div></li>
+            <li><span>4</span><div><strong>Människor får instruktion</strong><small>Tydligt tal berättar vad de ska göra och vart de ska gå.</small></div></li>
+            <li><span>5</span><div><strong>Systemet övervakas</strong><small>Fel, avbrott och reservfunktioner indikeras och dokumenteras.</small></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="standarder">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Regler och standarder</div>
+            <h2>EN 54, SBF 502:1 och rätt krav från början</h2>
+            <p class="lead-dark">Det är projektets brandskyddsbeskrivning som normalt fastställer behov och funktionskrav. AVAB omsätter kraven till en byggbar, mätbar och dokumenterad teknisk lösning.</p>
+          </div>
+        </div>
+        <div class="standards-grid">
+          <article class="standard-card"><strong>SS-EN 54-16</strong><span>Centralutrustning för talat larm.</span></article>
+          <article class="standard-card"><strong>SS-EN 54-24</strong><span>Högtalare för talade larmmeddelanden.</span></article>
+          <article class="standard-card"><strong>SS-EN 54-4</strong><span>Strömförsörjning och reservkraft.</span></article>
+          <article class="standard-card"><strong>SS-EN 54-23</strong><span>Optiska larmdon när de ingår i lösningen.</span></article>
+          <article class="standard-card"><strong>SBF 502:1</strong><span>Planering, projektering, installation, kontroll, skötsel och underhåll.</span></article>
+          <article class="standard-card"><strong>SS-EN 60268-16</strong><span>Objektiv verifiering av taluppfattbarhet med STI/STIPA.</span></article>
+        </div>
+        <div class="snippet-box">
+          <strong>Komponentcertifikat är inte samma sak som en färdig anläggning.</strong>
+          <p>Vi projekterar och utför anläggningen enligt projektets krav och relevanta standarder, genomför färdigställandekontroll och sammanställer dokumentation för anläggarintyg, besiktning, certifiering och överlämning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="taluppfattbarhet">
+      <div class="avab-container two-col align-start">
+        <div>
+          <div class="eyebrow">STI och STIPA</div>
+          <h2>Högt är inte samma sak som tydligt</h2>
+          <p class="lead-dark">Efterklang, bakgrundsbuller, långa kastavstånd och felriktade högtalare kan göra talet obegripligt även när ljudnivån är hög.</p>
+          <p>Vi projekterar täckning, högtalarplacering, riktning och ljudnivå efter lokalens akustik som en del av vår <a class="text-link" href="/tjanster/projektering/">projektering</a>. När lokalen är färdigställd mäter vi STI eller STIPA enligt SS-EN 60268-16 och projektets fastställda krav, och verifierar <a class="text-link" href="/tjanster/taluppfattbarhet-akustik/">taluppfattbarheten</a> objektivt.</p>
+          <div class="measure-points">
+            <div><strong>Mätpunkter</strong><span>placerade där människor faktiskt befinner sig.</span></div>
+            <div><strong>Bakgrundsljud och nivå</strong><span>dokumenteras vid mättillfället.</span></div>
+            <div><strong>Resultat mot krav</strong><span>jämförs med projektets fastställda STI-värde.</span></div>
+          </div>
+        </div>
+        <figure class="image-wrapper">
+          <!-- Lägg bilden i /assets när den flyttas från biblioteket -->
+          <img src="/assets/3d faltstyrka.webp" alt="Tekniker som mäter och verifierar taluppfattbarhet med STIPA i publik lokal" width="1200" height="750" loading="lazy" decoding="async">
+          <div class="image-caption">STI/STIPA-mätning verifierar att talet uppfattas där människor faktiskt står, inte bara att ljudet är starkt.</div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="inrymning">
+      <div class="avab-container two-col align-start">
+        <div>
+          <div class="eyebrow">Inrymningslarm</div>
+          <h2>När det kan vara farligare att lämna byggnaden</h2>
+          <p class="lead-dark">Ibland är rätt besked att stanna inne, söka skydd eller undvika ett visst område. Inrymningslarm används när människor snabbt behöver instrueras att skydda sig, inte att gå ut.</p>
+          <p>Behovet och utformningen utgår från verksamhetens riskanalys och beredskapsplan. Systemet byggs med skyddad aktivering, tydliga scenarier, zonindelade meddelanden och möjlighet att öva, ofta i samma anläggning som det talade utrymningslarmet men med egna larmscenarier.</p>
+        </div>
+        <aside class="snippet-box">
+          <strong>När behöver vi inrymningslarm?</strong>
+          <p>Behovet avgörs av verksamhetens riskanalys och beredskapsplan. Systemet används när människor snabbt behöver instrueras att söka skydd, stanna kvar eller undvika vissa områden.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--light" id="prioritet">
+      <div class="avab-container two-col align-start">
+        <div>
+          <div class="eyebrow">Integration och prioritet</div>
+          <h2>Säkerhetsfunktionen måste ha högsta prioritet</h2>
+          <p class="lead-dark">Ett vanligt <a class="text-link" href="/tjanster/ljudsystem/">ljudsystem</a> kan användas för tal, musik och utrop, men blir inte automatiskt ett talat utrymningslarm. Vardagsljud får aldrig kunna blockera eller försämra utrymningsmeddelandet.</p>
+          <p>Ska anläggningen även vara säkerhetssystem projekteras den med rätt övervakning, reservkraft, prioritet, kabel och dokumentation. Prioriteringen mellan brandlarm, utrymning, inrymning, PA, rastsignal och musik byggs in från början, samordnat i <a class="text-link" href="/tjanster/styrsystem-integration/">styrsystemet</a>, inte lappad på i efterhand.</p>
+        </div>
+        <aside class="snippet-box">
+          <strong>Kan den vanliga ljudanläggningen användas?</strong>
+          <p>Endast om lösningen projekteras och verifieras för säkerhetsfunktionen. Vardagsljud får aldrig kunna blockera eller försämra utrymningsmeddelandet.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="befintlig">
+      <div class="avab-container two-col align-start">
+        <div>
+          <div class="eyebrow">Har ni redan ett utrymningslarm?</div>
+          <h2>Statuskontroll, mätning och uppdatering av befintlig anläggning</h2>
+          <p class="lead-dark">Vi hjälper till med statuskontroll, felsökning, STI/STIPA-mätning, provning av brandlarmsstyrningar, kontroll av reservkraft och utbyte av utgångna komponenter, som en del av vår <a class="text-link" href="/service-support/">service och support</a>.</p>
+          <p>Efter ombyggnad, nya rumsindelningar eller förändrad verksamhet kan anläggningen behöva projekteras, injusteras och verifieras på nytt.</p>
+        </div>
+        <div>
+          <div class="eyebrow">För konsulter och elektriker</div>
+          <h2>Vi hjälper er före upphandlingen</h2>
+          <p class="lead-dark">AVAB kan ta fram tekniskt underlag för FFU, rambeskrivning och upphandling: funktionskrav, AMA-texter, systemgränser, ritningar, STI-krav och kostnadsunderlag.</p>
+          <p>Skicka handlingarna så går vi igenom allt som berör talat utrymningslarm, inrymning, ljud, <a class="text-link" href="/kunskap/ratt-kabel-av-teknik/">kablage</a> och integration.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="miljoer">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Akustiskt svåra miljöer</div>
+            <h2>Här gör vår ljudkompetens skillnad</h2>
+            <p class="lead-dark">AVAB har över 35 års erfarenhet av ljud och arbetar dagligen med taluppfattbarhet. Vi kan både vardagsljudet och säkerhetsljudet, vilket minskar risken för dubbel teknik och otydliga prioriteringar.</p>
+          </div>
+        </div>
+        <div class="competence-grid">
+          <a href="/miljo/skola/">Skola</a>
+          <a href="/miljo/sporthall/">Sporthall &amp; arena</a>
+          <a href="/miljo/simhall/">Simhall &amp; spa</a>
+          <a href="/miljo/kopcentrum-galleria/">Köpcentrum &amp; galleria</a>
+          <a href="/miljo/hotell/">Hotell</a>
+          <a href="/miljo/restaurang-bar-klubb/">Restaurang &amp; nattklubb</a>
+          <a href="/miljo/industri/">Industri</a>
+          <a href="/miljo/kyrka/">Kyrka &amp; samlingslokal</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tul-faq-cta" id="cta">
+      <div class="avab-container">
+        <div class="faq-heading">
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Snabba svar om UTM, TUL och inrymning</h2>
+          <p>Korta svar för fastighetsägare, kommuner, brandkonsulter, projektörer och elektriker. Se även <a class="text-link" href="/kunskap/ratt-kabel-av-teknik/">rätt kabel för AV-teknik</a> och <a class="text-link" href="/tjanster/taluppfattbarhet-akustik/">taluppfattbarhet och akustik</a>.</p>
+        </div>
+        <div class="compact-faq">
+          <details class="faq-item">
+            <summary>Vad är skillnaden mellan talat utrymningslarm och brandlarm?</summary>
+            <p>Brandlarmet detekterar brand och initierar föreskrivna funktioner. Det talade utrymningslarmet förmedlar instruktioner till människorna i byggnaden. Systemen samverkar ofta men har olika uppgifter.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vad är skillnaden mellan TUL och UTM?</summary>
+            <p>TUL är en vanlig förkortning för talat utrymningslarm. UTM betyder utrymningslarm med talat meddelande och är benämningen som används i Boverkets nya regler och i SBF 502:1.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan ett rastsignalsystem ersätta ett talat utrymningslarm?</summary>
+            <p>Nej, inte när brandskyddsbeskrivningen kräver UTM. Rastsignal är avsett för vardagen och saknar normalt säkerhetssystemets övervakning, reservkraft, prioritering och verifiering.</p>
+          </details>
+          <details class="faq-item">
+            <summary>När behöver vi inrymningslarm?</summary>
+            <p>Behovet avgörs av verksamhetens riskanalys och beredskapsplan. Systemet används när människor snabbt behöver instrueras att söka skydd, stanna kvar eller undvika vissa områden.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan den vanliga ljudanläggningen användas?</summary>
+            <p>Endast om lösningen projekteras och verifieras för säkerhetsfunktionen. Vardagsljud får aldrig kunna blockera eller försämra utrymningsmeddelandet.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Hur verifieras taluppfattbarheten?</summary>
+            <p>När lokalen är färdigställd mäts STI eller STIPA enligt SS-EN 60268-16 och projektets krav. Mätpunkter, bakgrundsljud, ljudnivå och resultat dokumenteras.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vem avgör om talat utrymningslarm krävs?</summary>
+            <p>Kravet fastställs normalt i brandskyddsbeskrivningen av projektets brandkonsult. AVAB omsätter kraven till en projekterad, installerad, driftsatt, uppmätt och dokumenterad teknisk lösning.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan en elektriker installera efter AVAB:s ritningar?</summary>
+            <p>Ja. AVAB kan utföra hela installationen eller projektera så att projektets elektriker installerar efter våra handlingar. Därefter konfigurerar, driftsätter, mäter och dokumenterar vi systemet.</p>
+          </details>
+        </div>
+
+        <div class="fullwidth-cta">
+          <div>
+            <div class="eyebrow">Bra att ha framme</div>
+            <h2>Skicka underlaget, så tar vi nästa steg</h2>
+            <p>För en första genomgång av talat utrymningslarm eller inrymningslarm hjälper det oss att se följande underlag:</p>
+            <ul class="checklist">
+              <li>Planritningar</li>
+              <li>Brandskyddsbeskrivning</li>
+              <li>FFU eller rambeskrivning</li>
+              <li>Verksamhet och dimensionerande personantal</li>
+              <li>Information om brandlarm och befintligt ljud</li>
+              <li>Krav på STI, EN 54 eller SBF 502:1</li>
+            </ul>
+            <div class="cta-actions">
+              <a class="button button-light" href="/kontakt/#ladda-upp-underlag">Ladda upp projektunderlag</a>
+              <a class="button button-secondary" href="/tjanster/taluppfattbarhet-akustik/">Läs om STI/STIPA</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+            </div>
+          </div>
+
+          <ul class="calc-list">
+            <li>Projektering enligt EN 54, SBF 502:1 och projektets krav.</li>
+            <li>Installation, inkoppling och brandlarmsstyrningar.</li>
+            <li>STI/STIPA-mätning och färdigställandekontroll.</li>
+            <li>Anläggarintyg, dokumentation och service.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</body>
+</html>
