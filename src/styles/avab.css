@@ -360,14 +360,14 @@ p {
 .hover-underline:hover::after,
 .hover-underline:focus-visible::after,
 .nav-dropdown:hover > .hover-underline::after,
-.nav-dropdown:focus-within > .hover-underline::after {
+.nav-dropdown:has(:focus-visible) > .hover-underline::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 .nav-links a:hover,
 .nav-links a:focus-visible,
 .nav-dropdown:hover > .nav-dropdown-trigger,
-.nav-dropdown:focus-within > .nav-dropdown-trigger {
+.nav-dropdown:has(:focus-visible) > .nav-dropdown-trigger {
   color: var(--avab-green);
 }
 .nav-chevron {
@@ -379,7 +379,7 @@ p {
   transition: transform 0.25s ease;
 }
 .nav-dropdown:hover .nav-chevron,
-.nav-dropdown:focus-within .nav-chevron {
+.nav-dropdown:has(:focus-visible) .nav-chevron {
   transform: rotate(225deg) translateY(-2px);
 }
 .nav-dropdown {
@@ -411,13 +411,13 @@ p {
   height: 3px;
 }
 .nav-dropdown:hover .mega-menu,
-.nav-dropdown:focus-within .mega-menu {
+.nav-dropdown:has(:focus-visible) .mega-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 .mega-menu:has(.mega-category:hover),
-.mega-menu:has(.mega-category:focus-within) {
+.mega-menu:has(.mega-category :focus-visible) {
   width: min(720px, calc(100vw - 48px));
 }
 .mega-categories,
@@ -462,7 +462,7 @@ p {
   flex: 0 0 auto;
 }
 .mega-category:hover > .mega-category-link,
-.mega-category:focus-within > .mega-category-link {
+.mega-category:has(:focus-visible) > .mega-category-link {
   color: var(--avab-green);
   background: var(--avab-light);
 }
@@ -483,7 +483,7 @@ p {
   transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
 }
 .mega-category:hover .mega-submenu,
-.mega-category:focus-within .mega-submenu {
+.mega-category:has(:focus-visible) .mega-submenu {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
@@ -518,7 +518,7 @@ p {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-dropdown:hover .service-menu,
-.nav-dropdown:focus-within .service-menu {
+.nav-dropdown:has(:focus-visible) .service-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
