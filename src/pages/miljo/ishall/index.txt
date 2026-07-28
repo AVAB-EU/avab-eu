@@ -169,11 +169,32 @@ import "../../../styles/avab.css";
     .summary-list strong { display: block; margin-bottom: 8px; color: var(--avab-dark); font-size: 1.12rem; line-height: 1.2; }
 
     /* ---- Lösningskort med hover/fokus-expandering ---- */
-    #losningar .solutions-grid {
+    .solutions-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
     }
+    .solution-card {
+      padding: 36px;
+      border-radius: var(--avab-radius);
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      box-shadow: var(--avab-shadow-sm);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .solution-card:hover,
+    .solution-card:focus-within {
+      transform: translateY(-8px);
+      box-shadow: var(--avab-shadow-lg);
+      border-color: var(--avab-green);
+    }
+    .solution-card-top { flex-grow: 1; }
+    .solution-card h3 { font-weight: 800; margin-bottom: 14px; font-size: 1.4rem; color: var(--avab-dark); line-height: 1.2; }
+    .solution-card .intro-text { margin-bottom: 22px; font-size: 1.02rem; color: var(--avab-dark-muted); line-height: 1.6; }
+    .solution-card-bottom { margin-top: auto; }
 
 
     /* ---- Synergi: flödeskort (grön etikett, ej numrerad) ---- */
@@ -193,6 +214,13 @@ import "../../../styles/avab.css";
       #utmaning { display: none; }
     }
 
+    /* ---- Kortrader: 4 kort ska ligga 2 + 2 (jamna rader) ---- */
+    @media (min-width: 1081px) {
+      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 769px) and (max-width: 1080px) {
+      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
 
 
     /* ---- FAQ + CTA i samma sektion, enligt mastern pa sporthallssidan ---- */
@@ -216,7 +244,7 @@ import "../../../styles/avab.css";
        (4px topplist med opacity 0 + 8px sidolist utan opacity-aterstallning).
        Resultatet blir en osynlig accent som vid hover dyker upp som en liten
        gron fyrkant. Har definieras accent och hover explicit i stallet. */
-    #losningar .solution-card {
+    .solution-card {
       position: relative;
       overflow: hidden;
       display: flex;
@@ -228,7 +256,7 @@ import "../../../styles/avab.css";
       box-shadow: var(--avab-shadow-sm);
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
-    #losningar .solution-card::before {
+    .solution-card::before {
       content: "";
       position: absolute;
       inset: 0 auto 0 0;
@@ -238,24 +266,24 @@ import "../../../styles/avab.css";
       background: var(--avab-green);
       opacity: 1;
     }
-    #losningar .solution-card:hover,
-    #losningar .solution-card:focus-within {
+    .solution-card:hover,
+    .solution-card:focus-within {
       transform: translateY(-6px);
       border-color: rgba(143, 192, 37, 0.55);
       box-shadow: var(--avab-shadow-lg);
       background: var(--avab-white);
     }
-    #losningar .solution-card:hover::before,
-    #losningar .solution-card:focus-within::before { opacity: 1; }
+    .solution-card:hover::before,
+    .solution-card:focus-within::before { opacity: 1; }
 
-    #losningar .solution-card h3 {
+    .solution-card h3 {
       margin-bottom: 12px;
       color: var(--avab-dark);
       font-size: 1.35rem;
       font-weight: 800;
       line-height: 1.25;
     }
-    #losningar .solution-card .intro-text {
+    .solution-card .intro-text {
       margin-bottom: 22px;
       color: var(--avab-dark-muted);
       font-size: 1.02rem;
@@ -263,7 +291,7 @@ import "../../../styles/avab.css";
     }
 
     /* Specifikationslista: etiketterna ar text, inte lankar */
-    #losningar .spec-list {
+    .spec-list {
       margin: 0 0 24px;
       padding: 18px 0 0;
       border-top: 1px solid var(--avab-border);
@@ -271,14 +299,14 @@ import "../../../styles/avab.css";
       display: grid;
       gap: 10px;
     }
-    #losningar .spec-list li {
+    .spec-list li {
       position: relative;
       padding-left: 26px;
       color: var(--avab-dark-muted);
       font-size: 0.96rem;
       line-height: 1.5;
     }
-    #losningar .spec-list li::before {
+    .spec-list li::before {
       content: "";
       position: absolute;
       top: 0.55em;
@@ -288,10 +316,10 @@ import "../../../styles/avab.css";
       border-radius: 50%;
       background: var(--avab-green);
     }
-    #losningar .spec-list strong { color: var(--avab-dark); font-weight: 800; }
+    .spec-list strong { color: var(--avab-dark); font-weight: 800; }
 
     /* En tydlig tjanstelank per kort, i stallet for spridda etikettlankar */
-    #losningar .solution-card .solution-link {
+    .solution-card .solution-link {
       align-self: flex-start;
       margin-top: auto;
       padding-bottom: 2px;
@@ -301,12 +329,11 @@ import "../../../styles/avab.css";
       font-size: 0.98rem;
       text-decoration: none;
     }
-    #losningar .solution-card .solution-link::after { content: " →"; color: var(--avab-green); }
-    #losningar .solution-card .solution-link:hover { color: var(--avab-green); border-bottom-color: var(--avab-dark); }
+    .solution-card .solution-link::after { content: " →"; color: var(--avab-green); }
+    .solution-card .solution-link:hover { color: var(--avab-green); border-bottom-color: var(--avab-dark); }
 
     @media (max-width: 768px) {
-      #losningar .solutions-grid { grid-template-columns: 1fr; gap: 16px; }
-      #losningar .solution-card { padding: 26px 26px 26px 32px; }
+      .solution-card { padding: 26px 26px 26px 32px; }
     }
   </style>
 </head>
