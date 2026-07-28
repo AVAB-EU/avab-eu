@@ -1,4 +1,5 @@
 ﻿---
+import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
@@ -18,8 +19,8 @@ import "../../../styles/avab.css";
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
-        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljoer/" },
-        { "@type": "ListItem", "position": 3, "name": "Restaurang & Klubb", "item": "https://avab.eu/miljoer/restaurang-bar-klubb/" }
+        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
+        { "@type": "ListItem", "position": 3, "name": "Restaurang & Klubb", "item": "https://avab.eu/miljo/restaurang-bar-klubb/" }
       ]
     },
     {
@@ -127,14 +128,10 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; font-size: 1.05rem; color: var(--avab-dark-muted); line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .solution-expand-inner { overflow: hidden; opacity: 0; transition: opacity 0.3s ease; }
-    .solution-card:hover .solution-expandable { grid-template-rows: 1fr; }
-    .solution-card:hover .solution-expand-inner { opacity: 1; }
+    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
+    .solution-expand-inner { overflow: visible; opacity: 1; }
 
-    .hover-indicator { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s ease, padding 0.4s ease; border-top: 1px solid var(--avab-border); padding-top: 20px; }
-    .solution-card:hover .hover-indicator { grid-template-rows: 0fr; padding-top: 0; border-top-color: transparent; }
-    .solution-card:hover .hover-indicator div { opacity: 0; }
+    .hover-indicator { display: none; }
 
     .bullet-list { list-style: none; margin-top: 20px; }
     .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; line-height: 1.5; color: var(--avab-dark-muted); }
@@ -199,7 +196,7 @@ import "../../../styles/avab.css";
     @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
     @media (max-width: 768px) {
       .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; } .hover-indicator { display: none; } .solution-expand-inner { opacity: 1; }
+      .solution-card h3 { min-height: auto; } .solution-expandable { display: block; opacity: 1; margin-top: 24px; } .hover-indicator { display: none; } .solution-expand-inner { overflow: visible; opacity: 1; }
       .flow-card strong, .flow-card span { min-height: auto; } 
     }
   </style>
@@ -218,7 +215,7 @@ import "../../../styles/avab.css";
     </div>
   </header>
 
-  <section class="fact-band" aria-label="Snabbfakta restaurang bar och klubb">
+  <section class="fact-band mobile-secondary" aria-label="Snabbfakta restaurang bar och klubb">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Restaurang, bar och klubb</strong></div>
       <div class="fact"><span>Ljud</span><strong>Bakgrund, DJ och scen</strong></div>
@@ -231,7 +228,7 @@ import "../../../styles/avab.css";
 
   <main>
     <section class="section" style="border-bottom: 1px solid var(--avab-border);">
-      <div class="container two-col">
+      <div class="container">
         <div class="animate-in">
           <div class="eyebrow">Verkligheten</div>
           <h2>Extrema tempon och höga krav</h2>
@@ -277,9 +274,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/ljudsystem/" class="cat-link">Zoner:</a> Oberoende volym för matsal, bar & ute</li>
-                    <li><a href="/styrsystem/" class="kw-link">Design:</a> Smarta och diskreta premiumhögtalare</li>
-                    <li><a href="/ljudsystem/" class="cat-link">Akustik:</a> Balanserat ljud som tillåter samtal</li>
+                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Zoner:</a> Oberoende volym för matsal, bar & ute</li>
+                    <li><a href="/tjanster/styrsystem-integration/" class="kw-link">Design:</a> Smarta och diskreta premiumhögtalare</li>
+                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Akustik:</a> Balanserat ljud som tillåter samtal</li>
                   </ul>
                 </div>
               </div>
@@ -296,9 +293,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/ljudsystem/" class="cat-link">Kraft:</a> Storskaligt PA-ljud och subwoofers</li>
+                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Kraft:</a> Storskaligt PA-ljud och subwoofers</li>
                     <li><a href="https://www.hyrljud.nu" target="_blank" class="kw-link">www.test1.avab.eu/:</a> Hyr in utrustning för tillfälliga event</li>
-                    <li><a href="/losningar/systemintegration/" class="cat-link">Integration:</a> Sömlös anslutning av externa mixers</li>
+                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Integration:</a> Sömlös anslutning av externa mixers</li>
                   </ul>
                 </div>
               </div>
@@ -315,9 +312,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/styrsystem/" class="cat-link">Effekter:</a> DMX-styrd miljö- och klubbelysning</li>
-                    <li><a href="/bild/" class="kw-link">Signage:</a> Digitala menyer och event-skärmar</li>
-                    <li><a href="/styrsystem/" class="cat-link">Scenarion:</a> Ljus som automatiskt följer tiden</li>
+                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Effekter:</a> DMX-styrd miljö- och klubbelysning</li>
+                    <li><a href="/tjanster/skarmar-projektorer/" class="kw-link">Signage:</a> Digitala menyer och event-skärmar</li>
+                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Scenarion:</a> Ljus som automatiskt följer tiden</li>
                   </ul>
                 </div>
               </div>
@@ -334,9 +331,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/kameraovervakning/" class="cat-link">Kameror:</a> Högupplöst bild i mörka miljöer</li>
-                    <li><a href="/kameraovervakning/" class="cat-link">Analys:</a> Smart sökning och crowd-control</li>
-                    <li><a href="/losningar/utrymningslarm/" class="cat-link">Larm:</a> Bryter hög musik vid fara</li>
+                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Kameror:</a> Högupplöst bild i mörka miljöer</li>
+                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Analys:</a> Smart sökning och crowd-control</li>
+                    <li><a href="/tjanster/talat-utrymningslarm/" class="cat-link">Larm:</a> Bryter hög musik vid fara</li>
                   </ul>
                 </div>
               </div>
@@ -344,7 +341,7 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="flow-grid animate-in">
+        <div class="flow-grid animate-in mobile-secondary">
           <div class="flow-card"><strong>Zonindelning → Upplevelse</strong><span>Gör det möjligt att spela tung bas i baren medan gästerna kan prata normalt i matsalen.</span></div>
           <div class="flow-card"><strong>Styrsystem → Enkelhet</strong><span>Ett förinställt "Klubb-läge" ställer om både belysning, volym och zoner på en sekund.</span></div>
           <div class="flow-card"><strong>Kameror → Trygghet</strong><span>Ger vakter och personal total överblick i mörka och trånga utrymmen.</span></div>
@@ -352,7 +349,7 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section" style="background: var(--avab-white); border-top: 1px solid var(--avab-border);">
+    <section class="section mobile-secondary" style="background: var(--avab-white); border-top: 1px solid var(--avab-border);">
       <div class="container animate-in">
         <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto;">
           <div class="eyebrow">Investering</div>
@@ -426,22 +423,27 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <aside class="cta-card">
-          <div class="eyebrow" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">Trygghet sedan 1990</div>
-          <h2>Ska vi rita upp er nya krog?</h2>
-          <p>Låt oss ta hand om tekniken, så att ni kan lägga er tid på att skapa upplevelser och ta hand om gästerna.</p>
-          <ul class="guarantee-list">
+        <div class="fullwidth-cta-wrap">
+          <div class="fullwidth-cta animate-in">
+            <div>
+              <div class="eyebrow">Trygghet sedan 1990</div>
+              <h2>Ska vi rita upp er nya krog?</h2>
+              <p>Låt oss ta hand om tekniken, så att ni kan lägga er tid på att skapa upplevelser och ta hand om gästerna.</p>
+              <div class="cta-actions">
+                <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
+              </div>
+            </div>
+            <ul class="cta-points">
             <li>Exakt zonstyrt ljud</li>
             <li>Enkla styrsystem för personalen</li>
             <li>Robust teknik som tål nattlivet</li>
           </ul>
-          <div class="hero-actions" style="margin-top: 32px; flex-direction: column; align-items: flex-start; width: 100%;">
-            <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
   </main>
 
+  <SiteFooter />
 </body>
 </html>

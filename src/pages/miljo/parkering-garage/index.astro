@@ -1,4 +1,5 @@
 ﻿---
+import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
@@ -18,8 +19,8 @@ import "../../../styles/avab.css";
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
-        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljoer/" },
-        { "@type": "ListItem", "position": 3, "name": "Parkering", "item": "https://avab.eu/miljoer/parkering-och-parkeringsgarage/" }
+        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
+        { "@type": "ListItem", "position": 3, "name": "Parkering", "item": "https://avab.eu/miljo/parkering-och-parkeringsgarage/" }
       ]
     },
     {
@@ -121,15 +122,11 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; color: var(--avab-dark-muted); font-size: 1.05rem; line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .solution-expand-inner { overflow: hidden; min-height: 0; opacity: 0; transition: opacity 0.3s ease; }
-    .solution-card:hover .solution-expandable { grid-template-rows: 1fr; }
-    .solution-card:hover .solution-expand-inner { opacity: 1; }
+    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
+    .solution-expand-inner { overflow: visible; opacity: 1; }
 
-    .hover-indicator { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s ease, padding 0.4s ease; border-top: 1px solid var(--avab-border); padding-top: 20px; }
+    .hover-indicator { display: none; }
     .hover-indicator div { overflow: hidden; min-height: 0; transition: opacity 0.3s ease; }
-    .solution-card:hover .hover-indicator { grid-template-rows: 0fr; padding-top: 0; border-top-color: transparent; }
-    .solution-card:hover .hover-indicator div { opacity: 0; }
 
     .bullet-list { list-style: none; margin-top: 20px; }
     .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; color: var(--avab-dark-muted); }
@@ -174,7 +171,7 @@ import "../../../styles/avab.css";
     @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
     @media (max-width: 768px) {
       .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; } .hover-indicator { display: none; } .solution-expand-inner { opacity: 1; }
+      .solution-card h3 { min-height: auto; } .solution-expandable { display: block; opacity: 1; margin-top: 24px; } .hover-indicator { display: none; } .solution-expand-inner { overflow: visible; opacity: 1; }
       .flow-card strong, .flow-card span { min-height: auto; } 
     }
   </style>
@@ -184,14 +181,14 @@ import "../../../styles/avab.css";
 
   <header class="hero">
     <div class="container animate-in">
-      <div class="eyebrow">Miljö: Parkering & Garage</div>
+      <div class="eyebrow">Miljö: Parkering och garage</div>
       <h1>Teknik som skapar flöde, trygghet och full kontroll</h1>
       <p>Parkeringshuset är besökarens första och sista intryck. Vi integrerar smarta kameror, gobo-vägvisning och platsindikering som gör en annars anonym miljö smidig och välkomnande.</p>
       <div style="margin-top: 40px;"><a class="button" href="/kontakt/">Boka kostnadsfri rådgivning</a></div>
     </div>
   </header>
 
-  <section class="fact-band" aria-label="Snabbfakta parkering och garage">
+  <section class="fact-band mobile-secondary" aria-label="Snabbfakta parkering och garage">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Parkering och garage</strong></div>
       <div class="fact"><span>Flöde</span><strong>Infart, kö och vägvisning</strong></div>
@@ -241,9 +238,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/kameraovervakning/" class="cat-link">ANPR:</a> Blixtsnabb avläsning av registreringsskyltar</li>
-                    <li><a href="/losningar/systemintegration/" class="cat-link">Integration:</a> Direktkoppling till betalsystem</li>
-                    <li><a href="/kameraovervakning/" class="cat-link">Trygghet:</a> AI-sökning vid skadegörelse</li>
+                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">ANPR:</a> Blixtsnabb avläsning av registreringsskyltar</li>
+                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Integration:</a> Direktkoppling till betalsystem</li>
+                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Trygghet:</a> AI-sökning vid skadegörelse</li>
                   </ul>
                 </div>
               </div>
@@ -262,9 +259,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/kameraovervakning/" class="cat-link">Sensorer:</a> Realtidsdata över lediga platser</li>
-                    <li><a href="/bild/" class="cat-link">Wayfinding:</a> "Hitta min bil"-funktion via skärm</li>
-                    <li><a href="/losningar/systemintegration/" class="cat-link">Data:</a> Analys av hur anläggningen utnyttjas</li>
+                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Sensorer:</a> Realtidsdata över lediga platser</li>
+                    <li><a href="/tjanster/skarmar-projektorer/" class="cat-link">Wayfinding:</a> "Hitta min bil"-funktion via skärm</li>
+                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Data:</a> Analys av hur anläggningen utnyttjas</li>
                   </ul>
                 </div>
               </div>
@@ -283,9 +280,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/bild/" class="cat-link">Gobo:</a> Slitstark och snygg projicering på mark/vägg</li>
-                    <li><a href="/bild/" class="cat-link">Signage:</a> Dynamiska skärmar med utfartshänvisning</li>
-                    <li><a href="/bild/" class="cat-link">Elbilar:</a> Tydlig markering för EV-laddning</li>
+                    <li><a href="/tjanster/skarmar-projektorer/" class="cat-link">Gobo:</a> Slitstark och snygg projicering på mark/vägg</li>
+                    <li><a href="/tjanster/skarmar-projektorer/" class="cat-link">Signage:</a> Dynamiska skärmar med utfartshänvisning</li>
+                    <li><a href="/tjanster/skarmar-projektorer/" class="cat-link">Elbilar:</a> Tydlig markering för EV-laddning</li>
                   </ul>
                 </div>
               </div>
@@ -304,9 +301,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/ljudsystem/" class="cat-link">Atmosfär:</a> Trygghetsskapande ljud i trapphus</li>
-                    <li><a href="/ljudsystem/" class="cat-link">Utrop:</a> Tydliga informationsmeddelanden</li>
-                    <li><a href="/losningar/utrymningslarm/" class="cat-link">TUL:</a> Integrerat talat utrymningslarm</li>
+                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Atmosfär:</a> Trygghetsskapande ljud i trapphus</li>
+                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Utrop:</a> Tydliga informationsmeddelanden</li>
+                    <li><a href="/tjanster/talat-utrymningslarm/" class="cat-link">TUL:</a> Integrerat talat utrymningslarm</li>
                   </ul>
                 </div>
               </div>
@@ -314,7 +311,7 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="flow-grid animate-in">
+        <div class="flow-grid animate-in mobile-secondary">
           <div class="flow-card"><strong>ANPR-kameror → Flöde</strong><span>Bilar rullar in utan att stanna vid bommen, vilket eliminerar köer som blockerar gatan.</span></div>
           <div class="flow-card"><strong>Platsindikering → Miljö</strong><span>Att direkt leda besökaren till en grön lampa minskar drastiskt utsläpp från cirkulerande bilar.</span></div>
           <div class="flow-card"><strong>Gobo & Ljud → Trygghet</strong><span>Visuell guidning och musik gör en annars mörk och anonym miljö trygg och välkomnande.</span></div>
@@ -322,7 +319,7 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
+    <section class="section mobile-secondary" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
       <div class="container animate-in">
         <div class="section-header">
           <div class="eyebrow">Investering</div>
@@ -373,7 +370,7 @@ import "../../../styles/avab.css";
     </section>
 
     <section class="section" id="faq" style="border-top: 1px solid var(--avab-border);">
-      <div class="container two-col">
+      <div class="container">
         <div>
           <div class="eyebrow">Kunskap</div>
           <h2 style="margin-bottom: 32px;">Vanliga frågor om parkeringssystem</h2>
@@ -392,20 +389,27 @@ import "../../../styles/avab.css";
             </div>
           </div>
         </div>
-        <aside class="cta-card">
-          <div class="eyebrow" style="background: rgba(255,255,255,0.1); color: #fff;">Trygghet sedan 1990</div>
-          <h2>Ska vi optimera ert parkeringshus?</h2>
-          <p>Rätt system minskar köerna, ökar tryggheten och ger er personal full kontroll över driften.</p>
-          <ul class="guarantee-list">
+        <div class="fullwidth-cta-wrap">
+          <div class="fullwidth-cta animate-in">
+            <div>
+              <div class="eyebrow">Trygghet sedan 1990</div>
+              <h2>Ska vi optimera ert parkeringshus?</h2>
+              <p>Rätt system minskar köerna, ökar tryggheten och ger er personal full kontroll över driften.</p>
+              <div class="cta-actions">
+                <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+              </div>
+            </div>
+            <ul class="cta-points">
             <li>ANPR för automatiskt in/utsläpp</li>
             <li>Gobo-projektion för vägvisning</li>
             <li>Trygghetsskapande ljudsystem</li>
           </ul>
-          <div style="margin-top: 32px;"><a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a></div>
-        </aside>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
+  <SiteFooter />
 </body>
 </html>

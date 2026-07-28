@@ -1,5 +1,4 @@
 ﻿---
-import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
@@ -9,8 +8,8 @@ import "../../../styles/avab.css";
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ljud & Teknik för Kyrka – Tydligt tal i krävande akustik | AVAB</title>
-  <meta name="description" content="Vi projekterar ljud och ljus för kyrkor med respekt för kulturhistoriska miljöer. Extrem taluppfattbarhet, Auracast-tillgänglighet och enkla styrsystem." />
+  <title>Ljud & Teknik för Hotell – Upplevelse och smidig drift | AVAB</title>
+  <meta name="description" content="AVAB integrerar teknik för hotell. Från rätt atmosfär i lobby och restaurang till driftsäker konferensteknik och styrsystem som förenklar för personalen." />
   
   <script type="application/ld+json">
   [
@@ -19,8 +18,8 @@ import "../../../styles/avab.css";
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
-        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
-        { "@type": "ListItem", "position": 3, "name": "Kyrka", "item": "https://avab.eu/miljo/kyrka/" }
+        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljoer/" },
+        { "@type": "ListItem", "position": 3, "name": "Hotell", "item": "https://avab.eu/miljoer/hotell/" }
       ]
     },
     {
@@ -29,26 +28,34 @@ import "../../../styles/avab.css";
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Hur löser vi ekot utan att det ser fult ut?",
+          "name": "Hur får man rätt ljud i både restaurang och bar när de ligger bredvid varandra?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vi använder diskreta, smala pelarhögtalare som kan färgmatchas med kyrkans inredning. Genom inbyggda delay-funktioner (fördröjning) ser vi till att ljudet från alla högtalare når församlingen exakt samtidigt, vilket eliminerar ekot och skapar kristallklart tal."
+            "text": "Svaret ligger i zonindelning. Vi designar systemet så att restaurangen kan ha dämpat bakgrundsljud för samtal, medan baren har högre energi och djupare bas. Personalen styr volym och spellistor för varje zon separat via en enkel touchpanel."
           }
         },
         {
           "@type": "Question",
-          "name": "Vi kan inte fräsa i stengolvet för en hörslinga. Vad gör vi?",
+          "name": "Varför strular konferenstekniken så ofta?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vi rekommenderar Auracast. Det är en modern, trådlös teknik som sänder ljudet med extremt låg fördröjning direkt till hörapparater med Bluetooth LE, eller via smidiga halsslingor. Detta ger perfekt tillgänglighet utan fysiska ingrepp i kulturhistoriskt känsliga golv."
+            "text": "Vanliga problem uppstår när systemen är för komplexa, kopplingar glappar eller när tekniken installerats utan en tanke på slutanvändaren. Vi bygger konferensrum med fokus på enkelhet – det ska räcka med att ansluta en kabel eller trycka på en knapp så startar skärm, ljud och kamera automatiskt."
           }
         },
         {
           "@type": "Question",
-          "name": "Kan systemet hantera både prästens tal och en julkonsert?",
+          "name": "Går det att integrera befintlig teknik i ett nytt styrsystem?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja. För vardagsbruk sköter en automixer ljudet från präst och kör helt automatiskt. För konserter bygger vi inkopplingspunkter så att ljudtekniker enkelt kan ansluta externa mixerbord. Behövs extra utrustning kompletterar ni enkelt via vårt systerbolag hyrljud.nu."
+            "text": "Ofta, ja. Det verksamheten egentligen behöver är sällan en total utrensning av all hårdvara, utan rätt styrsystem (t.ex. Crestron) som binder ihop de befintliga delarna till en fungerande och lättanvänd helhet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan jag snabbt hitta ett bortsprunget barn som är någonstans på hotellet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, med vår Exakt sökning kan ni på sekunder få fram alla kamerors inspelning – från det att barnet anlände, till exakt var det befinner sig just nu. Helt i enlighet med GDPR."
           }
         }
       ]
@@ -71,7 +78,7 @@ import "../../../styles/avab.css";
       --avab-dark: #282E29;  
       --avab-dark-muted: #3A433D;
       --avab-grey: #E9EAE9;
-      --avab-light: #F4F5F4; 
+      --avab-light: #F4F5F4;
       --avab-white: #ffffff; 
       --avab-border: rgba(40, 46, 42, 0.1);
       --avab-shadow-sm: 0 4px 12px rgba(40, 46, 42, 0.05);
@@ -95,7 +102,7 @@ import "../../../styles/avab.css";
     .hero { 
       position: relative; padding: 120px 0 80px; 
       background: linear-gradient(135deg, rgba(40, 46, 42, 0.65) 0%, rgba(40, 46, 42, 0.65) 100%), 
-                  url('https://images.unsplash.com/photo-1437603562860-1925b42cbe81?auto=format&fit=crop&q=80&w=1920') center/cover;
+                  url('https://images.unsplash.com/photo-1542314831-c53cd4b85ca4?auto=format&fit=crop&q=80&w=1920') center/cover;
       color: #ffffff !important; 
     }
     .hero h1 { color: #ffffff !important; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; max-width: 22ch; }
@@ -128,10 +135,14 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; font-size: 1.05rem; color: var(--avab-dark-muted); line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
-    .solution-expand-inner { overflow: visible; opacity: 1; }
+    .solution-expandable { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    .solution-expand-inner { overflow: hidden; opacity: 0; transition: opacity 0.3s ease; }
+    .solution-card:hover .solution-expandable { grid-template-rows: 1fr; }
+    .solution-card:hover .solution-expand-inner { opacity: 1; }
 
-    .hover-indicator { display: none; }
+    .hover-indicator { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s ease, padding 0.4s ease; border-top: 1px solid var(--avab-border); padding-top: 20px; }
+    .solution-card:hover .hover-indicator { grid-template-rows: 0fr; padding-top: 0; border-top-color: transparent; }
+    .solution-card:hover .hover-indicator div { opacity: 0; }
 
     .bullet-list { list-style: none; margin-top: 20px; }
     .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; line-height: 1.5; color: var(--avab-dark-muted); }
@@ -196,7 +207,7 @@ import "../../../styles/avab.css";
     @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
     @media (max-width: 768px) {
       .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { display: block; opacity: 1; margin-top: 24px; } .hover-indicator { display: none; } .solution-expand-inner { overflow: visible; opacity: 1; }
+      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; } .hover-indicator { display: none; } .solution-expand-inner { opacity: 1; }
       .flow-card strong, .flow-card span { min-height: auto; } 
     }
   </style>
@@ -206,49 +217,49 @@ import "../../../styles/avab.css";
 
   <header class="hero">
     <div class="container animate-in">
-      <div class="eyebrow">Miljö: Kyrka & Församling</div>
-      <h1>Teknik som bevarar rummets känsla och gör budskapet tydligt</h1>
-      <p>Vi skapar ljud- och ljuslösningar för kyrkor med respekt för kulturhistoriska miljöer. Extrem taluppfattbarhet, trådlös tillgänglighet och enkel styrning, helt utan att ta över rummets karaktär.</p>
+      <div class="eyebrow">Miljö: Hotell & Konferens</div>
+      <h1>Teknik som skapar upplevelse, kontroll och smidig drift</h1>
+      <p>På ett hotell ska tekniken aldrig ta plats. Vi skapar integrerade system för ljud, bild och säkerhet som fungerar osynligt i bakgrunden, men som höjer upplevelsen för gästerna och förenklar vardagen för er personal.</p>
       <div class="hero-actions">
         <a class="button" href="/kontakt/">Boka kostnadsfri rådgivning</a>
       </div>
     </div>
   </header>
 
-  <section class="fact-band mobile-secondary" aria-label="Snabbfakta kyrka">
+  <section class="fact-band" aria-label="Snabbfakta hotell och konferens">
     <div class="fact-grid">
-      <div class="fact"><span>Miljö</span><strong>Kyrkorum och församlingshem</strong></div>
-      <div class="fact"><span>Ljud</span><strong>Tal, kör och musik</strong></div>
-      <div class="fact"><span>Akustik</span><strong>Lång efterklang och STI</strong></div>
-      <div class="fact"><span>Tillgänglighet</span><strong>Hörslinga och tydligt tal</strong></div>
-      <div class="fact"><span>Estetik</span><strong>Diskret montage i känsliga rum</strong></div>
+      <div class="fact"><span>Miljö</span><strong>Hotell, lobby och konferens</strong></div>
+      <div class="fact"><span>Zoner</span><strong>Restaurang, bar, spa och möten</strong></div>
+      <div class="fact"><span>Ljud</span><strong>Bakgrundsmusik och tal</strong></div>
+      <div class="fact"><span>Bild</span><strong>Skärmar, projektor och signage</strong></div>
+      <div class="fact"><span>Drift</span><strong>Scenarier för personalen</strong></div>
       <div class="fact"><span>Leverans</span><strong>Projektering till service</strong></div>
     </div>
   </section>
 
   <main>
     <section class="section" style="border-bottom: 1px solid var(--avab-border);">
-      <div class="container">
+      <div class="container two-col">
         <div class="animate-in">
           <div class="eyebrow">Verkligheten</div>
-          <h2>En vacker men akustiskt extrem miljö</h2>
-          <p class="lead-dark">En kyrka är byggd för att skapa rymd och storslagen efterklang. Men just de höga valven och de hårda stenytorna som gör rummet vackert, skapar en massiv utmaning för taluppfattbarheten. Ljudet studsar och lever kvar länge, vilket snabbt gör tal otydligt.</p>
-          <p class="lead-dark">Att bara höja volymen förvärrar ofta ekot. Lösningen bygger istället på rätt placerade, riktade högtalare med inbyggda delay-funktioner, smart mikrofonhantering och en integration som bevarar byggnadens estetik.</p>
+          <h2>En dynamisk miljö med höga förväntningar</h2>
+          <p class="lead-dark">Ett hotell är inte en enhetlig miljö – det är en samling av helt olika zoner. Lobbyn, restaurangen, baren, spa-avdelningen och konferensytorna har alla sina unika krav på teknik. Samtidigt förändras behoven under dygnet; en lugn frukostmatsal ska snabbt kunna ställas om till en pulserande bar.</p>
+          <p class="lead-dark">När dessa miljöer byggs med separata, ointegrerade system blir resultatet krånglig hantering för personalen och teknik som inte utnyttjas. Vår lösning? Rätt teknik för rätt zon, knuten samman i ett och samma lättanvända gränssnitt.</p>
         </div>
 
         <aside class="animate-in" style="animation-delay: 0.1s;">
           <ul class="summary-list">
             <li>
-              <strong>Att höra är inte att förstå</strong>
-              Ljudet studsar i valven. Vi använder riktat ljud och delay-styrning för att ljudet från alla högtalare ska nå bänkraderna exakt samtidigt.
+              <strong>Personalen i fokus</strong>
+              Driften måste vara enkel. Personalen ska kunna byta ljud och ljus snabbt utan teknisk kunskap. Om ett system upplevs som krångligt kommer det förr eller senare att sluta användas.
             </li>
             <li>
-              <strong>Kulturhistoriska krav</strong>
-              Det går sällan att fräsa in kablar i gamla stengolv. Vi arbetar med modern trådlös distribution (Auracast) och diskreta, färgmatchade installationer.
+              <strong>Konferensen är en intäktsmotor</strong>
+              Det finns inget utrymme för fel under konferenser. Tekniken måste starta direkt och kopplingar ska fungera utan krångel. Strulande teknik här kostar omedelbart pengar och förtroende.
             </li>
             <li>
-              <strong>Många olika användare</strong>
-              Från präst till körledare och externa musiker. Systemet måste vara extremt enkelt att använda till vardags, men kraftfullt nog för en julkonsert.
+              <strong>Atmosfär genom zonindelning</strong>
+              Det handlar inte om att använda samma ljudlösning överallt. Det handlar om att skapa rätt känsla – dämpat i restaurangen och energi i baren – med total kontroll centralt.
             </li>
           </ul>
         </aside>
@@ -260,23 +271,23 @@ import "../../../styles/avab.css";
         <div class="section-header animate-in">
           <div class="eyebrow">Våra lösningar</div>
           <h2 style="margin-bottom: 16px;">Det digitala ekosystemet</h2>
-          <p class="lead-dark">Här är pelarna som balanserar modern teknik med kyrkans traditioner.</p>
+          <p class="lead-dark">Här är de fyra pelarna som skapar en professionell upplevelse över hela hotellet.</p>
         </div>
 
         <div class="solutions-grid">
           <article class="solution-card">
             <div class="solution-card-top">
-              <h3>Akustik & Tydligt Tal</h3>
-              <p class="intro-text">Genom att placera ut smala, diskreta högtalare i kyrkan minskar vi avståndet till lyssnaren. Med inbyggda delay-funktioner synkroniseras ljudet för att eliminera ekot.</p>
+              <h3>Ljud & Atmosfär</h3>
+              <p class="intro-text">Rätt musik på rätt plats. Vi zonindelar hotellet så att restaurang, lobby, bar och spa får exakt rätt akustisk miljö för tidpunkten på dygnet.</p>
             </div>
             <div class="solution-card-bottom">
               <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om ljudsystem ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/ljudsystem/" class="cat-link">DSP:</a> Delay-system och avancerad signalbehandling</li>
-                    <li><a href="/tjanster/ljudsystem/" class="kw-link">Automixer:</a> Hanterar präst och kör automatiskt</li>
-                    <li><a href="/tjanster/taluppfattbarhet/" class="cat-link">Design:</a> Smala pelarhögtalare som smälter in</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Zoner:</a> Diskret bakgrundsljud eller DJ-tryck</li>
+                    <li><a href="/styrsystem/" class="kw-link">Automatisering:</a> Ljudnivåer som följer klockan</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Design:</a> Högtalare som smälter in i inredningen</li>
                   </ul>
                 </div>
               </div>
@@ -285,17 +296,17 @@ import "../../../styles/avab.css";
 
           <article class="solution-card">
             <div class="solution-card-top">
-              <h3>Auracast & Tillgänglighet</h3>
-              <p class="intro-text">Att fräsa in teleslingor i stengolv är dyrt. Vi installerar modern Auracast för trådlös ljudöverföring direkt till hörapparater och halsslingor, utan ingrepp i golvet.</p>
+              <h3>Konferens & Möten</h3>
+              <p class="intro-text">Konferensteknik där inget lämnas åt slumpen. Vi bygger rum där ljud, bild och kamera startar sömlöst så fort gästen ansluter sin dator.</p>
             </div>
             <div class="solution-card-bottom">
-              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om hörslingor ↓</div></div>
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om bild & möten ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/horslinga/" class="cat-link">Trådlöst:</a> Ljuddistribution med noll fördröjning</li>
-                    <li><a href="/tjanster/horslinga/" class="kw-link">Auracast:</a> Nästa generations tillgänglighet</li>
-                    <li><a href="/tjanster/horslinga/" class="cat-link">Hjälpmedel:</a> Mottagare och smidiga halsslingor</li>
+                    <li><a href="/bild/" class="cat-link">Bild:</a> Ljusstarka skärmar och projektorer</li>
+                    <li><a href="/styrsystem/" class="kw-link">Enkelhet:</a> "Plug and Play" utan strul</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Hybrid:</a> Perfekt ljud för Teams och Zoom</li>
                   </ul>
                 </div>
               </div>
@@ -304,17 +315,17 @@ import "../../../styles/avab.css";
 
           <article class="solution-card">
             <div class="solution-card-top">
-              <h3>Styrning & Zoner</h3>
-              <p class="intro-text">Kyrkan består av flera rum. Skicka ljudet från predikan vidare till sidokapellet eller församlingshemmet. Allt styrs via touchpaneler med enkla, förinställda lägen.</p>
+              <h3>Information & Signage</h3>
+              <p class="intro-text">Guida gästerna rätt och stärk ert varumärke. Digitala infoskärmar visar dagens konferenser, restaurangmenyer och events.</p>
             </div>
             <div class="solution-card-bottom">
-              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Se styrsystem ↓</div></div>
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Se skärmlösningar ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Presets:</a> Lägen för gudstjänst, dop eller konsert</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="kw-link">Zoner:</a> Oberoende ljud i kyrkosal och sakristia</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Ljus:</a> Integrerad styrning av stämningsbelysning</li>
+                    <li><a href="/bild/" class="cat-link">Signage:</a> Digital vägvisning i lobbyn</li>
+                    <li><a href="/losningar/systemintegration/" class="kw-link">Uppdatering:</a> Ändra innehåll centralt på sekunder</li>
+                    <li><a href="/bild/" class="cat-link">Design:</a> Skärmar som passar hotellets estetik</li>
                   </ul>
                 </div>
               </div>
@@ -323,17 +334,17 @@ import "../../../styles/avab.css";
 
           <article class="solution-card">
             <div class="solution-card-top">
-              <h3>Event & Konsert</h3>
-              <p class="intro-text">Gör kyrkan redo för konserter. Vi bygger in professionella inkopplingspunkter för gästande ljudtekniker och integrerar scenljus för en maxad upplevelse.</p>
+              <h3>Styrsystem & Säkerhet</h3>
+              <p class="intro-text">Knyt ihop allt till en helhet. Vi integrerar styrsystem som förenklar driften samt säkerhetssystem som ger full kontroll över anläggningen.</p>
             </div>
             <div class="solution-card-bottom">
-              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om eventteknik ↓</div></div>
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om integration ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Inkoppling:</a> Dante- och analoga ljudpaneler</li>
-                    <li><a href="https://www.hyrljud.nu" target="_blank" class="kw-link">www.test1.avab.eu/:</a> Skala upp utrustningen vid behov</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Scenljus:</a> DMX-styrd belysning för kör och artister</li>
+                    <li><a href="/styrsystem/" class="cat-link">Styrning:</a> En touchpanel för hela hotellet</li>
+                    <li><a href="/kameraovervakning/" class="cat-link">Trygghet:</a> Kameraövervakning i publika ytor</li>
+                    <li><a href="/losningar/systemintegration/" class="kw-link">Integration:</a> Binder samman befintlig teknik</li>
                   </ul>
                 </div>
               </div>
@@ -341,39 +352,39 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="flow-grid animate-in mobile-secondary">
-          <div class="flow-card"><strong>Automixer → Tydlighet</strong><span>Justerar automatiskt volymen mellan präst och handmikrofoner utan att en tekniker behövs.</span></div>
-          <div class="flow-card"><strong>Auracast → Kulturarv</strong><span>Trådlös ljuddistribution gör att vi slipper stora fysiska ingrepp i historiska stengolv.</span></div>
-          <div class="flow-card"><strong>Zonstyrning → Flexibilitet</strong><span>Gör det möjligt för församlingen i sidokapellet att höra musiken lika tydligt som i mittgången.</span></div>
+        <div class="flow-grid animate-in">
+          <div class="flow-card"><strong>Zonindelning → Atmosfär</strong><span>Skapar rätt känsla i frukostmatsalen samtidigt som baren laddar för kvällen.</span></div>
+          <div class="flow-card"><strong>Integration → Enkelhet</strong><span>Receptionisten slipper ringa IT-supporten och styr allt från sin iPad.</span></div>
+          <div class="flow-card"><strong>Pålitlig teknik → Intäkter</strong><span>Konferensgäster som slipper teknikstrul bokar garanterat nästa möte hos er igen.</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section mobile-secondary" style="background: var(--avab-white); border-top: 1px solid var(--avab-border);">
+    <section class="section" style="border-top: 1px solid var(--avab-border);">
       <div class="container animate-in">
         <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto;">
           <div class="eyebrow">Investering</div>
-          <h2 style="margin-bottom: 16px;">Vad kostar teknik för en kyrka?</h2>
-          <p class="lead-dark" style="margin-bottom: 40px;">Priset styrs av kyrkorummets storlek, graden av akustisk utmaning och om ni har behov av stora konsert-investeringar. Här är en grov uppskattning.</p>
+          <h2 style="margin-bottom: 16px;">Vad kostar hotellteknik?</h2>
+          <p class="lead-dark" style="margin-bottom: 40px;">Priset styrs av hotellets storlek, antalet konferensrum och kravet på ljudkvalitet i restaurangen. Här är en grov uppskattning för att hjälpa er budgetera.</p>
         </div>
 
         <div class="pricing-grid">
           <div class="pricing-card">
             <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Mindre system</div>
-            <h3>20–200 kkr</h3>
-            <p>Passar det lilla kapellet eller den mindre frikyrkan. Inkluderar ett uppgraderat, diskret ljudsystem med automixer för mikrofoner och modern tillgänglighet.</p>
+            <h3>100–300 kkr</h3>
+            <p>Passar perfekt för det mindre boutiquehotellet. Inkluderar kvalitativt bakgrundsljud för lobby och restaurang samt grundläggande mötesteknik i ett fåtal zoner.</p>
           </div>
           
           <div class="pricing-card highlight">
             <div class="eyebrow">Vanligaste lösningen</div>
-            <h3>200–400 kkr</h3>
-            <p>För den traditionella kyrkan. Omfattar avancerad delay-styrning, flertalet diskreta pelarhögtalare, zonstyrning för sidobyggnader och inkopplingspunkter för musiker.</p>
+            <h3>300–800 kkr</h3>
+            <p>För hotell med tydlig konferensverksamhet, restaurang, bar och spa. Integrerade styrsystem, digitala infoskärmar (Signage) och premiumljud i flera zoner.</p>
           </div>
 
           <div class="pricing-card">
             <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Större system</div>
-            <h3>400 kkr +</h3>
-            <p>För domkyrkor och stora församlingar. Omfattande nätverkslösningar (Dante), trådlösa Auracast-nätverk över stora ytor, kamerateknik för streaming och fullskaligt konsertstöd.</p>
+            <h3>800 kkr +</h3>
+            <p>Storskaliga anläggningar med stora konferenssalar. Kräver hög integreringsnivå av befintlig teknik, kameraövervakning och extrem driftsäkerhet dygnet runt.</p>
           </div>
         </div>
       </div>
@@ -381,21 +392,21 @@ import "../../../styles/avab.css";
 
     <section class="section" style="border-top: 1px solid var(--avab-border);">
       <div class="container">
-        <div class="eyebrow">Kyrkoreferenser</div>
-        <h2>Teknik som smälter in i historien</h2>
+        <div class="eyebrow">Hotellreferenser</div>
+        <h2>Teknik som stärker varumärket</h2>
         <div class="ref-grid animate-in">
           <article class="ref-card">
-            <img src="https://images.unsplash.com/photo-1548625361-ecbfcb52ce21?auto=format&fit=crop&q=80&w=800" alt="Historisk kyrka ljudsystem och akustik">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800" alt="Hotell restaurang bar ljudsystem teknik">
             <div class="ref-content">
-              <h3>[Platshållare: Historisk Stenkyrka]</h3>
-              <p>Vi installerade färgmatchade, diskreta pelarhögtalare med avancerad delay-styrning för att övervinna den massiva efterklangen. Samtidigt uppgraderades tillgängligheten med trådlös Auracast för att skona stengolvet.</p>
+              <h3>[Platshållare: Centralt Boutiquehotell]</h3>
+              <p>Vi integrerade ett zonstyrt ljudsystem där lobbyn fick ett dämpat, välkomnande ljud medan restaurang och bar kunde växla över till pulserande energi framåt kvällen, allt styrt från receptionen.</p>
             </div>
           </article>
           <article class="ref-card">
-            <img src="https://images.unsplash.com/photo-1570527140771-020891229bb4?auto=format&fit=crop&q=80&w=800" alt="Större församlingskyrka teknik och kör">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Hotell konferensrum teknik bildskärm">
             <div class="ref-content">
-              <h3>[Platshållare: Större Församlingskyrka]</h3>
-              <p>Ett helt integrerat system för ljud, ljus och bild. Vi skapade tydliga Dante-inkopplingspunkter för gästande musiker och installerade touchpaneler med färdiga presets för gudstjänst, körsång och julkonsert.</p>
+              <h3>[Platshållare: Stort Konferenshotell]</h3>
+              <p>Totalrenovering av hotellets 12 konferensrum och stora eventyta. Vi säkrade driftsäkerheten med "plug-and-play"-bildteknik och installerade digital vägvisning (Signage) i alla allmänna utrymmen.</p>
             </div>
           </article>
         </div>
@@ -406,44 +417,43 @@ import "../../../styles/avab.css";
       <div class="container two-col" style="align-items: start;">
         <div>
           <div class="eyebrow">Kunskap</div>
-          <h2 style="margin-bottom: 32px;">Vanliga frågor om kyrkoteknik</h2>
+          <h2 style="margin-bottom: 32px;">Vanliga frågor om hotellteknik</h2>
           <div class="faq-list">
             <div class="faq-item">
-              <h3>Hur löser vi ekot utan att det ser fult ut?</h3>
-              <p>Vi använder diskreta, smala pelarhögtalare som kan färgmatchas med inredningen. Genom inbyggda delay-funktioner ser vi till att ljudet från alla högtalare når församlingen exakt samtidigt, vilket eliminerar ekot.</p>
+              <h3>Hur får man rätt ljud i både restaurang och bar bredvid varandra?</h3>
+              <p>Svaret ligger i zonindelning och rätt riktade högtalare. Restaurangen kan ha dämpat ljud för samtal, medan baren har högre energi. Personalen styr volym och spellistor separat via en touchpanel.</p>
             </div>
             <div class="faq-item">
-              <h3>Vi kan inte fräsa i stengolvet för en hörslinga. Vad gör vi?</h3>
-              <p>Vi rekommenderar Auracast. Det är en modern, trådlös teknik som sänder ljudet direkt till hörapparater med Bluetooth LE, eller via smidiga halsslingor. Perfekt tillgänglighet helt utan ingrepp i kulturhistoriska golv.</p>
+              <h3>Varför strular konferenstekniken så ofta?</h3>
+              <p>Vanliga problem uppstår när systemen är för komplexa eller när tekniken installerats utan en tanke på slutanvändaren. Vi bygger konferensrum med fokus på enkelhet – en kabel eller knapp räcker för att starta allt.</p>
             </div>
             <div class="faq-item">
-              <h3>Kan systemet hantera både prästens tal och en julkonsert?</h3>
-              <p>Ja. För vardagsbruk sköter en automixer ljudet från präst och kör automatiskt. För konserter bygger vi inkopplingspunkter så att ljudtekniker enkelt kan ansluta externa mixerbord. Vid enorma behov kompletterar ni via www.test1.avab.eu/.</p>
+              <h3>Går det att integrera befintlig teknik i ett nytt system?</h3>
+              <p>Ofta, ja. Det verksamheten behöver är sällan en total utrensning, utan rätt styrsystem (t.ex. Crestron) som binder ihop de befintliga delarna till en fungerande och lättanvänd helhet.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Kan jag snabbt hitta ett bortsprunget barn som är någonstans på hotellet?</h3>
+              <p>Ja, med vår Exakt sökning kan ni på sekunder få fram alla kamerors inspelning – från det att barnet anlände, till exakt var det befinner sig just nu. Allt sker helt i enlighet med GDPR.</p>
             </div>
           </div>
         </div>
 
-        <div class="fullwidth-cta-wrap">
-          <div class="fullwidth-cta animate-in">
-            <div>
-              <div class="eyebrow">Trygghet sedan 1990</div>
-              <h2>Ska vi uppgradera er kyrka?</h2>
-              <p>Vi projekterar system med den allra största respekt för byggnadens historia och akustik.</p>
-              <div class="cta-actions">
-                <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
-              </div>
-            </div>
-            <ul class="cta-points">
-            <li>Inga skador på historiska ytor</li>
-            <li>Auracast & diskreta system</li>
-            <li>Färdiga ljudlägen för personalen</li>
+        <aside class="cta-card">
+          <div class="eyebrow" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">Trygghet sedan 1990</div>
+          <h2>Ska vi rita upp ert hotell?</h2>
+          <p>Att komma in tidigt i planeringen är avgörande. Låt oss säkerställa helheten, så ni slipper kompromisser i driften senare.</p>
+          <ul class="guarantee-list">
+            <li>Rätt dimensionerat från början</li>
+            <li>Extremt enkelt handhavande</li>
+            <li>Driftsäkra konferensytor</li>
           </ul>
+          <div class="hero-actions" style="margin-top: 32px; flex-direction: column; align-items: flex-start; width: 100%;">
+            <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
   </main>
 
-  <SiteFooter />
 </body>
 </html>

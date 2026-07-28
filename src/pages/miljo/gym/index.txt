@@ -50,7 +50,7 @@ import "../../../styles/avab.css";
       "url": "https://www.avab.eu/",
       "logo": "https://www.avab.eu/logo.png",
       "image": "https://www.avab.eu/assets/sorby sporthall 1200x900.webp",
-      "telephone": "+46548202080",
+      "telephone": "+46-54-8202080",
       "email": "info@avab.eu",
       "sameAs": [
         "https://www.linkedin.com/company/avab",
@@ -301,14 +301,14 @@ import "../../../styles/avab.css";
           <div class="hero-actions">
             <a class="button button-primary" href="/kontakt/">Skicka ritningar eller boka genomgång</a>
             <a class="button button-secondary" href="#referenser">Se referenser</a>
-            <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
+            <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="fact-band mobile-secondary" aria-label="Snabbfakta gym och träningsanläggning">
+  <section class="fact-band" aria-label="Snabbfakta gym och träningsanläggning">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Gym &amp; träning</strong></div>
       <div class="fact"><span>Ljud</span><strong>Zoner, bas och headset</strong></div>
@@ -375,7 +375,7 @@ import "../../../styles/avab.css";
             <li>Separat ljud för gymyta, reception, lounge och gruppträningssalar.</li>
             <li>Trådlösa headset, handmikrofoner, Bluetooth och datoringång.</li>
             <li>Ljuslägen för energi, fokus eller lugn, automatiskt per pass.</li>
-            <li><a class="text-link" href="/tjanster/skarmar-projektorer/">Digital signage</a> för passchema, reklam och medlemsinfo.</li>
+            <li><a class="text-link" href="/tjanster/digital-signage/">Digital signage</a> för passchema, reklam och medlemsinfo.</li>
             <li><a class="text-link" href="/tjanster/kameraovervakning/">Kameraövervakning</a> med tydligt syfte, behörighet och skyltning.</li>
           </ul>
         </aside>
@@ -388,7 +388,7 @@ import "../../../styles/avab.css";
           <div>
             <div class="eyebrow">Referenser</div>
             <h2>Teknik som bevisats i träningsmiljö</h2>
-            <p class="lead-dark">AVAB arbetar med gym, <a class="text-link" href="/miljo/sporthall-arena/">sporthallar</a>, <a class="text-link" href="/miljo/skola/">skolor</a> och <a class="text-link" href="/miljo/hotell/">hotell</a>. Miljöer där energi, enkelhet och driftsäkerhet ska fungera varje pass, varje dag.</p>
+            <p class="lead-dark">AVAB arbetar med gym, <a class="text-link" href="/miljo/sporthall/">sporthallar</a>, <a class="text-link" href="/miljo/skola/">skolor</a> och <a class="text-link" href="/miljo/hotell/">hotell</a>. Miljöer där energi, enkelhet och driftsäkerhet ska fungera varje pass, varje dag.</p>
           </div>
         </div>
 
@@ -423,14 +423,14 @@ import "../../../styles/avab.css";
             <div class="ref-content">
               <h3>Lundsbergs skola</h3>
               <p>Sporthall ombyggd till gym med flera ljudzoner och infällda högtalare, styrt så enkelt att både elever och personal hanterar det direkt.</p>
-              <a href="/referenser/lundsbergs-skola-gym/">Se referensprojekt</a>
+              <a href="/referenser/lundsberg-skola-gym/">Se referensprojekt</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section mobile-secondary" id="arbetssatt">
+    <section class="section" id="arbetssatt">
       <div class="avab-container">
         <div class="section-heading">
           <div>
@@ -495,7 +495,7 @@ import "../../../styles/avab.css";
             <div class="cta-actions">
               <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
               <a class="button button-secondary" href="/tjanster/ljudsystem/">Läs om ljudsystem</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
             </div>
           </div>
 

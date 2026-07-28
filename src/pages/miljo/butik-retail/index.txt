@@ -1,5 +1,4 @@
 ﻿---
-import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
@@ -9,7 +8,7 @@ import "../../../styles/avab.css";
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ljud, Bild & Säkerhet för Butik och retail | AVAB</title>
+  <title>Ljud, Bild & Säkerhet för Butik & Retail | AVAB</title>
   <meta name="description" content="Teknik som ökar försäljning och minskar svinn. Vi projekterar zonstyrt ljud, digital signage, LED-väggar och smarta kamerasystem för retail." />
   
   <script type="application/ld+json">
@@ -19,8 +18,8 @@ import "../../../styles/avab.css";
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
-        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
-        { "@type": "ListItem", "position": 3, "name": "Butik och retail", "item": "https://avab.eu/miljo/butik-retail/" }
+        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljoer/" },
+        { "@type": "ListItem", "position": 3, "name": "Butik & Retail", "item": "https://avab.eu/miljoer/butik-retail/" }
       ]
     },
     {
@@ -122,10 +121,14 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; color: var(--avab-dark-muted); font-size: 1.05rem; line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
-    .solution-expand-inner { overflow: visible; opacity: 1; }
+    .solution-expandable { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    .solution-expand-inner { overflow: hidden; opacity: 0; transition: opacity 0.3s ease; }
+    .solution-card:hover .solution-expandable { grid-template-rows: 1fr; }
+    .solution-card:hover .solution-expand-inner { opacity: 1; }
 
-    .hover-indicator { display: none; }
+    .hover-indicator { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s ease, padding 0.4s ease; border-top: 1px solid var(--avab-border); padding-top: 20px; }
+    .solution-card:hover .hover-indicator { grid-template-rows: 0fr; padding-top: 0; border-top-color: transparent; }
+    .solution-card:hover .hover-indicator div { opacity: 0; }
 
     .bullet-list { list-style: none; margin-top: 20px; }
     .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; color: var(--avab-dark-muted); }
@@ -170,7 +173,7 @@ import "../../../styles/avab.css";
     @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
     @media (max-width: 768px) {
       .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { display: block; opacity: 1; margin-top: 24px; } .hover-indicator { display: none; } .solution-expand-inner { overflow: visible; opacity: 1; }
+      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; } .hover-indicator { display: none; } .solution-expand-inner { opacity: 1; }
       .flow-card strong, .flow-card span { min-height: auto; } 
     }
   </style>
@@ -180,14 +183,14 @@ import "../../../styles/avab.css";
 
   <header class="hero">
     <div class="container animate-in">
-      <div class="eyebrow">Miljö: Butik och retail</div>
+      <div class="eyebrow">Miljö: Butik & Retail</div>
       <h1>Teknik som ökar försäljning, skapar trygghet och ger kontroll</h1>
       <p>I en butik handlar teknik inte bara om ljud och bild – det handlar om konvertering. Vi bygger ekosystem som guidar kunden, skyddar mot svinn och analyserar köer i realtid.</p>
       <div style="margin-top: 40px;"><a class="button" href="/kontakt/">Boka kostnadsfri rådgivning</a></div>
     </div>
   </header>
 
-  <section class="fact-band mobile-secondary" aria-label="Snabbfakta butik och retail">
+  <section class="fact-band" aria-label="Snabbfakta butik och retail">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Butik och retailkedja</strong></div>
       <div class="fact"><span>Ljud</span><strong>Musikzoner och kampanjer</strong></div>
@@ -235,9 +238,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Trygghet:</a> Förebygg svinn och skydda personal</li>
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Exakt sökning:</a> Hitta händelser på sekunder</li>
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Affärsnytta:</a> Värmekartor och kö-analys</li>
+                    <li><a href="/kameraovervakning/" class="cat-link">Trygghet:</a> Förebygg svinn och skydda personal</li>
+                    <li><a href="/kameraovervakning/" class="cat-link">Exakt sökning:</a> Hitta händelser på sekunder</li>
+                    <li><a href="/kameraovervakning/" class="cat-link">Affärsnytta:</a> Värmekartor och kö-analys</li>
                   </ul>
                 </div>
               </div>
@@ -254,9 +257,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Zoner:</a> Olika musik i entré, säljyta och kassa</li>
-                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Utrop:</a> Tydliga kampanj- och personalmeddelanden</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Styrning:</a> Enkelt gränssnitt för butikschefen</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Zoner:</a> Olika musik i entré, säljyta och kassa</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Utrop:</a> Tydliga kampanj- och personalmeddelanden</li>
+                    <li><a href="/styrsystem/" class="cat-link">Styrning:</a> Enkelt gränssnitt för butikschefen</li>
                   </ul>
                 </div>
               </div>
@@ -273,9 +276,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/skarmar-projektorer/" class="cat-link">Exponering:</a> Ljusstarka LED-skärmar i skyltfönster</li>
-                    <li><a href="/tjanster/skarmar-projektorer/" class="cat-link">Digital Signage:</a> Kampanjskärmar i gångstråken</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Kontroll:</a> Byt innehåll centralt på sekunder</li>
+                    <li><a href="/bild/" class="cat-link">Exponering:</a> Ljusstarka LED-skärmar i skyltfönster</li>
+                    <li><a href="/bild/" class="cat-link">Digital Signage:</a> Kampanjskärmar i gångstråken</li>
+                    <li><a href="/losningar/systemintegration/" class="cat-link">Kontroll:</a> Byt innehåll centralt på sekunder</li>
                   </ul>
                 </div>
               </div>
@@ -293,8 +296,8 @@ import "../../../styles/avab.css";
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
                     <li><a href="https://www.hyrljud.nu" target="_blank" class="cat-link">Hyrljud<span>.</span>nu:</a> Tillfälliga ljud- och ljusanläggningar</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">DJ & Klubb:</a> Skapa energi utan dyra investeringar</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Skalbarhet:</a> Testa koncept före permanent bygge</li>
+                    <li><a href="/styrsystem/" class="cat-link">DJ & Klubb:</a> Skapa energi utan dyra investeringar</li>
+                    <li><a href="/losningar/systemintegration/" class="cat-link">Skalbarhet:</a> Testa koncept före permanent bygge</li>
                   </ul>
                 </div>
               </div>
@@ -302,7 +305,7 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="flow-grid animate-in mobile-secondary">
+        <div class="flow-grid animate-in">
           <div class="flow-card"><strong>Kamera-analys → Minskade köer</strong><span>Systemet larmar personalen om trycket ökar, så ni hinner öppna en kassa i tid.</span></div>
           <div class="flow-card"><strong>Digital Signage → Konvertering</strong><span>Säljande innehåll på rätt plats styr kundens fokus mot era mest lönsamma produkter.</span></div>
           <div class="flow-card"><strong>Tillfällig teknik → Trafik</strong><span>Dra folk till butiken med DJ-event och ljus via hyrljud<span>.</span>nu under intensiva kampanjhelger.</span></div>
@@ -310,7 +313,7 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section mobile-secondary" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
+    <section class="section" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
       <div class="container animate-in">
         <div class="section-header">
           <div class="eyebrow">Investering</div>
@@ -361,7 +364,7 @@ import "../../../styles/avab.css";
     </section>
 
     <section class="section" id="faq" style="border-top: 1px solid var(--avab-border);">
-      <div class="container">
+      <div class="container two-col">
         <div>
           <div class="eyebrow">Kunskap</div>
           <h2 style="margin-bottom: 32px;">Vanliga frågor om retailteknik</h2>
@@ -380,27 +383,20 @@ import "../../../styles/avab.css";
             </div>
           </div>
         </div>
-        <div class="fullwidth-cta-wrap">
-          <div class="fullwidth-cta animate-in">
-            <div>
-              <div class="eyebrow">Trygghet sedan 1990</div>
-              <h2>Ska vi optimera er butiksyta?</h2>
-              <p>Rätt projektering sparar pengar och ökar försäljningen. Låt oss se till att tekniken arbetar för er.</p>
-              <div class="cta-actions">
-                <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
-              </div>
-            </div>
-            <ul class="cta-points">
+        <aside class="cta-card">
+          <div class="eyebrow" style="background: rgba(255,255,255,0.1); color: #fff;">Trygghet sedan 1990</div>
+          <h2>Ska vi optimera er butiksyta?</h2>
+          <p>Rätt projektering sparar pengar och ökar försäljningen. Låt oss se till att tekniken arbetar för er.</p>
+          <ul class="guarantee-list">
             <li>Kameror som analyserar flöden</li>
             <li>Zonstyrt ljud för ökad konvertering</li>
             <li>Digitala skärmar som guidar kunden</li>
           </ul>
-          </div>
-        </div>
+          <div style="margin-top: 32px;"><a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a></div>
+        </aside>
       </div>
     </section>
   </main>
 
-  <SiteFooter />
 </body>
 </html>

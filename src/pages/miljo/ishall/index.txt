@@ -9,30 +9,30 @@ import "../../../styles/avab.css";
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ishall | Ljudsystem för extrem miljö – kristallklart tal | AVAB</title>
-  <meta name="description" content="AVAB projekterar ljud och AV-teknik för ishallar. Vi hanterar svår akustik och kondens med passiva, IP-klassade system och garanterad taluppfattbarhet (STI)." />
+  <title>Ishall &amp; arena | Ljudsystem för extrem miljö – kristallklart tal | AVAB</title>
+  <meta name="description" content="AVAB projekterar ljud och AV-teknik för ishallar och arenor. Vi hanterar svår akustik och kondens med passiva, IP-klassade system och garanterad taluppfattbarhet (STI)." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="author" content="AVAB" />
   <meta name="theme-color" content="#282E29" />
-  <link rel="canonical" href="https://www.avab.eu/miljo/ishall/" />
+  <link rel="canonical" href="https://www.avab.eu/ishall/" />
 
-  <meta property="og:title" content="Ishall | Ljudsystem för extrem miljö – kristallklart tal | AVAB" />
-  <meta property="og:description" content="Robust ljud och AV-teknik för ishallar: passiva IP-klassade högtalare, fukttåligt montage, EASE-simulering, STI, DMX-matchintro och talat utrymningslarm." />
+  <meta property="og:title" content="Ishall & arena | Ljudsystem för extrem miljö – kristallklart tal | AVAB" />
+  <meta property="og:description" content="Robust ljud och AV-teknik för ishallar och arenor: passiva IP-klassade högtalare, fukttåligt montage, EASE-simulering, STI, DMX-matchintro och talat utrymningslarm." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?auto=format&fit=crop&q=80&w=1600" />
   <meta property="og:image:width" content="1600" />
   <meta property="og:image:height" content="1067" />
-  <meta property="og:image:alt" content="Ishall – ljudsystem och AV-teknik från AVAB" />
-  <meta property="og:url" content="https://www.avab.eu/miljo/ishall/" />
+  <meta property="og:image:alt" content="Ishall och arena – ljudsystem och AV-teknik från AVAB" />
+  <meta property="og:url" content="https://www.avab.eu/ishall/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="sv_SE" />
   <meta property="og:site_name" content="AVAB" />
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ishall | Ljudsystem för extrem miljö | AVAB" />
-  <meta name="twitter:description" content="Passiva IP-klassade högtalare, fukttåligt montage, EASE-simulering, STI, DMX-matchintro och talat utrymningslarm för ishallar." />
+  <meta name="twitter:title" content="Ishall & arena | Ljudsystem för extrem miljö | AVAB" />
+  <meta name="twitter:description" content="Passiva IP-klassade högtalare, fukttåligt montage, EASE-simulering, STI, DMX-matchintro och talat utrymningslarm för ishallar och arenor." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?auto=format&fit=crop&q=80&w=1600" />
-  <meta name="twitter:image:alt" content="Ishall – ljudsystem och AV-teknik från AVAB" />
+  <meta name="twitter:image:alt" content="Ishall och arena – ljudsystem och AV-teknik från AVAB" />
 
   <!-- Favicon (byt sökväg till AVAB:s riktiga ikonfiler) -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -43,14 +43,14 @@ import "../../../styles/avab.css";
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Ljudsystem och AV-teknik för ishall",
-    "url": "https://www.avab.eu/miljo/ishall/",
+    "name": "Ljudsystem och AV-teknik för ishall och arena",
+    "url": "https://www.avab.eu/ishall/",
     "provider": {
       "@type": "LocalBusiness",
       "name": "AVAB",
       "url": "https://www.avab.eu/",
       "logo": "https://avab.eu/wp-content/uploads/logo.png",
-      "telephone": "+46548202080",
+      "telephone": "+46-54-820280",
       "email": "info@avab.eu",
       "address": {
         "@type": "PostalAddress",
@@ -74,7 +74,7 @@ import "../../../styles/avab.css";
       "Styrsystem för sekretariat",
       "Projektering och driftsättning"
     ],
-    "description": "AVAB projekterar, installerar och driftsätter ljud och AV-teknik för ishallar: passiva IP-klassade högtalare, fukttåligt montage, EASE-simulering, garanterad taluppfattbarhet (STI), DMX-styrt matchintro, talat utrymningslarm, hörslinga, styrsystem och dokumentation."
+    "description": "AVAB projekterar, installerar och driftsätter ljud och AV-teknik för ishallar och arenor: passiva IP-klassade högtalare, fukttåligt montage, EASE-simulering, garanterad taluppfattbarhet (STI), DMX-styrt matchintro, talat utrymningslarm, hörslinga, styrsystem och dokumentation."
   }
   </script>
 
@@ -118,7 +118,7 @@ import "../../../styles/avab.css";
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.avab.eu/" },
       { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://www.avab.eu/#miljoer" },
-      { "@type": "ListItem", "position": 3, "name": "Ishall", "item": "https://www.avab.eu/miljo/ishall/" }
+      { "@type": "ListItem", "position": 3, "name": "Ishall & arena", "item": "https://www.avab.eu/ishall/" }
     ]
   }
   </script>
@@ -127,10 +127,10 @@ import "../../../styles/avab.css";
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://www.avab.eu/miljo/ishall/#webpage",
-    "url": "https://www.avab.eu/miljo/ishall/",
-    "name": "Ishall | Ljudsystem för extrem miljö – kristallklart tal | AVAB",
-    "description": "Ljud och AV-teknik för ishallar: passiva IP-klassade högtalare, fukttåligt montage, EASE-simulering, STI, DMX-matchintro, talat utrymningslarm och styrsystem.",
+    "@id": "https://www.avab.eu/ishall/#webpage",
+    "url": "https://www.avab.eu/ishall/",
+    "name": "Ishall & arena | Ljudsystem för extrem miljö – kristallklart tal | AVAB",
+    "description": "Ljud och AV-teknik för ishallar och arenor: passiva IP-klassade högtalare, fukttåligt montage, EASE-simulering, STI, DMX-matchintro, talat utrymningslarm och styrsystem.",
     "inLanguage": "sv-SE",
     "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
     "datePublished": "2025-01-01",
@@ -197,12 +197,24 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 22px; font-size: 1.02rem; color: var(--avab-dark-muted); line-height: 1.6; }
     .solution-card-bottom { margin-top: auto; }
 
-    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
-    .solution-expand-inner { overflow: visible; opacity: 1; }
+    .solution-expandable {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .solution-expand-inner { overflow: hidden; opacity: 0; transition: opacity 0.3s ease; }
     .solution-card:hover .solution-expandable,
+    .solution-card:focus-within .solution-expandable { grid-template-rows: 1fr; }
     .solution-card:hover .solution-expand-inner,
+    .solution-card:focus-within .solution-expand-inner { opacity: 1; }
 
-    .hover-indicator { display: none; }
+    .hover-indicator {
+      display: grid;
+      grid-template-rows: 1fr;
+      transition: grid-template-rows 0.4s ease, padding 0.4s ease;
+      border-top: 1px solid var(--avab-border);
+      padding-top: 18px;
+    }
     .hover-indicator > div {
       font-weight: 800;
       color: var(--avab-dark);
@@ -211,6 +223,7 @@ import "../../../styles/avab.css";
       letter-spacing: 0.05em;
     }
     .solution-card:hover .hover-indicator,
+    .solution-card:focus-within .hover-indicator { grid-template-rows: 0fr; padding-top: 0; border-top-color: transparent; }
     .solution-card:hover .hover-indicator > div,
     .solution-card:focus-within .hover-indicator > div { opacity: 0; }
 
@@ -263,8 +276,8 @@ import "../../../styles/avab.css";
 
     @media (max-width: 768px) {
       /* På mobil: visa lösningskortens innehåll direkt (inget hover) */
-      .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
-      .solution-expand-inner { overflow: visible; opacity: 1; }
+      .solution-expandable { grid-template-rows: 1fr; }
+      .solution-expand-inner { opacity: 1; }
       .hover-indicator { display: none; }
     }
   </style>
@@ -277,7 +290,7 @@ import "../../../styles/avab.css";
       <ol>
         <li><a href="https://www.avab.eu/">Start</a></li>
         <li><a href="https://www.avab.eu/#miljoer">Miljöer</a></li>
-        <li><span aria-current="page">Ishall</span></li>
+        <li><span aria-current="page">Ishall &amp; arena</span></li>
       </ol>
     </div>
   </nav>
@@ -285,7 +298,7 @@ import "../../../styles/avab.css";
   <section class="hero" style="--hero-image:url('https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?auto=format&fit=crop&q=80&w=1800');">
     <div class="avab-container">
       <div class="hero-inner animate-in">
-        <div class="eyebrow">Ishall</div>
+        <div class="eyebrow">Ishall &amp; arena</div>
 
         <h1>Ljudsystem som övervinner ekot och kylan</h1>
 
@@ -302,9 +315,9 @@ import "../../../styles/avab.css";
       </div>
     </div>
   </section>
-  <section class="fact-band mobile-secondary" aria-label="Snabbfakta ishall">
+  <section class="fact-band" aria-label="Snabbfakta ishall">
     <div class="fact-grid">
-      <div class="fact"><span>Miljö</span><strong>Ishall</strong></div>
+      <div class="fact"><span>Miljö</span><strong>Ishall &amp; arena</strong></div>
       <div class="fact"><span>Ljud</span><strong>Tal, matchintro och måltuta</strong></div>
       <div class="fact"><span>Material</span><strong>Passivt och IP-klassat</strong></div>
       <div class="fact"><span>Akustik</span><strong>EASE-simulering och STI</strong></div>
@@ -429,7 +442,7 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="flow-grid animate-in mobile-secondary">
+        <div class="flow-grid animate-in">
           <div class="flow-card"><strong>Teknikrum → Driftsäkerhet</strong><span>Att isolera förstärkarna i ett varmt utrymme minimerar risken för fuktkortslutningar.</span></div>
           <div class="flow-card"><strong>Direktivitet → Akustik</strong><span>Att rikta högtalarna bort från isen är avgörande för att bekämpa hallens eko.</span></div>
           <div class="flow-card"><strong>Styrsystem → Personal</strong><span>Sekretariatet sköter all teknik, från utvisningsmusik till måltuta, från en enda skärm.</span></div>
@@ -443,7 +456,7 @@ import "../../../styles/avab.css";
           <div>
             <div class="eyebrow">Arenareferenser</div>
             <h2>Teknik som tål minusgrader</h2>
-            <p class="lead-dark">AVAB arbetar med ishallar, arenor, sporthallar och andra publika miljöer där ljud, styrning och säkerhet måste fungera i tuffa förhållanden. Närliggande sidor: <a class="text-link" href="/miljo/sporthall-arena/">sporthall och arena</a>, <a class="text-link" href="/miljo/simhall/">simhall</a> och <a class="text-link" href="/tjanster/taluppfattbarhet/">taluppfattbarhet</a>.</p>
+            <p class="lead-dark">AVAB arbetar med ishallar, arenor, sporthallar och andra publika miljöer där ljud, styrning och säkerhet måste fungera i tuffa förhållanden. Närliggande sidor: <a class="text-link" href="/miljo/sporthall/">sporthall &amp; arena</a>, <a class="text-link" href="/miljo/simhall/">simhall</a> och <a class="text-link" href="/tjanster/taluppfattbarhet/">taluppfattbarhet</a>.</p>
           </div>
         </div>
         <div class="ref-grid">
@@ -466,7 +479,7 @@ import "../../../styles/avab.css";
     </section>
 
     <section class="section section--light" id="faq">
-      <div class="avab-container" style="align-items: start;">
+      <div class="avab-container two-col" style="align-items: start;">
         <div>
           <div class="eyebrow">Kunskap</div>
           <h2>Vanliga frågor om ishallar</h2>
@@ -486,23 +499,19 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <div class="fullwidth-cta-wrap">
-          <div class="fullwidth-cta animate-in">
-            <div>
-              <div class="eyebrow">Trygghet sedan 1990</div>
-              <h2>Behöver ni räkna på akustiken?</h2>
-              <p>Vi tar helhetsansvaret för ljud i kalla miljöer – från EASE-simuleringar av ekot till korrekt dimensionerat kablage och driftsäkra teknikrum.</p>
-              <div class="cta-actions">
-            <a class="button button-light" href="/kontakt/">Boka EASE-genomgång</a>
-          </div>
-            </div>
-            <ul class="cta-points">
+        <aside class="cta-card animate-in">
+          <div class="eyebrow">Trygghet sedan 1990</div>
+          <h2>Behöver ni räkna på akustiken?</h2>
+          <p>Vi tar helhetsansvaret för ljud i kalla miljöer – från EASE-simuleringar av ekot till korrekt dimensionerat kablage och driftsäkra teknikrum.</p>
+          <ul class="calc-list">
             <li>Akustisk 3D-simulering</li>
             <li>Passiva &amp; fukttåliga system</li>
             <li>Garanterad taluppfattbarhet (STI)</li>
           </ul>
+          <div class="cta-actions">
+            <a class="button button-light" href="/kontakt/">Boka EASE-genomgång</a>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
   </main>

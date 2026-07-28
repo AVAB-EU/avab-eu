@@ -1,5 +1,4 @@
 ﻿---
-import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
@@ -19,8 +18,8 @@ import "../../../styles/avab.css";
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
-        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
-        { "@type": "ListItem", "position": 3, "name": "Fotboll utomhus", "item": "https://avab.eu/miljo/fotboll-utomhus/" }
+        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljoer/" },
+        { "@type": "ListItem", "position": 3, "name": "Fotboll utomhus", "item": "https://avab.eu/miljoer/fotboll-utomhus/" }
       ]
     },
     {
@@ -139,10 +138,14 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; font-size: 1.05rem; color: var(--avab-dark-muted); line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
-    .solution-expand-inner { overflow: visible; opacity: 1; }
+    .solution-expandable { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    .solution-expand-inner { overflow: hidden; opacity: 0; transition: opacity 0.3s ease; }
+    .solution-card:hover .solution-expandable { grid-template-rows: 1fr; }
+    .solution-card:hover .solution-expand-inner { opacity: 1; }
 
-    .hover-indicator { display: none; }
+    .hover-indicator { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s ease, padding 0.4s ease; border-top: 1px solid var(--avab-border); padding-top: 20px; }
+    .solution-card:hover .hover-indicator { grid-template-rows: 0fr; padding-top: 0; border-top-color: transparent; }
+    .solution-card:hover .hover-indicator div { opacity: 0; }
 
     /* Länkar i rutor */
     .bullet-list { list-style: none; margin-top: 20px; }
@@ -210,7 +213,7 @@ import "../../../styles/avab.css";
       .hero { padding: 100px 0 60px; } 
       .section { padding: 40px 0; } 
       .solution-card h3 { min-height: auto; } 
-      .solution-expandable { display: block; opacity: 1; margin-top: 24px; } .hover-indicator { display: none; } .solution-expand-inner { overflow: visible; opacity: 1; }
+      .solution-expandable { grid-template-rows: 1fr; } .hover-indicator { display: none; } .solution-expand-inner { opacity: 1; }
       .flow-card strong, .flow-card span { min-height: auto; } 
     }
   </style>
@@ -230,7 +233,7 @@ import "../../../styles/avab.css";
     </div>
   </header>
 
-  <section class="fact-band mobile-secondary" aria-label="Snabbfakta utomhusidrott">
+  <section class="fact-band" aria-label="Snabbfakta utomhusidrott">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Fotboll, arena och IP</strong></div>
       <div class="fact"><span>Ljud</span><strong>Speaker, musik och publik</strong></div>
@@ -243,7 +246,7 @@ import "../../../styles/avab.css";
 
   <main>
     <section class="section" style="border-bottom: 1px solid var(--avab-border);">
-      <div class="container">
+      <div class="container two-col">
         <div class="animate-in">
           <div class="eyebrow">Verkligheten</div>
           <h2>Arenans extrema utomhusmiljö</h2>
@@ -291,9 +294,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Hårdvara:</a> <a href="/tjanster/" class="kw-link">IP-klassade</a> väderbeständiga system</li>
-                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Spridning:</a> Hornhögtalare & väderklassade line arrays</li>
-                    <li><a href="/tjanster/taluppfattbarhet/" class="cat-link">Projektering:</a> Akustisk beräkning utomhus</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Hårdvara:</a> <a href="/losningar/" class="kw-link">IP-klassade</a> väderbeständiga system</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Spridning:</a> Hornhögtalare & väderklassade line arrays</li>
+                    <li><a href="/losningar/taluppfattbarhet/" class="cat-link">Projektering:</a> Akustisk beräkning utomhus</li>
                   </ul>
                 </div>
               </div>
@@ -310,9 +313,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/mikrofoner/" class="cat-link">Räckvidd:</a> Antenndistribution över långa avstånd</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Säkerhet:</a> Krypterad frekvenshantering utan avbrott</li>
-                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Produkter:</a> Tåliga hand- och ficksändare</li>
+                    <li><a href="/ljudsystem/mikrofoner/" class="cat-link">Räckvidd:</a> Antenndistribution över långa avstånd</li>
+                    <li><a href="/losningar/systemintegration/" class="cat-link">Säkerhet:</a> Krypterad frekvenshantering utan avbrott</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Produkter:</a> Tåliga hand- och ficksändare</li>
                   </ul>
                 </div>
               </div>
@@ -329,9 +332,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Zoner:</a> Flexibel uppdelning av arenaområdet</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Distribution:</a> Långa kabeldragningar med Dante/Fiber</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Gränssnitt:</a> Enkla touchpaneler för speaker och personal</li>
+                    <li><a href="/styrsystem/" class="cat-link">Zoner:</a> Flexibel uppdelning av arenaområdet</li>
+                    <li><a href="/losningar/systemintegration/" class="cat-link">Distribution:</a> Långa kabeldragningar med Dante/Fiber</li>
+                    <li><a href="/styrsystem/" class="cat-link">Gränssnitt:</a> Enkla touchpaneler för speaker och personal</li>
                   </ul>
                 </div>
               </div>
@@ -348,9 +351,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/talat-utrymningslarm/" class="cat-link">TUL:</a> Godkända röstlarm vid evakuering</li>
-                    <li><a href="/tjanster/horslinga/" class="cat-link">Tillgänglighet:</a> Utomhusanpassade hörslingor</li>
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Övervakning:</a> VMS och högupplösta kameror</li>
+                    <li><a href="/losningar/utrymningslarm/" class="cat-link">TUL:</a> Godkända röstlarm vid evakuering</li>
+                    <li><a href="/losningar/horslingor/" class="cat-link">Tillgänglighet:</a> Utomhusanpassade hörslingor</li>
+                    <li><a href="/kameraovervakning/" class="cat-link">Övervakning:</a> VMS och högupplösta kameror</li>
                   </ul>
                 </div>
               </div>
@@ -359,7 +362,7 @@ import "../../../styles/avab.css";
 
         </div>
         
-        <div class="flow-grid animate-in mobile-secondary">
+        <div class="flow-grid animate-in">
           <div class="flow-card"><strong>1. Exakt Zonindelning</strong><span>Rikta musiken enbart mot klacken och speakerljudet mot hela läktaren utan onödigt spill.</span></div>
           <div class="flow-card"><strong>2. Integrerad Säkerhet</strong><span>Vid fara tar utrymningslarmet omedelbart över och ger publiken lugna röstinstruktioner.</span></div>
           <div class="flow-card"><strong>3. Smidig Kontroll</strong><span>Speaker, domare eller vaktmästare styr hela arenamiljön enkelt via touchpanel eller app.</span></div>
@@ -415,29 +418,26 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <div class="fullwidth-cta-wrap">
-          <div class="fullwidth-cta animate-in">
-            <div>
-              <div class="eyebrow">Trygghet sedan 1990</div>
-              <h2>Behöver ni hjälp med projektering för utomhusarena?</h2>
-              <p>Att bygga robusta system utomhus kräver rätt val av komponenter från start. Vi hjälper er kravställa rätt IP-klassning, räckvidd och zonindelning för en framtidssäker idrottsplats.</p>
-              <div class="cta-actions">
-                <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri projektering</a>
-              </div>
-            </div>
-            <ul class="cta-points">
+        <aside class="cta-card">
+          <div class="eyebrow" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">Trygghet sedan 1990</div>
+          <h2>Behöver ni hjälp med projektering för utomhusarena?</h2>
+          <p>Att bygga robusta system utomhus kräver rätt val av komponenter från start. Vi hjälper er kravställa rätt IP-klassning, räckvidd och zonindelning för en framtidssäker idrottsplats.</p>
+          
+          <ul class="guarantee-list">
             <li>Vädertålig hårdvara (IP-klassat)</li>
             <li>Akustisk beräkning utomhus</li>
             <li>Godkända utrymningslarm (TUL)</li>
           </ul>
+          
+          <div class="hero-actions" style="margin-top: 32px; flex-direction: column; align-items: flex-start; width: 100%;">
+            <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri projektering</a>
           </div>
-        </div>
+        </aside>
 
       </div>
     </section>
 
   </main>
 
-  <SiteFooter />
 </body>
 </html>

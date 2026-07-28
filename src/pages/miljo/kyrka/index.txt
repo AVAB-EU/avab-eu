@@ -1,5 +1,4 @@
 ﻿---
-import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
@@ -19,8 +18,8 @@ import "../../../styles/avab.css";
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
-        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
-        { "@type": "ListItem", "position": 3, "name": "Kyrka", "item": "https://avab.eu/miljo/kyrka/" }
+        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljoer/" },
+        { "@type": "ListItem", "position": 3, "name": "Kyrka", "item": "https://avab.eu/miljoer/kyrka/" }
       ]
     },
     {
@@ -128,10 +127,14 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; font-size: 1.05rem; color: var(--avab-dark-muted); line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
-    .solution-expand-inner { overflow: visible; opacity: 1; }
+    .solution-expandable { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    .solution-expand-inner { overflow: hidden; opacity: 0; transition: opacity 0.3s ease; }
+    .solution-card:hover .solution-expandable { grid-template-rows: 1fr; }
+    .solution-card:hover .solution-expand-inner { opacity: 1; }
 
-    .hover-indicator { display: none; }
+    .hover-indicator { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s ease, padding 0.4s ease; border-top: 1px solid var(--avab-border); padding-top: 20px; }
+    .solution-card:hover .hover-indicator { grid-template-rows: 0fr; padding-top: 0; border-top-color: transparent; }
+    .solution-card:hover .hover-indicator div { opacity: 0; }
 
     .bullet-list { list-style: none; margin-top: 20px; }
     .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; line-height: 1.5; color: var(--avab-dark-muted); }
@@ -196,7 +199,7 @@ import "../../../styles/avab.css";
     @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
     @media (max-width: 768px) {
       .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { display: block; opacity: 1; margin-top: 24px; } .hover-indicator { display: none; } .solution-expand-inner { overflow: visible; opacity: 1; }
+      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; } .hover-indicator { display: none; } .solution-expand-inner { opacity: 1; }
       .flow-card strong, .flow-card span { min-height: auto; } 
     }
   </style>
@@ -215,7 +218,7 @@ import "../../../styles/avab.css";
     </div>
   </header>
 
-  <section class="fact-band mobile-secondary" aria-label="Snabbfakta kyrka">
+  <section class="fact-band" aria-label="Snabbfakta kyrka">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Kyrkorum och församlingshem</strong></div>
       <div class="fact"><span>Ljud</span><strong>Tal, kör och musik</strong></div>
@@ -228,7 +231,7 @@ import "../../../styles/avab.css";
 
   <main>
     <section class="section" style="border-bottom: 1px solid var(--avab-border);">
-      <div class="container">
+      <div class="container two-col">
         <div class="animate-in">
           <div class="eyebrow">Verkligheten</div>
           <h2>En vacker men akustiskt extrem miljö</h2>
@@ -274,9 +277,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/ljudsystem/" class="cat-link">DSP:</a> Delay-system och avancerad signalbehandling</li>
-                    <li><a href="/tjanster/ljudsystem/" class="kw-link">Automixer:</a> Hanterar präst och kör automatiskt</li>
-                    <li><a href="/tjanster/taluppfattbarhet/" class="cat-link">Design:</a> Smala pelarhögtalare som smälter in</li>
+                    <li><a href="/ljudsystem/" class="cat-link">DSP:</a> Delay-system och avancerad signalbehandling</li>
+                    <li><a href="/ljudsystem/" class="kw-link">Automixer:</a> Hanterar präst och kör automatiskt</li>
+                    <li><a href="/losningar/taluppfattbarhet/" class="cat-link">Design:</a> Smala pelarhögtalare som smälter in</li>
                   </ul>
                 </div>
               </div>
@@ -293,9 +296,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/horslinga/" class="cat-link">Trådlöst:</a> Ljuddistribution med noll fördröjning</li>
-                    <li><a href="/tjanster/horslinga/" class="kw-link">Auracast:</a> Nästa generations tillgänglighet</li>
-                    <li><a href="/tjanster/horslinga/" class="cat-link">Hjälpmedel:</a> Mottagare och smidiga halsslingor</li>
+                    <li><a href="/losningar/horslingor/" class="cat-link">Trådlöst:</a> Ljuddistribution med noll fördröjning</li>
+                    <li><a href="/losningar/horslingor/" class="kw-link">Auracast:</a> Nästa generations tillgänglighet</li>
+                    <li><a href="/losningar/horslingor/" class="cat-link">Hjälpmedel:</a> Mottagare och smidiga halsslingor</li>
                   </ul>
                 </div>
               </div>
@@ -312,9 +315,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Presets:</a> Lägen för gudstjänst, dop eller konsert</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="kw-link">Zoner:</a> Oberoende ljud i kyrkosal och sakristia</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Ljus:</a> Integrerad styrning av stämningsbelysning</li>
+                    <li><a href="/styrsystem/" class="cat-link">Presets:</a> Lägen för gudstjänst, dop eller konsert</li>
+                    <li><a href="/styrsystem/" class="kw-link">Zoner:</a> Oberoende ljud i kyrkosal och sakristia</li>
+                    <li><a href="/styrsystem/" class="cat-link">Ljus:</a> Integrerad styrning av stämningsbelysning</li>
                   </ul>
                 </div>
               </div>
@@ -331,9 +334,9 @@ import "../../../styles/avab.css";
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Inkoppling:</a> Dante- och analoga ljudpaneler</li>
+                    <li><a href="/losningar/systemintegration/" class="cat-link">Inkoppling:</a> Dante- och analoga ljudpaneler</li>
                     <li><a href="https://www.hyrljud.nu" target="_blank" class="kw-link">www.test1.avab.eu/:</a> Skala upp utrustningen vid behov</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Scenljus:</a> DMX-styrd belysning för kör och artister</li>
+                    <li><a href="/styrsystem/" class="cat-link">Scenljus:</a> DMX-styrd belysning för kör och artister</li>
                   </ul>
                 </div>
               </div>
@@ -341,7 +344,7 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="flow-grid animate-in mobile-secondary">
+        <div class="flow-grid animate-in">
           <div class="flow-card"><strong>Automixer → Tydlighet</strong><span>Justerar automatiskt volymen mellan präst och handmikrofoner utan att en tekniker behövs.</span></div>
           <div class="flow-card"><strong>Auracast → Kulturarv</strong><span>Trådlös ljuddistribution gör att vi slipper stora fysiska ingrepp i historiska stengolv.</span></div>
           <div class="flow-card"><strong>Zonstyrning → Flexibilitet</strong><span>Gör det möjligt för församlingen i sidokapellet att höra musiken lika tydligt som i mittgången.</span></div>
@@ -349,7 +352,7 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section mobile-secondary" style="background: var(--avab-white); border-top: 1px solid var(--avab-border);">
+    <section class="section" style="background: var(--avab-white); border-top: 1px solid var(--avab-border);">
       <div class="container animate-in">
         <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto;">
           <div class="eyebrow">Investering</div>
@@ -423,27 +426,22 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <div class="fullwidth-cta-wrap">
-          <div class="fullwidth-cta animate-in">
-            <div>
-              <div class="eyebrow">Trygghet sedan 1990</div>
-              <h2>Ska vi uppgradera er kyrka?</h2>
-              <p>Vi projekterar system med den allra största respekt för byggnadens historia och akustik.</p>
-              <div class="cta-actions">
-                <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
-              </div>
-            </div>
-            <ul class="cta-points">
+        <aside class="cta-card">
+          <div class="eyebrow" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">Trygghet sedan 1990</div>
+          <h2>Ska vi uppgradera er kyrka?</h2>
+          <p>Vi projekterar system med den allra största respekt för byggnadens historia och akustik.</p>
+          <ul class="guarantee-list">
             <li>Inga skador på historiska ytor</li>
             <li>Auracast & diskreta system</li>
             <li>Färdiga ljudlägen för personalen</li>
           </ul>
+          <div class="hero-actions" style="margin-top: 32px; flex-direction: column; align-items: flex-start; width: 100%;">
+            <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
   </main>
 
-  <SiteFooter />
 </body>
 </html>
