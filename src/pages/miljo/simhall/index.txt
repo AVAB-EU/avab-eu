@@ -14,7 +14,7 @@ import "../../../styles/avab.css";
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="author" content="AVAB" />
   <meta name="theme-color" content="#282E29" />
-  <link rel="canonical" href="https://www.avab.eu/miljo/simhall/" />
+  <link rel="canonical" href="https://www.avab.eu/simhall/" />
 
   <meta property="og:title" content="Simhall & badhus | Komplett AV-lösning | AVAB" />
   <meta property="og:description" content="Tydligt tal, zonstyrt ljud, fukttålig teknik, hörslinga, infoskärmar och smart styrning för simhallar, badhus, relax, gym och publika badanläggningar." />
@@ -22,7 +22,7 @@ import "../../../styles/avab.css";
   <meta property="og:image:width" content="1536" />
   <meta property="og:image:height" content="864" />
   <meta property="og:image:alt" content="Säffle simhall – AV-teknik och fukttålig ljudanläggning från AVAB" />
-  <meta property="og:url" content="https://www.avab.eu/miljo/simhall/" />
+  <meta property="og:url" content="https://www.avab.eu/simhall/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="sv_SE" />
   <meta property="og:site_name" content="AVAB" />
@@ -49,7 +49,7 @@ import "../../../styles/avab.css";
       "name": "AVAB",
       "url": "https://www.avab.eu/",
       "logo": "https://avab.eu/wp-content/uploads/logo.png",
-      "telephone": "+46548202080",
+      "telephone": "+46-54-820280",
       "email": "info@avab.eu",
       "address": {
         "@type": "PostalAddress",
@@ -174,7 +174,7 @@ import "../../../styles/avab.css";
         "@type": "ListItem",
         "position": 3,
         "name": "Simhall & badhus",
-        "item": "https://www.avab.eu/miljo/simhall/"
+        "item": "https://www.avab.eu/simhall/"
       }
     ]
   }
@@ -184,8 +184,8 @@ import "../../../styles/avab.css";
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://www.avab.eu/miljo/simhall/#webpage",
-    "url": "https://www.avab.eu/miljo/simhall/",
+    "@id": "https://www.avab.eu/simhall/#webpage",
+    "url": "https://www.avab.eu/simhall/",
     "name": "Simhall & badhus | Komplett AV-lösning | AVAB",
     "description": "Komplett AV-teknik för simhallar och badhus: ljud, zoner, styrning, fukttåliga högtalare, hörslinga, infoskärmar, STI, talat utrymningslarm, FFU och dokumentation.",
     "inLanguage": "sv-SE",
@@ -328,7 +328,18 @@ import "../../../styles/avab.css";
       </div>
     </div>
   </section>
-  <section class="fact-band mobile-secondary" aria-label="Snabbfakta simhall">
+
+  <div class="procurement-strip">
+    <div class="avab-container procurement-container">
+      <span class="procurement-item">Tydligt tal</span>
+      <span class="procurement-item">Fukttålig teknik</span>
+      <span class="procurement-item">Smart styrning</span>
+      <span class="procurement-item">Upphandlingsklart underlag</span>
+    </div>
+  </div>
+
+
+  <section class="fact-band" aria-label="Snabbfakta simhall">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Simhall &amp; badhus</strong></div>
       <div class="fact"><span>Ljud</span><strong>Tal, utrop och musik</strong></div>
@@ -501,7 +512,7 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section mobile-secondary" id="arbetssatt">
+    <section class="section" id="arbetssatt">
       <div class="avab-container">
         <div class="section-heading">
           <div>
@@ -570,7 +581,7 @@ import "../../../styles/avab.css";
             <div class="cta-actions">
               <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
               <a class="button button-secondary" href="/kontakt/">Få budgetnivå tidigt</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
             </div>
           </div>
 
