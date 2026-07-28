@@ -54,9 +54,9 @@ import "../../../styles/avab.css";
       "@type": "LocalBusiness",
       "name": "AVAB",
       "url": "https://www.avab.eu/",
-      "logo": "https://www.avab.eu/assets/avab-logotyp.png",
+      "logo": "https://www.avab.eu/logo.png",
       "image": "https://www.avab.eu/assets/avab-referens-sorby-sporthall-kumla-1200x900.webp",
-      "telephone": "+46-54-8202080",
+      "telephone": "+46548202080",
       "email": "info@avab.eu",
       "sameAs": [
         "https://www.linkedin.com/company/avab",
@@ -166,12 +166,12 @@ import "../../../styles/avab.css";
         "@type": "ListItem",
         "position": 2,
         "name": "Miljöer",
-        "item": "https://www.avab.eu/#miljoer"
+        "item": "https://www.avab.eu/miljo/"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Sporthall & arena",
+        "name": "Sporthall och arena",
         "item": "https://www.avab.eu/miljo/sporthall-arena/"
       }
     ]
@@ -301,18 +301,19 @@ import "../../../styles/avab.css";
       .sporthall-faq-cta .compact-faq {
         margin-bottom: 44px;
       }
+      .sporthall-mobile-secondary { display: none !important; }
     }
   </style>
 </head>
-<body class="environment-detail">
+<body>
   <SiteHeader />
 
   <nav class="breadcrumbs" aria-label="Brödsmulor">
     <div class="avab-container">
       <ol>
         <li><a href="https://www.avab.eu/">Start</a></li>
-        <li><a href="https://www.avab.eu/#miljoer">Miljöer</a></li>
-        <li><span aria-current="page">Sporthall & arena</span></li>
+        <li><a href="https://www.avab.eu/miljo/">Miljöer</a></li>
+        <li><span aria-current="page">Sporthall och arena</span></li>
       </ol>
     </div>
   </nav>
@@ -332,7 +333,7 @@ import "../../../styles/avab.css";
         <div class="hero-bottom">
           <div class="hero-actions">
             <a class="button button-primary" href="/kontakt/">Skicka ritningar eller boka genomgång</a>
-            <a class="button button-secondary" href="/bygg-din-losning/sporthall/">Räkna på din hall</a>
+            <a class="button button-secondary" href="/budgetkalkylator-av-teknik/">Räkna på din hall</a>
             <a class="button button-quiet" href="#referenser">Se referenser</a>
           </div>
         </div>
@@ -340,7 +341,7 @@ import "../../../styles/avab.css";
     </div>
   </section>
 
-  <section class="fact-band" aria-label="Snabbfakta sporthall">
+  <section class="fact-band sporthall-mobile-secondary" aria-label="Snabbfakta sporthall">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Sporthall &amp; idrottshall</strong></div>
       <div class="fact"><span>Ljud</span><strong>Tal, musik och speaker</strong></div>
@@ -378,24 +379,24 @@ import "../../../styles/avab.css";
             <h3>Enkel styrning</h3>
             <p>Mikrofoner, Bluetooth och zoner för personal och föreningar.</p>
           </article>
-          <article class="value-card">
+          <article class="value-card sporthall-mobile-secondary">
             <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18.5a3.5 3.5 0 1 0 7 0c0-1.57.92-2.52 2.04-3.46a6 6 0 1 0-8.04-9"/><path d="M6 9.5a3.5 3.5 0 1 1 4.5 3.36"/></svg></span>
             <h3>Tillgänglighet</h3>
             <p>Hörslinga, Auracast och STI planerat från början.</p>
           </article>
-          <article class="value-card">
+          <article class="value-card sporthall-mobile-secondary">
             <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg></span>
             <h3>Upphandlingsklart</h3>
             <p>FFU, dokumentation, inmätning och överlämning.</p>
           </article>
         </div>
 
-        <div class="calculator-band">
+        <div class="calculator-band sporthall-mobile-secondary">
           <div>
             <h3>Vill du se budgetnivån direkt?</h3>
             <p>Öppna sporthallskalkylatorn och räkna på ljud, zoner, styrning, hörslinga, läktare och STI.</p>
           </div>
-          <a class="button button-primary" href="/bygg-din-losning/sporthall/">Räkna på din hall</a>
+          <a class="button button-primary" href="/budgetkalkylator-av-teknik/">Räkna på din hall</a>
         </div>
       </div>
     </section>
@@ -405,18 +406,18 @@ import "../../../styles/avab.css";
         <div>
           <div class="eyebrow">Lösning</div>
           <h2>Sporthallar kräver mer än starka högtalare</h2>
-          <p>I många hallar hörs ljudet, men talet går ändå inte att uppfatta. Orsaken är ofta fel högtalarplacering, hårda ytor, högt tak, publik, bollträffar och lång efterklang. Därför projekterar vi ljudsystem och taluppfattbarhet tillsammans, inte var för sig.</p>
-          <p>När hallen delas med ridåvägg behöver A-hall och B-hall kunna användas separat, samtidigt som systemet ska fungera som helsal vid match, avslutning eller evenemang. I skolhallar samordnas anläggningen dessutom ofta med <a class="text-link" href="/rastsignal/">rastsignal</a> och talat utrymningslarm.</p>
+          <p>I många hallar hörs ljudet, men talet går ändå inte att uppfatta. Orsaken är ofta fel högtalarplacering, hårda ytor, högt tak, publik, bollträffar och lång efterklang. Därför projekterar vi <a class="text-link" href="/tjanster/ljudsystem/">ljudsystem</a> och <a class="text-link" href="/tjanster/taluppfattbarhet/">taluppfattbarhet</a> tillsammans, inte var för sig.</p>
+          <p>När hallen delas med ridåvägg behöver A-hall och B-hall kunna användas separat, samtidigt som systemet ska fungera som helsal vid match, avslutning eller evenemang. I skolhallar samordnas anläggningen dessutom ofta med <a class="text-link" href="/rastsignal/">rastsignal</a> och <a class="text-link" href="/tjanster/talat-utrymningslarm/">talat utrymningslarm</a>.</p>
         </div>
 
         <aside class="card solution-card">
           <h3>Därför projekterar vi systemet som en helhet</h3>
           <ul class="bullet-list">
-            <li>Ljudanläggning och högtalarplacering för taluppfattbarhet.</li>
-            <li>Zoner för A-hall, B-hall och helsal.</li>
+            <li><a class="text-link" href="/tjanster/ljudsystem/">Ljudanläggning</a> och högtalarplacering för <a class="text-link" href="/tjanster/taluppfattbarhet/">taluppfattbarhet</a>.</li>
+            <li><a class="text-link" href="/tjanster/styrsystem-integration/">Zoner</a> för A-hall, B-hall och helsal.</li>
             <li>Mikrofoner, headset, Bluetooth, musik och speakerljud.</li>
             <li><a class="text-link" href="/tjanster/horslinga/">Hörslinga</a>, Auracast, STI och inmätning vid krav.</li>
-            <li>Brandlarmsgränssnitt, dokumentation och driftunderlag.</li>
+            <li><a class="text-link" href="/tjanster/talat-utrymningslarm/">Brandlarmsgränssnitt</a>, dokumentation och driftunderlag.</li>
           </ul>
         </aside>
       </div>
@@ -428,11 +429,11 @@ import "../../../styles/avab.css";
           <div>
             <div class="eyebrow">Referenser</div>
             <h2>Beprövad teknik i publika miljöer</h2>
-            <p class="lead-dark">AVAB arbetar med sporthallar, idrottshallar, <a class="text-link" href="/miljo/skola/">skolor</a>, <a class="text-link" href="/miljo/simhall/">simhallar</a>, <a class="text-link" href="/miljo/ishall/">ishallar</a> och <a class="text-link" href="/miljo/utomhusidrott/">utomhusanläggningar</a>. Publika miljöer där ljud, styrning och tillgänglighet måste fungera varje dag.</p>
+            <p class="lead-dark">AVAB arbetar med sporthallar, idrottshallar, <a class="text-link" href="/miljo/skola/">skolor</a>, <a class="text-link" href="/miljo/simhall/">simhallar</a>, <a class="text-link" href="/miljo/ishall/">ishallar</a> och <a class="text-link" href="/miljo/gym/">gym och träningsanläggningar</a>. Publika miljöer där ljud, styrning och tillgänglighet måste fungera varje dag.</p>
           </div>
         </div>
 
-        <div class="proof-strip">
+        <div class="proof-strip sporthall-mobile-secondary">
           <div class="proof-item"><strong>35+ års erfarenhet</strong><span>Ljud, bild och installation.</span></div>
           <div class="proof-item"><strong>Kommuner och skolor</strong><span>Offentlig miljö, FFU och upphandling.</span></div>
           <div class="proof-item"><strong>Från ritning till drift</strong><span>Projektering, installation och inmätning.</span></div>
@@ -445,7 +446,7 @@ import "../../../styles/avab.css";
             <div class="ref-content">
               <h3>Sörby sporthall</h3>
               <p>Ljudanläggning och projektering för sporthallsmiljö med fokus på tydligt tal, robust montage och enkel användning.</p>
-              <a href="/kontakt/">Prata med oss om liknande projekt</a>
+              <a href="/referenser/sorby-sporthall-kumla/">Se referensprojekt</a>
             </div>
           </article>
 
@@ -454,23 +455,23 @@ import "../../../styles/avab.css";
             <div class="ref-content">
               <h3>Mullhyttans sporthall</h3>
               <p>Sporthall med standardplan, hörslinga och tillgänglighetskrav där kabelplanering, inmätning och dokumentation är avgörande.</p>
-              <a href="/tjanster/horslinga/">Läs mer om hörslinga</a>
+              <a href="/referenser/mullhyttans-sporthall/">Se referensprojekt</a>
             </div>
           </article>
 
-          <article class="ref-card">
+          <article class="ref-card sporthall-mobile-secondary">
             <img src="/assets/Crestron panel, Sörby 1200x900.webp" alt="Styrpanel för sporthall med enkel användning" width="900" height="600" loading="lazy" decoding="async">
             <div class="ref-content">
               <h3>Styrning i hallmiljö</h3>
               <p>Inkopplingspaneler, trådlösa mikrofoner och tydlig styrning gör vardagsanvändningen enklare för personal och föreningar.</p>
-              <a href="/kontakt/">Boka genomgång</a>
+              <a href="/tjanster/styrsystem-integration/">Läs mer om styrsystem och integration</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="arbetssatt">
+    <section class="section sporthall-mobile-secondary" id="arbetssatt">
       <div class="avab-container">
         <div class="section-heading">
           <div>
@@ -482,7 +483,7 @@ import "../../../styles/avab.css";
 
         <div class="grid-3">
           <div class="flow-card"><strong><em>1</em> Genomgång</strong><span>Vi går igenom ritningar, FFU, halltyp, läktare, ridåvägg, användning, tillgänglighetskrav och tekniska förutsättningar.</span></div>
-          <div class="flow-card"><strong><em>2</em> Projektering</strong><span>Vi tar fram lösning för ljud, styrning, zoner, hörslinga, Auracast, STI, rack, kabelvägar och gränsdragning mot el.</span></div>
+          <div class="flow-card"><strong><em>2</em> <a class="text-link" href="/tjanster/projektering/">Projektering</a></strong><span>Vi tar fram lösning för ljud, styrning, zoner, hörslinga, Auracast, STI, rack, kabelvägar och gränsdragning mot el.</span></div>
           <div class="flow-card"><strong><em>3</em> Leverans</strong><span>AVAB installerar hela lösningen eller samarbetar med elektriker. Vi ansvarar för driftsättning, inmätning, dokumentation och överlämning.</span></div>
         </div>
       </div>
@@ -534,8 +535,8 @@ import "../../../styles/avab.css";
             <p>Ta in AVAB innan kabelvägar, golv, rackplats och upphandlingskrav är låsta. Då blir lösningen enklare att bygga, lättare att förstå och tryggare att driftsätta.</p>
             <div class="cta-actions">
               <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/bygg-din-losning/sporthall/">Öppna kalkylatorn</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+              <a class="button button-secondary" href="/budgetkalkylator-av-teknik/">Öppna kalkylatorn</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
             </div>
           </div>
 
