@@ -1,6 +1,6 @@
 ﻿---
-import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -128,9 +128,10 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; font-size: 1.05rem; color: var(--avab-dark-muted); line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .solution-expand-inner { overflow: hidden; opacity: 1; transition: opacity 0.3s ease; }
+    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
+    .solution-expand-inner { overflow: visible; opacity: 1; }
 
+    .hover-indicator { display: none; }
 
     .bullet-list { list-style: none; margin-top: 20px; }
     .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; line-height: 1.5; color: var(--avab-dark-muted); }
@@ -164,9 +165,23 @@ import "../../../styles/avab.css";
     .ref-content p { font-size: 1rem; color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; }
 
     /* FAQ & CTA */
-
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item { padding-top: 16px; border-top: 1px solid var(--avab-border); }
+    .faq-item:first-child { border-top: 0; padding-top: 0; }
+    .faq-item h3 { font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; color: var(--avab-dark); line-height: 1.15; }
+    .faq-item p { color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
+    
+    .cta-card { 
+      background: linear-gradient(135deg, var(--avab-dark) 0%, #2A332C 50%, var(--avab-green) 100%); 
+      color: var(--avab-white); padding: 48px; border-radius: var(--avab-radius); 
+      display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;
+    }
     @media (min-width: 1081px) {
-      #faq    }
+      #faq .cta-card { margin-top: 62px; }
+    }
+    .cta-card h2, .cta-card p, .cta-card .eyebrow, .cta-card .guarantee-list, .cta-card .hero-actions { position: relative; z-index: 1; }
+    .cta-card h2 { color: var(--avab-white); margin-bottom: 16px; }
+    .cta-card p { color: var(--avab-white); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
     
     .guarantee-list { margin: 24px 0 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .guarantee-list li { display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--avab-white); font-size: 1rem; }
@@ -175,58 +190,15 @@ import "../../../styles/avab.css";
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; border-radius: 999px; font-weight: 700; background: var(--avab-green); color: var(--avab-dark); text-decoration: none; transition: var(--transition-smooth); font-size: 1.05rem; }
     .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px var(--avab-green-glow); }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 40px; }
+    .cta-card .button-light { background: #fff; color: var(--avab-dark); }
+    .cta-card .button-light:hover { background: #fff; box-shadow: 0 16px 32px rgba(0,0,0,0.2); }
 
     @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
     @media (max-width: 768px) {
       .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; }      .flow-card strong, .flow-card span { min-height: auto; } 
+      .solution-card h3 { min-height: auto; } .solution-expandable { display: block; opacity: 1; margin-top: 24px; } .hover-indicator { display: none; } .solution-expand-inner { overflow: visible; opacity: 1; }
+      .flow-card strong, .flow-card span { min-height: auto; } 
     }
-    /* Mobilanpassning (beslut per sida, dokumenterat):
-       - #utmaning (inledande problemnarrativ, sekundar fordjupning pa mobil)
-       Huvudbudskap, losningssektion, referenser/bevisning, FAQ och CTA visas alltid. */
-    @media (max-width: 768px) {
-      #utmaning { display: none; }
-    }
-    /* ---- FAQ (sajtstandard: details/summary, samma som ovriga sidor) ---- */
-    .compact-faq {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 28px;
-      row-gap: 0;
-      max-width: 1060px;
-      margin: 0;
-    }
-    .compact-faq details.faq-item { padding: 20px 0; }
-    .compact-faq summary { font-size: 1.05rem; }
-    .compact-faq details.faq-item p { font-size: 0.98rem; }
-    .compact-faq details.faq-item:nth-child(1),
-    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
-    @media (max-width: 768px) {
-      .compact-faq { grid-template-columns: 1fr; }
-      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
-    }
-
-    /* ---- Kortrader: 4 kort ska ligga 2 + 2 (jamna rader) ---- */
-    @media (min-width: 1081px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (min-width: 769px) and (max-width: 1080px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    /* ---- Statiska kort: innehallet alltid synligt (ingen hover-expandering) ---- */
-    .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-    .solution-expand-inner { opacity: 1; }
-    .solution-card:hover .solution-expandable,
-    .solution-card:focus-within .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-
-    /* ---- FAQ + CTA i samma sektion, enligt mastern pa sporthallssidan ---- */
-    .faq-cta { padding-top: 48px; padding-bottom: 96px; }
-    .faq-cta .compact-faq { margin-bottom: 64px; }
-    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
-    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
-    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
   </style>
 </head>
 <body>
@@ -243,7 +215,7 @@ import "../../../styles/avab.css";
     </div>
   </header>
 
-  <section class="fact-band" aria-label="Snabbfakta kyrka">
+  <section class="fact-band mobile-secondary" aria-label="Snabbfakta kyrka">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Kyrkorum och församlingshem</strong></div>
       <div class="fact"><span>Ljud</span><strong>Tal, kör och musik</strong></div>
@@ -255,8 +227,8 @@ import "../../../styles/avab.css";
   </section>
 
   <main>
-    <section class="section" id="utmaning" style="border-bottom: 1px solid var(--avab-border);">
-      <div class="container two-col">
+    <section class="section" style="border-bottom: 1px solid var(--avab-border);">
+      <div class="container">
         <div class="animate-in">
           <div class="eyebrow">Verkligheten</div>
           <h2>En vacker men akustiskt extrem miljö</h2>
@@ -298,6 +270,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Genom att placera ut smala, diskreta högtalare i kyrkan minskar vi avståndet till lyssnaren. Med inbyggda delay-funktioner synkroniseras ljudet för att eliminera ekot.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om ljudsystem ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -316,6 +289,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Att fräsa in teleslingor i stengolv är dyrt. Vi installerar modern Auracast för trådlös ljudöverföring direkt till hörapparater och halsslingor, utan ingrepp i golvet.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om hörslingor ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -334,6 +308,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Kyrkan består av flera rum. Skicka ljudet från predikan vidare till sidokapellet eller församlingshemmet. Allt styrs via touchpaneler med enkla, förinställda lägen.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Se styrsystem ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -352,6 +327,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Gör kyrkan redo för konserter. Vi bygger in professionella inkopplingspunkter för gästande ljudtekniker och integrerar scenljus för en maxad upplevelse.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om eventteknik ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -365,7 +341,7 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="flow-grid animate-in">
+        <div class="flow-grid animate-in mobile-secondary">
           <div class="flow-card"><strong>Automixer → Tydlighet</strong><span>Justerar automatiskt volymen mellan präst och handmikrofoner utan att en tekniker behövs.</span></div>
           <div class="flow-card"><strong>Auracast → Kulturarv</strong><span>Trådlös ljuddistribution gör att vi slipper stora fysiska ingrepp i historiska stengolv.</span></div>
           <div class="flow-card"><strong>Zonstyrning → Flexibilitet</strong><span>Gör det möjligt för församlingen i sidokapellet att höra musiken lika tydligt som i mittgången.</span></div>
@@ -373,9 +349,9 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section" style="background: var(--avab-white); border-top: 1px solid var(--avab-border);">
+    <section class="section mobile-secondary" style="background: var(--avab-white); border-top: 1px solid var(--avab-border);">
       <div class="container animate-in">
-        <div class="section-header">
+        <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto;">
           <div class="eyebrow">Investering</div>
           <h2 style="margin-bottom: 16px;">Vad kostar teknik för en kyrka?</h2>
           <p class="lead-dark" style="margin-bottom: 40px;">Priset styrs av kyrkorummets storlek, graden av akustisk utmaning och om ni har behov av stora konsert-investeringar. Här är en grov uppskattning.</p>
@@ -426,42 +402,43 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section faq-cta" id="faq" style="border-top: 1px solid var(--avab-border);">
-      <div class="avab-container">
-        <div class="faq-heading">
+    <section class="section" id="faq" style="border-top: 1px solid var(--avab-border);">
+      <div class="container two-col" style="align-items: start;">
+        <div>
           <div class="eyebrow">Kunskap</div>
-          <h2>Vanliga frågor om kyrkoteknik</h2>
-        </div>
-
-        <div class="compact-faq">
-          <details class="faq-item">
-            <summary>Hur löser vi ekot utan att det ser fult ut?</summary>
-            <p>Vi använder diskreta, smala pelarhögtalare som kan färgmatchas med inredningen. Genom inbyggda delay-funktioner ser vi till att ljudet från alla högtalare når församlingen exakt samtidigt, vilket eliminerar ekot.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Vi kan inte fräsa i stengolvet för en hörslinga. Vad gör vi?</summary>
-            <p>Vi rekommenderar Auracast. Det är en modern, trådlös teknik som sänder ljudet direkt till hörapparater med Bluetooth LE, eller via smidiga halsslingor. Perfekt tillgänglighet helt utan ingrepp i kulturhistoriska golv.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Kan systemet hantera både prästens tal och en julkonsert?</summary>
-            <p>Ja. För vardagsbruk sköter en automixer ljudet från präst och kör automatiskt. För konserter bygger vi inkopplingspunkter så att ljudtekniker enkelt kan ansluta externa mixerbord. Vid enorma behov kompletterar ni via www.test1.avab.eu/.</p>
-          </details>
-        </div>
-
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Trygghet sedan 1990</div>
-            <h2>Ska vi uppgradera er kyrka?</h2>
-            <p>Vi projekterar system med den allra största respekt för byggnadens historia och akustik.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+          <h2 style="margin-bottom: 32px;">Vanliga frågor om kyrkoteknik</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Hur löser vi ekot utan att det ser fult ut?</h3>
+              <p>Vi använder diskreta, smala pelarhögtalare som kan färgmatchas med inredningen. Genom inbyggda delay-funktioner ser vi till att ljudet från alla högtalare når församlingen exakt samtidigt, vilket eliminerar ekot.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Vi kan inte fräsa i stengolvet för en hörslinga. Vad gör vi?</h3>
+              <p>Vi rekommenderar Auracast. Det är en modern, trådlös teknik som sänder ljudet direkt till hörapparater med Bluetooth LE, eller via smidiga halsslingor. Perfekt tillgänglighet helt utan ingrepp i kulturhistoriska golv.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Kan systemet hantera både prästens tal och en julkonsert?</h3>
+              <p>Ja. För vardagsbruk sköter en automixer ljudet från präst och kör automatiskt. För konserter bygger vi inkopplingspunkter så att ljudtekniker enkelt kan ansluta externa mixerbord. Vid enorma behov kompletterar ni via www.test1.avab.eu/.</p>
             </div>
           </div>
-          <ul class="calc-list">
+        </div>
+
+        <div class="fullwidth-cta-wrap">
+          <div class="fullwidth-cta animate-in">
+            <div>
+              <div class="eyebrow">Trygghet sedan 1990</div>
+              <h2>Ska vi uppgradera er kyrka?</h2>
+              <p>Vi projekterar system med den allra största respekt för byggnadens historia och akustik.</p>
+              <div class="cta-actions">
+                <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
+              </div>
+            </div>
+            <ul class="cta-points">
             <li>Inga skador på historiska ytor</li>
             <li>Auracast & diskreta system</li>
             <li>Färdiga ljudlägen för personalen</li>
           </ul>
+          </div>
         </div>
       </div>
     </section>

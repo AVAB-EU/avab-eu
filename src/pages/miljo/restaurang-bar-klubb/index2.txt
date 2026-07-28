@@ -1,6 +1,6 @@
 ﻿---
-import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -128,9 +128,10 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; font-size: 1.05rem; color: var(--avab-dark-muted); line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .solution-expand-inner { overflow: hidden; opacity: 1; transition: opacity 0.3s ease; }
+    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
+    .solution-expand-inner { overflow: visible; opacity: 1; }
 
+    .hover-indicator { display: none; }
 
     .bullet-list { list-style: none; margin-top: 20px; }
     .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; line-height: 1.5; color: var(--avab-dark-muted); }
@@ -164,9 +165,23 @@ import "../../../styles/avab.css";
     .ref-content p { font-size: 1rem; color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; }
 
     /* FAQ & CTA */
-
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item { padding-top: 16px; border-top: 1px solid var(--avab-border); }
+    .faq-item:first-child { border-top: 0; padding-top: 0; }
+    .faq-item h3 { font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; color: var(--avab-dark); line-height: 1.15; }
+    .faq-item p { color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
+    
+    .cta-card { 
+      background: linear-gradient(135deg, var(--avab-dark) 0%, #2A332C 50%, var(--avab-green) 100%); 
+      color: var(--avab-white); padding: 48px; border-radius: var(--avab-radius); 
+      display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;
+    }
     @media (min-width: 1081px) {
-      #faq    }
+      #faq .cta-card { margin-top: 62px; }
+    }
+    .cta-card h2, .cta-card p, .cta-card .eyebrow, .cta-card .guarantee-list, .cta-card .hero-actions { position: relative; z-index: 1; }
+    .cta-card h2 { color: var(--avab-white); margin-bottom: 16px; }
+    .cta-card p { color: var(--avab-white); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
     
     .guarantee-list { margin: 24px 0 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .guarantee-list li { display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--avab-white); font-size: 1rem; }
@@ -175,58 +190,15 @@ import "../../../styles/avab.css";
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; border-radius: 999px; font-weight: 700; background: var(--avab-green); color: var(--avab-dark); text-decoration: none; transition: var(--transition-smooth); font-size: 1.05rem; }
     .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px var(--avab-green-glow); }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 40px; }
+    .cta-card .button-light { background: #fff; color: var(--avab-dark); }
+    .cta-card .button-light:hover { background: #fff; box-shadow: 0 16px 32px rgba(0,0,0,0.2); }
 
     @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
     @media (max-width: 768px) {
       .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; }      .flow-card strong, .flow-card span { min-height: auto; } 
+      .solution-card h3 { min-height: auto; } .solution-expandable { display: block; opacity: 1; margin-top: 24px; } .hover-indicator { display: none; } .solution-expand-inner { overflow: visible; opacity: 1; }
+      .flow-card strong, .flow-card span { min-height: auto; } 
     }
-    /* Mobilanpassning (beslut per sida, dokumenterat):
-       - #utmaning (inledande problemnarrativ, sekundar fordjupning pa mobil)
-       Huvudbudskap, losningssektion, referenser/bevisning, FAQ och CTA visas alltid. */
-    @media (max-width: 768px) {
-      #utmaning { display: none; }
-    }
-    /* ---- FAQ (sajtstandard: details/summary, samma som ovriga sidor) ---- */
-    .compact-faq {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 28px;
-      row-gap: 0;
-      max-width: 1060px;
-      margin: 0;
-    }
-    .compact-faq details.faq-item { padding: 20px 0; }
-    .compact-faq summary { font-size: 1.05rem; }
-    .compact-faq details.faq-item p { font-size: 0.98rem; }
-    .compact-faq details.faq-item:nth-child(1),
-    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
-    @media (max-width: 768px) {
-      .compact-faq { grid-template-columns: 1fr; }
-      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
-    }
-
-    /* ---- Kortrader: 4 kort ska ligga 2 + 2 (jamna rader) ---- */
-    @media (min-width: 1081px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (min-width: 769px) and (max-width: 1080px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    /* ---- Statiska kort: innehallet alltid synligt (ingen hover-expandering) ---- */
-    .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-    .solution-expand-inner { opacity: 1; }
-    .solution-card:hover .solution-expandable,
-    .solution-card:focus-within .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-
-    /* ---- FAQ + CTA i samma sektion, enligt mastern pa sporthallssidan ---- */
-    .faq-cta { padding-top: 48px; padding-bottom: 96px; }
-    .faq-cta .compact-faq { margin-bottom: 64px; }
-    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
-    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
-    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
   </style>
 </head>
 <body>
@@ -243,7 +215,7 @@ import "../../../styles/avab.css";
     </div>
   </header>
 
-  <section class="fact-band" aria-label="Snabbfakta restaurang bar och klubb">
+  <section class="fact-band mobile-secondary" aria-label="Snabbfakta restaurang bar och klubb">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Restaurang, bar och klubb</strong></div>
       <div class="fact"><span>Ljud</span><strong>Bakgrund, DJ och scen</strong></div>
@@ -255,8 +227,8 @@ import "../../../styles/avab.css";
   </section>
 
   <main>
-    <section class="section" id="utmaning" style="border-bottom: 1px solid var(--avab-border);">
-      <div class="container two-col">
+    <section class="section" style="border-bottom: 1px solid var(--avab-border);">
+      <div class="container">
         <div class="animate-in">
           <div class="eyebrow">Verkligheten</div>
           <h2>Extrema tempon och höga krav</h2>
@@ -298,6 +270,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Vi designar system där restaurangen har behagligt bakgrundsljud för samtal, medan baren levererar djup bas och energi. Allt styrs separat via skärm.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om ljudsystem ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -316,6 +289,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">När natten tar över krävs oöverträffad kraft och kvalitet. Vi installerar klubbsystem som tål att pressas, med säkra anslutningar för DJ och liveartister.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Se klubbteknik ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -334,6 +308,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Ljuset förvandlar lokalen. Varmt och inbjudande till middagen, pulserande färger till sista beställningen. Vi gör det möjligt med ett knapptryck.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om styrsystem ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -352,6 +327,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Kameraövervakning skapar en säker miljö för personal och gäster i intensiva miljöer. Snabba system för att hantera incidenter i lågt ljus.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om säkerhet ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -365,7 +341,7 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="flow-grid animate-in">
+        <div class="flow-grid animate-in mobile-secondary">
           <div class="flow-card"><strong>Zonindelning → Upplevelse</strong><span>Gör det möjligt att spela tung bas i baren medan gästerna kan prata normalt i matsalen.</span></div>
           <div class="flow-card"><strong>Styrsystem → Enkelhet</strong><span>Ett förinställt "Klubb-läge" ställer om både belysning, volym och zoner på en sekund.</span></div>
           <div class="flow-card"><strong>Kameror → Trygghet</strong><span>Ger vakter och personal total överblick i mörka och trånga utrymmen.</span></div>
@@ -373,9 +349,9 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section" style="background: var(--avab-white); border-top: 1px solid var(--avab-border);">
+    <section class="section mobile-secondary" style="background: var(--avab-white); border-top: 1px solid var(--avab-border);">
       <div class="container animate-in">
-        <div class="section-header">
+        <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto;">
           <div class="eyebrow">Investering</div>
           <h2 style="margin-bottom: 16px;">Vad kostar ett professionellt system?</h2>
           <p class="lead-dark" style="margin-bottom: 40px;">Priset styrs av antalet zoner, lokalens storlek och vilken ljudnivå (bakgrund eller nattklubb) ni behöver. Här är en grov uppskattning för att hjälpa er budgetera.</p>
@@ -426,42 +402,43 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section faq-cta" id="faq" style="border-top: 1px solid var(--avab-border);">
-      <div class="avab-container">
-        <div class="faq-heading">
+    <section class="section" id="faq" style="border-top: 1px solid var(--avab-border);">
+      <div class="container two-col" style="align-items: start;">
+        <div>
           <div class="eyebrow">Kunskap</div>
-          <h2>Vanliga frågor om restaurangteknik</h2>
-        </div>
-
-        <div class="compact-faq">
-          <details class="faq-item">
-            <summary>Hur hanterar vi övergången från lunch till nattklubb?</summary>
-            <p>Genom förprogrammerade scenarion i styrsystemet. Med ett knapptryck sänks belysningen, ljudbilden ändrar karaktär och fokus flyttas från matsalen till hög energi och tyngre bas på dansgolvet.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Vi vill testa event, men vill inte köpa dyr DJ-teknik än. Hur gör vi?</summary>
-            <p>Genom vårt systerbolag <a href="https://www.hyrljud.nu" target="_blank" style="color:var(--avab-green); font-weight:700; text-decoration:underline;">www.test1.avab.eu/</a> erbjuder vi långtidshyra av professionell DJ-, ljus- och eventutrustning. Ni kan skala upp verksamheten snabbt utan tunga investeringar, medan vi står för den fasta grundinstallationen.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Hur fungerar övervakningskamerorna i mörkret?</summary>
-            <p>Vi installerar kameror anpassade för extremt låga ljusförhållanden. Systemet hjälper er att snabbt hitta sekvenser vid incidenter, hantera trängsel och skapa en trygg miljö i nattklubben.</p>
-          </details>
-        </div>
-
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Trygghet sedan 1990</div>
-            <h2>Ska vi rita upp er nya krog?</h2>
-            <p>Låt oss ta hand om tekniken, så att ni kan lägga er tid på att skapa upplevelser och ta hand om gästerna.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+          <h2 style="margin-bottom: 32px;">Vanliga frågor om restaurangteknik</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Hur hanterar vi övergången från lunch till nattklubb?</h3>
+              <p>Genom förprogrammerade scenarion i styrsystemet. Med ett knapptryck sänks belysningen, ljudbilden ändrar karaktär och fokus flyttas från matsalen till hög energi och tyngre bas på dansgolvet.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Vi vill testa event, men vill inte köpa dyr DJ-teknik än. Hur gör vi?</h3>
+              <p>Genom vårt systerbolag <a href="https://www.hyrljud.nu" target="_blank" style="color:var(--avab-green); font-weight:700; text-decoration:underline;">www.test1.avab.eu/</a> erbjuder vi långtidshyra av professionell DJ-, ljus- och eventutrustning. Ni kan skala upp verksamheten snabbt utan tunga investeringar, medan vi står för den fasta grundinstallationen.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Hur fungerar övervakningskamerorna i mörkret?</h3>
+              <p>Vi installerar kameror anpassade för extremt låga ljusförhållanden. Systemet hjälper er att snabbt hitta sekvenser vid incidenter, hantera trängsel och skapa en trygg miljö i nattklubben.</p>
             </div>
           </div>
-          <ul class="calc-list">
+        </div>
+
+        <div class="fullwidth-cta-wrap">
+          <div class="fullwidth-cta animate-in">
+            <div>
+              <div class="eyebrow">Trygghet sedan 1990</div>
+              <h2>Ska vi rita upp er nya krog?</h2>
+              <p>Låt oss ta hand om tekniken, så att ni kan lägga er tid på att skapa upplevelser och ta hand om gästerna.</p>
+              <div class="cta-actions">
+                <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
+              </div>
+            </div>
+            <ul class="cta-points">
             <li>Exakt zonstyrt ljud</li>
             <li>Enkla styrsystem för personalen</li>
             <li>Robust teknik som tål nattlivet</li>
           </ul>
+          </div>
         </div>
       </div>
     </section>

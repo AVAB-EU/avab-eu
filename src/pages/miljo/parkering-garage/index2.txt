@@ -1,6 +1,6 @@
 ﻿---
-import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -20,7 +20,7 @@ import "../../../styles/avab.css";
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
         { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
-        { "@type": "ListItem", "position": 3, "name": "Parkering", "item": "https://avab.eu/miljo/parkering-garage/" }
+        { "@type": "ListItem", "position": 3, "name": "Parkering", "item": "https://avab.eu/miljo/parkering-och-parkeringsgarage/" }
       ]
     },
     {
@@ -122,9 +122,11 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; color: var(--avab-dark-muted); font-size: 1.05rem; line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .solution-expand-inner { overflow: hidden; min-height: 0; opacity: 1; transition: opacity 0.3s ease; }
+    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
+    .solution-expand-inner { overflow: visible; opacity: 1; }
 
+    .hover-indicator { display: none; }
+    .hover-indicator div { overflow: hidden; min-height: 0; transition: opacity 0.3s ease; }
 
     .bullet-list { list-style: none; margin-top: 20px; }
     .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; color: var(--avab-dark-muted); }
@@ -151,61 +153,27 @@ import "../../../styles/avab.css";
     .ref-content h3 { font-size: 1.4rem; margin-bottom: 12px; min-height: auto; } 
     .ref-content p { font-size: 1rem; color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; }
 
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item { padding-top: 16px; border-top: 1px solid var(--avab-border); }
+    .faq-item:first-child { border-top: 0; padding-top: 0; }
+    .faq-item h3 { font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; }
+    .faq-item p { color: var(--avab-dark-muted); line-height: 1.6; font-size: 1.1rem; margin-bottom: 0; }
 
+    .cta-card { background: linear-gradient(135deg, var(--avab-dark) 0%, #2A332C 50%, var(--avab-green) 100%); color: var(--avab-white); padding: 48px; border-radius: var(--avab-radius); display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+    .cta-card h2 { color: var(--avab-white); }
+    .cta-card p { color: var(--avab-white); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
+    @media (min-width: 1081px) { #faq .cta-card { margin-top: 62px; } }
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; border-radius: 999px; font-weight: 700; background: var(--avab-green); color: var(--avab-dark); text-decoration: none; transition: var(--transition-smooth); font-size: 1.05rem; }
     .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px var(--avab-green-glow); }
+    .cta-card .button-light { background: #fff; color: var(--avab-dark); }
+    .cta-card .button-light:hover { background: #fff; box-shadow: 0 16px 32px rgba(0,0,0,0.2); }
     
     @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
     @media (max-width: 768px) {
       .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; }      .flow-card strong, .flow-card span { min-height: auto; } 
+      .solution-card h3 { min-height: auto; } .solution-expandable { display: block; opacity: 1; margin-top: 24px; } .hover-indicator { display: none; } .solution-expand-inner { overflow: visible; opacity: 1; }
+      .flow-card strong, .flow-card span { min-height: auto; } 
     }
-    /* Mobilanpassning (beslut per sida, dokumenterat):
-       - #utmaning (inledande problemnarrativ, sekundar fordjupning pa mobil)
-       Huvudbudskap, losningssektion, referenser/bevisning, FAQ och CTA visas alltid. */
-    @media (max-width: 768px) {
-      #utmaning { display: none; }
-    }
-    /* ---- FAQ (sajtstandard: details/summary, samma som ovriga sidor) ---- */
-    .compact-faq {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 28px;
-      row-gap: 0;
-      max-width: 1060px;
-      margin: 0;
-    }
-    .compact-faq details.faq-item { padding: 20px 0; }
-    .compact-faq summary { font-size: 1.05rem; }
-    .compact-faq details.faq-item p { font-size: 0.98rem; }
-    .compact-faq details.faq-item:nth-child(1),
-    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
-    @media (max-width: 768px) {
-      .compact-faq { grid-template-columns: 1fr; }
-      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
-    }
-
-    /* ---- Kortrader: 4 kort ska ligga 2 + 2 (jamna rader) ---- */
-    @media (min-width: 1081px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (min-width: 769px) and (max-width: 1080px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    /* ---- Statiska kort: innehallet alltid synligt (ingen hover-expandering) ---- */
-    .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-    .solution-expand-inner { opacity: 1; }
-    .solution-card:hover .solution-expandable,
-    .solution-card:focus-within .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-
-    /* ---- FAQ + CTA i samma sektion, enligt mastern pa sporthallssidan ---- */
-    .faq-cta { padding-top: 48px; padding-bottom: 96px; }
-    .faq-cta .compact-faq { margin-bottom: 64px; }
-    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
-    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
-    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
   </style>
 </head>
 <body>
@@ -213,14 +181,14 @@ import "../../../styles/avab.css";
 
   <header class="hero">
     <div class="container animate-in">
-      <div class="eyebrow">Miljö: Parkering & Garage</div>
+      <div class="eyebrow">Miljö: Parkering och garage</div>
       <h1>Teknik som skapar flöde, trygghet och full kontroll</h1>
       <p>Parkeringshuset är besökarens första och sista intryck. Vi integrerar smarta kameror, gobo-vägvisning och platsindikering som gör en annars anonym miljö smidig och välkomnande.</p>
       <div style="margin-top: 40px;"><a class="button" href="/kontakt/">Boka kostnadsfri rådgivning</a></div>
     </div>
   </header>
 
-  <section class="fact-band" aria-label="Snabbfakta parkering och garage">
+  <section class="fact-band mobile-secondary" aria-label="Snabbfakta parkering och garage">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Parkering och garage</strong></div>
       <div class="fact"><span>Flöde</span><strong>Infart, kö och vägvisning</strong></div>
@@ -232,7 +200,7 @@ import "../../../styles/avab.css";
   </section>
 
   <main>
-    <section class="section" id="utmaning" style="border-bottom: 1px solid var(--avab-border);">
+    <section class="section" style="border-bottom: 1px solid var(--avab-border);">
       <div class="container two-col">
         <div class="animate-in">
           <div class="eyebrow">Verkligheten</div>
@@ -264,6 +232,9 @@ import "../../../styles/avab.css";
               <p class="intro-text">Läs av registreringsskyltar för omedelbar bomöppning. Använd exakt sökning för att hitta specifika fordon eller utreda incidenter på sekunder.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator">
+                <div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om säkerhet ↓</div>
+              </div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -282,6 +253,9 @@ import "../../../styles/avab.css";
               <p class="intro-text">Gröna och röda lampor i taket leder kunden direkt till en ledig plats. Integrerade skärmar i trapphusen hjälper dem sedan att hitta tillbaka till bilen.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator">
+                <div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om system ↓</div>
+              </div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -300,6 +274,9 @@ import "../../../styles/avab.css";
               <p class="intro-text">Förstärk guidningen i den mörka miljön. Gobo-projektorer lyser upp körriktningar och elbilsplatser direkt på asfalten, medan skärmar informerar.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator">
+                <div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om bild ↓</div>
+              </div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -318,6 +295,9 @@ import "../../../styles/avab.css";
               <p class="intro-text">Ett tyst garage upplevs otryggt. Ett välkalibrerat, dämpat bakgrundsljud ökar tryggheten, och systemet dubblerar som utrymningslarm vid fara.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator">
+                <div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om ljud ↓</div>
+              </div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -331,7 +311,7 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="flow-grid animate-in">
+        <div class="flow-grid animate-in mobile-secondary">
           <div class="flow-card"><strong>ANPR-kameror → Flöde</strong><span>Bilar rullar in utan att stanna vid bommen, vilket eliminerar köer som blockerar gatan.</span></div>
           <div class="flow-card"><strong>Platsindikering → Miljö</strong><span>Att direkt leda besökaren till en grön lampa minskar drastiskt utsläpp från cirkulerande bilar.</span></div>
           <div class="flow-card"><strong>Gobo & Ljud → Trygghet</strong><span>Visuell guidning och musik gör en annars mörk och anonym miljö trygg och välkomnande.</span></div>
@@ -339,7 +319,7 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
+    <section class="section mobile-secondary" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
       <div class="container animate-in">
         <div class="section-header">
           <div class="eyebrow">Investering</div>
@@ -389,42 +369,42 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section faq-cta" id="faq" style="border-top: 1px solid var(--avab-border);">
-      <div class="avab-container">
-        <div class="faq-heading">
+    <section class="section" id="faq" style="border-top: 1px solid var(--avab-border);">
+      <div class="container">
+        <div>
           <div class="eyebrow">Kunskap</div>
-          <h2>Vanliga frågor om parkeringssystem</h2>
-        </div>
-
-        <div class="compact-faq">
-          <details class="faq-item">
-            <summary>Kan vi slippa pappersbiljetter och köer vid bommarna?</summary>
-            <p>Absolut. Genom att installera ANPR-kameror läser systemet av bilen redan innan den stannat. Bommen öppnas direkt och parkeringen kopplas automatiskt till besökarens digitala betalsystem.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Hur hjälper systemet kunden att hitta sin bil?</summary>
-            <p>I större anläggningar knyter vi ihop kameraövervakningen med bilens registreringsnummer. Besökaren knappar in sitt nummer på en skärm i trapphuset och får se en karta med exakt var bilen står.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Varför ska man installera ljudsystem i ett parkeringshus?</summary>
-            <p>En tyst betongkällare upplevs ofta som otrygg. Ett dämpat, väl valt bakgrundsljud i gångstråk och trapphus maskerar obehagliga ekon och ökar trygghetskänslan markant.</p>
-          </details>
-        </div>
-
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Trygghet sedan 1990</div>
-            <h2>Ska vi optimera ert parkeringshus?</h2>
-            <p>Rätt system minskar köerna, ökar tryggheten och ger er personal full kontroll över driften.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+          <h2 style="margin-bottom: 32px;">Vanliga frågor om parkeringssystem</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Kan vi slippa pappersbiljetter och köer vid bommarna?</h3>
+              <p>Absolut. Genom att installera ANPR-kameror läser systemet av bilen redan innan den stannat. Bommen öppnas direkt och parkeringen kopplas automatiskt till besökarens digitala betalsystem.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Hur hjälper systemet kunden att hitta sin bil?</h3>
+              <p>I större anläggningar knyter vi ihop kameraövervakningen med bilens registreringsnummer. Besökaren knappar in sitt nummer på en skärm i trapphuset och får se en karta med exakt var bilen står.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Varför ska man installera ljudsystem i ett parkeringshus?</h3>
+              <p>En tyst betongkällare upplevs ofta som otrygg. Ett dämpat, väl valt bakgrundsljud i gångstråk och trapphus maskerar obehagliga ekon och ökar trygghetskänslan markant.</p>
             </div>
           </div>
-          <ul class="calc-list">
+        </div>
+        <div class="fullwidth-cta-wrap">
+          <div class="fullwidth-cta animate-in">
+            <div>
+              <div class="eyebrow">Trygghet sedan 1990</div>
+              <h2>Ska vi optimera ert parkeringshus?</h2>
+              <p>Rätt system minskar köerna, ökar tryggheten och ger er personal full kontroll över driften.</p>
+              <div class="cta-actions">
+                <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+              </div>
+            </div>
+            <ul class="cta-points">
             <li>ANPR för automatiskt in/utsläpp</li>
             <li>Gobo-projektion för vägvisning</li>
             <li>Trygghetsskapande ljudsystem</li>
           </ul>
+          </div>
         </div>
       </div>
     </section>

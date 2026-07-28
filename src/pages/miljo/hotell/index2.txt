@@ -1,6 +1,6 @@
 ﻿---
-import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -136,9 +136,10 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; font-size: 1.05rem; color: var(--avab-dark-muted); line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .solution-expand-inner { overflow: hidden; opacity: 1; transition: opacity 0.3s ease; }
+    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
+    .solution-expand-inner { overflow: visible; opacity: 1; }
 
+    .hover-indicator { display: none; }
 
     .bullet-list { list-style: none; margin-top: 20px; }
     .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; line-height: 1.5; color: var(--avab-dark-muted); }
@@ -172,9 +173,23 @@ import "../../../styles/avab.css";
     .ref-content p { font-size: 1rem; color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; }
 
     /* FAQ & CTA */
-
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item { padding-top: 16px; border-top: 1px solid var(--avab-border); }
+    .faq-item:first-child { border-top: 0; padding-top: 0; }
+    .faq-item h3 { font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; color: var(--avab-dark); line-height: 1.15; }
+    .faq-item p { color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
+    
+    .cta-card { 
+      background: linear-gradient(135deg, var(--avab-dark) 0%, #2A332C 50%, var(--avab-green) 100%); 
+      color: var(--avab-white); padding: 48px; border-radius: var(--avab-radius); 
+      display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;
+    }
     @media (min-width: 1081px) {
-      #faq    }
+      #faq .cta-card { margin-top: 62px; }
+    }
+    .cta-card h2, .cta-card p, .cta-card .eyebrow, .cta-card .guarantee-list, .cta-card .hero-actions { position: relative; z-index: 1; }
+    .cta-card h2 { color: var(--avab-white); margin-bottom: 16px; }
+    .cta-card p { color: var(--avab-white); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
     
     .guarantee-list { margin: 24px 0 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .guarantee-list li { display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--avab-white); font-size: 1rem; }
@@ -183,58 +198,15 @@ import "../../../styles/avab.css";
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; border-radius: 999px; font-weight: 700; background: var(--avab-green); color: var(--avab-dark); text-decoration: none; transition: var(--transition-smooth); font-size: 1.05rem; }
     .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px var(--avab-green-glow); }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 40px; }
+    .cta-card .button-light { background: #fff; color: var(--avab-dark); }
+    .cta-card .button-light:hover { background: #fff; box-shadow: 0 16px 32px rgba(0,0,0,0.2); }
 
     @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
     @media (max-width: 768px) {
       .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; }      .flow-card strong, .flow-card span { min-height: auto; } 
+      .solution-card h3 { min-height: auto; } .solution-expandable { display: block; opacity: 1; margin-top: 24px; } .hover-indicator { display: none; } .solution-expand-inner { overflow: visible; opacity: 1; }
+      .flow-card strong, .flow-card span { min-height: auto; } 
     }
-    /* Mobilanpassning (beslut per sida, dokumenterat):
-       - #utmaning (inledande problemnarrativ, sekundar fordjupning pa mobil)
-       Huvudbudskap, losningssektion, referenser/bevisning, FAQ och CTA visas alltid. */
-    @media (max-width: 768px) {
-      #utmaning { display: none; }
-    }
-    /* ---- FAQ (sajtstandard: details/summary, samma som ovriga sidor) ---- */
-    .compact-faq {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 28px;
-      row-gap: 0;
-      max-width: 1060px;
-      margin: 0;
-    }
-    .compact-faq details.faq-item { padding: 20px 0; }
-    .compact-faq summary { font-size: 1.05rem; }
-    .compact-faq details.faq-item p { font-size: 0.98rem; }
-    .compact-faq details.faq-item:nth-child(1),
-    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
-    @media (max-width: 768px) {
-      .compact-faq { grid-template-columns: 1fr; }
-      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
-    }
-
-    /* ---- Kortrader: 4 kort ska ligga 2 + 2 (jamna rader) ---- */
-    @media (min-width: 1081px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (min-width: 769px) and (max-width: 1080px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    /* ---- Statiska kort: innehallet alltid synligt (ingen hover-expandering) ---- */
-    .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-    .solution-expand-inner { opacity: 1; }
-    .solution-card:hover .solution-expandable,
-    .solution-card:focus-within .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-
-    /* ---- FAQ + CTA i samma sektion, enligt mastern pa sporthallssidan ---- */
-    .faq-cta { padding-top: 48px; padding-bottom: 96px; }
-    .faq-cta .compact-faq { margin-bottom: 64px; }
-    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
-    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
-    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
   </style>
 </head>
 <body>
@@ -251,7 +223,7 @@ import "../../../styles/avab.css";
     </div>
   </header>
 
-  <section class="fact-band" aria-label="Snabbfakta hotell och konferens">
+  <section class="fact-band mobile-secondary" aria-label="Snabbfakta hotell och konferens">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Hotell, lobby och konferens</strong></div>
       <div class="fact"><span>Zoner</span><strong>Restaurang, bar, spa och möten</strong></div>
@@ -263,8 +235,8 @@ import "../../../styles/avab.css";
   </section>
 
   <main>
-    <section class="section" id="utmaning" style="border-bottom: 1px solid var(--avab-border);">
-      <div class="container two-col">
+    <section class="section" style="border-bottom: 1px solid var(--avab-border);">
+      <div class="container">
         <div class="animate-in">
           <div class="eyebrow">Verkligheten</div>
           <h2>En dynamisk miljö med höga förväntningar</h2>
@@ -306,6 +278,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Rätt musik på rätt plats. Vi zonindelar hotellet så att restaurang, lobby, bar och spa får exakt rätt akustisk miljö för tidpunkten på dygnet.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om ljudsystem ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -324,6 +297,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Konferensteknik där inget lämnas åt slumpen. Vi bygger rum där ljud, bild och kamera startar sömlöst så fort gästen ansluter sin dator.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om bild & möten ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -342,6 +316,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Guida gästerna rätt och stärk ert varumärke. Digitala infoskärmar visar dagens konferenser, restaurangmenyer och events.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Se skärmlösningar ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -360,6 +335,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Knyt ihop allt till en helhet. Vi integrerar styrsystem som förenklar driften samt säkerhetssystem som ger full kontroll över anläggningen.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om integration ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -373,7 +349,7 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="flow-grid animate-in">
+        <div class="flow-grid animate-in mobile-secondary">
           <div class="flow-card"><strong>Zonindelning → Atmosfär</strong><span>Skapar rätt känsla i frukostmatsalen samtidigt som baren laddar för kvällen.</span></div>
           <div class="flow-card"><strong>Integration → Enkelhet</strong><span>Receptionisten slipper ringa IT-supporten och styr allt från sin iPad.</span></div>
           <div class="flow-card"><strong>Pålitlig teknik → Intäkter</strong><span>Konferensgäster som slipper teknikstrul bokar garanterat nästa möte hos er igen.</span></div>
@@ -381,9 +357,9 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section" style="border-top: 1px solid var(--avab-border);">
+    <section class="section mobile-secondary" style="border-top: 1px solid var(--avab-border);">
       <div class="container animate-in">
-        <div class="section-header">
+        <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto;">
           <div class="eyebrow">Investering</div>
           <h2 style="margin-bottom: 16px;">Vad kostar hotellteknik?</h2>
           <p class="lead-dark" style="margin-bottom: 40px;">Priset styrs av hotellets storlek, antalet konferensrum och kravet på ljudkvalitet i restaurangen. Här är en grov uppskattning för att hjälpa er budgetera.</p>
@@ -434,46 +410,47 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section faq-cta" id="faq" style="border-top: 1px solid var(--avab-border);">
-      <div class="avab-container">
-        <div class="faq-heading">
+    <section class="section" id="faq" style="border-top: 1px solid var(--avab-border);">
+      <div class="container two-col" style="align-items: start;">
+        <div>
           <div class="eyebrow">Kunskap</div>
-          <h2>Vanliga frågor om hotellteknik</h2>
-        </div>
-
-        <div class="compact-faq">
-          <details class="faq-item">
-            <summary>Hur får man rätt ljud i både restaurang och bar bredvid varandra?</summary>
-            <p>Svaret ligger i zonindelning och rätt riktade högtalare. Restaurangen kan ha dämpat ljud för samtal, medan baren har högre energi. Personalen styr volym och spellistor separat via en touchpanel.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Varför strular konferenstekniken så ofta?</summary>
-            <p>Vanliga problem uppstår när systemen är för komplexa eller när tekniken installerats utan en tanke på slutanvändaren. Vi bygger konferensrum med fokus på enkelhet – en kabel eller knapp räcker för att starta allt.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Går det att integrera befintlig teknik i ett nytt system?</summary>
-            <p>Ofta, ja. Det verksamheten behöver är sällan en total utrensning, utan rätt styrsystem (t.ex. Crestron) som binder ihop de befintliga delarna till en fungerande och lättanvänd helhet.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Kan jag snabbt hitta ett bortsprunget barn som är någonstans på hotellet?</summary>
-            <p>Ja, med vår Exakt sökning kan ni på sekunder få fram alla kamerors inspelning – från det att barnet anlände, till exakt var det befinner sig just nu. Allt sker helt i enlighet med GDPR.</p>
-          </details>
-        </div>
-
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Trygghet sedan 1990</div>
-            <h2>Ska vi rita upp ert hotell?</h2>
-            <p>Att komma in tidigt i planeringen är avgörande. Låt oss säkerställa helheten, så ni slipper kompromisser i driften senare.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+          <h2 style="margin-bottom: 32px;">Vanliga frågor om hotellteknik</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Hur får man rätt ljud i både restaurang och bar bredvid varandra?</h3>
+              <p>Svaret ligger i zonindelning och rätt riktade högtalare. Restaurangen kan ha dämpat ljud för samtal, medan baren har högre energi. Personalen styr volym och spellistor separat via en touchpanel.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Varför strular konferenstekniken så ofta?</h3>
+              <p>Vanliga problem uppstår när systemen är för komplexa eller när tekniken installerats utan en tanke på slutanvändaren. Vi bygger konferensrum med fokus på enkelhet – en kabel eller knapp räcker för att starta allt.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Går det att integrera befintlig teknik i ett nytt system?</h3>
+              <p>Ofta, ja. Det verksamheten behöver är sällan en total utrensning, utan rätt styrsystem (t.ex. Crestron) som binder ihop de befintliga delarna till en fungerande och lättanvänd helhet.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Kan jag snabbt hitta ett bortsprunget barn som är någonstans på hotellet?</h3>
+              <p>Ja, med vår Exakt sökning kan ni på sekunder få fram alla kamerors inspelning – från det att barnet anlände, till exakt var det befinner sig just nu. Allt sker helt i enlighet med GDPR.</p>
             </div>
           </div>
-          <ul class="calc-list">
+        </div>
+
+        <div class="fullwidth-cta-wrap">
+          <div class="fullwidth-cta animate-in">
+            <div>
+              <div class="eyebrow">Trygghet sedan 1990</div>
+              <h2>Ska vi rita upp ert hotell?</h2>
+              <p>Att komma in tidigt i planeringen är avgörande. Låt oss säkerställa helheten, så ni slipper kompromisser i driften senare.</p>
+              <div class="cta-actions">
+                <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
+              </div>
+            </div>
+            <ul class="cta-points">
             <li>Rätt dimensionerat från början</li>
             <li>Extremt enkelt handhavande</li>
             <li>Driftsäkra konferensytor</li>
           </ul>
+          </div>
         </div>
       </div>
     </section>

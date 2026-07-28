@@ -1,6 +1,6 @@
 ﻿---
-import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -9,7 +9,7 @@ import "../../../styles/avab.css";
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ljud, Bild & Säkerhet för Butik & Retail | AVAB</title>
+  <title>Ljud, Bild & Säkerhet för Butik och retail | AVAB</title>
   <meta name="description" content="Teknik som ökar försäljning och minskar svinn. Vi projekterar zonstyrt ljud, digital signage, LED-väggar och smarta kamerasystem för retail." />
   
   <script type="application/ld+json">
@@ -20,7 +20,7 @@ import "../../../styles/avab.css";
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
         { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
-        { "@type": "ListItem", "position": 3, "name": "Butik & Retail", "item": "https://avab.eu/miljo/butik-retail/" }
+        { "@type": "ListItem", "position": 3, "name": "Butik och retail", "item": "https://avab.eu/miljo/butik-retail/" }
       ]
     },
     {
@@ -122,9 +122,10 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; color: var(--avab-dark-muted); font-size: 1.05rem; line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .solution-expand-inner { overflow: hidden; opacity: 1; transition: opacity 0.3s ease; }
+    .solution-expandable { display: block; opacity: 1; margin-top: 24px; }
+    .solution-expand-inner { overflow: visible; opacity: 1; }
 
+    .hover-indicator { display: none; }
 
     .bullet-list { list-style: none; margin-top: 20px; }
     .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; color: var(--avab-dark-muted); }
@@ -151,61 +152,27 @@ import "../../../styles/avab.css";
     .ref-content h3 { font-size: 1.4rem; margin-bottom: 12px; min-height: auto; } 
     .ref-content p { font-size: 1rem; color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; }
 
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item { padding-top: 16px; border-top: 1px solid var(--avab-border); }
+    .faq-item:first-child { border-top: 0; padding-top: 0; }
+    .faq-item h3 { font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; }
+    .faq-item p { color: var(--avab-dark-muted); line-height: 1.6; font-size: 1.1rem; margin-bottom: 0; }
 
+    .cta-card { background: linear-gradient(135deg, var(--avab-dark) 0%, #2A332C 50%, var(--avab-green) 100%); color: var(--avab-white); padding: 48px; border-radius: var(--avab-radius); display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+    .cta-card h2 { color: var(--avab-white); }
+    .cta-card p { color: var(--avab-white); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
+    @media (min-width: 1081px) { #faq .cta-card { margin-top: 62px; } }
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; border-radius: 999px; font-weight: 700; background: var(--avab-green); color: var(--avab-dark); text-decoration: none; transition: var(--transition-smooth); font-size: 1.05rem; }
     .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px var(--avab-green-glow); }
+    .cta-card .button-light { background: #fff; color: var(--avab-dark); }
+    .cta-card .button-light:hover { background: #fff; box-shadow: 0 16px 32px rgba(0,0,0,0.2); }
     
     @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
     @media (max-width: 768px) {
       .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; }      .flow-card strong, .flow-card span { min-height: auto; } 
+      .solution-card h3 { min-height: auto; } .solution-expandable { display: block; opacity: 1; margin-top: 24px; } .hover-indicator { display: none; } .solution-expand-inner { overflow: visible; opacity: 1; }
+      .flow-card strong, .flow-card span { min-height: auto; } 
     }
-    /* Mobilanpassning (beslut per sida, dokumenterat):
-       - #utmaning (inledande problemnarrativ, sekundar fordjupning pa mobil)
-       Huvudbudskap, losningssektion, referenser/bevisning, FAQ och CTA visas alltid. */
-    @media (max-width: 768px) {
-      #utmaning { display: none; }
-    }
-    /* ---- FAQ (sajtstandard: details/summary, samma som ovriga sidor) ---- */
-    .compact-faq {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 28px;
-      row-gap: 0;
-      max-width: 1060px;
-      margin: 0;
-    }
-    .compact-faq details.faq-item { padding: 20px 0; }
-    .compact-faq summary { font-size: 1.05rem; }
-    .compact-faq details.faq-item p { font-size: 0.98rem; }
-    .compact-faq details.faq-item:nth-child(1),
-    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
-    @media (max-width: 768px) {
-      .compact-faq { grid-template-columns: 1fr; }
-      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
-    }
-
-    /* ---- Kortrader: 4 kort ska ligga 2 + 2 (jamna rader) ---- */
-    @media (min-width: 1081px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (min-width: 769px) and (max-width: 1080px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    /* ---- Statiska kort: innehallet alltid synligt (ingen hover-expandering) ---- */
-    .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-    .solution-expand-inner { opacity: 1; }
-    .solution-card:hover .solution-expandable,
-    .solution-card:focus-within .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-
-    /* ---- FAQ + CTA i samma sektion, enligt mastern pa sporthallssidan ---- */
-    .faq-cta { padding-top: 48px; padding-bottom: 96px; }
-    .faq-cta .compact-faq { margin-bottom: 64px; }
-    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
-    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
-    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
   </style>
 </head>
 <body>
@@ -213,14 +180,14 @@ import "../../../styles/avab.css";
 
   <header class="hero">
     <div class="container animate-in">
-      <div class="eyebrow">Miljö: Butik & Retail</div>
+      <div class="eyebrow">Miljö: Butik och retail</div>
       <h1>Teknik som ökar försäljning, skapar trygghet och ger kontroll</h1>
       <p>I en butik handlar teknik inte bara om ljud och bild – det handlar om konvertering. Vi bygger ekosystem som guidar kunden, skyddar mot svinn och analyserar köer i realtid.</p>
       <div style="margin-top: 40px;"><a class="button" href="/kontakt/">Boka kostnadsfri rådgivning</a></div>
     </div>
   </header>
 
-  <section class="fact-band" aria-label="Snabbfakta butik och retail">
+  <section class="fact-band mobile-secondary" aria-label="Snabbfakta butik och retail">
     <div class="fact-grid">
       <div class="fact"><span>Miljö</span><strong>Butik och retailkedja</strong></div>
       <div class="fact"><span>Ljud</span><strong>Musikzoner och kampanjer</strong></div>
@@ -232,7 +199,7 @@ import "../../../styles/avab.css";
   </section>
 
   <main>
-    <section class="section" id="utmaning" style="border-bottom: 1px solid var(--avab-border);">
+    <section class="section" style="border-bottom: 1px solid var(--avab-border);">
       <div class="container two-col">
         <div class="animate-in">
           <div class="eyebrow">Verkligheten</div>
@@ -264,6 +231,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Få full kontroll över ytan. Upptäck incidenter direkt och använd AI för att analysera kundernas rörelsemönster och flaskhalsar i realtid.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om säkerhet ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -282,6 +250,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Ljudet påverkar kundens beteende. Skapa en jämn och behaglig upplevelse där tempot kan anpassas oberoende mellan olika delar av butiken.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om ljudsystem ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -300,6 +269,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Dra in kunder från utsidan och guida dem i butiken. Digitala skärmar är det mest effektiva sättet att kommunicera snabba erbjudanden.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om bild ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -318,6 +288,7 @@ import "../../../styles/avab.css";
               <p class="intro-text">Skapa buzz kring en produktlansering eller kampanjhelg. Genom att hyra in extra teknik kan butiken tillfälligt förvandlas till en levande eventyta.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om hyrlösningar ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
@@ -331,7 +302,7 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="flow-grid animate-in">
+        <div class="flow-grid animate-in mobile-secondary">
           <div class="flow-card"><strong>Kamera-analys → Minskade köer</strong><span>Systemet larmar personalen om trycket ökar, så ni hinner öppna en kassa i tid.</span></div>
           <div class="flow-card"><strong>Digital Signage → Konvertering</strong><span>Säljande innehåll på rätt plats styr kundens fokus mot era mest lönsamma produkter.</span></div>
           <div class="flow-card"><strong>Tillfällig teknik → Trafik</strong><span>Dra folk till butiken med DJ-event och ljus via hyrljud<span>.</span>nu under intensiva kampanjhelger.</span></div>
@@ -339,7 +310,7 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
+    <section class="section mobile-secondary" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
       <div class="container animate-in">
         <div class="section-header">
           <div class="eyebrow">Investering</div>
@@ -389,42 +360,42 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section faq-cta" id="faq" style="border-top: 1px solid var(--avab-border);">
-      <div class="avab-container">
-        <div class="faq-heading">
+    <section class="section" id="faq" style="border-top: 1px solid var(--avab-border);">
+      <div class="container">
+        <div>
           <div class="eyebrow">Kunskap</div>
-          <h2>Vanliga frågor om retailteknik</h2>
-        </div>
-
-        <div class="compact-faq">
-          <details class="faq-item">
-            <summary>Hur kan kamerasystemet hjälpa oss att korta köerna?</summary>
-            <p>Moderna AI-kameror analyserar kundflöden i realtid. Upptäcker systemet att en kö byggs upp larmas personalen automatiskt, så att ni kan öppna en ny kassa direkt.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Vi vill ha DJ-event i helgen, måste vi köpa utrustning?</summary>
-            <p>Nej. Via vårt systerbolag <a href="https://www.hyrljud.nu" target="_blank" style="color:var(--avab-green); font-weight:700; text-decoration:underline;">hyrljud<span>.</span>nu</a> kan ni hyra klubbljud och ljus. Det gör att ni kan testa eventkoncept och driva trafik utan tunga permanenta investeringar.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Varför räcker det inte med samma musik i hela butiken?</summary>
-            <p>Olika ytor har olika syften. Entrén ska dra in kunden, säljytan behöver energi och kassan kräver ett lugnare tempo för ett stressfritt avslut. Zonstyrt ljud gör detta möjligt.</p>
-          </details>
-        </div>
-
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Trygghet sedan 1990</div>
-            <h2>Ska vi optimera er butiksyta?</h2>
-            <p>Rätt projektering sparar pengar och ökar försäljningen. Låt oss se till att tekniken arbetar för er.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+          <h2 style="margin-bottom: 32px;">Vanliga frågor om retailteknik</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Hur kan kamerasystemet hjälpa oss att korta köerna?</h3>
+              <p>Moderna AI-kameror analyserar kundflöden i realtid. Upptäcker systemet att en kö byggs upp larmas personalen automatiskt, så att ni kan öppna en ny kassa direkt.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Vi vill ha DJ-event i helgen, måste vi köpa utrustning?</h3>
+              <p>Nej. Via vårt systerbolag <a href="https://www.hyrljud.nu" target="_blank" style="color:var(--avab-green); font-weight:700; text-decoration:underline;">hyrljud<span>.</span>nu</a> kan ni hyra klubbljud och ljus. Det gör att ni kan testa eventkoncept och driva trafik utan tunga permanenta investeringar.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Varför räcker det inte med samma musik i hela butiken?</h3>
+              <p>Olika ytor har olika syften. Entrén ska dra in kunden, säljytan behöver energi och kassan kräver ett lugnare tempo för ett stressfritt avslut. Zonstyrt ljud gör detta möjligt.</p>
             </div>
           </div>
-          <ul class="calc-list">
+        </div>
+        <div class="fullwidth-cta-wrap">
+          <div class="fullwidth-cta animate-in">
+            <div>
+              <div class="eyebrow">Trygghet sedan 1990</div>
+              <h2>Ska vi optimera er butiksyta?</h2>
+              <p>Rätt projektering sparar pengar och ökar försäljningen. Låt oss se till att tekniken arbetar för er.</p>
+              <div class="cta-actions">
+                <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+              </div>
+            </div>
+            <ul class="cta-points">
             <li>Kameror som analyserar flöden</li>
             <li>Zonstyrt ljud för ökad konvertering</li>
             <li>Digitala skärmar som guidar kunden</li>
           </ul>
+          </div>
         </div>
       </div>
     </section>

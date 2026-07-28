@@ -1,6 +1,5 @@
 ﻿---
 import SiteHeader from "../../../components/SiteHeader.astro";
-import SiteFooter from "../../../components/SiteFooter.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -19,8 +18,8 @@ import "../../../styles/avab.css";
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
-        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
-        { "@type": "ListItem", "position": 3, "name": "Vård & Sjukhus", "item": "https://avab.eu/miljo/vard/" }
+        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljoer/" },
+        { "@type": "ListItem", "position": 3, "name": "Vård & Sjukhus", "item": "https://avab.eu/miljoer/vard/" }
       ]
     },
     {
@@ -114,9 +113,14 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; color: var(--avab-dark-muted); font-size: 1.05rem; line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .solution-expand-inner { overflow: hidden; opacity: 1; transition: opacity 0.3s ease; }
+    .solution-expandable { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    .solution-expand-inner { overflow: hidden; opacity: 0; transition: opacity 0.3s ease; }
+    .solution-card:hover .solution-expandable { grid-template-rows: 1fr; }
+    .solution-card:hover .solution-expand-inner { opacity: 1; }
 
+    .hover-indicator { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s ease, padding 0.4s ease; border-top: 1px solid var(--avab-border); padding-top: 20px; }
+    .solution-card:hover .hover-indicator { grid-template-rows: 0fr; padding-top: 0; border-top-color: transparent; }
+    .solution-card:hover .hover-indicator div { opacity: 0; }
 
     .bullet-list { list-style: none; margin-top: 20px; }
     .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; color: var(--avab-dark-muted); }
@@ -143,55 +147,25 @@ import "../../../styles/avab.css";
     .ref-content h3 { font-size: 1.4rem; margin-bottom: 12px; }
     .ref-content p { font-size: 1rem; color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; }
 
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item { padding-top: 16px; border-top: 1px solid var(--avab-border); }
+    .faq-item:first-child { border-top: 0; padding-top: 0; }
+    .faq-item h3 { font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; }
+    .faq-item p { color: var(--avab-dark-muted); line-height: 1.6; font-size: 1.1rem; margin-bottom: 0; }
 
+    .cta-card { background: linear-gradient(135deg, var(--avab-dark) 0%, #2A332C 50%, var(--avab-green) 100%); color: var(--avab-white); padding: 48px; border-radius: var(--avab-radius); display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+    .cta-card h2 { color: var(--avab-white); }
+    .cta-card p { color: var(--avab-white); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
+    @media (min-width: 1081px) { #faq .cta-card { margin-top: 62px; } }
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; border-radius: 999px; font-weight: 700; background: var(--avab-green); color: var(--avab-dark); text-decoration: none; transition: var(--transition-smooth); font-size: 1.05rem; }
     .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px var(--avab-green-glow); }
     
     @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
     @media (max-width: 768px) {
       .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; }      .flow-card strong, .flow-card span { min-height: auto; } 
+      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; } .hover-indicator { display: none; } .solution-expand-inner { opacity: 1; }
+      .flow-card strong, .flow-card span { min-height: auto; } 
     }
-
-    /* ---- FAQ (sajtstandard: details/summary, samma som ovriga sidor) ---- */
-    .compact-faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; row-gap: 0; max-width: 1060px; margin: 0; }
-    .compact-faq details.faq-item { padding: 20px 0; }
-    .compact-faq summary { font-size: 1.05rem; }
-    .compact-faq details.faq-item p { font-size: 0.98rem; }
-    .compact-faq details.faq-item:nth-child(1),
-    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
-
-    /* ---- Statiska kort: innehallet alltid synligt (ingen hover-expandering) ---- */
-    .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-    .solution-expand-inner { opacity: 1; }
-    .solution-card:hover .solution-expandable,
-    .solution-card:focus-within .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-
-    /* ---- Kortrader: 4 losningskort ligger 2 + 2 (jamna rader) ---- */
-    @media (min-width: 769px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    /* Mobilanpassning (beslut for denna sida, dokumenterat):
-       Doljs pa mobil (sekundart innehall):
-       - #verkligheten  narrativ bakgrund + summary-list, sammanfattas redan av hero och faktaband
-       - #budget        budgetspann, sekundart infor kontakt
-       Visas alltid: hero (huvudbudskap), #losningar (losningssektion),
-       #referenser (bevisning), FAQ och avslutande CTA. */
-    @media (max-width: 768px) {
-      #verkligheten { display: none; }
-      #budget { display: none; }
-      .compact-faq { grid-template-columns: 1fr; }
-      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
-    }
-
-    /* ---- FAQ + CTA i samma sektion, enligt mastern pa sporthallssidan ---- */
-    .faq-cta { padding-top: 48px; padding-bottom: 96px; }
-    .faq-cta .compact-faq { margin-bottom: 64px; }
-    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
-    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
-    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
   </style>
 </head>
 <body>
@@ -218,7 +192,7 @@ import "../../../styles/avab.css";
   </section>
 
   <main>
-    <section class="section" id="verkligheten" style="border-bottom: 1px solid var(--avab-border);">
+    <section class="section" style="border-bottom: 1px solid var(--avab-border);">
       <div class="container two-col">
         <div class="animate-in">
           <div class="eyebrow">Verkligheten</div>
@@ -236,7 +210,7 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section" id="losningar">
+    <section class="section">
       <div class="container">
         <div class="section-header animate-in">
           <div class="eyebrow">Våra lösningar</div>
@@ -250,12 +224,13 @@ import "../../../styles/avab.css";
               <p class="intro-text">Nätverksbaserade system för sjukhusövergripande utrop. Vi garanterar att information når rätt zon utan att störa intilliggande avdelningar.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Se zonkontroll ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Zoner:</a> Avdelningsspecifik utropsteknik</li>
-                    <li><a href="/tjanster/taluppfattbarhet/" class="cat-link">Klarhet:</a> Garanterad STI i bullriga miljöer</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Prioritet:</a> Krisutrop bryter all bakgrundsmusik</li>
+                    <li><a href="/ljudsystem/" class="cat-link">Zoner:</a> Avdelningsspecifik utropsteknik</li>
+                    <li><a href="/losningar/taluppfattbarhet/" class="cat-link">Klarhet:</a> Garanterad STI i bullriga miljöer</li>
+                    <li><a href="/styrsystem/" class="cat-link">Prioritet:</a> Krisutrop bryter all bakgrundsmusik</li>
                   </ul>
                 </div>
               </div>
@@ -268,12 +243,13 @@ import "../../../styles/avab.css";
               <p class="intro-text">Vi säkrar känsliga ytor med integrerad kameraövervakning och passerkontroll, vilket ger full spårbarhet och visuell verifiering.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om säkerhet ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Kontroll:</a> Kameror vid medicinskåp och lab</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Visuell logg:</a> Dokumenterad behörighetsstyrning</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Larm:</a> Varning vid obehörigt intrång i realtid</li>
+                    <li><a href="/kameraovervakning/" class="cat-link">Kontroll:</a> Kameror vid medicinskåp och lab</li>
+                    <li><a href="/losningar/systemintegration/" class="cat-link">Visuell logg:</a> Dokumenterad behörighetsstyrning</li>
+                    <li><a href="/styrsystem/" class="cat-link">Larm:</a> Varning vid obehörigt intrång i realtid</li>
                   </ul>
                 </div>
               </div>
@@ -286,12 +262,13 @@ import "../../../styles/avab.css";
               <p class="intro-text">AI-kameror upptäcker omedelbart om en boende fallit eller lämnat sängen vid en ovanlig tid, utan att personal behöver titta på live-bild.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om AI-kameror ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Integritet:</a> Övervakning helt enligt GDPR</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Automatlarm:</a> Larm till personalens telefoner</li>
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Effektivitet:</a> Minskar behovet av manuella ronder</li>
+                    <li><a href="/kameraovervakning/" class="cat-link">Integritet:</a> Övervakning helt enligt GDPR</li>
+                    <li><a href="/losningar/systemintegration/" class="cat-link">Automatlarm:</a> Larm till personalens telefoner</li>
+                    <li><a href="/kameraovervakning/" class="cat-link">Effektivitet:</a> Minskar behovet av manuella ronder</li>
                   </ul>
                 </div>
               </div>
@@ -304,12 +281,13 @@ import "../../../styles/avab.css";
               <p class="intro-text">Slipp fräsa i stengolv. Med Auracast skickas ljudet trådlöst direkt till hörapparater eller halsslingor i väntrum och samlingssalar.</p>
             </div>
             <div class="solution-card-bottom">
+              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om hörslingor ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/tjanster/horslinga/" class="cat-link">Trådlöst:</a> Stödjer Bluetooth LE och T-spole</li>
-                    <li><a href="/tjanster/horslinga/" class="cat-link">Enkelhet:</a> Inga fysiska ingrepp i byggnaden</li>
-                    <li><a href="/tjanster/horslinga/" class="cat-link">Räckvidd:</a> Täcker stora ytor med noll fördröjning</li>
+                    <li><a href="/losningar/horslingor/" class="cat-link">Trådlöst:</a> Stödjer Bluetooth LE och T-spole</li>
+                    <li><a href="/losningar/horslingor/" class="cat-link">Enkelhet:</a> Inga fysiska ingrepp i byggnaden</li>
+                    <li><a href="/losningar/horslingor/" class="cat-link">Räckvidd:</a> Täcker stora ytor med noll fördröjning</li>
                   </ul>
                 </div>
               </div>
@@ -325,9 +303,9 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section" id="budget" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
+    <section class="section" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
       <div class="container animate-in">
-        <div class="section-header">
+        <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto;">
           <div class="eyebrow">Investering</div>
           <h2 style="margin-bottom: 16px;">Budget för vård- och sjukhusteknik</h2>
           <p class="lead-dark" style="margin-bottom: 40px;">Priset styrs av antalet kameror, ytornas storlek och komplexiteten i nätverket. Här är en grov uppskattning för att hjälpa er budgetera.</p>
@@ -352,7 +330,7 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section" id="referenser" style="border-top: 1px solid var(--avab-border);">
+    <section class="section" style="border-top: 1px solid var(--avab-border);">
       <div class="container">
         <div class="eyebrow">Vårdreferenser</div>
         <h2>Teknik som gör skillnad på riktigt</h2>
@@ -375,48 +353,40 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section faq-cta" id="faq" style="border-top: 1px solid var(--avab-border);">
-      <div class="avab-container">
-        <div class="faq-heading">
+    <section class="section" id="faq" style="border-top: 1px solid var(--avab-border);">
+      <div class="container two-col" style="align-items: start;">
+        <div>
           <div class="eyebrow">Kunskap</div>
-          <h2>Vanliga frågor om sjukhusteknik</h2>
-        </div>
-
-        <div class="compact-faq">
-          <details class="faq-item">
-            <summary>Kan ni rikta utrop så de inte stör patienter som vilar?</summary>
-            <p>Ja, med vår zonindelning och IP-baserade högtalare kan vi rikta specifika meddelanden till personalutrymmen eller korridorer utan att det hörs i patientrummen.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Hur säkras laboratorier mot obehöriga?</summary>
-            <p>Vi kopplar samman kamerasystemet med passerkontrollen. När någon drar sitt kort loggas händelsen med en högupplöst bildsekvens, vilket ger full kontroll över känsliga miljöer.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Fungerar Auracast med gamla hörapparater?</summary>
-            <p>Auracast är framtiden, men vi glömmer inte historien. För gäster med äldre T-spole-apparater tillhandahåller vi smidiga halsslingor som tar emot den digitala signalen och gör den kompatibel.</p>
-          </details>
-        </div>
-
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Trygghet sedan 1990</div>
-            <h2>Ska vi planera er anläggning?</h2>
-            <p>Låt oss säkerställa teknik som avlastar er personal och skapar en tryggare miljö för patienter och boende.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+          <h2 style="margin-bottom: 32px;">Vanliga frågor om sjukhusteknik</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Kan ni rikta utrop så de inte stör patienter som vilar?</h3>
+              <p>Ja, med vår zonindelning och IP-baserade högtalare kan vi rikta specifika meddelanden till personalutrymmen eller korridorer utan att det hörs i patientrummen.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Hur säkras laboratorier mot obehöriga?</h3>
+              <p>Vi kopplar samman kamerasystemet med passerkontrollen. När någon drar sitt kort loggas händelsen med en högupplöst bildsekvens, vilket ger full kontroll över känsliga miljöer.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Fungerar Auracast med gamla hörapparater?</h3>
+              <p>Auracast är framtiden, men vi glömmer inte historien. För gäster med äldre T-spole-apparater tillhandahåller vi smidiga halsslingor som tar emot den digitala signalen och gör den kompatibel.</p>
             </div>
           </div>
-          <ul class="calc-list">
+        </div>
+        <aside class="cta-card">
+          <div class="eyebrow" style="background: rgba(255,255,255,0.1); color: #fff;">Trygghet sedan 1990</div>
+          <h2>Ska vi planera er anläggning?</h2>
+          <p>Låt oss säkerställa teknik som avlastar er personal och skapar en tryggare miljö för patienter och boende.</p>
+          <ul class="guarantee-list">
             <li>AI-baserad falldetektering</li>
             <li>Auracast utan golvingrepp</li>
             <li>Storskaliga nätverkssystem</li>
           </ul>
-        </div>
+          <div style="margin-top: 32px;"><a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a></div>
+        </aside>
       </div>
     </section>
   </main>
-
-  <SiteFooter />
 
 </body>
 </html>
