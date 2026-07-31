@@ -25,7 +25,7 @@ export interface Reference {
 // så att miljöpillren kan länka vidare till rätt miljösida.
 export const environments: FilterOption[] = [
   { id: "simhall", label: "Simhall", href: "/miljo/simhall/" },
-  { id: "sporthall", label: "Sporthall & arena", href: "/miljo/sporthall/" },
+  { id: "sporthall", label: "Sporthall & arena", href: "/miljo/sporthall-arena/" },
   { id: "ishall", label: "Ishall", href: "/miljo/ishall/" },
   { id: "skola", label: "Skola", href: "/miljo/skola/" },
   { id: "gym", label: "Gym", href: "/miljo/gym/" },
