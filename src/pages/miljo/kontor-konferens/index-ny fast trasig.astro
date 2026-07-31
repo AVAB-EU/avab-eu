@@ -1,0 +1,339 @@
+---
+
+import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import "../../../styles/avab.css";
+
+
+
+const title = 'Kontor & konferens · AVAB';
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --avab-green: #8fc025;
+        --avab-green-hover: #9ed229;
+        --avab-green-soft: rgba(143, 192, 37, 0.12);
+        --avab-green-glow: rgba(143, 192, 37, 0.4);
+        --avab-dark: #282e29;
+        --avab-dark-muted: #3a433d;
+        --avab-grey: #e9eae9;
+        --avab-light: #f4f5f4;
+        --avab-white: #ffffff;
+        --avab-border: rgba(40, 46, 42, 0.1);
+        --avab-shadow-sm: 0 4px 12px rgba(40, 46, 42, 0.05);
+        --avab-shadow-lg: 0 24px 48px rgba(40, 46, 42, 0.12);
+        --avab-radius: 24px;
+        --avab-radius-sm: 16px;
+        --avab-max: 1280px;
+        --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        --avab-nav-height: 72px;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        color: var(--avab-dark);
+        background: var(--avab-white);
+        line-height: 1.65;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      .avab-container { width: min(calc(100% - 48px), var(--avab-max)); margin: 0 auto; }
+      .section { padding: 80px 0; border-bottom: 1px solid var(--avab-border); }
+      .section--light { background: var(--avab-light); }
+      .two-col { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 56px; align-items: center; }
+      .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+      .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+      .site-nav {
+        position: sticky; top: 0; z-index: 10;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--avab-border);
+      }
+      .site-nav .avab-container { display: flex; align-items: center; justify-content: space-between; min-height: var(--avab-nav-height); }
+      .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.2rem; }
+      .brand-dot { width: 14px; height: 14px; border-radius: 4px; background: var(--avab-green); box-shadow: 0 0 0 4px var(--avab-green-soft); }
+      .nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
+      .nav-links a{ font-weight: 700; color: var(--avab-dark-muted); }
+      .nav-links a:hover{ color: var(--avab-green); }
+      .nav-button {
+        display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px;
+        background: var(--avab-green); color: var(--avab-dark); font-weight: 800; box-shadow: 0 8px 18px var(--avab-green-glow);
+      }
+      .breadcrumbs { border-bottom: 1px solid var(--avab-border); }
+      .breadcrumbs ol { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 14px 0; font-size: 0.9rem; color: var(--avab-dark-muted); }
+      .breadcrumbs li:not(:last-child)::after { content: '/'; margin-left: 8px; color: rgba(40,46,42,.35); }
+      .hero {
+        position: relative; min-height: 560px; display: flex; align-items: stretch; color: #fff;
+        background: linear-gradient(135deg, rgba(40,46,42,.85), rgba(40,46,42,.48)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80') center/cover;
+      }
+      .hero-inner { width: min(calc(100% - 48px), var(--avab-max)); margin: 0 auto; display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: center; }
+      .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; color: #d8f6a0; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+      .eyebrow::before { content: ''; display: inline-block; width: 28px; height: 2px; background: var(--avab-green); }
+      .hero h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 1.03; margin-bottom: 16px; color: #fff; }
+      .hero .lead { max-width: 60ch; margin-bottom: 28px; font-size: 1.18rem; color: rgba(255,255,255,0.9); }
+      .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+      .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 800; }
+      .button-primary { background: var(--avab-green); color: var(--avab-dark); }
+      .button-secondary { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.3); }
+      .hero-panel {
+        padding: 28px; border-radius: var(--avab-radius-sm); background: rgba(255,255,255,.12);
+        backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.25);
+      }
+      .hero-panel h3 { color: #fff; margin-bottom: 12px; font-size: 1.35rem; }
+      .hero-panel p { color: rgba(255,255,255,.9); margin-bottom: 18px; }
+      .hero-panel ul { list-style: none; display: grid; gap: 12px; }
+      .hero-panel li::before { content: '✓'; color: var(--avab-green); font-weight: 800; margin-right: 10px; }
+      h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 16px; }
+      h3 { font-size: 1.42rem; line-height: 1.25; margin-bottom: 12px; }
+      p { margin: 0 0 20px; color: var(--avab-dark-muted); font-size: 1.05rem; }
+      .card { padding: 28px; border-radius: var(--avab-radius-sm); border: 1px solid var(--avab-border); background: var(--avab-white); box-shadow: var(--avab-shadow-sm); }
+      .value-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+      .value-card { padding: 24px; border: 1px solid var(--avab-border); border-radius: var(--avab-radius-sm); background: #fff; }
+      .value-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: var(--avab-green-soft); margin-bottom: 14px; }
+      .env-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+      .env-card { position: relative; display: flex; flex-direction: column; overflow: hidden; padding: 28px; border: 1px solid var(--avab-border); border-radius: var(--avab-radius-sm); background: #fff; box-shadow: var(--avab-shadow-sm); }
+      .env-card::after { content: '→'; position: absolute; right: 26px; bottom: 22px; color: var(--avab-green); font-size: 1.55rem; }
+      .env-card p { flex: 1; margin-bottom: 0; }
+      .proof-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
+      .proof-item { padding: 24px; border-radius: var(--avab-radius-sm); background: var(--avab-light); }
+      .proof-item strong { display: block; font-size: 1.7rem; color: var(--avab-dark); }
+      .proof-item span { color: var(--avab-dark-muted); }
+      .cta-card { padding: 48px; background: linear-gradient(135deg, var(--avab-dark) 0%, #2a332c 55%, var(--avab-green) 100%); color: #fff; border-radius: var(--avab-radius); }
+      .cta-card h2, .cta-card p { color: #fff; }
+      .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+      .button-light { background: #fff; color: var(--avab-dark); }
+      .faq-card { padding: 24px; border: 1px solid var(--avab-border); border-radius: var(--avab-radius-sm); background: #fff; }
+      .faq-card + .faq-card { margin-top: 16px; }
+      .site-footer { padding: 56px 0 32px; background: var(--avab-dark); color: rgba(255,255,255,.88); }
+      .footer-grid { display: grid; grid-template-columns: 1.2fr 0.8fr 0.8fr; gap: 36px; }
+      .footer-list { list-style: none; display: grid; gap: 10px; }
+      .footer-list a { color: rgba(255,255,255,.85); }
+      .footer-list a:hover { color: var(--avab-green); }
+      @media (max-width: 900px) {
+        .two-col, .hero-inner, .value-grid, .env-grid, .proof-strip, .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr; }
+        .hero { min-height: auto; padding: 56px 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-nav">
+      <div class="avab-container">
+        <a class="brand" href="#">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>AVAB</span>
+        </a>
+        <nav aria-label="Huvudnavigering">
+          <ul class="nav-links">
+            <li><a href="#">Hem</a></li>
+            <li><a href="#">Miljö</a></li>
+            <li><a href="#">Tjänster</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </nav>
+        <a class="nav-button" href="#">Boka möte</a>
+      </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <div class="avab-container">
+        <ol>
+          <li><a href="#">Hem</a></li>
+          <li><a href="#">Miljö</a></li>
+          <li><span aria-current="page">Kontor &amp; konferens</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Miljölösningar</div>
+          <h1>Kontor &amp; konferens med smartare arbetsmiljö</h1>
+          <p class="lead">
+            Skapa en hållbar, trygg och effektiv arbetsplats med AVABs lösningar för kontor,
+            mötesrum och konferensytor.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#">Få offert</a>
+            <a class="button button-secondary" href="#">Se lösningar</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <h3>Så kan vi hjälpa dig</h3>
+          <p>Effektiva tjänster för moderna arbetsplatser – från inredning till service och support.</p>
+          <ul>
+            <li>Mer hållbar arbetsmiljö</li>
+            <li>Flexibla konferensytor</li>
+            <li>Trygg och tillgänglig infrastruktur</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Varför AVAB</div>
+          <h2>Designad för den moderna arbetsplatsen</h2>
+          <p>
+            Våra lösningar hjälper dig att skapa en arbetsmiljö där välbefinnande, produktivitet och hållbarhet går hand i hand.
+            Vi arbetar nära dig från behovsanalys till drift och uppföljning.
+          </p>
+          <p>
+            Med fokus på kvalitet, flexibilitet och långsiktiga affärsresultat bygger vi lösningar som är anpassade för företag i alla storlekar.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Det här får du</h3>
+          <p>Förbättrad arbetsmiljö, enklare administration och tydliga ansvarsfördelningar för hela din organisation.</p>
+          <div class="proof-strip">
+            <div class="proof-item">
+              <strong>93%</strong>
+              <span>kundnöjdhet</span>
+            </div>
+            <div class="proof-item">
+              <strong>24/7</strong>
+              <span>serviceglädje</span>
+            </div>
+            <div class="proof-item">
+              <strong>100%</strong>
+              <span>anpassningsbar</span>
+            </div>
+            <div class="proof-item">
+              <strong>1</strong>
+              <span>samordnad kontakt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div class="eyebrow">Nyckelfunktioner</div>
+          <h2>Våra lösningar för kontor och konferens</h2>
+        </div>
+        <div class="value-grid">
+          <article class="value-card">
+            <div class="value-icon">📍</div>
+            <h3>Effektiv layout</h3>
+            <p>Skapa tydliga arbetszoner och flexibla mötesytor som passar företagsverksamheten.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-icon">🧹</div>
+            <h3>Hållbar drift</h3>
+            <p>Smartare materialval och effektiv service minskar miljöpåverkan och driftskostnader.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-icon">🛡️</div>
+            <h3>Trygg miljö</h3>
+            <p>Se till att alla delar av arbetsplatsen möter tillgänglighets- och säkerhetskrav.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="avab-container">
+        <div class="eyebrow">För dig som</div>
+        <h2>Planerar framtidens arbetsplats</h2>
+        <div class="env-grid">
+          <article class="env-card">
+            <h3>Fastighetsägare</h3>
+            <p>Skapa attraktiva och välfungerande miljöer som stärker byggnadens värde och användarupplevelse.</p>
+          </article>
+          <article class="env-card">
+            <h3>Arbetsgivare</h3>
+            <p>Öka trivseln och effektiviteten med skräddarsydda lösningar för arbetsplatsen.</p>
+          </article>
+          <article class="env-card">
+            <h3>Projektteam</h3>
+            <p>Få ett enkelt samarbete från planering till leverans med tydliga milstolpar och ansvar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="avab-container">
+        <div class="cta-card">
+          <div class="eyebrow">Boka en konsultation</div>
+          <h2>Vill du utveckla din arbetsplats?</h2>
+          <p>
+            Låt oss hjälpa dig att hitta rätt lösning för kontor, konferens och den dagliga verksamheten.
+          </p>
+          <div class="cta-actions">
+            <a class="button button-light" href="#">Kontakta oss</a>
+            <a class="button button-secondary" href="#">Se våra tjänster</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="avab-container">
+        <div class="eyebrow">Vanliga frågor</div>
+        <h2>Snabba svar om våra lösningar</h2>
+
+        <div class="faq-card">
+          <h3>Hur lång tid tar ett projekt?</h3>
+          <p>Tidplanen beror på omfattning och förutsättningar, men vi arbetar alltid med tydliga mål och en smidig process.</p>
+        </div>
+        <div class="faq-card">
+          <h3>Kan lösningen anpassas efter våra behov?</h3>
+          <p>Ja. Vi skräddarsyr lösningar efter arbetsplatsens storlek, verksamhet och krav på hållbarhet och säkerhet.</p>
+        </div>
+        <div class="faq-card">
+          <h3>Hur får vi support efter leverans?</h3>
+          <p>Vi erbjuder kontinuerlig support och kan skapa ett långsiktigt underhålls- och serviceupplägg.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="avab-container footer-grid">
+        <div>
+          <div class="brand" style="color:#fff; margin-bottom: 14px;">
+            <span class="brand-dot" aria-hidden="true"></span>
+            <span>AVAB</span>
+          </div>
+          <p style="color: rgba(255,255,255,.8); margin-bottom: 0;">
+            Smartare lösningar för arbetsplatser och miljöer som ska fungera i praktiken.
+          </p>
+        </div>
+        <div>
+          <h3 style="color:#fff;">Tjänster</h3>
+          <ul class="footer-list">
+            <li><a href="#">Kontor</a></li>
+            <li><a href="#">Konferens</a></li>
+            <li><a href="#">Miljöservice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:#fff;">Kontakt</h3>
+          <ul class="footer-list">
+            <li><a href="#">info@avab.se</a></li>
+            <li><a href="#">08-123 45 67</a></li>
+            <li><a href="#">Sverige</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

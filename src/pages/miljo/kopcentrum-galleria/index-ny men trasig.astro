@@ -1,0 +1,544 @@
+---
+import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+
+import "../../../styles/avab.css";
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Miljö', href: '/miljo' },
+  { label: 'Köpcentrum Galleria', href: '/miljo/kopcentrum-galleria' },
+];
+---
+
+<html lang="sv">
+  <head>
+    <title>Köpcentrum Galleria | AVAB</title>
+    <meta
+      name="description"
+      content="Lösningar för Köpcentrum Galleria med hållbara, flexibla och säkra miljöanpassade installationer från AVAB."
+    />
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Primär navigation">
+      <div class="avab-container">
+        <a class="brand" href="/" aria-label="AVAB startsida">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>AVAB</span>
+        </a>
+        <ul class="nav-links">
+          <li><a class="nav-link hover-underline" href="/miljo">Miljö</a></li>
+          <li><a class="nav-link hover-underline" href="/services">Tjänster</a></li>
+          <li><a class="nav-link hover-underline" href="/kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Brödsmulor">
+      <div class="avab-container">
+        <ol>
+          {breadcrumbs.map((crumb, index) => (
+            <li>
+              {index < breadcrumbs.length - 1 ? (
+                <a href={crumb.href}>{crumb.label}</a>
+              ) : (
+                <span aria-current="page">{crumb.label}</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </nav>
+
+    <section class="hero hero--sporthall" aria-labelledby="page-title">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-content hero-inner">
+        <span class="eyebrow eyebrow-dark">Miljö – Köpcentrum Galleria</span>
+        <h1 id="page-title">Flexibla lösningar för moderna köpcentrum</h1>
+        <p class="lead">
+          AVAB stödjer köpcentrummiljöer med driftssäkra, energieffektiva och
+          användarvänliga lösningar som underlättar både besökare och driftslag.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#kontakt">Boka möte</a>
+          <a class="button button-secondary" href="#lösningar">Se lösningar</a>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="section">
+        <div class="avab-container two-col two-col--center">
+          <div>
+            <span class="eyebrow">Om platsen</span>
+            <h2>En välkomnande miljö som fungerar för alla</h2>
+            <p class="lead-dark">
+              I ett köpcentrum behöver varje yta kunna bära både hög trafik,
+              tydlig orientering och ett tryggt intryck. Våra lösningar är
+              byggda för att matcha just den kombinationen.
+            </p>
+          </div>
+          <div class="card card--light">
+            <h3>Vad vi fokuserar på</h3>
+            <ul class="bullet-list">
+              <li>Hög tillgänglighet och smidig trafikflöde</li>
+              <li>Rent, säkert och hållbart underhåll</li>
+              <li>Skalbara lösningar för säsongsvariationer</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light" id="lösningar">
+        <div class="avab-container">
+          <div class="section-heading">
+            <span class="eyebrow">Lösningar</span>
+            <h2>Det här gör vi för Galleria-miljön</h2>
+          </div>
+
+          <div class="env-grid">
+            <article class="env-card">
+              <h3><a href="#">Besöksflöde och orientering</a></h3>
+              <p>
+                Tydliga vägvisningar, smart planering och säkra zoner för kundflöde.
+              </p>
+            </article>
+            <article class="env-card">
+              <h3><a href="#">Renhållning och driftstöd</a></h3>
+              <p>
+                Effektiva rutiner och anpassad service för att hålla miljön ren,
+                trygg och attraktiv hela dagen.
+              </p>
+            </article>
+            <article class="env-card">
+              <h3><a href="#">Hållbar energianvändning</a></h3>
+              <p>
+                Energieffektiva lösningar som minskar driftkostnad och stärker
+                miljöprofilen i varje detalj.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="avab-container">
+          <div class="proof-strip" aria-label="Viktiga faktorer">
+            <div class="proof-item">
+              <strong>Hög trafiktäthet</strong>
+              <span>Designad för smidigt flöde och långa vistelser</span>
+            </div>
+            <div class="proof-item">
+              <strong>Trygghet</strong>
+              <span>Synlighet, tillgänglighet och tydliga rutiner</span>
+            </div>
+            <div class="proof-item">
+              <strong>Hållbar drift</strong>
+              <span>Effektiv användning av resurser och underhåll</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light">
+        <div class="avab-container two-col">
+          <div>
+            <span class="eyebrow">Process</span>
+            <h2>Så går ett projekt till</h2>
+            <div class="flow-grid-horizontal">
+              <article class="flow-card">
+                <strong>1. Kartläggning</strong>
+                <span>Vi analyserar trafik, användningsmönster och behov.</span>
+              </article>
+              <article class="flow-card">
+                <strong>2. Förslag</strong>
+                <span>Rekommenderade lösningar för varje del av miljön.</span>
+              </article>
+              <article class="flow-card">
+                <strong>3. Genomförande</strong>
+                <span>Optimering av driftsmodell och installationer.</span>
+              </article>
+              <article class="flow-card">
+                <strong>4. Uppföljning</strong>
+                <span>Vi ser till att lösningen fortsätter att prestera.</span>
+              </article>
+            </div>
+          </div>
+          <aside class="dark-card" aria-label="Snabb fakta">
+            <h3>Viktigt att tänka på</h3>
+            <ul class="bullet-list bullet-list-light">
+              <li>Öppenhet och tydlighet förstärker upplevelsen</li>
+              <li>Smarta lösningar ger lägre driftsstress</li>
+              <li>Hållbarhet skapar långsiktigt värde</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="avab-container">
+          <div class="section-heading">
+            <span class="eyebrow">Vanliga frågor</span>
+            <h2>Snabba svar kring miljöprojektet</h2>
+          </div>
+
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary>Hur lång tid tar ett projekt?</summary>
+              <p>
+                Tiden beror på omfattning, men vi arbetar med tydliga milstolpar och
+                genomförandeplaner från start.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Kan lösningarna anpassas efter säsong</summary>
+              <p>
+                Ja. Vi bygger flexibla lösningar som kan skalas upp eller ned med
+                trafikvikt, evenemang och driftsbehov.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Hur ser uppföljning ut?</summary>
+              <p>
+                Vi följer lösningens effektivitet och arbetar aktivt med förbättringar
+                baserat på mätning, observation och kundbehov.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="fullwidth-cta-wrap" id="kontakt">
+        <div class="avab-container">
+          <div class="fullwidth-cta cta-card">
+            <span class="eyebrow">Kontakta oss</span>
+            <h2>Vill du prata om lösningar för Köpcentrum Galleria?</h2>
+            <p>
+              Låt oss hjälpa dig att hitta den bästa miljöprofilen för er verksamhet.
+            </p>
+            <div class="cta-actions">
+              <a class="button button-light" href="mailto:info@avab.se">info@avab.se</a>
+              <a class="button button-quiet" href="tel:+46000000000">Ring oss</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="avab-container footer-inner">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="/" aria-label="AVAB">
+              <span class="brand-dot" aria-hidden="true"></span>
+              <span>AVAB</span>
+            </a>
+            <p class="footer-tagline">
+              Hållbara, säkra och smarta lösningar för moderna miljöer.
+            </p>
+          </div>
+          <div>
+            <h2 class="footer-heading">Kontakt</h2>
+            <a class="footer-contact-row" href="mailto:info@avab.se">info@avab.se</a>
+            <a class="footer-contact-row" href="tel:+46000000000">+46 00 000 00 00</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      :root {
+        --avab-green: #8fc025;
+        --avab-green-hover: #9ed229;
+        --avab-green-soft: rgba(143, 192, 37, 0.12);
+        --avab-dark: #282e29;
+        --avab-dark-muted: #3a433d;
+        --avab-grey: #e9eae9;
+        --avab-light: #f4f5f4;
+        --avab-white: #ffffff;
+        --avab-border: rgba(40, 46, 42, 0.1);
+        --avab-shadow-sm: 0 4px 12px rgba(40, 46, 42, 0.05);
+        --avab-shadow-lg: 0 24px 48px rgba(40, 46, 42, 0.12);
+        --avab-radius: 24px;
+        --avab-radius-sm: 16px;
+        --avab-max: 1280px;
+        --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        --avab-nav-height: 72px;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+        color: var(--avab-dark);
+        background: var(--avab-white);
+        line-height: 1.65;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      .avab-container { width: min(calc(100% - 48px), var(--avab-max)); margin: 0 auto; }
+      .site-nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--avab-border);
+      }
+      .site-nav .avab-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: var(--avab-nav-height);
+      }
+      .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; }
+      .brand-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 4px;
+        background: var(--avab-green);
+        box-shadow: 0 0 0 4px var(--avab-green-soft);
+      }
+      .nav-links {
+        display: flex;
+        gap: 16px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-link { font-weight: 700; color: var(--avab-dark-muted); }
+      .nav-link:hover { color: var(--avab-green); }
+      .breadcrumbs { border-bottom: 1px solid var(--avab-border); }
+      .breadcrumbs ol {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        list-style: none;
+        margin: 0;
+        padding: 14px 0;
+        font-size: 0.9rem;
+        color: var(--avab-dark-muted);
+      }
+      .breadcrumbs li:not(:last-child)::after {
+        content: "/";
+        margin-left: 8px;
+        color: var(--avab-border);
+      }
+      .breadcrumbs a:hover { color: var(--avab-green); }
+      .hero {
+        position: relative;
+        min-height: 520px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        overflow: hidden;
+        background: linear-gradient(135deg, #233025, #495649);
+      }
+      .hero-image {
+        min-height: 520px;
+        background:
+          linear-gradient(90deg, rgba(0,0,0,0.25), rgba(0,0,0,0.05)),
+          radial-gradient(circle at center, rgba(143, 192, 37, 0.44), transparent 40%),
+          url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=80') center/cover;
+      }
+      .hero-content {
+        padding: 56px;
+        color: var(--avab-white);
+      }
+      .hero h1,
+      .hero p,
+      .hero .eyebrow { color: var(--avab-white); }
+      .hero h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2.2rem, 4vw, 4rem);
+        line-height: 1.08;
+      }
+      .lead {
+        margin: 0 0 24px;
+        font-size: 1.15rem;
+        max-width: 60ch;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+        color: var(--avab-green);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 2px;
+        background: currentColor;
+      }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 999px;
+        font-weight: 800;
+        transition: var(--transition-smooth);
+      }
+      .button-primary {
+        background: var(--avab-green);
+        color: var(--avab-dark);
+        box-shadow: 0 8px 18px rgba(143, 192, 37, 0.28);
+      }
+      .button-primary:hover { background: var(--avab-green-hover); }
+      .button-secondary {
+        background: transparent;
+        color: var(--avab-white);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      .button-secondary:hover { background: rgba(255, 255, 255, 0.08); }
+      .button-light {
+        background: var(--avab-white);
+        color: var(--avab-dark);
+      }
+      .button-quiet {
+        background: rgba(255,255,255,0.14);
+        color: var(--avab-white);
+        border: 1px solid rgba(255,255,255,0.45);
+      }
+      .hero-actions, .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+      .section { padding: 80px 0; border-bottom: 1px solid var(--avab-border); }
+      .section:last-child { border-bottom: none; }
+      .section--light { background: var(--avab-light); }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 56px;
+        align-items: stretch;
+      }
+      .two-col--center { align-items: center; }
+      h1, h2, h3 { line-height: 1.15; margin: 0 0 12px; }
+      h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+      h3 { font-size: 1.5rem; }
+      .lead-dark, p, .bullet-list, .proof-item span, .flow-card span {
+        color: var(--avab-dark-muted);
+      }
+      .lead-dark {
+        font-size: 1.25rem;
+        max-width: 68ch;
+      }
+      .card, .env-card, .flow-card, .dark-card {
+        border: 1px solid var(--avab-border);
+        border-radius: var(--avab-radius-sm);
+        background: var(--avab-white);
+        box-shadow: var(--avab-shadow-sm);
+      }
+      .card { padding: 32px; }
+      .card--light { background: var(--avab-light); }
+      .bullet-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .bullet-list li { position: relative; padding-left: 18px; margin-bottom: 10px; }
+      .bullet-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.72em;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--avab-green);
+      }
+      .bullet-list-light li { color: var(--avab-white); }
+      .section-heading {
+        display: grid;
+        gap: 32px;
+        align-items: end;
+        margin-bottom: 42px;
+        max-width: 980px;
+      }
+      .env-grid, .flow-grid-horizontal {
+        display: grid;
+        gap: 24px;
+      }
+      .env-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .env-card, .flow-card { padding: 28px; }
+      .env-card::after {
+        content: "→";
+        display: block;
+        margin-top: 16px;
+        color: var(--avab-green);
+        font-size: 1.4rem;
+      }
+      .env-card h3 a:hover { color: var(--avab-green); }
+      .proof-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .proof-item {
+        padding: 24px;
+        background: var(--avab-light);
+        border-radius: var(--avab-radius-sm);
+      }
+      .proof-item strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--avab-green);
+        font-size: 1.15rem;
+      }
+      .dark-card {
+        padding: 32px;
+        background: linear-gradient(135deg, #242824 0%, #2b352c 100%);
+        color: var(--avab-white);
+      }
+      .dark-card h3, .dark-card p { color: var(--avab-white); }
+      .faq-list { display: grid; gap: 16px; }
+      .faq-item {
+        padding: 0 20px;
+        border: 1px solid var(--avab-border);
+        border-radius: var(--avab-radius-sm);
+        background: var(--avab-white);
+      }
+      .faq-item summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 20px 0;
+        font-weight: 700;
+      }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item p { margin: 0 0 20px; }
+      .fullwidth-cta-wrap { padding: 80px 0 0; }
+      .fullwidth-cta {
+        padding: 48px;
+        border-radius: var(--avab-radius);
+        background: linear-gradient(135deg, var(--avab-dark) 0%, #2a332c 50%, var(--avab-green) 100%);
+      }
+      .fullwidth-cta h2, .fullwidth-cta p { color: var(--avab-white); }
+      .site-footer { padding: 48px 0 24px; background: var(--avab-light); }
+      .footer-inner { display: grid; gap: 32px; }
+      .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      .footer-tagline { margin-top: 16px; color: var(--avab-dark-muted); }
+      .footer-contact-row {
+        display: block;
+        margin-top: 10px;
+        font-weight: 700;
+      }
+      .footer-contact-row:hover { color: var(--avab-green); }
+      @media (max-width: 768px) {
+        .hero,
+        .two-col,
+        .proof-strip,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-content { padding: 36px 24px; }
+        .hero-image { min-height: 320px; }
+        .section { padding: 56px 0; }
+        .fullwidth-cta { padding: 32px 24px; }
+      }
+    </style>
+  </body>
+</html>
