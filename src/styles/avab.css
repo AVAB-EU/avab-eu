@@ -1262,6 +1262,40 @@ details.faq-item p {
   margin-top: 32px;
 }
 
+/*
+ * CTA-knapparna ska behålla samma kontrast på alla miljösidor.
+ * Flera äldre sidor har en lokal `.button`-regel efter den gemensamma
+ * stilmallen; den får inte skriva över varianterna i den mörka CTA-rutan.
+ */
+.fullwidth-cta .cta-actions .button.button-light {
+  background: #fff;
+  color: var(--avab-dark);
+  border-color: #fff;
+  box-shadow: none;
+}
+.fullwidth-cta .cta-actions .button.button-light:hover {
+  background: var(--avab-light);
+  color: var(--avab-dark);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+.fullwidth-cta .cta-actions .button.button-secondary {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: none;
+}
+.fullwidth-cta .cta-actions .button.button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: #fff;
+}
+.fullwidth-cta .cta-actions .button.button-quiet {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
 /* Checklista i CTA (kallas både .cta-points och .calc-list) */
 .cta-points,
 .calc-list {
