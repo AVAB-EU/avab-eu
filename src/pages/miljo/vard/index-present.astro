@@ -1,0 +1,608 @@
+---
+import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import "../../../styles/avab.css";
+
+
+const facts = [
+  { value: '98%', label: 'av kunder upplever bättre arbetsmiljö' },
+  { value: '24/7', label: 'stöd för teams och chefer' },
+  { value: '12+', label: 'år av erfarenhet inom vård och omsorg' },
+];
+
+const envCards = [
+  {
+    title: 'Stödjande arbetsplats',
+    text: 'Bygg en arbetsmiljö där medarbetare snabbt hittar rätt hjälp, resurser och rutiner utan att känna sig osäkra.',
+  },
+  {
+    title: 'Trygga rutiner',
+    text: 'Standardiserade processer och tydlig kommunikation minskar stress, förbättrar kvalitetsarbetet och skapar bättre förutsättningar för varje shift.',
+  },
+  {
+    title: 'Lärande och utveckling',
+    text: 'Ge chefer och medarbetare verktyg att utvecklas i sin roll genom praktisk utbildning, tydliga riktlinjer och ett hälsofrämjande arbetssätt.',
+  },
+];
+
+const flowCards = [
+  {
+    step: '01',
+    title: 'Kartlägg nuläget',
+    text: 'Vi analyserar dagens arbetsmiljö, uppdrag och behov i verksamheten.',
+  },
+  {
+    step: '02',
+    title: 'Sätt mål',
+    text: 'Tillsammans prioriterar vi vad som ger störst effekt för arbetsplatsen.',
+  },
+  {
+    step: '03',
+    title: 'Genomför lösningar',
+    text: 'Vi implementerar stöd, rutiner och praktiska åtgärder för hela teamet.',
+  },
+  {
+    step: '04',
+    title: 'Följ upp och förbättra',
+    text: 'Kontinuerlig uppföljning gör att arbetet håller hög kvalitet över tid.',
+  },
+];
+
+const faqs = [
+  {
+    title: 'Hur snabbt kan arbetet starta?',
+    text: 'Vanligtvis kan vi påbörja en första kartläggning inom kort och skapa en tydlig plan för nästa steg.',
+  },
+  {
+    title: 'Passar detta både små och större verksamheter?',
+    text: 'Ja. Vi anpassar arbetet efter verksamhetens storlek, behov och tillgängliga resurser.',
+  },
+  {
+    title: 'Vad krävs av oss i organisationen?',
+    text: 'Det krävs ofta en engagerad kontaktperson, tillgång till relevant information och ett visst mått av deltagande från chefer och medarbetare.',
+  },
+];
+---
+
+<html lang="sv">
+  <head>
+    <title>Miljö & Vård | AVAB</title>
+  </head>
+  <body>
+    <header class="site-nav">
+      <div class="avab-container">
+        <a href="#" class="brand" aria-label="AVAB startsida">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>AVAB</span>
+        </a>
+      </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Brödsmulor">
+      <div class="avab-container">
+        <ol>
+          <li><a href="#">Hem</a></li>
+          <li><a href="#">Miljö</a></li>
+          <li><span aria-current="page">Vård</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="hero hero--sporthall">
+      <div class="hero-inner avab-container">
+        <div class="hero-content animate-in">
+          <p class="eyebrow eyebrow-dark">Miljö &amp; Vård</p>
+          <h1>Bygg en hållbar och trygg arbetsmiljö inom vård och omsorg</h1>
+          <p class="lead">
+            Vi hjälper verksamheter att skapa bättre förutsättningar för medarbetare,
+            chefer och patienter genom tydliga rutiner, stödjande processer och praktisk utveckling.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#kontakt">Boka möte</a>
+            <a class="button button-secondary" href="#metod">Se hur vi arbetar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">Vår uppgift</p>
+            <h2>Från utmaning till hållbar lösning</h2>
+          </div>
+          <p class="lead-dark">
+            Genom rätt stöd och väl förankrade rutiner skapar vi en arbetsplats där människor kan göra sitt bästa på ett säkert och meningsfullt sätt.
+          </p>
+        </div>
+
+        <div class="fact-band">
+          <div class="fact-grid">
+            {facts.map((fact) => (
+              <article class="fact">
+                <strong>{fact.value}</strong>
+                <span>{fact.label}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="metod">
+      <div class="avab-container split split-stretch">
+        <div>
+          <p class="eyebrow eyebrow-dark">Så arbetar vi</p>
+          <h2>En enkel och praktisk metodik</h2>
+          <p>
+            Vi bygger lösningar utifrån verksamhetens verklighet. Det betyder att varje förbättring kopplas till reella behov, tydliga beslut och ett hållbart uppföljningsarbete.
+          </p>
+        </div>
+
+        <div class="media-stack">
+          <div class="grid-2">
+            {envCards.map((card) => (
+              <article class="env-card">
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">Process</p>
+            <h2>Steg för steg mot bättre arbetsmiljö</h2>
+          </div>
+        </div>
+
+        <div class="flow-grid-horizontal">
+          {flowCards.map((card) => (
+            <article class="flow-card">
+              <strong>{card.step}</strong>
+              <h3>{card.title}</h3>
+              <span>{card.text}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="avab-container two-col two-col--center">
+        <div>
+          <p class="eyebrow eyebrow-dark">Resultat</p>
+          <h2>Mer fokus på verksamheten, mindre onödig osäkerhet</h2>
+          <p>
+            Målet är att skapa en miljö där uppdraget blir tydligare, arbetssättet blir mer jämnt och medarbetarna får bättre stöd i vardagen.
+          </p>
+          <ul class="bullet-list">
+            <li>Tydligare förväntningar och ansvar</li>
+            <li>Mer jämn och trygg arbetsvardag</li>
+            <li>Starkare förutsättningar för kontinuerligt lärande</li>
+          </ul>
+        </div>
+
+        <div class="image-wrapper image-wrapper--fill-lg">
+          <img alt="Arbetsmiljö i vård och omsorg" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">Vanliga frågor</p>
+            <h2>Snabba svar om samarbetet</h2>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details class="faq-card" open>
+              <summary class="faq-top">
+                <h3>{faq.title}</h3>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-expandable">
+                <div class="faq-expand-inner">
+                  <p>{faq.text}</p>
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="fullwidth-cta-wrap" id="kontakt">
+      <div class="avab-container">
+        <div class="fullwidth-cta cta-card">
+          <p class="eyebrow eyebrow-dark">Kontakta oss</p>
+          <h2>Vill du skapa en starkare arbetsmiljö?</h2>
+          <p>
+            Låt oss prata om era utmaningar och hitta ett konkret och hållbart nästa steg.
+          </p>
+          <div class="cta-actions">
+            <a class="button button-light" href="mailto:hello@avab.se">hello@avab.se</a>
+            <a class="button button-quiet" href="tel:+46000000000">Ring oss</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #282e29;
+        background: #fff;
+      }
+
+      .site-nav, .breadcrumbs, .hero, .section, .fullwidth-cta-wrap {
+        width: 100%;
+      }
+
+      .avab-container {
+        width: min(1180px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .site-nav {
+        border-bottom: 1px solid rgba(40, 46, 42, 0.1);
+        background: #fff;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 18px 0;
+        font-weight: 800;
+        color: #282e29;
+      }
+
+      .brand-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 4px;
+        background: #8fc025;
+        box-shadow: 0 0 0 4px rgba(143, 192, 37, 0.15);
+      }
+
+      .breadcrumbs {
+        border-bottom: 1px solid rgba(40, 46, 42, 0.1);
+        background: #fff;
+      }
+
+      .breadcrumbs ol {
+        list-style: none;
+        display: flex;
+        gap: 8px;
+        padding: 12px 0;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      .breadcrumbs li::after {
+        content: "/";
+        margin-left: 8px;
+        color: #8c8f8b;
+      }
+
+      .breadcrumbs li:last-child::after {
+        content: "";
+      }
+
+      .hero {
+        background:
+          linear-gradient(90deg, rgba(14, 18, 16, 0.82), rgba(14, 18, 16, 0.38)),
+          url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        color: #fff;
+        min-height: 520px;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-inner {
+        padding: 80px 0;
+      }
+
+      .hero-content {
+        max-width: 720px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.4rem, 5vw, 4.2rem);
+        line-height: 1.1;
+        margin: 0 0 20px;
+        color: #fff;
+      }
+
+      .lead {
+        font-size: 1.2rem;
+        max-width: 64ch;
+        color: rgba(255, 255, 255, 0.92);
+        margin-bottom: 28px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.8rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 2px;
+        background: #8fc025;
+      }
+
+      .eyebrow-dark {
+        color: #282e29;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 0 24px;
+        border-radius: 999px;
+        font-weight: 800;
+        text-decoration: none;
+        transition: 0.25s ease;
+      }
+
+      .button-primary {
+        background: #8fc025;
+        color: #282e29;
+      }
+
+      .button-secondary {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+      }
+
+      .button-light {
+        background: #fff;
+        color: #282e29;
+      }
+
+      .button-quiet {
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero-actions,
+      .cta-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .section {
+        padding: 80px 0;
+        border-bottom: 1px solid rgba(40, 46, 42, 0.08);
+      }
+
+      .section--light {
+        background: #f4f5f4;
+      }
+
+      .section-heading {
+        display: grid;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+
+      .section h2,
+      .fullwidth-cta h2,
+      .env-card h3,
+      .flow-card h3 {
+        margin: 0 0 12px;
+        color: #282e29;
+      }
+
+      .section h2,
+      .fullwidth-cta h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.16;
+      }
+
+      .lead-dark,
+      .section p,
+      .env-card p,
+      .flow-card span,
+      .faq-expand-inner p {
+        color: #3a433d;
+      }
+
+      .fact-band {
+        margin-top: 20px;
+      }
+
+      .fact-grid,
+      .grid-2,
+      .flow-grid-horizontal,
+      .env-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .fact-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .fact {
+        padding: 28px;
+        background: #fff;
+        border: 1px solid rgba(40, 46, 42, 0.08);
+        border-radius: 20px;
+      }
+
+      .fact strong {
+        display: block;
+        font-size: 2rem;
+        color: #8fc025;
+        margin-bottom: 8px;
+      }
+
+      .fact span {
+        color: #3a433d;
+        font-weight: 700;
+      }
+
+      .split-stretch {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 48px;
+        align-items: start;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .env-card,
+      .flow-card,
+      .faq-card {
+        background: #fff;
+        border: 1px solid rgba(40, 46, 42, 0.08);
+        border-radius: 18px;
+        box-shadow: 0 4px 12px rgba(40, 46, 42, 0.05);
+      }
+
+      .env-card {
+        padding: 24px;
+      }
+
+      .flow-grid-horizontal {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .flow-card {
+        padding: 24px;
+      }
+
+      .flow-card strong {
+        display: block;
+        font-size: 1.3rem;
+        color: #8fc025;
+        margin-bottom: 12px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .image-wrapper {
+        overflow: hidden;
+        border-radius: 24px;
+      }
+
+      .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .image-wrapper--fill-lg {
+        min-height: 420px;
+      }
+
+      .bullet-list {
+        margin: 20px 0 0 0;
+        padding-left: 20px;
+      }
+
+      .bullet-list li {
+        margin-bottom: 10px;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 16px;
+      }
+
+      .faq-card {
+        overflow: hidden;
+      }
+
+      .faq-top {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 24px;
+        cursor: pointer;
+      }
+
+      .faq-top h3 {
+        margin: 0;
+        font-size: 1.15rem;
+      }
+
+      .faq-icon {
+        font-size: 1.5rem;
+        color: #8fc025;
+        font-weight: 800;
+      }
+
+      .faq-expand-inner p {
+        margin: 0;
+        padding: 0 24px 24px;
+      }
+
+      .fullwidth-cta-wrap {
+        padding: 0 0 80px;
+      }
+
+      .fullwidth-cta {
+        padding: 40px;
+        border-radius: 28px;
+        background: linear-gradient(135deg, #282e29 0%, #2b332b 55%, #8fc025 100%);
+        color: #fff;
+      }
+
+      .fullwidth-cta h2,
+      .fullwidth-cta p {
+        color: #fff;
+      }
+
+      @media (max-width: 900px) {
+        .fact-grid,
+        .flow-grid-horizontal,
+        .grid-2,
+        .two-col,
+        .split-stretch {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </body>
+</html>
