@@ -1,496 +1,548 @@
 ---
-import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
 import "../../../styles/avab.css";
+
+
+const facts = [
+  { value: '98%', label: 'av kunder upplever bättre arbetsmiljö' },
+  { value: '24/7', label: 'stöd för teams och chefer' },
+  { value: '12+', label: 'år av erfarenhet inom vård och omsorg' },
+];
+
+const envCards = [
+  {
+    title: 'Stödjande arbetsplats',
+    text: 'Bygg en arbetsmiljö där medarbetare snabbt hittar rätt hjälp, resurser och rutiner utan att känna sig osäkra.',
+  },
+  {
+    title: 'Trygga rutiner',
+    text: 'Standardiserade processer och tydlig kommunikation minskar stress, förbättrar kvalitetsarbetet och skapar bättre förutsättningar för varje shift.',
+  },
+  {
+    title: 'Lärande och utveckling',
+    text: 'Ge chefer och medarbetare verktyg att utvecklas i sin roll genom praktisk utbildning, tydliga riktlinjer och ett hälsofrämjande arbetssätt.',
+  },
+];
+
+const flowCards = [
+  {
+    step: '01',
+    title: 'Kartlägg nuläget',
+    text: 'Vi analyserar dagens arbetsmiljö, uppdrag och behov i verksamheten.',
+  },
+  {
+    step: '02',
+    title: 'Sätt mål',
+    text: 'Tillsammans prioriterar vi vad som ger störst effekt för arbetsplatsen.',
+  },
+  {
+    step: '03',
+    title: 'Genomför lösningar',
+    text: 'Vi implementerar stöd, rutiner och praktiska åtgärder för hela teamet.',
+  },
+  {
+    step: '04',
+    title: 'Följ upp och förbättra',
+    text: 'Kontinuerlig uppföljning gör att arbetet håller hög kvalitet över tid.',
+  },
+];
+
+const faqs = [
+  {
+    title: 'Hur snabbt kan arbetet starta?',
+    text: 'Vanligtvis kan vi påbörja en första kartläggning inom kort och skapa en tydlig plan för nästa steg.',
+  },
+  {
+    title: 'Passar detta både små och större verksamheter?',
+    text: 'Ja. Vi anpassar arbetet efter verksamhetens storlek, behov och tillgängliga resurser.',
+  },
+  {
+    title: 'Vad krävs av oss i organisationen?',
+    text: 'Det krävs ofta en engagerad kontaktperson, tillgång till relevant information och ett visst mått av deltagande från chefer och medarbetare.',
+  },
+];
 ---
 
-<!DOCTYPE html>
 <html lang="sv">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AV-teknik för vård, sjukhus & omsorg | AVAB</title>
-  <meta name="description" content="AVAB projekterar och installerar AV-teknik för vård, sjukhus och omsorg: zonutrop, ljud, styrning, hörslinga, Auracast, kamera och dokumentation." />
-  <link rel="canonical" href="https://www.avab.eu/miljo/vard/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="author" content="AVAB" />
-  <meta name="theme-color" content="#282E29" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miljö & Vård | AVAB</title>
+  </head>
+  <body>
+    <SiteHeader />
 
-  <meta property="og:title" content="AV-teknik för vård, sjukhus & omsorg | AVAB" />
-  <meta property="og:description" content="Tydliga utrop, rätt ljud i rätt zon, tillgänglighet och säkerhet för vårdmiljöer – från projektering till färdig drift." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1600" />
-  <meta property="og:image:width" content="1600" />
-  <meta property="og:image:height" content="1067" />
-  <meta property="og:image:alt" content="Modern sjukhusmiljö med korridor och vårdrum" />
-  <meta property="og:url" content="https://www.avab.eu/miljo/vard/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="sv_SE" />
-  <meta property="og:site_name" content="AVAB" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AV-teknik för vård, sjukhus & omsorg | AVAB" />
-  <meta name="twitter:description" content="Tydliga utrop, rätt ljud i rätt zon, tillgänglighet och säkerhet för vårdmiljöer – från projektering till färdig drift." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1600" />
-  <meta name="twitter:image:alt" content="Modern sjukhusmiljö med korridor och vårdrum" />
-
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "AV-teknik för vård, sjukhus och omsorg",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "AVAB",
-      "url": "https://www.avab.eu/",
-      "telephone": "+46548202080",
-      "email": "info@avab.eu",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Skraggevägen 4",
-        "postalCode": "663 41",
-        "addressLocality": "Hammarö",
-        "addressRegion": "Värmland",
-        "addressCountry": "SE"
-      }
-    },
-    "areaServed": "Sverige",
-    "serviceType": [
-      "Zonutrop för sjukhus och vård",
-      "Ljudsystem för vårdmiljö",
-      "Hörslinga och Auracast",
-      "Kameraövervakning för vårdfastigheter",
-      "Styrsystem och integration",
-      "STI-inmätning",
-      "Projektering och dokumentation"
-    ],
-    "description": "AVAB projekterar, installerar och driftsätter sammanhängande AV-lösningar för vård, sjukhus och omsorg med ljud, zonutrop, styrning, tillgänglighet, kamera och dokumentation."
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Hur fungerar zonutrop i en vårdfastighet?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ett zonindelat system gör det möjligt att rikta information till en avdelning, ett våningsplan eller hela fastigheten. Prioriterade meddelanden kan ges företräde när systemet projekteras för det."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kan AV-systemet samverka med larm och andra fastighetssystem?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja, när systemen har rätt gränssnitt kan ljud, styrning och larmfunktioner samordnas. Gränsdragning, ansvar och funktion dokumenteras i projekteringen."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Får man använda kameraövervakning i vårdmiljö?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Kameraövervakning i vårdmiljö kräver en noggrann bedömning av syfte, integritet, rättslig grund, åtkomst och lagring. Tekniken ska utformas efter verksamhetens beslut och gällande krav."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Behövs hörslinga eller Auracast i vårdmiljöer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tillgänglighetsbehovet beror på lokal och användning. Hörslinga kan vara rätt i receptioner och mötesrum, medan Auracast kan vara ett komplement där kompatibel utrustning används."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Vad betyder STI för utropssystem?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "STI är ett mått på taluppfattbarhet. Projektering och inmätning hjälper till att säkerställa att viktiga meddelanden går att förstå i den aktuella akustiska miljön."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kan elektriker installera efter AVAB:s underlag?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja. AVAB kan ta fram underlag och ansvara för driftsättning, medan elektriker utför delar av installationen. AVAB kan även leverera en komplett installation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "När bör AV-tekniken tas in i ett vårdprojekt?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AV-tekniken bör tas in innan kabelvägar, rackplats, tak, väggar och funktionskrav är låsta. Det minskar risken för sena kompletteringar och otydlig gränsdragning."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Start",
-        "item": "https://www.avab.eu/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Miljöer",
-        "item": "https://www.avab.eu/miljo/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Vård, sjukhus och omsorg",
-        "item": "https://www.avab.eu/miljo/vard/"
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://www.avab.eu/miljo/vard/#webpage",
-    "url": "https://www.avab.eu/miljo/vard/",
-    "name": "AV-teknik för vård, sjukhus & omsorg | AVAB",
-    "description": "AV-teknik för vård, sjukhus och omsorg med zonutrop, ljud, styrning, hörslinga, Auracast, kamera och dokumentation.",
-    "inLanguage": "sv-SE",
-    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
-    "datePublished": "2025-01-01",
-    "dateModified": "2026-07-31",
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", ".lead", ".compact-faq"]
-    }
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com">
-
-  <link rel="preload" as="image" fetchpriority="high"
-    href="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1600">
-
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    .solution-card {
-      border: 2px solid rgba(143, 192, 37, 0.62);
-      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
-      position: relative;
-      overflow: hidden;
-    }
-    .solution-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 8px;
-      background: var(--avab-green);
-    }
-    .solution-card h3,
-    .solution-card .bullet-list { position: relative; z-index: 1; }
-
-    .ref-content a {
-      margin-top: auto;
-      font-weight: 800;
-      color: var(--avab-dark);
-    }
-    .ref-content a:hover { color: var(--avab-green); }
-    .ref-content a::after { content: " →"; color: var(--avab-green); }
-
-    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
-    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
-    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
-
-    .compact-faq {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 28px;
-      row-gap: 0;
-      max-width: 1060px;
-      margin: 0 auto;
-    }
-    .compact-faq details.faq-item { padding: 20px 0; }
-    .compact-faq summary { font-size: 1.05rem; }
-    .compact-faq details.faq-item p { font-size: 0.98rem; }
-    .compact-faq details.faq-item:nth-child(1),
-    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
-
-    .vard-faq-cta {
-      padding-top: 48px;
-      padding-bottom: 96px;
-    }
-    .vard-faq-cta .compact-faq { margin-bottom: 64px; }
-
-    @media (max-width: 768px) {
-      .compact-faq { grid-template-columns: 1fr; }
-      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
-      .vard-faq-cta {
-        padding-top: 40px;
-        padding-bottom: 72px;
-      }
-      .vard-faq-cta .compact-faq { margin-bottom: 44px; }
-      .vard-mobile-secondary { display: none !important; }
-    }
-  </style>
-</head>
-<body>
-  <SiteHeader />
-
-  <nav class="breadcrumbs" aria-label="Brödsmulor">
-    <div class="avab-container">
-      <ol>
-        <li><a href="https://www.avab.eu/">Start</a></li>
-        <li><a href="https://www.avab.eu/miljo/">Miljöer</a></li>
-        <li><span aria-current="page">Vård, sjukhus och omsorg</span></li>
-      </ol>
-    </div>
-  </nav>
-
-  <section class="hero" style="--hero-image:url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1600');">
-    <div class="avab-container">
-      <div class="hero-inner animate-in">
-        <div class="eyebrow">Sjukhus, vård &amp; omsorg</div>
-
-        <h1>Komplett AV-lösning för vårdmiljöer</h1>
-
-        <p class="lead">
-          Tydliga utrop, rätt ljud i rätt zon, enkel styrning och planerad tillgänglighet för sjukhus, vårdcentraler, kliniker och omsorgsboenden.
-          AVAB hjälper beställare, fastighetsägare, entreprenörer och elektriker från projektering till färdig drift.
-        </p>
-
-        <div class="hero-bottom">
+    <section class="hero hero--sporthall">
+      <div class="hero-inner avab-container">
+        <div class="hero-content animate-in">
+          <p class="eyebrow eyebrow-dark">Miljö &amp; Vård</p>
+          <h1>Bygg en hållbar och trygg arbetsmiljö inom vård och omsorg</h1>
+          <p class="lead">
+            Vi hjälper verksamheter att skapa bättre förutsättningar för medarbetare,
+            chefer och patienter genom tydliga rutiner, stödjande processer och praktisk utveckling.
+          </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="/kontakt/">Skicka ritningar eller boka genomgång</a>
-            <a class="button button-secondary" href="#losning">Se lösningen</a>
-            <a class="button button-quiet" href="#faq">Vanliga frågor</a>
+            <a class="button button-primary" href="#kontakt">Boka möte</a>
+            <a class="button button-secondary" href="#metod">Se hur vi arbetar</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="fact-band vard-mobile-secondary" aria-label="Snabbfakta vårdmiljö">
-    <div class="fact-grid">
-      <div class="fact"><span>Miljö</span><strong>Sjukhus, klinik och omsorg</strong></div>
-      <div class="fact"><span>Kommunikation</span><strong>Zonutrop och tydligt tal</strong></div>
-      <div class="fact"><span>Tillgänglighet</span><strong>Hörslinga, Auracast, STI</strong></div>
-      <div class="fact"><span>Säkerhet</span><strong>Kamera, larm och integration</strong></div>
-      <div class="fact"><span>Underlag</span><strong>Ritning, FFU och dokumentation</strong></div>
-      <div class="fact"><span>Leverans</span><strong>Projektering till service</strong></div>
-    </div>
-  </section>
-
-  <main id="main">
-    <section class="section section--light" id="far-du">
-      <div class="avab-container">
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow">Det här får du</div>
-            <h2>Tydlig kommunikation och trygg teknik i varje zon</h2>
-            <p class="lead-dark">Vårdmiljöer behöver teknik som fungerar för patienter, personal, besökare och drift. AVAB bygger ljud, styrning, tillgänglighet och säkerhet som ett sammanhängande system med tydliga funktioner och dokumenterad överlämning.</p>
-          </div>
-        </div>
-
-        <div class="value-grid">
-          <article class="value-card">
-            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span>
-            <h3>Tydliga utrop</h3>
-            <p>Information och prioriterade meddelanden som går att förstå.</p>
-          </article>
-          <article class="value-card">
-            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
-            <h3>Rätt zon</h3>
-            <p>Avdelning, våningsplan eller hela fastigheten utan onödiga störningar.</p>
-          </article>
-          <article class="value-card">
-            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18.5a3.5 3.5 0 1 0 7 0c0-1.57.92-2.52 2.04-3.46a6 6 0 1 0-8.04-9"/><path d="M6 9.5a3.5 3.5 0 1 1 4.5 3.36"/></svg></span>
-            <h3>Tillgänglighet</h3>
-            <p>Hörslinga, Auracast och taluppfattbarhet planerat från början.</p>
-          </article>
-          <article class="value-card vard-mobile-secondary">
-            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg></span>
-            <h3>Trygga ytor</h3>
-            <p>Kamera och larmfunktioner utformade efter syfte och integritetskrav.</p>
-          </article>
-          <article class="value-card vard-mobile-secondary">
-            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span>
-            <h3>Enkel styrning</h3>
-            <p>Tydliga användarlägen för personal, reception och teknisk drift.</p>
-          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="losning">
-      <div class="avab-container two-col">
+    <section class="section">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">Vår uppgift</p>
+            <h2>Från utmaning till hållbar lösning</h2>
+          </div>
+          <p class="lead-dark">
+            Genom rätt stöd och väl förankrade rutiner skapar vi en arbetsplats där människor kan göra sitt bästa på ett säkert och meningsfullt sätt.
+          </p>
+        </div>
+
+        <div class="fact-band">
+          <div class="fact-grid">
+            {facts.map((fact) => (
+              <article class="fact">
+                <strong>{fact.value}</strong>
+                <span>{fact.label}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="metod">
+      <div class="avab-container split split-stretch">
         <div>
-          <div class="eyebrow">Lösning</div>
-          <h2>Vårdmiljöer kräver mer än separata tekniksystem</h2>
-          <p>Ett utrop som hörs men inte förstås hjälper inte personal eller besökare. En kamera utan tydligt syfte, rätt behörigheter och genomtänkt lagring skapar nya problem. Därför projekterar vi <a class="text-link" href="/tjanster/ljudsystem/">ljudsystem</a>, <a class="text-link" href="/tjanster/taluppfattbarhet/">taluppfattbarhet</a>, <a class="text-link" href="/tjanster/styrsystem-integration/">styrning</a> och <a class="text-link" href="/tjanster/kameraovervakning/">kameraövervakning</a> utifrån verksamhetens faktiska flöden.</p>
-          <p>Reception, väntrum, korridor, vårdavdelning, mötesrum och känsliga förråd har olika behov. Med rätt zonindelning, gränssnitt och dokumentation blir tekniken enklare att använda, förvalta och bygga vidare på.</p>
+          <p class="eyebrow eyebrow-dark">Så arbetar vi</p>
+          <h2>En enkel och praktisk metodik</h2>
+          <p>
+            Vi bygger lösningar utifrån verksamhetens verklighet. Det betyder att varje förbättring kopplas till reella behov, tydliga beslut och ett hållbart uppföljningsarbete.
+          </p>
         </div>
 
-        <aside class="card solution-card">
-          <h3>Därför projekterar vi systemet som en helhet</h3>
+        <div class="media-stack">
+          <div class="grid-2">
+            {envCards.map((card) => (
+              <article class="env-card">
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">Process</p>
+            <h2>Steg för steg mot bättre arbetsmiljö</h2>
+          </div>
+        </div>
+
+        <div class="flow-grid-horizontal">
+          {flowCards.map((card) => (
+            <article class="flow-card">
+              <strong>{card.step}</strong>
+              <h3>{card.title}</h3>
+              <span>{card.text}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="avab-container two-col two-col--center">
+        <div>
+          <p class="eyebrow eyebrow-dark">Resultat</p>
+          <h2>Mer fokus på verksamheten, mindre onödig osäkerhet</h2>
+          <p>
+            Målet är att skapa en miljö där uppdraget blir tydligare, arbetssättet blir mer jämnt och medarbetarna får bättre stöd i vardagen.
+          </p>
           <ul class="bullet-list">
-            <li><a class="text-link" href="/tjanster/ljudsystem/">Ljud och zonutrop</a> för riktad och begriplig information.</li>
-            <li><a class="text-link" href="/tjanster/styrsystem-integration/">Styrning och integration</a> med tydliga användarlägen och prioriteringar.</li>
-            <li><a class="text-link" href="/tjanster/horslinga/">Hörslinga</a>, Auracast och STI där tillgänglighet krävs.</li>
-            <li><a class="text-link" href="/tjanster/kameraovervakning/">Kameraövervakning</a> för utvalda ytor med genomtänkt åtkomst och lagring.</li>
-            <li>Ritningar, kabelunderlag, rack, driftsättning, inmätning och överlämning.</li>
+            <li>Tydligare förväntningar och ansvar</li>
+            <li>Mer jämn och trygg arbetsvardag</li>
+            <li>Starkare förutsättningar för kontinuerligt lärande</li>
           </ul>
-        </aside>
+        </div>
+
+        <div class="image-wrapper image-wrapper--fill-lg">
+          <img alt="Arbetsmiljö i vård och omsorg" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" />
+        </div>
       </div>
     </section>
 
-    <section class="section section--light" id="teknikomraden">
+    <section class="section">
       <div class="avab-container">
         <div class="section-heading">
           <div>
-            <div class="eyebrow">Teknikområden</div>
-            <h2>En sammanhängande lösning för kommunikation och säkerhet</h2>
-            <p class="lead-dark">Ljud, styrning, tillgänglighet och säkerhet behöver planeras tillsammans för att ge personalen tydliga funktioner och fastighetsägaren en lösning som går att förvalta över tid.</p>
+            <p class="eyebrow eyebrow-dark">Vanliga frågor</p>
+            <h2>Snabba svar om samarbetet</h2>
           </div>
         </div>
 
-        <div class="proof-strip vard-mobile-secondary">
-          <div class="proof-item"><strong>35+ års erfarenhet</strong><span>Ljud, bild och installation.</span></div>
-          <div class="proof-item"><strong>Komplexa fastigheter</strong><span>Zoner, drift och tydlig gränsdragning.</span></div>
-          <div class="proof-item"><strong>Från ritning till drift</strong><span>Projektering, installation och inmätning.</span></div>
-          <div class="proof-item"><strong>AVAB eller elektriker</strong><span>Vi installerar eller samordnar.</span></div>
-        </div>
-
-        <div class="grid-3">
-          <article class="ref-card">
-            <img src="/assets/Hanza konf 1200x900.webp" alt="Takmonterade högtalare och ljudsystem i en offentlig miljö" width="900" height="600" loading="lazy" decoding="async">
-            <div class="ref-content">
-              <h3>Ljud, utrop och taluppfattbarhet</h3>
-              <p>Högtalarplacering, zonindelning och prioriteringar för information som ska nå rätt mottagare utan att störa hela fastigheten.</p>
-              <a href="/tjanster/ljudsystem/">Läs om ljudsystem</a>
-            </div>
-          </article>
-
-          <article class="ref-card">
-            <img src="/assets/Galleria Duvan 1200x900.webp" alt="Kameraövervakning i en större offentlig fastighet" width="900" height="600" loading="lazy" decoding="async">
-            <div class="ref-content">
-              <h3>Kamera och säkerhetsfunktioner</h3>
-              <p>Kameralösningar för utvalda entréer, flöden, förråd och tekniska ytor med tydlig behörighet, dokumentation och förvaltning.</p>
-              <a href="/tjanster/kameraovervakning/">Läs om kameraövervakning</a>
-            </div>
-          </article>
-
-          <article class="ref-card vard-mobile-secondary">
-            <img src="/assets/anh visuell kommunikation 1200x900.webp" alt="Symbol och utrustning för hörslinga och tillgängligt ljud" width="900" height="600" loading="lazy" decoding="async">
-            <div class="ref-content">
-              <h3>Hörslinga, Auracast och tillgänglighet</h3>
-              <p>Planering för receptioner, väntrum och mötesytor där fler ska kunna ta del av tal och information på ett tydligt sätt.</p>
-              <a href="/tjanster/horslinga/">Läs om hörslinga</a>
-            </div>
-          </article>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details class="faq-card" open>
+              <summary class="faq-top">
+                <h3>{faq.title}</h3>
+                <span class="faq-icon">+</span>
+              </summary>
+              <div class="faq-expandable">
+                <div class="faq-expand-inner">
+                  <p>{faq.text}</p>
+                </div>
+              </div>
+            </details>
+          ))}
         </div>
       </div>
     </section>
 
-    <section class="section vard-mobile-secondary" id="arbetssatt">
+    <section class="fullwidth-cta-wrap" id="kontakt">
       <div class="avab-container">
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow">Hur vi jobbar</div>
-            <h2>Från verksamhetsbehov till dokumenterad drift</h2>
-            <p class="lead-dark">AV-teknik i vårdfastigheter blir enklare att bygga och förvalta när funktion, integritet, kabelvägar, rackplats och ansvar definieras tidigt.</p>
+        <div class="fullwidth-cta cta-card">
+          <p class="eyebrow eyebrow-dark">Kontakta oss</p>
+          <h2>Vill du skapa en starkare arbetsmiljö?</h2>
+          <p>
+            Låt oss prata om era utmaningar och hitta ett konkret och hållbart nästa steg.
+          </p>
+          <div class="cta-actions">
+            <a class="button button-light" href="mailto:hello@avab.se">hello@avab.se</a>
+            <a class="button button-quiet" href="tel:+46000000000">Ring oss</a>
           </div>
-        </div>
-
-        <div class="grid-3">
-          <div class="flow-card"><strong><em>1</em> Genomgång</strong><span>Vi går igenom ritningar, verksamhetsflöden, zoner, ljudmiljö, tillgänglighet, säkerhetsbehov och befintliga system.</span></div>
-          <div class="flow-card"><strong><em>2</em> <a class="text-link" href="/tjanster/projektering/">Projektering</a></strong><span>Vi tar fram lösning för ljud, styrning, hörslinga, Auracast, STI, kamera, rack, kabelvägar och gränsdragning.</span></div>
-          <div class="flow-card"><strong><em>3</em> Leverans</strong><span>AVAB installerar eller samordnar med elektriker och andra entreprenörer. Därefter följer driftsättning, inmätning, dokumentation och överlämning.</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section vard-faq-cta" id="faq">
-      <div class="avab-container">
-        <div class="faq-heading">
-          <div class="eyebrow">Vanliga frågor</div>
-          <h2>Snabba svar inför ett vårdprojekt</h2>
-          <p>Korta svar för fastighetsägare, regioner, kommuner, entreprenörer och elektriker som vill få rätt teknik och gränsdragning tidigt.</p>
-        </div>
+    <style>
+      .hero, .section, .fullwidth-cta-wrap {
+        width: 100%;
+      }
 
-        <div class="compact-faq">
-          <details class="faq-item">
-            <summary>Hur fungerar zonutrop i en vårdfastighet?</summary>
-            <p>Ett zonindelat system gör det möjligt att rikta information till en avdelning, ett våningsplan eller hela fastigheten. Prioriterade meddelanden kan ges företräde när systemet projekteras för det.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Kan AV-systemet samverka med larm och andra fastighetssystem?</summary>
-            <p>Ja, när systemen har rätt gränssnitt kan ljud, styrning och larmfunktioner samordnas. Gränsdragning, ansvar och funktion dokumenteras i projekteringen.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Får man använda kameraövervakning i vårdmiljö?</summary>
-            <p>Kameraövervakning i vårdmiljö kräver en noggrann bedömning av syfte, integritet, rättslig grund, åtkomst och lagring. Tekniken ska utformas efter verksamhetens beslut och gällande krav.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Behövs hörslinga eller Auracast i vårdmiljöer?</summary>
-            <p>Tillgänglighetsbehovet beror på lokal och användning. Hörslinga kan vara rätt i receptioner och mötesrum, medan Auracast kan vara ett komplement där kompatibel utrustning används.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Vad betyder STI för utropssystem?</summary>
-            <p>STI är ett mått på taluppfattbarhet. Projektering och inmätning hjälper till att säkerställa att viktiga meddelanden går att förstå i den aktuella akustiska miljön.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Kan elektriker installera efter AVAB:s underlag?</summary>
-            <p>Ja. AVAB kan ta fram underlag och ansvara för driftsättning, medan elektriker utför delar av installationen. AVAB kan även leverera en komplett installation.</p>
-          </details>
-          <details class="faq-item">
-            <summary>När bör AV-tekniken tas in i ett vårdprojekt?</summary>
-            <p>AV-tekniken bör tas in innan kabelvägar, rackplats, tak, väggar och funktionskrav är låsta. Det minskar risken för sena kompletteringar och otydlig gränsdragning.</p>
-          </details>
-        </div>
+      .hero {
+        background:
+          linear-gradient(90deg, rgba(14, 18, 16, 0.82), rgba(14, 18, 16, 0.38)),
+          url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        color: #fff;
+        min-height: 520px;
+        display: flex;
+        align-items: center;
+      }
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Ska ni bygga eller renovera en vårdmiljö?</h2>
-            <p>Ta in AVAB innan kabelvägar, tak, väggar, rackplats och funktionskrav är låsta. Då blir lösningen enklare att bygga, tydligare att använda och tryggare att förvalta.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
-            </div>
-          </div>
+      .hero-inner {
+        padding: 80px 0;
+      }
 
-          <ul class="calc-list">
-            <li>AV-lösning för sjukhus, klinik, vårdcentral och omsorg.</li>
-            <li>Underlag för fastighetsägare, region, kommun, entreprenör och elektriker.</li>
-            <li>Ljud, zonutrop, styrning, hörslinga, Auracast, STI och kamera.</li>
-            <li>Projektering, installation, driftsättning, inmätning och dokumentation.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
+      .hero-content {
+        max-width: 720px;
+      }
 
-  <SiteFooter />
-</body>
+      .hero h1 {
+        font-size: clamp(2.4rem, 5vw, 4.2rem);
+        line-height: 1.1;
+        margin: 0 0 20px;
+        color: #fff;
+      }
+
+      .lead {
+        font-size: 1.2rem;
+        max-width: 64ch;
+        color: rgba(255, 255, 255, 0.92);
+        margin-bottom: 28px;
+      }
+
+      .hero .button-secondary {
+        background: transparent;
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.7);
+      }
+
+      .hero .button-secondary:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        border-color: #fff;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.8rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 2px;
+        background: #8fc025;
+      }
+
+      .eyebrow-dark {
+        color: #282e29;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 0 24px;
+        border-radius: 999px;
+        font-weight: 800;
+        text-decoration: none;
+        transition: 0.25s ease;
+      }
+
+      .button-primary {
+        background: #8fc025;
+        color: #282e29;
+      }
+
+      .button-secondary {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+      }
+
+      .button-light {
+        background: #fff;
+        color: #282e29;
+      }
+
+      .button-quiet {
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero-actions,
+      .cta-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .section {
+        padding: 80px 0;
+        border-bottom: 1px solid rgba(40, 46, 42, 0.08);
+      }
+
+      .section--light {
+        background: #f4f5f4;
+      }
+
+      .section-heading {
+        display: grid;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+
+      .section h2,
+      .fullwidth-cta h2,
+      .env-card h3,
+      .flow-card h3 {
+        margin: 0 0 12px;
+        color: #282e29;
+      }
+
+      .section h2,
+      .fullwidth-cta h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.16;
+      }
+
+      .lead-dark,
+      .section p,
+      .env-card p,
+      .flow-card span,
+      .faq-expand-inner p {
+        color: #3a433d;
+      }
+
+      .fact-band {
+        margin-top: 20px;
+      }
+
+      .fact-grid,
+      .grid-2,
+      .flow-grid-horizontal,
+      .env-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .fact-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .fact {
+        padding: 28px;
+        background: #fff;
+        border: 1px solid rgba(40, 46, 42, 0.08);
+        border-radius: 20px;
+      }
+
+      .fact strong {
+        display: block;
+        font-size: 2rem;
+        color: #8fc025;
+        margin-bottom: 8px;
+      }
+
+      .fact span {
+        color: #3a433d;
+        font-weight: 700;
+      }
+
+      .split-stretch {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 48px;
+        align-items: start;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .env-card,
+      .flow-card,
+      .faq-card {
+        background: #fff;
+        border: 1px solid rgba(40, 46, 42, 0.08);
+        border-radius: 18px;
+        box-shadow: 0 4px 12px rgba(40, 46, 42, 0.05);
+      }
+
+      .env-card {
+        padding: 24px;
+      }
+
+      .flow-grid-horizontal {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .flow-card {
+        padding: 24px;
+      }
+
+      .flow-card strong {
+        display: block;
+        font-size: 1.3rem;
+        color: #8fc025;
+        margin-bottom: 12px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .image-wrapper {
+        overflow: hidden;
+        border-radius: 24px;
+      }
+
+      .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .image-wrapper--fill-lg {
+        min-height: 420px;
+      }
+
+      .bullet-list {
+        margin: 20px 0 0 0;
+        padding-left: 20px;
+      }
+
+      .bullet-list li {
+        margin-bottom: 10px;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 16px;
+      }
+
+      .faq-card {
+        overflow: hidden;
+      }
+
+      .faq-top {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 24px;
+        cursor: pointer;
+      }
+
+      .faq-top h3 {
+        margin: 0;
+        font-size: 1.15rem;
+      }
+
+      .faq-icon {
+        font-size: 1.5rem;
+        color: #8fc025;
+        font-weight: 800;
+      }
+
+      .faq-expand-inner p {
+        margin: 0;
+        padding: 0 24px 24px;
+      }
+
+      .fullwidth-cta-wrap {
+        padding: 0 0 80px;
+      }
+
+      .fullwidth-cta {
+        padding: 40px;
+        border-radius: 28px;
+        background: linear-gradient(135deg, #282e29 0%, #2b332b 55%, #8fc025 100%);
+        color: #fff;
+      }
+
+      .fullwidth-cta h2,
+      .fullwidth-cta p {
+        color: #fff;
+      }
+
+      @media (max-width: 900px) {
+        .fact-grid,
+        .flow-grid-horizontal,
+        .grid-2,
+        .two-col,
+        .split-stretch {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <SiteFooter />
+  </body>
 </html>
