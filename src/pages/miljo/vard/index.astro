@@ -66,27 +66,12 @@ const faqs = [
 
 <html lang="sv">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Miljö & Vård | AVAB</title>
   </head>
   <body>
-    <header class="site-nav">
-      <div class="avab-container">
-        <a href="#" class="brand" aria-label="AVAB startsida">
-          <span class="brand-dot" aria-hidden="true"></span>
-          <span>AVAB</span>
-        </a>
-      </div>
-    </header>
-
-    <nav class="breadcrumbs" aria-label="Brödsmulor">
-      <div class="avab-container">
-        <ol>
-          <li><a href="#">Hem</a></li>
-          <li><a href="#">Miljö</a></li>
-          <li><span aria-current="page">Vård</span></li>
-        </ol>
-      </div>
-    </nav>
+    <SiteHeader />
 
     <section class="hero hero--sporthall">
       <div class="hero-inner avab-container">
@@ -239,66 +224,8 @@ const faqs = [
     </section>
 
     <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        color: #282e29;
-        background: #fff;
-      }
-
-      .site-nav, .breadcrumbs, .hero, .section, .fullwidth-cta-wrap {
+      .hero, .section, .fullwidth-cta-wrap {
         width: 100%;
-      }
-
-      .avab-container {
-        width: min(1180px, calc(100% - 48px));
-        margin: 0 auto;
-      }
-
-      .site-nav {
-        border-bottom: 1px solid rgba(40, 46, 42, 0.1);
-        background: #fff;
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 18px 0;
-        font-weight: 800;
-        color: #282e29;
-      }
-
-      .brand-dot {
-        width: 14px;
-        height: 14px;
-        border-radius: 4px;
-        background: #8fc025;
-        box-shadow: 0 0 0 4px rgba(143, 192, 37, 0.15);
-      }
-
-      .breadcrumbs {
-        border-bottom: 1px solid rgba(40, 46, 42, 0.1);
-        background: #fff;
-      }
-
-      .breadcrumbs ol {
-        list-style: none;
-        display: flex;
-        gap: 8px;
-        padding: 12px 0;
-        margin: 0;
-        font-size: 0.9rem;
-      }
-
-      .breadcrumbs li::after {
-        content: "/";
-        margin-left: 8px;
-        color: #8c8f8b;
-      }
-
-      .breadcrumbs li:last-child::after {
-        content: "";
       }
 
       .hero {
@@ -331,6 +258,18 @@ const faqs = [
         max-width: 64ch;
         color: rgba(255, 255, 255, 0.92);
         margin-bottom: 28px;
+      }
+
+      .hero .button-secondary {
+        background: transparent;
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.7);
+      }
+
+      .hero .button-secondary:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        border-color: #fff;
       }
 
       .eyebrow {
@@ -604,5 +543,6 @@ const faqs = [
         }
       }
     </style>
+    <SiteFooter />
   </body>
 </html>
