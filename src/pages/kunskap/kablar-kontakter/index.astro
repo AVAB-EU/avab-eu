@@ -1,0 +1,575 @@
+---
+import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import "../../../styles/avab.css";
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kablar & kontakter för AV-teknik | Högtalarkabel, DMX, XLR, nätverk | AVAB</title>
+  <meta name="description" content="AVAB hjälper med rätt kabel och kontakt för ljud, bild, ljus, hörslinga, mikrofoner, nätverk och DMX: högtalarkabel, 100V, XLR, Speakon, RJ45 och plint." />
+  <link rel="canonical" href="https://www.avab.eu/kunskap/ratt-kabel-av-teknik/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content="Kablar & kontakter för AV-teknik | Högtalarkabel, DMX, XLR, nätverk | AVAB" />
+  <meta property="og:description" content="En kabel är sällan bara en kabel. Den avgör om ljudet får rätt nivå, om DMX-ljuset svarar, om nätverket klarar PoE och om systemet går att felsöka om fem år." />
+  <meta property="og:image" content="https://www.avab.eu/assets/avab högtalare installerade.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="900" />
+  <meta property="og:image:alt" content="Professionellt kablage och kontaktering i AV-installation av AVAB" />
+  <meta property="og:url" content="https://www.avab.eu/kunskap/ratt-kabel-av-teknik/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kablar & kontakter för AV-teknik | Högtalarkabel, DMX, XLR, nätverk | AVAB" />
+  <meta name="twitter:description" content="En kabel är sällan bara en kabel. Den avgör om ljudet får rätt nivå, om DMX-ljuset svarar, om nätverket klarar PoE och om systemet går att felsöka om fem år." />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/avab högtalare installerade.webp" />
+  <meta name="twitter:image:alt" content="Professionellt kablage och kontaktering i AV-installation av AVAB" />
+
+  <!-- Favicon (byt sökväg till AVAB:s riktiga ikonfiler) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Kablar och kontakter för AV-teknik",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "AVAB",
+      "url": "https://www.avab.eu/",
+      "logo": "https://www.avab.eu/logo.png",
+      "image": "https://www.avab.eu/assets/avab högtalare installerade.webp",
+      "telephone": "+46-54-8202080",
+      "email": "info@avab.eu",
+      "sameAs": [
+        "https://www.linkedin.com/company/avab",
+        "https://www.facebook.com/avab"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Skraggevägen 4",
+        "postalCode": "663 41",
+        "addressLocality": "Hammarö",
+        "addressRegion": "Värmland",
+        "addressCountry": "SE"
+      }
+    },
+    "areaServed": "Sverige",
+    "serviceType": [
+      "Kabelval AV-installation",
+      "Högtalarkabel lågohm 100V",
+      "Hörslingekabel kopparfolie",
+      "DMX-kabel ljusstyrning",
+      "Antennkabel trådlösa mikrofoner",
+      "Nätverkskabel PoE Dante",
+      "Kontaktering Speakon XLR Phoenix",
+      "Kabelmärkning dokumentation"
+    ],
+    "description": "AVAB hjälper med kabelval, kontaktering, projektering och installation av kablage för ljud, bild, ljus, nätverk, hörslingor, trådlösa mikrofoner, styrsystem, kameraövervakning och talat utrymningslarm, inklusive mängdning, märkning, testning och dokumentation."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vilken högtalarkabel ska man välja?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Det beror på högtalarens impedans, effekt, längd och om systemet är lågohm eller 100V. Lågohm kräver ofta grövre ren koppar, medan 100V klarar längre sträckor med lägre ström."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan man använda vanlig XLR-kabel till DMX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "På korta sträckor kan det ibland fungera, men DMX ska helst använda riktig DMX-kabel eller korrekt Cat-kabel med rätt adaptrar och terminering."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hur lång får en nätverkskabel vara?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "För kopparnätverk är 100 meter normal maxlängd för en kanal. Behövs längre sträckor bör man använda fiber eller aktiv nätverksutrustning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad är skillnaden mellan balanserad och obalanserad ljudkabel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Balanserad kabel, till exempel XLR eller TRS, är bättre för längre sträckor och störiga miljöer. Obalanserad kabel, till exempel RCA eller 3,5 mm AUX, bör hållas kort."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan nätverkskabel användas till DMX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, i fasta installationer kan Cat-kabel ofta användas för DMX med rätt pinout och adaptrar. Det måste dokumenteras och installeras konsekvent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad är Phoenix-plint?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Phoenix används ofta som vardagsnamn för löstagbara skruvplintar/Euroblock-kontakter i professionell AV-utrustning. Man måste kontrollera pitch, polordning och fabrikat innan man byter kontakt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan elektriker installera efter AVAB:s underlag?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Vi hjälper särskilt gärna elektriker och projektörer att reda ut gränsdragningen: vad som ligger i elentreprenaden, vad som ligger i AV, vilka kablar och kontakter som ska användas och vad som ska dokumenteras."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Start",
+        "item": "https://www.avab.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Kunskap",
+        "item": "https://www.avab.eu/kunskap/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Kablar & kontakter",
+        "item": "https://www.avab.eu/kunskap/ratt-kabel-av-teknik/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.avab.eu/kunskap/ratt-kabel-av-teknik/#webpage",
+    "url": "https://www.avab.eu/kunskap/ratt-kabel-av-teknik/",
+    "name": "Kablar & kontakter för AV-teknik | Högtalarkabel, DMX, XLR, nätverk | AVAB",
+    "description": "AVAB hjälper med rätt kabel och kontakt för ljud, bild, ljus, hörslinga, mikrofoner, nätverk och DMX: högtalarkabel, 100V, XLR, Speakon, RJ45 och plint.",
+    "inLanguage": "sv-SE",
+    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
+    "datePublished": "2026-07-07",
+    "dateModified": "2026-07-07",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".lead", ".compact-faq"]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload av hero-bilden för snabbare LCP -->
+  <link rel="preload" as="image" fetchpriority="high"
+    href="/assets/avab högtalare installerade.webp"
+    imagesrcset="/assets/avab högtalare installerade.webp 1200w"
+    imagesizes="100vw">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Sidspecifika komponenter -->
+  <style>
+    /* ---- Lösningskort (grön ram, accentkant) ---- */
+    .solution-card {
+      border: 2px solid rgba(143, 192, 37, 0.62);
+      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      background: var(--avab-green);
+    }
+    .solution-card h3,
+    .solution-card .bullet-list,
+    .solution-card .formula { position: relative; z-index: 1; }
+
+    /* ---- AEO-svarsruta (snippet-box) ---- */
+    .snippet-box {
+      padding: 24px 28px;
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-left: 8px solid var(--avab-green);
+      box-shadow: var(--avab-shadow-sm);
+      margin-top: 28px;
+    }
+    .snippet-box strong { display: flex; align-items: center; gap: 8px; font-size: 1.1rem; margin-bottom: 8px; color: var(--avab-dark); }
+    .snippet-box strong::before { content: "⚡"; font-size: 1.05rem; }
+    .snippet-box p { margin-bottom: 0; font-size: 1.05rem; }
+
+    /* ---- Formelruta ---- */
+    .formula {
+      font-family: "SF Mono", "Consolas", monospace;
+      font-size: 0.95rem;
+      background: var(--avab-light);
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius-sm);
+      padding: 14px 18px;
+      margin: 16px 0;
+      color: var(--avab-dark);
+    }
+    .formula strong { display: block; margin-bottom: 4px; }
+
+    /* ---- Kabeltyps-kort ---- */
+    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 8px; }
+    .platform-card {
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius);
+      padding: 32px;
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .platform-card h3 { margin-bottom: 10px; }
+    .platform-card p { color: var(--avab-dark-muted); font-size: 0.98rem; }
+    .platform-card p:last-child { margin-bottom: 0; }
+    .platform-card .bullet-list { margin: 12px 0 0; }
+    .platform-card .bullet-list li { font-size: 0.95rem; }
+
+    /* ---- FAQ: vänsterställd rubrik + tvåkolumnslayout ---- */
+    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
+    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
+    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
+    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
+
+    .compact-faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 0;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .compact-faq details.faq-item { padding: 20px 0; }
+    .compact-faq summary { font-size: 1.05rem; }
+    .compact-faq details.faq-item p { font-size: 0.98rem; }
+    .compact-faq details.faq-item:nth-child(1),
+    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
+
+    .kablar-faq-cta {
+      padding-top: 48px;
+      padding-bottom: 96px;
+    }
+    .kablar-faq-cta .compact-faq {
+      margin-bottom: 64px;
+    }
+
+    /* ---- Responsivt (sidspecifikt) ---- */
+    @media (max-width: 768px) {
+      .compact-faq { grid-template-columns: 1fr; }
+      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
+      .kablar-faq-cta {
+        padding-top: 40px;
+        padding-bottom: 72px;
+      }
+      .kablar-faq-cta .compact-faq {
+        margin-bottom: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="https://www.avab.eu/">Start</a></li>
+        <li><a href="https://www.avab.eu/kunskap/">Kunskap</a></li>
+        <li><span aria-current="page">Kablar & kontakter</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero" style="--hero-image:url('/assets/avab högtalare installerade.webp');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Kunskap: Kablar & kontakter</div>
+
+        <h1>Rätt kabel till rätt sak</h1>
+
+        <p class="lead">
+          En kabel är sällan bara en kabel. I AV-teknik avgör den om ljudet får rätt nivå, om mikrofonen fungerar utan störningar, om DMX-ljuset svarar, om nätverket klarar PoE, om hörslingan får rätt fältstyrka och om systemet går att felsöka om fem år.
+          Rätt kabel från början sparar tid, pengar och felsökning.
+        </p>
+
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/kontakt/">Skicka ritningar eller boka genomgång</a>
+            <a class="button button-secondary" href="#kabeltyper">Se kabelguiden</a>
+            <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band" aria-label="Snabbfakta kablar och kontakter">
+    <div class="fact-grid">
+      <div class="fact"><span>Tjänst</span><strong>Kablar &amp; kontakter</strong></div>
+      <div class="fact"><span>Ljud</span><strong>Lågohm, 100V och area</strong></div>
+      <div class="fact"><span>RF</span><strong>50 ohm och låg förlust</strong></div>
+      <div class="fact"><span>Data</span><strong>Cat5e till Cat6a, PoE, DMX</strong></div>
+      <div class="fact"><span>Kontakter</span><strong>Speakon, XLR och Phoenix</strong></div>
+      <div class="fact"><span>Leverans</span><strong>Val, märkning, dokumentation</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section section--light" id="vad">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Svar direkt</div>
+          <h2>Fel kabel kan fungera, tills den inte gör det</h2>
+          <p class="lead-dark">AVAB hjälper med kabelval, kontaktering, projektering och installation av kablage för ljud, bild, ljus, nätverk, hörslingor, trådlösa mikrofoner, styrsystem, kameraövervakning och talat utrymningslarm.</p>
+          <p>Fel kabel kan fungera på kort avstånd, men ge spänningsfall, brus, tappad data, svag RF-signal, dålig taluppfattbarhet eller svår felsökning när anläggningen växer eller ska servas.</p>
+          <div class="snippet-box">
+            <strong>Hur väljer man rätt kabel?</strong>
+            <p>Rätt kabel väljs efter signaltyp, effekt, längd, miljö, kontakt, installationstyp och framtida service. Högtalarkabel, nätverkskabel, DMX-kabel, antennkabel, XLR, hörslingekabel och plintkablage har olika krav.</p>
+          </div>
+        </div>
+
+        <aside class="card">
+          <div class="eyebrow">Vanliga misstag</div>
+          <h3>Kabeln som råkade finnas på hyllan</h3>
+          <p>Det vanligaste misstaget är att välja kabel efter vad som råkar finnas. Det kan fungera i ett test, men bli fel i verklig installation:</p>
+          <ul class="bullet-list">
+            <li>För tunn högtalarkabel på lång sträcka, eller CCA där ren koppar borde användas.</li>
+            <li>Vanlig XLR-ljudkabel till långa DMX-sträckor.</li>
+            <li>För lång RG58 till trådlösa mikrofonantenner.</li>
+            <li>Nätverkskabel över 100 meter utan fiber eller aktiv utrustning.</li>
+            <li>Oskärmad eller feljordad kabel i störig miljö.</li>
+            <li>Fel Phoenix-plint eller fel pitch.</li>
+            <li>Obalanserad AUX-kabel för lång väg.</li>
+            <li>Ingen märkning i rack eller dosa, och ingen serviceögla där utrustning ska kunna bytas.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="hogtalarkabel">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Högtalarkabel</div>
+          <h2>Lågohm: kabeln blir en del av högtalarkretsen</h2>
+          <p>Lågohmshögtalare, till exempel 4 eller 8 ohm, kräver ofta ren koppar och tillräcklig kabelarea. Här går relativt hög ström, och för tunn kabel ger spänningsfall, effektförlust, sämre kontroll över högtalaren och ibland hörbar skillnad i bas och dynamik. Vid längre avstånd eller högre effekt i <a class="text-link" href="/tjanster/ljudsystem/">ljudsystem</a> blir 2,5, 4 eller 6 mm² snabbt relevant.</p>
+          <p>Många kardeler är en fördel: kabeln blir mer flexibel, mindre känslig för vibration och enklare att montera i kontakter, plintar och rack. Det handlar inte om att ljudet "går i fler trådar", utan om mekanik, hållbarhet och praktisk installation.</p>
+          <div class="formula">
+            <strong>Tumregel, koppar:</strong>
+            R tur och retur = 0,035 × längd i meter / kabelarea i mm²<br><br>
+            Exempel: 30 m till en 8-ohmshögtalare med 2,5 mm²:<br>
+            0,035 × 30 / 2,5 = 0,42 ohm, drygt 5 % av 8 ohm. Oftast rimligt.<br>
+            Samma kabel till 4 ohm blir drygt 10 %, vilket kan vara för mycket.
+          </div>
+        </div>
+
+        <aside class="card solution-card">
+          <h3>100V: längre sträckor, lägre ström</h3>
+          <p>100V-system används i skolor, korridorer, butiker, hotell, gym och större installationer med många högtalare. Högre spänning och lägre ström ger mindre spänningsfall, men total effekt, längd och framtida marginal måste fortfarande räknas.</p>
+          <div class="formula">
+            <strong>Exempel:</strong>
+            200 W last ger 200 / 100 = 2 A.<br>
+            100 m enkel väg, 1,5 mm² koppar:<br>
+            0,035 × 100 / 1,5 = 2,33 ohm<br>
+            Spänningsfall: 2 × 2,33 = 4,66 V, cirka 4,7 % av 100 V. Ofta acceptabelt.
+          </div>
+          <p>CCA, kopparklädd aluminium, kan fungera i enklare 100V-installationer om dimensioneringen är rätt, men i professionella och längre installationer är ren koppar ofta tryggare. För kritiska system och <a class="text-link" href="/tjanster/talat-utrymningslarm/">talat utrymningslarm</a> ska kabeltyp, brandklass och funktionskrav kontrolleras från början.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--light" id="kabeltyper">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Kabelguiden</div>
+            <h2>Olika signaler, olika krav</h2>
+            <p class="lead-dark">Samma koppartråd kan inte göra alla jobb. Här är de vanligaste kabeltyperna i en AV-anläggning och vad som avgör valet.</p>
+          </div>
+        </div>
+
+        <div class="platform-grid">
+          <article class="platform-card">
+            <h3>Kontakter för högtalare</h3>
+            <p>Speakon är låsbar, robust och byggd för högtalareffekt: vanlig i scen, event, sporthallar och installationer där högtalare kopplas om eller servas. Skruvplint och Phoenix/Euroblock används i fasta installationer, förstärkare, DSP och 100V-system.</p>
+            <p>Vid plint: använd ändhylsor där det passar, märk upp kablarna och blanda inte fabrikat utan kontroll. En Bose-plint kan ligga plus, minus, jord medan en Audac-plint ligger i annan ordning. Kontrollera alltid mot manual.</p>
+          </article>
+
+          <article class="platform-card">
+            <h3>Hörslingekabel</h3>
+            <p>En hörslinga ska skapa ett magnetfält för telespolen, så loopens geometri, resistans, metallförluster och placering avgör. Vanlig 1- eller 2-ledarkabel fungerar i enklare slingor, medan kopparfolie används under golv, matta eller flytspackel.</p>
+            <p>I sporthallar, aulor och konferensrum kan SLS, phased array, stoppslingor och flera slingzoner behövas. Projektera <a class="text-link" href="/tjanster/horslinga/">hörslingan</a> tidigt, innan golv, armering och kabelvägar är låsta.</p>
+          </article>
+
+          <article class="platform-card">
+            <h3>Antennkabel för trådlösa mikrofoner</h3>
+            <p>Här handlar det om RF-signal, inte ljud: rätt impedans, normalt 50 ohm, och låg förlust vid systemets frekvens. RG58 är smidig på korta sträckor men har relativt hög förlust vid UHF. Längre dragningar kräver lågförlustkabel, smartare antennplacering eller aktiva antenner.</p>
+            <p>Kontakter kan vara BNC, TNC, SMA eller N-type. Undvik adapterkedjor, varje övergång är en förlust och felkälla, och hantera diversity-systemets A- och B-antenn rätt.</p>
+          </article>
+
+          <article class="platform-card">
+            <h3>Nätverkskabel i AV-system</h3>
+            <p>Nätverkskabeln bär i dag nätverk, PoE, <a class="text-link" href="/tjanster/kameraovervakning/">kameraövervakning</a>, Dante, AES67, styrsystem, AVoIP, <a class="text-link" href="/tjanster/skarmar-projektorer/">signage</a>, accesspunkter och touchpaneler. Cat5e räcker ofta för 1 Gbit/s, Cat6 ger marginal och Cat6a rekommenderas för 10 Gbit/s upp till 100 meter.</p>
+            <p>Maxlängden är normalt 100 meter kanal, ofta 90 meter fast plus patch. Längre sträckor eller galvanisk separation löses bäst med fiber. Vid PoE ska switch, effektbudget, kabelkvalitet, temperatur och buntning beaktas. Se även <a class="text-link" href="/tjanster/natverk-switchar-router-fiber/">nätverk, switchar och fiber</a>.</p>
+          </article>
+
+          <article class="platform-card">
+            <h3>DMX: egen kabel eller Cat med disciplin</h3>
+            <p>DMX är differential datakommunikation och ska gå i kabel med rätt impedans, normalt 120 ohm. I fasta installationer kan Cat-kabel användas med rätt adaptrar och konsekvent pinout, dokumenterat och märkt enligt samma standard i båda ändar, med korrekt terminering.</p>
+            <p>Mikrofonkabel och DMX-kabel delar XLR-kontakt men är inte samma sak: XLR-ljudkabel till DMX är en nödlösning på korta sträckor, inte projektering. DMX använder traditionellt 5-polig XLR, medan 3-polig är scenpraktisk men kan förväxlas med ljud och phantommatning. Se även <a class="text-link" href="/tjanster/ljus/">ljus</a>.</p>
+          </article>
+
+          <article class="platform-card">
+            <h3>Linjenivå, mikrofon &amp; phantom</h3>
+            <p>Balanserad signal, XLR eller 6,3 mm TRS, tål störningar och längre dragningar. Obalanserad, RCA eller 3,5 mm AUX, hålls kort, särskilt nära dimmer, LED och motorer. Dator eller telefon in i ett proffssystem behöver ofta DI-box, isolator eller korrekt monosummering, som i <a class="text-link" href="/tjanster/konferensteknik/">konferensrum</a>.</p>
+            <p>Mikrofonsignal är svagare än linjenivå och kräver balanserad XLR. Kondensatormikrofoner behöver ofta 48 V phantommatning, ofarligt för rätt utrustning men ett problem med fel adapter i kedjan. Märk, testa och håll mikrofonlinjer isär från DMX och högtalarsignal.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plint-dokumentation">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Detaljer som avgör</div>
+          <h2>Pitch, polordning, brandklass och märkning</h2>
+          <p>Plintkontakter ser lika ut men är inte alltid utbytbara. Pitchen kan vara 3,5, 3,81, 5,0 eller 5,08 mm, och fel pitch kan nästan passa men ge glapp eller skadad utrustning. Ordningen på plus, minus, jord, skärm och styrsignal skiljer mellan tillverkare, så plintar ska märkas med funktion, inte bara kabelfärg.</p>
+          <p>Miljön styr också: kabel i publika lokaler kan kräva rätt brandklass, halogenfri mantel, UV-beständighet eller mekaniskt skydd. I simhallar, ishallar, utomhusmiljöer och industri tillkommer korrosion, temperatur, dragavlastning och kapsling. För talat utrymningslarm och säkerhetssystem är kabelkraven helt andra än för vanligt ljud, och ska följa systemkraven med övervakning och dokumentation.</p>
+          <p>Bra kablage ska gå att förstå flera år senare. Därför märker AVAB kablar, rack, plintar, paneler och uttag så att service, felsökning och ombyggnad blir enklare. En installation utan märkning kan fungera första dagen, men bli dyr så fort något ska ändras.</p>
+        </div>
+
+        <aside class="card solution-card">
+          <h3>Dokumentationen ska visa</h3>
+          <ul class="bullet-list">
+            <li>Kabeltyp och kabelnummer.</li>
+            <li>Start- och slutpunkt.</li>
+            <li>Kontakt eller plint.</li>
+            <li>Signaltyp samt zon eller funktion.</li>
+            <li>Eventuell PoE, spänning eller högtalarlast.</li>
+            <li>Vad som är reserv eller framtida kabel.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--light" id="arbetssatt">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Hur vi jobbar</div>
+            <h2>Så hjälper AVAB, särskilt gärna elektriker</h2>
+            <p class="lead-dark">Vi kommer in tidigt i <a class="text-link" href="/tjanster/projektering/">projekteringen</a> och reder ut gränsdragningen: vad ligger i elentreprenaden, vad ligger i AV, vilka kablar ska fram, vilka kontakter ska användas och vad ska dokumenteras för att anläggningen ska bli servicebar.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="flow-card"><strong><em>1</em> Kabelval &amp; mängdning</strong><span>Vi anger rätt kabel för ljud, bild, ljus, nätverk, hörslinga, mikrofoner, <a class="text-link" href="/tjanster/styrsystem-integration/">styrsystem</a>, kamera och utrymningsljud, med mängder och gränsdragning mot el.</span></div>
+          <div class="flow-card"><strong><em>2</em> Installation &amp; kontaktering</strong><span>AVAB installerar och kontakterar, eller stöttar projektets elektriker med pinout, polordning, terminering och rätt kontakter för varje fabrikat.</span></div>
+          <div class="flow-card"><strong><em>3</em> Märkning, test &amp; dokumentation</strong><span>Kablar, rack, plintar och uttag märks, testas och dokumenteras så att felsökning, service och ombyggnad fungerar även om fem år.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section kablar-faq-cta" id="cta">
+      <div class="avab-container">
+        <div class="faq-heading">
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Snabba svar om kablar och kontakter</h2>
+          <p>Korta svar för elektriker, projektörer, fastighetsägare och verksamheter som vill få kablaget rätt från början.</p>
+        </div>
+
+        <div class="compact-faq">
+          <details class="faq-item">
+            <summary>Vilken högtalarkabel ska man välja?</summary>
+            <p>Det beror på högtalarens impedans, effekt, längd och om systemet är lågohm eller 100V. Lågohm kräver ofta grövre ren koppar, medan 100V klarar längre sträckor med lägre ström.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan man använda vanlig XLR-kabel till DMX?</summary>
+            <p>På korta sträckor kan det ibland fungera, men DMX ska helst använda riktig DMX-kabel eller korrekt Cat-kabel med rätt adaptrar och terminering.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Hur lång får en nätverkskabel vara?</summary>
+            <p>För kopparnätverk är 100 meter normal maxlängd för en kanal. Behövs längre sträckor bör man använda fiber eller aktiv nätverksutrustning.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vad är skillnaden mellan balanserad och obalanserad ljudkabel?</summary>
+            <p>Balanserad kabel, till exempel XLR eller TRS, är bättre för längre sträckor och störiga miljöer. Obalanserad kabel, till exempel RCA eller 3,5 mm AUX, bör hållas kort.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan nätverkskabel användas till DMX?</summary>
+            <p>Ja, i fasta installationer kan Cat-kabel ofta användas för DMX med rätt pinout och adaptrar. Det måste dokumenteras och installeras konsekvent.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vad är Phoenix-plint?</summary>
+            <p>Phoenix används ofta som vardagsnamn för löstagbara skruvplintar/Euroblock-kontakter i professionell AV-utrustning. Man måste kontrollera pitch, polordning och fabrikat innan man byter kontakt.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan elektriker installera efter AVAB:s underlag?</summary>
+            <p>Ja. Vi hjälper särskilt gärna elektriker och projektörer att reda ut gränsdragningen: vad som ligger i elentreprenaden, vad som ligger i AV, vilka kablar och kontakter som ska användas och vad som ska dokumenteras.</p>
+          </details>
+        </div>
+
+        <div class="fullwidth-cta">
+          <div>
+            <div class="eyebrow">Ta in oss tidigt</div>
+            <h2>Behöver ni rätt kablage från början?</h2>
+            <p>AVAB hjälper er att projektera, installera, märka och dokumentera kablarna för ljud, ljus, nätverk, hörslinga, mikrofoner, konferensrum och utrymningsljud, så att anläggningen fungerar från början och går att förstå när den ska servas.</p>
+            <div class="cta-actions">
+              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
+              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+            </div>
+          </div>
+
+          <ul class="calc-list">
+            <li>Rätt kabel för signaltyp, effekt, längd och miljö.</li>
+            <li>Kontaktering med rätt pitch, polordning och terminering.</li>
+            <li>Gränsdragning mellan elentreprenad och AV.</li>
+            <li>Mängdning, märkning, testning och dokumentation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</body>
+</html>

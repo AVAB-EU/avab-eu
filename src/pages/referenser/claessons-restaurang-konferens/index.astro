@@ -1,0 +1,585 @@
+---
+import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import "../../../styles/avab.css";
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claessons Konferens &amp; Restaurang – AV-teknik för möten, mat och fest | AVAB</title>
+  <meta name="description" content="Referensprojekt: AVAB har i över 18 år levererat ljud, bild, styrning och konferensteknik till Claessons åtta konferensrum, restaurang och festvåning: Biamp, HDBaseT, trådlösa mikrofoner och Pioneer XPRS." />
+  <link rel="canonical" href="https://www.avab.eu/referenser/claessons-restaurang-konferens/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content="Claessons Konferens & Restaurang – teknik för möten, mat och fest" />
+  <meta property="og:description" content="Åtta konferensrum från 6 till 200 personer, restaurangljud, festanläggning med Pioneer XPRS och över 18 års samarbete med AVAB." />
+  <!-- Verifiera bildens mått när den läggs i /assets -->
+  <meta property="og:image" content="https://www.avab.eu/assets/claessons-albatrossen-stor-sal.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="800" />
+  <meta property="og:image:alt" content="Albatrossen, Claessons största konferens- och samlingslokal med projektorduk" />
+  <meta property="og:url" content="https://www.avab.eu/referenser/claessons-restaurang-konferens/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+  <meta property="article:published_time" content="2026-07-08" />
+  <meta property="article:modified_time" content="2026-07-08" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Claessons Konferens & Restaurang – AV-teknik för möten, mat och fest | AVAB" />
+  <meta name="twitter:description" content="Konferens, restaurang och festvåning i samma anläggning, med teknik AVAB utvecklat under mer än 18 år." />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/claessons-albatrossen-stor-sal.webp" />
+  <meta name="twitter:image:alt" content="Albatrossen, Claessons största konferens- och samlingslokal med projektorduk" />
+
+  <!-- Favicon (byt sökväg till AVAB:s riktiga ikonfiler) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://www.avab.eu/referenser/claessons-restaurang-konferens/#article",
+    "mainEntityOfPage": { "@id": "https://www.avab.eu/referenser/claessons-restaurang-konferens/#webpage" },
+    "headline": "Claessons Konferens & Restaurang – teknik för möten, mat och fest",
+    "description": "AVAB:s leverans och löpande utveckling av AV-teknik till Claessons under mer än 18 år: åtta konferensrum, Biamp-styrning, HDBaseT, trådlösa mikrofoner, restaurangljud, festanläggning med Pioneer XPRS och två hopkopplade projektorer.",
+    "datePublished": "2026-07-08",
+    "dateModified": "2026-07-08",
+    "inLanguage": "sv-SE",
+    "author": {
+      "@type": "Organization",
+      "name": "AVAB",
+      "url": "https://www.avab.eu/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AVAB",
+      "url": "https://www.avab.eu/",
+      "logo": { "@type": "ImageObject", "url": "https://www.avab.eu/logo.png" }
+    },
+    "image": ["https://www.avab.eu/assets/claessons-albatrossen-stor-sal.webp"],
+    "about": {
+      "@type": "Service",
+      "name": "Konferensteknik och restaurangljud",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "AVAB",
+        "url": "https://www.avab.eu/",
+        "telephone": "+46-54-8202080",
+        "email": "info@avab.eu",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Skraggevägen 4",
+          "postalCode": "663 41",
+          "addressLocality": "Hammarö",
+          "addressRegion": "Värmland",
+          "addressCountry": "SE"
+        }
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.avab.eu/referenser/claessons-restaurang-konferens/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hur många konferensrum har Claessons?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claessons har åtta konferensrum och samlingslokaler med kapacitet från sex till 200 personer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vilken teknik finns i Claessons större konferensrum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "De tre större konferensrummen har styrsystem, projektor, duk, ljud och bildöverföring via HDBaseT. I den största salen finns även trådlösa mikrofoner och möjlighet att ansluta extern mixer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan restaurangen användas för fest och event?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Restaurangdelen har både bakgrundsljud och en separat festanläggning med Pioneer XPRS-subbas och topphögtalare."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Varför är styrsystem viktigt i konferensrum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ett styrsystem gör att användaren kan starta projektor, duk och ljud på ett enkelt sätt utan att behöva förstå tekniken bakom installationen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Varför används HDBaseT i konferensrum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HDBaseT används för att överföra bild och styrsignaler stabilt över längre kabelsträckor. Det passar konferensrum där projektor, styrsystem och inkopplingspunkter ofta sitter långt ifrån varandra."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.avab.eu/referenser/claessons-restaurang-konferens/#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Start",
+        "item": "https://www.avab.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Referenser",
+        "item": "https://www.avab.eu/referenser/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Claessons Konferens & Restaurang",
+        "item": "https://www.avab.eu/referenser/claessons-restaurang-konferens/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.avab.eu/referenser/claessons-restaurang-konferens/#webpage",
+    "url": "https://www.avab.eu/referenser/claessons-restaurang-konferens/",
+    "name": "Claessons Konferens & Restaurang – AV-teknik för möten, mat och fest | AVAB",
+    "description": "Referensprojekt: åtta konferensrum, Biamp-styrning, HDBaseT, trådlösa mikrofoner, restaurangljud och festanläggning med Pioneer XPRS.",
+    "inLanguage": "sv-SE",
+    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
+    "breadcrumb": { "@id": "https://www.avab.eu/referenser/claessons-restaurang-konferens/#breadcrumb" },
+    "datePublished": "2026-07-08",
+    "dateModified": "2026-07-08",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".lead", ".compact-faq"]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload av hero-bilden för snabbare LCP -->
+  <link rel="preload" as="image" fetchpriority="high"
+    href="/assets/claessons-albatrossen-stor-sal.webp"
+    imagesrcset="/assets/claessons-albatrossen-stor-sal.webp 1200w"
+    imagesizes="100vw">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Sidspecifika komponenter -->
+  <style>
+    /* ---- AEO-svarsruta (referensvariant med etikett) ---- */
+    .snippet-box {
+      margin-top: 28px;
+      padding: 28px 30px;
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-left: 6px solid var(--avab-green);
+      border-radius: var(--avab-radius-sm);
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .snippet-box .label { display: block; margin-bottom: 8px; color: var(--avab-green); font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+    .snippet-box strong { display: block; font-size: 1.2rem; margin-bottom: 10px; color: var(--avab-dark); }
+    .snippet-box p:last-child { margin-bottom: 0; }
+
+    /* ---- Nyckeltal ---- */
+    .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 8px; }
+    .metric {
+      padding: 28px 22px;
+      border: 1px solid var(--avab-border);
+      border-top: 4px solid var(--avab-green);
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-white);
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .metric strong { display: block; margin-bottom: 8px; color: var(--avab-dark); font-size: 1.4rem; line-height: 1.1; }
+    .metric span { color: var(--avab-dark-muted); font-size: 0.92rem; }
+
+    /* ---- Utrustningslista (Albatrossen) ---- */
+    .deliverables { margin-top: 20px; padding: 0; list-style: none; }
+    .deliverables li {
+      position: relative;
+      padding: 0 0 14px 26px;
+      color: var(--avab-dark-muted);
+      font-size: 0.98rem;
+    }
+    .deliverables li::before { content: "✓"; position: absolute; left: 0; color: var(--avab-green); font-weight: 800; }
+
+    /* ---- Områdeskort ---- */
+    .scope-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
+    .scope {
+      padding: 24px;
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius-sm);
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .scope b { display: block; margin-bottom: 6px; color: var(--avab-dark); font-size: 1.02rem; }
+    .scope span { color: var(--avab-dark-muted); font-size: 0.93rem; line-height: 1.5; }
+
+    /* ---- Galleri + bildramar ---- */
+    .gallery { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
+    .span-7 { grid-column: span 7; }
+    .span-6 { grid-column: span 6; }
+    .span-5 { grid-column: span 5; }
+    .image-frame {
+      overflow: hidden;
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-grey);
+      border: 1px solid var(--avab-border);
+    }
+    .image-frame img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .gallery figure, .two-col figure { margin: 0; }
+    figcaption { padding-top: 12px; color: var(--avab-dark-muted); font-size: 0.88rem; }
+
+    /* Placeholder tills äkta projektbild läggs in */
+    .image-placeholder {
+      min-height: 300px;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      border: 2px dashed rgba(40, 46, 42, 0.28);
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-grey);
+      color: var(--avab-dark-muted);
+      text-align: center;
+    }
+    .image-placeholder strong { display: block; margin-bottom: 8px; color: var(--avab-dark); }
+    .image-placeholder small { display: block; font-size: 0.88rem; }
+
+    /* ---- FAQ: vänsterställd rubrik + tvåkolumnslayout ---- */
+    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
+    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
+    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
+    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
+
+    .compact-faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 0;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .compact-faq details.faq-item { padding: 20px 0; }
+    .compact-faq summary { font-size: 1.05rem; }
+    .compact-faq details.faq-item p { font-size: 0.98rem; }
+    .compact-faq details.faq-item:nth-child(1),
+    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
+
+    .claessons-faq-cta { padding-top: 48px; padding-bottom: 96px; }
+    .claessons-faq-cta .compact-faq { margin-bottom: 64px; }
+
+    /* ---- Responsivt (sidspecifikt) ---- */
+    @media (max-width: 1024px) {
+      .metrics, .scope-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 768px) {
+      .metrics, .scope-grid { grid-template-columns: 1fr; }
+      .span-7, .span-6, .span-5 { grid-column: span 12; }
+      .compact-faq { grid-template-columns: 1fr; }
+      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
+      .claessons-faq-cta { padding-top: 40px; padding-bottom: 72px; }
+      .claessons-faq-cta .compact-faq { margin-bottom: 44px; }
+    }
+  </style>
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="https://www.avab.eu/">Start</a></li>
+        <li><a href="https://www.avab.eu/referenser/">Referenser</a></li>
+        <li><span aria-current="page">Claessons Konferens &amp; Restaurang</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Lägg bilden i /assets när den flyttas från biblioteket -->
+  <section class="hero" style="--hero-image:url('/assets/claessons-albatrossen-stor-sal.webp');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Referensprojekt · Claessons Konferens &amp; Restaurang</div>
+
+        <h1>Claessons Konferens &amp; Restaurang – teknik för möten, mat och fest</h1>
+
+        <p class="lead">
+          Hos Claessons möts konferens, restaurang och festvåning i samma anläggning. AVAB har levererat och utvecklat ljud, bild, styrning och konferensteknik under mer än 18 år, från mindre mötesrum till Albatrossen med plats för upp till 200 personer.
+        </p>
+
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="#leveransen">Se leveransen</a>
+            <a class="button button-secondary" href="/kontakt/#ladda-upp-underlag">Planerar ni konferens?</a>
+            <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band" aria-label="Projektfakta">
+    <div class="fact-grid">
+      <div class="fact"><span>Kund</span><strong>Claessons Konferens &amp; Restaurang</strong></div>
+      <div class="fact"><span>Miljö</span><strong>Konferens, restaurang &amp; fest</strong></div>
+      <div class="fact"><span>Rum</span><strong>8 konferensrum och lokaler</strong></div>
+      <div class="fact"><span>Kapacitet</span><strong>6 till 200 personer</strong></div>
+      <div class="fact"><span>Styrning</span><strong>Neets, numera Biamp</strong></div>
+      <div class="fact"><span>Relation</span><strong>Kund i över 18 år</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section section--light" id="leveransen">
+      <div class="avab-container two-col align-start">
+        <div class="animate-in">
+          <div class="eyebrow">En konferensanläggning måste fungera varje dag</div>
+          <h2>Lika enkelt för ett litet möte som för en stor konferens</h2>
+          <p class="lead-dark">Claessons har åtta konferensrum och samlingslokaler med kapacitet från mindre möten för sex personer till större samlingar för upp till 200. Tekniken behöver därför fungera lika enkelt för ett litet möte som för en stor konferens, utbildning, paneldebatt eller företagsdag.</p>
+          <p>AVAB har hjälpt Claessons med ljud, bild, styrning och <a class="text-link" href="/tjanster/konferensteknik/">konferensteknik</a> under mer än 18 år. Det gör projektet till mer än en enskild installation. Det är ett långsiktigt samarbete där tekniken har kompletterats, uppdaterats och anpassats efter verksamhetens behov över tid, en naturlig del av vår <a class="text-link" href="/service-support/">service och support</a>.</p>
+        </div>
+
+        <aside class="snippet-box animate-in">
+          <span class="label">Kort svar för sök och AI</span>
+          <strong>Hur många konferensrum har Claessons?</strong>
+          <p>Claessons har åtta konferensrum och samlingslokaler med kapacitet från sex till 200 personer. De tre största har styrsystem, projektor, duk och HDBaseT, och Albatrossen har dessutom trådlösa mikrofoner och möjlighet att ansluta extern mixer.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="konferensrum">
+      <div class="avab-container two-col align-start">
+        <div class="animate-in">
+          <div class="eyebrow">Tre större konferensrum</div>
+          <h2>Rummet startas, rätt bildväg aktiveras, lokalen är redo</h2>
+          <p class="lead-dark">I de tre större konferensrummen, med kapacitet för cirka 50, 50 och 200 personer, används Neets-styrning, numera Biamp, för att göra tekniken enkel att hantera, byggt på samma principer som våra <a class="text-link" href="/tjanster/styrsystem-integration/">styrsystem</a>.</p>
+          <p>I de två mellanstora rummen är projektorduken motoriserad. När användaren startar projektorn åker duken ned automatiskt. I den största salen, Albatrossen, används en fast duk. Det gör att användaren slipper tänka på tekniken bakom: rummet startas, rätt bildväg aktiveras och lokalen blir redo för presentation.</p>
+          <aside class="snippet-box">
+            <span class="label">Kort svar</span>
+            <strong>Varför är styrsystem viktigt i konferensrum?</strong>
+            <p>Ett styrsystem gör att användaren kan starta projektor, duk och ljud på ett enkelt sätt utan att behöva förstå tekniken bakom installationen.</p>
+          </aside>
+        </div>
+        <figure class="animate-in">
+          <div class="image-placeholder"><div><strong>BILDPLATS: Motoriserad projektorduk</strong><small>Föreslagen fil: claessons-konferensrum-motoriserad-duk.webp</small></div></div>
+          <figcaption>Motoriserad projektorduk i ett av Claessons större konferensrum.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--light" id="albatrossen">
+      <div class="avab-container two-col align-start">
+        <figure class="animate-in">
+          <div class="image-placeholder"><div><strong>BILDPLATS: Albatrossen</strong><small>Föreslagen fil: claessons-albatrossen-stor-sal.webp</small></div></div>
+          <figcaption>Albatrossen, Claessons största konferens- och samlingslokal med plats för upp till 200 personer.</figcaption>
+        </figure>
+        <div class="animate-in">
+          <div class="eyebrow">Albatrossen, den största salen</div>
+          <h2>Rustad för större möten, presentationer och paneldebatter</h2>
+          <p class="lead-dark">Albatrossen tar upp till 200 personer och har trådlösa mikrofonsystem för större möten, presentationer och paneldebatter.</p>
+          <ul class="deliverables">
+            <li>En trådlös handmikrofon.</li>
+            <li>Två trådlösa headset.</li>
+            <li>Fast projektorduk.</li>
+            <li>HDBaseT för bildöverföring.</li>
+            <li>Möjlighet att ansluta extern mixer vid större arrangemang.</li>
+          </ul>
+          <p>Möjligheten att koppla in en extern mixer är viktig. Vid större konferenser, debatter eller scenprogram kan man behöva fler <a class="text-link" href="/tjanster/mikrofoner/">mikrofoner</a>, fler ljudkällor eller en tekniker som sköter ljudet mer aktivt. Då finns infrastrukturen redan på plats.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="hdbaset">
+      <div class="avab-container">
+        <div class="section-heading animate-in">
+          <div>
+            <div class="eyebrow">Bildöverföring</div>
+            <h2>HDBaseT för stabil bild över längre avstånd</h2>
+            <p class="lead-dark">Bildöverföringen sker med HDBaseT, vilket gör det möjligt att skicka bildsignaler över längre avstånd på ett stabilt sätt. I konferensanläggningar är det särskilt värdefullt eftersom projektor, styrning och anslutningspunkter ofta sitter långt ifrån varandra. För användaren ska det fortfarande kännas enkelt: koppla in datorn, starta systemet och presentera.</p>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><strong>8</strong><span>konferensrum och samlingslokaler</span></div>
+          <div class="metric"><strong>6–200</strong><span>personer i kapacitet</span></div>
+          <div class="metric"><strong>HDBaseT</strong><span>stabil bild över långa sträckor</span></div>
+          <div class="metric"><strong>18+ år</strong><span>samarbete med AVAB</span></div>
+        </div>
+        <aside class="snippet-box">
+          <span class="label">AEO-svar</span>
+          <strong>Varför används HDBaseT i konferensrum?</strong>
+          <p>HDBaseT används för att överföra bild och styrsignaler stabilt över längre kabelsträckor. Det passar konferensrum där projektor, styrsystem och inkopplingspunkter ofta sitter långt ifrån varandra.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--light" id="helhet">
+      <div class="avab-container">
+        <div class="section-heading animate-in">
+          <div>
+            <div class="eyebrow">Konferens med lunch och fika i samma hus</div>
+            <h2>Tekniken måste fungera utan att ta personalens tid</h2>
+            <p class="lead-dark">En viktig del av Claessons verksamhet är helheten kring konferensen. Kunden bokar inte bara ett rum med teknik, utan kan även få lunch, kaffe och fika levererat till konferensrummen.</p>
+          </div>
+        </div>
+        <p style="max-width: 860px;">Det betyder att tekniken måste fungera utan att ta personalens tid. En konferensanläggning där personalen behöver felsöka projektor, ljud eller mikrofoner inför varje bokning blir snabbt dyr i drift. Därför har fokus varit enkel styrning, tydliga inkopplingar och robust teknik.</p>
+      </div>
+    </section>
+
+    <section class="section" id="restaurangljud">
+      <div class="avab-container two-col align-start">
+        <div class="animate-in">
+          <div class="eyebrow">Restaurangljud i hela lokalen</div>
+          <h2>Rätt känsla utan att störa samtalet</h2>
+          <p class="lead-dark">I restaurangdelen har AVAB monterat högtalare i alla delar av lokalen. Syftet är att skapa ett jämnt och trevligt bakgrundsljud som fungerar både vid lunch, middag, mingel och event.</p>
+          <p>Restaurangljud handlar inte om att spela högt överallt. Det handlar om att skapa rätt känsla utan att störa samtal. Ljudet ska finnas där, fylla ut lokalen och bidra till atmosfären, precis det vi menar med genomtänkt <a class="text-link" href="/tjanster/bakgrundsmusik/">bakgrundsmusik</a> i ett väl projekterat <a class="text-link" href="/tjanster/ljudsystem/">ljudsystem</a>.</p>
+        </div>
+        <figure class="animate-in">
+          <div class="image-placeholder"><div><strong>BILDPLATS: Restaurangljud</strong><small>Föreslagen fil: claessons-restaurang-hogtalare.webp</small></div></div>
+          <figcaption>Högtalare för jämnt bakgrundsljud i restaurangdelen.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--light" id="fest">
+      <div class="avab-container two-col align-start">
+        <figure class="animate-in">
+          <div class="image-placeholder"><div><strong>BILDPLATS: Festanläggning</strong><small>Föreslagen fil: claessons-festanlaggning-pioneer-xprs.webp</small></div></div>
+          <figcaption>Festanläggning med Pioneer XPRS-subbas och topphögtalare.</figcaption>
+        </figure>
+        <div class="animate-in">
+          <div class="eyebrow">Festanläggning för kvällar och event</div>
+          <h2>Från restaurangmiljö till fest utan tillfälligt bygge</h2>
+          <p class="lead-dark">När restaurangen används som festvåning krävs mer kraft än vid vanlig bakgrundsmusik. Därför finns en separat festanläggning med Pioneer XPRS-system.</p>
+          <div class="scope-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+            <article class="scope"><b>Pioneer XPRS215S</b><span>Subbas som ger tyngd och tryck för dans och event.</span></article>
+            <article class="scope"><b>Pioneer XPRS112</b><span>Topphögtalare för kraft och tydlighet i hela lokalen.</span></article>
+          </div>
+          <p>Det ger lokalen möjlighet att gå från restaurangmiljö till fest, dans, företagsevent eller större arrangemang utan att bygga upp ett helt tillfälligt ljudsystem varje gång.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projektorer">
+      <div class="avab-container two-col align-start">
+        <div class="animate-in">
+          <div class="eyebrow">Bild i hela restaurangytan</div>
+          <h2>Två hopkopplade projektorer för den stora ytan</h2>
+          <p class="lead-dark">I restaurangdelen och festvåningen finns även två projektorer som är hopkopplade för enkel visning i den stora ytan.</p>
+          <p>Det gör att bild kan visas tydligt för fler gäster samtidigt, till exempel vid företagsevent, presentationer, bildspel, sport, föreläsningar eller festliga sammanhang. Val och placering av <a class="text-link" href="/tjanster/skarmar-projektorer/">bild och projektorer</a> anpassas efter lokalens storlek och användning.</p>
+        </div>
+        <figure class="animate-in">
+          <div class="image-placeholder"><div><strong>BILDPLATS: Två projektorer i restaurangen</strong><small>Föreslagen fil: claessons-restaurang-tva-projektorer.webp</small></div></div>
+          <figcaption>Två hopkopplade projektorer gör det enkelt att visa bild i hela den stora restaurangytan.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--light" id="relation">
+      <div class="avab-container">
+        <div class="section-heading animate-in">
+          <div>
+            <div class="eyebrow">Mer än 18 års samarbete</div>
+            <h2>Det starkaste är inte en produkt, det är relationen</h2>
+            <p class="lead-dark">AVAB har haft Claessons som kund i mer än 18 år. Under den tiden har behoven förändrats, teknik har bytts ut, lokaler har utvecklats och nya funktioner har tillkommit.</p>
+            <p>Det visar vad AVAB ofta gör bäst: inte bara installerar teknik, utan finns kvar när verksamheten växer, förändras och behöver nya lösningar. Fler projekt finns bland våra <a class="text-link" href="/referenser/">referenser</a>.</p>
+          </div>
+        </div>
+        <div class="proof-strip">
+          <div class="proof-item"><strong>18+ år</strong><span>som kund hos AVAB</span></div>
+          <div class="proof-item"><strong>8 rum</strong><span>konferens och samlingslokaler</span></div>
+          <div class="proof-item"><strong>200</strong><span>personer i största salen Albatrossen</span></div>
+          <div class="proof-item"><strong>1 anläggning</strong><span>konferens, restaurang och fest</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section claessons-faq-cta" id="fragor">
+      <div class="avab-container">
+        <div class="faq-heading">
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Frågor om konferensteknik, restaurangljud och festanläggning</h2>
+          <p>Korta svar för konferensanläggningar, restauranger och festvåningar som vill binda ihop möte, mat och event i samma teknik. Se även <a class="text-link" href="/miljo/restaurang-bar-klubb/">teknik för restaurang och bar</a>.</p>
+        </div>
+
+        <div class="compact-faq">
+          <details class="faq-item">
+            <summary>Hur många konferensrum har Claessons?</summary>
+            <p>Claessons har åtta konferensrum och samlingslokaler med kapacitet från sex till 200 personer.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vilken teknik finns i Claessons större konferensrum?</summary>
+            <p>De tre större konferensrummen har styrsystem, projektor, duk, ljud och bildöverföring via HDBaseT. I den största salen finns även trådlösa mikrofoner och möjlighet att ansluta extern mixer.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan restaurangen användas för fest och event?</summary>
+            <p>Ja. Restaurangdelen har både bakgrundsljud och en separat festanläggning med Pioneer XPRS-subbas och topphögtalare.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Varför är styrsystem viktigt i konferensrum?</summary>
+            <p>Ett styrsystem gör att användaren kan starta projektor, duk och ljud på ett enkelt sätt utan att behöva förstå tekniken bakom installationen.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Varför används HDBaseT i konferensrum?</summary>
+            <p>HDBaseT används för att överföra bild och styrsignaler stabilt över längre kabelsträckor. Det passar konferensrum där projektor, styrsystem och inkopplingspunkter ofta sitter långt ifrån varandra.</p>
+          </details>
+        </div>
+
+        <div class="fullwidth-cta">
+          <div>
+            <div class="eyebrow">Planerar ni konferens, restaurang eller festvåning?</div>
+            <h2>Bind ihop möte, mat och event i samma teknik</h2>
+            <p>AVAB projekterar och installerar konferensteknik, styrsystem, restaurangljud, festanläggning, mikrofoner och bild, och finns kvar för service när verksamheten växer och förändras.</p>
+            <div class="cta-actions">
+              <a class="button button-light" href="/kontakt/#ladda-upp-underlag">Ladda upp underlag</a>
+              <a class="button button-secondary" href="/miljo/restaurang-bar-klubb/">Se lösningar för restaurang</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+            </div>
+          </div>
+
+          <ul class="calc-list">
+            <li>Konferensteknik med Biamp-styrning och HDBaseT.</li>
+            <li>Trådlösa mikrofoner och plats för extern mixer.</li>
+            <li>Restaurangljud och separat festanläggning.</li>
+            <li>Projektering, installation och långsiktig service.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</body>
+</html>

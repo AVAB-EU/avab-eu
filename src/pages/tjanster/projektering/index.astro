@@ -1,0 +1,670 @@
+---
+import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import "../../../styles/avab.css";
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projektering av AV-teknik | Ljud, bild, hörslinga & utrymningslarm | AVAB</title>
+  <meta name="description" content="AVAB projekterar AV-teknik för sporthallar, simhallar, skolor, hotell och konferensrum: EASE-beräkning, skärmval, hörslinga, talat utrymningslarm och FFU." />
+  <link rel="canonical" href="https://www.avab.eu/tjanster/projektering/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content="Projektering av AV-teknik | Ljud, bild, hörslinga & utrymningslarm | AVAB" />
+  <meta property="og:description" content="Rätt teknik börjar inte med en produktlista. Den börjar med lokalen, verksamheten, ljudmiljön, användarna, entreprenadformen och kraven i projektet." />
+  <meta property="og:image" content="https://www.avab.eu/assets/Viktigt före installation projektering 1200x900.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="900" />
+  <meta property="og:image:alt" content="Projektering av AV-teknik före installation, utförd av AVAB" />
+  <meta property="og:url" content="https://www.avab.eu/tjanster/projektering/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projektering av AV-teknik | Ljud, bild, hörslinga & utrymningslarm | AVAB" />
+  <meta name="twitter:description" content="Rätt teknik börjar inte med en produktlista. Den börjar med lokalen, verksamheten, ljudmiljön, användarna, entreprenadformen och kraven i projektet." />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/Viktigt före installation projektering 1200x900.webp" />
+  <meta name="twitter:image:alt" content="Projektering av AV-teknik före installation, utförd av AVAB" />
+
+  <!-- Favicon (byt sökväg till AVAB:s riktiga ikonfiler) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Projektering av AV-teknik",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "AVAB",
+      "url": "https://www.avab.eu/",
+      "logo": "https://www.avab.eu/logo.png",
+      "image": "https://www.avab.eu/assets/Viktigt före installation projektering 1200x900.webp",
+      "telephone": "+46-54-8202080",
+      "email": "info@avab.eu",
+      "sameAs": [
+        "https://www.linkedin.com/company/avab",
+        "https://www.facebook.com/avab"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Skraggevägen 4",
+        "postalCode": "663 41",
+        "addressLocality": "Hammarö",
+        "addressRegion": "Värmland",
+        "addressCountry": "SE"
+      }
+    },
+    "areaServed": "Sverige",
+    "serviceType": [
+      "AV-projektering",
+      "EASE-beräkning ljudsystem",
+      "Skärmdimensionering projektering",
+      "Hörslingeprojektering PLS SLS",
+      "Projektering talat utrymningslarm",
+      "FFU AV-teknik",
+      "AB 04 ABT 06 AV-underlag",
+      "Teknisk beskrivning AV"
+    ],
+    "description": "AVAB hjälper beställare, elektriker, byggbolag, kommuner, konsulter och fastighetsägare med projektering av ljud, bild, ljus, styrning, hörslinga och talat utrymningslarm: EASE-beräkning, skärmdimensionering, zonindelning, FFU, mängder, AB 04/ABT 06 och tidig samordning mot el, IT, brand och bygg."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vad är AV-projektering?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AV-projektering är planering av ljud, bild, ljus, styrning, hörslinga, mikrofoner, skärmar, projektorer, nätverk, kablage och tekniska funktioner innan installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "När ska AVAB komma in i projektet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Helst innan kabelvägar, undertak, golv, teknikrum och FFU är låsta. Ju tidigare AV-tekniken samordnas med el, IT, bygg, brand och verksamhet, desto färre kompromisser behövs senare."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan AVAB hjälpa elektriker med underlag?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. AVAB kan hjälpa med systemskisser, mängder, funktionskrav, produktval, högtalarplacering, hörslinga, styrning och tekniska frågor inför offert eller installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad är EASE-projektering?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "EASE-projektering är simulering och beräkning av ljudsystem. Det används för att bedöma högtalarplacering, täckning, nivåer och taluppfattbarhet innan installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ni projektera hörslinga?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. AVAB projekterar hörslingor för konferensrum, sporthallar, skolor, simhallar, receptioner och publika miljöer. Vi hjälper även med PLS/SLS, stoppslingor, mätning och dokumentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Är talat utrymningslarm samma sak som vanligt ljudsystem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nej. Talat utrymningslarm är ett säkerhetssystem och behöver projekteras utifrån brandskyddsbeskrivning, EN54-krav, övervakning, reservkraft, prioritet och dokumentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ni hjälpa till med AB 04 och ABT 06?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. AVAB kan hjälpa till att tolka AV-delarna i entreprenadunderlag, ta fram tekniska beskrivningar, tydliggöra gränsdragningar och skapa underlag som fungerar bättre i projekt enligt AB 04 eller ABT 06."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Start",
+        "item": "https://www.avab.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tjänster",
+        "item": "https://www.avab.eu/#tjanster"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Projektering",
+        "item": "https://www.avab.eu/tjanster/projektering/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.avab.eu/tjanster/projektering/#webpage",
+    "url": "https://www.avab.eu/tjanster/projektering/",
+    "name": "Projektering av AV-teknik | Ljud, bild, hörslinga & utrymningslarm | AVAB",
+    "description": "AVAB projekterar AV-teknik för sporthallar, simhallar, skolor, hotell och konferensrum: EASE-beräkning, skärmval, hörslinga, talat utrymningslarm och FFU.",
+    "inLanguage": "sv-SE",
+    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
+    "datePublished": "2026-07-07",
+    "dateModified": "2026-07-07",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".lead", ".compact-faq"]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload av hero-bilden för snabbare LCP -->
+  <link rel="preload" as="image" fetchpriority="high"
+    href="/assets/Viktigt före installation projektering 1200x900.webp"
+    imagesrcset="/assets/Viktigt före installation projektering 1200x900.webp 1200w"
+    imagesizes="100vw">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Sidspecifika komponenter -->
+  <style>
+    /* ---- Lösningskort (grön ram, accentkant) ---- */
+    .solution-card {
+      border: 2px solid rgba(143, 192, 37, 0.62);
+      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      background: var(--avab-green);
+    }
+    .solution-card h3,
+    .solution-card .bullet-list { position: relative; z-index: 1; }
+
+    /* ---- AEO-svarsruta (snippet-box) ---- */
+    .snippet-box {
+      padding: 24px 28px;
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-left: 8px solid var(--avab-green);
+      box-shadow: var(--avab-shadow-sm);
+      margin-top: 28px;
+    }
+    .snippet-box strong { display: flex; align-items: center; gap: 8px; font-size: 1.1rem; margin-bottom: 8px; color: var(--avab-dark); }
+    .snippet-box strong::before { content: "⚡"; font-size: 1.05rem; }
+    .snippet-box p { margin-bottom: 0; font-size: 1.05rem; }
+
+    /* ---- Disciplinkort ---- */
+    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 8px; }
+    .platform-card {
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius);
+      padding: 32px;
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .platform-card h3 { margin-bottom: 10px; }
+    .platform-card p { color: var(--avab-dark-muted); font-size: 0.98rem; }
+    .platform-card p:last-child { margin-bottom: 0; }
+
+    /* ---- Miljökort ---- */
+    .env-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
+    .env-card {
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius-sm);
+      padding: 26px 28px;
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .env-card h3 { font-size: 1.25rem; margin-bottom: 8px; }
+    .env-card p { color: var(--avab-dark-muted); font-size: 0.97rem; margin-bottom: 0; }
+
+    /* ---- Inre länk i referenskort ("Se referensprojekt →") ---- */
+    .ref-content a {
+      margin-top: auto;
+      font-weight: 800;
+      color: var(--avab-dark);
+    }
+    .ref-content a:hover { color: var(--avab-green); }
+    .ref-content a::after { content: " →"; color: var(--avab-green); }
+    .grid-3 + .grid-3 { margin-top: 24px; }
+
+    /* ---- FAQ: vänsterställd rubrik + tvåkolumnslayout ---- */
+    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
+    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
+    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
+    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
+
+    .compact-faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 0;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .compact-faq details.faq-item { padding: 20px 0; }
+    .compact-faq summary { font-size: 1.05rem; }
+    .compact-faq details.faq-item p { font-size: 0.98rem; }
+    .compact-faq details.faq-item:nth-child(1),
+    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
+
+    .projektering-faq-cta {
+      padding-top: 48px;
+      padding-bottom: 96px;
+    }
+    .projektering-faq-cta .compact-faq {
+      margin-bottom: 64px;
+    }
+
+    /* ---- Responsivt (sidspecifikt) ---- */
+    @media (max-width: 1080px) {
+      .env-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .compact-faq { grid-template-columns: 1fr; }
+      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
+      .projektering-faq-cta {
+        padding-top: 40px;
+        padding-bottom: 72px;
+      }
+      .projektering-faq-cta .compact-faq {
+        margin-bottom: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="https://www.avab.eu/">Start</a></li>
+        <li><a href="https://www.avab.eu/#tjanster">Tjänster</a></li>
+        <li><span aria-current="page">Projektering</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero" style="--hero-image:url('/assets/Viktigt före installation projektering 1200x900.webp');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Tjänst: Projektering</div>
+
+        <h1>Projektering av AV-teknik som gör projektet tydligare från början</h1>
+
+        <p class="lead">
+          Rätt teknik börjar inte med en produktlista. Den börjar med lokalen, verksamheten, ljudmiljön, användarna, entreprenadformen och kraven i projektet.
+          Vi hjälper er från ungefärlig idé till ritning, budget, FFU, systemlösning och färdig installation. För beställare, elektriker, byggbolag, kommuner, konsulter och fastighetsägare.
+        </p>
+
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/kontakt/">Skicka ritningar eller FFU</a>
+            <a class="button button-secondary" href="#referenser">Se referenser</a>
+            <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band" aria-label="Snabbfakta projektering">
+    <div class="fact-grid">
+      <div class="fact"><span>Tjänst</span><strong>Projektering av AV-teknik</strong></div>
+      <div class="fact"><span>Beräkning</span><strong>EASE och taluppfattbarhet</strong></div>
+      <div class="fact"><span>Tillgänglighet</span><strong>Hörslinga, PLS och SLS</strong></div>
+      <div class="fact"><span>Säkerhet</span><strong>Talat utrymningslarm, EN 54</strong></div>
+      <div class="fact"><span>Entreprenad</span><strong>AB 04, ABT 06 och FFU</strong></div>
+      <div class="fact"><span>Leverans</span><strong>Idé till relationshandling</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section section--light" id="vad">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Varför projektering behövs</div>
+          <h2>AV-problemen uppstår sällan vid montaget</h2>
+          <p class="lead-dark">De uppstår långt tidigare: när ingen har räknat på ljudtäckningen, när skärmen valts utan hänsyn till avstånd, när högtalare hamnar i konflikt med ventilation, när hörslingan glöms bort tills golvet är färdigt eller när talat utrymningslarm blandas ihop med ett vanligt ljudsystem.</p>
+          <p>Då blir det kompromisser, ÄTA-arbeten, stress i slutet av entreprenaden och teknik som inte riktigt fungerar för verksamheten. Med tidig projektering samordnas allt i stället innan lösningarna är låsta.</p>
+          <div class="snippet-box">
+            <strong>Vad är AV-projektering?</strong>
+            <p>AV-projektering innebär att ljud, bild, styrning, hörslinga, mikrofoner, skärmar, projektorer, utrymningsljud, kabelvägar och integration planeras innan installation. Målet är att rätt teknik hamnar på rätt plats, med rätt gränsdragning, rätt dokumentation och färre dyra ändringar senare i projektet.</p>
+          </div>
+        </div>
+
+        <aside class="card">
+          <div class="eyebrow">Omfattning</div>
+          <h3>Med tidig projektering samordnar vi</h3>
+          <ul class="bullet-list">
+            <li>Rumsfunktioner och användarflöden.</li>
+            <li>Skärmar, projektorer och bildstorlek.</li>
+            <li>Ljudtäckning, taluppfattbarhet och EASE-beräkning.</li>
+            <li>Hörslinga, PLS/SLS, stoppslingor och Auracast som komplement.</li>
+            <li>Talat utrymningslarm, inrymning och gränsdragning mot brand.</li>
+            <li>Styrsystem, KNX, DMX, Dante, Q-SYS, Crestron och zonlogik.</li>
+            <li>Kablage, rack, nätverk, kanalisation och kabelvägar.</li>
+            <li>FFU, mängder, ritningsunderlag och relationshandlingar.</li>
+            <li>AB 04, ABT 06, ansvar, garanti och leveransvillkor.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="bron">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Bron mellan idé och installation</div>
+          <h2>"Vi behöver ljud i sporthallen" är bara början</h2>
+          <p>I ett tidigt skede låter frågan enkel. Men bakom den finns följdfrågorna: Ska ljudet täcka plan, läktare eller båda? Ska hallen kunna delas, med separata mikrofoner i A-hall och B-hall? Ska ljudet tystas av brandlarm? Ska systemet användas för rastsignal, speaker, musik, utbildning eller utrymning?</p>
+          <p>Samma sak gäller bild och tillgänglighet: Ska hörslingan täcka hela ytan eller bara publikdelen? Ska skärmen fungera för Excel, ritningar, Teams, publikvisning eller digital signage? Det är sådant projekteringen ska reda ut innan någon beställer fel saker.</p>
+        </div>
+
+        <aside class="card solution-card">
+          <h3>Tidig samordning sparar pengar</h3>
+          <p>Det billigaste tillfället att lösa ett AV-problem är innan väggar, golv, undertak, kabelstegar och teknikrum är färdiga. Tidig samordning avgör:</p>
+          <ul class="bullet-list">
+            <li>Om rätt rör och kabelvägar finns, och om racket får plats och ventilation.</li>
+            <li>Om nätverk och PoE är dimensionerat.</li>
+            <li>Om högtalare hamnar rätt i förhållande till ventilation och belysning.</li>
+            <li>Om projektor, duk eller skärm får rätt montagepunkt.</li>
+            <li>Om hörslingan kan byggas in i golvet.</li>
+            <li>Om styrsystemet kan prata med KNX, DMX, ljud, bild och brand.</li>
+            <li>Om framtida service blir enkel eller besvärlig.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--light" id="discipliner">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Disciplinerna</div>
+            <h2>Det här projekterar vi</h2>
+            <p class="lead-dark">Beroende på projekt kan leveransen innehålla allt från behovsanalys, platsbesök och systemförslag till EASE-beräkning, FFU-text, mängdförteckning, samordningsmöten, provning och överlämning.</p>
+          </div>
+        </div>
+
+        <div class="platform-grid">
+          <article class="platform-card">
+            <h3>Skärmstorlek &amp; bildprojektering</h3>
+            <p>En skärm ska inte väljas för att den "känns stor" i produktbladet, utan efter rummet, avståndet, innehållet och användningen. I ett mindre mötesrum kan 65–75 tum vara rimligt, i större konferensrum 85–98 tum, och i aula eller sporthall kan projektor, motoriserad duk eller LED-vägg vara rätt väg.</p>
+            <p>Vi tittar på avstånd från sista sittplats, om text och kalkylblad ska kunna läsas, ljusförhållanden, infästning och drifttid, som en del av <a class="text-link" href="/tjanster/skarmar-projektorer/">skärmar och projektorer</a> och <a class="text-link" href="/tjanster/konferensteknik/">konferenstekniken</a>.</p>
+          </article>
+
+          <article class="platform-card">
+            <h3>EASE-projektering av ljud</h3>
+            <p>För sporthallar, simhallar, ishallar, aulor, skolor, kyrkor och större publika lokaler räcker det inte att välja "bra högtalare". Med EASE simulerar vi hur ljudet sprids och bedömer täckning, nivåer och taluppfattbarhet innan installation.</p>
+            <p>Det visar var högtalarna bör placeras, hur många som behövs, hur de ska riktas och om särskilda ytor kräver egen zon, som grunden i hela <a class="text-link" href="/tjanster/ljudsystem/">ljudsystemet</a>.</p>
+          </article>
+
+          <article class="platform-card">
+            <h3>Taluppfattbarhet &amp; STI</h3>
+            <p>Ett ljudsystem är inte bra bara för att det låter högt. Tal måste vara tydligt, jämnt och begripligt, särskilt där instruktioner, speaker, utrop eller säkerhetsmeddelanden är viktiga.</p>
+            <p>Vi hjälper med placering, zonindelning, högtalarval, DSP-inställningar, mikrofoner och mätning. Läs mer om <a class="text-link" href="/tjanster/taluppfattbarhet-akustik/">taluppfattbarhet och akustik</a>.</p>
+          </article>
+
+          <article class="platform-card">
+            <h3>Hörslinga, PLS &amp; SLS</h3>
+            <p>Hörslinga behöver planeras tidigt: i vissa projekt ska slingkabel eller kopparfolie in i golvkonstruktion, under matta eller flytspackel. Väntar man för länge blir lösningen dyrare, sämre eller svårare att genomföra.</p>
+            <p>Projekteringen reder ut PLS eller SLS, täckta ytor, stoppslingor, metallförluster, förstärkarplacering, mätning och dokumentation, samt om Auracast ska komplettera. Läs mer om <a class="text-link" href="/tjanster/horslinga/">hörslinga</a>.</p>
+          </article>
+
+          <article class="platform-card">
+            <h3>Talat utrymningslarm &amp; inrymning</h3>
+            <p>Talat utrymningslarm ska inte blandas ihop med ett vanligt ljudsystem. Kräver brandskyddsbeskrivningen UTM/TUL projekteras systemet som säkerhetssystem med rätt prioritet, övervakning, reservkraft, EN54-anpassade komponenter, zonindelning och gränsdragning mot brandlarm.</p>
+            <p>Läs mer om <a class="text-link" href="/tjanster/talat-utrymningslarm/">talat utrymningslarm</a>, och om <a class="text-link" href="/rastsignal/">rastsignal</a> där gränsdragningen är relevant för skolor.</p>
+          </article>
+
+          <article class="platform-card">
+            <h3>AB 04, ABT 06 &amp; FFU</h3>
+            <p>I en utförandeentreprenad enligt AB 04 bygger entreprenören i hög grad efter beställarens projektering, så handlingarna måste vara tydliga. I en totalentreprenad enligt ABT 06 behöver funktionskraven vara tydliga i stället.</p>
+            <p>Vi tar fram tekniska beskrivningar, funktionskrav, systemskisser, mängder, budgetunderlag, frågor till FFU och granskningskommentarer, och samordnar mot el, IT, brand, bygg, akustik och verksamhet. Målet är att minska risken för missförstånd.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="miljoer">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Miljöer</div>
+            <h2>Där projektering är särskilt viktig</h2>
+            <p class="lead-dark">Ju svårare akustik, fler zoner och hårdare krav, desto mer avgör projekteringen.</p>
+          </div>
+        </div>
+
+        <div class="env-grid">
+          <article class="env-card">
+            <h3><a class="text-link" href="/miljo/sporthall/">Sporthall &amp; arena</a></h3>
+            <p>Ljud, taluppfattbarhet, läktare, vikvägg, mikrofoner, hörslinga, speakerläge och eventläge.</p>
+          </article>
+          <article class="env-card">
+            <h3><a class="text-link" href="/miljo/simhall/">Simhall</a></h3>
+            <p>Fukt, buller, zoner, utrop, tävling, hörslinga, styrning och samordning med bygg och el.</p>
+          </article>
+          <article class="env-card">
+            <h3><a class="text-link" href="/miljo/ishall/">Ishall</a></h3>
+            <p>Kyla, fukt, läktarljud, isljud, mikrofoner, rackplacering och taluppfattbarhet.</p>
+          </article>
+          <article class="env-card">
+            <h3><a class="text-link" href="/miljo/skola/">Skola</a></h3>
+            <p>Klassrum, aula, matsal, rastsignal, hörslinga, skärmar, projektorer, mikrofoner och inrymning/utrymning.</p>
+          </article>
+          <article class="env-card">
+            <h3><a class="text-link" href="/miljo/industri/">Industri</a></h3>
+            <p>Konferensrum, utbildningsrum, talat utrymningslarm, kamera, ljud och robust drift.</p>
+          </article>
+          <article class="env-card">
+            <h3><a class="text-link" href="/miljo/hotell/">Hotell</a>, <a class="text-link" href="/miljo/kontor-konferens/">kontor &amp; konferens</a></h3>
+            <p>Konferens, spa, zonljud, bakgrundsmusik, Teams, BYOD, USB-C, takmikrofoner, rumsbokning, AVoIP och styrsystem.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="referenser">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Referenser</div>
+            <h2>Projekterat, byggt och verifierat</h2>
+            <p class="lead-dark">Från nya simhallar till omprojekterade ishallar där den gamla lösningen aldrig fungerade. Projekteringen är skillnaden.</p>
+          </div>
+        </div>
+
+        <div class="proof-strip">
+          <div class="proof-item"><strong>35+ års erfarenhet</strong><span>Ljud, bild och installation.</span></div>
+          <div class="proof-item"><strong>EASE och STI</strong><span>Beräknat innan något monteras.</span></div>
+          <div class="proof-item"><strong>AB 04 och ABT 06</strong><span>Underlag som fungerar i entreprenad.</span></div>
+          <div class="proof-item"><strong>AVAB eller elektriker</strong><span>Vi installerar eller samordnar.</span></div>
+        </div>
+
+        <div class="grid-3">
+          <article class="ref-card">
+            <img src="/assets/avab-referens-saffle-simhall-1200x800.webp" alt="Säffle simhall med projekterad AV-teknik, Crestronstyrning och hörslingor från AVAB" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Säffle simhall</h3>
+              <p>Projektering och installation av AV-teknik i ny simhall med Crestronstyrning, ljud, ljus, mikrofoner, hörslingor och samordning enligt entreprenadkrav.</p>
+              <a href="/referenser/saffle-simhall/">Se referensprojekt</a>
+            </div>
+          </article>
+
+          <article class="ref-card">
+            <img src="/assets/avab-referens-sorby-sporthall-kumla-1200x900.webp" alt="Sörby sporthall i Kumla med projekterat sporthallsljud och vikväggsstyrning från AVAB" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Sörby sporthall, Kumla</h3>
+              <p>Sporthallsljud, trådlösa mikrofoner och styrning kopplad till vikvägg och ridåvägg.</p>
+              <a href="/referenser/sorby-sporthall-kumla/">Se referensprojekt</a>
+            </div>
+          </article>
+
+          <article class="ref-card">
+            <img src="/assets/mullhyttan-exterior 1200x900.webp" alt="Mullhyttans sporthall med projekterat ljud, hörslinga och zoner från AVAB" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Mullhyttans sporthall</h3>
+              <p>Sporthallsljud, hörslinga, zoner och tillgänglighet i större idrottsmiljö.</p>
+              <a href="/referenser/mullhyttans-sporthall/">Se referensprojekt</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid-3">
+          <article class="ref-card">
+            <img src="/assets/avab-referens-minnebergsskolan-arvika-1200x800.webp" alt="Minnebergsskolan i Arvika med projekterad klassrumsteknik, hörslingor och Crestron från AVAB" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Minnebergsskolan, Arvika</h3>
+              <p>Skola med klassrumsteknik, aula, ljud, bild, hörslingor, mikrofoner, Crestron, DMX och Dante.</p>
+              <a href="/referenser/minnebergsskolan-arvika/">Se referensprojekt</a>
+            </div>
+          </article>
+
+          <article class="ref-card">
+            <img src="/assets/Kils ishall 1200x900.webp" alt="Sannerudshallen i Kil med omprojekterat ishallsljud från AVAB" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Sannerudshallen, Kil</h3>
+              <p>Omprojekterat ljud i ishall där tidigare lösning gav burkigt ljud och fuktproblem. Ny placering, fler mindre högtalare, separat styrning och rack flyttat till bättre miljö.</p>
+              <a href="/referenser/sannerudshallen-kil/">Se referensprojekt</a>
+            </div>
+          </article>
+
+          <article class="ref-card">
+            <img src="/assets/3d faltstyrka.webp" alt="EASE-simulering av ljudspridning och fältstyrka från AVAB:s projektering" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Räkna på ert projekt</h3>
+              <p>Vill ni få en första känsla för nivåer och budget innan projekteringen? Testa vår budgetkalkylator för AV-teknik.</p>
+              <a href="/budgetkalkylator-av-teknik/">Öppna budgetkalkylatorn</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="arbetssatt">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Hur vi jobbar</div>
+            <h2>Från idé till relationshandling</h2>
+            <p class="lead-dark">Beroende på projekt tar vi hela kedjan eller de delar som behövs, alltid med målet att rätt teknik hamnar på rätt plats med rätt gränsdragning.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="flow-card"><strong><em>1</em> Behov &amp; underlag</strong><span>Behovsanalys, platsbesök, genomgång av ritningar och verksamhetskrav, systemförslag och budgetindikering.</span></div>
+          <div class="flow-card"><strong><em>2</em> Projektering</strong><span>EASE-beräkning, högtalarplacering, skärm- och bilddimensionering, hörslinga, zonindelning, rack- och teknikrumsplanering, signalflöden, kabel- och kanalisationsunderlag, funktionsbeskrivning, FFU-text, produktförslag och mängdförteckning.</span></div>
+          <div class="flow-card"><strong><em>3</em> Genomförande</strong><span>Samordningsmöten mot el, IT, brand och bygg, installation av AVAB eller projektets elektriker, provning, driftsättning, relationshandlingar, utbildning och överlämning.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projektering-faq-cta" id="cta">
+      <div class="avab-container">
+        <div class="faq-heading">
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Snabba svar om AV-projektering</h2>
+          <p>Korta svar för beställare, elektriker, byggbolag, kommuner och konsulter som vill få rätt underlag tidigt.</p>
+        </div>
+
+        <div class="compact-faq">
+          <details class="faq-item">
+            <summary>Vad är AV-projektering?</summary>
+            <p>AV-projektering är planering av ljud, bild, ljus, styrning, hörslinga, mikrofoner, skärmar, projektorer, nätverk, kablage och tekniska funktioner innan installation.</p>
+          </details>
+          <details class="faq-item">
+            <summary>När ska AVAB komma in i projektet?</summary>
+            <p>Helst innan kabelvägar, undertak, golv, teknikrum och FFU är låsta. Ju tidigare AV-tekniken samordnas med el, IT, bygg, brand och verksamhet, desto färre kompromisser behövs senare.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan AVAB hjälpa elektriker med underlag?</summary>
+            <p>Ja. AVAB kan hjälpa med systemskisser, mängder, funktionskrav, produktval, högtalarplacering, hörslinga, styrning och tekniska frågor inför offert eller installation.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vad är EASE-projektering?</summary>
+            <p>EASE-projektering är simulering och beräkning av ljudsystem. Det används för att bedöma högtalarplacering, täckning, nivåer och taluppfattbarhet innan installation.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan ni projektera hörslinga?</summary>
+            <p>Ja. AVAB projekterar hörslingor för konferensrum, sporthallar, skolor, simhallar, receptioner och publika miljöer. Vi hjälper även med PLS/SLS, stoppslingor, mätning och dokumentation.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Är talat utrymningslarm samma sak som vanligt ljudsystem?</summary>
+            <p>Nej. Talat utrymningslarm är ett säkerhetssystem och behöver projekteras utifrån brandskyddsbeskrivning, EN54-krav, övervakning, reservkraft, prioritet och dokumentation.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan ni hjälpa till med AB 04 och ABT 06?</summary>
+            <p>Ja. AVAB kan hjälpa till att tolka AV-delarna i entreprenadunderlag, ta fram tekniska beskrivningar, tydliggöra gränsdragningar och skapa underlag som fungerar bättre i projekt enligt AB 04 eller ABT 06.</p>
+          </details>
+        </div>
+
+        <div class="fullwidth-cta">
+          <div>
+            <div class="eyebrow">Ta in oss tidigt</div>
+            <h2>Har ni ritningar, FFU eller en lokal som behöver teknik?</h2>
+            <p>Skicka underlaget till AVAB tidigt, så hjälper vi er att hitta rätt nivå av ljud, bild, hörslinga, styrning och utrymningsljud, innan projektet blir dyrt att ändra.</p>
+            <div class="cta-actions">
+              <a class="button button-light" href="/kontakt/">Skicka ritningar eller FFU</a>
+              <a class="button button-secondary" href="/budgetkalkylator-av-teknik/">Testa budgetkalkylatorn</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+            </div>
+          </div>
+
+          <ul class="calc-list">
+            <li>EASE-beräkning, skärmdimensionering och hörslingeprojektering.</li>
+            <li>FFU-text, mängder, systemskisser och budgetunderlag.</li>
+            <li>Samordning mot el, IT, brand, bygg, akustik och verksamhet.</li>
+            <li>Underlag som fungerar i AB 04 och ABT 06.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</body>
+</html>

@@ -1,0 +1,603 @@
+---
+import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import "../../../styles/avab.css";
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kroppkärrs IP | Ljud över två fotbollsplaner | AVAB</title>
+  <meta name="description" content="Referensprojekt: Kroppkärrs IP fick en prisvärd 2-zons ljudanläggning för två fotbollsplaner med IP-klassade högtalare, Sennheiser-mikrofon, Bluetooth och 100V." />
+  <link rel="canonical" href="https://www.avab.eu/referenser/kroppkarrs-ip-fotboll/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content="Kroppkärrs IP – ljud över två planer med smart zonlösning" />
+  <meta property="og:description" content="Prisvärd 2-zons ljudanläggning med IP-klassade AtlasIED-högtalare, 100V-drift, Denon-mixer, Sennheiser-mikrofon med utomhusantenner och skyddad Bluetooth-pairing." />
+  <!-- Verifiera bildens mått när den läggs i /assets -->
+  <meta property="og:image" content="https://www.avab.eu/assets/kroppkarrs-ip-hero-hogtalare.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="800" />
+  <meta property="og:image:alt" content="Närbild på två utomhushögtalare monterade i mast vid Kroppkärrs IP" />
+  <meta property="og:url" content="https://www.avab.eu/referenser/kroppkarrs-ip-fotboll/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+  <meta property="article:published_time" content="2026-07-08" />
+  <meta property="article:modified_time" content="2026-07-08" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kroppkärrs IP | Ljud över två fotbollsplaner | AVAB" />
+  <meta name="twitter:description" content="Två ljudzoner, IP-klassade utomhushögtalare, Sennheiser-mikrofon och skyddad styrning, byggt för föreningsvardag och tight budget." />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/kroppkarrs-ip-hero-hogtalare.jpg" />
+  <meta name="twitter:image:alt" content="Närbild på två utomhushögtalare monterade i mast vid Kroppkärrs IP" />
+
+  <!-- Favicon (byt sökväg till AVAB:s riktiga ikonfiler) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://www.avab.eu/referenser/kroppkarrs-ip-fotboll/#article",
+    "mainEntityOfPage": { "@id": "https://www.avab.eu/referenser/kroppkarrs-ip-fotboll/#webpage" },
+    "headline": "Kroppkärrs IP – ljud över två planer med smart zonlösning",
+    "description": "AVAB:s leverans av en prisvärd 2-zons ljudanläggning för två fotbollsplaner: IP-klassade utomhushögtalare, 100V-drift, Denon 2-zonsmixer, Sennheiser trådlös mikrofon med utomhusantenner och skyddad Bluetooth-pairing.",
+    "datePublished": "2026-07-08",
+    "dateModified": "2026-07-08",
+    "inLanguage": "sv-SE",
+    "author": {
+      "@type": "Organization",
+      "name": "AVAB",
+      "url": "https://www.avab.eu/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AVAB",
+      "url": "https://www.avab.eu/",
+      "logo": { "@type": "ImageObject", "url": "https://www.avab.eu/logo.png" }
+    },
+    "image": ["https://www.avab.eu/assets/kroppkarrs-ip-hero-hogtalare.jpg"],
+    "about": {
+      "@type": "Service",
+      "name": "Ljudsystem för idrottsplats utomhus",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "AVAB",
+        "url": "https://www.avab.eu/",
+        "telephone": "+46-54-8202080",
+        "email": "info@avab.eu",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Skraggevägen 4",
+          "postalCode": "663 41",
+          "addressLocality": "Hammarö",
+          "addressRegion": "Värmland",
+          "addressCountry": "SE"
+        }
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Varför inte bara en stor högtalare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Två zoner ger bättre kontroll. Huvudplan och B-plan kan användas separat, och ljudet behöver inte skickas över ytor där det inte behövs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Varför används 100V-system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "100V är praktiskt för fasta installationer och längre kabeldragningar, särskilt när högtalarna sitter långt från förstärkare och styrning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Varför sitter pairing-knappen innanför dörren?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "För att systemet ska vara enkelt för behöriga användare, men inte öppet för vem som helst som står utanför och försöker ansluta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan samma lösning användas på andra idrottsplatser?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Principen med rätt högtalare per yta, tydliga zoner och skyddad styrning fungerar för många typer av utomhusanläggningar."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.avab.eu/referenser/kroppkarrs-ip-fotboll/#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Start",
+        "item": "https://www.avab.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Referenser",
+        "item": "https://www.avab.eu/referenser/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Kroppkärrs IP",
+        "item": "https://www.avab.eu/referenser/kroppkarrs-ip-fotboll/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.avab.eu/referenser/kroppkarrs-ip-fotboll/#webpage",
+    "url": "https://www.avab.eu/referenser/kroppkarrs-ip-fotboll/",
+    "name": "Kroppkärrs IP | Ljud över två fotbollsplaner | AVAB",
+    "description": "Referensprojekt: 2-zons ljudanläggning för två fotbollsplaner med IP-klassade högtalare, 100V, Sennheiser-mikrofon och skyddad Bluetooth-pairing.",
+    "inLanguage": "sv-SE",
+    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
+    "breadcrumb": { "@id": "https://www.avab.eu/referenser/kroppkarrs-ip-fotboll/#breadcrumb" },
+    "datePublished": "2026-07-08",
+    "dateModified": "2026-07-08",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".lead", ".compact-faq"]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload av hero-bilden för snabbare LCP -->
+  <link rel="preload" as="image" fetchpriority="high"
+    href="/assets/kroppkarrs-ip-hero-hogtalare.jpg"
+    imagesrcset="/assets/kroppkarrs-ip-hero-hogtalare.jpg 1200w"
+    imagesizes="100vw">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Sidspecifika komponenter -->
+  <style>
+    /* ---- AEO-svarsruta (referensvariant med etikett) ---- */
+    .snippet-box {
+      margin-top: 28px;
+      padding: 28px 30px;
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-left: 6px solid var(--avab-green);
+      border-radius: var(--avab-radius-sm);
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .snippet-box .label { display: block; margin-bottom: 8px; color: var(--avab-green); font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+    .snippet-box h3 { font-size: 1.3rem; margin-bottom: 10px; }
+    .snippet-box p:last-child { margin-bottom: 0; }
+
+    /* ---- Små faktakort (utmaning + leverans) ---- */
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .scope {
+      padding: 22px;
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius-sm);
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .scope b { display: block; margin-bottom: 6px; color: var(--avab-dark); font-size: 1.02rem; }
+    .scope span { color: var(--avab-dark-muted); font-size: 0.93rem; line-height: 1.5; }
+
+    /* ---- Leveranslista ---- */
+    .deliverables { margin-top: 20px; padding: 0; list-style: none; }
+    .deliverables li {
+      position: relative;
+      padding: 0 0 14px 26px;
+      color: var(--avab-dark-muted);
+      font-size: 0.98rem;
+    }
+    .deliverables li::before { content: "✓"; position: absolute; left: 0; color: var(--avab-green); font-weight: 800; }
+    .deliverables li strong { color: var(--avab-dark); }
+
+    /* ---- Nyckeltal ---- */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .metric {
+      padding: 24px 20px;
+      border: 1px solid var(--avab-border);
+      border-top: 4px solid var(--avab-green);
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-white);
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .metric strong { display: block; margin-bottom: 6px; color: var(--avab-dark); font-size: 1.3rem; line-height: 1.1; }
+    .metric span { color: var(--avab-dark-muted); font-size: 0.92rem; }
+
+    /* ---- Citat ---- */
+    .quote-line {
+      margin: 24px 0 0;
+      padding: 22px 26px;
+      border-left: 6px solid var(--avab-green);
+      background: var(--avab-white);
+      border-radius: var(--avab-radius-sm);
+      border-top: 1px solid var(--avab-border);
+      border-right: 1px solid var(--avab-border);
+      border-bottom: 1px solid var(--avab-border);
+      box-shadow: var(--avab-shadow-sm);
+      font-weight: 700;
+      color: var(--avab-dark);
+      font-style: italic;
+    }
+    .testimonial {
+      margin: 34px 0 0;
+      padding: 30px 34px;
+      background: var(--avab-white);
+      border: 1px solid var(--avab-border);
+      border-left: 6px solid var(--avab-green);
+      border-radius: var(--avab-radius-sm);
+      box-shadow: var(--avab-shadow-sm);
+    }
+    .testimonial p { font-size: 1.15rem; font-weight: 700; color: var(--avab-dark); margin-bottom: 10px; }
+    .testimonial cite { font-style: normal; color: var(--avab-dark-muted); font-size: 0.95rem; }
+
+    /* ---- Galleri + bildramar ---- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .span-7 { grid-column: span 7; }
+    .span-6 { grid-column: span 6; }
+    .span-5 { grid-column: span 5; }
+    .image-frame {
+      overflow: hidden;
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-grey);
+      border: 1px solid var(--avab-border);
+    }
+    .image-frame img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .image-frame.tall img { aspect-ratio: 4 / 5; }
+    .gallery figure, .two-col figure { margin: 0; }
+    figcaption { padding-top: 12px; color: var(--avab-dark-muted); font-size: 0.88rem; }
+
+    /* Placeholder tills äkta projektbild läggs in */
+    .image-placeholder {
+      min-height: 260px;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      border: 2px dashed rgba(40, 46, 42, 0.28);
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-grey);
+      color: var(--avab-dark-muted);
+      text-align: center;
+    }
+    .image-placeholder strong { display: block; margin-bottom: 8px; color: var(--avab-dark); }
+
+    /* ---- FAQ: vänsterställd rubrik + tvåkolumnslayout ---- */
+    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
+    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
+    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
+    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
+
+    .compact-faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 0;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .compact-faq details.faq-item { padding: 20px 0; }
+    .compact-faq summary { font-size: 1.05rem; }
+    .compact-faq details.faq-item p { font-size: 0.98rem; }
+    .compact-faq details.faq-item:nth-child(1),
+    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
+
+    .kroppkarr-faq-cta {
+      padding-top: 48px;
+      padding-bottom: 96px;
+    }
+    .kroppkarr-faq-cta .compact-faq {
+      margin-bottom: 64px;
+    }
+
+    /* ---- Responsivt (sidspecifikt) ---- */
+    @media (max-width: 1024px) {
+      .scope-grid, .metrics { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .span-7, .span-6, .span-5 { grid-column: span 12; }
+      .compact-faq { grid-template-columns: 1fr; }
+      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
+      .kroppkarr-faq-cta {
+        padding-top: 40px;
+        padding-bottom: 72px;
+      }
+      .kroppkarr-faq-cta .compact-faq {
+        margin-bottom: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="https://www.avab.eu/">Start</a></li>
+        <li><a href="https://www.avab.eu/referenser/">Referenser</a></li>
+        <li><span aria-current="page">Kroppkärrs IP</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Lägg bilden i /assets när den flyttas från biblioteket -->
+  <section class="hero" style="--hero-image:url('/assets/kroppkarrs-ip-hero-hogtalare.jpg');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Referensprojekt · Kroppkärrs IP, Karlstad</div>
+
+        <h1>Ljud över två planer med smart zonlösning</h1>
+
+        <p class="lead">
+          Kroppkärrs IP behövde ljud till två nya fotbollsplaner utan att budgeten sprang iväg. AVAB byggde en kompakt 2-zonslösning med IP-klassade utomhushögtalare, trådlös Sennheiser-mikrofon, Bluetooth och skyddad styrning inomhus.
+        </p>
+
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/kontakt/#ladda-upp-underlag">Ladda upp ritningar och FFU</a>
+            <a class="button button-secondary" href="/miljo/utomhusidrott/">Se lösningar för utomhusidrott</a>
+            <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band" aria-label="Projektfakta">
+    <div class="fact-grid">
+      <div class="fact"><span>Miljö</span><strong>Två fotbollsplaner</strong></div>
+      <div class="fact"><span>Behov</span><strong>Prisvärd ljudlösning</strong></div>
+      <div class="fact"><span>Lösning</span><strong>Två ljudzoner</strong></div>
+      <div class="fact"><span>Högtalare</span><strong>12 tum + 8 tum</strong></div>
+      <div class="fact"><span>Drift</span><strong>100V, 120W per högtalare</strong></div>
+      <div class="fact"><span>Styrning</span><strong>Mikrofon och Bluetooth</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section section--light" id="utmaningen">
+      <div class="avab-container two-col align-start">
+        <div class="animate-in">
+          <div class="eyebrow">Utmaningen</div>
+          <h2>Två nya planer, tydliga utrop och en budget som behövde hållas</h2>
+          <p class="lead-dark">Målet var enkelt: få <a class="text-link" href="/tjanster/ljudsystem/">ljud</a> som hörs över båda planerna, utan att bygga ett onödigt stort system. Det skulle fungera för träning, match, samlingar och enklare arrangemang på en <a class="text-link" href="/miljo/utomhusidrott/">utomhusidrottsanläggning</a>.</p>
+          <p>AVAB återkom med en zonstyrd lösning, byggd enligt samma principer som våra större <a class="text-link" href="/tjanster/styrsystem-integration/">styrsystem</a>, där huvudplan och B-plan kan hanteras separat eller tillsammans. Det ger föreningen kontroll i vardagen och gör att ljudet skickas dit det behövs.</p>
+          <div class="scope-grid">
+            <article class="scope"><b>Utrop och musik</b><span>Trådlös mikrofon och Bluetooth som vardagskällor.</span></article>
+            <article class="scope"><b>Tight budget</b><span>Få komponenter, men rätt komponenter.</span></article>
+            <article class="scope"><b>Två zoner</b><span>Huvudplan och B-plan separat eller ihop.</span></article>
+          </div>
+        </div>
+
+        <div class="animate-in">
+          <figure>
+            <div class="image-frame">
+              <!-- Lägg bilden i /assets när den flyttas från biblioteket -->
+              <img src="/assets/kroppkarrs-ip-oversikt-tva-planer.jpg" alt="Översikt över Kroppkärrs IP med två fotbollsplaner och master" width="1280" height="720" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Kroppkärrs IP har flera ytor, långa avstånd och vardaglig föreningsdrift. Ljudet behövde fungera utan att lösningen blev större än nödvändigt.</figcaption>
+          </figure>
+          <blockquote class="quote-line">Vad du än planerar: dra alltid fler rör. Plötsligt händer något, och då är man väldigt glad att det finns lediga vägar in.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="losning">
+      <div class="avab-container two-col align-start">
+        <figure class="animate-in">
+          <div class="image-frame tall">
+            <!-- Lägg bilden i /assets när den flyttas från biblioteket -->
+            <img src="/assets/kroppkarrs-ip-lift-montage.jpg" alt="Lift vid mast under installation av ljudanläggning på Kroppkärrs IP" width="1080" height="1350" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Installation i mast kräver rätt höjd, rätt riktning och praktiska kabelvägar ner till skyddad teknikplacering.</figcaption>
+        </figure>
+        <div class="animate-in">
+          <div class="eyebrow">Lösningen</div>
+          <h2>En 12-tummare till huvudplanen och en 8-tummare till B-planen</h2>
+          <p class="lead-dark">I stället för att försöka täcka allt med samma högtalartyp anpassades varje zon efter avstånd, yta och användning.</p>
+          <p>Huvudplanen fick en 12-tums IP-klassad utomhushögtalare från AtlasIED och B-planen en 8-tums högtalare. Båda drivs via 100V-system med 120W per högtalare från Labgruppen-slutsteg. En Denon 2-zonsmixer hanterar signalvägarna och gör lösningen enkel att använda.</p>
+          <div class="metrics">
+            <div class="metric"><strong>2</strong><span>zoner</span></div>
+            <div class="metric"><strong>120W</strong><span>per högtalare</span></div>
+            <div class="metric"><strong>100V</strong><span>för långa kabeldragningar</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="sa-har-gjorde-avab">
+      <div class="avab-container">
+        <div class="section-heading animate-in">
+          <div>
+            <div class="eyebrow">Så här gjorde AVAB</div>
+            <h2>Rätt högtalare per yta, skyddad styrning och enkel vardag</h2>
+          </div>
+        </div>
+
+        <div class="scope-grid">
+          <article class="scope">
+            <b>Mikrofon över båda planerna</b>
+            <span>En trådlös <a class="text-link" href="/tjanster/mikrofoner/">Sennheiser-mikrofon</a> med utomhusantenner ger täckning över hela området. Det gör systemet praktiskt vid match, träning och enklare arrangemang.</span>
+          </article>
+          <article class="scope">
+            <b>Bluetooth med skyddad pairing</b>
+            <span>Denon Bluetooth-mottagaren har stark antenn, men pairing-knappen sitter innanför dörren. Rätt personer kan ansluta enkelt, medan obehöriga inte kan ta över ljudet utifrån.</span>
+          </article>
+          <article class="scope">
+            <b>Skyddad teknikplacering</b>
+            <span>Mixer, mottagare och slutsteg placeras skyddat inomhus. Det ger enklare drift, bättre livslängd och mindre risk för väder, skadegörelse eller felanvändning. Samma tänk används ofta i <a class="text-link" href="/miljo/sporthall/">sporthallar och arenor</a>.</span>
+          </article>
+        </div>
+
+        <!-- TODO: fyll i riktigt namn på ordföranden före publicering -->
+        <blockquote class="testimonial">
+          <p>AVAB levererade en ljudanläggning som passar både användning och budget. Mikrofonen räcker över hela området, så vi är mycket nöjda.</p>
+          <cite>Ordförande, Norrstrands IF</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section" id="bilder">
+      <div class="avab-container">
+        <div class="section-heading animate-in">
+          <div>
+            <div class="eyebrow">Bilder</div>
+            <h2>Rätt produkt för en ganska tuff vardag</h2>
+            <p class="lead-dark">Utomhusljud på en idrottsplats ska inte bara låta bra första dagen. Det ska tåla regn, blåst, kyla, sol, långa kabeldragningar och användning av många olika personer över lång tid.</p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure class="span-7">
+            <div class="image-frame">
+              <!-- Lägg bilden i /assets när den flyttas från biblioteket -->
+              <img src="/assets/kroppkarrs-ip-vy-fran-mast.jpg" alt="Vy från masten där högtalarna riktas ut över planen" width="1280" height="720" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Från masten syns varför riktning och täckning är avgörande. Ljudet ska hamna på planen, inte överallt runt omkring.</figcaption>
+          </figure>
+          <figure class="span-5">
+            <div class="image-frame">
+              <!-- Lägg bilden i /assets när den flyttas från biblioteket -->
+              <img src="/assets/kroppkarrs-ip-hogtalare-fore-montage.jpg" alt="Utomhushögtalare förbereds före montage" width="1280" height="720" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Högtalarna förbereddes på marken innan montage. Rätt beslag och infästning sparar tid när arbetet sker på höjd.</figcaption>
+          </figure>
+          <figure class="span-6">
+            <div class="image-frame">
+              <!-- Lägg bilden i /assets när den flyttas från biblioteket -->
+              <img src="/assets/kroppkarrs-ip-mast-lift-efter-installation.jpg" alt="Mast med monterade högtalare och lift efter installation" width="1280" height="720" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Slutmontage i mast. En kompakt lösning som täcker två planer med separata zoner.</figcaption>
+          </figure>
+          <figure class="span-6">
+            <div class="image-placeholder"><div><strong>BILDPLATS: Rackskåp och skyddad teknik</strong>Rackskåpet monteras upp mot tak innanför låst dörr. Där samlas Denon 2-zonsmixer, Labgruppen-slutsteg, Sennheiser-mottagare, Bluetooth-mottagare och skyddad pairing-knapp.</div></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="leverans">
+      <div class="avab-container two-col align-start">
+        <div class="animate-in">
+          <div class="eyebrow">Leveransomfattning</div>
+          <h2>Det här ingick</h2>
+          <ul class="deliverables">
+            <li><strong>Ljud över två planer:</strong> zonlösning för huvudplan och B-plan.</li>
+            <li><strong>Utomhushögtalare:</strong> 12 tum till huvudplan, 8 tum till B-plan, IP-klassade för väder och vind.</li>
+            <li><strong>Signal och förstärkning:</strong> Denon 2-zonsmixer, Labgruppen-slutsteg, 100V och 120W per högtalare.</li>
+            <li><strong>Källor:</strong> Sennheiser trådlös mikrofon med utomhusantenner och Denon Bluetooth-mottagare.</li>
+            <li><strong>Skyddad åtkomst:</strong> pairing-knapp innanför dörr och teknik i låst utrymme.</li>
+          </ul>
+        </div>
+
+        <aside class="snippet-box animate-in">
+          <span class="label">Kort svar för sök och AI</span>
+          <h3>Vad gjorde AVAB på Kroppkärrs IP?</h3>
+          <p>AVAB levererade en prisvärd 2-zons ljudanläggning för två fotbollsplaner med IP-klassade utomhushögtalare, 100V-drift, Denon-mixer, Sennheiser-mikrofon, Bluetooth och skyddad styrning.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section kroppkarr-faq-cta" id="fragor">
+      <div class="avab-container">
+        <div class="faq-heading">
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Frågor om ljud på idrottsplats och fotbollsplan</h2>
+          <p>Svaren sammanfattar sådant som brukar avgöra om en utomhuslösning blir lätt att använda över tid. Se även fler projekt bland våra <a class="text-link" href="/referenser/">referenser</a>.</p>
+        </div>
+
+        <div class="compact-faq">
+          <details class="faq-item">
+            <summary>Varför inte bara en stor högtalare?</summary>
+            <p>Två zoner ger bättre kontroll. Huvudplan och B-plan kan användas separat, och ljudet behöver inte skickas över ytor där det inte behövs.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Varför används 100V-system?</summary>
+            <p>100V är praktiskt för fasta installationer och längre kabeldragningar, särskilt när högtalarna sitter långt från förstärkare och styrning.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Varför sitter pairing-knappen innanför dörren?</summary>
+            <p>För att systemet ska vara enkelt för behöriga användare, men inte öppet för vem som helst som står utanför och försöker ansluta.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan samma lösning användas på andra idrottsplatser?</summary>
+            <p>Ja. Principen med rätt högtalare per yta, tydliga zoner och skyddad styrning fungerar för många typer av utomhusanläggningar.</p>
+          </details>
+        </div>
+
+        <div class="fullwidth-cta">
+          <div>
+            <div class="eyebrow">Planerar ni ny plan, arena eller idrottsplats?</div>
+            <h2>Ta med ljud, rör och styrning tidigt i projekteringen</h2>
+            <p>AVAB hjälper till med <a class="text-link" href="/tjanster/projektering/">projektering</a>, zonindelning, högtalarval, mikrofonlösning, kabelvägar, rackplacering och driftsättning. Skicka ritningar och förutsättningar så tar vi fram en lösning som går att bygga och använda.</p>
+            <div class="cta-actions">
+              <a class="button button-light" href="/kontakt/#ladda-upp-underlag">Ladda upp ritningar och FFU</a>
+              <a class="button button-secondary" href="/miljo/utomhusidrott/">Se lösningar för utomhusidrott</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+            </div>
+          </div>
+
+          <ul class="calc-list">
+            <li>Två ljudzoner, huvudplan och B-plan separat eller ihop.</li>
+            <li>IP-klassade högtalare med 100V-drift för långa kabelvägar.</li>
+            <li>Sennheiser-mikrofon med täckning över hela området.</li>
+            <li>Skyddad teknik, Bluetooth-pairing och enkel föreningsvardag.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</body>
+</html>

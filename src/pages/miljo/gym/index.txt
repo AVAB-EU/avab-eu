@@ -1,0 +1,515 @@
+---
+import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import "../../../styles/avab.css";
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gym & träningsanläggning | Ljud, ljus & bild | AVAB</title>
+  <meta name="description" content="AV-teknik för gym och träningsanläggningar: zonstyrt ljud, bas och mikrofoner för gruppträning, digital signage, virtuella pass, ljus och kameraövervakning." />
+  <link rel="canonical" href="https://www.avab.eu/miljo/gym/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content="Gym & träningsanläggning | Ljud, ljus & bild | AVAB" />
+  <meta property="og:description" content="Jämnt bakgrundsljud i gymytan, tryck och bas i gruppträningssalen, virtuella pass och ljusscenarier. Teknik som är enkel att använda men genomtänkt bakom kulisserna." />
+  <meta property="og:image" content="https://www.avab.eu/assets/sorby sporthall 1200x900.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="900" />
+  <meta property="og:image:alt" content="Träningshall med zonstyrt ljud och AV-teknik från AVAB" />
+  <meta property="og:url" content="https://www.avab.eu/miljo/gym/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gym & träningsanläggning | Ljud, ljus & bild | AVAB" />
+  <meta name="twitter:description" content="Jämnt bakgrundsljud i gymytan, tryck och bas i gruppträningssalen, virtuella pass och ljusscenarier. Teknik som är enkel att använda men genomtänkt bakom kulisserna." />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/sorby sporthall 1200x900.webp" />
+  <meta name="twitter:image:alt" content="Träningshall med zonstyrt ljud och AV-teknik från AVAB" />
+
+  <!-- Favicon (byt sökväg till AVAB:s riktiga ikonfiler) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AV-teknik för gym och träningsanläggning",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "AVAB",
+      "url": "https://www.avab.eu/",
+      "logo": "https://www.avab.eu/logo.png",
+      "image": "https://www.avab.eu/assets/sorby sporthall 1200x900.webp",
+      "telephone": "+46-54-8202080",
+      "email": "info@avab.eu",
+      "sameAs": [
+        "https://www.linkedin.com/company/avab",
+        "https://www.facebook.com/avab"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Skraggevägen 4",
+        "postalCode": "663 41",
+        "addressLocality": "Hammarö",
+        "addressRegion": "Värmland",
+        "addressCountry": "SE"
+      }
+    },
+    "areaServed": "Sverige",
+    "serviceType": [
+      "Ljudsystem gym",
+      "Gymmusik och bakgrundsljud",
+      "Ljud gruppträningssal",
+      "Mikrofoner och headset gruppträning",
+      "Digital signage gym",
+      "Virtuella pass LED-vägg",
+      "Ljusstyrning träningsanläggning",
+      "Kameraövervakning gym"
+    ],
+    "description": "AVAB projekterar, installerar och driftsätter kompletta AV-lösningar för gym och träningsanläggningar: zonstyrt bakgrundsljud, gruppträningssalar med bas och mikrofoner, digital signage, LED-vägg och projektor för virtuella pass, ljusscenarier, styrning och kameraövervakning."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vad behöver ett gym för AV-teknik?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ofta bakgrundsljud i träningsytor, kraftigare ljud i gruppträningssalar, mikrofoner, enkel styrning, digital signage, bildlösningar för pass, ljuseffekter och kameraövervakning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan musiken tidsstyras i ett gym?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Musiken kan starta när gymmet öppnar, ändra volym eller spellista över dagen och stängas av automatiskt när anläggningen stänger."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad är virtuella pass?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Virtuella pass är träningspass som spelas upp via skärm, LED-vägg eller projektor. Systemet startar automatiskt rätt video, ljudzon, volym och ljusscenario utan att en instruktör behöver vara på plats."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "LED-vägg eller projektor till pass?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Det beror på lokalens ljus, budget, bildstorlek och användning. AVAB hjälper till att välja mellan LED-vägg, projektor, projektorduk eller stor skärm."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan en sporthall eller padelhall byggas om till gym?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Befintliga hallar kan få zonindelat ljud, infällda högtalare och bas, ny belysning och enkel styrning. AVAB har bland annat byggt om en sporthall till gym och lyft en äldre padelhall med pendlad belysning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan AVAB installera kameraövervakning i gym?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, med fokus på trygghet vid obemannade tider: rätt kameraplacering, incidentuppföljning, behörighetsstyrning, rimlig lagringstid och tydlig skyltning mot medlemmar och personal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan elektriker installera efter AVAB:s underlag?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. AVAB kan projektera och driftsätta, medan elektriker installerar efter underlag. AVAB kan också installera hela lösningen."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Start",
+        "item": "https://www.avab.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Miljöer",
+        "item": "https://www.avab.eu/#miljoer"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Gym & träningsanläggning",
+        "item": "https://www.avab.eu/miljo/gym/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.avab.eu/miljo/gym/#webpage",
+    "url": "https://www.avab.eu/miljo/gym/",
+    "name": "Gym & träningsanläggning | Ljud, ljus & bild | AVAB",
+    "description": "AV-teknik för gym och träningsanläggningar: zonstyrt ljud, bas och mikrofoner för gruppträning, digital signage, virtuella pass, ljus och kameraövervakning.",
+    "inLanguage": "sv-SE",
+    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
+    "datePublished": "2026-07-07",
+    "dateModified": "2026-07-14",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".lead", ".compact-faq"]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload av hero-bilden för snabbare LCP -->
+  <link rel="preload" as="image" fetchpriority="high"
+    href="/assets/sorby sporthall 1200x900.webp"
+    imagesrcset="/assets/sorby sporthall 1200x900.webp 1200w"
+    imagesizes="100vw">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Sidspecifika komponenter -->
+  <style>
+    /* ---- Lösningskort (grön ram, accentkant) ---- */
+    .solution-card {
+      border: 2px solid rgba(143, 192, 37, 0.62);
+      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      background: var(--avab-green);
+    }
+    .solution-card h3,
+    .solution-card .bullet-list { position: relative; z-index: 1; }
+
+    /* ---- Inre länk i referenskort ("Se referensprojekt →") ---- */
+    .ref-content a {
+      margin-top: auto;
+      font-weight: 800;
+      color: var(--avab-dark);
+    }
+    .ref-content a:hover { color: var(--avab-green); }
+    .ref-content a::after { content: " →"; color: var(--avab-green); }
+
+    /* ---- FAQ: vänsterställd rubrik + tvåkolumnslayout ---- */
+    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
+    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
+    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
+    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
+
+    .compact-faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 0;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .compact-faq details.faq-item { padding: 20px 0; }
+    .compact-faq summary { font-size: 1.05rem; }
+    .compact-faq details.faq-item p { font-size: 0.98rem; }
+    .compact-faq details.faq-item:nth-child(1),
+    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
+
+    .gym-faq-cta {
+      padding-top: 48px;
+      padding-bottom: 96px;
+    }
+    .gym-faq-cta .compact-faq {
+      margin-bottom: 64px;
+    }
+
+    /* ---- Responsivt (sidspecifikt) ---- */
+    @media (max-width: 768px) {
+      .compact-faq { grid-template-columns: 1fr; }
+      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
+      .gym-faq-cta {
+        padding-top: 40px;
+        padding-bottom: 72px;
+      }
+      .gym-faq-cta .compact-faq {
+        margin-bottom: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="/">Start</a></li>
+        <li><a href="https://www.avab.eu/#miljoer">Miljöer</a></li>
+        <li><span aria-current="page">Gym & träningsanläggning</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero" style="--hero-image:url('/assets/sorby sporthall 1200x900.webp');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Gym & träningsanläggning</div>
+
+        <h1>AV-teknik som får gymmet att kännas rätt</h1>
+
+        <p class="lead">
+          Jämnt bakgrundsljud i gymytan, tryck och bas i gruppträningssalarna, digital signage, virtuella pass, ljusscenarier och kameraövervakning.
+          Enkelt att använda, genomtänkt bakom kulisserna. För gymkedjor, fastighetsägare, lokala anläggningar och elektriker.
+        </p>
+
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/kontakt/">Skicka ritningar eller boka genomgång</a>
+            <a class="button button-secondary" href="#referenser">Se referenser</a>
+            <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band" aria-label="Snabbfakta gym och träningsanläggning">
+    <div class="fact-grid">
+      <div class="fact"><span>Miljö</span><strong>Gym &amp; träning</strong></div>
+      <div class="fact"><span>Ljud</span><strong>Zoner, bas och headset</strong></div>
+      <div class="fact"><span>Salar</span><strong>Presets för spinning och HIIT</strong></div>
+      <div class="fact"><span>Bild</span><strong>Signage och virtuella pass</strong></div>
+      <div class="fact"><span>Ljus</span><strong>Scenarier och energi</strong></div>
+      <div class="fact"><span>Leverans</span><strong>Projektering till drift</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section section--light" id="far-du">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Det här får du</div>
+            <h2>Från lågmäld gymmusik till gruppträning med tryck</h2>
+            <p class="lead-dark">Gymmiljöer behöver olika teknik i olika delar av lokalen. Receptionen, fria vikter, maskinparken, gruppträningssalen och spinningsalen ska inte låta eller styras på samma sätt. AVAB bygger allt som ett system i stället för separata öar.</p>
+          </div>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span>
+            <h3>Jämnt bakgrundsljud</h3>
+            <p>Rätt placerade högtalare ger en stabil ljudmatta över träningsytan.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
+            <h3>Tryck i salen</h3>
+            <p>Bas, toppar och mikrofoner som klarar spinning, HIIT, dans och funktionell träning.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span>
+            <h3>Enkel styrning</h3>
+            <p>Crestron, touchpanel eller inkopplingspanel med tydlig volymkontroll.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8"/><path d="M12 18v4"/></svg></span>
+            <h3>Skärmar överallt</h3>
+            <p>Digital signage för passchema, kampanjer, reklam och virtuella pass.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <h3>Tryggare drift</h3>
+            <p>Kameraövervakning med behörighet och incidentuppföljning vid obemannade tider.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Lösning</div>
+          <h2>Ett gym är inte ett rum, det är många miljöer samtidigt</h2>
+          <p>I gymytan ska musiken kännas närvarande utan att ta över, i gruppträningssalen ska den bära passet. Ett spinningpass utan bas är som en ostmacka utan smör: det går att genomföra, men poängen försvinner. Därför projekterar vi <a class="text-link" href="/tjanster/ljudsystem/">ljudsystem</a> och <a class="text-link" href="/tjanster/bakgrundsmusik/">bakgrundsmusik</a> i zoner, med tidsstyrning som följer öppettiderna.</p>
+          <p>Instruktören ska kunna starta passet, inte felsöka tekniken. Med <a class="text-link" href="/tjanster/styrsystem-integration/">styrsystem</a> får salen förval för spinning, yoga, HIIT och föreläsning, och <a class="text-link" href="/tjanster/skarmar-projektorer/">LED-vägg eller projektor</a> spelar upp virtuella pass automatiskt med rätt ljud, volym och ljus, även när bemanningen är låg.</p>
+        </div>
+
+        <aside class="card solution-card">
+          <h3>Därför projekterar vi gym som zoner</h3>
+          <ul class="bullet-list">
+            <li>Separat ljud för gymyta, reception, lounge och gruppträningssalar.</li>
+            <li>Trådlösa headset, handmikrofoner, Bluetooth och datoringång.</li>
+            <li>Ljuslägen för energi, fokus eller lugn, automatiskt per pass.</li>
+            <li><a class="text-link" href="/tjanster/digital-signage/">Digital signage</a> för passchema, reklam och medlemsinfo.</li>
+            <li><a class="text-link" href="/tjanster/kameraovervakning/">Kameraövervakning</a> med tydligt syfte, behörighet och skyltning.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--light" id="referenser">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Referenser</div>
+            <h2>Teknik som bevisats i träningsmiljö</h2>
+            <p class="lead-dark">AVAB arbetar med gym, <a class="text-link" href="/miljo/sporthall/">sporthallar</a>, <a class="text-link" href="/miljo/skola/">skolor</a> och <a class="text-link" href="/miljo/hotell/">hotell</a>. Miljöer där energi, enkelhet och driftsäkerhet ska fungera varje pass, varje dag.</p>
+          </div>
+        </div>
+
+        <div class="proof-strip">
+          <div class="proof-item"><strong>35+ års erfarenhet</strong><span>Ljud, bild och installation.</span></div>
+          <div class="proof-item"><strong>Gymkedjor och anläggningar</strong><span>STC, Nordic Wellness med flera.</span></div>
+          <div class="proof-item"><strong>Från ritning till drift</strong><span>Projektering, installation och inmätning.</span></div>
+          <div class="proof-item"><strong>AVAB eller elektriker</strong><span>Vi installerar eller samordnar.</span></div>
+        </div>
+
+        <div class="grid-3">
+          <article class="ref-card">
+            <img src="/assets/Crestron panel, Sörby 1200x900.webp" alt="Touchpanel för enkel styrning av ljudzoner i träningsanläggning från AVAB" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>STC, Kil</h3>
+              <p>Gymanläggning med ljud i flera zoner, trådlösa mikrofoner för gruppträning och infällda basar, allt samlat i en smart och enkel styrning.</p>
+              <a href="/referenser/stc-kil-gym/">Se referensprojekt</a>
+            </div>
+          </article>
+
+          <article class="ref-card">
+            <img src="/assets/avab högtalare installerade.webp" alt="Installation av belysning och teknik i träningshall utförd av AVAB" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Nordic Wellness Marieberg, Örebro</h3>
+              <p>En äldre padelhall förvandlad till modern träningsyta, där AVAB monterade 180 meter pendlad belysning över hela anläggningen.</p>
+              <a href="/referenser/nordic-wellness-orebro-marieberg/">Se referensprojekt</a>
+            </div>
+          </article>
+
+          <article class="ref-card">
+            <img src="/assets/avab hogtalare installerade.webp" alt="Infällda högtalare för zonstyrt gymljud installerade av AVAB" width="900" height="600" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Lundsbergs skola</h3>
+              <p>Sporthall ombyggd till gym med flera ljudzoner och infällda högtalare, styrt så enkelt att både elever och personal hanterar det direkt.</p>
+              <a href="/referenser/lundsberg-skola-gym/">Se referensprojekt</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="arbetssatt">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Hur vi jobbar</div>
+            <h2>Från ritning och lokalbesök till färdig drift</h2>
+            <p class="lead-dark">Det bästa resultatet kommer när ljud, bild, ljus, styrning, kamera och <a class="text-link" href="/tjanster/projektering/">projektering</a> planeras tillsammans. Då slipper gymmet separata system som inte pratar med varandra.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="flow-card"><strong><em>1</em> Genomgång</strong><span>Vi går igenom ytor, salar, öppettider, bemanning, passformer, skärmar, ljudnivåer och säkerhetsbehov.</span></div>
+          <div class="flow-card"><strong><em>2</em> Projektering</strong><span>Vi tar fram lösning för högtalare, bas, mikrofoner, styrning, signage, bild, ljus, kamera, rack och kabelvägar.</span></div>
+          <div class="flow-card"><strong><em>3</em> Leverans</strong><span>AVAB installerar, programmerar, driftsätter och lämnar över en anläggning som personalen faktiskt kan använda.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gym-faq-cta" id="cta">
+      <div class="avab-container">
+        <div class="faq-heading">
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Snabba svar om AV-teknik i gym</h2>
+          <p>Korta svar för gymkedjor, fastighetsägare, lokala anläggningar och elektriker som vill få rätt teknik tidigt.</p>
+        </div>
+
+        <div class="compact-faq">
+          <details class="faq-item">
+            <summary>Vad behöver ett gym för AV-teknik?</summary>
+            <p>Ofta bakgrundsljud i träningsytor, kraftigare ljud i gruppträningssalar, mikrofoner, enkel styrning, digital signage, bildlösningar för pass, ljuseffekter och kameraövervakning.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan musiken tidsstyras i ett gym?</summary>
+            <p>Ja. Musiken kan starta när gymmet öppnar, ändra volym eller spellista över dagen och stängas av automatiskt när anläggningen stänger.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vad är virtuella pass?</summary>
+            <p>Virtuella pass är träningspass som spelas upp via skärm, LED-vägg eller projektor. Systemet startar automatiskt rätt video, ljudzon, volym och ljusscenario utan att en instruktör behöver vara på plats.</p>
+          </details>
+          <details class="faq-item">
+            <summary>LED-vägg eller projektor till pass?</summary>
+            <p>Det beror på lokalens ljus, budget, bildstorlek och användning. AVAB hjälper till att välja mellan LED-vägg, projektor, projektorduk eller stor skärm.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan en sporthall eller padelhall byggas om till gym?</summary>
+            <p>Ja. Befintliga hallar kan få zonindelat ljud, infällda högtalare och bas, ny belysning och enkel styrning. AVAB har bland annat byggt om en sporthall till gym och lyft en äldre padelhall med pendlad belysning.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan AVAB installera kameraövervakning i gym?</summary>
+            <p>Ja, med fokus på trygghet vid obemannade tider: rätt kameraplacering, incidentuppföljning, behörighetsstyrning, rimlig lagringstid och tydlig skyltning mot medlemmar och personal.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan elektriker installera efter AVAB:s underlag?</summary>
+            <p>Ja. AVAB kan projektera och driftsätta, medan elektriker installerar efter underlag. AVAB kan också installera hela lösningen.</p>
+          </details>
+        </div>
+
+        <div class="fullwidth-cta">
+          <div>
+            <div class="eyebrow">Ta in oss tidigt</div>
+            <h2>Ska ni bygga, flytta eller uppdatera ett gym?</h2>
+            <p>Ta in AVAB innan kabelvägar, undertak, rackplats, skärmplacering och gruppträningssalar är låsta. Då blir tekniken enklare att bygga, snyggare att montera och lättare att använda.</p>
+            <div class="cta-actions">
+              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
+              <a class="button button-secondary" href="/tjanster/ljudsystem/">Läs om ljudsystem</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
+            </div>
+          </div>
+
+          <ul class="calc-list">
+            <li>Komplett AV-lösning för gym och träningsanläggningar.</li>
+            <li>Ljud, bild, ljus, styrning, signage och kamera i samma systemtänk.</li>
+            <li>Gruppträningssalar med tryck, bas och enkel kontroll.</li>
+            <li>Tidsstyrd musik, virtuella pass och automatiserade scenarier.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</body>
+</html>

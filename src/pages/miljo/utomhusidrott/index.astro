@@ -1,5 +1,6 @@
 ﻿---
 import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -18,8 +19,8 @@ import "../../../styles/avab.css";
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
-        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljoer/" },
-        { "@type": "ListItem", "position": 3, "name": "Fotboll utomhus", "item": "https://avab.eu/miljoer/fotboll-utomhus/" }
+        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
+        { "@type": "ListItem", "position": 3, "name": "Fotboll utomhus", "item": "https://avab.eu/miljo/fotboll-utomhus/" }
       ]
     },
     {
@@ -138,14 +139,9 @@ import "../../../styles/avab.css";
     .solution-card .intro-text { margin-bottom: 24px; font-size: 1.05rem; color: var(--avab-dark-muted); line-height: 1.6; }
 
     .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .solution-expand-inner { overflow: hidden; opacity: 0; transition: opacity 0.3s ease; }
-    .solution-card:hover .solution-expandable { grid-template-rows: 1fr; }
-    .solution-card:hover .solution-expand-inner { opacity: 1; }
+    .solution-expandable { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    .solution-expand-inner { overflow: hidden; opacity: 1; transition: opacity 0.3s ease; }
 
-    .hover-indicator { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s ease, padding 0.4s ease; border-top: 1px solid var(--avab-border); padding-top: 20px; }
-    .solution-card:hover .hover-indicator { grid-template-rows: 0fr; padding-top: 0; border-top-color: transparent; }
-    .solution-card:hover .hover-indicator div { opacity: 0; }
 
     /* Länkar i rutor */
     .bullet-list { list-style: none; margin-top: 20px; }
@@ -172,25 +168,11 @@ import "../../../styles/avab.css";
     .ref-content p { font-size: 1rem; color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; }
 
     /* FAQ & CTA */
-    .faq-list { display: grid; gap: 16px; }
-    .faq-item { padding-top: 16px; border-top: 1px solid var(--avab-border); }
-    .faq-item:first-child { border-top: 0; padding-top: 0; }
-    .faq-item h3 { font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; color: var(--avab-dark); line-height: 1.15; }
-    .faq-item p { color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
-    
-    .cta-card { 
-      background: linear-gradient(135deg, var(--avab-dark) 0%, #2A332C 50%, var(--avab-green) 100%); 
-      color: var(--avab-white); padding: 48px; border-radius: var(--avab-radius); 
-      display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;
-    }
+
     
     @media (min-width: 1081px) {
-      #faq .cta-card { margin-top: 62px; }
-    }
+      #faq    }
 
-    .cta-card h2, .cta-card p, .cta-card .eyebrow, .cta-card .guarantee-list, .cta-card .hero-actions { position: relative; z-index: 1; }
-    .cta-card h2 { color: var(--avab-white); margin-bottom: 16px; }
-    .cta-card p { color: var(--avab-white); line-height: 1.6; margin-bottom: 0; font-size: 1.1rem; }
     
     .guarantee-list { margin: 24px 0 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .guarantee-list li { display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--avab-white); font-size: 1rem; }
@@ -202,8 +184,6 @@ import "../../../styles/avab.css";
     
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 40px; }
 
-    .cta-card .button-light { background: #fff; color: var(--avab-dark); }
-    .cta-card .button-light:hover { background: #fff; box-shadow: 0 16px 32px rgba(0,0,0,0.2); }
 
     @media (max-width: 1080px) { 
       .two-col, .ref-grid { grid-template-columns: 1fr; } 
@@ -213,9 +193,54 @@ import "../../../styles/avab.css";
       .hero { padding: 100px 0 60px; } 
       .section { padding: 40px 0; } 
       .solution-card h3 { min-height: auto; } 
-      .solution-expandable { grid-template-rows: 1fr; } .hover-indicator { display: none; } .solution-expand-inner { opacity: 1; }
-      .flow-card strong, .flow-card span { min-height: auto; } 
+      .solution-expandable { grid-template-rows: 1fr; }      .flow-card strong, .flow-card span { min-height: auto; } 
     }
+    /* Mobilanpassning (beslut per sida, dokumenterat):
+       - #utmaning (inledande problemnarrativ, sekundar fordjupning pa mobil)
+       Huvudbudskap, losningssektion, referenser/bevisning, FAQ och CTA visas alltid. */
+    @media (max-width: 768px) {
+      #utmaning { display: none; }
+    }
+    /* ---- FAQ (sajtstandard: details/summary, samma som ovriga sidor) ---- */
+    .compact-faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 0;
+      max-width: 1060px;
+      margin: 0;
+    }
+    .compact-faq details.faq-item { padding: 20px 0; }
+    .compact-faq summary { font-size: 1.05rem; }
+    .compact-faq details.faq-item p { font-size: 0.98rem; }
+    .compact-faq details.faq-item:nth-child(1),
+    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
+    @media (max-width: 768px) {
+      .compact-faq { grid-template-columns: 1fr; }
+      .compact-faq details.faq-item:nth-child(2) { border-top: none; }
+    }
+
+    /* ---- Kortrader: 4 kort ska ligga 2 + 2 (jamna rader) ---- */
+    @media (min-width: 1081px) {
+      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 769px) and (max-width: 1080px) {
+      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    /* ---- Statiska kort: innehallet alltid synligt (ingen hover-expandering) ---- */
+    .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
+    .solution-expand-inner { opacity: 1; }
+    .solution-card:hover .solution-expandable,
+    .solution-card:focus-within .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
+
+    /* ---- FAQ + CTA i samma sektion, enligt mastern pa sporthallssidan ---- */
+    .faq-cta { padding-top: 48px; padding-bottom: 96px; }
+    .faq-cta .compact-faq { margin-bottom: 64px; }
+    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
+    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
+    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
+    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
   </style>
 </head>
 <body>
@@ -233,8 +258,19 @@ import "../../../styles/avab.css";
     </div>
   </header>
 
+  <section class="fact-band" aria-label="Snabbfakta utomhusidrott">
+    <div class="fact-grid">
+      <div class="fact"><span>Miljö</span><strong>Fotboll, arena och IP</strong></div>
+      <div class="fact"><span>Ljud</span><strong>Speaker, musik och publik</strong></div>
+      <div class="fact"><span>Material</span><strong>Väderklassat och riktat</strong></div>
+      <div class="fact"><span>Styrning</span><strong>Matchläge och vardagsdrift</strong></div>
+      <div class="fact"><span>Trygghet</span><strong>Utrop och säker zonindelning</strong></div>
+      <div class="fact"><span>Leverans</span><strong>Projektering till inmätning</strong></div>
+    </div>
+  </section>
+
   <main>
-    <section class="section" style="border-bottom: 1px solid var(--avab-border);">
+    <section class="section" id="utmaning" style="border-bottom: 1px solid var(--avab-border);">
       <div class="container two-col">
         <div class="animate-in">
           <div class="eyebrow">Verkligheten</div>
@@ -279,13 +315,12 @@ import "../../../styles/avab.css";
               <p class="intro-text">Robust och kraftfullt ljud som når hela läktaren och planen. Rätt materialval garanterar lång livslängd utomhus.</p>
             </div>
             <div class="solution-card-bottom">
-              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om vädertåligt ljud ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/ljudsystem/" class="cat-link">Hårdvara:</a> <a href="/losningar/" class="kw-link">IP-klassade</a> väderbeständiga system</li>
-                    <li><a href="/ljudsystem/" class="cat-link">Spridning:</a> Hornhögtalare & väderklassade line arrays</li>
-                    <li><a href="/losningar/taluppfattbarhet/" class="cat-link">Projektering:</a> Akustisk beräkning utomhus</li>
+                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Hårdvara:</a> <a href="/tjanster/" class="kw-link">IP-klassade</a> väderbeständiga system</li>
+                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Spridning:</a> Hornhögtalare & väderklassade line arrays</li>
+                    <li><a href="/tjanster/taluppfattbarhet/" class="cat-link">Projektering:</a> Akustisk beräkning utomhus</li>
                   </ul>
                 </div>
               </div>
@@ -298,13 +333,12 @@ import "../../../styles/avab.css";
               <p class="intro-text">Säker signalöverföring över stora avstånd. Perfekt för domare, intervjuer på planen eller invigningstal.</p>
             </div>
             <div class="solution-card-bottom">
-              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Se trådlösa system ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/ljudsystem/mikrofoner/" class="cat-link">Räckvidd:</a> Antenndistribution över långa avstånd</li>
-                    <li><a href="/losningar/systemintegration/" class="cat-link">Säkerhet:</a> Krypterad frekvenshantering utan avbrott</li>
-                    <li><a href="/ljudsystem/" class="cat-link">Produkter:</a> Tåliga hand- och ficksändare</li>
+                    <li><a href="/tjanster/mikrofoner/" class="cat-link">Räckvidd:</a> Antenndistribution över långa avstånd</li>
+                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Säkerhet:</a> Krypterad frekvenshantering utan avbrott</li>
+                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Produkter:</a> Tåliga hand- och ficksändare</li>
                   </ul>
                 </div>
               </div>
@@ -317,13 +351,12 @@ import "../../../styles/avab.css";
               <p class="intro-text">Dela enkelt upp ljudet mellan läktare, gräsplan, entréer och VIP-ytor med en intuitiv touchpanel.</p>
             </div>
             <div class="solution-card-bottom">
-              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Utforska styrning ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/styrsystem/" class="cat-link">Zoner:</a> Flexibel uppdelning av arenaområdet</li>
-                    <li><a href="/losningar/systemintegration/" class="cat-link">Distribution:</a> Långa kabeldragningar med Dante/Fiber</li>
-                    <li><a href="/styrsystem/" class="cat-link">Gränssnitt:</a> Enkla touchpaneler för speaker och personal</li>
+                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Zoner:</a> Flexibel uppdelning av arenaområdet</li>
+                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Distribution:</a> Långa kabeldragningar med Dante/Fiber</li>
+                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Gränssnitt:</a> Enkla touchpaneler för speaker och personal</li>
                   </ul>
                 </div>
               </div>
@@ -336,13 +369,12 @@ import "../../../styles/avab.css";
               <p class="intro-text">En arena för alla. Vi garanterar både tillgänglighet via hörslingor och trygghet via certifierade talade utrymningslarm.</p>
             </div>
             <div class="solution-card-bottom">
-              <div class="hover-indicator"><div style="font-weight:800; color:var(--avab-green); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em;">Läs om säkerhet ↓</div></div>
               <div class="solution-expandable">
                 <div class="solution-expand-inner">
                   <ul class="bullet-list">
-                    <li><a href="/losningar/utrymningslarm/" class="cat-link">TUL:</a> Godkända röstlarm vid evakuering</li>
-                    <li><a href="/losningar/horslingor/" class="cat-link">Tillgänglighet:</a> Utomhusanpassade hörslingor</li>
-                    <li><a href="/kameraovervakning/" class="cat-link">Övervakning:</a> VMS och högupplösta kameror</li>
+                    <li><a href="/tjanster/talat-utrymningslarm/" class="cat-link">TUL:</a> Godkända röstlarm vid evakuering</li>
+                    <li><a href="/tjanster/horslinga/" class="cat-link">Tillgänglighet:</a> Utomhusanpassade hörslingor</li>
+                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Övervakning:</a> VMS och högupplösta kameror</li>
                   </ul>
                 </div>
               </div>
@@ -385,48 +417,48 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section" id="faq" style="border-top: 1px solid var(--avab-border);">
-      <div class="container two-col" style="align-items: start;">
-        
-        <div>
+    <section class="section faq-cta" id="faq" style="border-top: 1px solid var(--avab-border);">
+      <div class="avab-container">
+        <div class="faq-heading">
           <div class="eyebrow">Kunskap</div>
-          <h2 style="margin-bottom: 32px;">Vanliga frågor om utomhusteknik</h2>
-          <div class="faq-list">
-            <div class="faq-item">
-              <h3>Vilken IP-klassning krävs för utomhushögtalare på arenan?</h3>
-              <p>För utomhusbruk på arenor rekommenderar vi system med minst IP55- eller IP56-klassning. Detta säkerställer att tekniken klarar av regn, snö och damm under hela året utan att ta skada eller tappa i ljudkvalitet.</p>
-            </div>
-            <div class="faq-item">
-              <h3>Hur hanterar vi ljudet vid evakuering?</h3>
-              <p>Vi integrerar anläggningen med ett godkänt Talat Utrymningslarm (TUL). Vid ett brandlarm bryts all musik och speakerljud automatiskt, och systemet spelar istället upp tydliga, förprogrammerade röstinstruktioner för att säkert evakuera publiken.</p>
-            </div>
-            <div class="faq-item">
-              <h3>Går det att styra ljudet trådlöst från planen?</h3>
-              <p>Ja. Vi kan installera säkra trådlösa nätverk och anpassade touchpaneler eller appar. Det gör det möjligt för tränare eller domare att styra volym, musik och zoner direkt nerifrån gräset, utan att behöva vara i speakerbåset.</p>
-            </div>
-          </div>
+          <h2>Vanliga frågor om utomhusteknik</h2>
         </div>
 
-        <aside class="cta-card">
-          <div class="eyebrow" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">Trygghet sedan 1990</div>
-          <h2>Behöver ni hjälp med projektering för utomhusarena?</h2>
-          <p>Att bygga robusta system utomhus kräver rätt val av komponenter från start. Vi hjälper er kravställa rätt IP-klassning, räckvidd och zonindelning för en framtidssäker idrottsplats.</p>
-          
-          <ul class="guarantee-list">
+        <div class="compact-faq">
+          <details class="faq-item">
+            <summary>Vilken IP-klassning krävs för utomhushögtalare på arenan?</summary>
+            <p>För utomhusbruk på arenor rekommenderar vi system med minst IP55- eller IP56-klassning. Detta säkerställer att tekniken klarar av regn, snö och damm under hela året utan att ta skada eller tappa i ljudkvalitet.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Hur hanterar vi ljudet vid evakuering?</summary>
+            <p>Vi integrerar anläggningen med ett godkänt Talat Utrymningslarm (TUL). Vid ett brandlarm bryts all musik och speakerljud automatiskt, och systemet spelar istället upp tydliga, förprogrammerade röstinstruktioner för att säkert evakuera publiken.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Går det att styra ljudet trådlöst från planen?</summary>
+            <p>Ja. Vi kan installera säkra trådlösa nätverk och anpassade touchpaneler eller appar. Det gör det möjligt för tränare eller domare att styra volym, musik och zoner direkt nerifrån gräset, utan att behöva vara i speakerbåset.</p>
+          </details>
+        </div>
+
+        <div class="fullwidth-cta">
+          <div>
+            <div class="eyebrow">Trygghet sedan 1990</div>
+            <h2>Behöver ni hjälp med projektering för utomhusarena?</h2>
+            <p>Att bygga robusta system utomhus kräver rätt val av komponenter från start. Vi hjälper er kravställa rätt IP-klassning, räckvidd och zonindelning för en framtidssäker idrottsplats.</p>
+            <div class="cta-actions">
+              <a class="button button-light" href="/kontakt/">Boka kostnadsfri projektering</a>
+            </div>
+          </div>
+          <ul class="calc-list">
             <li>Vädertålig hårdvara (IP-klassat)</li>
             <li>Akustisk beräkning utomhus</li>
             <li>Godkända utrymningslarm (TUL)</li>
           </ul>
-          
-          <div class="hero-actions" style="margin-top: 32px; flex-direction: column; align-items: flex-start; width: 100%;">
-            <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri projektering</a>
-          </div>
-        </aside>
-
+        </div>
       </div>
     </section>
 
   </main>
 
+  <SiteFooter />
 </body>
 </html>

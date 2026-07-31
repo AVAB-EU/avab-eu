@@ -1,19 +1,134 @@
 ﻿---
+import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
 
 
-<!-- Converted HTML content from kameraovervakning.html -->
-<!doctype html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kameraövervakning och CCTV | AI, exakt sökning och smart integration | AVAB</title>
-<meta name="description" content="Modern kameraövervakning med AI, exakt sökning, integration och tydlig projektering. AVAB hjälper skolor, butiker, hotell, industri och publika miljöer att få kontroll på riktigt.">
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kameraövervakning och CCTV | AI, exakt sökning och smart integration | AVAB</title>
+  <meta name="description" content="Modern kameraövervakning med AI, exakt sökning, integration och tydlig projektering. AVAB hjälper skolor, butiker, hotell, industri och publika miljöer att få kontroll på riktigt." />
+  <link rel="canonical" href="https://www.avab.eu/tjanster/kameraovervakning/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <meta property="og:title" content="Kameraövervakning och CCTV | AI, exakt sökning och smart integration | AVAB" />
+  <meta property="og:description" content="Modern kameraövervakning med AI, exakt sökning, integration och tydlig projektering för verksamheter och publika miljöer." />
+  <meta property="og:image" content="https://www.avab.eu/assets/kameraovervakning-hero.png" />
+  <meta property="og:image:width" content="2048" />
+  <meta property="og:image:height" content="768" />
+  <meta property="og:image:alt" content="Professionell kameraövervakning vid en modern fastighet" />
+  <meta property="og:url" content="https://www.avab.eu/tjanster/kameraovervakning/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kameraövervakning och CCTV | AVAB" />
+  <meta name="twitter:description" content="Modern kameraövervakning med AI, exakt sökning, integration och tydlig projektering." />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/kameraovervakning-hero.png" />
+  <meta name="twitter:image:alt" content="Professionell kameraövervakning vid en modern fastighet" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" fetchpriority="high" href="/assets/kameraovervakning-hero.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+
+  <style>
+    .camera-hero {
+      min-height: 560px;
+      overflow: hidden;
+    }
+
+    .camera-hero > .hero-image {
+      object-position: center;
+    }
+
+    .camera-hero > .hero-image + .hero-content {
+      justify-content: center;
+      padding: 64px 0;
+    }
+
+    .camera-hero > .hero-image + .hero-content::before {
+      width: min(1080px, 92vw);
+      background: linear-gradient(
+        90deg,
+        rgba(20, 24, 21, 0.96) 0%,
+        rgba(20, 24, 21, 0.88) 50%,
+        rgba(20, 24, 21, 0.42) 76%,
+        transparent 100%
+      );
+    }
+
+    .camera-hero h1 {
+      max-width: 19ch;
+      font-size: clamp(2.6rem, 4.2vw, 4rem);
+      line-height: 1.02;
+    }
+
+    .camera-hero .lead {
+      max-width: 63ch;
+      margin-bottom: 0;
+      font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+      line-height: 1.55;
+    }
+
+    .camera-hero .hero-actions {
+      margin-top: 28px;
+    }
+
+    .camera-intro {
+      padding: 56px 0;
+    }
+
+    @media (max-width: 768px) {
+      .camera-hero:has(> .hero-image) {
+        min-height: 540px;
+      }
+
+      .camera-hero > .hero-image {
+        object-position: 66% center;
+      }
+
+      .camera-hero > .hero-image + .hero-content {
+        min-height: 540px;
+        justify-content: flex-end;
+        padding: 48px 0 40px;
+      }
+
+      .camera-hero > .hero-image + .hero-content::before {
+        width: 120vw;
+        background: linear-gradient(
+          90deg,
+          rgba(20, 24, 21, 0.96) 0%,
+          rgba(20, 24, 21, 0.82) 72%,
+          rgba(20, 24, 21, 0.48) 100%
+        );
+      }
+
+      .camera-hero h1 {
+        max-width: 15ch;
+        font-size: clamp(2.35rem, 10vw, 3.35rem);
+      }
+
+      .camera-hero .lead {
+        font-size: 1rem;
+      }
+
+      .camera-intro {
+        padding: 44px 0;
+      }
+    }
+  </style>
 
 <script type="application/ld+json">
 {
@@ -22,7 +137,7 @@ import "../../../styles/avab.css";
 		{
 			"@type": "WebPage",
 			"name": "Kameraövervakning och CCTV – modern övervakning med snabb sökning, tydlig kontroll och smart integration",
-			"url": "https://www.avab.eu/kameraovervakning/",
+			"url": "https://www.avab.eu/tjanster/kameraovervakning/",
 			"description": "Modern kameraövervakning med AI, exakt sökning, integration och tydlig projektering. AVAB hjälper skolor, butiker, hotell, industri och publika miljöer att få kontroll på riktigt.",
 			"inLanguage": "sv-SE"
 		},
@@ -98,27 +213,58 @@ import "../../../styles/avab.css";
 	]
 }
 </script>
-<header class="hero">
-  <div class="container">
-    <div class="hero-content animate-in">
-      <div class="eyebrow">Helhetslösningar</div>
-      <h1>Kameraövervakning och CCTV – modern övervakning med snabb sökning, tydlig kontroll och smart integration</h1>
-      <p class="lead">När olyckan är framme är det för sent att upptäcka att systemet inte håller måttet. Många köper kameror i tron att de köper säkerhet, men slutar upp med utrustning som är för krånglig att använda och som bara passivt spelar in video.</p>
-      <p class="lead">Modern kameraövervakning handlar om att skapa kontroll. Det kräver knivskarp bild, exakt sökning och sömlös integration. <strong>Vi säljer inte lösa produkter; vi designar, installerar och garanterar en mätbar funktion.</strong></p>
-      
-      <div class="hero-actions">
-        <a class="button button-primary" href="/kontakt/">Boka en kostnadsfri genomgång</a>
-        <a class="checklist-link" href="/kravstallning/">Ladda ner vår checklista för kravställning →</a>
-      </div>
+</head>
+
+<body>
+<SiteHeader />
+
+<nav class="breadcrumbs" aria-label="Brödsmulor">
+  <div class="avab-container">
+    <ol>
+      <li><a href="https://www.avab.eu/">Start</a></li>
+      <li><a href="https://www.avab.eu/#tjanster">Tjänster</a></li>
+      <li><span aria-current="page">Kameraövervakning</span></li>
+    </ol>
+  </div>
+</nav>
+
+<header class="hero camera-hero">
+  <img
+    class="hero-image"
+    src="/assets/kameraovervakning-hero.png"
+    alt=""
+    width="2048"
+    height="768"
+    fetchpriority="high"
+    decoding="async"
+    aria-hidden="true"
+  />
+  <div class="avab-container hero-content animate-in">
+    <div class="eyebrow">Kameraövervakning &amp; CCTV</div>
+    <h1>Kameraövervakning som ger kontroll när det gäller</h1>
+    <p class="lead">Professionella kamerasystem med skarp bild, exakt sökning, AI-analys och säker lagring – projekterade, installerade och integrerade av AVAB.</p>
+
+    <div class="hero-actions">
+      <a class="button button-primary" href="/kontakt/">Boka en kostnadsfri genomgång</a>
+      <a class="button button-quiet" href="/kravstallning/">Ladda ner vår checklista för kravställning →</a>
     </div>
   </div>
 </header>
 
-<SiteHeader />
+<section class="fact-band" aria-label="Snabbfakta kameraövervakning">
+  <div class="fact-grid">
+    <div class="fact"><span>System</span><strong>Kamera, lagring och analys</strong></div>
+    <div class="fact"><span>Sökning</span><strong>Person, fordon och händelse</strong></div>
+    <div class="fact"><span>AI</span><strong>Filter och smart detektering</strong></div>
+    <div class="fact"><span>Integritet</span><strong>GDPR och behörighetsstyrning</strong></div>
+    <div class="fact"><span>Integration</span><strong>Ljud, larm och styrsystem</strong></div>
+    <div class="fact"><span>Leverans</span><strong>Projektering till service</strong></div>
+  </div>
+</section>
 
-<main>
+<main id="main">
 
-<section class="section" style="padding-bottom: 0;">
+<section class="section camera-intro">
   <div class="container animate-in">
     <div class="snabbt-svar bg-gray" style="margin-top: 0; max-width: 800px;">
       <h2 class="snabbt-svar-title">Vad är kameraövervakning?</h2>
@@ -249,7 +395,15 @@ import "../../../styles/avab.css";
       </div>
       <div class="video-wrapper">
         <div class="video-container animate-in">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Exakt Sökning Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+          <video
+            controls
+            preload="metadata"
+            playsinline
+            aria-label="Exakt sökning i praktiken – Galleria Duvan i Karlstad"
+          >
+            <source src="/assets/exakt_sokning.mp4" type="video/mp4" />
+            Din webbläsare stöder inte videouppspelning. <a href="/assets/exakt_sokning.mp4">Öppna videon direkt</a>.
+          </video>
         </div>
         <div class="video-caption">
           <h2 class="caption-style">Exakt sökning i praktiken – Galleria Duvan i Karlstad</h2><br>
@@ -269,7 +423,7 @@ import "../../../styles/avab.css";
     </div>
     
     <div class="solutions-grid">
-      <article class="solution-card">
+      <article class="solution-card clickable-card">
         <div class="solution-content">
           <div class="solution-top"><h2>DORI, bildkvalitet och projektering – där nyttan avgörs</h2></div>
           <p>Ett system är värdelöst om bilderna inte går att använda och om täckningen inte matchar verkligheten. Vi projekterar för rätt pixeltäthet, kameraplacering och täckning från start.</p>
@@ -281,13 +435,13 @@ import "../../../styles/avab.css";
                 <li>Undviker blinda zoner och felaktig täckning.</li>
                 <li>IP/IK-klassade kameror som tål utomhusmiljö.</li>
               </ul>
-              <a class="solution-link" href="/projektering/">Läs mer om vår projektering →</a>
+              <a class="solution-link card-primary-link" href="/projektering/">Läs mer om vår projektering →</a>
             </div>
           </div>
         </div>
       </article>
 
-      <article class="solution-card">
+      <article class="solution-card clickable-card">
         <div class="solution-content">
           <div class="solution-top"><h2>Integration – när kameraövervakning blir riktigt stark</h2></div>
           <p>Ett kamerasystem blir starkast när det samverkar med andra delar. Kameraövervakning kan integreras med ljud, utrymningslarm, bildskärmar och styrsystem.</p>
@@ -299,13 +453,13 @@ import "../../../styles/avab.css";
                 <li>AI som aktiverar talat utrymningslarm.</li>
                 <li>Styr allt från en central och användarvänlig panel.</li>
               </ul>
-              <a class="solution-link" href="/projektering/systemintegration/">Läs mer om systemintegration →</a>
+              <a class="solution-link card-primary-link" href="/projektering/systemintegration/">Läs mer om systemintegration →</a>
             </div>
           </div>
         </div>
       </article>
 
-      <article class="solution-card">
+      <article class="solution-card clickable-card">
         <div class="solution-content">
           <div class="solution-top"><h2>Lagring, NVR och app – kontroll utan onödigt krångel</h2></div>
           <p>Behåll 100% kontroll över ert material. Vi bygger lokala nätverk (NVR) för säker lagring med smidig åtkomst – helt utan onödigt krångel eller molnabonnemang där det passar bäst.</p>
@@ -317,7 +471,7 @@ import "../../../styles/avab.css";
                 <li>Säker fjärrhantering och mobil åtkomst.</li>
                 <li>Tydlig kontroll över vem som ser materialet.</li>
               </ul>
-              <a class="solution-link" href="/kontakt/">Prata lagring med oss →</a>
+              <a class="solution-link card-primary-link" href="/kontakt/">Prata lagring med oss →</a>
             </div>
           </div>
         </div>
@@ -568,11 +722,7 @@ import "../../../styles/avab.css";
     </div>
 </section>
 </main>
-<!-- Styles and full page content omitted for brevity in Astro file; embed full HTML body below -->
 
-<style>
-/* (Omitted here for brevity — original CSS from kameraovervakning.html should be pasted here) */
-</style>
-
-<!-- Paste the rest of the HTML body from kameraovervakning.html here -->
-<!-- For brevity in this edit, include the full content as-is from the provided attachment when applying in your project. -->
+<SiteFooter />
+</body>
+</html>

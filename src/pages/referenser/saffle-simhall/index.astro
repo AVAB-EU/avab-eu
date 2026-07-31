@@ -1,4 +1,5 @@
 ﻿---
+import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
@@ -575,48 +576,6 @@ import "../../../styles/avab.css";
 
   </main>
 
-  <footer class="site-footer">
-    <div class="avab-container">
-      <div class="footer-grid">
-        <div>
-          <a class="brand" href="/" aria-label="AVAB – till startsidan">
-            <span class="brand-dot" aria-hidden="true"></span>
-            AVAB
-          </a>
-          <p>Ljud, ljus, bild och kameraövervakning – smart styrt. Projektering, installation och driftsättning för simhallar, skolor, arenor och publika miljöer över hela Sverige.</p>
-        </div>
-
-        <nav aria-label="Sidlänkar">
-          <h2>Gå vidare</h2>
-          <ul class="footer-links">
-            <li><a href="/miljoer/simhall/">Teknik för simhall</a></li>
-            <li><a href="/tjanster/horslinga/">Hörslinga</a></li>
-            <li><a href="/tjanster/smart-styrning/">Smart styrning</a></li>
-            <li><a href="/referenser/">Referenser</a></li>
-            <li><a href="/kontakt/">Kontakt</a></li>
-          </ul>
-        </nav>
-
-        <div>
-          <h2>Kontakt</h2>
-          <address class="footer-contact" style="font-style: normal;">
-            <a href="tel:+46548202080">054-8202080</a>
-            <a href="mailto:info@avab.eu">info@avab.eu</a>
-            <span>Skraggevägen 4<br>663 41 Hammarö, Värmland</span>
-          </address>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© <span id="year">2026</span> AVAB. Referensprojekt Säffle simhall.</span>
-        <span>Org.nr 556977-1776 · <a href="/integritetspolicy/" style="color: inherit; text-decoration: underline;">Integritetspolicy</a></span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const year = document.getElementById('year');
-    if (year) year.textContent = String(new Date().getFullYear());
-  </script>
+  <SiteFooter />
 </body>
 </html>
