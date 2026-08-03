@@ -56,7 +56,7 @@ export const technologies: FilterOption[] = [
   { id: "ledvagg", label: "LED-vägg" },
   { id: "bakgrundsmusik", label: "Bakgrundsmusik", href: "/tjanster/bakgrundsmusik/" },
   { id: "konferens", label: "Konferens & videomöte", href: "/tjanster/konferensteknik/" },
-  { id: "taluppfattbarhet", label: "Taluppfattbarhet", href: "/tjanster/taluppfattbarhet-akustik/" },
+  { id: "taluppfattbarhet", label: "Taluppfattbarhet", href: "/tjanster/taluppfattbarhet/" },
   { id: "projektering", label: "Projektering", href: "/tjanster/projektering/" },
   { id: "service", label: "Service" },
 ];
