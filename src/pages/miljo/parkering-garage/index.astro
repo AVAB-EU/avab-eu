@@ -1,6 +1,6 @@
-﻿---
-import SiteHeader from "../../../components/SiteHeader.astro";
+---
 import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -9,421 +9,481 @@ import "../../../styles/avab.css";
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ljud, Bild & Säkerhet för Parkeringshus & Garage | AVAB</title>
-  <meta name="description" content="Vi skapar smarta parkeringshus. Integrerade system med ANPR-kameror, platsindikering, gobo-projektion och trygghetsskapande ljud för optimalt flöde." />
-  
+  <title>Parkering & garage | Kamera, ANPR, intercom och AV-teknik | AVAB</title>
+  <meta name="description" content="AVAB projekterar och installerar teknik för parkering och garage: kameraövervakning, ANPR, bom- och grindintegration, intercom, vägvisning, utrop, talat utrymningslarm och dokumentation." />
+  <link rel="canonical" href="https://www.avab.eu/miljo/parkering-garage/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content="Parkering & garage | Kamera, ANPR, intercom och AV-teknik | AVAB" />
+  <meta property="og:description" content="Tryggare infart, bättre överblick och tydlig kommunikation i parkeringshus, garage och markparkeringar." />
+  <meta property="og:image" content="https://www.avab.eu/assets/kameraovervakning-hero.png" />
+  <meta property="og:image:width" content="2032" />
+  <meta property="og:image:height" content="774" />
+  <meta property="og:image:alt" content="Kameraövervakning för parkering, garage och fordonsinfart" />
+  <meta property="og:url" content="https://www.avab.eu/miljo/parkering-garage/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Parkering & garage | Kamera, ANPR, intercom och AV-teknik | AVAB" />
+  <meta name="twitter:description" content="Kamera, nummerplåtsigenkänning, bommar, intercom, vägvisning och utrop för parkering och garage." />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/kameraovervakning-hero.png" />
+  <meta name="twitter:image:alt" content="Kameraövervakning för parkering, garage och fordonsinfart" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
-        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
-        { "@type": "ListItem", "position": 3, "name": "Parkering", "item": "https://avab.eu/miljo/parkering-garage/" }
-      ]
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AV- och säkerhetsteknik för parkering och garage",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "AVAB",
+      "url": "https://www.avab.eu/",
+      "telephone": "+46548202080",
+      "email": "info@avab.eu",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Skraggevägen 4",
+        "postalCode": "663 41",
+        "addressLocality": "Hammarö",
+        "addressRegion": "Värmland",
+        "addressCountry": "SE"
+      }
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Kan vi slippa pappersbiljetter och köer vid bommarna?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Absolut. Genom att installera ANPR-kameror (automatisk nummerplåtsigenkänning) läser systemet av bilen redan innan den stannat. Bommen öppnas direkt och parkeringen kopplas automatiskt till besökarens digitala betalsystem."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Hur hjälper systemet kunden att hitta sin bil?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "I större anläggningar knyter vi ihop kameraövervakningen med bilens registreringsnummer. Besökaren kan knappa in sitt nummer på en skärm i trapphuset och direkt få se en karta med exakt var bilen står parkerad."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Varför ska man installera ljudsystem i ett parkeringshus?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "En tyst betongkällare upplevs ofta som otrygg. Ett dämpat, väl valt bakgrundsljud i gångstråk och trapphus maskerar obehagliga ekon och ökar trygghetskänslan markant. Samma system används även för viktiga informationsutrop."
-          }
+    "areaServed": "Sverige",
+    "serviceType": [
+      "Kameraövervakning för parkering och garage",
+      "ANPR och nummerplåtsigenkänning",
+      "Bom- och grindintegration",
+      "Intercom och anropspunkter",
+      "Digital vägvisning och informationsskärmar",
+      "Zonstyrda utrop och ljudsystem",
+      "Talat utrymningslarm",
+      "Projektering, installation och dokumentation"
+    ],
+    "description": "AVAB projekterar, installerar och driftsätter teknik för parkeringshus, garage och markparkeringar med kameraövervakning, ANPR, bom- och grindintegration, intercom, vägvisning, utrop, säkerhetsgränssnitt och dokumentation."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vilken teknik behövs i ett parkeringshus eller garage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Behovet varierar, men vanliga delar är kameraövervakning, nummerplåtsigenkänning, integration mot bom eller grind, intercom, informationsskärmar, vägvisning, utrop, nätverk, lagring och dokumenterad drift."
         }
-      ]
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ANPR öppna bommen automatiskt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, nummerplåtsigenkänning kan tekniskt kopplas till behörighet och styrning av bom eller grind. Lösningen behöver samordnas med passage, betalning, säkerhetslogik, nätverk och verksamhetens integritetsrutiner."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan kamerorna hjälpa oss att hitta en specifik bil eller incident?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rätt kameratäckning, bildkvalitet, tidssynk, lagring och sökfunktioner kan göra det betydligt enklare att hitta relevanta händelser. Vilka sökfunktioner som används behöver anpassas till syftet och verksamhetens regler."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Behöver parkeringshuset intercom eller hjälptelefon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Intercom är ofta värdefullt vid infart, utfart, betalstation, gångdörr och hjälpplats. Besökaren kan få kontakt med drift eller bevakning, och personalen kan hantera händelsen från rätt plats."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan systemet visa lediga platser och vägleda besökare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Sensorer, kamerabaserad beläggningsinformation och digital skyltning kan användas för att visa kapacitet och leda trafik. Funktion och noggrannhet beror på vald teknik, miljö och systemintegration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Är vanliga informationsutrop samma sak som talat utrymningslarm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nej. Informationsutrop och driftmeddelanden är verksamhetsfunktioner. Ett certifierat talat utrymningslarm är ett separat säkerhetssystem som projekteras, övervakas och dokumenteras efter de krav som gäller för anläggningen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "När bör tekniken tas in i parkeringsprojektet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ta in tekniken innan bomlägen, kabelvägar, nätverk, teknikrum, kamerafästen, belysning, skyltning, elmatning och säkerhetsgränssnitt är låsta. Tidig samordning minskar ombyggnad och förbättrar driften."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Start",
+        "item": "https://www.avab.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Miljöer",
+        "item": "https://www.avab.eu/miljo/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Parkering och garage",
+        "item": "https://www.avab.eu/miljo/parkering-garage/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.avab.eu/miljo/parkering-garage/#webpage",
+    "url": "https://www.avab.eu/miljo/parkering-garage/",
+    "name": "Parkering & garage | Kamera, ANPR, intercom och AV-teknik | AVAB",
+    "description": "Teknik för parkering och garage med kameraövervakning, ANPR, bom- och grindintegration, intercom, vägvisning, utrop och dokumentation.",
+    "inLanguage": "sv-SE",
+    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
+    "datePublished": "2025-01-01",
+    "dateModified": "2026-08-03",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".lead", ".compact-faq"]
     }
-  ]
+  }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preload" as="image" fetchpriority="high"
+    href="/assets/kameraovervakning-hero.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <style>
-    /* NÖDRAKETEN */
-    .single-post .site-content .ast-container, .single-post .entry-content, .single-post .post-content { max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
-    .single-post .site-content { padding: 0 !important; }
-
-    :root {
-      --avab-green: #8FC025; 
-      --avab-green-glow: rgba(143, 192, 37, 0.4);
-      --avab-dark: #282E29;  
-      --avab-dark-muted: #3A433D;
-      --avab-grey: #E9EAE9;
-      --avab-light: #F4F5F4;
-      --avab-white: #ffffff; 
-      --avab-border: rgba(40, 46, 42, 0.1);
-      --avab-shadow-sm: 0 4px 12px rgba(40, 46, 42, 0.05);
-      --avab-shadow-lg: 0 24px 48px rgba(40, 46, 42, 0.12);
-      --avab-radius: 24px;
-      --avab-radius-sm: 16px;
-      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    .solution-card {
+      border: 2px solid rgba(143, 192, 37, 0.62);
+      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
+      position: relative;
+      overflow: hidden;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--avab-dark); background: var(--avab-white); line-height: 1.65; -webkit-font-smoothing: antialiased; }
-    
-    .container { width: min(calc(100% - 48px), 1280px); margin: 0 auto; }
-    .section { padding: 56px 0; }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-in { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-
-    /* Hero */
-    .hero { 
-      position: relative; padding: 120px 0 80px; 
-      background: linear-gradient(135deg, rgba(40, 46, 42, 0.8) 0%, rgba(40, 46, 42, 0.6) 100%), 
-                  url('https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?auto=format&fit=crop&q=80&w=1920') center/cover;
-      color: #ffffff !important; 
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      background: var(--avab-green);
     }
-    .hero h1 { color: #ffffff !important; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; max-width: 25ch; }
-    .hero p { color: #ffffff !important; font-size: 1.25rem; max-width: 68ch; opacity: 0.95; margin-bottom: 0; }
+    .solution-card h3,
+    .solution-card .bullet-list { position: relative; z-index: 1; }
 
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: var(--avab-green); color: var(--avab-dark); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }
-    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #ffffff; }
-
-    h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; margin-bottom: 16px; line-height: 1.15; }
-    .lead-dark { font-size: 1.15rem; max-width: 68ch; color: var(--avab-dark-muted); margin-bottom: 20px; }
-
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-    
-    .summary-list { display: grid; gap: 16px; list-style: none; margin-top: 62px; }
-    .summary-list li { padding: 24px 20px; border-radius: var(--avab-radius-sm); background: var(--avab-white); box-shadow: var(--avab-shadow-sm); border: 1px solid var(--avab-border); }
-    .summary-list strong { display: block; margin-bottom: 8px; color: var(--avab-dark); font-size: 1.15rem; }
-
-    /* Solutions Grid med Expand/Collapse */
-    .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 24px; }
-    .solution-card { padding: 40px; border-radius: var(--avab-radius); background: var(--avab-white); border: 1px solid var(--avab-border); transition: var(--transition-smooth); display: flex; flex-direction: column; position: relative; }
-    .solution-card:hover { transform: translateY(-8px); box-shadow: var(--avab-shadow-lg); border-color: var(--avab-green); }
-    
-    .solution-card-top { flex-grow: 1; display: flex; flex-direction: column; }
-    .solution-card h3 { font-weight: 800; margin-bottom: 16px; font-size: 1.5rem; min-height: 3.6rem; }
-    .solution-card .intro-text { margin-bottom: 24px; color: var(--avab-dark-muted); font-size: 1.05rem; line-height: 1.6; }
-
-    .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .solution-expand-inner { overflow: hidden; min-height: 0; opacity: 1; transition: opacity 0.3s ease; }
-
-
-    .bullet-list { list-style: none; margin-top: 20px; }
-    .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; color: var(--avab-dark-muted); }
-    .bullet-list li::before { content: "✓"; position: absolute; left: 0; color: var(--avab-green); font-weight: 800; }
-    .cat-link { color: var(--avab-dark); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--avab-green); }
-
-    /* Flow / Pris / Ref */
-    .flow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 40px; }
-    .flow-card { padding: 24px; border-radius: var(--avab-radius-sm); background: var(--avab-white); border: 1px solid var(--avab-border); }
-    .flow-card strong { display: block; min-height: 3.2rem; color: var(--avab-green); font-size: 1.05rem; margin-bottom: 12px; line-height: 1.4; }
-    .flow-card span { font-size: 0.95rem; color: var(--avab-dark-muted); min-height: 4.5rem; display: block; line-height: 1.5; }
-
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; text-align: left; }
-    .pricing-card { padding: 40px; border-radius: var(--avab-radius); background: var(--avab-white); border: 1px solid var(--avab-border); transition: var(--transition-smooth); display: flex; flex-direction: column; align-items: flex-start; }
-    .pricing-card h3 { font-size: 2.2rem; font-weight: 800; margin: 16px 0; color: var(--avab-dark); }
-    .pricing-card p { color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; font-size: 1.05rem; }
-    .pricing-card.highlight { border: 2px solid var(--avab-green); position: relative; box-shadow: var(--avab-shadow-lg); }
-
-    .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-top: 40px; align-items: stretch; }
-    .ref-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%; background: var(--avab-white); border-radius: var(--avab-radius); border: 1px solid var(--avab-border); box-shadow: var(--avab-shadow-sm); transition: var(--transition-smooth); }
-    .ref-card:hover { transform: translateY(-5px); box-shadow: var(--avab-shadow-lg); border-color: var(--avab-green); }
-    .ref-card img { width: 100%; height: 240px; object-fit: cover; }
-    .ref-content { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; }
-    .ref-content h3 { font-size: 1.4rem; margin-bottom: 12px; min-height: auto; } 
-    .ref-content p { font-size: 1rem; color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; }
-
-
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; border-radius: 999px; font-weight: 700; background: var(--avab-green); color: var(--avab-dark); text-decoration: none; transition: var(--transition-smooth); font-size: 1.05rem; }
-    .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px var(--avab-green-glow); }
-    
-    @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
-    @media (max-width: 768px) {
-      .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; }      .flow-card strong, .flow-card span { min-height: auto; } 
+    .ref-content a {
+      margin-top: auto;
+      font-weight: 800;
+      color: var(--avab-dark);
     }
-    /* Mobilanpassning (beslut per sida, dokumenterat):
-       - #utmaning (inledande problemnarrativ, sekundar fordjupning pa mobil)
-       Huvudbudskap, losningssektion, referenser/bevisning, FAQ och CTA visas alltid. */
-    @media (max-width: 768px) {
-      #utmaning { display: none; }
-    }
-    /* ---- FAQ (sajtstandard: details/summary, samma som ovriga sidor) ---- */
+    .ref-content a:hover { color: var(--avab-green); }
+    .ref-content a::after { content: " →"; color: var(--avab-green); }
+
+    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
+    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
+    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
+    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
+
     .compact-faq {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       column-gap: 28px;
       row-gap: 0;
       max-width: 1060px;
-      margin: 0;
+      margin: 0 auto;
     }
     .compact-faq details.faq-item { padding: 20px 0; }
     .compact-faq summary { font-size: 1.05rem; }
     .compact-faq details.faq-item p { font-size: 0.98rem; }
     .compact-faq details.faq-item:nth-child(1),
     .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
+
+    .parkering-faq-cta {
+      padding-top: 48px;
+      padding-bottom: 96px;
+    }
+    .parkering-faq-cta .compact-faq { margin-bottom: 64px; }
+
     @media (max-width: 768px) {
       .compact-faq { grid-template-columns: 1fr; }
       .compact-faq details.faq-item:nth-child(2) { border-top: none; }
+      .parkering-faq-cta {
+        padding-top: 40px;
+        padding-bottom: 72px;
+      }
+      .parkering-faq-cta .compact-faq { margin-bottom: 44px; }
+      .parkering-mobile-secondary { display: none !important; }
     }
-
-    /* ---- Kortrader: 4 kort ska ligga 2 + 2 (jamna rader) ---- */
-    @media (min-width: 1081px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (min-width: 769px) and (max-width: 1080px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    /* ---- Statiska kort: innehallet alltid synligt (ingen hover-expandering) ---- */
-    .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-    .solution-expand-inner { opacity: 1; }
-    .solution-card:hover .solution-expandable,
-    .solution-card:focus-within .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-
-    /* ---- FAQ + CTA i samma sektion, enligt mastern pa sporthallssidan ---- */
-    .faq-cta { padding-top: 48px; padding-bottom: 96px; }
-    .faq-cta .compact-faq { margin-bottom: 64px; }
-    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
-    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
-    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
   </style>
 </head>
 <body>
   <SiteHeader />
 
-  <header class="hero">
-    <div class="container animate-in">
-      <div class="eyebrow">Miljö: Parkering & Garage</div>
-      <h1>Teknik som skapar flöde, trygghet och full kontroll</h1>
-      <p>Parkeringshuset är besökarens första och sista intryck. Vi integrerar smarta kameror, gobo-vägvisning och platsindikering som gör en annars anonym miljö smidig och välkomnande.</p>
-      <div style="margin-top: 40px;"><a class="button" href="/kontakt/">Boka kostnadsfri rådgivning</a></div>
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="https://www.avab.eu/">Start</a></li>
+        <li><a href="https://www.avab.eu/miljo/">Miljöer</a></li>
+        <li><span aria-current="page">Parkering och garage</span></li>
+      </ol>
     </div>
-  </header>
+  </nav>
 
-  <section class="fact-band" aria-label="Snabbfakta parkering och garage">
+  <section class="hero" style="--hero-image:url('/assets/kameraovervakning-hero.png');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Parkering & garage</div>
+        <h1>Komplett teknik för parkering och garage</h1>
+        <p class="lead">
+          Kameraövervakning, ANPR, bom- och grindintegration, intercom, vägvisning och tydlig kommunikation för parkeringshus, garage och markparkeringar.
+          För fastighetsägare, parkeringsoperatörer, projektörer och entreprenörer som vill skapa bättre flöde, överblick och tryggare drift.
+        </p>
+
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/kontakt/">Skicka ritningar eller boka genomgång</a>
+            <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
+            <a class="button button-quiet" href="#teknikomraden">Se lösningar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band parkering-mobile-secondary" aria-label="Snabbfakta parkering och garage">
     <div class="fact-grid">
-      <div class="fact"><span>Miljö</span><strong>Parkering och garage</strong></div>
-      <div class="fact"><span>Flöde</span><strong>Infart, kö och vägvisning</strong></div>
-      <div class="fact"><span>Kamera</span><strong>ANPR och överblick</strong></div>
-      <div class="fact"><span>Ljud</span><strong>Utrop och talad information</strong></div>
-      <div class="fact"><span>Trygghet</span><strong>Larm, ljus och zoner</strong></div>
+      <div class="fact"><span>Miljö</span><strong>P-hus, garage &amp; markparkering</strong></div>
+      <div class="fact"><span>Infart</span><strong>ANPR, bom och grind</strong></div>
+      <div class="fact"><span>Överblick</span><strong>Kamera och incidentsökning</strong></div>
+      <div class="fact"><span>Kontakt</span><strong>Intercom och hjälpstationer</strong></div>
+      <div class="fact"><span>Information</span><strong>Skyltning, utrop och vägvisning</strong></div>
       <div class="fact"><span>Leverans</span><strong>Projektering till drift</strong></div>
     </div>
   </section>
 
-  <main>
-    <section class="section" id="utmaning" style="border-bottom: 1px solid var(--avab-border);">
-      <div class="container two-col">
-        <div class="animate-in">
-          <div class="eyebrow">Verkligheten</div>
-          <h2>Det första och sista intrycket</h2>
-          <p class="lead-dark">Ett parkeringshus är sällan prioriterat – tills problemen uppstår. Långa köer vid infarten, stress över att hitta en ledig plats och en allmän känsla av otrygghet färgar hela upplevelsen av er fastighet.</p>
-          <p class="lead-dark">Ofta beror detta på fragmenterad teknik. Ett system för bommar, ett för betalning och ett tredje för övervakning. Vi bygger en integrerad helhet där kameror, skyltar och ljud samverkar för att optimera trafikflödet och radera frustrationen för besökaren.</p>
+  <main id="main">
+    <section class="section section--light" id="far-du">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Det här får du</div>
+            <h2>Teknik som ger överblick utan att göra anläggningen svårare att använda</h2>
+            <p class="lead-dark">En parkeringsanläggning består av infart, körstråk, parkeringsytor, gångvägar, trapphus, betalning och utfart. AVAB samordnar kamera, kommunikation, vägvisning och integration så att personalen får rätt verktyg och besökaren möter tydliga funktioner.</p>
+          </div>
         </div>
-        <aside class="animate-in" style="animation-delay: 0.1s;">
-          <ul class="summary-list">
-            <li><strong>Friktion dödar flödet</strong> Pappersbiljetter är ett minne blott. Med ANPR (nummerplåtsavläsning) öppnas bommar automatiskt och betalning sker digitalt.</li>
-            <li><strong>Överblick är avgörande</strong> Smarta kameror hanterar inte bara säkerhet, de analyserar beläggningen och hjälper er agera innan trängsel uppstår.</li>
-            <li><strong>Känslan av trygghet</strong> Tydlig gobo-projektion på marken och trygghetsskapande bakgrundsljud förvandlar en mörk källare till en inbjudande entré.</li>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <h3>Bättre överblick</h3>
+            <p>Kameratäckning och sökfunktioner planerade efter verkliga händelser och siktlinjer.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 17v2"/><path d="M17 17v2"/><path d="M6 7l2-3h8l2 3"/><circle cx="7" cy="12" r="1"/><circle cx="17" cy="12" r="1"/></svg></span>
+            <h3>Smidigare infart</h3>
+            <p>ANPR och integration kan automatisera behöriga fordonsflöden vid bom och grind.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg></span>
+            <h3>Kontakt vid problem</h3>
+            <p>Intercom vid infart, utfart och hjälpplats ger besökaren en tydlig kontaktväg.</p>
+          </article>
+          <article class="value-card parkering-mobile-secondary">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8"/><path d="M12 18v4"/><path d="m8 11 3-3 2 2 3-3"/></svg></span>
+            <h3>Tydlig vägvisning</h3>
+            <p>Skärmar och skyltning kan visa riktning, kapacitet, driftstatus och viktig information.</p>
+          </article>
+          <article class="value-card parkering-mobile-secondary">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg></span>
+            <h3>Dokumenterad drift</h3>
+            <p>Märkning, behörigheter, lagring, utbildning och underlag för service och förvaltning.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="losning">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Lösning</div>
+          <h2>Infart, parkering och gångvägar behöver fungera som en sammanhängande miljö</h2>
+          <p>En kamera vid bommen löser inte automatiskt överblicken inne i garaget. På samma sätt hjälper inte en informationsskärm om beläggningsdata, skyltlogik och driftansvar saknas. Tekniken behöver projekteras efter hela resan från infart till parkerad bil och vidare till gångväg, trapphus och utfart.</p>
+          <p>Därför samordnar vi <a class="text-link" href="/tjanster/kameraovervakning/">kameraövervakning</a>, ANPR, intercom, <a class="text-link" href="/tjanster/styrsystem-integration/">styrning och integration</a>, <a class="text-link" href="/tjanster/ljudsystem/">utrop och ljud</a> samt <a class="text-link" href="/tjanster/talat-utrymningslarm/">talat utrymningslarm</a> med nätverk, passage, betalning, belysning och fastighetsdrift.</p>
+        </div>
+
+        <aside class="card solution-card">
+          <h3>Därför projekterar vi anläggningen som en helhet</h3>
+          <ul class="bullet-list">
+            <li>Infart, utfart, körstråk, parkeringsytor, gångdörrar och trapphus får kameror efter syfte och siktlinje.</li>
+            <li>ANPR, behörighet, betalning, bom och grind samordnas med säkerhetslogik och reservrutiner.</li>
+            <li>Intercom placeras där en besökare faktiskt behöver hjälp och kopplas till rätt mottagare.</li>
+            <li>Skyltning, lediga platser och vägvisning byggs på tillförlitliga data och tydliga driftlägen.</li>
+            <li>Informationsutrop hålls tydligt åtskilda från certifierat <a class="text-link" href="/tjanster/talat-utrymningslarm/">talat utrymningslarm</a>.</li>
+            <li>Nätverk, lagring, rack, UPS, belysning, kabelvägar, märkning och service planeras från början.</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-header animate-in">
-          <div class="eyebrow">Våra lösningar</div>
-          <h2 style="margin-bottom: 16px;">Det digitala P-ekosystemet</h2>
-        </div>
-        <div class="solutions-grid">
-          
-          <article class="solution-card">
-            <div class="solution-card-top">
-              <h3>ANPR & Kameraövervakning</h3>
-              <p class="intro-text">Läs av registreringsskyltar för omedelbar bomöppning. Använd exakt sökning för att hitta specifika fordon eller utreda incidenter på sekunder.</p>
-            </div>
-            <div class="solution-card-bottom">
-              <div class="solution-expandable">
-                <div class="solution-expand-inner">
-                  <ul class="bullet-list">
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">ANPR:</a> Blixtsnabb avläsning av registreringsskyltar</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Integration:</a> Direktkoppling till betalsystem</li>
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Trygghet:</a> AI-sökning vid skadegörelse</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="solution-card">
-            <div class="solution-card-top">
-              <h3>Platsindikering & Vägvisning</h3>
-              <p class="intro-text">Gröna och röda lampor i taket leder kunden direkt till en ledig plats. Integrerade skärmar i trapphusen hjälper dem sedan att hitta tillbaka till bilen.</p>
-            </div>
-            <div class="solution-card-bottom">
-              <div class="solution-expandable">
-                <div class="solution-expand-inner">
-                  <ul class="bullet-list">
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Sensorer:</a> Realtidsdata över lediga platser</li>
-                    <li><a href="/tjanster/skarmar-projektorer/" class="cat-link">Wayfinding:</a> "Hitta min bil"-funktion via skärm</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Data:</a> Analys av hur anläggningen utnyttjas</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="solution-card">
-            <div class="solution-card-top">
-              <h3>Gobo & Digital Signage</h3>
-              <p class="intro-text">Förstärk guidningen i den mörka miljön. Gobo-projektorer lyser upp körriktningar och elbilsplatser direkt på asfalten, medan skärmar informerar.</p>
-            </div>
-            <div class="solution-card-bottom">
-              <div class="solution-expandable">
-                <div class="solution-expand-inner">
-                  <ul class="bullet-list">
-                    <li><a href="/tjanster/skarmar-projektorer/" class="cat-link">Gobo:</a> Slitstark och snygg projicering på mark/vägg</li>
-                    <li><a href="/tjanster/skarmar-projektorer/" class="cat-link">Signage:</a> Dynamiska skärmar med utfartshänvisning</li>
-                    <li><a href="/tjanster/skarmar-projektorer/" class="cat-link">Elbilar:</a> Tydlig markering för EV-laddning</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="solution-card">
-            <div class="solution-card-top">
-              <h3>Ljud & Utrymning</h3>
-              <p class="intro-text">Ett tyst garage upplevs otryggt. Ett välkalibrerat, dämpat bakgrundsljud ökar tryggheten, och systemet dubblerar som utrymningslarm vid fara.</p>
-            </div>
-            <div class="solution-card-bottom">
-              <div class="solution-expandable">
-                <div class="solution-expand-inner">
-                  <ul class="bullet-list">
-                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Atmosfär:</a> Trygghetsskapande ljud i trapphus</li>
-                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Utrop:</a> Tydliga informationsmeddelanden</li>
-                    <li><a href="/tjanster/talat-utrymningslarm/" class="cat-link">TUL:</a> Integrerat talat utrymningslarm</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="flow-grid animate-in">
-          <div class="flow-card"><strong>ANPR-kameror → Flöde</strong><span>Bilar rullar in utan att stanna vid bommen, vilket eliminerar köer som blockerar gatan.</span></div>
-          <div class="flow-card"><strong>Platsindikering → Miljö</strong><span>Att direkt leda besökaren till en grön lampa minskar drastiskt utsläpp från cirkulerande bilar.</span></div>
-          <div class="flow-card"><strong>Gobo & Ljud → Trygghet</strong><span>Visuell guidning och musik gör en annars mörk och anonym miljö trygg och välkomnande.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
-      <div class="container animate-in">
-        <div class="section-header">
-          <div class="eyebrow">Investering</div>
-          <h2 style="margin-bottom: 16px;">Vad kostar ett modernt p-system?</h2>
-          <p class="lead-dark" style="margin-bottom: 40px;">Priset styrs av antalet in/utfarter, om ni önskar platsdetektering vid varje ruta och kravet på säkerhetskameror. Här är en grov uppskattning för budgetering.</p>
-        </div>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Mindre garage / BRF</div>
-            <h3>30–100 kkr</h3>
-            <p>Passar bostadsrättsföreningar och mindre garage. Inkluderar högupplösta säkerhetskameror, smidiga infoskärmar vid in- och utfart samt grundläggande bakgrundsljud och utrop.</p>
-          </div>
-          <div class="pricing-card highlight">
-            <div class="eyebrow">Mellanstort P-hus</div>
-            <h3>100–250 kkr</h3>
-            <p>För det kommersiella parkeringshuset. Komplett ANPR-integration kopplat till betalsystem, utökad kameraövervakning, digital wayfinding och trygghetsskapande ljud i trapphus.</p>
-          </div>
-          <div class="pricing-card">
-            <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Stora anläggningar</div>
-            <h3>250 kkr +</h3>
-            <p>För de riktigt stora anläggningarna. Fullständig platsdetektering med kameror per ruta som även ger djupgående statistik, avancerad dataanalys och integrerad gobo-projektion.</p>
+    <section class="section section--light" id="teknikomraden">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Teknikområden</div>
+            <h2>Infart, överblick och kommunikation i samma lösning</h2>
+            <p class="lead-dark">Bra parkeringsteknik ska minska manuella moment och göra det enkelt att förstå vad som händer. Funktionerna anpassas efter anläggningens storlek, ljusförhållanden, trafikflöden, bemanning, nätverk och integritetskrav.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section" style="border-top: 1px solid var(--avab-border);">
-      <div class="container">
-        <div class="eyebrow">P-hus Referenser</div>
-        <h2>Teknik som eliminerar köerna</h2>
-        <div class="ref-grid animate-in">
+        <div class="proof-strip parkering-mobile-secondary">
+          <div class="proof-item"><strong>35+ års erfarenhet</strong><span>Kamera, ljud, styrning, nätverk och installation.</span></div>
+          <div class="proof-item"><strong>Projektanpassad täckning</strong><span>Infart, körytor, trapphus och känsliga punkter.</span></div>
+          <div class="proof-item"><strong>Integration med kontroll</strong><span>Bom, grind, passage, betalning och driftgränssnitt.</span></div>
+          <div class="proof-item"><strong>Installation och service</strong><span>En partner även efter driftsättning.</span></div>
+        </div>
+
+        <div class="grid-3">
           <article class="ref-card">
-            <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&q=80&w=800" alt="Mindre parkeringsgarage övervakning och ljud">
+            <img src="/assets/kameraovervakning-hero.png" alt="Kameraövervakning för parkeringshus, garage och fordonsinfart" width="2032" height="774" loading="lazy" decoding="async">
             <div class="ref-content">
-              <h3>Mindre parkeringsgarage</h3>
-              <p>I samarbete med ett ledande parkeringsbolag utrustade vi detta garage med ett integrerat säkerhetssystem. Vi installerade högupplöst kameraövervakning, trygghetsskapande bakgrundsljud och strategiskt placerade infoskärmar vid in- och utfart för att ge besökarna tydlig guidning och ett tryggt helhetsintryck från första stund.</p>
+              <h3>Kamera och incidentsökning</h3>
+              <p>Kameror väljs och placeras efter registreringsskylt, fordonsöverblick, gångstråk och kritiska punkter. Bildkvalitet, tidssynk, lagring och sökfunktioner planeras för att personalen ska kunna hitta relevanta händelser.</p>
+              <a href="/tjanster/kameraovervakning/">Se lösningar för kameraövervakning</a>
             </div>
           </article>
+
           <article class="ref-card">
-            <img src="https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?auto=format&fit=crop&q=80&w=800" alt="Större parkeringsanläggning med platsindikering och skärmar">
+            <img src="/assets/Galleria Duvan 1200x900.webp" alt="Entré- och handelsmiljö med kameraövervakning och teknisk drift" width="1200" height="900" loading="lazy" decoding="async">
             <div class="ref-content">
-              <h3>Större parkeringsanläggning</h3>
-              <p>En komplett lösning med integrerad kameraövervakning och dynamiska infoskärmar både vid portarna och inne i anläggningen. Här sitter även smarta platsindikerande kameror som inte bara guidar föraren till en ledig ruta med grön lampa, utan även levererar ovärderlig besöksstatistik för optimering av driften.</p>
+              <h3>ANPR, bom och grind</h3>
+              <p>Nummerplåtsigenkänning kan förenkla behöriga infarter och ge ett tydligare fordonsflöde. Vi samordnar kamera, listor, passage, betalning, styrsignaler, loggning och manuella reservrutiner.</p>
+              <a href="/tjanster/styrsystem-integration/">Läs om styrning och integration</a>
+            </div>
+          </article>
+
+          <article class="ref-card parkering-mobile-secondary">
+            <img src="/assets/anh visuell kommunikation 1200x900.webp" alt="Informationsskärm för vägvisning, driftstatus och visuell kommunikation" width="1200" height="900" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Intercom, vägvisning och utrop</h3>
+              <p>Intercom ger hjälp vid infart och betalning, medan skyltning och skärmar visar riktning, kapacitet och driftstatus. Zonstyrda utrop kan användas för information utan att blandas ihop med säkerhetssystem.</p>
+              <a href="/tjanster/styrsystem-integration/">Se möjligheter för integration</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section faq-cta" id="faq" style="border-top: 1px solid var(--avab-border);">
-      <div class="container">
+    <section class="section parkering-mobile-secondary" id="arbetssatt">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Hur vi jobbar</div>
+            <h2>Från trafikflöde och riskbild till en dokumenterad anläggning</h2>
+            <p class="lead-dark">Tekniken blir mer träffsäker och enklare att installera när trafik, kameratäckning, belysning, nätverk, bommar, skyltning och säkerhetsgränssnitt samordnas innan byggnation eller ombyggnad är låst.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="flow-card"><strong><em>1</em> Genomgång</strong><span>Vi går igenom ritningar, trafikflöden, infart och utfart, körytor, gångstråk, trapphus, betalning, bemanning, befintlig teknik, nätverk, belysning och vilka händelser ni behöver hantera.</span></div>
+          <div class="flow-card"><strong><em>2</em> <a class="text-link" href="/tjanster/projektering/">Projektering</a></strong><span>Vi tar fram kameraplacering, ANPR, intercom, vägvisning, utropszoner, nätverk, lagring, rack, integrationer, kabelvägar, miljökrav, gränsdragning och dokumentation.</span></div>
+          <div class="flow-card"><strong><em>3</em> Leverans</strong><span>AVAB installerar eller samordnar med bygg, el, IT, passage, parkering, brand och säkerhet. Därefter följer programmering, test, utbildning, dokumentation och överlämning.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section parkering-faq-cta" id="faq">
+      <div class="avab-container">
         <div class="faq-heading">
-          <div class="eyebrow">Kunskap</div>
-          <h2>Vanliga frågor om parkeringssystem</h2>
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Snabba svar inför ett parkerings- eller garageprojekt</h2>
+          <p>Korta svar för fastighetsägare, parkeringsoperatörer, projektörer, drift, IT, säkerhetsansvariga, elektriker och entreprenörer som vill få rätt teknik från början.</p>
         </div>
 
         <div class="compact-faq">
           <details class="faq-item">
-            <summary>Kan vi slippa pappersbiljetter och köer vid bommarna?</summary>
-            <p>Absolut. Genom att installera ANPR-kameror läser systemet av bilen redan innan den stannat. Bommen öppnas direkt och parkeringen kopplas automatiskt till besökarens digitala betalsystem.</p>
+            <summary>Vilken teknik behövs i parkering och garage?</summary>
+            <p>Vanliga delar är kameraövervakning, ANPR, bom- och grindintegration, intercom, informationsskärmar, vägvisning, utrop, nätverk, lagring och dokumenterad drift.</p>
           </details>
           <details class="faq-item">
-            <summary>Hur hjälper systemet kunden att hitta sin bil?</summary>
-            <p>I större anläggningar knyter vi ihop kameraövervakningen med bilens registreringsnummer. Besökaren knappar in sitt nummer på en skärm i trapphuset och får se en karta med exakt var bilen står.</p>
+            <summary>Kan ANPR öppna bommen automatiskt?</summary>
+            <p>Ja, nummerplåtsigenkänning kan tekniskt kopplas till behörighet och bomstyrning. Lösningen behöver samordnas med passage, betalning, säkerhetslogik, nätverk och verksamhetens integritetsrutiner.</p>
           </details>
           <details class="faq-item">
-            <summary>Varför ska man installera ljudsystem i ett parkeringshus?</summary>
-            <p>En tyst betongkällare upplevs ofta som otrygg. Ett dämpat, väl valt bakgrundsljud i gångstråk och trapphus maskerar obehagliga ekon och ökar trygghetskänslan markant.</p>
+            <summary>Kan kamerorna hitta en specifik bil eller incident?</summary>
+            <p>Rätt täckning, bildkvalitet, tidssynk, lagring och sökfunktioner gör det enklare att hitta relevanta händelser. Funktionerna anpassas efter syfte, behörighet och verksamhetens regler.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Behöver parkeringshuset intercom?</summary>
+            <p>Intercom är ofta värdefullt vid infart, utfart, betalstation, gångdörr och hjälpplats. Besökaren får kontakt med drift eller bevakning, och personalen kan hantera händelsen från rätt plats.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan systemet visa lediga platser?</summary>
+            <p>Ja. Sensorer, kamerabaserad beläggningsinformation och digital skyltning kan visa kapacitet och leda trafik. Noggrannhet och funktion beror på teknik, miljö och integration.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Är informationsutrop samma sak som talat utrymningslarm?</summary>
+            <p>Nej. Informationsutrop är en verksamhetsfunktion. Ett certifierat talat utrymningslarm är ett separat säkerhetssystem som projekteras, övervakas och dokumenteras efter anläggningens krav.</p>
+          </details>
+          <details class="faq-item">
+            <summary>När bör tekniken tas in i projektet?</summary>
+            <p>Ta in tekniken innan bomlägen, kabelvägar, nätverk, teknikrum, kamerafästen, belysning, skyltning, elmatning och säkerhetsgränssnitt är låsta. Då minskar ombyggnad och driften blir enklare.</p>
           </details>
         </div>
 
         <div class="fullwidth-cta">
           <div>
-            <div class="eyebrow">Trygghet sedan 1990</div>
-            <h2>Ska vi optimera ert parkeringshus?</h2>
-            <p>Rätt system minskar köerna, ökar tryggheten och ger er personal full kontroll över driften.</p>
+            <div class="eyebrow">Ta in oss tidigt</div>
+            <h2>Ska ni bygga, bygga om eller uppgradera en parkering?</h2>
+            <p>Ta in AVAB innan bomlägen, kamerafästen, belysning, nätverk, rack, kabelvägar, skyltning och säkerhetsgränssnitt är låsta. Då blir tekniken mer träffsäker, enklare för driftpersonalen och lättare att förvalta över tid.</p>
             <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
+              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
             </div>
           </div>
+
           <ul class="calc-list">
-            <li>ANPR för automatiskt in/utsläpp</li>
-            <li>Gobo-projektion för vägvisning</li>
-            <li>Trygghetsskapande ljudsystem</li>
+            <li>AV- och säkerhetsteknik för parkeringshus, garage, markparkering och fordonsinfart.</li>
+            <li>Underlag för fastighetsägare, parkering, projektör, entreprenör, el, IT och säkerhet.</li>
+            <li>Kamera, ANPR, bom, grind, intercom, vägvisning, utrop och säkerhetsgränssnitt.</li>
+            <li>Projektering, installation, programmering, test, utbildning, dokumentation och service.</li>
           </ul>
         </div>
       </div>

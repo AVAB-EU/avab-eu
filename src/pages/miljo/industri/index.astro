@@ -1,6 +1,6 @@
-﻿---
-import SiteHeader from "../../../components/SiteHeader.astro";
+---
 import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -9,422 +9,481 @@ import "../../../styles/avab.css";
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ljud, Bild & Säkerhet för Industri & Logistik | AVAB</title>
-  <meta name="description" content="Robust teknik för industrimiljöer. Vi projekterar AI-kameraövervakning, utrymningslarm, ANPR vid grindar och smarta utropssystem via Schoolbell Pro." />
-  
+  <title>Industri & logistik | Ljud, utrop, kamera och AV-teknik | AVAB</title>
+  <meta name="description" content="AVAB projekterar och installerar robust AV-teknik för industri och logistik: zonstyrda utrop, ljud, kamera, ANPR, mötesrum, informationsskärmar, styrning och dokumentation." />
+  <link rel="canonical" href="https://www.avab.eu/miljo/industri/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content="Industri & logistik | Ljud, utrop, kamera och AV-teknik | AVAB" />
+  <meta property="og:description" content="Robust kommunikation, kameraövervakning, grindintegration och mötesteknik för produktion, lager och logistik." />
+  <meta property="og:image" content="https://www.avab.eu/assets/kameraovervakning-hero.png" />
+  <meta property="og:image:width" content="2032" />
+  <meta property="og:image:height" content="774" />
+  <meta property="og:image:alt" content="Kameraövervakning vid en modern industri- eller logistikfastighet" />
+  <meta property="og:url" content="https://www.avab.eu/miljo/industri/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Industri & logistik | Ljud, utrop, kamera och AV-teknik | AVAB" />
+  <meta name="twitter:description" content="Komplett AV-teknik för produktion, verkstad, lager, logistikytor, grindar och mötesrum." />
+  <meta name="twitter:image" content="https://www.avab.eu/assets/kameraovervakning-hero.png" />
+  <meta name="twitter:image:alt" content="Kameraövervakning vid en modern industri- eller logistikfastighet" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "AVAB", "item": "https://avab.eu/" },
-        { "@type": "ListItem", "position": 2, "name": "Miljöer", "item": "https://avab.eu/miljo/" },
-        { "@type": "ListItem", "position": 3, "name": "Industri", "item": "https://avab.eu/miljo/industri/" }
-      ]
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AV-teknik för industri och logistik",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "AVAB",
+      "url": "https://www.avab.eu/",
+      "telephone": "+46548202080",
+      "email": "info@avab.eu",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Skraggevägen 4",
+        "postalCode": "663 41",
+        "addressLocality": "Hammarö",
+        "addressRegion": "Värmland",
+        "addressCountry": "SE"
+      }
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Hur når vi ut med utrop i extremt bullriga produktionsmiljöer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Vi använder kraftfulla, riktade högtalarsystem kombinerat med styrsystemet Schoolbell Pro. Det gör att ni kan schemalägga signaler eller göra live-utrop i specifika zoner med garanterad taluppfattbarhet (STI), oavsett bakgrundsbuller."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Tål utrustningen damm, fukt och vibrationer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja. Industrimiljöer kräver extrem robusthet. Vi projekterar och installerar uteslutande IP-klassad utrustning som är byggd för att klara tuffa förhållanden, temperaturväxlingar och hög belastning över tid."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kan kamerasystemet automatisera inpasseringen av lastbilar?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Absolut. Genom att integrera ANPR-kameror (automatisk nummerplåtsigenkänning) vid grindar och bommar öppnas tillträdet automatiskt för behöriga fordon, vilket effektiviserar hela logistikflödet."
-          }
+    "areaServed": "Sverige",
+    "serviceType": [
+      "AV-teknik för industri och logistik",
+      "Zonstyrda utrop och ljudsystem",
+      "Kameraövervakning och incidentsökning",
+      "ANPR och integration vid grindar",
+      "Talat utrymningslarm",
+      "Mötesrum och informationsskärmar",
+      "Styrsystem och integration",
+      "Projektering, installation och dokumentation"
+    ],
+    "description": "AVAB projekterar, installerar och driftsätter robusta AV-lösningar för industri och logistik med zonstyrda utrop, ljud, kameraövervakning, ANPR, mötesteknik, informationsskärmar, styrning och dokumentation."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vilken AV-teknik behöver en industri- eller logistikanläggning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Behovet styrs av verksamheten, men vanliga delar är zonstyrda utrop, högtalare för bullriga miljöer, kameraövervakning, grind- och ANPR-integration, informationsskärmar, mötesteknik, styrning samt tydlig dokumentation."
         }
-      ]
+      },
+      {
+        "@type": "Question",
+        "name": "Hur får man tydliga utrop i en bullrig produktionshall?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Systemet behöver dimensioneras efter bullernivå, lokalens akustik, maskiner, arbetszoner och meddelandets betydelse. Rätt högtalartyp, placering, riktning, signalbehandling och inmätning är viktigare än att bara öka effekten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan signaler och utrop delas mellan olika hallar och skift?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Produktion, lager, lastzon, kontor och utomhusytor kan få egna zoner, scheman, meddelanden och behörigheter. Systemet kan även ge manuella live-utrop där verksamheten behöver det."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Är vanliga driftutrop samma sak som talat utrymningslarm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nej. Driftutrop, skiftsignaler och informationsmeddelanden är verksamhetsfunktioner. Ett certifierat talat utrymningslarm är ett separat säkerhetssystem som projekteras, övervakas och dokumenteras efter de krav som gäller för anläggningen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan kamera och ANPR integreras med grindar och bommar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, tekniskt kan nummerplåtsigenkänning och kamerahändelser kopplas till passage, grindar och logistikflöden. Lösningen behöver projekteras tillsammans med behörigheter, säkerhetslogik, nätverk och verksamhetens integritetsrutiner."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Tål utrustningen damm, fukt, temperaturväxlingar och vibrationer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Utrustningen väljs efter den verkliga miljön. IP-klass, temperaturintervall, korrosionsrisk, vibrationer, rengöring, montage och kabelskydd behöver bedömas var för sig eftersom en IP-klass inte beskriver alla belastningar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "När bör AV-tekniken tas in i industriprojektet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ta in AV innan kabelvägar, nätverk, teknikrum, grindar, takmontage, elmatning och säkerhetsgränssnitt är låsta. Tidig samordning minskar ombyggnad och gör systemet enklare att installera, testa och förvalta."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Start",
+        "item": "https://www.avab.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Miljöer",
+        "item": "https://www.avab.eu/miljo/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Industri och logistik",
+        "item": "https://www.avab.eu/miljo/industri/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.avab.eu/miljo/industri/#webpage",
+    "url": "https://www.avab.eu/miljo/industri/",
+    "name": "Industri & logistik | Ljud, utrop, kamera och AV-teknik | AVAB",
+    "description": "Robust AV-teknik för industri och logistik med zonstyrda utrop, ljud, kamera, ANPR, mötesrum, informationsskärmar, styrning och dokumentation.",
+    "inLanguage": "sv-SE",
+    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
+    "datePublished": "2025-01-01",
+    "dateModified": "2026-08-03",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".lead", ".compact-faq"]
     }
-  ]
+  }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preload" as="image" fetchpriority="high"
+    href="/assets/kameraovervakning-hero.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <style>
-    /* NÖDRAKETEN */
-    .single-post .site-content .ast-container, .single-post .entry-content, .single-post .post-content { max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
-    .single-post .site-content { padding: 0 !important; }
-
-    :root {
-      --avab-green: #8FC025; 
-      --avab-green-glow: rgba(143, 192, 37, 0.4);
-      --avab-dark: #282E29;  
-      --avab-dark-muted: #3A433D;
-      --avab-grey: #E9EAE9;
-      --avab-light: #F4F5F4;
-      --avab-white: #ffffff; 
-      --avab-border: rgba(40, 46, 42, 0.1);
-      --avab-shadow-sm: 0 4px 12px rgba(40, 46, 42, 0.05);
-      --avab-shadow-lg: 0 24px 48px rgba(40, 46, 42, 0.12);
-      --avab-radius: 24px;
-      --avab-radius-sm: 16px;
-      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    .solution-card {
+      border: 2px solid rgba(143, 192, 37, 0.62);
+      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
+      position: relative;
+      overflow: hidden;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--avab-dark); background: var(--avab-white); line-height: 1.65; -webkit-font-smoothing: antialiased; }
-    
-    .container { width: min(calc(100% - 48px), 1280px); margin: 0 auto; }
-    .section { padding: 56px 0; }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-in { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-
-    /* Hero */
-    .hero { 
-      position: relative; padding: 120px 0 80px; 
-      background: linear-gradient(135deg, rgba(40, 46, 42, 0.8) 0%, rgba(40, 46, 42, 0.6) 100%), 
-                  url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920') center/cover;
-      color: #ffffff !important; 
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      background: var(--avab-green);
     }
-    .hero h1 { color: #ffffff !important; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; max-width: 25ch; }
-    .hero p { color: #ffffff !important; font-size: 1.25rem; max-width: 68ch; opacity: 0.95; margin-bottom: 0; }
+    .solution-card h3,
+    .solution-card .bullet-list { position: relative; z-index: 1; }
 
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: var(--avab-green); color: var(--avab-dark); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }
-    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #ffffff; }
-
-    h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; margin-bottom: 16px; line-height: 1.15; }
-    .lead-dark { font-size: 1.15rem; max-width: 68ch; color: var(--avab-dark-muted); margin-bottom: 20px; }
-
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-    
-    .summary-list { display: grid; gap: 16px; list-style: none; margin-top: 62px; }
-    .summary-list li { padding: 24px 20px; border-radius: var(--avab-radius-sm); background: var(--avab-white); box-shadow: var(--avab-shadow-sm); border: 1px solid var(--avab-border); }
-    .summary-list strong { display: block; margin-bottom: 8px; color: var(--avab-dark); font-size: 1.15rem; }
-
-    /* Solutions Grid */
-    .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 24px; }
-    .solution-card { padding: 40px; border-radius: var(--avab-radius); background: var(--avab-white); border: 1px solid var(--avab-border); transition: var(--transition-smooth); display: flex; flex-direction: column; position: relative; }
-    .solution-card:hover { transform: translateY(-8px); box-shadow: var(--avab-shadow-lg); border-color: var(--avab-green); }
-    
-    .solution-card-top { flex-grow: 1; display: flex; flex-direction: column; }
-    .solution-card h3 { font-weight: 800; margin-bottom: 16px; font-size: 1.5rem; min-height: 3.6rem; }
-    .solution-card .intro-text { margin-bottom: 24px; color: var(--avab-dark-muted); font-size: 1.05rem; line-height: 1.6; }
-
-    .solution-card-bottom { margin-top: auto; }
-    .solution-expandable { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .solution-expand-inner { overflow: hidden; min-height: 0; opacity: 1; transition: opacity 0.3s ease; }
-
-
-    .bullet-list { list-style: none; margin-top: 20px; }
-    .bullet-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; color: var(--avab-dark-muted); }
-    .bullet-list li::before { content: "✓"; position: absolute; left: 0; color: var(--avab-green); font-weight: 800; }
-    .cat-link { color: var(--avab-dark); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--avab-green); transition: var(--transition-smooth); }
-    .cat-link:hover { background: var(--avab-green); color: #fff; }
-
-    /* Flow / Pris / Ref */
-    .flow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 40px; }
-    .flow-card { padding: 24px; border-radius: var(--avab-radius-sm); background: var(--avab-white); border: 1px solid var(--avab-border); }
-    .flow-card strong { display: block; min-height: 3.2rem; color: var(--avab-green); font-size: 1.05rem; margin-bottom: 12px; line-height: 1.4; }
-    .flow-card span { font-size: 0.95rem; color: var(--avab-dark-muted); min-height: 4.5rem; display: block; line-height: 1.5; }
-
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; text-align: left; }
-    .pricing-card { padding: 40px; border-radius: var(--avab-radius); background: var(--avab-white); border: 1px solid var(--avab-border); transition: var(--transition-smooth); display: flex; flex-direction: column; align-items: flex-start; }
-    .pricing-card h3 { font-size: 2.2rem; font-weight: 800; margin: 16px 0; color: var(--avab-dark); }
-    .pricing-card p { color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; font-size: 1.05rem; }
-    .pricing-card.highlight { border: 2px solid var(--avab-green); position: relative; box-shadow: var(--avab-shadow-lg); }
-
-    .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-top: 40px; align-items: stretch; }
-    .ref-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%; background: var(--avab-white); border-radius: var(--avab-radius); border: 1px solid var(--avab-border); box-shadow: var(--avab-shadow-sm); transition: var(--transition-smooth); }
-    .ref-card:hover { transform: translateY(-5px); box-shadow: var(--avab-shadow-lg); border-color: var(--avab-green); }
-    .ref-card img { width: 100%; height: 240px; object-fit: cover; }
-    .ref-content { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; }
-    .ref-content h3 { font-size: 1.4rem; margin-bottom: 12px; min-height: auto; } 
-    .ref-content p { font-size: 1rem; color: var(--avab-dark-muted); line-height: 1.6; margin-bottom: 0; }
-
-
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; border-radius: 999px; font-weight: 700; background: var(--avab-green); color: var(--avab-dark); text-decoration: none; transition: var(--transition-smooth); font-size: 1.05rem; }
-    .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px var(--avab-green-glow); }
-    
-    @media (max-width: 1080px) { .two-col, .ref-grid { grid-template-columns: 1fr; } .summary-list { margin-top: 24px; } }
-    @media (max-width: 768px) {
-      .hero { padding: 100px 0 60px; } .section { padding: 40px 0; } 
-      .solution-card h3 { min-height: auto; } .solution-expandable { grid-template-rows: 1fr; }      .flow-card strong, .flow-card span { min-height: auto; } 
+    .ref-content a {
+      margin-top: auto;
+      font-weight: 800;
+      color: var(--avab-dark);
     }
-    /* Mobilanpassning (beslut per sida, dokumenterat):
-       - #utmaning (inledande problemnarrativ, sekundar fordjupning pa mobil)
-       Huvudbudskap, losningssektion, referenser/bevisning, FAQ och CTA visas alltid. */
-    @media (max-width: 768px) {
-      #utmaning { display: none; }
-    }
-    /* ---- FAQ (sajtstandard: details/summary, samma som ovriga sidor) ---- */
+    .ref-content a:hover { color: var(--avab-green); }
+    .ref-content a::after { content: " →"; color: var(--avab-green); }
+
+    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
+    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
+    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
+    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
+
     .compact-faq {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       column-gap: 28px;
       row-gap: 0;
       max-width: 1060px;
-      margin: 0;
+      margin: 0 auto;
     }
     .compact-faq details.faq-item { padding: 20px 0; }
     .compact-faq summary { font-size: 1.05rem; }
     .compact-faq details.faq-item p { font-size: 0.98rem; }
     .compact-faq details.faq-item:nth-child(1),
     .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
+
+    .industri-faq-cta {
+      padding-top: 48px;
+      padding-bottom: 96px;
+    }
+    .industri-faq-cta .compact-faq { margin-bottom: 64px; }
+
     @media (max-width: 768px) {
       .compact-faq { grid-template-columns: 1fr; }
       .compact-faq details.faq-item:nth-child(2) { border-top: none; }
+      .industri-faq-cta {
+        padding-top: 40px;
+        padding-bottom: 72px;
+      }
+      .industri-faq-cta .compact-faq { margin-bottom: 44px; }
+      .industri-mobile-secondary { display: none !important; }
     }
-
-    /* ---- Kortrader: 4 kort ska ligga 2 + 2 (jamna rader) ---- */
-    @media (min-width: 1081px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (min-width: 769px) and (max-width: 1080px) {
-      .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    /* ---- Statiska kort: innehallet alltid synligt (ingen hover-expandering) ---- */
-    .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-    .solution-expand-inner { opacity: 1; }
-    .solution-card:hover .solution-expandable,
-    .solution-card:focus-within .solution-expandable { grid-template-rows: 1fr; opacity: 1; margin-top: 0; }
-
-    /* ---- FAQ + CTA i samma sektion, enligt mastern pa sporthallssidan ---- */
-    .faq-cta { padding-top: 48px; padding-bottom: 96px; }
-    .faq-cta .compact-faq { margin-bottom: 64px; }
-    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
-    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
-    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 0; max-width: 760px; }
   </style>
 </head>
 <body>
   <SiteHeader />
 
-  <header class="hero">
-    <div class="container animate-in">
-      <div class="eyebrow">Miljö: Industri & Logistik</div>
-      <h1>Teknik som skapar kontroll, säkerhet och effektiv drift</h1>
-      <p>I en industrimiljö ska allt fungera – hela tiden. Vi bygger robusta system för AI-övervakning, Schoolbell Pro-styrda utrop och säkra konferensrum som tål tuffa miljöer och intensiva flöden.</p>
-      <div style="margin-top: 40px;"><a class="button" href="/kontakt/">Boka kostnadsfri rådgivning</a></div>
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="https://www.avab.eu/">Start</a></li>
+        <li><a href="https://www.avab.eu/miljo/">Miljöer</a></li>
+        <li><span aria-current="page">Industri och logistik</span></li>
+      </ol>
     </div>
-  </header>
+  </nav>
 
-  <section class="fact-band" aria-label="Snabbfakta industri">
-    <div class="fact-grid">
-      <div class="fact"><span>Miljö</span><strong>Produktion och logistik</strong></div>
-      <div class="fact"><span>Ljud</span><strong>Utrop, larm och zoner</strong></div>
-      <div class="fact"><span>Kamera</span><strong>ANPR och incidentkontroll</strong></div>
-      <div class="fact"><span>Drift</span><strong>Robust teknik för 24/7</strong></div>
-      <div class="fact"><span>Integration</span><strong>Passer, larm och styrning</strong></div>
-      <div class="fact"><span>Leverans</span><strong>Projektering till service</strong></div>
+  <section class="hero" style="--hero-image:url('/assets/kameraovervakning-hero.png');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Industri & logistik</div>
+        <h1>Komplett AV-lösning för industri och logistik</h1>
+        <p class="lead">
+          Tydliga utrop, robust ljud, kameraövervakning, grindintegration och stabil mötesteknik för produktion, verkstad, lager och logistikytor.
+          För verksamheter, fastighetsägare, projektörer och entreprenörer som vill få tekniken rätt från ritning till daglig drift.
+        </p>
+
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/kontakt/">Skicka ritningar eller boka genomgång</a>
+            <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
+            <a class="button button-quiet" href="#teknikomraden">Se lösningar</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <main>
-    <section class="section" id="utmaning" style="border-bottom: 1px solid var(--avab-border);">
-      <div class="container two-col">
-        <div class="animate-in">
-          <div class="eyebrow">Verkligheten</div>
-          <h2>När små störningar får stora konsekvenser</h2>
-          <p class="lead-dark">Industrimiljöer handlar om produktion, flöden och tillgänglighet. Över massiva ytor sker interna transporter, processövervakning och logistik parallellt. Att manuellt ha överblick i realtid är nästintill omöjligt, och bristande kommunikation i bullriga lokaler skapar livsfarliga risker.</p>
-          <p class="lead-dark">Vi projekterar integrerade system som gör vardagen enklare och säkrare. Genom att knyta ihop kameraövervakning, passagekontroll och zonindelade utropssystem får driften full kontroll över anläggningen, dygnet runt.</p>
+  <section class="fact-band industri-mobile-secondary" aria-label="Snabbfakta industri och logistik">
+    <div class="fact-grid">
+      <div class="fact"><span>Miljö</span><strong>Produktion, lager &amp; logistik</strong></div>
+      <div class="fact"><span>Kommunikation</span><strong>Zonstyrda utrop och signaler</strong></div>
+      <div class="fact"><span>Säkerhet</span><strong>Kamera, ANPR och larmgränssnitt</strong></div>
+      <div class="fact"><span>Robusthet</span><strong>Damm, fukt och temperatur</strong></div>
+      <div class="fact"><span>Arbetsplatser</span><strong>Mötesrum och infoskärmar</strong></div>
+      <div class="fact"><span>Leverans</span><strong>Projektering till drift</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section section--light" id="far-du">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Det här får du</div>
+            <h2>Teknik som når fram, håller över tid och är enkel att förvalta</h2>
+            <p class="lead-dark">Industrimiljöer ställer olika krav i produktionshall, lager, lastzon, kontor och utomhusytor. AVAB samordnar kommunikation, säkerhet, mötesteknik och styrning så att systemen fungerar tillsammans utan att blanda ihop verksamhetsfunktioner med certifierade säkerhetssystem.</p>
+          </div>
         </div>
-        <aside class="animate-in" style="animation-delay: 0.1s;">
-          <ul class="summary-list">
-            <li><strong>Buller och akustik</strong> Talat utrymningslarm och personalutrop måste nå fram. Vi kalibrerar ljudsystem som överröstar maskinerna utan att bli obegripliga.</li>
-            <li><strong>Automatisering av logistik</strong> Att låta personal manuellt öppna grindar tar tid. ANPR-kameror läser av lastbilar och sköter inpasseringen automatiskt.</li>
-            <li><strong>Robusthet är ett krav</strong> Teknik i industri utsätts för damm, fukt och vibrationer. Vi installerar uteslutande utrustning byggd för de tuffaste förhållandena.</li>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span>
+            <h3>Tydliga utrop</h3>
+            <p>Rätt högtalare, placering och zoner för tal och signaler i bullriga lokaler.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3>Robust installation</h3>
+            <p>Utrustning, montage och kapsling valda efter den verkliga miljöbelastningen.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <h3>Snabb incidentsökning</h3>
+            <p>Kameravinklar, lagring och sökfunktioner planerade för verksamhetens behov.</p>
+          </article>
+          <article class="value-card industri-mobile-secondary">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 17v2"/><path d="M17 17v2"/><path d="M6 7l2-3h8l2 3"/><circle cx="7" cy="12" r="1"/><circle cx="17" cy="12" r="1"/></svg></span>
+            <h3>Effektiv infart</h3>
+            <p>ANPR och grindintegration kan förenkla behöriga fordonsflöden.</p>
+          </article>
+          <article class="value-card industri-mobile-secondary">
+            <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg></span>
+            <h3>Dokumenterad drift</h3>
+            <p>Märkning, behörigheter, utbildning och underlag för framtida service.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="losning">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Lösning</div>
+          <h2>En industrifastighet är flera teknikmiljöer i samma anläggning</h2>
+          <p>Produktionshallens buller kräver en annan ljudlösning än kontoret. Lager, lastzoner och perimeter behöver andra kameravinklar och ljusförhållanden än entré och reception. Samtidigt ska mötesrum, informationsskärmar och driftplatser vara enkla för personalen att använda.</p>
+          <p>Därför projekterar vi <a class="text-link" href="/tjanster/ljudsystem/">ljud och utrop</a>, <a class="text-link" href="/tjanster/kameraovervakning/">kameraövervakning</a>, <a class="text-link" href="/tjanster/styrsystem-integration/">styrning och integration</a>, mötesteknik och <a class="text-link" href="/tjanster/talat-utrymningslarm/">talat utrymningslarm</a> med tydliga gränssnitt. Varje system får rätt funktion, behörighet, nätverk och dokumentation.</p>
+        </div>
+
+        <aside class="card solution-card">
+          <h3>Därför projekterar vi systemet som en helhet</h3>
+          <ul class="bullet-list">
+            <li>Bullernivåer, akustik och arbetszoner ligger till grund för högtalarplacering och ljudnivå.</li>
+            <li>Produktion, lager, lastzon, kontor och utomhusytor kan få separata utropszoner och behörigheter.</li>
+            <li>Kamera, ANPR, passage, grindar och logistikflöden samordnas med verksamhetens säkerhetslogik.</li>
+            <li>Driftutrop hålls tydligt åtskilda från certifierat <a class="text-link" href="/tjanster/talat-utrymningslarm/">talat utrymningslarm</a>.</li>
+            <li>Mötesrum, infoskärmar och personalytor får enhetliga anslutningar och enkel styrning.</li>
+            <li>Nätverk, rack, elmatning, kabelvägar, märkning, utbildning och service planeras från början.</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-header animate-in">
-          <div class="eyebrow">Våra lösningar</div>
-          <h2 style="margin-bottom: 16px;">Det digitala industri-ekosystemet</h2>
-        </div>
-        <div class="solutions-grid">
-          
-          <article class="solution-card">
-            <div class="solution-card-top">
-              <h3>Kameror & Processövervakning</h3>
-              <p class="intro-text">Säkra perimetern och övervaka kritiska produktionsmoment. Med AI-kameror hittar ni snabbt specifika händelser och kan analysera driftflöden effektivt.</p>
-            </div>
-            <div class="solution-card-bottom">
-              <div class="solution-expandable">
-                <div class="solution-expand-inner">
-                  <ul class="bullet-list">
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Trygghet:</a> Skydda lager och känsliga laboratorier</li>
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Logistik:</a> ANPR-kameror för fordonsinpassering</li>
-                    <li><a href="/tjanster/kameraovervakning/" class="cat-link">Exakt sökning:</a> Utred incidenter på sekunder</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="solution-card">
-            <div class="solution-card-top">
-              <h3>Utrop & Schoolbell Pro</h3>
-              <p class="intro-text">Nå ut med information även i de bullrigaste hallarna. Vi bygger zonindelade system där utropen schemaläggs och styrs smidigt via Schoolbell Pro.</p>
-            </div>
-            <div class="solution-card-bottom">
-              <div class="solution-expandable">
-                <div class="solution-expand-inner">
-                  <ul class="bullet-list">
-                    <li><a href="https://www.schoolbell.se" target="_blank" class="cat-link" style="text-decoration: underline;">Schoolbell Pro:</a> Schemalagda signaler & utrop</li>
-                    <li><a href="/tjanster/ljudsystem/" class="cat-link">Zonindelning:</a> Rätt meddelande till rätt hall</li>
-                    <li><a href="/tjanster/talat-utrymningslarm/" class="cat-link">Säkerhet:</a> Talat utrymningslarm (TUL)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="solution-card">
-            <div class="solution-card-top">
-              <h3>Mötesrum & Infoskärmar</h3>
-              <p class="intro-text">Kommunikation är A och O. Vi utrustar konferensrum och personalmatsalar med stabil bild- och ljudteknik för friktionsfria genomgångar och möten.</p>
-            </div>
-            <div class="solution-card-bottom">
-              <div class="solution-expandable">
-                <div class="solution-expand-inner">
-                  <ul class="bullet-list">
-                    <li><a href="/tjanster/skarmar-projektorer/" class="cat-link">Signage:</a> Informationsskärmar i fikarummet</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Mötesrum:</a> Trådlös presentation och hybridstöd</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Enkelhet:</a> Starta tekniken med ett knapptryck</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="solution-card">
-            <div class="solution-card-top">
-              <h3>Event & Tillfällig Teknik</h3>
-              <p class="intro-text">Vid invigningar eller lanseringar krävs en professionell inramning. Komplettera er fasta teknik genom att hyra scen, ljud och ljus vid behov.</p>
-            </div>
-            <div class="solution-card-bottom">
-              <div class="solution-expandable">
-                <div class="solution-expand-inner">
-                  <ul class="bullet-list">
-                    <li><a href="https://www.hyrljud.nu" target="_blank" class="cat-link" style="text-decoration: underline;">hyrljud<span>.</span>nu:</a> Skala upp med scenteknik</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Lansering:</a> Tillfälliga bild- och ljudinstallationer</li>
-                    <li><a href="/tjanster/styrsystem-integration/" class="cat-link">Ekonomi:</a> Betala bara när ni behöver det</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="flow-grid animate-in">
-          <div class="flow-card"><strong>ANPR-kameror → Effektivitet</strong><span>Lastbilar skannas vid grinden och släpps in per automatik, vilket kapar ledtider.</span></div>
-          <div class="flow-card"><strong>Schoolbell Pro → Tydlighet</strong><span>Gör det möjligt att styra skiftbyten och säkerhetsutrop digitalt över enorma ytor.</span></div>
-          <div class="flow-card"><strong>IP-klassning → Långsiktighet</strong><span>Rätt val av damm- och fukttålig utrustning minimerar servicekostnader över tid.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="border-top: 1px solid var(--avab-border); background: var(--avab-white);">
-      <div class="container animate-in">
-        <div class="section-header">
-          <div class="eyebrow">Investering</div>
-          <h2 style="margin-bottom: 16px;">Vad kostar industritekniken?</h2>
-          <p class="lead-dark" style="margin-bottom: 40px;">Priset styrs av anläggningens yta, krav på utrymningslarm och hur komplext säkerhetsnätverket behöver vara. Här är en grov uppskattning för budgetering.</p>
-        </div>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Mindre lager & verkstad</div>
-            <h3>100–300 kkr</h3>
-            <p>Passar den mindre industrin. Grundläggande kameraövervakning för perimeterskydd, utrustning för fikarum/mötesrum och ett enkelt zonstyrt ljudsystem.</p>
-          </div>
-          <div class="pricing-card highlight">
-            <div class="eyebrow">Mellanstor produktion</div>
-            <h3>300–800 kkr</h3>
-            <p>För medelstora fabriker. Integrerad kameraanalys, ANPR vid logistikgrindar, talat utrymningslarm och utrop via Schoolbell Pro.</p>
-          </div>
-          <div class="pricing-card">
-            <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Stora industrikomplex</div>
-            <h3>800 kkr +</h3>
-            <p>Storskaliga logistik- och industriparker. Inkluderar avancerad processövervakning, djupt integrerade säkerhetssystem och hundratals zonstyrda högtalare.</p>
+    <section class="section section--light" id="teknikomraden">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Teknikområden</div>
+            <h2>Kommunikation, säkerhet och möten som fungerar tillsammans</h2>
+            <p class="lead-dark">Bra industriteknik ska stödja driften utan att bli ännu ett system som personalen måste felsöka. Funktionerna anpassas efter miljön och samlas i en tydlig lösning med rätt gränsdragning mot IT, passage, brand och maskinsäkerhet.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section" style="border-top: 1px solid var(--avab-border);">
-      <div class="container">
-        <div class="eyebrow">Industrireferenser</div>
-        <h2>Teknik som håller produktionen igång</h2>
-        <div class="ref-grid animate-in">
+        <div class="proof-strip industri-mobile-secondary">
+          <div class="proof-item"><strong>35+ års erfarenhet</strong><span>Ljud, bild, kamera, styrning och installation.</span></div>
+          <div class="proof-item"><strong>Hanza Mechanics</strong><span>Konferensteknik och rumsbokning i en industriverksamhet.</span></div>
+          <div class="proof-item"><strong>Från hall till grind</strong><span>Zoner, infart, mötesrum och gemensamma ytor.</span></div>
+          <div class="proof-item"><strong>Installation och service</strong><span>En partner även efter driftsättning.</span></div>
+        </div>
+
+        <div class="grid-3">
           <article class="ref-card">
-            <img src="https://images.unsplash.com/photo-1565439390118-bbf175517e45?auto=format&fit=crop&q=80&w=800" alt="Modern produktionsanläggning maskiner">
+            <img src="/assets/avab hogtalare installerade.webp" alt="Professionellt installerade högtalare för zonstyrda utrop och ljud" width="1200" height="900" loading="lazy" decoding="async">
             <div class="ref-content">
-              <h3>[Platshållare: Modern Produktionsanläggning]</h3>
-              <p>Vi säkrade en bullrig produktionsmiljö genom att installera IP-klassade högtalare knutna till Schoolbell Pro. Utrop och skiftsignaler når nu fram med extrem tydlighet, och perimetern övervakas via smarta kameror.</p>
+              <h3>Utrop och zonstyrt ljud</h3>
+              <p>Högtalartyp, placering, riktning och signalbehandling anpassas efter buller och akustik. Produktion, lager, lastzon och utomhusytor kan styras separat med schemalagda signaler och behöriga live-utrop.</p>
+              <a href="/tjanster/ljudsystem/">Läs om professionella ljudsystem</a>
             </div>
           </article>
+
           <article class="ref-card">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7ce30c8?auto=format&fit=crop&q=80&w=800" alt="Stort logistikcenter lager hyllor">
+            <img src="/assets/kameraovervakning-hero.png" alt="Kameraövervakning för industri, lager, perimeter och logistik" width="2032" height="774" loading="lazy" decoding="async">
             <div class="ref-content">
-              <h3>[Platshållare: Stort Logistikcenter]</h3>
-              <p>En helhetslösning där vi integrerade ANPR-kameror vid infarten för att automatisera godsmottagningen. Samtidigt utrustades mötesrum och matsalar med driftsäker bild- och ljudteknik för internkommunikation.</p>
+              <h3>Kamera, ANPR och incidenthantering</h3>
+              <p>Perimeter, lager, känsliga ytor och infarter får kameror efter syfte och ljusförhållanden. ANPR kan integreras med grindar, medan sökfunktioner och lagring förenklar utredning av relevanta händelser.</p>
+              <a href="/tjanster/kameraovervakning/">Se lösningar för kameraövervakning</a>
+            </div>
+          </article>
+
+          <article class="ref-card industri-mobile-secondary">
+            <img src="/assets/Hanza konf 1200x900.webp" alt="Konferensrum hos Hanza Mechanics i Töcksfors med AV-teknik från AVAB" width="1200" height="900" loading="lazy" decoding="async">
+            <div class="ref-content">
+              <h3>Mötesrum hos Hanza Mechanics</h3>
+              <p>Hos Hanza Mechanics i Töcksfors levererade AVAB två konferensrum med 85-tumsskärmar, Crestron AirMedia, Teams/BYOD, Sennheiser-videobar och rumsbokningspaneler.</p>
+              <a href="/referenser/hanza-konferens-tocksfors/">Se referensprojektet</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section faq-cta" id="faq" style="border-top: 1px solid var(--avab-border);">
+    <section class="section industri-mobile-secondary" id="arbetssatt">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Hur vi jobbar</div>
+            <h2>Från driftbehov och riskbild till en dokumenterad anläggning</h2>
+            <p class="lead-dark">Tekniken blir robustare och enklare att installera när buller, kameratäckning, grindar, nätverk, rack, kabelvägar och säkerhetsgränssnitt samordnas innan byggnation eller ombyggnad är låst.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="flow-card"><strong><em>1</em> Genomgång</strong><span>Vi går igenom ritningar, verksamhetsflöden, buller, arbetszoner, lager, lastytor, infarter, befintlig teknik, IT-miljö, behörigheter och vad personalen faktiskt behöver göra.</span></div>
+          <div class="flow-card"><strong><em>2</em> <a class="text-link" href="/tjanster/projektering/">Projektering</a></strong><span>Vi tar fram zonplan, högtalar- och kameraplacering, ANPR, nätverk, lagring, styrning, rack, kabelvägar, gränsdragning, miljökrav och dokumentation.</span></div>
+          <div class="flow-card"><strong><em>3</em> Leverans</strong><span>AVAB installerar eller samordnar med bygg, elektriker, IT, passage, brand och säkerhet. Därefter följer programmering, test, inmätning, utbildning, dokumentation och överlämning.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section industri-faq-cta" id="faq">
       <div class="avab-container">
         <div class="faq-heading">
-          <div class="eyebrow">Kunskap</div>
-          <h2>Vanliga frågor om industriteknik</h2>
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Snabba svar inför ett industri- eller logistikprojekt</h2>
+          <p>Korta svar för verksamhetsansvariga, fastighetsägare, projektörer, IT, säkerhetsansvariga, elektriker och entreprenörer som vill få rätt teknik från början.</p>
         </div>
 
         <div class="compact-faq">
           <details class="faq-item">
-            <summary>Hur når vi ut med utrop i extremt bullriga miljöer?</summary>
-            <p>Vi använder kraftfulla, riktade högtalarsystem kombinerat med styrsystemet Schoolbell Pro. Det gör att ni kan schemalägga signaler eller göra live-utrop med garanterad taluppfattbarhet.</p>
+            <summary>Vilken AV-teknik behöver industri och logistik?</summary>
+            <p>Vanliga delar är zonstyrda utrop, högtalare för bullriga miljöer, kameraövervakning, grind- och ANPR-integration, informationsskärmar, mötesteknik, styrning samt dokumenterad drift.</p>
           </details>
           <details class="faq-item">
-            <summary>Tål utrustningen damm och temperaturväxlingar?</summary>
-            <p>Ja. Industrimiljöer kräver extrem robusthet. Vi projekterar och installerar uteslutande IP-klassad utrustning som är byggd för att klara tuffa förhållanden och hög belastning över tid.</p>
+            <summary>Hur får man tydliga utrop i en bullrig hall?</summary>
+            <p>Systemet dimensioneras efter bullernivå, akustik, maskiner, arbetszoner och meddelandets betydelse. Rätt högtalartyp, placering, riktning och signalbehandling är viktigare än att bara öka effekten.</p>
           </details>
           <details class="faq-item">
-            <summary>Kan kamerasystemet automatisera insläpp av lastbilar?</summary>
-            <p>Absolut. Genom att integrera ANPR-kameror (nummerplåtsigenkänning) vid grindar och bommar öppnas tillträdet automatiskt för behöriga fordon, vilket snabbar upp logistikflödet.</p>
+            <summary>Kan signaler och utrop delas mellan olika zoner?</summary>
+            <p>Ja. Produktion, lager, lastzon, kontor och utomhusytor kan få egna zoner, scheman, meddelanden och behörigheter. Systemet kan även ge manuella live-utrop där det behövs.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Är driftutrop samma sak som talat utrymningslarm?</summary>
+            <p>Nej. Driftutrop och skiftsignaler är verksamhetsfunktioner. Ett certifierat talat utrymningslarm är ett separat säkerhetssystem som projekteras, övervakas och dokumenteras efter anläggningens krav.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan kamera och ANPR styra grindar och bommar?</summary>
+            <p>Tekniskt kan nummerplåtsigenkänning och kamerahändelser integreras med passage och grindar. Lösningen behöver samordnas med behörigheter, säkerhetslogik, nätverk och verksamhetens integritetsrutiner.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Tål utrustningen damm, fukt och vibrationer?</summary>
+            <p>Utrustningen väljs efter den verkliga miljön. IP-klass, temperaturintervall, korrosion, vibrationer, rengöring, montage och kabelskydd bedöms var för sig eftersom en IP-klass inte beskriver alla belastningar.</p>
+          </details>
+          <details class="faq-item">
+            <summary>När bör AV-tekniken tas in i projektet?</summary>
+            <p>Ta in AV innan kabelvägar, nätverk, teknikrum, grindar, takmontage, elmatning och säkerhetsgränssnitt är låsta. Då minskar ombyggnad och systemet blir enklare att installera, testa och förvalta.</p>
           </details>
         </div>
 
         <div class="fullwidth-cta">
           <div>
-            <div class="eyebrow">Trygghet sedan 1990</div>
-            <h2>Ska vi rita upp er anläggning?</h2>
-            <p>Låt oss projektera robusta system som förenklar driften, ökar säkerheten och håller över tid.</p>
+            <div class="eyebrow">Ta in oss tidigt</div>
+            <h2>Ska ni bygga, bygga om eller uppgradera en industrimiljö?</h2>
+            <p>Ta in AVAB innan kabelvägar, nätverk, grindar, rack, takmontage, elmatning och säkerhetsgränssnitt är låsta. Då blir tekniken robustare, enklare för personalen och lättare att förvalta över tid.</p>
             <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
+              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
+              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
+              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
             </div>
           </div>
+
           <ul class="calc-list">
-            <li>Schoolbell Pro för säkra utrop</li>
-            <li>IP-klassad och tålig hårdvara</li>
-            <li>Smarta kameror för flödeskontroll</li>
+            <li>AV-lösningar för produktion, verkstad, lager, logistikcenter och industrifastighet.</li>
+            <li>Underlag för verksamhet, fastighetsägare, projektör, entreprenör, el, IT och säkerhet.</li>
+            <li>Utrop, ljud, kamera, ANPR, mötesrum, infoskärmar, styrning och säkerhetsgränssnitt.</li>
+            <li>Projektering, installation, programmering, test, utbildning, dokumentation och service.</li>
           </ul>
         </div>
       </div>
