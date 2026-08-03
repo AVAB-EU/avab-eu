@@ -616,11 +616,11 @@ p {
 }
 
 .hero--home {
-  --hero-image: url("/assets/avab-referens-saffle-simhall-1350x900.webp");
+  --hero-image: url("/assets/tavlingsbassang-startpallar-langvy.webp");
 }
 
 .hero--sporthall {
-  --hero-image: url("/assets/avab-referens-sorby-sporthall-kumla-1200x900.webp");
+  --hero-image: url("/assets/sporthall-interior-linjer.webp");
 }
 
 .hero-inner {

@@ -478,14 +478,14 @@ import "../../../styles/avab.css";
         </div>
         <div class="ref-grid">
           <article class="ref-card animate-in">
-            <img src="/assets/Hammaro ishall 1200x900.webp" alt="Hammarö ishall ljudsystem och akustik" width="900" height="600" loading="lazy" decoding="async">
+            <img src="/assets/ishall-hangande-hogtalare-resultattavla.webp" alt="Hammarö ishall ljudsystem och akustik" width="900" height="600" loading="lazy" decoding="async">
             <div class="ref-content">
               <h3>Hammarö ishall, Värmland</h3>
               <p>Vi projekterade och installerade ett komplett ljudsystem i Hammarös hjärta. Genom att använda rätt riktade passiva högtalare kunde vi maximera taluppfattbarheten (STI) trots hallens utmanande, hårda ytor.</p>
             </div>
           </article>
           <article class="ref-card animate-in">
-            <img src="/assets/Kils ishall 1200x900.webp" alt="Modern ishall under hockeymatch med ljud och ljuseffekter" width="900" height="600" loading="lazy" decoding="async">
+            <img src="/assets/ishall-hogtalare-ovan-is.webp" alt="Modern ishall under hockeymatch med ljud och ljuseffekter" width="900" height="600" loading="lazy" decoding="async">
             <div class="ref-content">
               <h3>Fler projekt</h3>
               <p>Här presenterar vi nästa ishallsprojekt – exempelvis Crestron-styrda matchintron, dånande måltutor eller zonerat ljud mellan VIP-loger och huvudläktare. <a class="text-link" href="/kontakt/">Vill ni bli vår nästa referens?</a></p>

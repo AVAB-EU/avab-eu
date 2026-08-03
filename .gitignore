@@ -18,6 +18,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+.astro-dev.stderr.log
+.astro-dev.stdout.log
 
 # environment variables
 .env

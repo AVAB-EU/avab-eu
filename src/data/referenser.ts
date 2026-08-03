@@ -66,7 +66,7 @@ export const references: Reference[] = [
     title: "Säffle simhall",
     slug: "/referenser/saffle-simhall/",
     location: "Säffle",
-    image: "/assets/avab-referens-saffle-simhall-1200x800.webp",
+    image: "/assets/tegelbyggnad-glasfasad-entre.webp",
     imageAlt: "Säffle simhall med zonindelat ljud och Crestronstyrning från AVAB",
     excerpt:
       "Överordnat Crestronsystem, zonindelat ljud, ingjutna hörslingor, projektor och RGB-styrd miljöbelysning. Upp till 487 sparade arbetstimmar per år.",
@@ -111,7 +111,7 @@ export const references: Reference[] = [
     title: "Minnebergsskolan, Arvika",
     slug: "/referenser/minnebergsskolan-arvika/",
     location: "Arvika",
-    image: "/assets/avab-referens-minnebergsskolan-arvika-1200x800.webp",
+    image: "/assets/modern-trafasad-innergard.webp",
     imageAlt: "Minnebergsskolan i Arvika med aula, hörsalar och Crestron från AVAB",
     excerpt:
       "Skola för 900 elever: klassrum, 20 hörsalar, 18 infoskärmar och en aula med Crestron, DMX och Dante.",
@@ -134,7 +134,7 @@ export const references: Reference[] = [
     title: "Hundfjällshotellet & Hundfjällscenter",
     slug: "/referenser/hundfjallshotellet-hundfjallscenter-salen/",
     location: "Sälen",
-    image: "/assets/avab-referens-hundfjallshotellet-salen-1200x800.webp",
+    image: "/assets/fjallanlaggning-vinterkvall.webp",
     imageAlt: "Hög entré i Hundfjällshotellet i Sälen med pendlade högtalare från AVAB",
     excerpt:
       "494 högtalare i 28 appstyrda ljudzoner, EASE-projektering, fem konferensrum med SLS-hörslinga och Dante mellan husen.",
@@ -181,7 +181,7 @@ export const references: Reference[] = [
     title: "Sörby idrottshall, Kumla",
     slug: "/referenser/sorby-sporthall-kumla/",
     location: "Kumla",
-    image: "/assets/avab-referens-sorby-sporthall-kumla-1200x900.webp",
+    image: "/assets/sporthall-interior-linjer.webp",
     imageAlt: "Sörby idrottshall i Kumla med Crestron, Dante och LED-vägg från AVAB",
     excerpt:
       "Delbar hall med Crestron, Bose ControlSpace EX-1280, Dante-anslutna Bluetooth-mottagare, trådlösa mikrofoner och LED-vägg.",
@@ -214,7 +214,7 @@ export const references: Reference[] = [
     title: "Hanza Mechanics, Töcksfors",
     slug: "/referenser/hanza-konferens-tocksfors/",
     location: "Töcksfors",
-    image: "/assets/Hanza konf 1200x900.webp",
+    image: "/assets/konferensrum-stor-skarm-bord.webp",
     imageAlt: "Konferensrum hos Hanza Mechanics i Töcksfors med videobar och rumsbokning från AVAB",
     excerpt:
       "Två nya konferensrum med 85-tums Samsung PRO, Crestron AirMedia, Teams/BYOD, Sennheiser-videobar och rumsbokningspaneler utanför fyra rum.",
