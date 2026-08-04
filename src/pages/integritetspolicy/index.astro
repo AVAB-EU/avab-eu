@@ -1,4 +1,5 @@
 ---
+import CookieConsent from "../../components/CookieConsent.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import "../../styles/avab.css";
@@ -110,6 +111,22 @@ import "../../styles/avab.css";
       },
       {
         "@type": "Question",
+        "name": "Hur hanterar AVAB cookies på webbplatsen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AVAB använder Cookiebot för att hantera samtycke. Inga icke-nödvändiga cookies aktiveras utan ditt aktiva godkännande. Du kan ändra eller återkalla samtycke via cookieknappen längst ner till vänster på sidan eller via länken i sidfoten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Överförs uppgifter utanför EU?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vissa tjänster, exempelvis Google Analytics och Microsoft Clarity, kan behandla uppgifter i USA. Överföringen sker med stöd av EU–US Data Privacy Framework eller standardavtalsklausuler."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Hur kontaktar jag AVAB om personuppgifter?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -156,7 +173,7 @@ import "../../styles/avab.css";
       "url": "https://www.avab.eu/"
     },
     "datePublished": "2026-07-02",
-    "dateModified": "2026-07-02",
+    "dateModified": "2026-08-04",
     "speakable": {
       "@type": "SpeakableSpecification",
       "cssSelector": [
@@ -167,6 +184,8 @@ import "../../styles/avab.css";
     }
   }
   </script>
+
+  <CookieConsent />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -433,7 +452,9 @@ import "../../styles/avab.css";
               <li><a href="#delning">Delning</a></li>
               <li><a href="#rattigheter">Rättigheter</a></li>
               <li><a href="#kontakt">Kontakt</a></li>
-              <li><a href="#cookies">Cookies</a></li>
+              <li><a href="#underbitraden">Personuppgiftsbiträden</a></li>
+              <li><a href="#tredjeland">Tredjeland</a></li>
+              <li><a href="#cookies">Cookies och samtycke</a></li>
             </ol>
           </nav>
 
@@ -597,41 +618,120 @@ import "../../styles/avab.css";
               </address>
             </section>
 
-            <section id="cookies" class="policy-chapter">
-              <h2>8. Cookies</h2>
+            <section id="underbitraden" class="policy-chapter">
+              <h2>8. Personuppgiftsbiträden</h2>
               <p>
-                AVAB:s webbplats kan använda cookies och liknande tekniker för att
-                webbplatsen ska fungera, för att förstå hur den används och för att
-                förbättra innehåll och funktioner.
+                AVAB använder ett antal externa tjänster som behandlar
+                personuppgifter för vår räkning. Dessa tjänsteleverantörer
+                agerar som personuppgiftsbiträden och behandlar uppgifter
+                enligt våra instruktioner och gällande biträdesavtal.
               </p>
-
-              <h3>Typer av cookies</h3>
 
               <ul class="bullet-list">
                 <li>
-                  <strong>Nödvändiga cookies</strong> – krävs för att webbplatsen
-                  ska fungera tekniskt.
+                  <strong>Google Analytics (GA4)</strong> – webbanalys för att
+                  förstå hur webbplatsen används. Aktiveras först efter samtycke.
                 </li>
                 <li>
-                  <strong>Analytiska cookies</strong> – hjälper oss förstå hur
-                  webbplatsen används, exempelvis vilka sidor som besöks.
+                  <strong>Google Tag Manager</strong> – teknisk plattform för att
+                  hantera analysverktyg villkorat av samtycke.
                 </li>
                 <li>
-                  <strong>Funktionella cookies</strong> – kan användas för att minnas
-                  val och inställningar.
+                  <strong>Microsoft Clarity</strong> – analysverktyg för att
+                  förstå användarbeteende genom aggregerade klick- och
+                  scrolldata. Formulärfält maskeras automatiskt. Aktiveras
+                  först efter samtycke.
+                </li>
+                <li>
+                  <strong>Cookiebot (Usercentrics)</strong> – hanterar
+                  samtyckesbannern och lagrar besökarens cookieval.
+                </li>
+                <li>
+                  <strong>Hostingleverantör</strong> – drift av webbplatsen
+                  och lagring av webbplatsdata.
+                </li>
+              </ul>
+            </section>
+
+            <section id="tredjeland" class="policy-chapter">
+              <h2>9. Överföring till tredjeland</h2>
+              <p>
+                Vissa av de tjänster AVAB använder, exempelvis Google Analytics
+                och Microsoft Clarity, kan innebära att personuppgifter
+                överförs till och behandlas i USA.
+              </p>
+              <p>
+                Dessa överföringar sker med stöd av EU-kommissionens
+                beslut om adekvat skyddsnivå under EU–US Data Privacy
+                Framework, alternativt med stöd av standardavtalsklausuler
+                och kompletterande skyddsåtgärder. Inga uppgifter överförs
+                utan att en rättslig grund och lämpliga säkerhetsåtgärder
+                finns på plats.
+              </p>
+            </section>
+
+            <section id="cookies" class="policy-chapter">
+              <h2>10. Cookies och samtycke</h2>
+              <p>
+                AVAB:s webbplats använder cookies och liknande tekniker.
+                Icke-nödvändiga cookies aktiveras aldrig utan ditt aktiva
+                samtycke. Samtycket hanteras via Cookiebot, som visas
+                första gången du besöker webbplatsen.
+              </p>
+
+              <h3>Kategorier av cookies</h3>
+
+              <ul class="bullet-list">
+                <li>
+                  <strong>Nödvändiga</strong> – krävs för att webbplatsen
+                  ska fungera tekniskt. Dessa kräver inget samtycke.
+                </li>
+                <li>
+                  <strong>Statistik</strong> – hjälper oss förstå hur
+                  webbplatsen används via Google Analytics och
+                  Microsoft Clarity. Aktiveras först efter samtycke.
+                </li>
+                <li>
+                  <strong>Marknadsföring</strong> – används för eventuell
+                  annonsuppföljning. Inte aktivt idag men kategorin finns
+                  för framtida behov. Kräver separat samtycke.
                 </li>
               </ul>
 
+              <h3>Ändra eller återkalla samtycke</h3>
               <p>
-                Du kan normalt hantera eller blockera cookies via din webbläsares
-                inställningar. Vissa funktioner kan påverkas om nödvändiga cookies
-                blockeras.
+                Du kan när som helst ändra eller ta tillbaka ditt samtycke
+                genom att klicka på cookieknappen som alltid visas längst
+                ner till vänster på sidan, eller genom att klicka på
+                "Hantera cookies" i sidfoten.
               </p>
+
+              <h3>Fullständig cookiedeklaration</h3>
+              <p>
+                Nedan visas en automatiskt uppdaterad förteckning över
+                alla cookies som används på webbplatsen, kategoriserade
+                efter ändamål, med namn, leverantör, syfte och varaktighet.
+              </p>
+
+              <!-- Cookiebot auto-genererad deklaration -->
+              <script
+                id="CookieDeclaration"
+                src="https://consent.cookiebot.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/cd.js"
+                type="text/javascript"
+                async>
+              </script>
+              <noscript>
+                <p>
+                  Cookiedeklarationen kräver JavaScript. Besök
+                  <a href="https://consent.cookiebot.com/">consent.cookiebot.com</a>
+                  för fullständig information.
+                </p>
+              </noscript>
 
               <div class="snabbt-svar policy-updated">
                 <p>
                   Denna policy gäller från 25 juni 2025 och uppdaterades senast
-                  2 juli 2026.
+                  4 augusti 2026.
                 </p>
               </div>
             </section>
@@ -690,6 +790,25 @@ import "../../styles/avab.css";
           </details>
 
           <details class="faq-item">
+            <summary>Hur hanterar AVAB cookies på webbplatsen?</summary>
+            <p>
+              AVAB använder Cookiebot för att hantera samtycke. Inga icke-nödvändiga
+              cookies aktiveras utan ditt aktiva godkännande. Du kan ändra eller
+              återkalla samtycke via cookieknappen längst ner till vänster på sidan
+              eller via länken i sidfoten.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Överförs uppgifter utanför EU?</summary>
+            <p>
+              Vissa tjänster, exempelvis Google Analytics och Microsoft Clarity,
+              kan behandla uppgifter i USA. Överföringen sker med stöd av
+              EU–US Data Privacy Framework eller standardavtalsklausuler.
+            </p>
+          </details>
+
+          <details class="faq-item">
             <summary>Hur kontaktar jag AVAB om personuppgifter?</summary>
             <p>
               Du kan kontakta AVAB via e-post på info@avab.eu eller telefon 054-8202080
@@ -720,7 +839,7 @@ import "../../styles/avab.css";
               <li>Frågor om personuppgifter</li>
               <li>Begäran om registerutdrag</li>
               <li>Rättelse eller radering</li>
-              <li>Frågor om cookies och webbplatsdata</li>
+              <li>Frågor om cookies, samtycke och webbplatsdata</li>
             </ul>
           </div>
         </div>

@@ -1,0 +1,231 @@
+---
+/**
+ * CookieConsent.astro
+ * ───────────────────
+ * Lägg i: src/components/CookieConsent.astro
+ * Importera i varje sidas <head>, FÖRE alla andra skript.
+ *
+ * Ordning som genereras:
+ *   1. Consent Mode v2 default → allt nekat
+ *   2. Cookiebot CMP → uppdaterar consent-state vid användarval
+ *   3. GTM → laddar taggar (GA4, Clarity m.fl.) villkorat av consent
+ *
+ * IDs att byta ut:
+ *   CBID   → AVAB:s Cookiebot Group ID (skapas i Cookiebot-admin)
+ *   GTM_ID → AVAB:s GTM Container ID
+ */
+const CBID   = "PLACEHOLDER-CBID";   // ex: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+const GTM_ID = "GTM-PLACEHOLDER";    // ex: "GTM-ABC1234"
+---
+
+<!-- ═══ 1. Google Consent Mode v2 — neka allt som default ═══ -->
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag("consent", "default", {
+    ad_storage:            "denied",
+    ad_user_data:          "denied",
+    ad_personalization:    "denied",
+    analytics_storage:     "denied",
+    functionality_storage: "denied",
+    personalization_storage: "denied",
+    security_storage:      "granted",
+    wait_for_update:       500
+  });
+  gtag("set", "ads_data_redaction", true);
+  gtag("set", "url_passthrough", true);
+</script>
+
+<!-- ═══ 2. Cookiebot CMP ═══ -->
+<script
+  id="Cookiebot"
+  src="https://consent.cookiebot.com/uc.js"
+  data-cbid={CBID}
+  data-blockingmode="auto"
+  type="text/javascript"
+  is:inline
+></script>
+
+<!-- ═══ 3. Google Tag Manager ═══ -->
+<script is:inline define:vars={{ GTM_ID }}>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+  new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;
+  j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;
+  f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer",GTM_ID);
+</script>
+
+<!-- ═══ 4. GTM noscript-fallback (direkt efter <body> i layout) ═══ -->
+<!--
+  OBS: Lägg denna rad manuellt direkt efter <body> i SiteHeader.astro
+  eller i en layout-komponent:
+
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLACEHOLDER"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+-->
+
+<!-- ═══ 5. Flytande cookie-knapp ═══ -->
+<style>
+  .avab-cookie-fab {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9990;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 22px;
+    background: var(--avab-green, #282E29);
+    color: var(--avab-white, #fff);
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    box-shadow:
+      0 2px 8px rgba(0,0,0,0.18),
+      0 0 0 0 rgba(143,191,135,0);
+    transition: box-shadow 0.25s ease, background 0.25s ease, width 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .avab-cookie-fab:hover {
+    background: var(--avab-green-hover, #1e2420);
+    box-shadow:
+      0 4px 16px rgba(0,0,0,0.22),
+      0 0 0 2px var(--avab-focus, rgba(143,191,135,0.5));
+  }
+
+  .avab-cookie-fab:focus-visible {
+    outline: 2px solid var(--avab-focus, rgba(143,191,135,0.5));
+    outline-offset: 2px;
+  }
+
+  .avab-cookie-fab__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+  }
+
+  .avab-cookie-fab__label {
+    padding-right: 16px;
+    opacity: 1;
+    max-width: 130px;
+    transition: opacity 0.2s ease, max-width 0.3s ease, padding 0.3s ease;
+  }
+
+  /* Kollapsa till bara ikon efter 4 s så den inte stör */
+  .avab-cookie-fab--compact .avab-cookie-fab__label {
+    opacity: 0;
+    max-width: 0;
+    padding-right: 0;
+  }
+
+  .avab-cookie-fab--compact {
+    border-radius: 50%;
+  }
+
+  /* Expandera igen på hover */
+  .avab-cookie-fab--compact:hover .avab-cookie-fab__label,
+  .avab-cookie-fab--compact:focus-visible .avab-cookie-fab__label {
+    opacity: 1;
+    max-width: 130px;
+    padding-right: 16px;
+  }
+
+  .avab-cookie-fab--compact:hover,
+  .avab-cookie-fab--compact:focus-visible {
+    border-radius: 22px;
+  }
+
+  /* Göm när Cookiebot-bannern är aktiv */
+  .avab-cookie-fab[aria-hidden="true"] {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  @media (max-width: 480px) {
+    .avab-cookie-fab {
+      bottom: 14px;
+      left: 14px;
+      height: 40px;
+    }
+    .avab-cookie-fab__icon {
+      width: 40px;
+      height: 40px;
+    }
+    /* Starta kompakt direkt på mobil */
+    .avab-cookie-fab .avab-cookie-fab__label {
+      opacity: 0;
+      max-width: 0;
+      padding-right: 0;
+    }
+    .avab-cookie-fab {
+      border-radius: 50%;
+    }
+    .avab-cookie-fab:hover,
+    .avab-cookie-fab:focus-visible {
+      border-radius: 22px;
+    }
+    .avab-cookie-fab:hover .avab-cookie-fab__label,
+    .avab-cookie-fab:focus-visible .avab-cookie-fab__label {
+      opacity: 1;
+      max-width: 130px;
+      padding-right: 14px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Skapa knappen dynamiskt så den hamnar i <body>, inte <head>
+    const fab = document.createElement("button");
+    fab.type = "button";
+    fab.className = "avab-cookie-fab";
+    fab.setAttribute("aria-label", "Hantera cookies");
+    fab.innerHTML = `
+      <span class="avab-cookie-fab__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <circle cx="7" cy="7" r="1.3" fill="currentColor"/>
+          <circle cx="12" cy="6" r="1" fill="currentColor"/>
+          <circle cx="6" cy="12" r="1" fill="currentColor"/>
+          <circle cx="13" cy="11" r="1.3" fill="currentColor"/>
+          <circle cx="10" cy="14" r="1" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="avab-cookie-fab__label">Hantera cookies</span>
+    `;
+    document.body.appendChild(fab);
+
+    // Kollapsa till ikon efter 4 s
+    const collapseTimer = setTimeout(() => {
+      fab.classList.add("avab-cookie-fab--compact");
+    }, 4000);
+
+    // Klick öppnar Cookiebot-dialogen
+    fab.addEventListener("click", () => {
+      const cb = (window as any).Cookiebot;
+      if (cb) cb.renew();
+    });
+
+    // Göm FAB medan Cookiebot-bannern visas
+    const hideWhenBannerOpen = () => {
+      fab.setAttribute("aria-hidden", "true");
+    };
+    const showWhenBannerClosed = () => {
+      fab.setAttribute("aria-hidden", "false");
+    };
+
+    window.addEventListener("CookiebotOnDialogDisplay", hideWhenBannerOpen);
+    window.addEventListener("CookiebotOnAccept", showWhenBannerClosed);
+    window.addEventListener("CookiebotOnDecline", showWhenBannerClosed);
+  });
+</script>
