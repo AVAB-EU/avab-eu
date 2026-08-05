@@ -69,7 +69,7 @@ export const references: Reference[] = [
     image: "/assets/tegelbyggnad-glasfasad-entre.webp",
     imageAlt: "Säffle simhall med zonindelat ljud och Crestronstyrning från AVAB",
     excerpt:
-      "Överordnat Crestronsystem, zonindelat ljud, ingjutna hörslingor, projektor och RGB-styrd miljöbelysning. Upp till 487 sparade arbetstimmar per år.",
+      "Överordnat Crestronsystem, zonindelat ljud, ingjutna hörslingor, projektor och RGB-styrd miljöbelysning.",
     environments: ["simhall"],
     technologies: ["ljud", "styrsystem", "crestron", "ljus", "horslinga", "mikrofoner", "bild", "projektering"],
     featured: true,

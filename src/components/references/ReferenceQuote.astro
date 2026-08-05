@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Quote = NonNullable<CollectionEntry<"references">["data"]["quote"]>;
+interface Props { quote: Quote }
+const { quote } = Astro.props;
+---
+
+<section class="reference-section">
+  <div class="avab-container">
+    <div class="reference-quote">
+      <blockquote><p>”{quote.text}”</p></blockquote>
+      <footer><strong>{quote.attribution}</strong>{quote.role}</footer>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type ReferenceData = CollectionEntry<"references">["data"];
+
+interface Props {
+  scale: NonNullable<ReferenceData["scale"]>;
+}
+
+const { scale } = Astro.props;
+---
+
+<section class="reference-section" aria-labelledby="reference-scale-title">
+  <div class="avab-container">
+    <div class="reference-section-heading">
+      <span class="reference-kicker">{scale.eyebrow}</span>
+      <h2 id="reference-scale-title">{scale.title}</h2>
+      {scale.lead && <p>{scale.lead}</p>}
+    </div>
+
+    <div class="scale-grid">
+      {scale.items.map((item) => (
+        <div class="scale-item">
+          <strong>{item.value}</strong>
+          <span>{item.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
