@@ -51,6 +51,8 @@ ska ändå granskas redaktionellt vid respektive migrering.
 | Hanza Mechanics | samma | `/assets/konferensrum-vaggskarm-ljudlimpa.webp` | Ja | Galleri | Ja, 1200×900 | Angiven och migrerad | Behåll |
 | Hanza Mechanics | samma | `/assets/modern-trafasad-innergard.webp` | Ja | Relaterad referens | Ja, 1200×834 | Angiven och migrerad | Behåll |
 | Hundfjällshotellet | `/referenser/hundfjallshotellet-hundfjallscenter-salen/` | `/assets/fjallanlaggning-vinterkvall.webp` | Ja | Hero/metadata | Ja, 1422×800 | Angiven | Behåll |
+| Hundfjällshotellet | samma | `/assets/Bakrundsmusik-restaurang-hundfjällscenter.webp` | Ja | Galleri | Ja, 1200×900 | Angiven och motivgranskad | Använd i draft; rättigheter okända |
+| Hundfjällshotellet | samma | `/assets/hundfjällscenter-konferens.webp` | Ja | Galleri | Ja, 1200×900 | Angiven och motivgranskad | Använd i draft; rättigheter okända |
 | Hundfjällshotellet | samma | `/assets/hundfjallscenter-ease-ljudberakning-spa.webp` | Nej | Galleri | Nej | Angiven | Lokalisera original |
 | Hundfjällshotellet | samma | `/assets/skistar-lodge-hundfjallet-huvudentre-pendel-hogtalare.webp` | Nej | Galleri | Nej | Angiven | Lokalisera original |
 | Hundfjällshotellet | samma | `/assets/skistar-lodge-hundfjallet-restaurang-ljudanlaggning.webp` | Nej | Galleri | Nej | Angiven | Lokalisera original |
@@ -317,7 +319,47 @@ true`.
 Draften får inte ändras till `draft: false` förrän kundcitat,
 publiceringsgodkännande och bildrättigheter har bekräftats.
 
-## Readiness-matris för de 13 omigrerade referenserna
+### Manuell visuell kontroll av Säffle-draften
+
+Beställaren godkände 2026-08-05 Säffle-draftens visuella utformning på
+`test2.avab.eu` efter kontroll i både desktop- och mobilvy. Godkännandet
+omfattar bland annat faktabandets desktop- och mobilläge samt att den synliga
+scale-/omfattningssektionen är borttagen.
+
+Det visuella godkännandet är inte ett publiceringsgodkännande. Säffle ska
+fortsätta vara `draft: true` tills kundcitat, publiceringsgodkännande och
+bildrättigheter har bekräftats.
+
+## Fas 3A: Hundfjällshotellet migrerat som draft
+
+Teknisk migrering genomförd 2026-08-05 med `draft: true` och `seo.noindex:
+true`.
+
+- routen är en tunn wrapper runt den gemensamma `ReferencePage`
+- Markdown-entryn är primär innehållskälla för själva referenssidan
+- arkivet fortsätter tillfälligt visa posten från `referenser.ts`, eftersom
+  draft-poster filtreras bort
+- den verifierade lokala hero-bilden kombineras med två lokala, motivgranskade
+  interiörbilder; saknade äldre bildvägar och platshållare används inte
+- den saknade `/tjanster/konferensteknik/` ersätts med den befintliga relativa
+  länken `/miljo/kontor-konferens/`
+- CTA-texten och legacy-varianten behålls, men det saknade ankaret
+  `/kontakt/#ladda-upp-underlag` rättas till `/kontakt/#kontaktformular`
+- ingen scale-sektion och inget obestyrkt kundcitat renderas
+- den befintliga CTA-texten återges med den avgränsade legacy-renderern
+
+| Uppgift | Klassificering | Hantering i draft |
+|---|---|---|
+| 494 högtalare | verifierad med intern källa | Behålls från befintlig AVAB-referens; bör bekräftas inför `draft: false`. |
+| 28 appstyrda ljudzoner | verifierad med intern källa | Behålls från befintlig AVAB-referens; bör bekräftas inför `draft: false`. |
+| Fem konferensrum | verifierad med intern källa | Behålls från befintlig AVAB-referens. |
+| Dante mellan byggnaderna | verifierad med intern källa | Behålls från befintlig AVAB-referens. |
+| Färdigställt 2021 | saknar underlag | Utelämnas ur draften. |
+| Kundcitat | saknar underlag | Ingen citatsektion renderas. |
+| Publiceringsgodkännande | kräver kundgodkännande | Blockerar `draft: false`. |
+| Rättigheter för tre använda bilder | kräver kundgodkännande | Blockerar `draft: false`. |
+
+## Readiness-matris för återstående referenser och aktiva drafts
 
 `Migreringsstatus` avser teknisk migrering. Kolumnen `Godkännanden` avser
 publicering och kan därför blockera publicering även när sidan är tekniskt
@@ -329,19 +371,20 @@ migreringsbar.
 | Claessons Konferens & Restaurang | standard | redo | blockerad | blockerad | redo med mindre åtgärd | okänt; publicering blockerad | Återställ hero; besluta service-, konferens- och bildroute | blockerad |
 | Ekhagsskolan | standard | redo | blockerad | redo | redo med mindre åtgärd | okänt; publicering blockerad | Återställ hero-original | blockerad |
 | Friskis&Svettis Karlstad | standard | redo | blockerad | blockerad | redo med mindre åtgärd | okänt; publicering blockerad | Återställ hero; besluta service- och konferensroute | blockerad |
-| Hundfjällshotellet & Hundfjällscenter | extended | redo | redo med mindre åtgärd | redo med mindre åtgärd | redo med mindre åtgärd | okänt; publicering blockerad | Använd verifierad hero och enbildsläge; besluta konferensroute | redo med mindre åtgärd |
+| Hundfjällshotellet & Hundfjällscenter | extended | migrerad som draft | redo tekniskt; rättigheter okända | redo | verifierad med intern källa | kräver kundgodkännande; publicering blockerad | Granska draften; bekräfta mängduppgifter och bildrättigheter innan `draft: false` | migrerad som draft |
 | Kroppkärrs IP | extended | redo | blockerad | redo | redo med mindre åtgärd | okänt; publicering blockerad | Återställ hero-original | blockerad |
 | Lesjöfors AB | standard | redo | blockerad | blockerad | redo med mindre åtgärd | okänt; publicering blockerad | Återställ hero; besluta konferens- och BYOD-route | blockerad |
 | Lundsbergs skola | standard | redo | blockerad | blockerad | redo med mindre åtgärd | okänt; publicering blockerad | Återställ hero; besluta bildroute | blockerad |
 | Minnebergsskolan | extended | redo | redo med mindre åtgärd | redo med mindre åtgärd | redo med mindre åtgärd | okänt; publicering blockerad | Använd verifierad hero och enbildsläge; besluta två saknade länkmål | redo med mindre åtgärd |
 | Nordic Wellness Marieberg | compact | redo | blockerad | redo | redo med mindre åtgärd | okänt; publicering blockerad | Återställ hero-original | blockerad |
-| Säffle simhall | extended | migrerad som draft | redo tekniskt; rättigheter okända | redo | redo med mindre åtgärd | kräver kundgodkännande; publicering blockerad | Granska draften; bekräfta citat och bildrättigheter innan `draft: false` | migrerad som draft |
+| Säffle simhall | extended | migrerad som draft och visuellt godkänd | redo tekniskt; rättigheter okända | redo | redo med mindre åtgärd | kräver kundgodkännande; publicering blockerad | Bekräfta citat och bildrättigheter innan `draft: false` | migrerad som draft |
 | Sannerudshallen | extended | redo | blockerad | redo | redo med mindre åtgärd | okänt; publicering blockerad | Återställ hero-original | blockerad |
 | Sörby idrottshall | extended | redo | redo med mindre åtgärd | redo med mindre åtgärd | redo med mindre åtgärd | okänt; publicering blockerad | Utelämna platshållare och besluta bildroute | redo med mindre åtgärd |
 
-Summering: 0 `redo`, 4 `redo med mindre åtgärd`, 9 `blockerad` och 0
-`okänt` för teknisk migrering. Samtliga 13 är fortfarande blockerade för
-publiceringsbeslut eftersom kundgodkännande och bildrättigheter är okända.
+Summering efter Hundfjälls-draften: 2 `migrerad som draft`, 2 `redo med mindre
+åtgärd` och 9 `blockerad` för teknisk migrering. Samtliga är fortsatt
+blockerade för publiceringsbeslut tills respektive kund- och bildgodkännande
+är dokumenterat.
 
 ## Rekommenderad nästa pilotbatch
 
@@ -349,10 +392,10 @@ publiceringsbeslut eftersom kundgodkännande och bildrättigheter är okända.
 |---|---|---|
 | compact | Nordic Wellness Marieberg | Blockerad: enda compact-kandidaten saknar verifierad hero. |
 | standard | Ekhagsskolan | Blockerad: närmast redo eftersom länkarna fungerar, men hero saknas. |
-| extended | Säffle simhall | Migrerad som draft i fas 2B. Osäkra mängduppgifter är utelämnade och publicering inväntar godkännande av citat och bildrättigheter. |
+| extended | Hundfjällshotellet | Migrerad som draft i fas 3A med tre lokala bilder, relativ konferenslänk och utan scale eller kundcitat. Publicering inväntar kund- och bildgodkännande. |
 
-Migrera därför högst Säffle som nästa pilot. Starta inte compact- eller
-standardpilot förrän respektive hero-original finns.
+Säffle och Hundfjällshotellet utgör nu de två aktiva extended-drafterna.
+Starta inte compact- eller standardpilot förrän respektive hero-original finns.
 
 ## Manuell visuell kontroll efter fas 1.5
 
