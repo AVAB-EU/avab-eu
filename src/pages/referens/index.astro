@@ -1,0 +1,543 @@
+---
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import "../../styles/avab.css";
+
+const references = [
+  {
+    title: "Säffle simhall",
+    href: "/referenser/saffle-simhall/",
+    image: "/assets/saffle-simhall-hero.webp",
+    alt: "Säffle simhall med AV-teknik från AVAB",
+    excerpt: "Zonindelat ljud, styrning och hörslingor i en krävande simhallsmiljö där drift, fukt och enkel användning är avgörande.",
+    environments: ["Simhall", "Sport"],
+    techniques: ["Ljudsystem", "Styrsystem", "Hörslinga"],
+    search: "säffle simhall badhus ljud styrning hörslinga crestron zoner sport"
+  },
+  {
+    title: "Årjängs simhall",
+    href: "/referenser/arjangs-simhall/",
+    excerpt: "Flera ljudzoner, reception, gym, gruppträning, relax och bildteknik i en simhall där olika verksamheter behöver fungera parallellt.",
+    environments: ["Simhall", "Sport"],
+    techniques: ["Ljudsystem", "Styrsystem", "Hörslinga", "Bild"],
+    search: "årjäng arjang simhall badhus ljud zoner reception gym gruppträning relax projektor hörslinga sport"
+  },
+  {
+    title: "Sörby sporthall, Kumla",
+    href: "/referenser/sorby-sporthall-kumla/",
+    image: "/assets/referens-sorby-sporthall.webp",
+    alt: "Sörby sporthall i Kumla med ljud och styrning från AVAB",
+    excerpt: "Sporthallsteknik med ljud, styrning och LED-vägg för en hall där ridåvägg, publik, träning och match kräver tydlig zonlogik.",
+    environments: ["Sporthall", "Sport"],
+    techniques: ["Ljudsystem", "Styrsystem", "Bild"],
+    search: "sörby sorby sporthall kumla ljud styrning led-vägg ledvägg bose dante sport"
+  },
+  {
+    title: "Kroppkärrs IP, Karlstad",
+    href: "/referenser/kroppkarrs-ip-fotboll/",
+    image: "/assets/kroppkarrs-ip-hero-hogtalare.jpg",
+    alt: "Utomhushögtalare monterade vid Kroppkärrs IP i Karlstad",
+    excerpt: "Tvåzons ljudanläggning för fotbollsplaner med utomhushögtalare, trådlös mikrofon, Bluetooth och skyddad teknikplacering.",
+    environments: ["Utomhusidrott", "Sport"],
+    techniques: ["Ljudsystem", "Styrsystem"],
+    search: "kroppkärr kroppkarr ip karlstad fotboll utomhusidrott ljud 100v sennheiser bluetooth sport"
+  },
+  {
+    title: "Sannerudshallen, Kil",
+    href: "/referenser/sannerudshallen-kil/",
+    excerpt: "Uppgraderat ljud i ishall med fler riktade högtalare, bättre taluppfattbarhet och skyddad teknikplacering bort från den fuktiga miljön.",
+    environments: ["Ishall", "Sport"],
+    techniques: ["Ljudsystem", "Taluppfattbarhet"],
+    search: "sannerudshallen kil ishall ljud taluppfattbarhet electrovoice dbx slutsteg sport"
+  },
+  {
+    title: "Minnebergsskolan, Arvika",
+    href: "/referenser/minnebergsskolan-arvika/",
+    image: "/assets/referens-minnebergsskolan.webp",
+    alt: "Minnebergsskolan i Arvika med AV-teknik från AVAB",
+    excerpt: "AV-teknik i klassrum, gradäng, aula, matsal och bibliotek med projektorer, ljud, hörslingor och genomtänkt teknikstruktur.",
+    environments: ["Skola", "Utbildning & Vård"],
+    techniques: ["Bild", "Ljudsystem", "Hörslinga", "Styrsystem"],
+    search: "minnebergsskolan arvika skola epson projektor aula hörslinga ljud utbildning vård"
+  },
+  {
+    title: "Lundsbergs skola",
+    href: "/referenser/lundsbergs-skola/",
+    excerpt: "Komplett ljudanläggning med flera zoner för entré, omklädningsrum, spinning, roddsal och större gymdel med appstyrning.",
+    environments: ["Skola", "Sporthall", "Utbildning & Vård"],
+    techniques: ["Ljudsystem", "Styrsystem"],
+    search: "lundsbergs skola gym spinning rodd omklädning ljud appstyrning utbildning sport"
+  },
+  {
+    title: "Hanza Mechanics, Töcksfors",
+    href: "/referenser/hanza-konferens-tocksfors/",
+    image: "/assets/referens-hanza-konferens.webp",
+    alt: "Konferensrum hos Hanza Mechanics i Töcksfors",
+    excerpt: "Konferensteknik, Teams Rooms, bokningspaneler och informationsskärmar för en modern industrimiljö med dagliga möten.",
+    environments: ["Industri", "Kontor & Konferens"],
+    techniques: ["Bild", "Styrsystem", "Ljudsystem"],
+    search: "hanza mechanics töcksfors tocksfors industri konferens teams rooms skärmar crestron sennheiser"
+  },
+  {
+    title: "Claessons Restaurang & Konferens",
+    href: "/referenser/claessons-restaurang-konferens/",
+    image: "/assets/claessons-restaurang-karolinen.webp",
+    alt: "Claessons Restaurang och Konferens på Karolinen i Karlstad",
+    excerpt: "18+ års samarbete med restaurangljud, festvåning, projektorer, kompletta konferensrum och styrning från Neets/Biamp.",
+    environments: ["Kontor & Konferens", "Restaurang", "Hotell"],
+    techniques: ["Ljudsystem", "Bild", "Styrsystem"],
+    search: "claessons restaurang konferens karolinen karlstad neets biamp hdbaset projektor festvåning ljud"
+  },
+  {
+    title: "Hundfjällshotellet & Hundfjällscenter",
+    href: "/referenser/hundfjallshotellet-hundfjallscenter-salen/",
+    image: "/assets/referens-hundfjallshotellet.webp",
+    alt: "Hundfjällshotellet och Hundfjällscenter i Sälen",
+    excerpt: "Hotell- och konferensanläggning med många ljudzoner, restaurangmiljöer, mötesrum, styrning och hörslingor.",
+    environments: ["Hotell", "Kontor & Konferens", "Restaurang"],
+    techniques: ["Ljudsystem", "Styrsystem", "Hörslinga", "Bild"],
+    search: "hundfjällshotellet hundfjallscenter sälen hotell konferens restaurang ljudzoner biamp hörslinga"
+  },
+  {
+    title: "Galleria Duvan, Karlstad",
+    href: "/referenser/galleria-duvan-karlstad/",
+    image: "/assets/referens-galleria-duvan.webp",
+    alt: "Galleria Duvan i Karlstad med kameraövervakning från AVAB",
+    excerpt: "Kameraövervakning för galleria och garage med bättre överblick, snabbare incidenthantering och mer träffsäkra sökningar.",
+    environments: ["Köpcentrum", "Parkering & Garage", "Butik & Retail"],
+    techniques: ["Kameraövervakning"],
+    search: "galleria duvan karlstad kameraövervakning kameror garage köpcentrum butik retail säkerhet"
+  },
+  {
+    title: "Go Banana, Karlstad City",
+    href: "/referenser/go-banana-karlstad/",
+    excerpt: "Kameraövervakning i butiksmiljö där snabb överblick, trygghet och tydligare incidenthantering är viktiga delar av driften.",
+    environments: ["Butik & Retail"],
+    techniques: ["Kameraövervakning"],
+    search: "go banana karlstad butik retail kameraövervakning säkerhet"
+  },
+  {
+    title: "Loka Brunn",
+    href: "/referenser/loka-brunn/",
+    excerpt: "Teknik för hotell, konferens och upplevelsemiljöer där ljud, bild och drift behöver fungera diskret i en etablerad anläggning.",
+    environments: ["Hotell", "Kontor & Konferens"],
+    techniques: ["Ljudsystem", "Bild", "Styrsystem"],
+    search: "loka brunn hotell konferens ljud bild styrning möten"
+  },
+  {
+    title: "Telia Summit, Clarion Arlanda",
+    href: "/referenser/telia-summit-clarion-arlanda/",
+    excerpt: "Event- och konferensteknik i en miljö där presentation, tal, bild och publikflöde behöver vara stabilt från start till slut.",
+    environments: ["Kontor & Konferens", "Hotell"],
+    techniques: ["Ljudsystem", "Bild", "Styrsystem"],
+    search: "telia summit clarion arlanda event konferens ljud bild presentation hotell"
+  },
+  {
+    title: "Säffle simhall – hörslinga och styrning",
+    href: "/referenser/saffle-simhall/",
+    image: "/assets/saffle-simhall-hero.webp",
+    alt: "Säffle simhall referensprojekt med styrning, ljud och hörslinga",
+    excerpt: "En tydlig simhallsreferens för projekt där ljud, hörslinga och styrning behöver samverka i fuktig publik miljö.",
+    environments: ["Simhall", "Sport"],
+    techniques: ["Hörslinga", "Styrsystem", "Ljudsystem"],
+    search: "säffle simhall hörslinga styrning ljud badhus tillgänglighet"
+  }
+];
+
+const environmentFilters = [
+  "Alla",
+  "Simhall",
+  "Sporthall",
+  "Skola",
+  "Ishall",
+  "Utomhusidrott",
+  "Kontor & Konferens",
+  "Hotell",
+  "Restaurang",
+  "Butik & Retail",
+  "Köpcentrum",
+  "Industri",
+  "Parkering & Garage"
+];
+
+const techniqueFilters = [
+  "Alla tekniker",
+  "Ljudsystem",
+  "Bild",
+  "Styrsystem",
+  "Hörslinga",
+  "Kameraövervakning",
+  "Taluppfattbarhet"
+];
+
+const itemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "AVAB referensprojekt",
+  "itemListElement": references.map((reference, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": reference.title,
+    "url": `https://www.avab.eu${reference.href}`
+  }))
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan jag filtrera AVAB:s referenser efter miljö?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Referenssidan är byggd för att kunna filtrera projekt efter miljö, till exempel simhall, sporthall, skola, ishall, konferens, restaurang eller industri."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jag söka efter teknik eller varumärken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Sökningen kan användas för projektnamn, ort, miljö, teknik och vanliga teknikord som ljudsystem, styrsystem, hörslinga, kameraövervakning, Biamp, Neets, Crestron eller Sennheiser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Visar sidan alla AVAB:s projekt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sidan visar ett urval och byggs på löpande. AVAB har fler projekt än de som är publicerade som kompletta referenssidor."
+      }
+    }
+  ]
+};
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Referenser inom ljud, bild och styrning | AVAB</title>
+  <meta name="description" content="Se AVAB:s referensprojekt inom simhall, sporthall, skola, konferens, restaurang, industri och publika miljöer. Filtrera efter miljö och teknik." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://www.avab.eu/referenser/" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content="Referenser inom ljud, bild och styrning | AVAB" />
+  <meta property="og:description" content="Referensprojekt inom simhall, sporthall, skola, konferens, restaurang, industri och publika miljöer. Filtrera efter miljö och teknik." />
+  <meta property="og:url" content="https://www.avab.eu/referenser/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Referenser inom ljud, bild och styrning | AVAB" />
+  <meta name="twitter:description" content="Filtrera AVAB:s referensprojekt efter miljö och teknik." />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Start",
+        "item": "https://www.avab.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Referenser",
+        "item": "https://www.avab.eu/referenser/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json" set:html={JSON.stringify(itemList)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="/">Start</a></li>
+        <li><span aria-current="page">Referenser</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero">
+      <div class="avab-container">
+        <div class="hero-inner animate-in">
+          <div class="eyebrow">Referenser</div>
+          <h1>Projekt inom ljud, bild, styrning och säkerhet</h1>
+          <p class="lead">
+            Här samlar vi referensprojekt från simhallar, sporthallar, skolor, ishallar, konferensmiljöer, restauranger, hotell, industrier och publika fastigheter.
+            Filtrera efter miljö eller teknik för att hitta projekt som liknar ert.
+          </p>
+
+          <div class="hero-bottom">
+            <div class="hero-actions">
+              <a class="button button-primary" href="#referensbank">Se referenser</a>
+              <a class="button button-secondary" href="tel:+46548202080">Ring 054-8202080</a>
+              <a class="button button-quiet" href="/miljo/simhall/">Se simhall</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fact-band" aria-label="Snabbfakta referenser">
+      <div class="fact-grid">
+        <div class="fact"><span>Fokus</span><strong>Simhall, sporthall och skola</strong></div>
+        <div class="fact"><span>Teknik</span><strong>Ljud, bild, styrning och säkerhet</strong></div>
+        <div class="fact"><span>Miljöer</span><strong>Publika och kommersiella lokaler</strong></div>
+        <div class="fact"><span>Leverans</span><strong>Projektering till driftsättning</strong></div>
+        <div class="fact"><span>Urval</span><strong>Byggs på löpande</strong></div>
+        <div class="fact"><span>Hitta rätt</span><strong>Filter och sök</strong></div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="snabba-svar">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Kort svar</div>
+            <h2>Vad visar AVAB:s referenser?</h2>
+            <p class="lead-dark">Referenserna visar hur vi löser ljud, bild, styrning, hörslinga, kameraövervakning och konferensteknik i verkliga lokaler – inte bara på ritning eller produktblad.</p>
+          </div>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <h3>Kan jag filtrera efter miljö?</h3>
+            <p>Ja. Börja med simhall, sporthall, skola eller annan miljö för att hitta projekt som liknar ert.</p>
+          </article>
+          <article class="value-card">
+            <h3>Kan jag filtrera efter teknik?</h3>
+            <p>Ja. Du kan filtrera på exempelvis ljudsystem, styrsystem, hörslinga, kameraövervakning eller bild.</p>
+          </article>
+          <article class="value-card">
+            <h3>Varför ligger projekten inte alfabetiskt?</h3>
+            <p>De är sorterade efter relevans och de områden där AVAB vill visa starkast kompetens först.</p>
+          </article>
+          <article class="value-card">
+            <h3>Finns fler projekt?</h3>
+            <p>Ja. Alla projekt ligger inte publicerade än. Sidan fylls på efter hand när nya referenssidor byggs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="referensbank">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Referensbank</div>
+            <h2>Filtrera projekt efter miljö och teknik</h2>
+            <p class="lead-dark">Korten använder samma referensdesign som på övriga sidor. Tre kort visas i bredd på desktop och fyller sedan på nedåt.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <label for="reference-search" class="eyebrow">Sök referens</label>
+            <input id="reference-search" type="search" placeholder="Sök på projekt, ort, teknik eller varumärke" autocomplete="off" data-reference-search />
+          </div>
+          <div class="card">
+            <div class="eyebrow">Prioriterade miljöer</div>
+            <p><a class="text-link" href="/miljo/simhall/">Simhall</a>, <a class="text-link" href="/miljo/sporthall/">sporthall</a>, <a class="text-link" href="/miljo/skola/">skola</a> och <a class="text-link" href="/miljo/ishall/">ishall</a> ligger först eftersom de är viktiga miljöer för AVAB:s projektering och installation.</p>
+          </div>
+        </div>
+
+        <div class="hero-actions" aria-label="Filtrera efter miljö">
+          {environmentFilters.map((filter) => (
+            <button class="button button-secondary" type="button" data-filter-group="environment" data-filter-value={filter === "Alla" ? "all" : filter} aria-pressed={filter === "Alla" ? "true" : "false"}>{filter}</button>
+          ))}
+        </div>
+
+        <div class="hero-actions" aria-label="Filtrera efter teknik">
+          {techniqueFilters.map((filter) => (
+            <button class="button button-secondary" type="button" data-filter-group="technique" data-filter-value={filter === "Alla tekniker" ? "all" : filter} aria-pressed={filter === "Alla tekniker" ? "true" : "false"}>{filter}</button>
+          ))}
+        </div>
+
+        <p class="lead-dark" data-reference-count>{references.length} referenser visas.</p>
+
+        <div class="ref-grid animate-in animate-delay-1" data-reference-grid>
+          {references.map((reference) => (
+            <a
+              href={reference.href}
+              class="ref-card"
+              data-reference-card
+              data-environments={reference.environments.join("|")}
+              data-techniques={reference.techniques.join("|")}
+              data-search={`${reference.title} ${reference.excerpt} ${reference.search} ${reference.environments.join(" ")} ${reference.techniques.join(" ")}`.toLowerCase()}
+            >
+              {reference.image && <img src={reference.image} alt={reference.alt || reference.title} width="800" height="533" loading="lazy" decoding="async" />}
+              <div class="ref-content">
+                <h3>{reference.title}</h3>
+                <p>{reference.excerpt}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="relaterat">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Internlänkning</div>
+          <h2>Hitta referenser via rätt miljö</h2>
+          <p>Referenssidan fungerar som en samlingspunkt, men många besökare börjar på en miljösida. Därför ska referenskorten kunna återanvändas på simhall, sporthall, skola, hotell, konferens och andra undersidor.</p>
+          <p>För projekt i tidiga skeden är det ofta mest relevant att börja med rätt miljö och sedan koppla på teknik som ljud, styrning, hörslinga eller kameraövervakning.</p>
+        </div>
+
+        <aside class="dark-card">
+          <h3>Populära ingångar</h3>
+          <ul class="bullet-list bullet-list-light">
+            <li><a class="text-link" href="/miljo/simhall/">Simhall</a></li>
+            <li><a class="text-link" href="/miljo/sporthall/">Sporthall</a></li>
+            <li><a class="text-link" href="/miljo/skola/">Skola</a></li>
+            <li><a class="text-link" href="/miljo/kontor-konferens/">Kontor &amp; konferens</a></li>
+            <li><a class="text-link" href="/tjanster/horslinga/">Hörslinga</a></li>
+            <li><a class="text-link" href="/tjanster/kameraovervakning/">Kameraövervakning</a></li>
+            <li><a class="text-link" href="/rastsignal/">Rastsignal</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="avab-container">
+        <div class="faq-heading">
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Frågor om referenser och liknande projekt</h2>
+          <p>Korta svar för upphandlare, fastighetsägare, entreprenörer och verksamhetsansvariga som vill se relevanta exempel.</p>
+        </div>
+
+        <div class="compact-faq">
+          <details class="faq-item">
+            <summary>Kan jag filtrera referenser efter miljö?</summary>
+            <p>Ja. Välj exempelvis simhall, sporthall, skola, ishall, konferens eller restaurang för att bara visa relevanta referenskort.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan jag filtrera efter teknik?</summary>
+            <p>Ja. Du kan filtrera efter exempelvis ljudsystem, bild, styrsystem, hörslinga, kameraövervakning och taluppfattbarhet.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Visas alla AVAB:s projekt här?</summary>
+            <p>Nej. Sidan är ett urval som fylls på löpande. AVAB har fler installationer än de som hunnit bli publicerade som fulla referenssidor.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kan AVAB visa liknande projekt inför upphandling?</summary>
+            <p>Ja. Berätta vilken typ av lokal eller teknik ni arbetar med, så kan vi visa relevanta exempel och diskutera rätt ambitionsnivå.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="avab-container">
+        <div class="fullwidth-cta">
+          <div>
+            <div class="eyebrow">Letar ni efter en liknande referens?</div>
+            <h2>Alla projekt ligger inte publicerade på webben</h2>
+            <p>Berätta vilken typ av lokal ni arbetar med, så visar vi relevanta exempel och hjälper er hitta rätt nivå på ljud, bild, styrning, tillgänglighet och säkerhet.</p>
+
+            <div class="cta-actions">
+              <a class="button button-light" href="tel:+46548202080">Ring 054-8202080</a>
+              <a class="button button-secondary" href="/miljo/simhall/">Se simhall</a>
+              <a class="button button-quiet" href="/miljo/sporthall/">Se sporthall</a>
+            </div>
+          </div>
+
+          <ul class="calc-list">
+            <li>Referenser efter miljö, teknik och projekttyp.</li>
+            <li>Underlag för tidig dialog med beställare och entreprenör.</li>
+            <li>Exempel från driftmiljöer där tekniken måste fungera varje dag.</li>
+            <li>Projekt från projektering till installation och driftsättning.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+
+  <script>
+    const searchInput = document.querySelector('[data-reference-search]');
+    const cards = Array.from(document.querySelectorAll('[data-reference-card]'));
+    const count = document.querySelector('[data-reference-count]');
+    const buttons = Array.from(document.querySelectorAll('[data-filter-group]'));
+
+    const active = {
+      environment: 'all',
+      technique: 'all'
+    };
+
+    function setPressed(group, value) {
+      buttons
+        .filter((button) => button.dataset.filterGroup === group)
+        .forEach((button) => {
+          const isActive = button.dataset.filterValue === value;
+          button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          button.classList.toggle('button-primary', isActive);
+          button.classList.toggle('button-secondary', !isActive);
+        });
+    }
+
+    function updateCards() {
+      const query = (searchInput?.value || '').trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const environments = (card.dataset.environments || '').split('|');
+        const techniques = (card.dataset.techniques || '').split('|');
+        const haystack = card.dataset.search || '';
+        const matchesEnvironment = active.environment === 'all' || environments.includes(active.environment);
+        const matchesTechnique = active.technique === 'all' || techniques.includes(active.technique);
+        const matchesSearch = !query || haystack.includes(query);
+        const shouldShow = matchesEnvironment && matchesTechnique && matchesSearch;
+
+        card.hidden = !shouldShow;
+        if (shouldShow) visible += 1;
+      });
+
+      if (count) {
+        count.textContent = `${visible} ${visible === 1 ? 'referens' : 'referenser'} visas.`;
+      }
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const group = button.dataset.filterGroup;
+        const value = button.dataset.filterValue || 'all';
+        if (!group) return;
+
+        active[group] = value;
+        setPressed(group, value);
+        updateCards();
+      });
+    });
+
+    searchInput?.addEventListener('input', updateCards);
+    setPressed('environment', 'all');
+    setPressed('technique', 'all');
+    updateCards();
+  </script>
+</body>
+</html>
