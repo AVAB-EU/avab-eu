@@ -229,13 +229,16 @@ relatedReferences:
 
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Planerar ni en liknande anläggning?
   title: Ta in AV, styrning och tillgänglighet innan konstruktionerna låses
   text: Skicka ritningar, FFU eller en kort projektbeskrivning. AVAB hjälper er att bedöma behov, omfattning och lämpligt nästa steg.
   primaryLabel: Ladda upp underlag
   primaryHref: /kontakt/#kontaktformular
-  primaryContactIntent: project
-  secondaryLabel: Kontakta AVAB
-  secondaryHref: /kontakt/
+  secondaryLabel: Se lösningar för simhall
+  secondaryHref: /miljo/simhall/
+  points:
+    - Gemensam Crestronstyrning för ljud, ljus och hörslingor
+    - Ljud i bassäng-, relax- och caféytor
+    - Mikrofoner och hörslingor för tillgängliga utrop
 ---

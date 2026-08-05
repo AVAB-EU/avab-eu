@@ -160,13 +160,16 @@ relevance:
     - Mötesrum där användaren ska kunna ansluta sin egen dator
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Planerar ni konferensrum eller styrelserum?
   title: Gör rummet enkelt för användaren och ordentligt bakom väggen
   text: AVAB projekterar och installerar mötesrum med Q-SYS, USB-C, trådlös presentation, takmikrofoner, kameror, Dante, högtalare, förstärkare och dokumentation.
   primaryLabel: Ladda upp underlag
   primaryHref: /kontakt/#kontaktformular
-  primaryContactIntent: project
   secondaryLabel: Se lösningar för konferensrum
   secondaryHref: /miljo/kontor-konferens/
+  points:
+    - 86-tums 4K-display för globala möten
+    - Beamforming-takmikrofon och Q-SYS med AEC
+    - Enkel anslutning via USB-C
 ---

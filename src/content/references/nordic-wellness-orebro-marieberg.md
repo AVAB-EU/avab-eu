@@ -149,13 +149,16 @@ relevance:
     - Verksamheter som vill kombinera funktionellt ljus och visuellt uttryck
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Ljus som passar lokalen?
   title: Vi projekterar och installerar där standardlösningar inte räcker
   text: 'Gym, simhallar, skolor, hotell och publika lokaler har ofta en sak gemensamt: tekniken måste fungera varje dag, men den måste också passa rummet. Det är där projektering, montagevana och noggrannhet gör skillnad.'
   primaryLabel: Boka ljusprojektering
   primaryHref: /kontakt/#kontaktformular
-  primaryContactIntent: project
   secondaryLabel: Se lösningar för gym
   secondaryHref: /miljo/gym/
+  points:
+    - 180 meter fjärrstyrd LED-belysning
+    - Fyra 40 meter långa huvudstråk
+    - Precisionsmontage på cirka åtta meters höjd
 ---

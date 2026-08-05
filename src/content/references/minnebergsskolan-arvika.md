@@ -163,13 +163,16 @@ relevance:
     - Projekt med krav på hörseltillgänglighet och digital information
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Planerar ni en skola?
   title: Ta in tekniken innan rummen låses
   text: AVAB kan gå igenom hela FFU:t, projektera undervisningsrum, hörsalar, aula, infoskärmar och tillgängligt ljud samt följa projektet genom installation och driftsättning.
   primaryLabel: Ladda upp FFU och ritningar
   primaryHref: /kontakt/#kontaktformular
-  primaryContactIntent: project
   secondaryLabel: Se lösningar för skola
   secondaryHref: /miljo/skola/
+  points:
+    - AV-teknik i fem byggnader
+    - 20 hörsalar och 18 informationsskärmar
+    - Aula med Crestron, DMX, Dante och hörslinga
 ---

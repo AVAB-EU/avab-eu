@@ -156,13 +156,16 @@ relevance:
     - Miljöer där tekniken ska vara diskret integrerad
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Planerar ni gym eller träningsanläggning?
   title: Zonindelat ljud med rätt känsla i varje yta
   text: AVAB projekterar och installerar zonindelat, appstyrt ljud för gym, spinning, rodd och sociala ytor, med lokala ljudkällor, infällda högtalare och basar där energin behövs.
   primaryLabel: Ladda upp underlag
   primaryHref: /kontakt/#kontaktformular
-  primaryContactIntent: project
   secondaryLabel: Se lösningar för gym
   secondaryHref: /miljo/gym/
+  points:
+    - Åtta separat styrbara ljudzoner
+    - Lokal ljudkälla i varje träningsrum
+    - Appstyrning för gym, spinning och rodd
 ---
