@@ -66,8 +66,6 @@ facts:
     value: December 2019
   - label: Miljö
     value: 50-meters simhall
-  - label: "AVAB:s leverans"
-    value: Crestron, RGB-belysning och ljud
 
 brief:
   eyebrow: Uppdraget på 30 sekunder
@@ -102,24 +100,6 @@ scope:
       value: Montage och driftsättning
   serviceLabel: Läs om lösningar för simhall
   serviceHref: /miljo/simhall/
-
-scale:
-  eyebrow: Verifierad omfattning
-  title: Två delar av lösningens omfattning
-  lead: Två konkreta värden visar mikrofonlösningens täckning och hur styrningen samlats för personalen.
-  items:
-    - value: "2"
-      label: mikrofonantenner i 50-metersbassängen
-      evidence:
-        type: delivered
-        source: https://avab.eu/simhall/
-        verifiedAt: 2026-08-05
-    - value: "1"
-      label: gemensamt Crestrongränssnitt
-      evidence:
-        type: delivered
-        source: https://avab.eu/saffle-simhall/
-        verifiedAt: 2026-08-05
 
 results:
   eyebrow: Resultat och verifiering

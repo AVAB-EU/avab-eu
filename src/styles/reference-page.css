@@ -132,11 +132,17 @@
 }
 
 .reference-facts {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
   border-bottom: 1px solid var(--reference-line);
   background: var(--reference-facts-bg);
 }
 
-.reference-facts-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.reference-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(190px, 1fr));
+  min-width: 950px;
+}
 .reference-fact { min-width: 0; padding: 24px 22px; border-right: 1px solid var(--reference-line); }
 .reference-fact:first-child { border-left: 1px solid var(--reference-line); }
 .reference-fact span {
@@ -148,7 +154,13 @@
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
-.reference-fact strong { display: block; color: var(--reference-ink); font-size: 0.98rem; line-height: 1.38; }
+.reference-fact strong {
+  display: block;
+  color: var(--reference-ink);
+  font-size: 0.98rem;
+  line-height: 1.38;
+  white-space: nowrap;
+}
 
 .reference-section {
   padding: clamp(64px, 8vw, 108px) 0;
@@ -403,12 +415,6 @@
 .related-card span { color: var(--reference-ink); font-size: 0.9rem; font-weight: 800; }
 .related-card span::after { content: " →"; color: var(--avab-green); }
 
-@media (max-width: 1100px) {
-  .reference-facts-grid { grid-template-columns: repeat(3, 1fr); }
-  .reference-fact:nth-child(4) { border-left: 1px solid var(--reference-line); }
-  .reference-fact:nth-child(n + 4) { border-top: 1px solid var(--reference-line); }
-}
-
 @media (max-width: 900px) {
   .reference-hero__grid,
   .reference-content-grid,
@@ -431,17 +437,26 @@
   .reference-hero h1 { font-size: clamp(2.45rem, 12vw, 3.7rem); }
   .reference-actions { width: 100%; flex-direction: column; }
   .reference-actions .button { width: 100%; }
-  .reference-facts-grid,
+  .reference-facts { overflow-x: visible; }
+  .reference-facts-grid {
+    grid-template-columns: 1fr;
+    min-width: 0;
+  }
+  .reference-fact,
+  .reference-fact:first-child {
+    padding: 18px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--reference-line);
+    border-left: 0;
+  }
+  .reference-fact:last-child { border-bottom: 0; }
+  .reference-fact strong { white-space: normal; }
   .scope-list,
   .room-grid,
   .scale-grid,
   .gallery-grid,
   .technical-content ul,
   .relevance-grid { grid-template-columns: 1fr; }
-  .reference-facts .reference-facts-grid { width: 100%; margin: 0; }
-  .reference-fact,
-  .reference-fact:nth-child(4),
-  .reference-fact:nth-child(n + 4) { border: 0; }
   .reference-block + .reference-block { margin-top: 52px; padding-top: 52px; }
   .related-grid { grid-template-columns: 1fr; }
 }
