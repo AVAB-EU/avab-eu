@@ -435,3 +435,57 @@ Manuell checklista:
    `measured` eller `estimated`.
 5. Bevara varje äldre sidas CTA via kompatibilitetsläge; CTA-standardisering
    görs först efter att alla referenser är migrerade.
+
+## Fas 3B: batchmigrering av återstående referenser som draft
+
+Teknisk batchmigrering genomförd 2026-08-05 efter uttryckligt beslut att
+förbereda samtliga återstående referenser i en gemensam körning. Den här
+sektionen ersätter den äldre readiness-matrisens tekniska blockerare, men inte
+blockerarna för publicering.
+
+Gemensamma beslut för samtliga elva sidor:
+
+- `draft: true` och `seo.noindex: true`
+- tunn route runt den gemensamma `ReferencePage`
+- exakt fem korta värden i faktabandet
+- ingen `scale`-sektion och ingen synlig "Verifierad omfattning"
+- inget kundcitat utan dokumenterat godkännande
+- relativa interna länkar och befintligt `#kontaktformular`
+- legacy-CTA återges av den avgränsade kompatibilitetsrenderern
+- arkivet fortsätter använda `referenser.ts` medan entryn är draft
+- inga interna evidensnoteringar renderas publikt
+
+De gamla route-filerna hänvisade till nio bildfiler som saknades både i repot
+och på produktionsdomänens `/assets/`-vägar. För att undvika trasiga bilder i
+testmiljön används befintliga lokala AVAB-bilder. Där en verifierad
+projektspecifik bild saknas är alt-texten medvetet generell och påstår inte att
+motivet visar den namngivna kunden. Dessa bilder är provisoriska och ska
+bekräftas eller ersättas innan `draft: false`.
+
+| Referens | Primär lokal bild i draft | Faktastatus | Bildstatus | Teknisk status |
+|---|---|---|---|---|
+| Årjängs simhall | `/assets/simhall-bassang-glasfasad.webp` | Återpublicerad från befintlig AVAB-sida; invigning april 2024 ska slutbekräftas | Provisorisk miljöbild; rättigheter och kundkoppling ska bekräftas | Migrerad som draft |
+| Claessons Konferens & Restaurang | `/assets/claessons-konferens-albatrossen.webp` | Återpublicerad från befintlig AVAB-sida | Tre lokala projektnamngivna bilder; rättigheter ska bekräftas | Migrerad som draft |
+| Ekhagsskolan | `/assets/inomhusarena-plan-laktare-bred.webp` | Återpublicerad från befintlig AVAB-sida | Provisorisk miljöbild; rättigheter och kundkoppling ska bekräftas | Migrerad som draft |
+| Friskis&Svettis Karlstad | `/assets/gym-traningslokal-personer-hero.webp` | Återpublicerad från befintlig AVAB-sida; startår 2026 ska slutbekräftas | Provisorisk gymbild; rättigheter och kundkoppling ska bekräftas | Migrerad som draft |
+| Kroppkärrs IP | `/assets/utomhushogtalare-pa-mast.webp` | Återpublicerad från befintlig AVAB-sida | Lokal motivrelevant bild; rättigheter ska bekräftas | Migrerad som draft |
+| Lesjöfors AB | `/assets/lesjofors-ab.webp` | Återpublicerad från befintlig AVAB-sida | Lokal projektnamngiven bild; rättigheter ska bekräftas | Migrerad som draft |
+| Lundsbergs skola | `/assets/gym-interior-traningsutrustning.webp` | Återpublicerad från befintlig AVAB-sida | Provisorisk gymbild; rättigheter och kundkoppling ska bekräftas | Migrerad som draft |
+| Minnebergsskolan | `/assets/modern-trafasad-innergard.webp` | Återpublicerad från befintlig AVAB-sida | Lokal projektrelaterad bild; rättigheter ska bekräftas | Migrerad som draft |
+| Nordic Wellness Marieberg | `/assets/gym-interior-bla-ledbelysning.webp` | Återpublicerad från befintlig AVAB-sida; 180 m, 4 × 40 m och cirka 8 m ska slutbekräftas | Lokal motivrelevant bild; rättigheter och kundkoppling ska bekräftas | Migrerad som draft |
+| Sannerudshallen | `/assets/hero-kils-ishall-interior.webp` | Återpublicerad från befintlig AVAB-sida | Lokal Kils-bild; rättigheter ska bekräftas | Migrerad som draft |
+| Sörby idrottshall | `/assets/sporthall-interior-linjer.webp` | Återpublicerad från befintlig AVAB-sida | Lokal projektrelaterad bild; rättigheter ska bekräftas | Migrerad som draft |
+
+### Readiness efter batchmigreringen
+
+Samtliga elva sidor är tekniskt redo för deploy till den noindex-skyddade
+testmiljön och manuell visuell granskning. Ingen av dem är redo att ändras till
+`draft: false`.
+
+Följande måste dokumenteras per referens före publicering:
+
+1. kundens godkännande av den migrerade texten
+2. rättighet och tillåten användning för vald hero- och eventuell galleribild
+3. bekräftelse av mängduppgifter och årtal mot projektunderlag eller kund
+4. beslut om provisoriska miljöbilder ska ersättas med projektspecifika original
+5. separat godkännande innan ett tidigare publicerat kundcitat återinförs
