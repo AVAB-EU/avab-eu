@@ -1,5 +1,10 @@
 # CTA fas 1: inventering och rekommenderad avgränsning
 
+> Historik: dokumentet beskriver referenspilotens avgränsning. Piloten är
+> genomförd. Den webbplatsomfattande fortsättningen och route-för-route-besluten
+> finns i `cta-webbplatsinventering-och-beslut.md`, som är styrande för nästa
+> CTA-fas.
+
 ## Status
 
 Inventeringen genomfördes 2026-08-05 efter att samtliga referenssidor hade
@@ -34,9 +39,9 @@ webbplatsomfattande standardisering.
 |---|---:|---|
 | Referensdetaljer | 14 | 1 PageCTA, 13 legacy |
 | Referensarkiv | 1 | Lokal fullwidth-cta |
-| Miljösidor | 14 | Lokal fullwidth-cta på samtliga |
+| Miljösidor | 15 | Lokal fullwidth-cta på samtliga |
 | Tjänstesidor | 13 | 12 lokala fullwidth-cta, 1 lokal CTA-kortvariant |
-| Start, kunskap och övriga stödsidor | 6 | Lokala fullwidth-cta |
+| Start, kunskap och övriga stödsidor | 5 | Lokala fullwidth-cta |
 | Kontaktsida | 1 | Kontaktformuläret är konverteringsmålet |
 
 Det finns alltså minst fyra aktiva presentationssätt:
@@ -79,7 +84,7 @@ Det finns alltså minst fyra aktiva presentationssätt:
 
 ## Övriga sidtyper
 
-Samtliga 14 aktiva miljösidor har en lokal fullwidth-cta och ska lämnas
+Samtliga 15 aktiva miljösidor har en lokal fullwidth-cta och ska lämnas
 oförändrade i referensutrullningen.
 
 Tolv tjänstesidor har en lokal fullwidth-cta. Kameraövervakning använder ett

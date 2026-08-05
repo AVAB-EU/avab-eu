@@ -1,5 +1,6 @@
 ﻿---
 import heroHomeSaffleSimhall from "../assets/images/industries/saffle-simhall-hero.webp";
+import PageCTA from "../components/PageCTA.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import "../styles/avab.css";
@@ -852,28 +853,23 @@ const heroImage = heroHomeSaffleSimhall.src;
         </aside>
       </div>
 
-      <div class="avab-container fullwidth-cta-wrap">
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Teknik som håller i verkligheten</div>
-            <h2>Ska vi hjälpa er planera nästa teknikmiljö?</h2>
-            <p>Avancerad teknik behöver inte kännas avancerad i vardagen. Vi bygger system som är enkla att använda, tydliga att drifta och robusta nog att fungera när det verkligen gäller.</p>
-
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri rådgivning</a>
-              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
-            </div>
-          </div>
-
-          <ul class="cta-points">
-            <li>Helhetsansvar från projektering till drift</li>
-            <li>Konferensrum, skola, säkerhet och publika miljöer</li>
-            <li>Service, livscykel och återbruk där det är rätt</li>
-            <li>Från mindre mötesrum till större publika anläggningar</li>
-          </ul>
-        </div>
-      </div>
     </section>
+
+    <PageCTA
+      eyebrow="Teknik som håller i verkligheten"
+      title="Ska vi hjälpa er planera nästa teknikmiljö?"
+      text="Avancerad teknik behöver inte kännas avancerad i vardagen. Vi bygger system som är enkla att använda, tydliga att drifta och robusta nog att fungera när det verkligen gäller."
+      primaryLabel="Boka kostnadsfri rådgivning"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "Helhetsansvar från projektering till drift",
+        "Konferensrum, skola, säkerhet och publika miljöer",
+        "Service, livscykel och återbruk där det är rätt",
+        "Från mindre mötesrum till större publika anläggningar",
+      ]}
+    />
 
   </main>
 
