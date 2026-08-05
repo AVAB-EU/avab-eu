@@ -1,5 +1,6 @@
 ﻿---
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -867,27 +868,23 @@ import "../../../styles/avab.css";
         </aside>
       </div>
 
-      <div class="avab-container fullwidth-cta-wrap">
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Teknik som fungerar i verkligheten</div>
-            <h2>Ska vi hjälpa er välja rätt hörslinga?</h2>
-            <p>Skicka eller ladda upp FFU, ritningar och en kort beskrivning av lokalen. Vi avgör om den bör ha PLS, SLS, diskslinga, Auracast eller en kombination och tar fram rätt omfattning.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Ladda upp FFU eller ritning</a>
-              <a class="button button-secondary" href="/kontakt/">Kontakta AVAB</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-          <ul class="cta-points">
-            <li>Projektering från ritning eller befintlig lokal</li>
-            <li>PLS, SLS, lågläckande lösningar, Auracast och tillgänglighetsanpassning</li>
-            <li>Samordning med ljudsystem, mikrofoner och styrning</li>
-            <li>Mätning, certifiering, dokumentation och långsiktig drift</li>
-          </ul>
-        </div>
-      </div>
     </section>
+
+    <PageCTA
+      eyebrow="Teknik som fungerar i verkligheten"
+      title="Ska vi hjälpa er välja rätt hörslinga?"
+      text="Skicka eller ladda upp FFU, ritningar och en kort beskrivning av lokalen. Vi avgör om den bör ha PLS, SLS, diskslinga, Auracast eller en kombination och tar fram rätt omfattning."
+      primaryLabel="Ladda upp FFU eller ritning"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om taluppfattbarhet"
+      secondaryHref="/tjanster/taluppfattbarhet/"
+      points={[
+        "Projektering från ritning eller befintlig lokal",
+        "PLS, SLS, lågläckande lösningar, Auracast och tillgänglighetsanpassning",
+        "Samordning med ljudsystem, mikrofoner och styrning",
+        "Mätning, certifiering, dokumentation och långsiktig drift",
+      ]}
+    />
 
   </main>
 

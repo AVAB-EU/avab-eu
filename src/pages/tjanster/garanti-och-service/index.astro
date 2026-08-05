@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -276,27 +277,21 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section">
-      <div class="avab-container">
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Nästa steg</div>
-            <h2>Vill ni minska risken för driftstopp?</h2>
-            <p>Vi kan felsöka ett aktuellt problem, gå igenom en äldre anläggning eller föreslå ett serviceupplägg för lokaler där tekniken alltid måste fungera.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="tel:+46548202080">Ring 054-8202080</a>
-              <a class="button button-secondary" href="mailto:info@avab.eu">Mejla AVAB</a>
-            </div>
-          </div>
-          <ul class="calc-list">
-            <li>Felsökning och återställning</li>
-            <li>Garantiärenden och leverantörskontakt</li>
-            <li>Förebyggande genomgång</li>
-            <li>Serviceavtal och planerade uppgraderingar</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      eyebrow="Nästa steg"
+      title="Vill ni minska risken för driftstopp?"
+      text="Vi kan felsöka ett aktuellt problem, gå igenom en äldre anläggning eller föreslå ett serviceupplägg för lokaler där tekniken alltid måste fungera."
+      primaryLabel="Ring 054-8202080"
+      primaryHref="tel:+46548202080"
+      secondaryLabel="Kontakta AVAB"
+      secondaryHref="/kontakt/"
+      points={[
+        "Felsökning och återställning",
+        "Garantiärenden och leverantörskontakt",
+        "Förebyggande genomgång",
+        "Serviceavtal och planerade uppgraderingar",
+      ]}
+    />
   </main>
 
   <SiteFooter />

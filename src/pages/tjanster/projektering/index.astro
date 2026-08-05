@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -275,27 +276,21 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section">
-      <div class="avab-container">
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Nästa steg</div>
-            <h2>Ta in AV-tekniken innan byggprojektet låser sig</h2>
-            <p>Skicka ritningar, FFU eller en kort beskrivning av lokalen. Vi hjälper er att se vilka beslut som behöver tas tidigt och vilket underlag som behövs för nästa steg.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="tel:+46548202080">Ring 054-8202080</a>
-              <a class="button button-secondary" href="mailto:info@avab.eu">Mejla AVAB</a>
-            </div>
-          </div>
-          <ul class="calc-list">
-            <li>Genomgång av ritningar och verksamhetsbehov</li>
-            <li>Systemprincip och zonindelning</li>
-            <li>Gränsdragning mot el, bygg och nätverk</li>
-            <li>Underlag för offert, upphandling och installation</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      eyebrow="Nästa steg"
+      title="Ta in AV-tekniken innan byggprojektet låser sig"
+      text="Skicka ritningar, FFU eller en kort beskrivning av lokalen. Vi hjälper er att se vilka beslut som behöver tas tidigt och vilket underlag som behövs för nästa steg."
+      primaryLabel="Kontakta AVAB"
+      primaryHref="/kontakt/"
+      secondaryLabel="Ring 054-8202080"
+      secondaryHref="tel:+46548202080"
+      points={[
+        "Genomgång av ritningar och verksamhetsbehov",
+        "Systemprincip och zonindelning",
+        "Gränsdragning mot el, bygg och nätverk",
+        "Underlag för offert, upphandling och installation",
+      ]}
+    />
   </main>
 
   <SiteFooter />

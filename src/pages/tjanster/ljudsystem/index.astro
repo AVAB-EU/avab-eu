@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -613,27 +614,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Ska ni bygga nytt ljud eller rädda ett gammalt?</h2>
-            <p>AVAB hjälper er att välja rätt system, räkna på lokalen, installera och verifiera resultatet, så att ljudet fungerar för verksamheten varje dag, i många år.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/taluppfattbarhet/">Läs om taluppfattbarhet</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Lågohm, 100V eller kombination, valt efter användningen.</li>
-            <li>EASE-simulering och STI-mätning där det behövs.</li>
-            <li>Zoner, DSP, Dante och styrning som personalen förstår.</li>
-            <li>Projektering, installation, injustering och dokumentation.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Ska ni bygga nytt ljud eller rädda ett gammalt?"
+      text="AVAB hjälper er att välja rätt system, räkna på lokalen, installera och verifiera resultatet, så att ljudet fungerar för verksamheten varje dag, i många år."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om taluppfattbarhet"
+      secondaryHref="/tjanster/taluppfattbarhet/"
+      points={[
+        "Lågohm, 100V eller kombination, valt efter användningen.",
+        "EASE-simulering och STI-mätning där det behövs.",
+        "Zoner, DSP, Dante och styrning som personalen förstår.",
+        "Projektering, installation, injustering och dokumentation.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -632,27 +633,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Vill ni samla ljud, bild, ljus och styrning i ett system?</h2>
-            <p>AVAB hjälper er att projektera, installera och driftsätta styrsystem och integration för publika miljöer, mötesrum och anläggningar där tekniken behöver fungera varje dag, och där personalen faktiskt kan använda den.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/service-support/">Läs om service &amp; support</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Crestron, Q-SYS, Biamp, Bose och Yamaha efter behov.</li>
-            <li>Gränssnitt och behörigheter anpassade för personalen.</li>
-            <li>Logik mellan ljud, bild, ljus, zoner och driftlägen.</li>
-            <li>Projektering, programmering, driftsättning och utbildning.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Vill ni samla ljud, bild, ljus och styrning i ett system?"
+      text="AVAB hjälper er att projektera, installera och driftsätta styrsystem och integration för publika miljöer, mötesrum och anläggningar där tekniken behöver fungera varje dag, och där personalen faktiskt kan använda den."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om garanti och service"
+      secondaryHref="/tjanster/garanti-och-service/"
+      points={[
+        "Crestron, Q-SYS, Biamp, Bose och Yamaha efter behov.",
+        "Gränssnitt och behörigheter anpassade för personalen.",
+        "Logik mellan ljud, bild, ljus, zoner och driftlägen.",
+        "Projektering, programmering, driftsättning och utbildning.",
+      ]}
+    />
   </main>
 
   <SiteFooter />
