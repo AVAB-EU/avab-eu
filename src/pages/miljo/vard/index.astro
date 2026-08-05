@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -468,27 +469,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Ska ni bygga eller renovera en vårdmiljö?</h2>
-            <p>Ta in AVAB innan kabelvägar, tak, väggar, rackplats och funktionskrav är låsta. Då blir lösningen enklare att bygga, tydligare att använda och tryggare att förvalta.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>AV-lösning för sjukhus, klinik, vårdcentral och omsorg.</li>
-            <li>Underlag för fastighetsägare, region, kommun, entreprenör och elektriker.</li>
-            <li>Ljud, zonutrop, styrning, hörslinga, Auracast, STI och kamera.</li>
-            <li>Projektering, installation, driftsättning, inmätning och dokumentation.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Ska ni bygga eller renovera en vårdmiljö?"
+      text="Ta in AVAB innan kabelvägar, tak, väggar, rackplats och funktionskrav är låsta. Då blir lösningen enklare att bygga, tydligare att använda och tryggare att förvalta."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "AV-lösning för sjukhus, klinik, vårdcentral och omsorg.",
+        "Underlag för fastighetsägare, region, kommun, entreprenör och elektriker.",
+        "Ljud, zonutrop, styrning, hörslinga, Auracast, STI och kamera.",
+        "Projektering, installation, driftsättning, inmätning och dokumentation.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

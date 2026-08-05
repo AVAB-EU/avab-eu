@@ -1,6 +1,7 @@
 ﻿---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 
 import "../../../styles/avab.css";
 
@@ -763,29 +764,22 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
       </div>
     </section>
 
-    <section class="section" id="cta">
-      <div class="avab-container fullwidth-cta-wrap">
-        <div class="fullwidth-cta animate-in">
-          <div>
-            <div class="eyebrow">Nästa steg</div>
-            <h2>Ska ni bygga, bygga om eller modernisera ett köpcentrum?</h2>
-            <p>Skicka ritningar, befintlig teknisk dokumentation eller en kort beskrivning av fastigheten. Vi hjälper er att se vilka delar som bör projekteras nu, vad som kan byggas etappvis och hur ljud, bild, signage, kamera och eventytor kan samverka i samma helhet.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="mailto:andreas@avab.eu?subject=K%C3%B6pcentrum%20och%20galleria%20-%20teknisk%20genomg%C3%A5ng">Mejla ritningar eller fråga</a>
-              <a class="button button-secondary" href="/kontakt/">Boka rådgivning</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
-            </div>
-          </div>
-
-          <ul class="cta-points">
-            <li>Ljud, signage, LED, kamera och event i en helhet.</li>
-            <li>Underlag för fastighetsägare, drift, säkerhet och upphandling.</li>
-            <li>Projektering, installation, certifiering och dokumentation.</li>
-            <li>Service, funktionskontroll och etappvis utbyggnad.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      id="cta"
+      eyebrow="Nästa steg"
+      title="Ska ni bygga, bygga om eller modernisera ett köpcentrum?"
+      text="Skicka ritningar, befintlig teknisk dokumentation eller en kort beskrivning av fastigheten. Vi hjälper er att se vilka delar som bör projekteras nu, vad som kan byggas etappvis och hur ljud, bild, signage, kamera och eventytor kan samverka i samma helhet."
+      primaryLabel="Boka rådgivning"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "Ljud, signage, LED, kamera och event i en helhet.",
+        "Underlag för fastighetsägare, drift, säkerhet och upphandling.",
+        "Projektering, installation, certifiering och dokumentation.",
+        "Service, funktionskontroll och etappvis utbyggnad.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

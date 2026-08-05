@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -487,27 +488,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Ska ni bygga, flytta eller uppdatera ett gym?</h2>
-            <p>Ta in AVAB innan kabelvägar, undertak, rackplats, skärmplacering och gruppträningssalar är låsta. Då blir tekniken enklare att bygga, snyggare att montera och lättare att använda.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/ljudsystem/">Läs om ljudsystem</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Komplett AV-lösning för gym och träningsanläggningar.</li>
-            <li>Ljud, bild, ljus, styrning, signage och kamera i samma systemtänk.</li>
-            <li>Gruppträningssalar med tryck, bas och enkel kontroll.</li>
-            <li>Tidsstyrd musik, virtuella pass och automatiserade scenarier.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Ska ni bygga, flytta eller uppdatera ett gym?"
+      text="Ta in AVAB innan kabelvägar, undertak, rackplats, skärmplacering och gruppträningssalar är låsta. Då blir tekniken enklare att bygga, snyggare att montera och lättare att använda."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om ljudsystem"
+      secondaryHref="/tjanster/ljudsystem/"
+      points={[
+        "Komplett AV-lösning för gym och träningsanläggningar.",
+        "Ljud, bild, ljus, styrning, signage och kamera i samma systemtänk.",
+        "Gruppträningssalar med tryck, bas och enkel kontroll.",
+        "Tidsstyrd musik, virtuella pass och automatiserade scenarier.",
+      ]}
+    />
   </main>
 
   <SiteFooter />
