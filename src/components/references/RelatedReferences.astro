@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type RelatedReferences = NonNullable<CollectionEntry<"references">["data"]["relatedReferences"]>;
+interface Props { related: RelatedReferences }
+const { related } = Astro.props;
+---
+
+<section class="reference-section reference-section--soft" aria-labelledby="relaterade">
+  <div class="avab-container">
+    <div class="reference-section-heading">
+      <span class="reference-kicker">{related.eyebrow}</span>
+      <h2 id="relaterade">{related.title}</h2>
+    </div>
+    <div class="related-grid">
+      {related.items.map((reference) => (
+        <a class="related-card" href={reference.href}>
+          <img
+            src={reference.image.src}
+            alt={reference.image.alt}
+            width={reference.image.width}
+            height={reference.image.height}
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="related-card-content">
+            <h3>{reference.title}</h3>
+            <p>{reference.text}</p>
+            <span>Se referensen</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

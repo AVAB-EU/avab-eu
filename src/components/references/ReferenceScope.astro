@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type ReferenceData = CollectionEntry<"references">["data"];
+interface Props {
+  scope: ReferenceData["scope"];
+  variants?: ReferenceData["variants"];
+}
+const { scope, variants } = Astro.props;
+---
+
+<section class="reference-section reference-section--soft" id="omfattning">
+  <div class="avab-container reference-content-grid">
+    <article class="reference-article">
+      <section class="reference-block">
+        <span class="reference-kicker">{scope.eyebrow}</span>
+        <h2>{scope.title}</h2>
+        <p>{scope.lead}</p>
+        <ul class="scope-list">
+          {scope.items.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
+
+      {variants && (
+        <section class="reference-block">
+          <span class="reference-kicker">{variants.eyebrow}</span>
+          <h2>{variants.title}</h2>
+          <p>{variants.lead}</p>
+          <div class="room-grid">
+            {variants.items.map((variant) => (
+              <article class="room-card">
+                <h3>{variant.title}</h3>
+                <p>{variant.text}</p>
+                <ul>{variant.details.map((detail) => <li>{detail}</li>)}</ul>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+    </article>
+
+    {scope.projectFacts && (
+      <aside class="reference-sidebar" aria-label="Projektfakta">
+        <h2>Projektfakta</h2>
+        <dl class="sidebar-facts">
+          {scope.projectFacts.map((fact) => (
+            <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>
+          ))}
+        </dl>
+        {scope.serviceLabel && scope.serviceHref && (
+          <a class="button button-primary sidebar-action" href={scope.serviceHref}>
+            {scope.serviceLabel}
+          </a>
+        )}
+      </aside>
+    )}
+  </div>
+</section>

@@ -69,7 +69,7 @@ export const references: Reference[] = [
     image: "/assets/tegelbyggnad-glasfasad-entre.webp",
     imageAlt: "Säffle simhall med zonindelat ljud och Crestronstyrning från AVAB",
     excerpt:
-      "Överordnat Crestronsystem, zonindelat ljud, ingjutna hörslingor, projektor och RGB-styrd miljöbelysning. Upp till 487 sparade arbetstimmar per år.",
+      "Överordnat Crestronsystem, zonindelat ljud, ingjutna hörslingor, projektor och RGB-styrd miljöbelysning.",
     environments: ["simhall"],
     technologies: ["ljud", "styrsystem", "crestron", "ljus", "horslinga", "mikrofoner", "bild", "projektering"],
     featured: true,
@@ -209,16 +209,5 @@ export const references: Reference[] = [
       "Appstyrd ljudanläggning i åtta zoner för gym, spinning- och roddsal, entré och omklädningsrum, med infällda högtalare och basar.",
     environments: ["skola", "gym"],
     technologies: ["ljud", "bild", "bakgrundsmusik", "projektering"],
-  },
-  {
-    title: "Hanza Mechanics, Töcksfors",
-    slug: "/referenser/hanza-konferens-tocksfors/",
-    location: "Töcksfors",
-    image: "/assets/konferensrum-stor-skarm-bord.webp",
-    imageAlt: "Konferensrum hos Hanza Mechanics i Töcksfors med videobar och rumsbokning från AVAB",
-    excerpt:
-      "Två nya konferensrum med 85-tums Samsung PRO, Crestron AirMedia, Teams/BYOD, Sennheiser-videobar och rumsbokningspaneler utanför fyra rum.",
-    environments: ["industri", "kontor-konferens"],
-    technologies: ["bild", "styrsystem", "crestron", "mikrofoner", "konferens"],
   },
 ];
