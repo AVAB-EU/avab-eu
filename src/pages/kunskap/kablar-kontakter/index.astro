@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -547,27 +548,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Behöver ni rätt kablage från början?</h2>
-            <p>AVAB hjälper er att projektera, installera, märka och dokumentera kablarna för ljud, ljus, nätverk, hörslinga, mikrofoner, konferensrum och utrymningsljud, så att anläggningen fungerar från början och går att förstå när den ska servas.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Rätt kabel för signaltyp, effekt, längd och miljö.</li>
-            <li>Kontaktering med rätt pitch, polordning och terminering.</li>
-            <li>Gränsdragning mellan elentreprenad och AV.</li>
-            <li>Mängdning, märkning, testning och dokumentation.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Behöver ni rätt kablage från början?"
+      text="AVAB hjälper er att projektera, installera, märka och dokumentera kablarna för ljud, ljus, nätverk, hörslinga, mikrofoner, konferensrum och utrymningsljud, så att anläggningen fungerar från början och går att förstå när den ska servas."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "Rätt kabel för signaltyp, effekt, längd och miljö.",
+        "Kontaktering med rätt pitch, polordning och terminering.",
+        "Gränsdragning mellan elentreprenad och AV.",
+        "Mängdning, märkning, testning och dokumentation.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+import PageCTA from "../../components/PageCTA.astro";
 import ReferenceCard from "../../components/ReferenceCard.astro";
 import { getCollection } from "astro:content";
 import { absoluteUrl, SITE_URL } from "../../config/site";
@@ -338,28 +339,21 @@ const itemListElements = sorted.map((ref, i) => ({
       </div>
     </section>
 
-    <section class="section section--light">
-      <div class="avab-container">
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Planerar ni ett liknande projekt?</div>
-            <h2>Skicka underlaget, så hittar vi rätt nivå tillsammans</h2>
-            <p>Skicka ritningar, FFU eller en kort beskrivning så hjälper vi er hitta rätt nivå på ljud, bild, ljus, styrning och tillgänglighet, från projektering till driftsatt och dokumenterad anläggning.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/#ladda-upp-underlag">Ladda upp underlag</a>
-              <a class="button button-secondary" href="/#tjanster">Se våra tjänster</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-          <ul class="calc-list">
-            <li>Ljud, bild, ljus och styrsystem i samma helhet.</li>
-            <li>Mikrofoner, hörslingor och taluppfattbarhet.</li>
-            <li>Projektering, installation och driftsättning.</li>
-            <li>Service och support när verksamheten förändras.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      eyebrow="Planerar ni ett liknande projekt?"
+      title="Skicka underlaget, så hittar vi rätt nivå tillsammans"
+      text="Skicka ritningar, FFU eller en kort beskrivning så hjälper vi er hitta rätt nivå på ljud, bild, ljus, styrning och tillgänglighet, från projektering till driftsatt och dokumenterad anläggning."
+      primaryLabel="Ladda upp underlag"
+      primaryHref="/kontakt/#kontaktformular"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "Ljud, bild, ljus och styrsystem i samma helhet.",
+        "Mikrofoner, hörslingor och taluppfattbarhet.",
+        "Projektering, installation och driftsättning.",
+        "Service och support när verksamheten förändras.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

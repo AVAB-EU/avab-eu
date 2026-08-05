@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+import PageCTA from "../../components/PageCTA.astro";
 import "../../styles/avab.css";
 ---
 
@@ -699,33 +700,24 @@ import "../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta-wrap">
-          <div class="fullwidth-cta">
-            <div>
-              <span class="eyebrow">Kontakt</span>
-              <h2>Har du frågor om integritet?</h2>
-              <p>
-                Kontakta AVAB om du vill veta mer om hur vi behandlar personuppgifter
-                eller om du vill använda någon av dina rättigheter.
-              </p>
-
-              <div class="cta-actions">
-                <a class="button button-light" href="mailto:info@avab.eu">Mejla AVAB</a>
-                <a class="button button-secondary" href="/kontakt/">Gå till kontakt</a>
-                <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-              </div>
-            </div>
-
-            <ul class="calc-list">
-              <li>Frågor om personuppgifter</li>
-              <li>Begäran om registerutdrag</li>
-              <li>Rättelse eller radering</li>
-              <li>Frågor om cookies och webbplatsdata</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Kontakt"
+      title="Har du frågor om integritet?"
+      text="Kontakta AVAB om du vill veta mer om hur vi behandlar personuppgifter eller om du vill använda någon av dina rättigheter."
+      primaryLabel="Mejla AVAB"
+      primaryHref="mailto:info@avab.eu"
+      secondaryLabel="Gå till kontakt"
+      secondaryHref="/kontakt/"
+      points={[
+        "Frågor om personuppgifter",
+        "Begäran om registerutdrag",
+        "Rättelse eller radering",
+        "Frågor om cookies och webbplatsdata",
+      ]}
+    />
   </main>
 
   <SiteFooter />

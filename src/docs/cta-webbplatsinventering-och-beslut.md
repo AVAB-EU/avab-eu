@@ -79,7 +79,7 @@ länkmål, medan `PageCTA` förblir generell.
 
 | Route | Nuläge | Beslut | Särskild åtgärd |
 |---|---|---|---|
-| `/referenser/` | fullwidth | Byt till `PageCTA` | Rätta kontaktankaret till `#kontaktformular`; behåll tjänstefördjupning |
+| `/referenser/` | fullwidth | Byt till `PageCTA` | Rätta kontaktankaret till `#kontaktformular`; ersätt saknat `/#tjanster` med projektering |
 | `/referenser/arjangs-simhall/` | `PageCTA` | Behåll | Ingen CTA-ändring före visuell slutkontroll |
 | `/referenser/claessons-restaurang-konferens/` | `PageCTA` | Behåll | Ingen CTA-ändring före visuell slutkontroll |
 | `/referenser/ekhagsskolan-dals-langed/` | `PageCTA` | Behåll | Ingen CTA-ändring före visuell slutkontroll |
@@ -144,6 +144,7 @@ Nuvarande sidunika rubrik, text och faktapunkter är redaktionell utgångspunkt.
 |---|---|---|
 | `/om-oss/` | `/projektering/` | `/tjanster/projektering/` |
 | `/referenser/` | `/kontakt/#ladda-upp-underlag` | `/kontakt/#kontaktformular` |
+| `/referenser/` | `/#tjanster` | `/tjanster/projektering/` |
 | `/miljo/sporthall-arena/` | `/budgetkalkylator-av-teknik/` | `/tjanster/projektering/` |
 | `/tjanster/styrsystem-integration/` | `/service-support/` | `/tjanster/garanti-och-service/` |
 | `/tjanster/talat-utrymningslarm/` | `/kontakt/#ladda-upp-underlag` | `/kontakt/#kontaktformular` |
