@@ -229,13 +229,93 @@ mätkälla i nuvarande datamodell.
 | Lundsbergs skola | Ja | Okänt | Okänt | Okänt | Ja | Nej | Okänt | standard |
 | Minnebergsskolan | Ja | Okänt | Okänt | Okänt | Ja | Nej | Okänt | extended |
 | Nordic Wellness Marieberg | Ja | Okänt | Okänt | Okänt | Ja | Nej | Okänt | compact |
-| Säffle simhall | Ja | Okänt | Okänt | Okänt | Ja | Nej | Okänt | extended |
+| Säffle simhall | Ja | Kräver kundgodkännande | Okänt | Verifierat: december 2019 | Ja | Delvis; se fas 2A-granskningen | Citatet är publicerat, men formellt godkännande saknas | extended |
 | Sannerudshallen | Ja | Okänt | Okänt | Okänt | Ja | Nej | Okänt | extended |
 | Sörby idrottshall | Ja | Okänt | Okänt | Okänt | Ja | Nej | Okänt | extended |
 
-Rekommendation: 1 compact, 5 standard och 8 extended. Samtliga 14 saknar
-dokumenterat publiceringsgodkännande, kända bildrättigheter, verifierat
-färdigställandedatum och godkänt kundcitat i den inventerade källkoden.
+Rekommendation: 1 compact, 5 standard och 8 extended. Säffles
+färdigställandedatum och befintliga citat kan verifieras mot publika källor,
+men dokumenterat publiceringsgodkännande och bildrättigheter saknas fortfarande.
+Motsvarande godkännanden är även okända för övriga referenser.
+
+## Fas 2A: faktagranskning av Säffle simhall
+
+Kontrollerad 2026-08-05. Klassificeringen gäller underlaget inför migrering,
+inte vad som automatiskt får publiceras. Interna granskningskommentarer och
+evidensfält ska aldrig renderas som webbtext.
+
+| Uppgift | Klassificering | Underlag | Beslut inför migrering |
+|---|---|---|---|
+| Upp till 487 sparade arbetstimmar per år | saknar underlag | Uppgiften fanns endast i arkivutdraget och saknar kalkyl, antaganden eller källdokument. | Borttagen ur det publika arkivutdraget. Får inte migreras utan dokumenterad beräkning. |
+| 50+ högtalare | verifierad med intern källa | `src/docs/avab-design-referenssida-inkopare.md` markerar värdet som verifierat. Den publika AVAB-sidan bekräftar ljudsystem i hela anläggningen, men inte antalet. | Använd endast om projektunderlag eller kunden bekräftar antalet; annars utelämna värdet. |
+| Sju huvudsakliga ljudområden | verifierad med intern källa | Samma interna designunderlag anger sju ljudzoner. Den publika AVAB-sidan namnger fem områden men ger ingen totalsiffra. | Bekräfta zonlista eller ritning; annars utelämna totalsiffran. |
+| Två mikrofonantenner | verifierad | AVAB:s publika simhallssida anger två antenner i 50-metersbassängen. | Kan användas som skalvärde om det är relevant för köparen. |
+| Två läktarområden med hörslinga | saknar underlag | Publik källa bekräftar hörslinga i konferensrum och på läktare, men inte två separata läktarområden. | Ändra inte till ett numeriskt skalvärde utan ritning eller kundbekräftelse. Den säkra texten är att hörslinga finns i konferensrum och på läktare. |
+| Ett gemensamt Crestrongränssnitt | verifierad | AVAB:s publika Säffle-sida beskriver styrning från ett enda gränssnitt. | Kan användas, men behöver inte ligga i scale om sammanfattningen redan säger samma sak. |
+| 50-metersbassäng | verifierad | Säffle kommun anger att anläggningen har en 50-metersbassäng. | Kan användas som miljöfakta; undvik dubblering mellan faktaband och scale. |
+| Färdigställd/invigd december 2019 | verifierad | Säffle kommun anger invigning i december 2019. | Använd december 2019 eller enbart 2019 beroende på detaljnivå. |
+| AVAB levererade, monterade och driftsatte Crestron, RGB-belysning och ljud | verifierad | Befintligt kundcitat på avab.eu samt AVAB:s publika projektsida. | Kan användas som kärna i ansvarstexten. |
+| Fullt ansvar för projektering, systemdesign, mikrofoner, hörslingor, projektor, KNX/DMX-integration och dokumentation | verifierad med intern källa | Nuvarande Säffle-sida och internt designunderlag. Publika källor styrker endast delar av den fulla listan. | Bekräfta ansvarsmatris eller beställningsunderlag med AVAB/kund innan hela listan migreras. |
+| Kundcitatets ordalydelse | verifierad | Citatet är publicerat på avab.eu och överensstämmer i sak med den nuvarande referenssidan. | Behåll inte automatiskt; återpublicering i migrerad form kräver godkännande. |
+| Anders Björkman, projektledare, Assemblin | verifierad | Namn och befattning står tillsammans med citatet på avab.eu. | Kan anges om citatet godkänns för fortsatt användning. |
+| Publiceringsgodkännande för migrerad referens | kräver kundgodkännande | Ingen godkännandedokumentation finns i repot. | Blockerar publiceringsbeslut, men inte teknisk migrering med `draft: true`. |
+| Bildrättigheter för de fem bilderna | kräver kundgodkännande | Bilderna ligger på avab.eu men saknar rättighetsmetadata och dokumenterad fotograf/rättighetsägare. | Bekräfta fotograf, rättighetsägare och tillåten användning före publicering. |
+
+### Säffles bilder
+
+Samtliga fem URL:er svarade HTTP 200 med `image/webp` 2026-08-05.
+Pixelmåtten är lästa ur respektive WebP-fil. Bilderna innehåller ICC-profil men
+ingen identifierad rättighetsmetadata. Hero och den första galleribilden är
+samma motiv i två storlekar och bör inte användas som två separata berättande
+bilder.
+
+| Roll | URL | Motiv och faktiska mått | Alt-textbedömning | Rekommenderad användning | Rättighetsstatus |
+|---|---|---|---|---|---|
+| Hero | `https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-50m-hogt-palm-vatten-parkering-2-1536x864.webp` | 50-metersbassäng med en vägghögtalare tydligt i förgrunden, 1536×864 | Nuvarande alt är saklig och relevant. | Hero. Behåll denna större variant. | Okänd; kräver dokumentation/godkännande. |
+| Galleri, bassäng | `https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-50m-hogt-palm-vatten-parkering-2-1024x576.webp` | Samma bassängmotiv som hero, 1024×576 | Nuvarande alt är saklig men bilden tillför inget nytt efter hero. | Utelämna ur galleri om hero används. | Okänd; kräver dokumentation/godkännande. |
+| Galleri, reception | `https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-reception-1024x576.webp` | Ljus reception-/caféyta med sittplatser och synliga högtalare, 1024×576 | Förtydliga till "Reception och caféyta i Säffle simhall med väggmonterade högtalare". | Galleri; bra miljö- och teknikbild. | Okänd; kräver dokumentation/godkännande. |
+| Galleri, relax | `https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-relax-1024x576.webp` | Relaxpool, vilstolar och palmer, 1024×576 | Nuvarande alt beskriver motivet; färgsatt belysning är svagt synlig och bör inte överdrivas. | Galleri för miljöbredd. | Okänd; kräver dokumentation/godkännande. |
+| Galleri, barnpool | `https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-barnpool-1024x576.webp` | Barnpool med lekfigurer och palmer, 1024×576 | Ta bort påståendet om styrd miljöbelysning ur alt-texten; det är inte bildens motiv. | Galleri för miljöbredd. | Okänd; kräver dokumentation/godkännande. |
+
+### Readiness efter fas 2A
+
+Säffle bedömdes efter fas 2A vara **redo för teknisk migrering med mindre
+åtgärder**, under följande villkor:
+
+- skapa entryn som `draft: true` tills publicerings- och bildgodkännanden finns
+- migrera inte 487-timmarsuppgiften
+- använd bara 50+ högtalare och sju ljudområden om intern projektkälla kan
+  bifogas; utelämna dem annars
+- utelämna det numeriska påståendet om två läktarområden tills det har styrkts
+- bevara den befintliga lokala `.reference-cta`-lösningen oförändrad under
+  referensmigreringen
+- använd hero plus tre unika gallerimotiv; dubblera inte hero i galleriet
+
+Publicering är fortfarande blockerad av saknat kundgodkännande och okända
+bildrättigheter.
+
+### Fas 2B: migrerad som draft
+
+Teknisk migrering genomförd 2026-08-05 med `draft: true` och `seo.noindex:
+true`.
+
+- routen är en tunn wrapper runt den gemensamma `ReferencePage`
+- Säffles Markdown-entry är primär innehållskälla för själva referenssidan
+- arkivet fortsätter tillfälligt visa posten från `referenser.ts`, eftersom
+  draft-poster filtreras bort; detta förhindrar att en intern draft ersätter
+  det befintliga publika arkivkortet
+- scale innehåller endast två mikrofonantenner och ett gemensamt
+  Crestrongränssnitt, båda med publikt underlag
+- 487 timmar, 50+ högtalare, sju ljudområden och två läktarområden har
+  utelämnats ur den migrerade webbtexten
+- hero kombineras med tre unika galleribilder; den mindre dubbletten av
+  hero-bilden används inte
+- den befintliga `.reference-cta`-varianten återges av en avgränsad
+  kompatibilitetskomponent med oförändrad text, länkar och knappantal
+- `PageCTA.astro`, `SiteFooter.astro` och global CTA-CSS är oförändrade
+
+Draften får inte ändras till `draft: false` förrän kundcitat,
+publiceringsgodkännande och bildrättigheter har bekräftats.
 
 ## Readiness-matris för de 13 omigrerade referenserna
 
@@ -255,7 +335,7 @@ migreringsbar.
 | Lundsbergs skola | standard | redo | blockerad | blockerad | redo med mindre åtgärd | okänt; publicering blockerad | Återställ hero; besluta bildroute | blockerad |
 | Minnebergsskolan | extended | redo | redo med mindre åtgärd | redo med mindre åtgärd | redo med mindre åtgärd | okänt; publicering blockerad | Använd verifierad hero och enbildsläge; besluta två saknade länkmål | redo med mindre åtgärd |
 | Nordic Wellness Marieberg | compact | redo | blockerad | redo | redo med mindre åtgärd | okänt; publicering blockerad | Återställ hero-original | blockerad |
-| Säffle simhall | extended | redo | redo | redo | redo med mindre åtgärd | okänt; publicering blockerad | Kontrollera källan till arkivets 487-timmarsuppgift och citatgodkännande | redo med mindre åtgärd |
+| Säffle simhall | extended | migrerad som draft | redo tekniskt; rättigheter okända | redo | redo med mindre åtgärd | kräver kundgodkännande; publicering blockerad | Granska draften; bekräfta citat och bildrättigheter innan `draft: false` | migrerad som draft |
 | Sannerudshallen | extended | redo | blockerad | redo | redo med mindre åtgärd | okänt; publicering blockerad | Återställ hero-original | blockerad |
 | Sörby idrottshall | extended | redo | redo med mindre åtgärd | redo med mindre åtgärd | redo med mindre åtgärd | okänt; publicering blockerad | Utelämna platshållare och besluta bildroute | redo med mindre åtgärd |
 
@@ -269,7 +349,7 @@ publiceringsbeslut eftersom kundgodkännande och bildrättigheter är okända.
 |---|---|---|
 | compact | Nordic Wellness Marieberg | Blockerad: enda compact-kandidaten saknar verifierad hero. |
 | standard | Ekhagsskolan | Blockerad: närmast redo eftersom länkarna fungerar, men hero saknas. |
-| extended | Säffle simhall | Rekommenderad efter liten faktakontroll. Hero och fyra galleribilder svarar HTTP 200, länkarna fungerar och innehållet är komplett. |
+| extended | Säffle simhall | Migrerad som draft i fas 2B. Osäkra mängduppgifter är utelämnade och publicering inväntar godkännande av citat och bildrättigheter. |
 
 Migrera därför högst Säffle som nästa pilot. Starta inte compact- eller
 standardpilot förrän respektive hero-original finns.
