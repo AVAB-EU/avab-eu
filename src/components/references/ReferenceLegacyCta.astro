@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type ReferenceCta = NonNullable<CollectionEntry<"references">["data"]["cta"]>;
+type LegacyCta = Extract<ReferenceCta, { variant: "legacy" }>;
+interface Props { cta: LegacyCta }
+const { cta } = Astro.props;
+---
+
+<section class="reference-section">
+  <div class="avab-container">
+    <div class="reference-cta">
+      <div>
+        <span class="reference-kicker">{cta.eyebrow}</span>
+        <h2>{cta.title}</h2>
+        <p>{cta.text}</p>
+      </div>
+      <div class="reference-cta-actions">
+        <a
+          class="button button-light"
+          href={cta.primaryHref}
+          data-contact-intent={cta.primaryContactIntent}
+        >{cta.primaryLabel}</a>
+        <a class="button button-secondary" href={cta.secondaryHref}>{cta.secondaryLabel}</a>
+      </div>
+    </div>
+  </div>
+</section>

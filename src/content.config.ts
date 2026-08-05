@@ -51,31 +51,47 @@ const evidenceSchema = z
   });
 
 const ctaSchema = z
-  .object({
-    enabled: z.boolean(),
-    variant: z.enum(["page", "legacy", "none"]),
-    eyebrow: requiredText.optional(),
-    title: requiredText.optional(),
-    text: requiredText.optional(),
-    primaryLabel: requiredText.optional(),
-    primaryHref: requiredText.optional(),
-    secondaryLabel: requiredText.optional(),
-    secondaryHref: requiredText.optional(),
-    points: z.array(requiredText).min(1).optional(),
-  })
+  .discriminatedUnion("variant", [
+    z
+      .object({
+        enabled: z.literal(true),
+        variant: z.literal("page"),
+        eyebrow: requiredText.optional(),
+        title: requiredText,
+        text: requiredText.optional(),
+        primaryLabel: requiredText,
+        primaryHref: requiredText,
+        secondaryLabel: requiredText.optional(),
+        secondaryHref: requiredText.optional(),
+        points: z.array(requiredText).min(1).optional(),
+      })
+      .strict(),
+    z
+      .object({
+        enabled: z.literal(true),
+        variant: z.literal("legacy"),
+        eyebrow: requiredText,
+        title: requiredText,
+        text: requiredText,
+        primaryLabel: requiredText,
+        primaryHref: requiredText,
+        primaryContactIntent: requiredText.optional(),
+        secondaryLabel: requiredText,
+        secondaryHref: requiredText,
+      })
+      .strict(),
+    z
+      .object({
+        enabled: z.literal(false),
+        variant: z.literal("none"),
+      })
+      .strict(),
+  ])
   .superRefine((cta, context) => {
     if (
-      cta.enabled &&
       cta.variant === "page" &&
-      (!cta.title || !cta.primaryLabel || !cta.primaryHref)
+      Boolean(cta.secondaryLabel) !== Boolean(cta.secondaryHref)
     ) {
-      context.addIssue({
-        code: "custom",
-        message: "En aktiverad PageCTA kräver titel, primäretikett och primärlänk.",
-      });
-    }
-
-    if (Boolean(cta.secondaryLabel) !== Boolean(cta.secondaryHref)) {
       context.addIssue({
         code: "custom",
         message: "Sekundär CTA-etikett och länk måste anges tillsammans.",
@@ -83,9 +99,8 @@ const ctaSchema = z
     }
   });
 
-const references = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/references" }),
-  schema: z.object({
+const referenceSchema = z
+  .object({
     draft: z.boolean().default(false),
     slug: z.string().startsWith("/referenser/").endsWith("/"),
     layout: z.enum(["compact", "standard", "extended"]),
@@ -162,9 +177,18 @@ const references = defineCollection({
       .optional(),
     scale: z
       .object({
-        eyebrow: z.string(),
-        title: z.string(),
-        items: z.array(z.object({ value: z.string(), label: z.string() })).min(1),
+        eyebrow: requiredText,
+        title: requiredText,
+        lead: requiredText.optional(),
+        items: z
+          .array(
+            z.object({
+              value: requiredText,
+              label: requiredText,
+              evidence: evidenceSchema,
+            }),
+          )
+          .min(1),
       })
       .optional(),
     results: z
@@ -182,6 +206,14 @@ const references = defineCollection({
             }),
           )
           .min(1),
+      })
+      .optional(),
+    quote: z
+      .object({
+        text: requiredText,
+        attribution: requiredText,
+        role: requiredText,
+        evidence: evidenceSchema,
       })
       .optional(),
     gallery: z
@@ -230,7 +262,33 @@ const references = defineCollection({
       })
       .optional(),
     cta: ctaSchema.optional(),
-  }),
+  })
+  .superRefine((reference, context) => {
+    if (!reference.scale) return;
+
+    const normalize = (value: string) =>
+      value.trim().toLocaleLowerCase("sv-SE").replace(/\s+/g, " ");
+    const factPairs = new Set(
+      reference.facts.map(
+        (fact) => `${normalize(fact.value)}::${normalize(fact.label)}`,
+      ),
+    );
+
+    reference.scale.items.forEach((item, index) => {
+      const pair = `${normalize(item.value)}::${normalize(item.label)}`;
+      if (factPairs.has(pair)) {
+        context.addIssue({
+          code: "custom",
+          path: ["scale", "items", index],
+          message: "Skalvärdet dubblerar en post i faktabandet.",
+        });
+      }
+    });
+  });
+
+const references = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/references" }),
+  schema: referenceSchema,
 });
 
 export const collections = { references };
