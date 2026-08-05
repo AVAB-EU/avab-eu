@@ -234,6 +234,37 @@ redaktionell och juridisk kontext innan större batcher.
 - behåll kontaktsidans lokala kontaktmodul
 - dokumentera desktop-, mobil-, tangentbords- och länkgranskning
 
+#### Genomförandestatus 2026-08-05
+
+- samtliga 49 kanoniska routes är byggda och strukturellt verifierade
+- 48 routes har exakt en `PageCTA`; kontaktsidan behåller sin lokala
+  kontaktmodul utan en extra `PageCTA`
+- den generiska `foot-cta`-markupen och dess komponent-CSS är borttagna ur
+  `SiteFooter`
+- ingen kanonisk route renderar `foot-cta`, `fullwidth-cta` eller `cta-card`
+- `PageCTA` ligger före `SiteFooter` på samtliga 48 routes som använder den
+- representativa desktop- och mobilrenderingar är kontrollerade för en sida
+  med `PageCTA` samt för kontaktsidan utan `PageCTA`
+- tangentbordsordningen är verifierad från primär CTA till sekundär CTA och
+  vidare till footerns första länk; samtliga tre visar `:focus-visible`
+- interna CTA-routes och fragment verifierades i respektive implementationbatch
+- testmiljöbygget behåller `noindex` på samtliga genererade sidor
+
+De globala legacy-reglerna för `fullwidth-cta` och `cta-card` behålls tills de
+gamla/preview-routsen pensioneras. De används fortfarande av byggda historiska
+routes och kan därför inte tas bort utan att ändra sidor utanför CTA-arbetets
+godkända omfattning.
+
+Följande sex preview-routes innehåller dessutom egen, inbäddad historisk
+`foot-cta`-markup och lämnas uttryckligen oförändrade:
+
+- `/miljo/hotell/preview-miljo-hotell/`
+- `/miljo/ishall/preview-miljo-ishall/`
+- `/miljo/kontor-konferens/preview-miljo-kontor-konferens/`
+- `/miljo/kopcentrum-galleria/preview-miljo-kopcentrum-galleria/`
+- `/miljo/utomhusidrott/preview-miljo-utomhusidrott/`
+- `/miljo/vard/preview-miljo-vard/`
+
 ## Regler för varje implementationbatch
 
 - inga gamla/preview-routes får följa med
