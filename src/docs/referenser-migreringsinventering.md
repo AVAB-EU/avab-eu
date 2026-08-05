@@ -304,8 +304,8 @@ true`.
 - arkivet fortsätter tillfälligt visa posten från `referenser.ts`, eftersom
   draft-poster filtreras bort; detta förhindrar att en intern draft ersätter
   det befintliga publika arkivkortet
-- scale innehåller endast två mikrofonantenner och ett gemensamt
-  Crestrongränssnitt, båda med publikt underlag
+- den synliga scale-sektionen har tagits bort efter visuell granskning; de
+  verifierade uppgifterna finns kvar där de är relevanta i saktexten
 - 487 timmar, 50+ högtalare, sju ljudområden och två läktarområden har
   utelämnats ur den migrerade webbtexten
 - hero kombineras med tre unika galleribilder; den mindre dubbletten av
