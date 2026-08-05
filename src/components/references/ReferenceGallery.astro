@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Gallery = NonNullable<CollectionEntry<"references">["data"]["gallery"]>;
+interface Props { gallery: Gallery }
+const { gallery } = Astro.props;
+---
+
+<section class="reference-section" aria-labelledby="bilder">
+  <div class="avab-container">
+    <div class="reference-section-heading">
+      <span class="reference-kicker">{gallery.eyebrow}</span>
+      <h2 id="bilder">{gallery.title}</h2>
+      {gallery.lead && <p>{gallery.lead}</p>}
+    </div>
+    <div class="gallery-grid">
+      {gallery.images.map((image) => (
+        <figure>
+          <div class="gallery-image">
+            <img
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption>{image.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

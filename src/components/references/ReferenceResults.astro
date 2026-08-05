@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Results = NonNullable<CollectionEntry<"references">["data"]["results"]>;
+interface Props { results: Results }
+const { results } = Astro.props;
+---
+
+<section class="reference-section reference-section--soft" aria-labelledby="resultat">
+  <div class="avab-container">
+    <div class="reference-section-heading">
+      <span class="reference-kicker">{results.eyebrow}</span>
+      <h2 id="resultat">{results.title}</h2>
+      {results.lead && <p>{results.lead}</p>}
+    </div>
+    <div class="reference-summary-grid">
+      {results.items.map((result) => (
+        <article class="reference-summary">
+          {result.label && <span class="reference-summary-number">{result.label}</span>}
+          <h3>{result.title}</h3>
+          <p>{result.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
