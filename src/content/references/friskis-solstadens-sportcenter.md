@@ -157,12 +157,16 @@ relevance:
     - Anläggningar där drift och service måste fungera parallellt
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Gym, sportanläggning eller äldre AV?
   title: Vi kan ta över, dokumentera och bygga vidare
   text: AVAB hjälper träningsanläggningar, sporthallar, skolor, hotell och publika miljöer med service, utbyte, komplettering och ny projektering av ljud, bild och styrsystem.
   primaryLabel: Boka genomgång av er teknik
   primaryHref: /kontakt/
   secondaryLabel: Läs om serviceavtal
-  secondaryHref: /service-support/
+  secondaryHref: /tjanster/garanti-och-service/
+  points:
+    - 24 ljudzoner och 32 ingångar
+    - Teknik i sju salar, gym och gemensamma ytor
+    - Stegvis modernisering som tar vara på fungerande utrustning
 ---

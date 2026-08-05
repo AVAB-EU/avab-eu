@@ -189,12 +189,16 @@ relevance:
     - Anläggningar som ska kunna uppgraderas och servas över tid
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Planerar ni konferens, restaurang eller festvåning?
   title: Bygg teknik som fungerar när huset är fullt
   text: AVAB hjälper restauranger, konferensanläggningar, hotell och fastighetsägare med ljud, bild, projektorer, mikrofoner, styrning, tillgänglighet och långsiktig drift. Vi kan inventera nuläget, föreslå rätt nivå och bygga en lösning som personalen faktiskt kan använda.
-  primaryLabel: Ring 054-8202080
-  primaryHref: tel:+46548202080
+  primaryLabel: Boka kostnadsfri rådgivning
+  primaryHref: /kontakt/#kontaktformular
   secondaryLabel: Se konferensmiljöer
   secondaryHref: /miljo/kontor-konferens/
+  points:
+    - Åtta konferensrum för cirka 6–200 personer
+    - Fyra ljudzoner i restaurangen
+    - Långsiktig service och vidareutveckling
 ---

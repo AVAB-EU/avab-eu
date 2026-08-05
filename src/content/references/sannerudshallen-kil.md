@@ -166,13 +166,16 @@ relevance:
     - Arenor som behöver olika ljudtäckning för publik och aktivitetsyta
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Behöver ni bättre ljud i ishall?
   title: AVAB projekterar ljud som fungerar i verklig drift
   text: Vi hjälper till med projektering, installation, styrning och service när tal, musik och information behöver nå fram i svåra lokaler.
   primaryLabel: Ladda upp underlag
   primaryHref: /kontakt/#kontaktformular
-  primaryContactIntent: project
   secondaryLabel: Se lösningar för ishall
   secondaryHref: /miljo/ishall/
+  points:
+    - Riktade 12-tums högtalare för tydligare tal
+    - Separat täckning för läktare och is
+    - Signalbehandling och förstärkare i skyddad rackplacering
 ---

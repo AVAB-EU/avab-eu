@@ -158,13 +158,16 @@ relevance:
     - Föreningar som behöver mikrofon och musik med enkelt handhavande
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Planerar ni ny plan, arena eller idrottsplats?
   title: Ta med ljud, rör och styrning tidigt i projekteringen
   text: AVAB hjälper till med projektering, zonindelning, högtalarval, mikrofonlösning, kabelvägar, rackplacering och driftsättning. Skicka ritningar och förutsättningar så tar vi fram en lösning som går att bygga och använda.
   primaryLabel: Ladda upp ritningar och FFU
   primaryHref: /kontakt/#kontaktformular
-  primaryContactIntent: project
   secondaryLabel: Se lösningar för utomhusidrott
   secondaryHref: /miljo/utomhusidrott/
+  points:
+    - Två separat styrbara fotbollsplaner
+    - Vädertåliga masthögtalare med 100V-distribution
+    - Trådlös mikrofon och skyddad Bluetooth
 ---

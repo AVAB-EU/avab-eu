@@ -489,3 +489,38 @@ Följande måste dokumenteras per referens före publicering:
 3. bekräftelse av mängduppgifter och årtal mot projektunderlag eller kund
 4. beslut om provisoriska miljöbilder ska ersättas med projektspecifika original
 5. separat godkännande innan ett tidigare publicerat kundcitat återinförs
+
+## Manuell granskning efter fas 3B
+
+Beställaren bekräftade 2026-08-05 att den samlade referensbatchen ser bra ut på
+test2.avab.eu. Godkännandet gäller den visuella helheten och gör att
+referensmigreringen kan lämnas som tekniskt slutförd.
+
+Granskningen identifierade en separat förbättring: flera sidor saknar den
+sekundära boxen med projektfakta. Kodinventeringen visar att det gäller samtliga
+elva entries från fas 3B:
+
+- Årjängs simhall
+- Claessons Konferens & Restaurang
+- Ekhagsskolan
+- Friskis&Svettis Karlstad
+- Kroppkärrs IP
+- Lesjöfors AB
+- Lundsbergs skola
+- Minnebergsskolan
+- Nordic Wellness Marieberg
+- Sannerudshallen
+- Sörby idrottshall
+
+De har det primära faktabandet med fem värden men saknar det valfria
+scope.projectFacts-blocket. Hanza, Säffle och Hundfjäll har båda nivåerna.
+
+Åtgärden skjuts upp och ska genomföras som en egen, avgränsad förbättring:
+
+1. besluta vilka fakta som ska visas utan att dubblera faktabandet
+2. verifiera varje uppgift mot befintligt underlag
+3. lägg till boxen konsekvent på de elva sidorna
+4. granska desktop och mobil
+
+Projektfaktaboxen ska inte blandas in i CTA fas 1 eller den kommande
+CTA-konverteringen.

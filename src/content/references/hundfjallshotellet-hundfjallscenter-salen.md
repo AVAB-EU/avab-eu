@@ -228,13 +228,16 @@ relatedReferences:
 
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Planerar ni hotell eller resort?
   title: Ljudet ska följa gästens resa och vara enkelt för personalen
   text: AVAB projekterar ljudspridning, zoner, musikstyrning, konferensteknik, hörslingor och nätverksljud innan installationen börjar. Skicka ritningar och FFU så tar vi fram rätt omfattning.
   primaryLabel: Ladda upp ritningar och FFU
   primaryHref: /kontakt/#kontaktformular
-  primaryContactIntent: project
   secondaryLabel: Se lösningar för hotell
   secondaryHref: /miljo/hotell/
+  points:
+    - 494 högtalare i 28 appstyrda zoner
+    - Dante-baserat ljud mellan byggnaderna
+    - Fem konferensrum med mikrofoner och SLS-hörslinga
 ---

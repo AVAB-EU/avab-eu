@@ -170,13 +170,16 @@ relevance:
     - Projekt där mikrofoner, musik och storbild ska styras tillsammans
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Planerar ni delbar hall eller sporthall?
   title: Ett system som följer hallen, inte tvärtom
   text: AVAB projekterar och installerar styrsystem, ljud, mikrofoner, antennplacering och LED-vägg för idrottshallar som ska fungera både delade och som helsal, med enkel styrning för alla som använder lokalen.
   primaryLabel: Ladda upp ritningar och FFU
   primaryHref: /kontakt/#kontaktformular
-  primaryContactIntent: project
   secondaryLabel: Se lösningar för sporthall
   secondaryHref: /miljo/sporthall-arena/
+  points:
+    - Separat ljud och Bluetooth i båda halvsalarna
+    - Gemensam styrning när hallen används som helsal
+    - Crestron samlar mikrofoner, ljud och LED-vägg
 ---

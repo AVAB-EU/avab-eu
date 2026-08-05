@@ -167,13 +167,16 @@ relevance:
     - Projekt där kablage och teknik behöver samordnas tidigt
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Planerar ni simhall, badhus eller träningsdel?
   title: Ta in ljud, bild och tillgänglighet innan ytskikten låser lösningen
   text: AVAB projekterar ljudzoner, högtalare, headset, projektor, AVoIP, hörslingor, paneler, kabelvägar, dokumentation och service för simhallar där tekniken behöver hålla länge.
   primaryLabel: Ladda upp ritningar och FFU
   primaryHref: /kontakt/#kontaktformular
-  primaryContactIntent: project
   secondaryLabel: Se lösningar för simhall
   secondaryHref: /miljo/simhall/
+  points:
+    - Sex ljudzoner för bassäng, träning, relax och reception
+    - Projektor, AVoIP och ljud i multipoolen
+    - Diskslinga för tillgängligare samtal i receptionen
 ---

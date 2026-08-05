@@ -166,13 +166,16 @@ relevance:
     - Miljöer med många användare och krav på enkelt handhavande
 cta:
   enabled: true
-  variant: legacy
+  variant: page
   eyebrow: Planerar ni skolidrottshall eller delbar hall?
   title: Ett ljudsystem som följer hallen, inte tvärtom
   text: AVAB projekterar och installerar zonstyrt ljud, mikrofoner, panelstyrning och ridåväggslogik för idrottshallar som ska fungera både delade och som helsal, med enkel styrning för alla som använder lokalen.
   primaryLabel: Ladda upp ritningar och FFU
   primaryHref: /kontakt/#kontaktformular
-  primaryContactIntent: project
   secondaryLabel: Se lösningar för skola
   secondaryHref: /miljo/skola/
+  points:
+    - Separat ljud i A-sal och B-sal
+    - Automatisk växling när hallen används som helsal
+    - Mikrofon, AUX och Bluetooth med enkel lokal styrning
 ---
