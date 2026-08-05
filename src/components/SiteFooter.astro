@@ -5,22 +5,6 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
-  <div class="foot-cta">
-    <div class="avab-container foot-cta-inner">
-      <div class="foot-cta-text">
-        <h2>Ska ni bygga en ny anläggning eller uppgradera ljudet?</h2>
-        <p>Vi hjälper kommuner, byggbolag och elektriker - från ritning till driftsättning.</p>
-      </div>
-      <div class="foot-cta-actions">
-        <a class="foot-btn foot-btn-primary" href="/kontakt/">Kontakta oss</a>
-        <a class="foot-btn foot-btn-ghost" href="tel:+46548202080">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Ring 054 820 20 80
-        </a>
-      </div>
-    </div>
-  </div>
-
   <div class="avab-container foot-main">
     <div class="foot-col foot-brand">
       <a class="foot-brand-mark" href="/" aria-label="AVAB - till startsidan">
@@ -107,71 +91,6 @@ const year = new Date().getFullYear();
   .site-footer a:focus-visible {
     outline: var(--avab-focus, 3px solid var(--footer-accent));
     outline-offset: 3px;
-  }
-
-  .foot-cta {
-    background: linear-gradient(90deg, rgba(143, 191, 135, 0.1), rgba(143, 191, 135, 0));
-    border-bottom: 1px solid var(--footer-border);
-  }
-
-  .foot-cta-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
-  .foot-cta-text h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: 0;
-    margin: 0;
-    color: var(--footer-text);
-  }
-
-  .foot-cta-text p {
-    color: var(--footer-muted);
-    font-size: 0.95rem;
-    margin: 6px 0 0;
-  }
-
-  .foot-cta-actions {
-    display: flex;
-    gap: 14px;
-    flex-shrink: 0;
-  }
-
-  .foot-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    padding: 14px 26px;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: var(--transition-smooth, all 0.25s ease);
-  }
-
-  .foot-btn-primary {
-    background: var(--footer-text);
-    color: var(--footer-bg);
-  }
-
-  .foot-btn-primary:hover {
-    background: #fff;
-  }
-
-  .foot-btn-ghost {
-    border: 1px solid var(--footer-border);
-    color: var(--footer-text);
-  }
-
-  .foot-btn-ghost:hover {
-    border-color: var(--footer-accent);
-    color: var(--footer-accent);
   }
 
   .foot-main {
@@ -340,27 +259,6 @@ const year = new Date().getFullYear();
   }
 
   @media (max-width: 768px) {
-    .foot-cta-inner {
-      flex-direction: column;
-      align-items: flex-start;
-      padding-top: 32px;
-      padding-bottom: 32px;
-    }
-
-    .foot-cta-text h2 {
-      font-size: 1.3rem;
-    }
-
-    .foot-cta-actions {
-      width: 100%;
-      flex-direction: column;
-    }
-
-    .foot-btn {
-      justify-content: center;
-      width: 100%;
-    }
-
     .foot-main {
       grid-template-columns: 1fr;
       gap: 40px;
