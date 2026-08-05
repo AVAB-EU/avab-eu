@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -467,27 +468,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Ska ni bygga, bygga om eller uppgradera en parkering?</h2>
-            <p>Ta in AVAB innan bomlägen, kamerafästen, belysning, nätverk, rack, kabelvägar, skyltning och säkerhetsgränssnitt är låsta. Då blir tekniken mer träffsäker, enklare för driftpersonalen och lättare att förvalta över tid.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>AV- och säkerhetsteknik för parkeringshus, garage, markparkering och fordonsinfart.</li>
-            <li>Underlag för fastighetsägare, parkering, projektör, entreprenör, el, IT och säkerhet.</li>
-            <li>Kamera, ANPR, bom, grind, intercom, vägvisning, utrop och säkerhetsgränssnitt.</li>
-            <li>Projektering, installation, programmering, test, utbildning, dokumentation och service.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Ska ni bygga, bygga om eller uppgradera en parkering?"
+      text="Ta in AVAB innan bomlägen, kamerafästen, belysning, nätverk, rack, kabelvägar, skyltning och säkerhetsgränssnitt är låsta. Då blir tekniken mer träffsäker, enklare för driftpersonalen och lättare att förvalta över tid."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "AV- och säkerhetsteknik för parkeringshus, garage, markparkering och fordonsinfart.",
+        "Underlag för fastighetsägare, parkering, projektör, entreprenör, el, IT och säkerhet.",
+        "Kamera, ANPR, bom, grind, intercom, vägvisning, utrop och säkerhetsgränssnitt.",
+        "Projektering, installation, programmering, test, utbildning, dokumentation och service.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

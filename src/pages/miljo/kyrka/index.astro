@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -467,27 +468,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Ska ni renovera, bygga om eller uppgradera en kyrka?</h2>
-            <p>Ta in AVAB innan kabelvägar, golv, ytskikt, el, nätverk, belysning och infästningar är låsta. Då kan tekniken bli mer diskret, talet tydligare och systemet enklare för både personal, besökare och externa tekniker.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>AV-lösningar för kyrka, kapell, församlingshem och samlingslokal.</li>
-            <li>Underlag för församling, pastorat, fastighetsägare, projektör, el, IT och entreprenör.</li>
-            <li>Ljud, mikrofoner, hörteknik, streaming, bild, ljusgränssnitt och styrning.</li>
-            <li>Projektering, installation, programmering, inmätning, utbildning, dokumentation och service.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Ska ni renovera, bygga om eller uppgradera en kyrka?"
+      text="Ta in AVAB innan kabelvägar, golv, ytskikt, el, nätverk, belysning och infästningar är låsta. Då kan tekniken bli mer diskret, talet tydligare och systemet enklare för både personal, besökare och externa tekniker."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "AV-lösningar för kyrka, kapell, församlingshem och samlingslokal.",
+        "Underlag för församling, pastorat, fastighetsägare, projektör, el, IT och entreprenör.",
+        "Ljud, mikrofoner, hörteknik, streaming, bild, ljusgränssnitt och styrning.",
+        "Projektering, installation, programmering, inmätning, utbildning, dokumentation och service.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

@@ -1,6 +1,7 @@
 ﻿---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -528,27 +529,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Ska ni bygga eller renovera sporthall?</h2>
-            <p>Ta in AVAB innan kabelvägar, golv, rackplats och upphandlingskrav är låsta. Då blir lösningen enklare att bygga, lättare att förstå och tryggare att driftsätta.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/budgetkalkylator-av-teknik/">Öppna kalkylatorn</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Komplett AV-lösning för sporthall och idrottshall.</li>
-            <li>Underlag för kommun, upphandlare, byggbolag och elektriker.</li>
-            <li>Ljud, styrning, hörslinga, Auracast, STI och dokumentation.</li>
-            <li>Projektering, installation, driftsättning och inmätning.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Ska ni bygga eller renovera sporthall?"
+      text="Ta in AVAB innan kabelvägar, golv, rackplats och upphandlingskrav är låsta. Då blir lösningen enklare att bygga, lättare att förstå och tryggare att driftsätta."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "Komplett AV-lösning för sporthall och idrottshall.",
+        "Underlag för kommun, upphandlare, byggbolag och elektriker.",
+        "Ljud, styrning, hörslinga, Auracast, STI och dokumentation.",
+        "Projektering, installation, driftsättning och inmätning.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

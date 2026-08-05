@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -469,27 +470,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Ska ni bygga, renovera eller uppgradera ett hotell?</h2>
-            <p>Ta in AVAB innan inredning, tak, el, nätverk, rack, kabelvägar och konferensfunktioner är låsta. Då blir tekniken diskretare, enklare för personalen och tryggare att förvalta.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>AV-lösningar för hotell, resort, lobby, restaurang, bar, spa och konferens.</li>
-            <li>Underlag för hotellägare, fastighetsägare, arkitekt, entreprenör, IT och elektriker.</li>
-            <li>Zonstyrt ljud, konferensteknik, signage, styrsystem, hörslinga och kameraövervakning.</li>
-            <li>Projektering, installation, programmering, utbildning, dokumentation och service.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Ska ni bygga, renovera eller uppgradera ett hotell?"
+      text="Ta in AVAB innan inredning, tak, el, nätverk, rack, kabelvägar och konferensfunktioner är låsta. Då blir tekniken diskretare, enklare för personalen och tryggare att förvalta."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "AV-lösningar för hotell, resort, lobby, restaurang, bar, spa och konferens.",
+        "Underlag för hotellägare, fastighetsägare, arkitekt, entreprenör, IT och elektriker.",
+        "Zonstyrt ljud, konferensteknik, signage, styrsystem, hörslinga och kameraövervakning.",
+        "Projektering, installation, programmering, utbildning, dokumentation och service.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

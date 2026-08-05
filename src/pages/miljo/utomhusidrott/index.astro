@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -469,27 +470,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Ska ni bygga eller uppgradera en idrottsplats?</h2>
-            <p>Ta in AVAB innan master, markrör, el, nätverk, speakerplats och teknikutrymmen är låsta. Då blir systemet enklare att bygga, lättare att använda och tryggare att förvalta.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>AV-lösningar för fotbollsplaner, idrottsplatser, läktare och utomhusarenor.</li>
-            <li>Underlag för förening, kommun, fastighetsägare, entreprenör och elektriker.</li>
-            <li>Vädertåligt ljud, zoner, mikrofoner, styrning, säkerhet och tillgänglighet.</li>
-            <li>Projektering, installation, programmering, test och dokumentation.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Ska ni bygga eller uppgradera en idrottsplats?"
+      text="Ta in AVAB innan master, markrör, el, nätverk, speakerplats och teknikutrymmen är låsta. Då blir systemet enklare att bygga, lättare att använda och tryggare att förvalta."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "AV-lösningar för fotbollsplaner, idrottsplatser, läktare och utomhusarenor.",
+        "Underlag för förening, kommun, fastighetsägare, entreprenör och elektriker.",
+        "Vädertåligt ljud, zoner, mikrofoner, styrning, säkerhet och tillgänglighet.",
+        "Projektering, installation, programmering, test och dokumentation.",
+      ]}
+    />
   </main>
 
   <SiteFooter />
