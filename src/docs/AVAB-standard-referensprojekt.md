@@ -217,11 +217,18 @@ Manuellt angivna relaterade projekt ska prioriteras framför automatiska träffa
 
 ## 13. Kontaktsektion
 
-Alla projektsidor avslutas med en gemensam kontaktsektion, exempelvis:
+En helt ny projektsida avslutas normalt med den gemensamma `<PageCTA />`,
+exempelvis:
 
 > Har du ett liknande projekt?
 
-Kontaktsektionen ska ligga i Astro-layouten och inte kopieras in i varje Markdown-fil.
+Kontaktsektionen ska styras av Astro-layouten och innehållsdata, inte kopieras
+in som fri HTML i varje Markdown-fil.
+
+Detta gäller inte som ett automatiskt CTA-byte när en befintlig referens
+migreras till content collection. Då ska sidans befintliga CTA, eller avsaknad
+av CTA, bevaras tills det separata CTA-arbetet efter referensmigreringen.
+`src/docs/cta-och-sitefooter-overgang.md` är bindande för övergången.
 
 ---
 

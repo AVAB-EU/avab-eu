@@ -1,0 +1,233 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  text?: string;
+  primaryLabel: string;
+  primaryHref: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  points?: string[];
+  ariaLabel?: string;
+  id?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  text,
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+  points,
+  ariaLabel,
+  id,
+} = Astro.props;
+
+const titleSlug = title
+  .normalize("NFKD")
+  .replace(/[\u0300-\u036f]/g, "")
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-+|-+$/g, "");
+
+const headingId = id?.trim() || `page-cta-${titleSlug || "heading"}`;
+const hasPoints = Boolean(points?.length);
+const sectionLabel = ariaLabel
+  ? { "aria-label": ariaLabel }
+  : { "aria-labelledby": headingId };
+---
+
+<section
+  class:list={["page-cta", { "page-cta--without-points": !hasPoints }]}
+  {...sectionLabel}
+>
+  <div class="avab-container page-cta__inner">
+    <div class="page-cta__content">
+      {eyebrow && <p class="page-cta__eyebrow">{eyebrow}</p>}
+      <h2 id={headingId}>{title}</h2>
+      {text && <p class="page-cta__text">{text}</p>}
+
+      <div class="page-cta__actions">
+        <a
+          class="button page-cta__button page-cta__button--primary"
+          href={primaryHref}
+        >
+          {primaryLabel}
+        </a>
+        {secondaryLabel && secondaryHref && (
+          <a
+            class="button page-cta__button page-cta__button--secondary"
+            href={secondaryHref}
+          >
+            {secondaryLabel}
+          </a>
+        )}
+      </div>
+    </div>
+
+    {points && points.length > 0 && (
+      <ul class="page-cta__points">
+        {points.map((point) => <li>{point}</li>)}
+      </ul>
+    )}
+  </div>
+</section>
+
+<style>
+  .page-cta {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 100px;
+    background: linear-gradient(
+      135deg,
+      var(--avab-dark, #282e29) 0%,
+      #1c221e 40%,
+      #3f5d1b 100%
+    );
+    color: #fff;
+  }
+
+  .page-cta__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+    padding-top: clamp(48px, 7vw, 72px);
+    padding-bottom: clamp(48px, 7vw, 72px);
+  }
+
+  .page-cta--without-points .page-cta__inner {
+    grid-template-columns: minmax(0, 820px);
+  }
+
+  .page-cta__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 18px;
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .page-cta__eyebrow::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    border-radius: 50%;
+    background: var(--avab-green, #8fc025);
+  }
+
+  .page-cta h2 {
+    max-width: 18ch;
+    margin: 0 0 16px;
+    color: #fff;
+  }
+
+  .page-cta__text {
+    max-width: 64ch;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1.15rem;
+  }
+
+  .page-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .page-cta__button {
+    box-shadow: none;
+  }
+
+  .page-cta__button--primary {
+    border: 1px solid #fff;
+    background: #fff;
+    color: var(--avab-dark, #282e29);
+  }
+
+  .page-cta__button--primary:hover {
+    border-color: var(--avab-light, #f4f6f2);
+    background: var(--avab-light, #f4f6f2);
+    color: var(--avab-dark, #282e29);
+  }
+
+  .page-cta__button--secondary {
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    background: transparent;
+    color: #fff;
+  }
+
+  .page-cta__button--secondary:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  .page-cta__button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+  }
+
+  .page-cta__points {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .page-cta__points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .page-cta__points li::before {
+    content: "✓";
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    border-radius: 50%;
+    background: var(--avab-green, #8fc025);
+    color: var(--avab-dark, #282e29);
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+
+  @media (max-width: 900px) {
+    .page-cta__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-cta__actions {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .page-cta__button {
+      width: 100%;
+    }
+
+    .page-cta__text {
+      font-size: 1.06rem;
+    }
+  }
+</style>

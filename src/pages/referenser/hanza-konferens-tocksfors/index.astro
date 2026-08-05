@@ -1,4 +1,5 @@
 ---
+import PageCTA from "../../../components/PageCTA.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import "../../../styles/avab.css";
@@ -22,14 +23,6 @@ const scope = [
   "HDBaseT och touchpanel på bordet i det lilla rummet",
   "Sennheiser TeamConnect Videobar Medium i det stora rummet",
   "Crestron rumsbokningspaneler utanför totalt fyra konferensrum",
-];
-
-const scale = [
-  { value: "2", label: "nya konferensrum" },
-  { value: "4", label: "rumsbokningspaneler" },
-  { value: "2", label: "USB-C-donglar per rum" },
-  { value: '85"', label: "display i båda nya rummen" },
-  { value: "2", label: "rumslösningar efter storlek" },
 ];
 
 const gallery = [
@@ -222,11 +215,11 @@ const structuredData = {
         --reference-muted: #59615b;
         --reference-line: rgba(40, 46, 42, 0.14);
         --reference-soft: #f6f7f5;
-        --reference-facts-bg: rgba(31, 37, 33, 0.06);
+        --reference-facts-bg: rgba(182, 182, 182, 0.05);
+        --reference-green-soft: rgba(143, 192, 37, 0.12);
       }
 
       .reference-page {
-        overflow-x: hidden;
         background: var(--avab-white);
       }
 
@@ -260,28 +253,19 @@ const structuredData = {
         color: var(--avab-green);
       }
 
-      /* Referenshero med vit bakgrund och fullbreddsbild */
-      .reference-hero--split {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        align-items: stretch;
-        container-type: inline-size;
+      .reference-hero {
+        padding: clamp(48px, 7vw, 88px) 0;
         border-bottom: 1px solid var(--reference-line);
-        background: var(--avab-white);
+        background:
+          radial-gradient(circle at 10% 20%, var(--reference-green-soft), transparent 28%),
+          var(--avab-white);
       }
 
-      .reference-hero__content-wrap {
-        display: flex;
+      .reference-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+        gap: clamp(36px, 6vw, 88px);
         align-items: center;
-        padding:
-          clamp(48px, 5vw, 72px)
-          clamp(32px, 5vw, 72px)
-          clamp(48px, 5vw, 72px)
-          max(24px, calc((100cqw - var(--avab-max)) / 2));
-      }
-
-      .reference-hero__content {
-        width: min(100%, 580px);
       }
 
       .reference-kicker {
@@ -338,18 +322,25 @@ const structuredData = {
         gap: 12px;
       }
 
-      .reference-hero__media {
-        min-width: 0;
-        min-height: 100%;
-        margin: 0;
+      .reference-image {
+        position: relative;
+        overflow: hidden;
         background: var(--avab-grey);
+        box-shadow: 0 28px 70px rgba(40, 46, 42, 0.16);
       }
 
-      .reference-hero__media img {
+      .reference-image::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+      }
+
+      .reference-image img {
         width: 100%;
-        height: 100%;
+        min-height: 500px;
         object-fit: cover;
-        object-position: 58% center;
       }
 
       .reference-facts {
@@ -782,39 +773,12 @@ const structuredData = {
         color: var(--avab-green);
       }
 
-      .reference-cta {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 48px;
-        align-items: center;
-        padding: clamp(36px, 6vw, 64px);
-        border-radius: var(--avab-radius);
-        background: var(--avab-dark);
-      }
-
-      .reference-cta h2 {
-        max-width: 17ch;
-        margin-bottom: 14px;
-        color: var(--avab-white);
-      }
-
-      .reference-cta p {
-        margin: 0;
-        color: rgba(255, 255, 255, 0.76);
-      }
-
-      .reference-cta .reference-kicker {
-        color: rgba(255, 255, 255, 0.78);
-      }
-
-      .reference-cta-actions {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 12px;
-      }
-
       @media (max-width: 1100px) {
+        .reference-hero-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 42px;
+        }
+
         .reference-facts-grid {
           grid-template-columns: repeat(3, 1fr);
         }
@@ -833,36 +797,20 @@ const structuredData = {
       }
 
       @media (max-width: 900px) {
-        .reference-content-grid,
-        .reference-cta {
+        .reference-content-grid {
           grid-template-columns: 1fr;
         }
 
-        .reference-hero--split {
+        .reference-hero-grid {
           grid-template-columns: 1fr;
-        }
-
-        .reference-hero__content-wrap {
-          padding:
-            clamp(44px, 8vw, 64px)
-            24px;
-        }
-
-        .reference-hero__content {
-          width: min(100%, 720px);
         }
 
         .reference-hero h1 {
           max-width: 14ch;
         }
 
-        .reference-hero__media {
-          min-height: 0;
-          aspect-ratio: 16 / 10;
-        }
-
-        .reference-hero__media img {
-          min-height: 0;
+        .reference-image img {
+          min-height: 380px;
         }
 
         .reference-summary-grid {
@@ -883,30 +831,27 @@ const structuredData = {
           position: static;
         }
 
-        .reference-cta-actions {
-          justify-content: flex-start;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .reference-hero__content-wrap {
-          padding: 38px 16px 42px;
-        }
       }
 
       @media (max-width: 680px) {
+        .reference-hero {
+          padding-top: 38px;
+        }
+
         .reference-hero h1 {
           font-size: clamp(2.45rem, 12vw, 3.7rem);
         }
 
-        .reference-actions,
-        .reference-cta-actions {
+        .reference-image img {
+          min-height: 290px;
+        }
+
+        .reference-actions {
           width: 100%;
           flex-direction: column;
         }
 
-        .reference-actions .button,
-        .reference-cta-actions .button {
+        .reference-actions .button {
           width: 100%;
         }
 
@@ -920,16 +865,15 @@ const structuredData = {
           grid-template-columns: 1fr;
         }
 
-        .reference-fact,
-        .reference-fact:first-child,
-        .reference-fact:nth-child(4) {
-          border-left: 1px solid var(--reference-line);
-          border-right: 1px solid var(--reference-line);
-          border-top: 1px solid var(--reference-line);
+        .reference-facts .reference-facts-grid {
+          width: 100%;
+          margin: 0;
         }
 
-        .reference-fact:first-child {
-          border-top: 0;
+        .reference-fact,
+        .reference-fact:nth-child(4),
+        .reference-fact:nth-child(n + 4) {
+          border: 0;
         }
 
         .reference-block + .reference-block {
@@ -971,11 +915,11 @@ const structuredData = {
     </nav>
 
     <main id="main">
-      <header class="reference-hero reference-hero--split">
-        <div class="reference-hero__content-wrap">
-          <div class="reference-hero__content">
+      <header class="reference-hero">
+        <div class="avab-container reference-hero-grid">
+          <div>
             <span class="reference-kicker">Referens · Kontor och konferens</span>
-            <h1>Hanza Mechanics, Töcksfors</h1>
+            <h1>Hanza Mechanics</h1>
             <p class="reference-hero-subtitle">
               Konferensrum som är lätta att boka, starta och koppla upp
             </p>
@@ -998,18 +942,18 @@ const structuredData = {
               </a>
             </div>
           </div>
-        </div>
 
-        <figure class="reference-hero__media">
-          <img
-            src={heroImage.src}
-            alt={heroImage.alt}
-            width={heroImage.width}
-            height={heroImage.height}
-            fetchpriority="high"
-            decoding="async"
-          />
-        </figure>
+          <figure class="reference-image">
+            <img
+              src={heroImage.src}
+              alt={heroImage.alt}
+              width={heroImage.width}
+              height={heroImage.height}
+              fetchpriority="high"
+              decoding="async"
+            />
+          </figure>
+        </div>
       </header>
 
       <section class="reference-facts" aria-label="Referensen i ett nötskal">
@@ -1160,28 +1104,6 @@ const structuredData = {
               Se kontor och konferens
             </a>
           </aside>
-        </div>
-      </section>
-
-      <section class="reference-section" aria-labelledby="skala">
-        <div class="avab-container">
-          <div class="reference-section-heading">
-            <span class="reference-kicker">Omfattning</span>
-            <h2 id="skala">Verifierade skalindikatorer</h2>
-            <p>
-              Uppgifterna visar projektets storlek utan att blanda in antagna
-              värden om tid, användare eller ekonomi.
-            </p>
-          </div>
-
-          <div class="scale-grid">
-            {scale.map((item) => (
-              <div class="scale-item">
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -1357,34 +1279,20 @@ const structuredData = {
         </div>
       </section>
 
-      <section class="reference-section">
-        <div class="avab-container">
-          <div class="reference-cta">
-            <div>
-              <span class="reference-kicker">Planerar ni nya konferensrum?</span>
-              <h2>Ta fram rätt teknisk nivå för varje rum</h2>
-              <p>
-                Skicka ritningar eller en kort beskrivning av antal rum,
-                användare och mötessätt så hjälper AVAB er att bedöma rätt
-                teknisk nivå.
-              </p>
-            </div>
-
-            <div class="reference-cta-actions">
-              <a
-                class="button button-light"
-                href="/kontakt/#kontaktformular"
-                data-contact-intent="project"
-              >
-                Ladda upp underlag
-              </a>
-              <a class="button button-secondary" href="/kontakt/">
-                Kontakta AVAB
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageCTA
+        eyebrow="Konferensrum som fungerar i vardagen"
+        title="Planerar ni nya eller uppgraderade mötesrum?"
+        text="Vi hjälper er från behovsanalys och projektering till installation, driftsättning och support."
+        primaryLabel="Boka kostnadsfri rådgivning"
+        primaryHref="/kontakt/"
+        secondaryLabel="Läs om konferenslösningar"
+        secondaryHref="/miljo/kontor-konferens/"
+        points={[
+          "Trådlös presentation med tydlig användning",
+          "Teams- och BYOD-lösningar anpassade efter rummet",
+          "Styrning, installation och support från samma partner",
+        ]}
+      />
     </main>
 
     <SiteFooter />
