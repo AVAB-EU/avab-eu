@@ -1,6 +1,7 @@
 ﻿---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -705,22 +706,23 @@ import "../../../styles/avab.css";
       </div>
     </div>
 
-    <aside class="card cta-card" id="kontakt">
-      <div class="eyebrow" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">Slipp onödigt krångel</div>
-      <h2>Låt oss ta helhetsansvaret</h2>
-      <p>Oavsett om ni ska bygga nytt eller uppgradera ett äldre, ostrukturerat system, finns vi här för att göra er vardag tryggare och oerhört mycket enklare. Vi börjar gärna med en genomgång av er riskbild och era flöden.</p>
-      <ul class="guarantee-list">
-        <li>Upp till 10 års garanti på utvald hårdvara</li>
-        <li>Trygga serviceavtal med snabb inställelsetid</li>
-        <li>Smarta system för distansövervakning</li>
-      </ul>
-      <div class="hero-actions" style="margin-top: 32px; flex-direction: column; align-items: flex-start;">
-        <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
-        <a class="button button-secondary" href="/kontakt/" style="width: 100%;">Skicka in ritningar för projektering</a>
-      </div>
-    </aside>
     </div>
 </section>
+
+<PageCTA
+  eyebrow="Slipp onödigt krångel"
+  title="Låt oss ta helhetsansvaret"
+  text="Oavsett om ni ska bygga nytt eller uppgradera ett äldre, ostrukturerat system, finns vi här för att göra er vardag tryggare och oerhört mycket enklare. Vi börjar gärna med en genomgång av er riskbild och era flöden."
+  primaryLabel="Boka kostnadsfri rådgivning"
+  primaryHref="/kontakt/"
+  secondaryLabel="Läs om projektering"
+  secondaryHref="/tjanster/projektering/"
+  points={[
+    "Upp till 10 års garanti på utvald hårdvara",
+    "Trygga serviceavtal med snabb inställelsetid",
+    "Smarta system för distansövervakning",
+  ]}
+/>
 </main>
 
 <SiteFooter />

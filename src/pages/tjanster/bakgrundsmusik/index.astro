@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -401,27 +402,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Bakgrundsmusik med kontroll</div>
-            <h2>Vill ni att lokalen ska kännas rätt hela dagen?</h2>
-            <p>AVAB hjälper er med bakgrundsmusik, zonstyrning, ljudsystem och enkel kontroll för personalen. Vi bygger lösningen efter lokalen, verksamheten och känslan ni vill skapa.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka genomgång</a>
-              <a class="button button-secondary" href="#arbetssatt">Se hur vi jobbar</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Musikprofil efter verksamhet, tid och zon.</li>
-            <li>Högtalarplacering, förstärkare och jämn ljudnivå.</li>
-            <li>Scheman, lägen och enkel styrning för personal.</li>
-            <li>Musiktjänst för företagsbruk och möjlighet till support.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Bakgrundsmusik med kontroll"
+      title="Vill ni att lokalen ska kännas rätt hela dagen?"
+      text="AVAB hjälper er med bakgrundsmusik, zonstyrning, ljudsystem och enkel kontroll för personalen. Vi bygger lösningen efter lokalen, verksamheten och känslan ni vill skapa."
+      primaryLabel="Boka genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Se hur vi jobbar"
+      secondaryHref="#arbetssatt"
+      points={[
+        "Musikprofil efter verksamhet, tid och zon.",
+        "Högtalarplacering, förstärkare och jämn ljudnivå.",
+        "Scheman, lägen och enkel styrning för personal.",
+        "Musiktjänst för företagsbruk och möjlighet till support.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

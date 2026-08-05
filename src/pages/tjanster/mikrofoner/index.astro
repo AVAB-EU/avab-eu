@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -696,27 +697,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Behöver ni mikrofoner som bara fungerar?</h2>
-            <p>Till sporthall, aula, skola, gym, konferensrum, kyrka eller simhall: AVAB hjälper er att välja rätt mikrofontyp, projektera trådlöst, placera antenner, programmera DSP och bygga ett system där talet hörs tydligt.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/ljudsystem/">Läs om ljudsystem</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Handmikrofon, headset, tak eller svanhals, valt efter användningen.</li>
-            <li>Sennheiser-system med frekvensplan och rätt antennplacering.</li>
-            <li>DSP med automix, AEC och feedbackkontroll.</li>
-            <li>Laddning, märkning, dokumentation och utbildning.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Behöver ni mikrofoner som bara fungerar?"
+      text="Till sporthall, aula, skola, gym, konferensrum, kyrka eller simhall: AVAB hjälper er att välja rätt mikrofontyp, projektera trådlöst, placera antenner, programmera DSP och bygga ett system där talet hörs tydligt."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om ljudsystem"
+      secondaryHref="/tjanster/ljudsystem/"
+      points={[
+        "Handmikrofon, headset, tak eller svanhals, valt efter användningen.",
+        "Sennheiser-system med frekvensplan och rätt antennplacering.",
+        "DSP med automix, AEC och feedbackkontroll.",
+        "Laddning, märkning, dokumentation och utbildning.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

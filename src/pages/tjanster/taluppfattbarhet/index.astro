@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -495,32 +496,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta-wrap">
-          <div class="fullwidth-cta">
-            <div>
-              <div class="eyebrow">Behöver ni tydligare tal?</div>
-              <h2>Kontakta AVAB för mätning och åtgärdsförslag</h2>
-              <p>
-                Har ni problem med otydliga utrop, ojämnt ljud, eko eller klagomål på att tal inte hörs?
-                Vi hjälper er att hitta orsaken och ta fram en lösning som fungerar i verkligheten.
-              </p>
-              <div class="cta-actions">
-                <a class="button button-light" href="/kontakt/">Kontakta AVAB</a>
-                <a class="button button-secondary" href="/tjanster/horslinga/">Se hörslinga</a>
-                <a class="button button-quiet" href="tel:+46548202080">Ring 054-820 20 80</a>
-              </div>
-            </div>
-
-            <ul class="calc-list">
-              <li>STI/STIPA-mätning och dokumentation.</li>
-              <li>Felsökning av PA- och utropssystem.</li>
-              <li>Förslag för högtalarplacering, zoner och akustik.</li>
-              <li>Hörslinga, SLS och Auracast för tillgängligt ljud.</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Behöver ni tydligare tal?"
+      title="Kontakta AVAB för mätning och åtgärdsförslag"
+      text="Har ni problem med otydliga utrop, ojämnt ljud, eko eller klagomål på att tal inte hörs? Vi hjälper er att hitta orsaken och ta fram en lösning som fungerar i verkligheten."
+      primaryLabel="Kontakta AVAB"
+      primaryHref="/kontakt/"
+      secondaryLabel="Se hörslinga"
+      secondaryHref="/tjanster/horslinga/"
+      points={[
+        "STI/STIPA-mätning och dokumentation.",
+        "Felsökning av PA- och utropssystem.",
+        "Förslag för högtalarplacering, zoner och akustik.",
+        "Hörslinga, SLS och Auracast för tillgängligt ljud.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

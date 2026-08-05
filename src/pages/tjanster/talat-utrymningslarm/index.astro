@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -708,35 +709,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Bra att ha framme</div>
-            <h2>Skicka underlaget, så tar vi nästa steg</h2>
-            <p>För en första genomgång av talat utrymningslarm eller inrymningslarm hjälper det oss att se följande underlag:</p>
-            <ul class="checklist">
-              <li>Planritningar</li>
-              <li>Brandskyddsbeskrivning</li>
-              <li>FFU eller rambeskrivning</li>
-              <li>Verksamhet och dimensionerande personantal</li>
-              <li>Information om brandlarm och befintligt ljud</li>
-              <li>Krav på STI, EN 54 eller SBF 502:1</li>
-            </ul>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/#ladda-upp-underlag">Ladda upp projektunderlag</a>
-              <a class="button button-secondary" href="/tjanster/taluppfattbarhet/">Läs om STI/STIPA</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Projektering enligt EN 54, SBF 502:1 och projektets krav.</li>
-            <li>Installation, inkoppling och brandlarmsstyrningar.</li>
-            <li>STI/STIPA-mätning och färdigställandekontroll.</li>
-            <li>Anläggarintyg, dokumentation och service.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Bra att ha framme"
+      title="Skicka underlaget, så tar vi nästa steg"
+      text="Skicka planritningar, brandskyddsbeskrivning, FFU eller rambeskrivning samt uppgifter om verksamhet, personantal, brandlarm, befintligt ljud och krav på STI, EN 54 eller SBF 502:1."
+      primaryLabel="Ladda upp projektunderlag"
+      primaryHref="/kontakt/#kontaktformular"
+      secondaryLabel="Läs om STI/STIPA"
+      secondaryHref="/tjanster/taluppfattbarhet/"
+      points={[
+        "Projektering enligt EN 54, SBF 502:1 och projektets krav.",
+        "Installation, inkoppling och brandlarmsstyrningar.",
+        "STI/STIPA-mätning och färdigställandekontroll.",
+        "Anläggarintyg, dokumentation och service.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

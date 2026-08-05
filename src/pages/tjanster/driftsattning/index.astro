@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -276,27 +277,21 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section">
-      <div class="avab-container">
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Nästa steg</div>
-            <h2>Låt oss göra installationen användbar på riktigt</h2>
-            <p>Vi kan driftsätta en ny anläggning, justera ett befintligt system eller hjälpa till när teknik är installerad men inte fungerar som tänkt.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="tel:+46548202080">Ring 054-8202080</a>
-              <a class="button button-secondary" href="mailto:info@avab.eu">Mejla AVAB</a>
-            </div>
-          </div>
-          <ul class="calc-list">
-            <li>Programmering och systemtest</li>
-            <li>Ljudinjustering och zonbalans</li>
-            <li>Styrlogik och användarflöde</li>
-            <li>Dokumentation, utbildning och backup</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      eyebrow="Nästa steg"
+      title="Låt oss göra installationen användbar på riktigt"
+      text="Vi kan driftsätta en ny anläggning, justera ett befintligt system eller hjälpa till när teknik är installerad men inte fungerar som tänkt."
+      primaryLabel="Kontakta AVAB"
+      primaryHref="/kontakt/"
+      secondaryLabel="Ring 054-8202080"
+      secondaryHref="tel:+46548202080"
+      points={[
+        "Programmering och systemtest",
+        "Ljudinjustering och zonbalans",
+        "Styrlogik och användarflöde",
+        "Dokumentation, utbildning och backup",
+      ]}
+    />
   </main>
 
   <SiteFooter />
