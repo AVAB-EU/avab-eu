@@ -210,15 +210,4 @@ export const references: Reference[] = [
     environments: ["skola", "gym"],
     technologies: ["ljud", "bild", "bakgrundsmusik", "projektering"],
   },
-  {
-    title: "Hanza Mechanics, Töcksfors",
-    slug: "/referenser/hanza-konferens-tocksfors/",
-    location: "Töcksfors",
-    image: "/assets/konferensrum-stor-skarm-bord.webp",
-    imageAlt: "Konferensrum hos Hanza Mechanics i Töcksfors med videobar och rumsbokning från AVAB",
-    excerpt:
-      "Två nya konferensrum med 85-tums Samsung PRO, Crestron AirMedia, Teams/BYOD, Sennheiser-videobar och rumsbokningspaneler utanför fyra rum.",
-    environments: ["industri", "kontor-konferens"],
-    technologies: ["bild", "styrsystem", "crestron", "mikrofoner", "konferens"],
-  },
 ];

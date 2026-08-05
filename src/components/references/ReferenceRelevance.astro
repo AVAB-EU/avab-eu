@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Relevance = NonNullable<CollectionEntry<"references">["data"]["relevance"]>;
+interface Props { relevance: Relevance }
+const { relevance } = Astro.props;
+---
+
+<section class="reference-section" aria-labelledby="relevans">
+  <div class="avab-container">
+    <div class="reference-section-heading">
+      <span class="reference-kicker">{relevance.eyebrow}</span>
+      <h2 id="relevans">{relevance.title}</h2>
+      {relevance.lead && <p>{relevance.lead}</p>}
+    </div>
+    <ul class="relevance-grid">
+      {relevance.items.map((item) => <li class="relevance-item">{item}</li>)}
+    </ul>
+  </div>
+</section>

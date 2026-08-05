@@ -2,8 +2,35 @@
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import ReferenceCard from "../../components/ReferenceCard.astro";
-import { references, environments, technologies } from "../../data/referenser";
+import { getCollection } from "astro:content";
+import { absoluteUrl, SITE_URL } from "../../config/site";
+import {
+  references as legacyReferences,
+  environments,
+  technologies,
+  type Reference,
+} from "../../data/referenser";
 import "../../styles/avab.css";
+
+const contentReferences: Reference[] = (await getCollection("references"))
+  .filter((entry) => !entry.data.draft)
+  .map((entry) => ({
+    title: entry.data.archive.title,
+    slug: entry.data.slug,
+    location: entry.data.location,
+    image: entry.data.archive.image.src,
+    imageAlt: entry.data.archive.image.alt,
+    excerpt: entry.data.archive.excerpt,
+    environments: entry.data.archive.environments,
+    technologies: entry.data.archive.technologies,
+    featured: entry.data.archive.featured,
+  }));
+
+const migratedSlugs = new Set(contentReferences.map((reference) => reference.slug));
+const references = [
+  ...legacyReferences.filter((reference) => !migratedSlugs.has(reference.slug)),
+  ...contentReferences,
+];
 
 // Utvalda projekt till förtroendebandet (fasta siffror som säljer).
 const trustItems = [
@@ -24,7 +51,7 @@ const total = references.length;
 const itemListElements = sorted.map((ref, i) => ({
   "@type": "ListItem",
   position: i + 1,
-  url: `https://www.avab.eu${ref.slug}`,
+  url: absoluteUrl(ref.slug),
   name: ref.title,
 }));
 ---
@@ -36,26 +63,26 @@ const itemListElements = sorted.map((ref, i) => ({
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Referenser – AV-projekt inom ljud, bild, ljus och styrning | AVAB</title>
   <meta name="description" content="Ett urval av AVAB:s projekt inom ljud, bild, ljus, styrsystem, hörslingor, mikrofoner och kamera i simhallar, sporthallar, skolor, gym, hotell, restauranger, konferens och offentliga miljöer." />
-  <link rel="canonical" href="https://www.avab.eu/referenser/" />
+  <link rel="canonical" href={absoluteUrl("/referenser/")} />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="author" content="AVAB" />
   <meta name="theme-color" content="#282E29" />
 
   <meta property="og:title" content="Referenser – AVAB:s AV-projekt" />
-  <meta property="og:description" content="Filtrera AVAB:s referensprojekt på miljö och teknik: simhall, sporthall, skola, gym, hotell, konferens, industri och mer." />
-  <meta property="og:image" content="https://www.avab.eu/assets/fjallanlaggning-vinterkvall.webp" />
+  <meta property="og:description" content="Filtrera AVAB:s referenser på miljö och teknik: simhall, sporthall, skola, gym, hotell, konferens, industri och mer." />
+  <meta property="og:image" content={absoluteUrl("/assets/fjallanlaggning-vinterkvall.webp")} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="800" />
   <meta property="og:image:alt" content="Ett urval av AVAB:s AV-projekt" />
-  <meta property="og:url" content="https://www.avab.eu/referenser/" />
+  <meta property="og:url" content={absoluteUrl("/referenser/")} />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="sv_SE" />
   <meta property="og:site_name" content="AVAB" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Referenser – AVAB:s AV-projekt" />
-  <meta name="twitter:description" content="Filtrera AVAB:s referensprojekt på miljö och teknik." />
-  <meta name="twitter:image" content="https://www.avab.eu/assets/fjallanlaggning-vinterkvall.webp" />
+  <meta name="twitter:description" content="Filtrera AVAB:s referenser på miljö och teknik." />
+  <meta name="twitter:image" content={absoluteUrl("/assets/fjallanlaggning-vinterkvall.webp")} />
   <meta name="twitter:image:alt" content="Ett urval av AVAB:s AV-projekt" />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -65,13 +92,13 @@ const itemListElements = sorted.map((ref, i) => ({
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "@id": "https://www.avab.eu/referenser/#webpage",
-    "url": "https://www.avab.eu/referenser/",
+    "@id": `${absoluteUrl("/referenser/")}#webpage`,
+    "url": absoluteUrl("/referenser/"),
     "name": "Referenser – AVAB:s AV-projekt",
     "description": "Ett urval av AVAB:s projekt inom ljud, bild, ljus, styrsystem, hörslingor, mikrofoner och kamera.",
     "inLanguage": "sv-SE",
-    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": "https://www.avab.eu/" },
-    "breadcrumb": { "@id": "https://www.avab.eu/referenser/#breadcrumb" },
+    "isPartOf": { "@type": "WebSite", "name": "AVAB", "url": `${SITE_URL}/` },
+    "breadcrumb": { "@id": `${absoluteUrl("/referenser/")}#breadcrumb` },
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": total,
@@ -82,10 +109,10 @@ const itemListElements = sorted.map((ref, i) => ({
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "@id": "https://www.avab.eu/referenser/#breadcrumb",
+    "@id": `${absoluteUrl("/referenser/")}#breadcrumb`,
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.avab.eu/" },
-      { "@type": "ListItem", "position": 2, "name": "Referenser", "item": "https://www.avab.eu/referenser/" }
+      { "@type": "ListItem", "position": 1, "name": "Start", "item": `${SITE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Referenser", "item": absoluteUrl("/referenser/") }
     ]
   })} />
 
@@ -225,38 +252,37 @@ const itemListElements = sorted.map((ref, i) => ({
   <nav class="breadcrumbs" aria-label="Brödsmulor">
     <div class="avab-container">
       <ol>
-        <li><a href="https://www.avab.eu/">Start</a></li>
+        <li><a href="/">Start</a></li>
         <li><span aria-current="page">Referenser</span></li>
       </ol>
     </div>
   </nav>
 
-  <section class="section section--light" style="padding-bottom: 40px;">
-    <div class="avab-container">
-      <div class="section-heading" style="max-width: 820px;">
-        <div>
-          <div class="eyebrow">Referenser</div>
-          <h1>Projekt vi är stolta över</h1>
-          <p class="lead-dark">Ett urval av AVAB:s projekt inom ljud, bild, ljus, styrsystem, hörslingor, mikrofoner, kamera och AV-teknik i simhallar, sporthallar, skolor, gym, hotell, restauranger, konferensanläggningar och offentliga miljöer.</p>
+  <main id="main">
+    <section class="section section--light" style="padding-bottom: 40px;">
+      <div class="avab-container">
+        <div class="section-heading" style="max-width: 820px;">
+          <div>
+            <div class="eyebrow">Referenser</div>
+            <h1>Projekt vi är stolta över</h1>
+            <p class="lead-dark">Ett urval av AVAB:s projekt inom ljud, bild, ljus, styrsystem, hörslingor, mikrofoner, kamera och AV-teknik i simhallar, sporthallar, skolor, gym, hotell, restauranger, konferensanläggningar och offentliga miljöer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-band">
+      <div class="avab-container">
+        <div class="trust-grid">
+          {trustItems.map((item) => (
+            <div class="trust-cell">
+              <strong>{item.stat}</strong>
+              <span>{item.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
-  </section>
-
-  <div class="trust-band">
-    <div class="avab-container">
-      <div class="trust-grid">
-        {trustItems.map((item) => (
-          <div class="trust-cell">
-            <strong>{item.stat}</strong>
-            <span>{item.label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-
-  <main id="main">
     <section class="section">
       <div class="avab-container">
 

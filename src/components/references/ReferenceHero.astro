@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type ReferenceData = CollectionEntry<"references">["data"];
+
+interface Props {
+  data: Pick<
+    ReferenceData,
+    "category" | "environment" | "heroTitle" | "heroSubtitle" | "summary" | "heroImage"
+  >;
+}
+
+const { data } = Astro.props;
+---
+
+<header class="reference-hero reference-hero--split">
+  <div class="avab-container reference-hero__grid">
+    <div class="reference-hero__content-wrap">
+      <div class="reference-hero__content">
+        <span class="reference-kicker">{data.category} · {data.environment}</span>
+        <h1>{data.heroTitle}</h1>
+        <p class="reference-hero-subtitle">{data.heroSubtitle}</p>
+        <p class="reference-hero-lead">{data.summary}</p>
+        <div class="reference-actions">
+          <a class="button button-primary" href="#omfattning">Se AVAB:s omfattning</a>
+          <a
+            class="button button-secondary"
+            href="/kontakt/#kontaktformular"
+            data-contact-intent="project"
+          >Kontakta AVAB</a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="reference-hero__media">
+      <img
+        src={data.heroImage.src}
+        alt={data.heroImage.alt}
+        width={data.heroImage.width}
+        height={data.heroImage.height}
+        style={`object-position: ${data.heroImage.objectPosition ?? "center"}`}
+        fetchpriority="high"
+        decoding="async"
+      />
+    </figure>
+  </div>
+</header>

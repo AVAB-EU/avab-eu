@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Brief = CollectionEntry<"references">["data"]["brief"];
+interface Props { brief: Brief }
+const { brief } = Astro.props;
+---
+
+<section class="reference-section" aria-labelledby="uppdraget">
+  <div class="avab-container">
+    <div class="reference-section-heading">
+      <span class="reference-kicker">{brief.eyebrow}</span>
+      <h2 id="uppdraget">{brief.title}</h2>
+    </div>
+    <div class="reference-summary-grid">
+      <article class="reference-summary">
+        <h3>Kundens behov</h3>
+        <p>{brief.need}</p>
+      </article>
+      <article class="reference-summary">
+        <h3>AVAB:s ansvar</h3>
+        <p>{brief.responsibility}</p>
+      </article>
+      <article class="reference-summary">
+        <h3>Resultatet</h3>
+        <p>{brief.result}</p>
+      </article>
+    </div>
+  </div>
+</section>
