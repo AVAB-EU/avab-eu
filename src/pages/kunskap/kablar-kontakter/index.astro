@@ -205,31 +205,13 @@ import "../../../styles/avab.css";
 
   <!-- Sidspecifika komponenter -->
   <style>
-    /* ---- Lösningskort (grön ram, accentkant) ---- */
-    .solution-card {
-      border: 2px solid rgba(143, 192, 37, 0.62);
-      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
-      position: relative;
-      overflow: hidden;
-    }
-    .solution-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 8px;
-      background: var(--avab-green);
-    }
-    .solution-card h3,
-    .solution-card .bullet-list,
-    .solution-card .formula { position: relative; z-index: 1; }
-
     /* ---- AEO-svarsruta (snippet-box) ---- */
     .snippet-box {
       padding: 24px 28px;
+      padding-left: 40px;
       border-radius: var(--avab-radius-sm);
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
-      border-left: 8px solid var(--avab-green);
       box-shadow: var(--avab-shadow-sm);
       margin-top: 28px;
     }
@@ -362,7 +344,7 @@ import "../../../styles/avab.css";
           <h2>Fel kabel kan fungera, tills den inte gör det</h2>
           <p class="lead-dark">AVAB hjälper med kabelval, kontaktering, projektering och installation av kablage för ljud, bild, ljus, nätverk, hörslingor, trådlösa mikrofoner, styrsystem, kameraövervakning och talat utrymningslarm.</p>
           <p>Fel kabel kan fungera på kort avstånd, men ge spänningsfall, brus, tappad data, svag RF-signal, dålig taluppfattbarhet eller svår felsökning när anläggningen växer eller ska servas.</p>
-          <div class="snippet-box">
+          <div class="snippet-box accent-rail">
             <strong>Hur väljer man rätt kabel?</strong>
             <p>Rätt kabel väljs efter signaltyp, effekt, längd, miljö, kontakt, installationstyp och framtida service. Högtalarkabel, nätverkskabel, DMX-kabel, antennkabel, XLR, hörslingekabel och plintkablage har olika krav.</p>
           </div>
@@ -402,7 +384,7 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <aside class="card solution-card">
+        <aside class="card solution-card accent-rail">
           <h3>100V: längre sträckor, lägre ström</h3>
           <p>100V-system används i skolor, korridorer, butiker, hotell, gym och större installationer med många högtalare. Högre spänning och lägre ström ger mindre spänningsfall, men total effekt, längd och framtida marginal måste fortfarande räknas.</p>
           <div class="formula">
@@ -477,7 +459,7 @@ import "../../../styles/avab.css";
           <p>Bra kablage ska gå att förstå flera år senare. Därför märker AVAB kablar, rack, plintar, paneler och uttag så att service, felsökning och ombyggnad blir enklare. En installation utan märkning kan fungera första dagen, men bli dyr så fort något ska ändras.</p>
         </div>
 
-        <aside class="card solution-card">
+        <aside class="card solution-card accent-rail">
           <h3>Dokumentationen ska visa</h3>
           <ul class="bullet-list">
             <li>Kabeltyp och kabelnummer.</li>

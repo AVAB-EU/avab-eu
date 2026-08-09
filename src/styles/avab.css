@@ -1081,31 +1081,39 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--avab-green);
-  color: var(--avab-dark);
-  font-size: 0.85rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--avab-dark-muted);
+  box-shadow: none;
+  font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   margin-bottom: 24px;
   align-self: flex-start;
 }
 .eyebrow::before {
   content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  width: 34px;
+  height: 3px;
+  flex: 0 0 34px;
+  border-radius: 3px;
+  background: var(--avab-green);
+  box-shadow: none;
 }
-.eyebrow-dark {
-  background: rgba(255, 255, 255, 0.1);
+.eyebrow--light {
+  color: var(--avab-dark-muted);
+}
+.eyebrow-dark,
+.eyebrow--dark,
+.hero .eyebrow {
+  background: transparent;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 0;
+  box-shadow: none;
 }
-
 
 /* ---- 12. Kort & listor ----------------------------------- */
 .card {
@@ -1169,7 +1177,7 @@ p {
   font-size: 1.15rem;
   font-weight: 800;
 }
-.bullet-list-light li { color: var(--avab-white); }
+.bullet-list.bullet-list-light li { color: var(--avab-white); }
 
 /* Värdekort med ikon (icon + titel + text) */
 .value-grid {
@@ -2034,7 +2042,7 @@ a.footer-contact-row:focus-visible {
 .quote-line {
   margin: 0;
   padding: 24px 28px;
-  border-left: 6px solid var(--avab-green);
+  padding-left: 40px;
   border-radius: var(--avab-radius-sm);
   background: var(--avab-white);
   box-shadow: var(--avab-shadow-lg);
@@ -2353,7 +2361,6 @@ a.footer-contact-row:focus-visible {
       grid-template-columns: 1.2fr 1fr;
       gap: 40px;
       align-items: center;
-      border-left: 8px solid var(--avab-green);
       box-shadow: var(--avab-shadow-lg);
     }
     .byod-banner h2 { color: #fff; font-size: 2.2rem; }
@@ -2365,7 +2372,6 @@ a.footer-contact-row:focus-visible {
     /* ---- Cirkulär AV ---- */
     .cirkular-card {
       padding: 48px;
-      border-left: 8px solid var(--avab-green);
       background: var(--avab-white);
       box-shadow: var(--avab-shadow-sm);
       border-radius: var(--avab-radius-sm);
@@ -2391,8 +2397,8 @@ a.footer-contact-row:focus-visible {
     .action-card {
       background: var(--avab-light);
       border: 1px solid var(--avab-border);
-      border-left: 4px solid var(--avab-green);
       padding: 24px;
+      padding-left: 40px;
       border-radius: var(--avab-radius-sm);
       display: flex;
       flex-direction: column;
@@ -2449,11 +2455,11 @@ a.footer-contact-row:focus-visible {
       .byod-banner { grid-template-columns: 1fr; gap: 40px; }
       .expert-card { min-height: 320px; }
       .expert-content h3, .expert-content p { min-height: auto; }
-      .cirkular-card { padding: 32px; }
+      .cirkular-card { padding: 32px 32px 32px 40px; }
     }
     @media (max-width: 768px) {
       .notice-grid, .action-grid { grid-template-columns: 1fr; }
-      .byod-banner { padding: 32px 24px; }
+      .byod-banner { padding: 32px 24px 32px 40px; }
       .k-item { flex-direction: column; align-items: flex-start; gap: 12px; }
 
       /* Expertkort som kompakt 2-kolumnsrutnät på mobil (utan !important – ID ger specificitet) */
@@ -2594,6 +2600,33 @@ h2.snabbt-svar-title::before {
 }
 
 .solution-card:hover::before { opacity: 1; }
+
+/* Rak, fristående accentlinje som inte följer kortets hörnradie. */
+.accent-rail {
+  position: relative;
+}
+.accent-rail::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 18px;
+  width: 4px;
+  height: auto;
+  border-radius: 3px;
+  background: var(--avab-green);
+  box-shadow: none;
+  opacity: 1;
+  transition: none;
+  pointer-events: none;
+}
+
+.card.solution-card.accent-rail {
+  padding-left: 40px;
+  border: 1px solid var(--avab-border);
+  overflow: hidden;
+  box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
+}
 .solution-content { display: flex; flex: 1; flex-direction: column; }
 .solution-content p { margin-bottom: 0; }
 .solution-top { display: flex; min-height: 4rem; margin-bottom: 12px; }
@@ -2728,22 +2761,23 @@ h2.snabbt-svar-title::before {
 /* ============================================================
    Environment page overrides migrated from sporthall pages
    ============================================================ */
-    /* ---- Lösningskort (grön ram, accentkant) ---- */
-    .solution-card {
+    /* Interaktiva lösningskort behåller sin befintliga hoveraccent. */
+    .solution-card.clickable-card {
       border: 2px solid rgba(143, 192, 37, 0.62);
       box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
       position: relative;
       overflow: hidden;
     }
-    .solution-card::before {
+    .solution-card.clickable-card::before,
+    .solution-card.solution-card--media::before {
       content: "";
       position: absolute;
       inset: 0 auto 0 0;
       width: 8px;
+      height: auto;
+      border-radius: 0;
       background: var(--avab-green);
     }
-    .solution-card h3,
-    .solution-card .bullet-list { position: relative; z-index: 1; }
 
     /* ---- Inre länk i referenskort ("Se referensprojekt →") ---- */
     .ref-content a {
