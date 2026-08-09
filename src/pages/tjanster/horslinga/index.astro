@@ -244,10 +244,10 @@ import "../../../styles/avab.css";
     /* ---- AEO-svarsruta (snippet-box) ---- */
     .snippet-box {
       padding: 28px;
+      padding-left: 40px;
       border-radius: var(--avab-radius-sm);
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
-      border-left: 8px solid var(--avab-green);
       box-shadow: var(--avab-shadow-sm);
       margin-top: 28px;
     }
@@ -275,10 +275,10 @@ import "../../../styles/avab.css";
     .mini-row strong { color: var(--avab-dark); }
 
     /* ---- Mörkt läckage-/sekretessband ---- */
-    .leakage-band { background: linear-gradient(135deg, var(--avab-dark), #1f241f); color: #fff; border-radius: var(--avab-radius); padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; box-shadow: var(--avab-shadow-lg); border-left: 8px solid var(--avab-green); }
+    .leakage-band { background: linear-gradient(135deg, var(--avab-dark), #1f241f); color: #fff; border-radius: var(--avab-radius); padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; box-shadow: var(--avab-shadow-lg); }
     .leakage-band h2, .leakage-band h3 { color: #fff; }
     .leakage-band p { color: rgba(255, 255, 255, 0.86); }
-    .leakage-band .snippet-box { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); border-left-color: var(--avab-green); }
+    .leakage-band .snippet-box { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); }
     .leakage-band .snippet-box strong { color: #fff; }
     .leakage-band .snippet-box p { color: rgba(255, 255, 255, 0.86); }
 
@@ -310,7 +310,7 @@ import "../../../styles/avab.css";
     .price-label.green { background: var(--avab-green); border-color: var(--avab-green); }
     .price-card .price { font-size: clamp(2.1rem, 4vw, 2.8rem); line-height: 1; color: var(--avab-green); font-weight: 800; margin-bottom: 22px; }
     .price-card p { font-size: 1.05rem; margin-bottom: 0; }
-    .price-note { margin-top: 40px; padding: 28px; border-radius: var(--avab-radius-sm); background: var(--avab-green-soft); border-left: 4px solid var(--avab-green); max-width: 820px; }
+    .price-note { margin-top: 40px; padding: 28px 28px 28px 40px; border-radius: var(--avab-radius-sm); background: var(--avab-green-soft); max-width: 820px; }
     .price-note strong { display: block; margin-bottom: 10px; color: var(--avab-dark); }
     .price-note p { margin-bottom: 0; }
 
@@ -354,7 +354,7 @@ import "../../../styles/avab.css";
       .calculator-band { grid-template-columns: 1fr; padding: 24px; }
       .price-grid { grid-template-columns: 1fr; }
       .mini-row { grid-template-columns: 1fr; gap: 2px; }
-      .leakage-band { padding: 40px 24px; }
+      .leakage-band { padding: 40px 24px 40px 40px; }
     }
   </style>
 </head>
@@ -415,7 +415,7 @@ import "../../../styles/avab.css";
           <p class="lead-dark">En hörslinga är ett trådlöst ljudsystem för personer med hörapparat eller cochleaimplantat. Ljudet skickas inte som vanligt högtalarljud genom rummet, utan som ett magnetfält som mottagarens telespole kan ta emot direkt.</p>
           <p>Hörslinga kallas också teleslinga, induktionsslinga eller induktiv hörslinga. Orden beskriver samma grundprincip: en slingförstärkare driver kabel eller kopparfolie som skapar ett magnetfält över lyssningsytan. Det gör att talet kan bli tydligare, särskilt i lokaler där ekon, avstånd och bakgrundsljud annars gör det svårt att uppfatta vad som sägs.</p>
           <p>Många elektriker, projektörer och inköpare vet att hörslingan ska finnas med, men inte alltid varför eller vilken lösning som krävs. I en FFU blir den lätt bara en punkt i handlingen. Vi hjälper er att omvandla den punkten till rätt system, rätt omfattning och ett underlag som går att upphandla.</p>
-          <div class="snippet-box">
+          <div class="snippet-box accent-rail">
             <strong>Kort teknisk sammanfattning</strong>
             <p>Hörslinga skickar ljud direkt till hörapparater och cochleaimplantat med telespole. PLS passar ofta mindre rum, medan SLS används i större eller mer krävande lokaler där man behöver jämnare täckning och bättre kontroll på läckage.</p>
           </div>
@@ -654,13 +654,13 @@ import "../../../styles/avab.css";
     <!-- 7. Läckage & sekretess -->
     <section class="section section--light" id="lackage">
       <div class="avab-container">
-        <div class="leakage-band">
+        <div class="leakage-band accent-rail">
           <div>
             <div class="eyebrow eyebrow-dark">Läckage &amp; sekretess</div>
             <h2>Magnetfält följer inte väggarna</h2>
             <p>En hörslinga skapar ett magnetfält, och det fältet stannar inte automatiskt vid rummets väggar. I många lokaler är det inget problem, men i skolor, vård, konferensrum och byggnader med flera närliggande rum kan läckage bli avgörande.</p>
             <p>Med SLS kan man forma fältet mer kontrollerat och använda stopp- eller kontrollslingor för att begränsa spridningen utanför den yta där ljudet ska tas emot.</p>
-            <div class="snippet-box">
+            <div class="snippet-box accent-rail">
               <strong>Viktigt att säga ärligt</strong>
               <p>SLS betyder inte att signalen aldrig lämnar rummet. Det betyder att läckaget kan begränsas kraftigt när systemet projekteras och installeras rätt.</p>
             </div>
@@ -779,7 +779,7 @@ import "../../../styles/avab.css";
           </article>
         </div>
 
-        <div class="price-note">
+        <div class="price-note accent-rail">
           <strong>Vad kostar en hörslinga?</strong>
           <p>En mindre PLS-lösning börjar ofta runt 10 000–30 000 kr, medan SLS i större lokaler oftast hamnar mellan 40 000 och 150 000 kr. Auracast, mottagare med halsslinga och hybridlösningar landar ofta på 100 000–200 000 kr beroende på antal zoner, sändare, integration och hur systemet ska användas.</p>
         </div>
@@ -863,9 +863,9 @@ import "../../../styles/avab.css";
         <aside class="animate-in">
           <div class="eyebrow">Snabba svar</div>
           <h2>Korta svar inför projektering</h2>
-          <div class="snippet-box" style="margin-top: 0;"><strong>Vad passar PLS till?</strong><p>PLS passar ofta mindre rum där en enkel perimeterslinga ger tillräcklig täckning och läckage inte är kritiskt.</p></div>
-          <div class="snippet-box"><strong>Vad passar SLS till?</strong><p>SLS passar större, mer komplexa eller sekretesskänsliga lokaler där man behöver jämnare täckning och bättre kontroll på magnetfältet.</p></div>
-          <div class="snippet-box"><strong>Hörslinga eller Auracast?</strong><p>Det beror på lokalen. Auracast är starkt där man inte kan påverka byggnaden, medan SLS är bättre i stora aktiva ytor som sporthallar.</p></div>
+          <div class="snippet-box accent-rail" style="margin-top: 0;"><strong>Vad passar PLS till?</strong><p>PLS passar ofta mindre rum där en enkel perimeterslinga ger tillräcklig täckning och läckage inte är kritiskt.</p></div>
+          <div class="snippet-box accent-rail"><strong>Vad passar SLS till?</strong><p>SLS passar större, mer komplexa eller sekretesskänsliga lokaler där man behöver jämnare täckning och bättre kontroll på magnetfältet.</p></div>
+          <div class="snippet-box accent-rail"><strong>Hörslinga eller Auracast?</strong><p>Det beror på lokalen. Auracast är starkt där man inte kan påverka byggnaden, medan SLS är bättre i stora aktiva ytor som sporthallar.</p></div>
         </aside>
       </div>
 

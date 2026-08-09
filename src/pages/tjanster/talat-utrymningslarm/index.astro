@@ -213,31 +213,13 @@ import "../../../styles/avab.css";
 
   <!-- Sidspecifika komponenter -->
   <style>
-    /* ---- Lösningskort (grön ram, accentkant) ---- */
-    .solution-card {
-      border: 2px solid rgba(143, 192, 37, 0.62);
-      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
-      position: relative;
-      overflow: hidden;
-    }
-    .solution-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 8px;
-      background: var(--avab-green);
-    }
-    .solution-card h3,
-    .solution-card .bullet-list,
-    .solution-card .signal-flow { position: relative; z-index: 1; }
-
     /* ---- AEO-svarsruta (snippet-box) ---- */
     .snippet-box {
       padding: 24px 28px;
+      padding-left: 40px;
       border-radius: var(--avab-radius-sm);
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
-      border-left: 8px solid var(--avab-green);
       box-shadow: var(--avab-shadow-sm);
       margin-top: 28px;
     }
@@ -310,9 +292,9 @@ import "../../../styles/avab.css";
     .measure-points > div {
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
-      border-left: 6px solid var(--avab-green);
       border-radius: var(--avab-radius-sm);
       padding: 16px 20px;
+      padding-left: 40px;
       box-shadow: var(--avab-shadow-sm);
     }
     .measure-points strong { display: block; color: var(--avab-dark); margin-bottom: 2px; }
@@ -466,7 +448,7 @@ import "../../../styles/avab.css";
             <div class="process-step"><b>04</b><span>Intyg, besiktning och service</span></div>
           </div>
         </div>
-        <aside class="snippet-box">
+        <aside class="snippet-box accent-rail">
           <strong>Vad är ett talat utrymningslarm?</strong>
           <p>Utrymningslarm med talat meddelande (UTM) använder övervakade högtalare för att ge tydliga instruktioner vid brand eller annan fara. TUL, talat utrymningslarm, är den vanliga benämningen i branschen. En siren säger att något hänt, ett talat meddelande förklarar vad människor ska göra och vart de ska gå.</p>
         </aside>
@@ -517,7 +499,7 @@ import "../../../styles/avab.css";
             <p><a class="text-link card-primary-link" href="#inrymning">Läs om inrymning</a></p>
           </article>
         </div>
-        <div class="snippet-box">
+        <div class="snippet-box accent-rail">
           <strong>Räcker rastsignalen?</strong>
           <p>Ett rastsignalsystem räcker för vardagskommunikation, men ersätter aldrig ett talat utrymningslarm när det krävs i brandskyddsbeskrivningen. Behovet av ett särskilt inrymningslarm avgörs av verksamhetens riskanalys och beredskapsplan.</p>
         </div>
@@ -570,7 +552,7 @@ import "../../../styles/avab.css";
           <article class="standard-card"><strong>SBF 502:1</strong><span>Planering, projektering, installation, kontroll, skötsel och underhåll.</span></article>
           <article class="standard-card"><strong>SS-EN 60268-16</strong><span>Objektiv verifiering av taluppfattbarhet med STI/STIPA.</span></article>
         </div>
-        <div class="snippet-box">
+        <div class="snippet-box accent-rail">
           <strong>Komponentcertifikat är inte samma sak som en färdig anläggning.</strong>
           <p>Vi projekterar och utför anläggningen enligt projektets krav och relevanta standarder, genomför färdigställandekontroll och sammanställer dokumentation för anläggarintyg, besiktning, certifiering och överlämning.</p>
         </div>
@@ -585,9 +567,9 @@ import "../../../styles/avab.css";
           <p class="lead-dark">Efterklang, bakgrundsbuller, långa kastavstånd och felriktade högtalare kan göra talet obegripligt även när ljudnivån är hög.</p>
           <p>Vi projekterar täckning, högtalarplacering, riktning och ljudnivå efter lokalens akustik som en del av vår <a class="text-link" href="/tjanster/projektering/">projektering</a>. När lokalen är färdigställd mäter vi STI eller STIPA enligt SS-EN 60268-16 och projektets fastställda krav, och verifierar <a class="text-link" href="/tjanster/taluppfattbarhet/">taluppfattbarheten</a> objektivt.</p>
           <div class="measure-points">
-            <div><strong>Mätpunkter</strong><span>placerade där människor faktiskt befinner sig.</span></div>
-            <div><strong>Bakgrundsljud och nivå</strong><span>dokumenteras vid mättillfället.</span></div>
-            <div><strong>Resultat mot krav</strong><span>jämförs med projektets fastställda STI-värde.</span></div>
+            <div class="accent-rail"><strong>Mätpunkter</strong><span>placerade där människor faktiskt befinner sig.</span></div>
+            <div class="accent-rail"><strong>Bakgrundsljud och nivå</strong><span>dokumenteras vid mättillfället.</span></div>
+            <div class="accent-rail"><strong>Resultat mot krav</strong><span>jämförs med projektets fastställda STI-värde.</span></div>
           </div>
         </div>
         <figure class="image-wrapper">
@@ -606,7 +588,7 @@ import "../../../styles/avab.css";
           <p class="lead-dark">Ibland är rätt besked att stanna inne, söka skydd eller undvika ett visst område. Inrymningslarm används när människor snabbt behöver instrueras att skydda sig, inte att gå ut.</p>
           <p>Behovet och utformningen utgår från verksamhetens riskanalys och beredskapsplan. Systemet byggs med skyddad aktivering, tydliga scenarier, zonindelade meddelanden och möjlighet att öva, ofta i samma anläggning som det talade utrymningslarmet men med egna larmscenarier.</p>
         </div>
-        <aside class="snippet-box">
+        <aside class="snippet-box accent-rail">
           <strong>När behöver vi inrymningslarm?</strong>
           <p>Behovet avgörs av verksamhetens riskanalys och beredskapsplan. Systemet används när människor snabbt behöver instrueras att söka skydd, stanna kvar eller undvika vissa områden.</p>
         </aside>
@@ -621,7 +603,7 @@ import "../../../styles/avab.css";
           <p class="lead-dark">Ett vanligt <a class="text-link" href="/tjanster/ljudsystem/">ljudsystem</a> kan användas för tal, musik och utrop, men blir inte automatiskt ett talat utrymningslarm. Vardagsljud får aldrig kunna blockera eller försämra utrymningsmeddelandet.</p>
           <p>Ska anläggningen även vara säkerhetssystem projekteras den med rätt övervakning, reservkraft, prioritet, kabel och dokumentation. Prioriteringen mellan brandlarm, utrymning, inrymning, PA, rastsignal och musik byggs in från början, samordnat i <a class="text-link" href="/tjanster/styrsystem-integration/">styrsystemet</a>, inte lappad på i efterhand.</p>
         </div>
-        <aside class="snippet-box">
+        <aside class="snippet-box accent-rail">
           <strong>Kan den vanliga ljudanläggningen användas?</strong>
           <p>Endast om lösningen projekteras och verifieras för säkerhetsfunktionen. Vardagsljud får aldrig kunna blockera eller försämra utrymningsmeddelandet.</p>
         </aside>

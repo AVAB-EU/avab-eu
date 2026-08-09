@@ -326,7 +326,6 @@ const heroImage = heroHomeSaffleSimhall.src;
       grid-template-columns: 1.2fr 1fr;
       gap: 40px;
       align-items: center;
-      border-left: 8px solid var(--avab-green);
       box-shadow: var(--avab-shadow-lg);
     }
     .byod-banner h2 { color: #fff; font-size: 2.2rem; }
@@ -338,7 +337,6 @@ const heroImage = heroHomeSaffleSimhall.src;
     /* ---- Cirkulär AV ---- */
     .cirkular-card {
       padding: 48px;
-      border-left: 8px solid var(--avab-green);
       background: var(--avab-white);
       box-shadow: var(--avab-shadow-sm);
       border-radius: var(--avab-radius-sm);
@@ -364,8 +362,8 @@ const heroImage = heroHomeSaffleSimhall.src;
     .action-card {
       background: var(--avab-light);
       border: 1px solid var(--avab-border);
-      border-left: 4px solid var(--avab-green);
       padding: 24px;
+      padding-left: 40px;
       border-radius: var(--avab-radius-sm);
       display: flex;
       flex-direction: column;
@@ -422,11 +420,11 @@ const heroImage = heroHomeSaffleSimhall.src;
       .byod-banner { grid-template-columns: 1fr; gap: 40px; }
       .expert-card { min-height: 320px; }
       .expert-content h3, .expert-content p { min-height: auto; }
-      .cirkular-card { padding: 32px; }
+      .cirkular-card { padding: 32px 32px 32px 40px; }
     }
     @media (max-width: 768px) {
       .notice-grid, .action-grid { grid-template-columns: 1fr; }
-      .byod-banner { padding: 32px 24px; }
+      .byod-banner { padding: 32px 24px 32px 40px; }
       .k-item { flex-direction: column; align-items: flex-start; gap: 12px; }
 
       #losningar .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
@@ -678,7 +676,7 @@ const heroImage = heroHomeSaffleSimhall.src;
 
     <section class="section" id="cirkular-av" style="background: var(--avab-light);">
       <div class="avab-container">
-        <div class="cirkular-card">
+        <div class="cirkular-card accent-rail">
           <div class="grid-2">
             <div>
               <div class="eyebrow" style="margin-bottom: 16px;">Hållbarhet i praktiken</div>
@@ -709,11 +707,11 @@ const heroImage = heroHomeSaffleSimhall.src;
           </div>
 
           <div class="action-grid">
-            <a href="/nedladdningar/checklista-av-sakerhet/" class="action-card clickable-card">
+            <a href="/nedladdningar/checklista-av-sakerhet/" class="action-card clickable-card accent-rail">
               <strong>Ladda ner vår checklista</strong>
               <span>Så kravställer du AV-teknik →</span>
             </a>
-            <a href="/tjanster/projektering/" class="action-card clickable-card">
+            <a href="/tjanster/projektering/" class="action-card clickable-card accent-rail">
               <strong>För projektörer och arkitekter</strong>
               <span>Ta in oss från början →</span>
             </a>
@@ -728,7 +726,7 @@ const heroImage = heroHomeSaffleSimhall.src;
 
     <section class="section" id="konferens-tjanst">
       <div class="avab-container animate-in">
-        <div class="byod-banner">
+        <div class="byod-banner accent-rail">
           <div>
             <div class="eyebrow eyebrow-dark">Aktuellt erbjudande</div>
             <h2>Konferensrum som tjänst (BYOD)</h2>
