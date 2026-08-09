@@ -256,6 +256,7 @@ import "../../../styles/avab.css";
 
     /* ---- Definitionskort (tagg + titel + text) ---- */
     .definition-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 32px; }
+    .definition-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .definition-card { background: var(--avab-white); border: 1px solid var(--avab-border); border-radius: var(--avab-radius-sm); padding: 24px; box-shadow: var(--avab-shadow-sm); }
     .definition-card .tag { display: inline-flex; margin-bottom: 14px; padding: 6px 12px; border-radius: 999px; background: var(--avab-green); color: var(--avab-dark); font-weight: 800; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
     .definition-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
@@ -678,7 +679,7 @@ import "../../../styles/avab.css";
           <p>Auracast är en Bluetooth LE Audio-baserad teknik där en ljudkälla kan sända ljud till många kompatibla mottagare samtidigt. Det öppnar för flera parallella ljudflöden, till exempel olika zoner, språk, skärmar eller salar.</p>
           <p>I kyrkor, kulturbyggnader, hyrda lokaler och andra miljöer där man har små eller inga möjligheter att påverka lokalen fysiskt kan Auracast vara en lösning. Man slipper lägga slinga i golvet men kan ändå erbjuda tillgängligt ljud.</p>
           <p>För användare med hörapparat eller cochleaimplantat med T-spole kan man även använda en Auracast-mottagare tillsammans med halsslinga. Då tas ljudet emot trådlöst och skickas vidare till T-spolen via halsslingan.</p>
-          <div class="definition-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="definition-grid definition-grid--two">
             <div class="definition-card"><span class="tag">Styrka</span><p>Mycket bra där man inte vill bryta upp golv, påverka ytskikt eller göra större ingrepp i lokalen.</p></div>
             <div class="definition-card"><span class="tag">Möjlighet</span><p>Kan ge flera trådlösa ljudzoner och fungera med mottagare + halsslinga för T-spole.</p></div>
             <div class="definition-card"><span class="tag">Begränsning</span><p>I sporthallar där användaren rör sig mycket är mottagare med halsslinga sämre. Där är SLS normalt rätt.</p></div>
