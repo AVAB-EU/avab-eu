@@ -3,6 +3,8 @@ import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
+
+const heroImage = "/assets/driftsattning-hero.webp";
 ---
 
 <!DOCTYPE html>
@@ -15,6 +17,7 @@ import "../../../styles/avab.css";
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://www.avab.eu/driftsattning/" />
   <meta name="theme-color" content="#282E29" />
+  <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
   <meta property="og:title" content="Driftsättning av AV-system, ljud, bild och styrning | AVAB" />
   <meta property="og:description" content="AVAB driftsätter ljudsystem, konferensteknik, styrsystem, hörslingor, kameror och AV-anläggningar med test, injustering, dokumentation och användarstöd." />
   <meta property="og:url" content="https://www.avab.eu/driftsattning/" />
@@ -122,7 +125,7 @@ import "../../../styles/avab.css";
 
   <main id="main">
     <!-- Bildförslag hero: Egen AVAB-bild som tydligt visar driftsättning. Lägg bilden i /assets/ när filnamnet är bestämt. -->
-    <section class="hero">
+    <section class="hero" style={`--hero-image: url('${heroImage}');`}>
       <div class="avab-container">
         <div class="hero-inner animate-in">
           <div class="eyebrow">Vår leverans · Driftsättning</div>
