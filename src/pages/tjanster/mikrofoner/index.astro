@@ -205,30 +205,13 @@ import "../../../styles/avab.css";
 
   <!-- Sidspecifika komponenter -->
   <style>
-    /* ---- Lösningskort (grön ram, accentkant) ---- */
-    .solution-card {
-      border: 2px solid rgba(143, 192, 37, 0.62);
-      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
-      position: relative;
-      overflow: hidden;
-    }
-    .solution-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 8px;
-      background: var(--avab-green);
-    }
-    .solution-card h3,
-    .solution-card .bullet-list { position: relative; z-index: 1; }
-
     /* ---- AEO-svarsruta (snippet-box) ---- */
     .snippet-box {
       padding: 24px 28px;
+      padding-left: 40px;
       border-radius: var(--avab-radius-sm);
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
-      border-left: 8px solid var(--avab-green);
       box-shadow: var(--avab-shadow-sm);
       margin-top: 28px;
     }
@@ -237,7 +220,7 @@ import "../../../styles/avab.css";
     .snippet-box p { margin-bottom: 0; font-size: 1.05rem; }
 
     /* ---- Mikrofontyps- och miljökort ---- */
-    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 8px; }
+    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px; margin-top: 8px; }
     .platform-card {
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
@@ -384,7 +367,7 @@ import "../../../styles/avab.css";
           <h2>Mikrofonen är den del av systemet användaren håller i</h2>
           <p class="lead-dark">AVAB projekterar och installerar mikrofonlösningar för sporthallar, skolor, konferensrum, hotell, gym, aulor, kyrkor, industrimiljöer och publika lokaler: trådlösa handmikrofoner, ficksändare, headset, myggor, takmikrofoner, bordsmikrofoner, antenner, DSP, automix, AEC och feedbackkontroll.</p>
           <p>För många installationer är målet enkelt: mikrofonen ska vara laddad, starta stabilt, låta bra, ha rätt räckvidd och inte skapa rundgång eller strul när någon ska prata.</p>
-          <div class="snippet-box">
+          <div class="snippet-box accent-rail">
             <strong>Vad är en mikrofonlösning?</strong>
             <p>En mikrofonlösning består av mikrofon, anslutning eller trådlös sändare, mottagare, antenner, signalbehandling och ljudsystem. Rätt mikrofon väljs efter användning: handhållen mikrofon för tal och speaker, ficksändare med headset för fria händer, takmikrofon för konferensrum, bordsmikrofon för fasta möten och dynamisk eller kondensatormikrofon för scen, tal eller inspelning.</p>
           </div>
@@ -421,7 +404,7 @@ import "../../../styles/avab.css";
           </figure>
         </div>
 
-        <aside class="card solution-card">
+        <aside class="card solution-card accent-rail">
           <h3>SpeechLine för tal och utbildning</h3>
           <p>Sennheiser SpeechLine Digital Wireless är byggt för tal, presentation, föreläsning och utbildning snarare än traditionell scenproduktion. Det passar i skolor, universitet, konferensrum, föreläsningssalar och företagsmiljöer där användaren vill ha enkel hantering och stabil talöverföring.</p>
           <p>SpeechLine är särskilt intressant där mikrofonerna ska användas av många olika personer och tekniken ska vara så självgående som möjligt. För en sporthall eller scen kan andra Sennheiser-system passa bättre, men för undervisning och talmiljöer är SpeechLine ofta en stark kandidat.</p>
@@ -555,7 +538,7 @@ import "../../../styles/avab.css";
           </figure>
         </div>
 
-        <aside class="card solution-card">
+        <aside class="card solution-card accent-rail">
           <h3>DSP, automix och vardagsdrift</h3>
           <p>Mikrofoner fungerar bäst som del av ett genomtänkt ljudsystem. En DSP hanterar automix, EQ, kompressor, prioritet, ducking, AEC och feedbackkontroll. Automix prioriterar aktiva talare, AEC hindrar distansdeltagare från att höra sig själva i retur, och feedbackkontroll minskar rundgångsrisken, men ersätter inte bra högtalarplacering och rätt mikrofonteknik.</p>
           <p>Många mikrofonproblem är egentligen driftproblem: oladdad mikrofon, fel headset, bytt kanal eller saknade batterier. Därför projekterar vi också vardagen: laddstationer, märkning, förvaring, reservmikrofon, instruktioner, enkel panelstyrning, dokumentation och utbildning. Ett system som är lätt att använda håller längre och ger färre supportärenden.</p>
