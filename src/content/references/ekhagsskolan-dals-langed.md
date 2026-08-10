@@ -28,7 +28,7 @@ seo:
 archive:
   title: Ekhagsskolan, Dals Långed
   image:
-    src: /assets/inomhusarena-plan-laktare-bred.webp
+    src: /assets/takhogtalare-rad-takinstallation.webp
     alt: Delbar idrottshall med spelplan och läktare
     width: 1536
     height: 864
@@ -53,7 +53,7 @@ customer:
   publicationApproved: null
   referenceAvailableOnRequest: false
 heroImage:
-  src: /assets/inomhusarena-plan-laktare-bred.webp
+  src: /assets/takhogtalare-rad-takinstallation.webp
   alt: Delbar idrottshall med spelplan och läktare
   width: 1536
   height: 864

@@ -146,7 +146,7 @@ export const references: Reference[] = [
     title: "Friskis&Svettis Karlstad",
     slug: "/referenser/friskis-solstadens-sportcenter/",
     location: "Karlstad",
-    image: "/assets/gym-traningslokal-personer-hero.webp",
+    image: "/assets/friskis-svettis-gym.webp",
     imageAlt: "Träningslokal med gymutrustning och takhögtalare",
     excerpt:
       "Service, utbyte och komplettering av en tio år gammal anläggning: 24 ljudzoner, 32 ingångar, sju salar, Crestron och ClearOne.",
@@ -192,7 +192,7 @@ export const references: Reference[] = [
     title: "Ekhagsskolan, Dals Långed",
     slug: "/referenser/ekhagsskolan-dals-langed/",
     location: "Dals Långed",
-    image: "/assets/inomhusarena-plan-laktare-bred.webp",
+    image: "/assets/takhogtalare-rad-takinstallation.webp",
     imageAlt: "Delbar idrottshall med spelplan och läktare",
     excerpt:
       "Zonstyrt ljud i en delbar skolidrottshall med Bose EX-880, CC-16-paneler, JBL EON, Sennheiser-mikrofoner, AUX och Bluetooth.",

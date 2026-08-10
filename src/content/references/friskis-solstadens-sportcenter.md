@@ -20,7 +20,7 @@ seo:
 archive:
   title: Friskis&Svettis Karlstad
   image:
-    src: /assets/gym-traningslokal-personer-hero.webp
+    src: /assets/friskis-svettis-gym.webp
     alt: Träningslokal med gymutrustning och takhögtalare
     width: 1648
     height: 625
@@ -48,7 +48,7 @@ customer:
   publicationApproved: null
   referenceAvailableOnRequest: false
 heroImage:
-  src: /assets/gym-traningslokal-personer-hero.webp
+  src: /assets/friskis-svettis-gym.webp
   alt: Träningslokal med gymutrustning och takhögtalare
   width: 1648
   height: 625
