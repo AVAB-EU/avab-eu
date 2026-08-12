@@ -342,6 +342,9 @@ import "../../../styles/avab.css";
     /* ---- Bildplatshållare (endast för diagram/illustrationer som ska bli AVAB:s egna) ---- */
     .image-placeholder { min-height: 320px; width: 100%; border-radius: var(--avab-radius-sm); border: 2px dashed rgba(40, 46, 42, 0.22); background: linear-gradient(135deg, #f7f8f7 0%, #e9eae9 100%); display: flex; align-items: center; justify-content: center; text-align: center; padding: 32px; color: var(--avab-dark-muted); font-weight: 800; }
     .image-placeholder span { display: block; max-width: 36ch; }
+    .content-image { display: block; width: 100%; height: 320px; object-fit: cover; border-radius: var(--avab-radius-sm); }
+    .content-image--diagram { object-fit: contain; background: #fff; }
+    .content-image--compact { height: 240px; border-radius: 0; }
     .image-caption { font-size: 0.92rem; margin-top: 12px; color: var(--avab-dark-muted); }
 
     @media (max-width: 1024px) {
@@ -499,11 +502,11 @@ import "../../../styles/avab.css";
           </div>
           <div>
             <figure>
-              <div class="image-placeholder"><span>PLATSHÅLLARE<br>Slingritning med zoner, kabeldragning och beräknad mängd</span></div>
+              <img class="content-image" src="/assets/av-projektering-laptop-ritningar.webp" alt="Projektering av hörslinga med ritningar och beräkningsprogram" width="1200" height="900" loading="lazy" decoding="async" />
               <figcaption class="image-caption">Projekteringen visar var slingan ska ligga, vilka ytor som ska täckas och hur installationen samordnas.</figcaption>
             </figure>
             <figure style="margin-top: 24px;">
-              <div class="image-placeholder"><span>PLATSHÅLLARE<br>Tekniker mäter fältstyrka enligt SS-EN IEC 60118-4</span></div>
+              <img class="content-image" src="/assets/horslinga-annlagning-mats.webp" alt="Tekniker installerar kabel för hörslinga på ett golv" width="1200" height="900" loading="lazy" decoding="async" />
               <figcaption class="image-caption">Den färdiga anläggningen mäts, justeras och dokumenteras enligt SS-EN IEC 60118-4.</figcaption>
             </figure>
           </div>
@@ -569,7 +572,7 @@ import "../../../styles/avab.css";
         </div>
 
         <div class="grid-2" style="margin-top: 48px; align-items: center;">
-          <div class="image-placeholder"><span>PLATSHÅLLARE ILLUSTRATION<br>Mikrofon → förstärkare → slinga i golv → hörapparat / cochleaimplantat</span></div>
+          <img class="content-image" src="/assets/horslinga-installation-golv.webp" alt="Installation av hörslingans kabel i golvet" width="1200" height="900" loading="lazy" decoding="async" />
           <div>
             <h3>Det viktiga är inte bara att slingan finns – utan att fältet blir rätt</h3>
             <p>För att en hörslinga ska fungera bra krävs rätt nivå, jämn täckning, låg störning och rätt frekvensåtergivning. Därför behöver lösningen projekteras och mätas i den faktiska miljön.</p>
@@ -600,7 +603,7 @@ import "../../../styles/avab.css";
 
         <div class="compare-grid">
           <article class="compare-card">
-            <div class="image-placeholder" style="border-radius: 0; min-height: 240px;"><span>PLATSHÅLLARE<br>PLS – spridningsmönster för mindre rum</span></div>
+            <img class="content-image content-image--diagram content-image--compact" src="/assets/PLS-slinga-ritning.webp" alt="Simulering av magnetfältets styrka och täckning för en hörslinga" width="1200" height="900" loading="lazy" decoding="async" />
             <div class="compare-card-header">
               <span class="tag">PLS</span>
               <h3>Perimeterslinga för mindre och enklare rum</h3>
@@ -616,7 +619,7 @@ import "../../../styles/avab.css";
           </article>
 
           <article class="compare-card">
-            <div class="image-placeholder" style="border-radius: 0; min-height: 240px;"><span>PLATSHÅLLARE<br>SLS – spridningsmönster med stopp-/kontrollslingor</span></div>
+            <img class="content-image content-image--diagram content-image--compact" src="/assets/SLS-slinga-ritning.webp" alt="Tredimensionell simulering av kontrollerad fältstyrka för ett hörslingssystem" width="2000" height="1000" loading="lazy" decoding="async" />
             <div class="compare-card-header">
               <span class="tag">SLS</span>
               <h3>Kontrollerad lösning för större och känsligare lokaler</h3>
@@ -665,7 +668,7 @@ import "../../../styles/avab.css";
               <p>SLS betyder inte att signalen aldrig lämnar rummet. Det betyder att läckaget kan begränsas kraftigt när systemet projekteras och installeras rätt.</p>
             </div>
           </div>
-          <div class="image-placeholder"><span>PLATSHÅLLARE JÄMFÖRELSEBILD<br>PLS läcker utanför rummet / SLS kontrollerar fältet bättre</span></div>
+          <img class="content-image content-image--diagram" src="/assets/faltstyrka-simulering-3d.webp" alt="Jämförelse och simulering av hörslingans magnetfält inom och utanför lyssningsytan" width="2000" height="1000" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
@@ -687,7 +690,7 @@ import "../../../styles/avab.css";
           </div>
         </div>
         <aside class="card">
-          <div class="image-placeholder"><span>PLATSHÅLLARE ILLUSTRATION<br>Auracast: flera ljudzoner till hörapparat, hörlur, mobil och mottagare med halsslinga</span></div>
+          <img class="content-image" src="/assets/williams-av-auracast.webp" alt="Konferensrum där ljud från mötet kan distribueras till olika typer av mottagare" width="1200" height="900" loading="lazy" decoding="async" />
           <p class="image-caption">Auracast kan distribuera flera ljudflöden, till exempel scenljud, skärmljud och tolkning, till kompatibla mottagare.</p>
         </aside>
       </div>
