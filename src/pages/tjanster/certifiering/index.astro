@@ -3,6 +3,8 @@ import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
+
+const heroImage = "/assets/STI-matning-hero.webp";
 ---
 
 <!DOCTYPE html>
@@ -15,6 +17,7 @@ import "../../../styles/avab.css";
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://www.avab.eu/certifiering/" />
   <meta name="theme-color" content="#282E29" />
+  <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
   <meta property="og:title" content="Certifiering, mätning och verifiering av AV-system | AVAB" />
   <meta property="og:description" content="AVAB hjälper med mätning, verifiering, protokoll och underlag för AV-system, taluppfattbarhet, hörslinga, ljudanläggningar och talat utrymningslarm." />
   <meta property="og:url" content="https://www.avab.eu/certifiering/" />
@@ -121,8 +124,7 @@ import "../../../styles/avab.css";
   </nav>
 
   <main id="main">
-    <!-- Bildförslag hero: Egen AVAB-bild som tydligt visar certifiering. Lägg bilden i /assets/ när filnamnet är bestämt. -->
-    <section class="hero">
+    <section class="hero" style={`--hero-image: url('${heroImage}');`}>
       <div class="avab-container">
         <div class="hero-inner animate-in">
           <div class="eyebrow">Vår leverans · Certifiering</div>
