@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type TechnicalDetails = NonNullable<CollectionEntry<"references">["data"]["technicalDetails"]>;
+interface Props { details: TechnicalDetails }
+const { details } = Astro.props;
+---
+
+<section class="reference-section reference-section--soft">
+  <div class="avab-container reference-content-grid">
+    <article class="reference-article">
+      <div class="reference-section-heading">
+        <span class="reference-kicker">{details.eyebrow}</span>
+        <h2>{details.title}</h2>
+        {details.lead && <p>{details.lead}</p>}
+      </div>
+      <details class="technical-details">
+        <summary>{details.summaryLabel}</summary>
+        <div class="technical-content"><ul>{details.items.map((item) => <li>{item}</li>)}</ul></div>
+      </details>
+    </article>
+
+    {details.relatedCompetence && (
+      <aside class="reference-sidebar">
+        <h2>Relaterad kompetens</h2>
+        <dl class="sidebar-facts">
+          {details.relatedCompetence.map((item) => (
+            <div><dt>{item.label}</dt><dd><a class="text-link" href={item.href}>{item.title}</a></dd></div>
+          ))}
+        </dl>
+      </aside>
+    )}
+  </div>
+</section>

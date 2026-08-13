@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -121,7 +122,7 @@ import "../../../styles/avab.css";
 
   <main id="main">
     <!-- Bildförslag hero: Egen AVAB-bild som tydligt visar installation. Lägg bilden i /assets/ när filnamnet är bestämt. -->
-    <section class="hero">
+    <section class="hero" style="--hero-image: url('/assets/installation-hero.webp');">
       <div class="avab-container">
         <div class="hero-inner animate-in">
           <div class="eyebrow">Vår leverans · Installation</div>
@@ -239,7 +240,7 @@ import "../../../styles/avab.css";
           <a class="card" href="/installation/"><h3>Installation</h3><p>Montage, kablage, rack, inkoppling och samordning i verkliga projekt.</p></a>
           <a class="card" href="/driftsattning/"><h3>Driftsättning</h3><p>Programmering, test, injustering, användarflöde och överlämning.</p></a>
           <a class="card" href="/certifiering/"><h3>Certifiering</h3><p>Mätning, verifiering, protokoll och samordning mot relevanta krav.</p></a>
-          <a class="card" href="/service-och-garanti/"><h3>Service &amp; garanti</h3><p>Felsökning, support, garantiärenden, underhåll och fortsatt utveckling.</p></a>
+          <a class="card" href="/tjanster/garanti-och-service/"><h3>Service &amp; garanti</h3><p>Felsökning, support, garantiärenden, underhåll och fortsatt utveckling.</p></a>
         </div>
       </div>
     </section>
@@ -276,27 +277,21 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section">
-      <div class="avab-container">
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Nästa steg</div>
-            <h2>Behöver ni en installationspartner som förstår hela AV-systemet?</h2>
-            <p>AVAB hjälper till från montageplan och samordning till färdig inkoppling. Vi kan ta ansvar för hela AV-installationen eller arbeta tillsammans med er elektriker och övriga entreprenörer.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="tel:+46548202080">Ring 054-8202080</a>
-              <a class="button button-secondary" href="mailto:info@avab.eu">Mejla AVAB</a>
-            </div>
-          </div>
-          <ul class="calc-list">
-            <li>Montage och inkoppling</li>
-            <li>Kabel, märkning och rackstruktur</li>
-            <li>Samordning med el, bygg och nätverk</li>
-            <li>Förberedelse för driftsättning och service</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      eyebrow="Nästa steg"
+      title="Behöver ni en installationspartner som förstår hela AV-systemet?"
+      text="AVAB hjälper till från montageplan och samordning till färdig inkoppling. Vi kan ta ansvar för hela AV-installationen eller arbeta tillsammans med er elektriker och övriga entreprenörer."
+      primaryLabel="Kontakta AVAB"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "Montage och inkoppling",
+        "Kabel, märkning och rackstruktur",
+        "Samordning med el, bygg och nätverk",
+        "Förberedelse för driftsättning och service",
+      ]}
+    />
   </main>
 
   <SiteFooter />

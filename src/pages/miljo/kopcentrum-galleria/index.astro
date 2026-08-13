@@ -1,6 +1,7 @@
 ﻿---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 
 import "../../../styles/avab.css";
 
@@ -215,9 +216,9 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
     .snippet-box {
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
-      border-left: 8px solid var(--avab-green);
       border-radius: var(--avab-radius);
       padding: 36px;
+      padding-left: 40px;
       box-shadow: var(--avab-shadow-sm);
       height: 100%;
     }
@@ -382,7 +383,7 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
       .compact-faq { grid-template-columns: 1fr; }
       .compact-faq details.faq-item:nth-child(2) { border-top: none; }
       .feature-card .number { font-size: 2rem; }
-      .snippet-box { padding: 28px; }
+      .snippet-box { padding: 28px 28px 28px 40px; }
     }
   </style>
 </head>
@@ -434,7 +435,7 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
   <main id="main">
     <section class="section section--light" id="kort-svar">
       <div class="avab-container two-col">
-        <div class="snippet-box animate-in">
+        <div class="snippet-box animate-in accent-rail">
           <div class="eyebrow">Kort svar</div>
           <h2>Vad behöver ett modernt köpcentrum?</h2>
           <p>Ett modernt köpcentrum behöver teknik som skapar trygghet, flöde och upplevelse: zonstyrt bakgrundsljud, tydliga utrop, Digital Signage, totems, LED-väggar, kameraövervakning för hela fastigheten, garage- och parkeringslösningar samt PA och tross för torg och event.</p>
@@ -525,7 +526,7 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
           </div>
         </div>
         <div class="solution-grid">
-          <article class="solution-card animate-in">
+          <article class="solution-card solution-card--media animate-in">
             <div class="solution-image">
               <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=900" alt="Food court och publik miljö med zonstyrt bakgrundsljud" width="900" height="600" loading="lazy" decoding="async">
               <div class="image-label">Ljud i zoner</div>
@@ -542,7 +543,7 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
             </div>
           </article>
 
-          <article class="solution-card animate-in">
+          <article class="solution-card solution-card--media animate-in">
             <div class="solution-image">
               <img src="/assets/digital-signage-totum.webp" alt="Digital Signage och informationsskärmar i köpcentrum" width="900" height="600" loading="lazy" decoding="async">
               <div class="image-label">Signage &amp; totems</div>
@@ -559,7 +560,7 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
             </div>
           </article>
 
-          <article class="solution-card animate-in">
+          <article class="solution-card solution-card--media animate-in">
             <div class="solution-image">
               <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&q=80&w=900" alt="Kameraövervakning och säkerhet i publika miljöer" width="900" height="600" loading="lazy" decoding="async">
               <div class="image-label">Säkerhet</div>
@@ -576,7 +577,7 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
             </div>
           </article>
 
-          <article class="solution-card animate-in">
+          <article class="solution-card solution-card--media animate-in">
             <div class="solution-image">
               <img src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&q=80&w=900" alt="Garage och parkeringsmiljö med kameraövervakning och skyltning" width="900" height="600" loading="lazy" decoding="async">
               <div class="image-label">Garage &amp; parkering</div>
@@ -593,7 +594,7 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
             </div>
           </article>
 
-          <article class="solution-card animate-in">
+          <article class="solution-card solution-card--media animate-in">
             <div class="solution-image">
               <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=900" alt="Mindre scen och PA-teknik för event i galleria" width="900" height="600" loading="lazy" decoding="async">
               <div class="image-label">PA &amp; tross</div>
@@ -610,7 +611,7 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
             </div>
           </article>
 
-          <article class="solution-card animate-in">
+          <article class="solution-card solution-card--media animate-in">
             <div class="solution-image">
               <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=900" alt="Central styrning och drift av tekniska system" width="900" height="600" loading="lazy" decoding="async">
               <div class="image-label">Styrning &amp; drift</div>
@@ -763,29 +764,22 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
       </div>
     </section>
 
-    <section class="section" id="cta">
-      <div class="avab-container fullwidth-cta-wrap">
-        <div class="fullwidth-cta animate-in">
-          <div>
-            <div class="eyebrow">Nästa steg</div>
-            <h2>Ska ni bygga, bygga om eller modernisera ett köpcentrum?</h2>
-            <p>Skicka ritningar, befintlig teknisk dokumentation eller en kort beskrivning av fastigheten. Vi hjälper er att se vilka delar som bör projekteras nu, vad som kan byggas etappvis och hur ljud, bild, signage, kamera och eventytor kan samverka i samma helhet.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="mailto:andreas@avab.eu?subject=K%C3%B6pcentrum%20och%20galleria%20-%20teknisk%20genomg%C3%A5ng">Mejla ritningar eller fråga</a>
-              <a class="button button-secondary" href="/kontakt/">Boka rådgivning</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
-            </div>
-          </div>
-
-          <ul class="cta-points">
-            <li>Ljud, signage, LED, kamera och event i en helhet.</li>
-            <li>Underlag för fastighetsägare, drift, säkerhet och upphandling.</li>
-            <li>Projektering, installation, certifiering och dokumentation.</li>
-            <li>Service, funktionskontroll och etappvis utbyggnad.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      id="cta"
+      eyebrow="Nästa steg"
+      title="Ska ni bygga, bygga om eller modernisera ett köpcentrum?"
+      text="Skicka ritningar, befintlig teknisk dokumentation eller en kort beskrivning av fastigheten. Vi hjälper er att se vilka delar som bör projekteras nu, vad som kan byggas etappvis och hur ljud, bild, signage, kamera och eventytor kan samverka i samma helhet."
+      primaryLabel="Boka rådgivning"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "Ljud, signage, LED, kamera och event i en helhet.",
+        "Underlag för fastighetsägare, drift, säkerhet och upphandling.",
+        "Projektering, installation, certifiering och dokumentation.",
+        "Service, funktionskontroll och etappvis utbyggnad.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

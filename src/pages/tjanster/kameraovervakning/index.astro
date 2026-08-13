@@ -1,6 +1,7 @@
 ﻿---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -231,7 +232,7 @@ import "../../../styles/avab.css";
 <header class="hero camera-hero">
   <img
     class="hero-image"
-    src="/assets/overvakningskamera-fasad-hero.webp"
+    src="/assets/Kameraovervakning-dahua-hero.webp"
     alt=""
     width="2032"
     height="774"
@@ -318,7 +319,7 @@ import "../../../styles/avab.css";
     
     <aside class="animate-in" style="animation-delay: 0.1s; display: flex; flex-direction: column;">
       <div class="card" style="height: 100%;">
-        <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Perspektiv</div>
+        <div class="eyebrow">Perspektiv</div>
         <h2>Vad menas med moderna kamerasystem?</h2>
         <p>Moderna kamerasystem handlar inte bara om att sätta upp kameror och lagra material. De handlar om att skapa kontroll, trygghet och snabbare beslut i verkliga miljöer.</p>
         <p>Det är därför två anläggningar med ungefär lika många kameror ändå kan fungera helt olika: den ena spelar in allt men ger begränsat värde när något händer, medan den andra gör det möjligt att snabbt hitta rätt sekvens, följa rörelser och förstå förloppet direkt.</p>
@@ -514,7 +515,7 @@ import "../../../styles/avab.css";
     </div>
 
     <div class="synergi-wrapper" style="margin-top: 80px;">
-      <div class="eyebrow" style="background: var(--avab-dark); color: #fff;">Synergi</div>
+      <div class="eyebrow">Synergi</div>
       <h2 class="snabbt-svar-title" style="font-size: 1.2rem; margin-bottom: 16px; margin-top: 8px;">Analys som verksamhetsstöd – inte bara säkerhet</h2>
       <p style="max-width: 800px; margin-bottom: 24px;">Helheten gör lösningen oslagbar. Moderna kamerasystem används inte bara för utredningar. När analysen är tillräckligt bra kan samma system också hjälpa er att förstå kundflöden, köbildning och rörelsemönster i miljön.</p>
       <div class="flow-grid-horizontal">
@@ -557,7 +558,7 @@ import "../../../styles/avab.css";
     
     <div class="pricing-grid">
       <div class="pricing-card">
-        <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Mindre system</div>
+        <div class="eyebrow">Mindre system</div>
         <h3>30–100 kkr</h3>
         <p>Passar butiker, restauranger, mindre hotell, kontor, lager och bilhandlare. Ett effektivt system för att säkra perimetern och ytorna.</p>
       </div>
@@ -569,7 +570,7 @@ import "../../../styles/avab.css";
       </div>
       
       <div class="pricing-card">
-        <div class="eyebrow" style="background: var(--avab-light); color: var(--avab-dark-muted); border: 1px solid var(--avab-border);">Större system</div>
+        <div class="eyebrow">Större system</div>
         <h3>400 kkr +</h3>
         <p>Storskaliga anläggningar med komplexa krav. Exempelvis integration med branddetektering, eller parkeringsgarage med hundratals kameror för att hitta lediga platser.</p>
       </div>
@@ -585,7 +586,7 @@ import "../../../styles/avab.css";
 <section class="section" style="background: var(--avab-light); border-top: 1px solid var(--avab-border);">
   <div class="container two-col animate-in">
     <div class="card">
-      <div class="eyebrow" style="background: var(--avab-white); border: 1px solid var(--avab-border); color: var(--avab-dark-muted);">Utmaningen</div>
+      <div class="eyebrow">Utmaningen</div>
       <h2>Problemet är sällan kamerorna</h2>
       <p>Många verksamheter har redan kameror på plats. Problemet är ofta att systemen är svåra att använda, det tar för lång tid att hitta rätt material och tekniken inte är byggd för verklig användning.</p>
       <p>När flera funktioner inte hänger ihop blir säkerhetsarbetet splittrat, och investeringen ger inte den trygghet som förväntades.</p>
@@ -607,120 +608,121 @@ import "../../../styles/avab.css";
       <p style="margin-bottom: 32px;">Oavsett om ni ska bygga nytt, uppgradera ett äldre system eller förstå vilken nivå som faktiskt passar er verksamhet hjälper vi er gärna vidare.</p>
       
       <div class="faq-list">
-        <div class="faq-card">
-          <div class="faq-top">
+        <details class="faq-card">
+          <summary class="faq-top">
             <h3>Vad är kameraövervakning?</h3>
-            <span class="faq-icon">+</span>
-          </div>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
           <div class="faq-expandable">
             <div class="faq-expand-inner">
               <p>Kameraövervakning är ett system av kameror, lagring och analysverktyg som används för att skapa trygghet, överblick och snabbare förståelse av händelser.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-card">
-          <div class="faq-top">
+        <details class="faq-card">
+          <summary class="faq-top">
             <h3>Vad är skillnaden mellan kamera och system?</h3>
-            <span class="faq-icon">+</span>
-          </div>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
           <div class="faq-expandable">
             <div class="faq-expand-inner">
               <p>En kamera spelar in. Ett modernt system kombinerar video med sökbarhet, analys, integration och användbar drift så att rätt information går att hitta snabbt.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-card">
-          <div class="faq-top">
+        <details class="faq-card">
+          <summary class="faq-top">
             <h3>Är kameraövervakning tillåten?</h3>
-            <span class="faq-icon">+</span>
-          </div>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
           <div class="faq-expandable">
             <div class="faq-expand-inner">
               <p>Ja, om den följer GDPR och kamerabevakningslagen och används med tydligt syfte, korrekt information och rätt hantering.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-card">
-          <div class="faq-top">
+        <details class="faq-card">
+          <summary class="faq-top">
             <h3>Vad är exakt sökning?</h3>
-            <span class="faq-icon">+</span>
-          </div>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
           <div class="faq-expandable">
             <div class="faq-expand-inner">
               <p>Exakt sökning gör det möjligt att snabbt hitta rätt person eller händelse i inspelat material i stället för att manuellt gå igenom stora mängder video.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-card">
-          <div class="faq-top">
+        <details class="faq-card">
+          <summary class="faq-top">
             <h3>Hur fungerar AI i moderna kamerasystem?</h3>
-            <span class="faq-icon">+</span>
-          </div>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
           <div class="faq-expandable">
             <div class="faq-expand-inner">
               <p>AI hjälper systemet att filtrera bort irrelevant material, förbättra sökningar, lyfta fram viktiga händelser och minska manuellt arbete.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-card">
-          <div class="faq-top">
+        <details class="faq-card">
+          <summary class="faq-top">
             <h3>Behöver vi moln eller räcker lokal lagring?</h3>
-            <span class="faq-icon">+</span>
-          </div>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
           <div class="faq-expandable">
             <div class="faq-expand-inner">
               <p>Det beror på behov och lösning, men många verksamheter klarar sig mycket bra med lokal lagring och tydlig kontroll över materialet.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-card">
-          <div class="faq-top">
+        <details class="faq-card">
+          <summary class="faq-top">
             <h3>Kan kameraövervakning integreras med ljud och larm?</h3>
-            <span class="faq-icon">+</span>
-          </div>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
           <div class="faq-expandable">
             <div class="faq-expand-inner">
               <p>Ja. Integration med ljud, larm, informationsytor och styrning är ofta det som gör lösningen verkligt stark i praktiken.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-card">
-          <div class="faq-top">
+        <details class="faq-card">
+          <summary class="faq-top">
             <h3>Vad kostar ett professionellt kamerasystem?</h3>
-            <span class="faq-icon">+</span>
-          </div>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
           <div class="faq-expandable">
             <div class="faq-expand-inner">
               <p>Det beror på ytor, analysnivå, integration, lagring och användningskrav.</p>
             </div>
           </div>
-        </div>
+        </details>
       </div>
     </div>
 
-    <aside class="card cta-card" id="kontakt">
-      <div class="eyebrow" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">Slipp onödigt krångel</div>
-      <h2>Låt oss ta helhetsansvaret</h2>
-      <p>Oavsett om ni ska bygga nytt eller uppgradera ett äldre, ostrukturerat system, finns vi här för att göra er vardag tryggare och oerhört mycket enklare. Vi börjar gärna med en genomgång av er riskbild och era flöden.</p>
-      <ul class="guarantee-list">
-        <li>Upp till 10 års garanti på utvald hårdvara</li>
-        <li>Trygga serviceavtal med snabb inställelsetid</li>
-        <li>Smarta system för distansövervakning</li>
-      </ul>
-      <div class="hero-actions" style="margin-top: 32px; flex-direction: column; align-items: flex-start;">
-        <a class="button button-light" href="/kontakt/" style="width: 100%;">Boka kostnadsfri rådgivning</a>
-        <a class="button button-secondary" href="/kontakt/" style="width: 100%;">Skicka in ritningar för projektering</a>
-      </div>
-    </aside>
     </div>
 </section>
+
+<PageCTA
+  eyebrow="Slipp onödigt krångel"
+  title="Låt oss ta helhetsansvaret"
+  text="Oavsett om ni ska bygga nytt eller uppgradera ett äldre, ostrukturerat system, finns vi här för att göra er vardag tryggare och oerhört mycket enklare. Vi börjar gärna med en genomgång av er riskbild och era flöden."
+  primaryLabel="Boka kostnadsfri rådgivning"
+  primaryHref="/kontakt/"
+  secondaryLabel="Läs om projektering"
+  secondaryHref="/tjanster/projektering/"
+  points={[
+    "Upp till 10 års garanti på utvald hårdvara",
+    "Trygga serviceavtal med snabb inställelsetid",
+    "Smarta system för distansövervakning",
+  ]}
+/>
 </main>
 
 <SiteFooter />

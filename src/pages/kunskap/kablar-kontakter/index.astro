@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -204,31 +205,13 @@ import "../../../styles/avab.css";
 
   <!-- Sidspecifika komponenter -->
   <style>
-    /* ---- Lösningskort (grön ram, accentkant) ---- */
-    .solution-card {
-      border: 2px solid rgba(143, 192, 37, 0.62);
-      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
-      position: relative;
-      overflow: hidden;
-    }
-    .solution-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 8px;
-      background: var(--avab-green);
-    }
-    .solution-card h3,
-    .solution-card .bullet-list,
-    .solution-card .formula { position: relative; z-index: 1; }
-
     /* ---- AEO-svarsruta (snippet-box) ---- */
     .snippet-box {
       padding: 24px 28px;
+      padding-left: 40px;
       border-radius: var(--avab-radius-sm);
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
-      border-left: 8px solid var(--avab-green);
       box-shadow: var(--avab-shadow-sm);
       margin-top: 28px;
     }
@@ -250,7 +233,7 @@ import "../../../styles/avab.css";
     .formula strong { display: block; margin-bottom: 4px; }
 
     /* ---- Kabeltyps-kort ---- */
-    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 8px; }
+    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px; margin-top: 8px; }
     .platform-card {
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
@@ -361,7 +344,7 @@ import "../../../styles/avab.css";
           <h2>Fel kabel kan fungera, tills den inte gör det</h2>
           <p class="lead-dark">AVAB hjälper med kabelval, kontaktering, projektering och installation av kablage för ljud, bild, ljus, nätverk, hörslingor, trådlösa mikrofoner, styrsystem, kameraövervakning och talat utrymningslarm.</p>
           <p>Fel kabel kan fungera på kort avstånd, men ge spänningsfall, brus, tappad data, svag RF-signal, dålig taluppfattbarhet eller svår felsökning när anläggningen växer eller ska servas.</p>
-          <div class="snippet-box">
+          <div class="snippet-box accent-rail">
             <strong>Hur väljer man rätt kabel?</strong>
             <p>Rätt kabel väljs efter signaltyp, effekt, längd, miljö, kontakt, installationstyp och framtida service. Högtalarkabel, nätverkskabel, DMX-kabel, antennkabel, XLR, hörslingekabel och plintkablage har olika krav.</p>
           </div>
@@ -401,7 +384,7 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <aside class="card solution-card">
+        <aside class="card solution-card accent-rail">
           <h3>100V: längre sträckor, lägre ström</h3>
           <p>100V-system används i skolor, korridorer, butiker, hotell, gym och större installationer med många högtalare. Högre spänning och lägre ström ger mindre spänningsfall, men total effekt, längd och framtida marginal måste fortfarande räknas.</p>
           <div class="formula">
@@ -476,7 +459,7 @@ import "../../../styles/avab.css";
           <p>Bra kablage ska gå att förstå flera år senare. Därför märker AVAB kablar, rack, plintar, paneler och uttag så att service, felsökning och ombyggnad blir enklare. En installation utan märkning kan fungera första dagen, men bli dyr så fort något ska ändras.</p>
         </div>
 
-        <aside class="card solution-card">
+        <aside class="card solution-card accent-rail">
           <h3>Dokumentationen ska visa</h3>
           <ul class="bullet-list">
             <li>Kabeltyp och kabelnummer.</li>
@@ -547,27 +530,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Behöver ni rätt kablage från början?</h2>
-            <p>AVAB hjälper er att projektera, installera, märka och dokumentera kablarna för ljud, ljus, nätverk, hörslinga, mikrofoner, konferensrum och utrymningsljud, så att anläggningen fungerar från början och går att förstå när den ska servas.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/projektering/">Läs om projektering</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Rätt kabel för signaltyp, effekt, längd och miljö.</li>
-            <li>Kontaktering med rätt pitch, polordning och terminering.</li>
-            <li>Gränsdragning mellan elentreprenad och AV.</li>
-            <li>Mängdning, märkning, testning och dokumentation.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Behöver ni rätt kablage från början?"
+      text="AVAB hjälper er att projektera, installera, märka och dokumentera kablarna för ljud, ljus, nätverk, hörslinga, mikrofoner, konferensrum och utrymningsljud, så att anläggningen fungerar från början och går att förstå när den ska servas."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "Rätt kabel för signaltyp, effekt, längd och miljö.",
+        "Kontaktering med rätt pitch, polordning och terminering.",
+        "Gränsdragning mellan elentreprenad och AV.",
+        "Mängdning, märkning, testning och dokumentation.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

@@ -1,0 +1,173 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PageCTA from "../components/PageCTA.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import ReferenceBrief from "../components/references/ReferenceBrief.astro";
+import ReferenceFacts from "../components/references/ReferenceFacts.astro";
+import ReferenceGallery from "../components/references/ReferenceGallery.astro";
+import ReferenceHero from "../components/references/ReferenceHero.astro";
+import ReferenceRelevance from "../components/references/ReferenceRelevance.astro";
+import ReferenceResults from "../components/references/ReferenceResults.astro";
+import ReferenceScale from "../components/references/ReferenceScale.astro";
+import ReferenceQuote from "../components/references/ReferenceQuote.astro";
+import ReferenceLegacyCta from "../components/references/ReferenceLegacyCta.astro";
+import ReferenceScope from "../components/references/ReferenceScope.astro";
+import ReferenceTechnicalDetails from "../components/references/ReferenceTechnicalDetails.astro";
+import RelatedReferences from "../components/references/RelatedReferences.astro";
+import { absoluteUrl, SITE_URL } from "../config/site";
+import "../styles/avab.css";
+import "../styles/reference-page.css";
+
+interface Props { reference: CollectionEntry<"references"> }
+const { reference } = Astro.props;
+const data = reference.data;
+const canonicalUrl = absoluteUrl(data.slug);
+const heroImageUrl = absoluteUrl(data.heroImage.src);
+const publishedDate = data.publishedDate.toISOString().slice(0, 10);
+const updatedDate = data.updatedDate.toISOString().slice(0, 10);
+const robots = data.draft || data.seo.noindex
+  ? "noindex, nofollow"
+  : "index, follow, max-image-preview:large";
+
+const schemaImages = Array.from(new Set([
+  heroImageUrl,
+  ...(data.gallery?.images.map((image) => absoluteUrl(image.src)) ?? []),
+]));
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      headline: data.seo.ogTitle ?? data.seo.title,
+      description: data.seo.description,
+      datePublished: publishedDate,
+      dateModified: updatedDate,
+      inLanguage: "sv-SE",
+      image: schemaImages,
+      author: { "@type": "Organization", name: "AVAB", url: `${SITE_URL}/` },
+      publisher: { "@type": "Organization", name: "AVAB", url: `${SITE_URL}/` },
+      mainEntityOfPage: { "@id": `${canonicalUrl}#webpage` },
+      about: data.archive.technologies.map((name) => ({ "@type": "Thing", name })),
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      url: canonicalUrl,
+      name: data.seo.title,
+      description: data.seo.description,
+      inLanguage: "sv-SE",
+      isPartOf: { "@type": "WebSite", name: "AVAB", url: `${SITE_URL}/` },
+      breadcrumb: { "@id": `${canonicalUrl}#breadcrumb` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Start", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: "Referenser", item: absoluteUrl("/referenser/") },
+        { "@type": "ListItem", position: 3, name: data.title, item: canonicalUrl },
+      ],
+    },
+  ],
+};
+
+const cta = data.cta;
+const renderPageCta = Boolean(
+  cta?.enabled &&
+  cta.variant === "page" &&
+  cta.title &&
+  cta.primaryLabel &&
+  cta.primaryHref,
+);
+const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
+---
+
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{data.seo.title}</title>
+    <meta name="description" content={data.seo.description} />
+    <meta name="robots" content={robots} />
+    <meta name="author" content="AVAB" />
+    <meta name="theme-color" content="#282E29" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="sv_SE" />
+    <meta property="og:site_name" content="AVAB" />
+    <meta property="og:title" content={data.seo.ogTitle ?? data.seo.title} />
+    <meta property="og:description" content={data.seo.ogDescription ?? data.seo.description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={heroImageUrl} />
+    <meta property="og:image:width" content={String(data.heroImage.width)} />
+    <meta property="og:image:height" content={String(data.heroImage.height)} />
+    <meta property="og:image:alt" content={data.heroImage.alt} />
+    <meta property="article:published_time" content={publishedDate} />
+    <meta property="article:modified_time" content={updatedDate} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={data.seo.twitterTitle ?? data.seo.title} />
+    <meta name="twitter:description" content={data.seo.twitterDescription ?? data.seo.description} />
+    <meta name="twitter:image" content={heroImageUrl} />
+    <meta name="twitter:image:alt" content={data.heroImage.alt} />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" fetchpriority="high" href={data.heroImage.src} />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  </head>
+  <body class={`reference-page reference-page--${data.layout}`}>
+    <SiteHeader />
+    <nav class="reference-breadcrumbs" aria-label="Brödsmulor">
+      <div class="avab-container">
+        <ol>
+          <li><a href="/">Start</a></li>
+          <li><a href="/referenser/">Referenser</a></li>
+          <li><span aria-current="page">{data.title}</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <main id="main">
+      <ReferenceHero data={data} />
+      <ReferenceFacts facts={data.facts} />
+      <ReferenceBrief brief={data.brief} />
+      <ReferenceScope scope={data.scope} variants={data.variants} />
+      {data.scale && <ReferenceScale scale={data.scale} />}
+      {data.results && <ReferenceResults results={data.results} />}
+      {data.quote && <ReferenceQuote quote={data.quote} />}
+      {data.gallery && <ReferenceGallery gallery={data.gallery} />}
+      {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
+      {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
+      {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
+
+      {renderPageCta && cta && (
+        <PageCTA
+          eyebrow={cta.eyebrow}
+          title={cta.title!}
+          text={cta.text}
+          primaryLabel={cta.primaryLabel!}
+          primaryHref={cta.primaryHref!}
+          secondaryLabel={cta.secondaryLabel}
+          secondaryHref={cta.secondaryHref}
+          points={cta.points}
+        />
+      )}
+      {renderLegacyCta && cta && cta.variant === "legacy" && (
+        <ReferenceLegacyCta cta={cta} />
+      )}
+    </main>
+    <SiteFooter />
+  </body>
+</html>

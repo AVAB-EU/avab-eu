@@ -1,5 +1,8 @@
 ---
 import avabLogo from "../assets/images/brand/avab-logotyp-farg.png";
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => currentPath === href;
 ---
 
 <a class="skip-link" href="#main">Hoppa till innehåll</a>
@@ -103,6 +106,7 @@ import avabLogo from "../assets/images/brand/avab-logotyp-farg.png";
             </ul>
           </div>
         </li>
+        <li><a class="nav-link hover-underline" href="/referenser/">Referenser</a></li>
         <li><a class="nav-link hover-underline" href="/om-oss/">Om oss</a></li>
       </ul>
     </nav>
@@ -110,5 +114,201 @@ import avabLogo from "../assets/images/brand/avab-logotyp-farg.png";
       <a class="nav-phone" href="tel:+46548202080"><span>☎</span> 054 820 20 80</a>
       <a class="nav-button" href="/kontakt/">Kontakta oss</a>
     </div>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Öppna meny"
+    >
+      <span class="menu-toggle-bar" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
+
+<div class="mobile-menu-overlay" data-mobile-menu-overlay inert></div>
+
+<nav id="mobile-menu" class="mobile-menu" aria-label="Mobilmeny" data-mobile-menu inert>
+  <div class="mobile-menu-head">
+    <a class="brand" href="/" aria-label="AVAB - till startsidan">
+      <img src={avabLogo.src} alt="AVAB" width="130" height="36" />
+    </a>
+    <button class="mobile-menu-close" type="button" data-mobile-menu-close aria-label="Stäng meny">
+      <span aria-hidden="true">✕</span>
+    </button>
+  </div>
+
+  <ul class="mobile-menu-list">
+    <li>
+      <details class="mobile-menu-group">
+        <summary>Miljöer</summary>
+        <details class="mobile-menu-subgroup">
+          <summary>Sport</summary>
+          <ul class="mobile-menu-links">
+            <li><a href="/miljo/sporthall-arena/" aria-current={isActive("/miljo/sporthall-arena/") ? "page" : undefined}>Sporthall & Arena</a></li>
+            <li><a href="/miljo/simhall/" aria-current={isActive("/miljo/simhall/") ? "page" : undefined}>Simhall</a></li>
+            <li><a href="/miljo/ishall/" aria-current={isActive("/miljo/ishall/") ? "page" : undefined}>Ishall</a></li>
+            <li><a href="/miljo/utomhusidrott/" aria-current={isActive("/miljo/utomhusidrott/") ? "page" : undefined}>Utomhusidrott</a></li>
+            <li><a href="/miljo/gym/" aria-current={isActive("/miljo/gym/") ? "page" : undefined}>Gym & träningsanläggning</a></li>
+          </ul>
+        </details>
+        <details class="mobile-menu-subgroup">
+          <summary>Handel & Möten</summary>
+          <ul class="mobile-menu-links">
+            <li><a href="/miljo/kontor-konferens/" aria-current={isActive("/miljo/kontor-konferens/") ? "page" : undefined}>Kontor & Konferens</a></li>
+            <li><a href="/miljo/hotell/" aria-current={isActive("/miljo/hotell/") ? "page" : undefined}>Hotell</a></li>
+            <li><a href="/miljo/restaurang-bar-klubb/" aria-current={isActive("/miljo/restaurang-bar-klubb/") ? "page" : undefined}>Restaurang & Bar</a></li>
+            <li><a href="/miljo/butik-retail/" aria-current={isActive("/miljo/butik-retail/") ? "page" : undefined}>Butik & Retail</a></li>
+            <li><a href="/miljo/kopcentrum-galleria/" aria-current={isActive("/miljo/kopcentrum-galleria/") ? "page" : undefined}>Köpcentrum & Galleria</a></li>
+          </ul>
+        </details>
+        <details class="mobile-menu-subgroup">
+          <summary>Utbildning & Vård</summary>
+          <ul class="mobile-menu-links">
+            <li><a href="/miljo/skola/" aria-current={isActive("/miljo/skola/") ? "page" : undefined}>Skola</a></li>
+            <li><a href="/miljo/vard/" aria-current={isActive("/miljo/vard/") ? "page" : undefined}>Vård & Sjukhus</a></li>
+          </ul>
+        </details>
+        <details class="mobile-menu-subgroup">
+          <summary>Övriga miljöer</summary>
+          <ul class="mobile-menu-links">
+            <li><a href="/miljo/industri/" aria-current={isActive("/miljo/industri/") ? "page" : undefined}>Industri</a></li>
+            <li><a href="/miljo/kyrka/" aria-current={isActive("/miljo/kyrka/") ? "page" : undefined}>Kyrka</a></li>
+            <li><a href="/miljo/parkering-garage/" aria-current={isActive("/miljo/parkering-garage/") ? "page" : undefined}>Parkering & Garage</a></li>
+          </ul>
+        </details>
+      </details>
+    </li>
+    <li>
+      <details class="mobile-menu-group">
+        <summary>Tjänster</summary>
+        <ul class="mobile-menu-links">
+          <li><a href="/tjanster/ljudsystem/" aria-current={isActive("/tjanster/ljudsystem/") ? "page" : undefined}>Ljudsystem</a></li>
+          <li><a href="/tjanster/mikrofoner/" aria-current={isActive("/tjanster/mikrofoner/") ? "page" : undefined}>Mikrofoner</a></li>
+          <li><a href="/rastsignal/" aria-current={isActive("/rastsignal/") ? "page" : undefined}>Rastsignal</a></li>
+          <li><a href="/tjanster/horslinga/" aria-current={isActive("/tjanster/horslinga/") ? "page" : undefined}>Hörslinga</a></li>
+          <li><a href="/tjanster/kameraovervakning/" aria-current={isActive("/tjanster/kameraovervakning/") ? "page" : undefined}>Kameraövervakning</a></li>
+          <li><a href="/tjanster/taluppfattbarhet/" aria-current={isActive("/tjanster/taluppfattbarhet/") ? "page" : undefined}>Taluppfattbarhet</a></li>
+          <li><a href="/tjanster/talat-utrymningslarm/" aria-current={isActive("/tjanster/talat-utrymningslarm/") ? "page" : undefined}>Talat utrymningslarm</a></li>
+          <li><a href="/tjanster/styrsystem-integration/" aria-current={isActive("/tjanster/styrsystem-integration/") ? "page" : undefined}>Styrsystem & integration</a></li>
+          <li><a href="/tjanster/bakgrundsmusik/" aria-current={isActive("/tjanster/bakgrundsmusik/") ? "page" : undefined}>Bakgrundsmusik</a></li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details class="mobile-menu-group">
+        <summary>Vår leverans</summary>
+        <ul class="mobile-menu-links">
+          <li><a href="/tjanster/projektering/" aria-current={isActive("/tjanster/projektering/") ? "page" : undefined}>Projektering</a></li>
+          <li><a href="/tjanster/installation/" aria-current={isActive("/tjanster/installation/") ? "page" : undefined}>Installation</a></li>
+          <li><a href="/tjanster/driftsattning/" aria-current={isActive("/tjanster/driftsattning/") ? "page" : undefined}>Driftsättning</a></li>
+          <li><a href="/tjanster/certifiering/" aria-current={isActive("/tjanster/certifiering/") ? "page" : undefined}>Certifiering</a></li>
+          <li><a href="/tjanster/overlamning/">Överlämning</a></li>
+          <li><a href="/tjanster/garanti-och-service/" aria-current={isActive("/tjanster/garanti-och-service/") ? "page" : undefined}>Garanti och service</a></li>
+        </ul>
+      </details>
+    </li>
+    <li class="mobile-menu-plain">
+      <a href="/referenser/" aria-current={isActive("/referenser/") ? "page" : undefined}>Referenser</a>
+    </li>
+    <li class="mobile-menu-plain">
+      <a href="/om-oss/" aria-current={isActive("/om-oss/") ? "page" : undefined}>Om oss</a>
+    </li>
+  </ul>
+
+  <a class="button button-primary mobile-menu-contact" href="/kontakt/">Kontakta oss</a>
+</nav>
+
+<script>
+  function initMobileMenu() {
+    const toggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+    const panel = document.querySelector<HTMLElement>("[data-mobile-menu]");
+    const overlay = document.querySelector<HTMLElement>("[data-mobile-menu-overlay]");
+    const closeBtn = document.querySelector<HTMLButtonElement>("[data-mobile-menu-close]");
+    const desktopQuery = window.matchMedia("(min-width: 901px)");
+
+    if (!toggle || !panel || !overlay) return;
+
+    let lastFocused: HTMLElement | null = null;
+
+    function getFocusable(): HTMLElement[] {
+      if (!panel) return [];
+      return Array.from(
+        panel.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), summary')
+      ).filter((el) => el.offsetParent !== null);
+    }
+
+    function resetAccordions() {
+      panel?.querySelectorAll("details[open]").forEach((details) => {
+        details.removeAttribute("open");
+      });
+    }
+
+    function onKeydown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        closeMenu();
+        return;
+      }
+      if (event.key === "Tab") {
+        const focusable = getFocusable();
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    }
+
+    function openMenu() {
+      if (!panel || !overlay || !toggle) return;
+      resetAccordions();
+      lastFocused = document.activeElement as HTMLElement | null;
+      panel.removeAttribute("inert");
+      overlay.removeAttribute("inert");
+      panel.setAttribute("data-open", "true");
+      overlay.setAttribute("data-open", "true");
+      toggle.setAttribute("aria-expanded", "true");
+      document.body.classList.add("mobile-menu-locked");
+      (closeBtn ?? panel).focus();
+      document.addEventListener("keydown", onKeydown);
+    }
+
+    function closeMenu() {
+      if (!panel || !overlay || !toggle) return;
+      panel.removeAttribute("data-open");
+      overlay.removeAttribute("data-open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("mobile-menu-locked");
+      panel.setAttribute("inert", "");
+      overlay.setAttribute("inert", "");
+      document.removeEventListener("keydown", onKeydown);
+      resetAccordions();
+      if (lastFocused) lastFocused.focus();
+      else toggle.focus();
+    }
+
+    toggle.addEventListener("click", () => {
+      if (toggle.getAttribute("aria-expanded") === "true") closeMenu();
+      else openMenu();
+    });
+
+    closeBtn?.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    panel.addEventListener("click", (event) => {
+      const link = (event.target as HTMLElement).closest("a");
+      if (link) closeMenu();
+    });
+
+    desktopQuery.addEventListener("change", (event) => {
+      if (event.matches) closeMenu();
+    });
+  }
+
+  initMobileMenu();
+</script>

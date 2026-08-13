@@ -1,7 +1,10 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
+
+const heroImage = "/assets/STI-matning-hero.webp";
 ---
 
 <!DOCTYPE html>
@@ -14,6 +17,7 @@ import "../../../styles/avab.css";
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://www.avab.eu/certifiering/" />
   <meta name="theme-color" content="#282E29" />
+  <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
   <meta property="og:title" content="Certifiering, mätning och verifiering av AV-system | AVAB" />
   <meta property="og:description" content="AVAB hjälper med mätning, verifiering, protokoll och underlag för AV-system, taluppfattbarhet, hörslinga, ljudanläggningar och talat utrymningslarm." />
   <meta property="og:url" content="https://www.avab.eu/certifiering/" />
@@ -120,8 +124,7 @@ import "../../../styles/avab.css";
   </nav>
 
   <main id="main">
-    <!-- Bildförslag hero: Egen AVAB-bild som tydligt visar certifiering. Lägg bilden i /assets/ när filnamnet är bestämt. -->
-    <section class="hero">
+    <section class="hero" style={`--hero-image: url('${heroImage}');`}>
       <div class="avab-container">
         <div class="hero-inner animate-in">
           <div class="eyebrow">Vår leverans · Certifiering</div>
@@ -239,7 +242,7 @@ import "../../../styles/avab.css";
           <a class="card" href="/installation/"><h3>Installation</h3><p>Montage, kablage, rack, inkoppling och samordning i verkliga projekt.</p></a>
           <a class="card" href="/driftsattning/"><h3>Driftsättning</h3><p>Programmering, test, injustering, användarflöde och överlämning.</p></a>
           <a class="card" href="/certifiering/"><h3>Certifiering</h3><p>Mätning, verifiering, protokoll och samordning mot relevanta krav.</p></a>
-          <a class="card" href="/service-och-garanti/"><h3>Service &amp; garanti</h3><p>Felsökning, support, garantiärenden, underhåll och fortsatt utveckling.</p></a>
+          <a class="card" href="/tjanster/garanti-och-service/"><h3>Service &amp; garanti</h3><p>Felsökning, support, garantiärenden, underhåll och fortsatt utveckling.</p></a>
         </div>
       </div>
     </section>
@@ -276,27 +279,21 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section">
-      <div class="avab-container">
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Nästa steg</div>
-            <h2>Behöver ni mätning, verifiering eller ett tydligt protokoll?</h2>
-            <p>Berätta vilken funktion som ska verifieras och vilka krav som gäller. Då kan vi avgöra rätt metod, rätt omfattning och om någon ytterligare sakkunnig behöver ingå.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="tel:+46548202080">Ring 054-8202080</a>
-              <a class="button button-secondary" href="mailto:info@avab.eu">Mejla AVAB</a>
-            </div>
-          </div>
-          <ul class="calc-list">
-            <li>Taluppfattbarhet och STIPA</li>
-            <li>Hörslinga och täckning</li>
-            <li>Funktionsprov och systemscenarier</li>
-            <li>Protokoll, åtgärdsförslag och omprov</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      eyebrow="Nästa steg"
+      title="Behöver ni mätning, verifiering eller ett tydligt protokoll?"
+      text="Berätta vilken funktion som ska verifieras och vilka krav som gäller. Då kan vi avgöra rätt metod, rätt omfattning och om någon ytterligare sakkunnig behöver ingå."
+      primaryLabel="Kontakta AVAB"
+      primaryHref="/kontakt/"
+      secondaryLabel="Ring 054-8202080"
+      secondaryHref="tel:+46548202080"
+      points={[
+        "Taluppfattbarhet och STIPA",
+        "Hörslinga och täckning",
+        "Funktionsprov och systemscenarier",
+        "Protokoll, åtgärdsförslag och omprov",
+      ]}
+    />
   </main>
 
   <SiteFooter />

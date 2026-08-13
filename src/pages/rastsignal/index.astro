@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+import PageCTA from "../../components/PageCTA.astro";
 import "../../styles/avab.css";
 ---
 
@@ -241,7 +242,7 @@ import "../../styles/avab.css";
     </div>
   </nav>
 
-  <section class="hero" style="--hero-image:url('/assets/takhogtalare-rad-takinstallation.webp');">
+  <section class="hero" style="--hero-image:url('/assets/skola-flyg-vy-hero.webp');">
     <div class="avab-container">
       <div class="hero-inner animate-in">
         <div class="eyebrow">Rastsignal för skola</div>
@@ -318,7 +319,7 @@ import "../../styles/avab.css";
                 decoding="async"
               />
             </figure>
-            <p class="quote-line">
+            <p class="quote-line accent-rail">
               Kort svar: rastsignal är ett schemastyrt ljudsystem som gör skolans tider,
               zoner och meddelanden tydliga utan manuell hantering varje dag.
             </p>
@@ -497,33 +498,20 @@ import "../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section">
-      <div class="avab-container">
-        <div class="fullwidth-cta">
-          <div>
-            <h2>Vill ni få ordning på signaler, zoner och talmeddelanden?</h2>
-            <p>
-              AVAB hjälper skolor, fastighetsägare och entreprenörer att välja rätt nivå för rastsignal,
-              skolklockor, högtalare och styrning. Vi kan inventera befintlig anläggning, föreslå zoner
-              och ta fram en lösning som fungerar i drift.
-            </p>
-
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Kontakta AVAB</a>
-              <a class="button button-secondary" href="/miljo/skola/">Se skola som miljö</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Inventering av befintliga högtalare och kablage.</li>
-            <li>Förslag på zoner, scheman och styrning.</li>
-            <li>Tydlig gränsdragning mot larm och säkerhetssystem.</li>
-            <li>Installation, driftsättning och dokumentation.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      title="Vill ni få ordning på signaler, zoner och talmeddelanden?"
+      text="AVAB hjälper skolor, fastighetsägare och entreprenörer att välja rätt nivå för rastsignal, skolklockor, högtalare och styrning. Vi kan inventera befintlig anläggning, föreslå zoner och ta fram en lösning som fungerar i drift."
+      primaryLabel="Kontakta AVAB"
+      primaryHref="/kontakt/"
+      secondaryLabel="Se skola som miljö"
+      secondaryHref="/miljo/skola/"
+      points={[
+        "Inventering av befintliga högtalare och kablage.",
+        "Förslag på zoner, scheman och styrning.",
+        "Tydlig gränsdragning mot larm och säkerhetssystem.",
+        "Installation, driftsättning och dokumentation.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

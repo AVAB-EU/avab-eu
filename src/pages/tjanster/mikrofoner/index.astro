@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -204,30 +205,13 @@ import "../../../styles/avab.css";
 
   <!-- Sidspecifika komponenter -->
   <style>
-    /* ---- Lösningskort (grön ram, accentkant) ---- */
-    .solution-card {
-      border: 2px solid rgba(143, 192, 37, 0.62);
-      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
-      position: relative;
-      overflow: hidden;
-    }
-    .solution-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 8px;
-      background: var(--avab-green);
-    }
-    .solution-card h3,
-    .solution-card .bullet-list { position: relative; z-index: 1; }
-
     /* ---- AEO-svarsruta (snippet-box) ---- */
     .snippet-box {
       padding: 24px 28px;
+      padding-left: 40px;
       border-radius: var(--avab-radius-sm);
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
-      border-left: 8px solid var(--avab-green);
       box-shadow: var(--avab-shadow-sm);
       margin-top: 28px;
     }
@@ -236,7 +220,7 @@ import "../../../styles/avab.css";
     .snippet-box p { margin-bottom: 0; font-size: 1.05rem; }
 
     /* ---- Mikrofontyps- och miljökort ---- */
-    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 8px; }
+    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px; margin-top: 8px; }
     .platform-card {
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
@@ -266,6 +250,13 @@ import "../../../styles/avab.css";
     }
     .image-placeholder strong { display: block; margin-bottom: 8px; color: var(--avab-dark); }
     .image-placeholder small { display: block; font-size: 0.88rem; }
+    .content-image {
+      display: block;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: var(--avab-radius-sm);
+    }
     .content-figure { margin-top: 28px; }
     .gallery {
       display: grid;
@@ -316,6 +307,7 @@ import "../../../styles/avab.css";
     @media (max-width: 768px) {
       .gallery { grid-template-columns: 1fr; }
       .image-placeholder { min-height: 240px; }
+      .content-image { height: 240px; }
       .compact-faq { grid-template-columns: 1fr; }
       .compact-faq details.faq-item:nth-child(2) { border-top: none; }
       .mikrofoner-faq-cta {
@@ -341,7 +333,7 @@ import "../../../styles/avab.css";
     </div>
   </nav>
 
-  <section class="hero" style="--hero-image:url('/assets/hallbyggnad-fasad-parkering.webp');">
+  <section class="hero" style="--hero-image:url('/assets/mikrofoner-hero.webp');">
     <div class="avab-container">
       <div class="hero-inner animate-in">
         <div class="eyebrow">Tjänst: Mikrofoner</div>
@@ -383,7 +375,7 @@ import "../../../styles/avab.css";
           <h2>Mikrofonen är den del av systemet användaren håller i</h2>
           <p class="lead-dark">AVAB projekterar och installerar mikrofonlösningar för sporthallar, skolor, konferensrum, hotell, gym, aulor, kyrkor, industrimiljöer och publika lokaler: trådlösa handmikrofoner, ficksändare, headset, myggor, takmikrofoner, bordsmikrofoner, antenner, DSP, automix, AEC och feedbackkontroll.</p>
           <p>För många installationer är målet enkelt: mikrofonen ska vara laddad, starta stabilt, låta bra, ha rätt räckvidd och inte skapa rundgång eller strul när någon ska prata.</p>
-          <div class="snippet-box">
+          <div class="snippet-box accent-rail">
             <strong>Vad är en mikrofonlösning?</strong>
             <p>En mikrofonlösning består av mikrofon, anslutning eller trådlös sändare, mottagare, antenner, signalbehandling och ljudsystem. Rätt mikrofon väljs efter användning: handhållen mikrofon för tal och speaker, ficksändare med headset för fria händer, takmikrofon för konferensrum, bordsmikrofon för fasta möten och dynamisk eller kondensatormikrofon för scen, tal eller inspelning.</p>
           </div>
@@ -415,12 +407,12 @@ import "../../../styles/avab.css";
           <p>AVAB använder ofta Sennheiser som standard för trådlösa handmikrofoner, ficksändare och headset i installationer där mikrofonerna ska fungera varje dag: sporthallar, skolor, aulor, gym och konferensrum där användaren inte ska behöva förstå tekniken bakom. Relevanta systemfamiljer är bland annat Evolution Wireless Digital, EW-DX och SpeechLine Digital Wireless, och nivån väljs efter antal kanaler, miljö, frekvensplanering, användarvana och krav på drift.</p>
           <p>Analoga UHF-system är beprövade, har mycket låg latens och kan ge tydliga varningssignaler när mottagningen försämras, vilket en tekniker ibland hinner reagera på. Digitala system kan ge renare ljud, effektivare frekvensanvändning, bättre systemövervakning och ibland kryptering. Det viktiga är inte att det ena alltid är bäst, utan att systemet väljs efter frekvensmiljö, antal mikrofoner, räckvidd, latens, budget och service.</p>
           <figure class="content-figure">
-            <div class="image-placeholder"><div><strong>BILDPLATS: Sennheiser-handmikrofoner i laddstation</strong><small>Egen bild: mikrofoner, ficksändare eller laddstation från en AVAB-installation</small></div></div>
-            <figcaption>Trådlösa Sennheiser-system valda för vardagsdrift: laddade, märkta och redo när någon ska prata.</figcaption>
+            <img class="content-image" src="/assets/mikrofoner-headset-gruppträning.webp" alt="Instruktör som använder trådlöst headset i en träningslokal" width="1200" height="900" loading="lazy" decoding="async" />
+            <figcaption>Trådlösa mikrofonsystem ger rörelsefrihet och en jämn talnivå i den dagliga verksamheten.</figcaption>
           </figure>
         </div>
 
-        <aside class="card solution-card">
+        <aside class="card solution-card accent-rail">
           <h3>SpeechLine för tal och utbildning</h3>
           <p>Sennheiser SpeechLine Digital Wireless är byggt för tal, presentation, föreläsning och utbildning snarare än traditionell scenproduktion. Det passar i skolor, universitet, konferensrum, föreläsningssalar och företagsmiljöer där användaren vill ha enkel hantering och stabil talöverföring.</p>
           <p>SpeechLine är särskilt intressant där mikrofonerna ska användas av många olika personer och tekniken ska vara så självgående som möjligt. För en sporthall eller scen kan andra Sennheiser-system passa bättre, men för undervisning och talmiljöer är SpeechLine ofta en stark kandidat.</p>
@@ -526,15 +518,15 @@ import "../../../styles/avab.css";
 
         <div class="gallery">
           <figure>
-            <div class="image-placeholder"><div><strong>BILDPLATS: Speaker med handmikrofon i sporthall</strong><small>Egen bild: handmikrofon i användning vid match eller samling</small></div></div>
+            <img class="content-image" src="/assets/inomhusarena-match-publik.webp" alt="Match och publik i en inomhusarena där mikrofoner används för speakerljud" width="1200" height="900" loading="lazy" decoding="async" />
             <figcaption>Handmikrofonen är sporthallens arbetshäst: enkel att förstå för speaker, domare och föreningsledare.</figcaption>
           </figure>
           <figure>
-            <div class="image-placeholder"><div><strong>BILDPLATS: Instruktör med headset i gruppträning</strong><small>Egen bild: headset och ficksändare i träningsmiljö</small></div></div>
+            <img class="content-image" src="/assets/mikrofoner-headset-gruppträning.webp" alt="Instruktör med trådlöst headset under gruppträning" width="1200" height="900" loading="lazy" decoding="async" />
             <figcaption>Headset ger fria händer och jämn talnivå när instruktören rör sig och pratar över musiken.</figcaption>
           </figure>
           <figure>
-            <div class="image-placeholder"><div><strong>BILDPLATS: Takmikrofon i konferensrum</strong><small>Egen bild: takmonterad mikrofonarray, gärna från Lesjöfors-projektet</small></div></div>
+            <img class="content-image" src="/assets/mikrofoner-takmikrofon-konferensrum.webp" alt="Takmonterad mikrofonarray i ett konferensrum" width="1200" height="900" loading="lazy" decoding="async" />
             <figcaption>Takmikrofonen håller bordet rent och fångar talet där mötesdeltagarna faktiskt sitter.</figcaption>
           </figure>
         </div>
@@ -549,12 +541,12 @@ import "../../../styles/avab.css";
           <p>Om antennerna sitter fel, kabeln är för lång eller frekvenserna krockar kommer systemet att strula även om mikrofonen är bra. AVAB tittar på antal trådlösa mikrofoner, frekvensmiljö, antennplacering, diversity-mottagning, antennfördelning, koaxialkabel och dämpning enligt principerna i vår <a class="text-link" href="/kunskap/kablar-kontakter/">kabelguide</a>, aktiva eller passiva antenner, rackplacering, framtida utbyggnad samt laddning, batterier och rutiner.</p>
           <p>Vid större system görs frekvensplanering innan installation. Det gäller särskilt sporthallar, skolor, hotell, scener och anläggningar där flera trådlösa system används samtidigt.</p>
           <figure class="content-figure">
-            <div class="image-placeholder"><div><strong>BILDPLATS: Antennfördelning och mottagare i rack</strong><small>Egen bild: mottagare, antennsplitter eller riktantenner från en AVAB-installation</small></div></div>
+            <img class="content-image" src="/assets/driftsattning-hero.webp" alt="Tekniker som driftsätter mottagare och annan AV-utrustning i ett rack" width="2032" height="770" loading="lazy" decoding="async" />
             <figcaption>Radiolänken byggs i racket: mottagare, antennfördelning och rätt koaxialkabel avgör stabiliteten.</figcaption>
           </figure>
         </div>
 
-        <aside class="card solution-card">
+        <aside class="card solution-card accent-rail">
           <h3>DSP, automix och vardagsdrift</h3>
           <p>Mikrofoner fungerar bäst som del av ett genomtänkt ljudsystem. En DSP hanterar automix, EQ, kompressor, prioritet, ducking, AEC och feedbackkontroll. Automix prioriterar aktiva talare, AEC hindrar distansdeltagare från att höra sig själva i retur, och feedbackkontroll minskar rundgångsrisken, men ersätter inte bra högtalarplacering och rätt mikrofonteknik.</p>
           <p>Många mikrofonproblem är egentligen driftproblem: oladdad mikrofon, fel headset, bytt kanal eller saknade batterier. Därför projekterar vi också vardagen: laddstationer, märkning, förvaring, reservmikrofon, instruktioner, enkel panelstyrning, dokumentation och utbildning. Ett system som är lätt att använda håller längre och ger färre supportärenden.</p>
@@ -696,27 +688,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Behöver ni mikrofoner som bara fungerar?</h2>
-            <p>Till sporthall, aula, skola, gym, konferensrum, kyrka eller simhall: AVAB hjälper er att välja rätt mikrofontyp, projektera trådlöst, placera antenner, programmera DSP och bygga ett system där talet hörs tydligt.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/tjanster/ljudsystem/">Läs om ljudsystem</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Handmikrofon, headset, tak eller svanhals, valt efter användningen.</li>
-            <li>Sennheiser-system med frekvensplan och rätt antennplacering.</li>
-            <li>DSP med automix, AEC och feedbackkontroll.</li>
-            <li>Laddning, märkning, dokumentation och utbildning.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Behöver ni mikrofoner som bara fungerar?"
+      text="Till sporthall, aula, skola, gym, konferensrum, kyrka eller simhall: AVAB hjälper er att välja rätt mikrofontyp, projektera trådlöst, placera antenner, programmera DSP och bygga ett system där talet hörs tydligt."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om ljudsystem"
+      secondaryHref="/tjanster/ljudsystem/"
+      points={[
+        "Handmikrofon, headset, tak eller svanhals, valt efter användningen.",
+        "Sennheiser-system med frekvensplan och rätt antennplacering.",
+        "DSP med automix, AEC och feedbackkontroll.",
+        "Laddning, märkning, dokumentation och utbildning.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

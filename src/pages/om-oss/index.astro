@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+import PageCTA from "../../components/PageCTA.astro";
 import "../../styles/avab.css";
 ---
 
@@ -286,7 +287,7 @@ import "../../styles/avab.css";
             <p>Mätning, funktionsprov, protokoll och underlag för taluppfattbarhet, hörslinga och systemfunktion.</p>
           </a>
 
-          <a class="card" href="/service-och-garanti/">
+          <a class="card" href="/tjanster/garanti-och-service/">
             <h3>Service &amp; garanti</h3>
             <p>Support, felsökning, garantiärenden, uppdateringar och framtida kompletteringar.</p>
           </a>
@@ -499,32 +500,21 @@ import "../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section">
-      <div class="avab-container">
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Teknik ska fungera för människor</div>
-            <h2>Har ni en lokal eller ett projekt där tekniken behöver bli enklare och bättre?</h2>
-            <p>
-              Berätta hur lokalen används och vilka problem ni vill lösa. Vi hjälper er att ta fram rätt nivå på ljud, bild, styrning, tillgänglighet och säkerhetsrelaterad AV-teknik.
-            </p>
-
-            <div class="cta-actions">
-              <a class="button button-light" href="tel:+46548202080">Ring 054-8202080</a>
-              <a class="button button-secondary" href="/referenser/">Se våra referenser</a>
-              <a class="button button-quiet" href="/projektering/">Läs om projektering</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Behovsanalys och projektering.</li>
-            <li>Installation och samordning.</li>
-            <li>Driftsättning och användarstöd.</li>
-            <li>Service och långsiktig utveckling.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      eyebrow="Teknik ska fungera för människor"
+      title="Har ni en lokal eller ett projekt där tekniken behöver bli enklare och bättre?"
+      text="Berätta hur lokalen används och vilka problem ni vill lösa. Vi hjälper er att ta fram rätt nivå på ljud, bild, styrning, tillgänglighet och säkerhetsrelaterad AV-teknik."
+      primaryLabel="Boka kostnadsfri rådgivning"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "Behovsanalys och projektering.",
+        "Installation och samordning.",
+        "Driftsättning och användarstöd.",
+        "Service och långsiktig utveckling.",
+      ]}
+    />
   </main>
 
   <SiteFooter />

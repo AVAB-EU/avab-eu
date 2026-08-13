@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -204,30 +205,13 @@ import "../../../styles/avab.css";
 
   <!-- Sidspecifika komponenter -->
   <style>
-    /* ---- Lösningskort (grön ram, accentkant) ---- */
-    .solution-card {
-      border: 2px solid rgba(143, 192, 37, 0.62);
-      box-shadow: 0 18px 42px rgba(143, 192, 37, 0.12);
-      position: relative;
-      overflow: hidden;
-    }
-    .solution-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 8px;
-      background: var(--avab-green);
-    }
-    .solution-card h3,
-    .solution-card .bullet-list { position: relative; z-index: 1; }
-
     /* ---- AEO-svarsruta (snippet-box) ---- */
     .snippet-box {
       padding: 24px 28px;
+      padding-left: 40px;
       border-radius: var(--avab-radius-sm);
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
-      border-left: 8px solid var(--avab-green);
       box-shadow: var(--avab-shadow-sm);
       margin-top: 28px;
     }
@@ -236,7 +220,7 @@ import "../../../styles/avab.css";
     .snippet-box p { margin-bottom: 0; font-size: 1.05rem; }
 
     /* ---- Plattformskort (Crestron, Q-SYS, Biamp, Bose, Yamaha) ---- */
-    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 8px; }
+    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px; margin-top: 8px; }
     .platform-card {
       background: var(--avab-white);
       border: 1px solid var(--avab-border);
@@ -370,7 +354,7 @@ import "../../../styles/avab.css";
           <h2>Varför styrsystem behövs</h2>
           <p class="lead-dark">När en anläggning är liten går det ofta att lösa mycket med en fjärrkontroll, en app och några fasta knappar. Men så fort miljön blir större förändras kraven.</p>
           <p>En simhall har flera zoner. En sporthall kan delas med vikvägg. Ett hotell har konferensrum, bar, spa och restaurang. Ett gym har reception, träningsyta och gruppträningssalar. En skola har klassrum, aula, matsal och idrottshall. Då räcker det inte att varje produkt fungerar var för sig. Tekniken måste förstå hur lokalen används.</p>
-          <div class="snippet-box">
+          <div class="snippet-box accent-rail">
             <strong>Vad är styrsystem och integration?</strong>
             <p>Styrsystem och integration innebär att ljud, bild, ljus, mikrofoner, skärmar, projektorer, zoner, sensorer och andra tekniska system samlas i ett gränssnitt. Systemet kan både styra funktioner och visa status, till exempel volym, vald källa, larm, dörrstatus, temperatur eller om en vikvägg är öppen eller stängd.</p>
           </div>
@@ -402,7 +386,7 @@ import "../../../styles/avab.css";
           <p>Med system som Crestron och Q-SYS kan man därför inte bara trycka på "starta möte" eller "öppen simhall". Man kan också hämta information, visa status och bygga logik mellan flera system, tillsammans med <a class="text-link" href="/tjanster/ljudsystem/">ljudsystemet</a> och övrig teknik. Det är här styrsystemet blir mer än en snygg touchpanel: det blir anläggningens sammanhållande logik.</p>
         </div>
 
-        <aside class="card solution-card">
+        <aside class="card solution-card accent-rail">
           <h3>Logik mellan systemen</h3>
           <ul class="bullet-list">
             <li>Öppnas vikväggen slås ljudzonerna ihop automatiskt.</li>
@@ -526,7 +510,7 @@ import "../../../styles/avab.css";
           </article>
 
           <article class="ref-card">
-            <img src="/assets/takhogtalare-rad-takinstallation.webp" alt="Friskis&Svettis Karlstad, Solstadens Sportcenter, med ljud, styrning och zoner från AVAB" width="1200" height="900" loading="lazy" decoding="async">
+            <img src="/assets/friskis-svettis-gym.webp" alt="Friskis&Svettis Karlstad, Solstadens Sportcenter, med ljud, styrning och zoner från AVAB" width="1200" height="900" loading="lazy" decoding="async">
             <div class="ref-content">
               <h3>Friskis&Svettis Karlstad</h3>
               <p>Solstadens Sportcenter: service, utbyte och komplettering av AV-teknik med 24 ljudzoner, 32 ingångar, Crestron och ClearOne.</p>
@@ -555,7 +539,7 @@ import "../../../styles/avab.css";
           </article>
 
           <article class="ref-card">
-            <img src="/assets/konferensrum-vaggskarm-ljudlimpa.webp" alt="Konferensrum med Crestronstyrning, motoriserad duk och ljusstyrning från AVAB" width="1200" height="900" loading="lazy" decoding="async">
+            <img src="/assets/victoriasalen-lokabrunn-konferens.webp" alt="Konferensrum med Crestronstyrning, motoriserad duk och ljusstyrning från AVAB" width="1200" height="900" loading="lazy" decoding="async">
             <div class="ref-content">
               <h3>Loka Brunn konferens &amp; spa</h3>
               <p>Konferensrum, spa, ljud, Crestron, motoriserad duk, ljusstyrning, mikrofoner och hörslinga.</p>
@@ -632,27 +616,24 @@ import "../../../styles/avab.css";
           </details>
         </div>
 
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Ta in oss tidigt</div>
-            <h2>Vill ni samla ljud, bild, ljus och styrning i ett system?</h2>
-            <p>AVAB hjälper er att projektera, installera och driftsätta styrsystem och integration för publika miljöer, mötesrum och anläggningar där tekniken behöver fungera varje dag, och där personalen faktiskt kan använda den.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="/kontakt/">Boka kostnadsfri genomgång</a>
-              <a class="button button-secondary" href="/service-support/">Läs om service &amp; support</a>
-              <a class="button button-quiet" href="tel:+46548202080">Ring 054-8202080</a>
-            </div>
-          </div>
-
-          <ul class="calc-list">
-            <li>Crestron, Q-SYS, Biamp, Bose och Yamaha efter behov.</li>
-            <li>Gränssnitt och behörigheter anpassade för personalen.</li>
-            <li>Logik mellan ljud, bild, ljus, zoner och driftlägen.</li>
-            <li>Projektering, programmering, driftsättning och utbildning.</li>
-          </ul>
-        </div>
       </div>
     </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Vill ni samla ljud, bild, ljus och styrning i ett system?"
+      text="AVAB hjälper er att projektera, installera och driftsätta styrsystem och integration för publika miljöer, mötesrum och anläggningar där tekniken behöver fungera varje dag, och där personalen faktiskt kan använda den."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om garanti och service"
+      secondaryHref="/tjanster/garanti-och-service/"
+      points={[
+        "Crestron, Q-SYS, Biamp, Bose och Yamaha efter behov.",
+        "Gränssnitt och behörigheter anpassade för personalen.",
+        "Logik mellan ljud, bild, ljus, zoner och driftlägen.",
+        "Projektering, programmering, driftsättning och utbildning.",
+      ]}
+    />
   </main>
 
   <SiteFooter />
