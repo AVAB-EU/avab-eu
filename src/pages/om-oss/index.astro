@@ -3,6 +3,8 @@ import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import PageCTA from "../../components/PageCTA.astro";
 import "../../styles/avab.css";
+
+const heroImage = "/assets/om-oss-hero-bild.webp";
 ---
 
 <!DOCTYPE html>
@@ -17,6 +19,7 @@ import "../../styles/avab.css";
   <link rel="canonical" href="https://www.avab.eu/om-oss/" />
   <meta name="author" content="AVAB" />
   <meta name="theme-color" content="#282E29" />
+  <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
 
   <meta property="og:title" content="Om AVAB | Från ljud och event till kompletta AV-installationer" />
   <meta property="og:description" content="AVAB har arbetat med ljud och teknik sedan 1990 och hjälper i dag kunder med projektering, installation, driftsättning, verifiering och service av kompletta AV-system." />
@@ -148,7 +151,7 @@ import "../../styles/avab.css";
   </nav>
 
   <main id="main">
-    <section class="hero">
+    <section class="hero" style={`--hero-image: url('${heroImage}');`}>
       <div class="avab-container">
         <div class="hero-inner animate-in">
           <div class="eyebrow">Om AVAB</div>

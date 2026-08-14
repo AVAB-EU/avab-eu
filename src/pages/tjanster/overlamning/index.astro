@@ -1,7 +1,10 @@
 ---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
+
+const heroImage = "/assets/Overlamning-saffle-hero.webp";
 ---
 
 <!DOCTYPE html>
@@ -12,11 +15,12 @@ import "../../../styles/avab.css";
   <title>Överlämning av AV-system, dokumentation och användarstöd | AVAB</title>
   <meta name="description" content="AVAB hjälper till med överlämning av AV-system med dokumentation, funktionsgenomgång, användarstöd, protokoll och tydliga kontaktvägar för fortsatt drift och service." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="canonical" href="https://www.avab.eu/overlamning/" />
+  <link rel="canonical" href="https://www.avab.eu/tjanster/overlamning/" />
   <meta name="theme-color" content="#282E29" />
+  <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
   <meta property="og:title" content="Överlämning av AV-system, dokumentation och användarstöd | AVAB" />
   <meta property="og:description" content="AVAB hjälper till med överlämning av AV-system med dokumentation, funktionsgenomgång, användarstöd, protokoll och tydliga kontaktvägar för fortsatt drift och service." />
-  <meta property="og:url" content="https://www.avab.eu/overlamning/" />
+  <meta property="og:url" content="https://www.avab.eu/tjanster/overlamning/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="sv_SE" />
   <meta property="og:site_name" content="AVAB" />
@@ -34,7 +38,7 @@ import "../../../styles/avab.css";
     "url": "https://www.avab.eu/"
   },
   "areaServed": "Sverige",
-  "url": "https://www.avab.eu/overlamning/",
+  "url": "https://www.avab.eu/tjanster/overlamning/",
   "description": "AVAB hjälper till med överlämning av AV-system med dokumentation, funktionsgenomgång, användarstöd, protokoll och tydliga kontaktvägar för fortsatt drift och service."
 }
 </script>
@@ -53,7 +57,7 @@ import "../../../styles/avab.css";
       "@type": "ListItem",
       "position": 2,
       "name": "Överlämning",
-      "item": "https://www.avab.eu/overlamning/"
+      "item": "https://www.avab.eu/tjanster/overlamning/"
     }
   ]
 }
@@ -120,8 +124,7 @@ import "../../../styles/avab.css";
   </nav>
 
   <main id="main">
-    <!-- Bildförslag hero: Egen AVAB-bild som tydligt visar genomgång eller färdig anläggning. Lägg bilden i /assets/ när filnamnet är bestämt. -->
-    <section class="hero">
+    <section class="hero" style={`--hero-image: url('${heroImage}');`}>
       <div class="avab-container">
         <div class="hero-inner animate-in">
           <div class="eyebrow">Vår leverans · Överlämning</div>
@@ -236,12 +239,12 @@ import "../../../styles/avab.css";
         </div>
 
         <div class="grid-3">
-          <a class="card" href="/projektering/"><h3>Projektering</h3><p>Behov, ritningar, funktion, systemprincip och tydlig omfattning före installation.</p></a>
-          <a class="card" href="/installation/"><h3>Installation</h3><p>Montage, kablage, rack, inkoppling och samordning i verkliga projekt.</p></a>
-          <a class="card" href="/driftsattning/"><h3>Driftsättning</h3><p>Programmering, test, injustering och kontroll av systemets funktion.</p></a>
-          <a class="card" href="/certifiering/"><h3>Certifiering</h3><p>Mätning, verifiering, protokoll och samordning mot relevanta krav.</p></a>
-          <a class="card" href="/overlamning/"><h3>Överlämning</h3><p>Dokumentation, funktionsgenomgång och en tydlig övergång till användare och drift.</p></a>
-          <a class="card" href="/service-och-garanti/"><h3>Service &amp; garanti</h3><p>Felsökning, support, garantiärenden, underhåll och fortsatt utveckling.</p></a>
+          <a class="card" href="/tjanster/projektering/"><h3>Projektering</h3><p>Behov, ritningar, funktion, systemprincip och tydlig omfattning före installation.</p></a>
+          <a class="card" href="/tjanster/installation/"><h3>Installation</h3><p>Montage, kablage, rack, inkoppling och samordning i verkliga projekt.</p></a>
+          <a class="card" href="/tjanster/driftsattning/"><h3>Driftsättning</h3><p>Programmering, test, injustering och kontroll av systemets funktion.</p></a>
+          <a class="card" href="/tjanster/certifiering/"><h3>Certifiering</h3><p>Mätning, verifiering, protokoll och samordning mot relevanta krav.</p></a>
+          <article class="card card--current" aria-current="page"><h3>Överlämning</h3><p>Dokumentation, funktionsgenomgång och en tydlig övergång till användare och drift.</p></article>
+          <a class="card" href="/tjanster/garanti-och-service/"><h3>Service &amp; garanti</h3><p>Felsökning, support, garantiärenden, underhåll och fortsatt utveckling.</p></a>
         </div>
       </div>
     </section>
@@ -278,27 +281,21 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <section class="section">
-      <div class="avab-container">
-        <div class="fullwidth-cta">
-          <div>
-            <div class="eyebrow">Nästa steg</div>
-            <h2>Se till att AV-systemet är tydligt även efter projektet</h2>
-            <p>AVAB hjälper till att samla överlämningen, gå igenom systemets viktigaste funktioner och ge verksamhet och drift rätt underlag för att ta över anläggningen.</p>
-            <div class="cta-actions">
-              <a class="button button-light" href="tel:+46548202080">Ring 054 820 20 80</a>
-              <a class="button button-secondary" href="mailto:info@avab.eu">Mejla AVAB</a>
-            </div>
-          </div>
-          <ul class="calc-list">
-            <li>Funktionsgenomgång med användare och drift</li>
-            <li>Relevant dokumentation och protokoll</li>
-            <li>Tydlig information för framtida service</li>
-            <li>Övergång från projekt till normal drift</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      eyebrow="Nästa steg"
+      title="Se till att AV-systemet är tydligt även efter projektet"
+      text="AVAB hjälper till att samla överlämningen, gå igenom systemets viktigaste funktioner och ge verksamhet och drift rätt underlag för att ta över anläggningen."
+      primaryLabel="Kontakta AVAB"
+      primaryHref="/kontakt/"
+      secondaryLabel="Ring 054-8202080"
+      secondaryHref="tel:+46548202080"
+      points={[
+        "Funktionsgenomgång med användare och drift",
+        "Relevant dokumentation och protokoll",
+        "Tydlig information för framtida service",
+        "Övergång från projekt till normal drift",
+      ]}
+    />
   </main>
 
   <SiteFooter />

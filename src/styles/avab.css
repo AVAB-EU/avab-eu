@@ -1127,6 +1127,15 @@ p {
   height: 100%;
 }
 
+/* Markerar den aktuella sidan i en kortbaserad lokal navigation. */
+.card--current {
+  background: var(--avab-green);
+  border-color: var(--avab-green);
+  box-shadow: 0 12px 28px var(--avab-green-glow);
+}
+.card--current h3,
+.card--current p { color: var(--avab-dark); }
+
 /* Mörkt kort med grön kant (BYOD/CTA-liknande block) */
 .dark-card {
   background: linear-gradient(135deg, var(--avab-dark), #1f241f);

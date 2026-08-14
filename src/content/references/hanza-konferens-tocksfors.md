@@ -151,14 +151,14 @@ gallery:
   title: Mötesteknik i de färdiga rummen
   lead: Bilderna visar den gemensamma bildytan och hur styrning respektive videobar placerats i mötesmiljön.
   images:
+    - src: /assets/hanza-mechanics-bordspanel.webp
+      alt: Bordspanel och headset på konferensbordet hos Hanza Mechanics
+      caption: Bordspanelen och headsetet är placerade nära användaren för enkel styrning och tydliga möten.
+      width: 1280
+      height: 720
     - src: /assets/konferensrum-stor-skarm-bord.webp
-      alt: Konferensrum hos Hanza Mechanics med stor display, touchpanel och headset på bordet
-      caption: Bordspanelen och anslutningarna är placerade nära användaren, med en gemensam 85-tums bildyta för presentation och möte.
-      width: 1200
-      height: 900
-    - src: /assets/konferensrum-vaggskarm-ljudlimpa.webp
-      alt: Konferensrum hos Hanza Mechanics med stor display och videobar ovanför mötesbordet
-      caption: Videobaren samlar kamera, mikrofon och högtalare vid displayen och håller mötesbordet fritt från fast teknik.
+      alt: Konferensrum hos Hanza Mechanics med stor display, bordspanel och headset
+      caption: Det färdiga rummet samlar bild, styrning och mötesljud i en lättanvänd lösning med en gemensam 85-tums bildyta.
       width: 1200
       height: 900
 
