@@ -1,0 +1,79 @@
+---
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import BudgetCalculator from "../../components/budgetkalkylator/BudgetCalculator.astro";
+import "../../styles/avab.css";
+import "../../styles/budgetkalkylator.css";
+
+const canonical = "https://www.avab.eu/budgetkalkylator-av-teknik/";
+const title = "Budgetkalkylator för AV-teknik | AVAB";
+const description = "Räkna fram en budgetindikation för AV-teknik i sporthall, simhall, konferens, restaurang och gym. Belopp exklusive moms och inte bindande offert.";
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Start", item: "https://www.avab.eu/" },
+      { "@type": "ListItem", position: 2, name: "Budgetkalkylator för AV-teknik", item: canonical },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "AVAB:s budgetkalkylator för AV-teknik",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    url: canonical,
+    description,
+    provider: { "@type": "Organization", name: "AVAB", url: "https://www.avab.eu/", telephone: "+46548202080" },
+    offers: { "@type": "Offer", price: "0", priceCurrency: "SEK", description: "Kostnadsfri budgetindikator; inte en bindande offert." },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Är budgetbeloppen bindande?", acceptedAnswer: { "@type": "Answer", text: "Nej. Beloppen är budgetindikationer exklusive moms. För skarp offert krävs genomgång och projektering." } },
+      { "@type": "Question", name: "Vilka områden kan beräknas?", acceptedAnswer: { "@type": "Answer", text: "Sporthall, simhall, konferens, restaurang och gym. Simhall, konferens, restaurang och gym använder märkta teststartvärden." } },
+      { "@type": "Question", name: "Skickas kontaktuppgifterna till AVAB?", acceptedAnswer: { "@type": "Answer", text: "Nej. Uppgifterna används endast lokalt för utskriftsunderlaget och lämnar inte webbläsaren." } },
+    ],
+  },
+];
+---
+
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#282E29" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="sv_SE" />
+    <meta property="og:site_name" content="AVAB" />
+    <meta property="og:image" content="https://www.avab.eu/assets/inomhusarena-plan-laktare-bred.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  </head>
+  <body class="budget-page">
+    <SiteHeader />
+    <main id="main">
+      <section class="budget-hero">
+        <div class="avab-container">
+          <div class="eyebrow eyebrow-dark">Budgetkalkylator för AV-teknik</div>
+          <h1>Räkna på teknik i sporthall, simhall, konferens, restaurang och gym</h1>
+          <p>Bygg en budgetindikation per funktionsdel med data från AVAB:s prisunderlag. Kalkylen visar belopp exklusive moms och är inte en bindande offert.</p>
+          <div class="budget-hero-actions"><a class="button button-primary" href="#valj-miljo">Starta kalkylen</a><a class="button button-secondary" href="#instruktion">Så fungerar den</a></div>
+          <div class="budget-hero-chips"><span class="budget-hero-chip">Fem aktiva områden</span><span class="budget-hero-chip">Budget exkl. moms</span><span class="budget-hero-chip">Lokal PDF-utskrift</span></div>
+        </div>
+      </section>
+      <BudgetCalculator />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
