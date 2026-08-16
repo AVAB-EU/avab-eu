@@ -222,436 +222,297 @@ const embeddedImages = {
   "school3": "data:image/webp;base64,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",
 } as const;
 
-const projectGrids = [
+const projectLandscape = [
   {
-    "cols": 3,
-    "ratio": "land",
-    "split": false,
-    "items": [
-      {
-        "key": "ritning",
-        "title": "AV-placeringar genom byggnaden",
-        "text": "Ritningsunderlaget gav en gemensam grund för klassrum, bibliotek, infoskärmar och andra AV-punkter. Det gjorde att kabelvägar och montage kunde samordnas innan ytskikten var färdiga.",
-        "alt": "AV-ritning för Minnebergsskolan i Arvika med markerade AV-placeringar"
-      },
-      {
-        "key": "exterior1",
-        "title": "En ny skola med många olika miljöer",
-        "text": "Minnebergsskolan rymmer undervisning, gemensamma ytor och specialrum i samma byggnad. AV-lösningen behövde därför vara både enhetlig och flexibel.",
-        "alt": "Minnebergsskolans träfasad och innergård i Arvika"
-      },
-      {
-        "key": "leverans",
-        "title": "Logistik är också en del av installationen",
-        "text": "När stora leveranser ska in i en pågående byggarbetsplats måste tider, lyft, skydd och åtkomst fungera. Här fick projektorer och övrigt material ta en mindre självklar väg in när hissen inte var i drift.",
-        "alt": "Leverans av AV-utrustning på byggarbetsplatsen vid Minnebergsskolan"
-      }
-    ]
+    "key": "ritning",
+    "title": "AV-placeringar genom byggnaden",
+    "text": "Ritningsunderlaget gav en gemensam grund för klassrum, bibliotek, infoskärmar och andra AV-punkter. Det gjorde att kabelvägar och montage kunde samordnas innan ytskikten var färdiga.",
+    "alt": "AV-ritning för Minnebergsskolan i Arvika med markerade AV-placeringar",
+    "fit": "contain"
+  },
+  {
+    "key": "exterior1",
+    "title": "En ny skola med många olika miljöer",
+    "text": "Minnebergsskolan rymmer undervisning, gemensamma ytor och specialrum i samma byggnad. AV-lösningen behövde därför vara både enhetlig och flexibel.",
+    "alt": "Minnebergsskolans träfasad och innergård i Arvika"
+  },
+  {
+    "key": "leverans",
+    "title": "Logistik är också en del av installationen",
+    "text": "När stora leveranser ska in i en pågående byggarbetsplats måste tider, lyft, skydd och åtkomst fungera. Här fick projektorer och övrigt material ta en mindre självklar väg in när hissen inte var i drift.",
+    "alt": "Leverans av AV-utrustning på byggarbetsplatsen vid Minnebergsskolan"
   }
 ];
-const aulaGrids = [
+const aulaLandscape = [
   {
-    "cols": 2,
-    "ratio": "land",
-    "split": false,
-    "items": [
-      {
-        "key": "aula_3d",
-        "title": "3D-underlag för gradäng och siktlinjer",
-        "text": "Modellen gav tidigt en bild av nivåer, publikytor och hur projektion, ljus och teknik skulle förhålla sig till gradängen.",
-        "alt": "3D-modell av gradängen i Minnebergsskolans aula"
-      },
-      {
-        "key": "aula_form",
-        "title": "Rumsvolymen börjar ta form",
-        "text": "När gradäng, undertak och väggar kom på plats kunde montagehöjder och siktlinjer verifieras mot den verkliga lokalen.",
-        "alt": "Minnebergsskolans aula under byggnation"
-      }
-    ]
+    "key": "aula_3d",
+    "title": "3D-underlag för gradäng och siktlinjer",
+    "text": "Modellen gav tidigt en bild av nivåer, publikytor och hur projektion, ljus och teknik skulle förhålla sig till gradängen.",
+    "alt": "3D-modell av gradängen i Minnebergsskolans aula"
   },
   {
-    "cols": 1,
-    "ratio": "pano",
-    "split": false,
-    "items": [
-      {
-        "key": "duk_bars",
-        "title": "Den stora duken kommer in",
-        "text": "Projektorduken är en fysisk del av arkitekturen och kräver planerad transport, infästning och montage. Storleken blir tydlig först när den ligger på marken.",
-        "alt": "Stor projektorduk bärs in till Minnebergsskolans aula"
-      }
-    ]
+    "key": "aula_form",
+    "title": "Rumsvolymen börjar ta form",
+    "text": "När gradäng, undertak och väggar kom på plats kunde montagehöjder och siktlinjer verifieras mot den verkliga lokalen.",
+    "alt": "Minnebergsskolans aula under byggnation"
   },
   {
-    "cols": 2,
-    "ratio": "land",
-    "split": false,
-    "items": [
-      {
-        "key": "duk_monterad",
-        "title": "Duken på plats i den färdiga volymen",
-        "text": "Dukens höjd och placering måste fungera både från gradängen och från den öppna matsalsdelen utan att kollidera med övrig teknik.",
-        "alt": "Projektorduk monterad i Minnebergsskolans aula"
-      },
-      {
-        "key": "front_proj",
-        "title": "Frontljus och projektor på samma tekniska nivå",
-        "text": "Frontljusrå och projektor samordnades i takmiljön så att scenljus och bild kunde fungera tillsammans utan att störa siktlinjerna.",
-        "alt": "Frontljusrå med projektor i Minnebergsskolans aula"
-      }
-    ]
+    "key": "duk_bars",
+    "title": "Den stora duken kommer in",
+    "text": "Projektorduken är en fysisk del av arkitekturen och kräver planerad transport, infästning och montage. Storleken blir tydlig först när den ligger på marken.",
+    "alt": "Stor projektorduk bärs in till Minnebergsskolans aula",
+    "wide": true
   },
   {
-    "cols": 1,
-    "ratio": "pano",
-    "split": false,
-    "items": [
-      {
-        "key": "proj_test",
-        "title": "Bildsystemet testas i verklig miljö",
-        "text": "Bildstorlek, position och läsbarhet verifierades på den monterade duken innan den slutliga överlämningen.",
-        "alt": "Test av projektor på stor duk i Minnebergsskolans aula"
-      }
-    ]
+    "key": "duk_monterad",
+    "title": "Duken på plats i den färdiga volymen",
+    "text": "Dukens höjd och placering måste fungera både från gradängen och från den öppna matsalsdelen utan att kollidera med övrig teknik.",
+    "alt": "Projektorduk monterad i Minnebergsskolans aula"
   },
   {
-    "cols": 3,
-    "ratio": "land",
-    "split": false,
-    "items": [
-      {
-        "key": "skiljevagg",
-        "title": "Rummet kan delas när användningen kräver det",
-        "text": "En flamskyddad moltonvägg gör att aula och matsal kan ändra karaktär och delas av utan att den tekniska funktionen försvinner.",
-        "alt": "Flamskyddad molton som skiljevägg mellan aula och matsal"
-      },
-      {
-        "key": "crestron",
-        "title": "Komplex teknik samlad i enkel styrning",
-        "text": "Crestron-panelen samlar projektor, duk, ljus och mikrofoner i ett gränssnitt som personalen kan använda utan att behöva förstå systemets signalvägar.",
-        "alt": "Crestron touchpanel för styrning av Minnebergsskolans aula"
-      },
-      {
-        "key": "dante_panel",
-        "title": "Dante och lokala anslutningar för liveteknik",
-        "text": "Anslutningspunkter i läktaren gör att extern ljud- och bildteknik kan kopplas in utan provisoriska kabeldragningar genom lokalen.",
-        "alt": "Dante- och AV-anslutningspanel i läktaren på Minnebergsskolan"
-      }
-    ]
+    "key": "front_proj",
+    "title": "Frontljus och projektor på samma tekniska nivå",
+    "text": "Frontljusrå och projektor samordnades i takmiljön så att scenljus och bild kunde fungera tillsammans utan att störa siktlinjerna.",
+    "alt": "Frontljusrå med projektor i Minnebergsskolans aula"
   },
   {
-    "cols": 1,
-    "ratio": "pano",
-    "split": false,
-    "items": [
-      {
-        "key": "yamaha_tf1",
-        "title": "Yamaha TF1 när arrangemanget kräver mer",
-        "text": "Vardagssystemet är enkelt, men en Yamaha TF1 med Dante kan anslutas när skolan behöver fler kanaler och mer avancerad liveteknik.",
-        "alt": "Yamaha TF1 digitalmixer med Dante för aula och musikrum"
-      }
-    ]
+    "key": "proj_test",
+    "title": "Bildsystemet testas i verklig miljö",
+    "text": "Bildstorlek, position och läsbarhet verifierades på den monterade duken innan den slutliga överlämningen.",
+    "alt": "Test av projektor på stor duk i Minnebergsskolans aula",
+    "wide": true
+  },
+  {
+    "key": "skiljevagg",
+    "title": "Rummet kan delas när användningen kräver det",
+    "text": "En flamskyddad moltonvägg gör att aula och matsal kan ändra karaktär och delas av utan att den tekniska funktionen försvinner.",
+    "alt": "Flamskyddad molton som skiljevägg mellan aula och matsal"
+  },
+  {
+    "key": "crestron",
+    "title": "Komplex teknik samlad i enkel styrning",
+    "text": "Crestron-panelen samlar projektor, duk, ljus och mikrofoner i ett gränssnitt som personalen kan använda utan att behöva förstå systemets signalvägar.",
+    "alt": "Crestron touchpanel för styrning av Minnebergsskolans aula",
+    "fit": "contain"
+  },
+  {
+    "key": "dante_panel",
+    "title": "Dante och lokala anslutningar för liveteknik",
+    "text": "Anslutningspunkter i läktaren gör att extern ljud- och bildteknik kan kopplas in utan provisoriska kabeldragningar genom lokalen.",
+    "alt": "Dante- och AV-anslutningspanel i läktaren på Minnebergsskolan"
+  },
+  {
+    "key": "yamaha_tf1",
+    "title": "Yamaha TF1 när arrangemanget kräver mer",
+    "text": "Vardagssystemet är enkelt, men en Yamaha TF1 med Dante kan anslutas när skolan behöver fler kanaler och mer avancerad liveteknik.",
+    "alt": "Yamaha TF1 digitalmixer med Dante för aula och musikrum",
+    "wide": true
   }
 ];
-const aulaPortraitGrids = [
+const aulaPortrait = [
   {
-    "cols": 1,
-    "ratio": "portrait",
-    "split": true,
-    "items": [
-      {
-        "key": "aula_skelett",
-        "title": "Aulan innan installationerna syns",
-        "text": "I det tidiga byggskedet finns möjligheten att planera kabelvägar, infästningar och teknikytor rätt från början.",
-        "alt": "Minnebergsskolans aula i tidigt byggskede"
-      }
-    ]
+    "key": "aula_skelett",
+    "title": "Aulan innan installationerna syns",
+    "text": "I det tidiga byggskedet finns möjligheten att planera kabelvägar, infästningar och teknikytor rätt från början.",
+    "alt": "Minnebergsskolans aula i tidigt byggskede"
   },
   {
-    "cols": 3,
-    "ratio": "tall",
-    "split": false,
-    "items": [
-      {
-        "key": "duk_monteras",
-        "title": "Projektorduken monteras på höjd",
-        "text": "Montaget krävde åtkomst i hela den höga rumsvolymen och noggrann inmätning mot scen, gradäng och projektor.",
-        "alt": "Montage av projektorduk i Minnebergsskolans aula"
-      },
-      {
-        "key": "front_monteras",
-        "title": "Frontljusrån byggs in",
-        "text": "Ljusrån monterades som permanent infrastruktur, med kablage och infästning som skulle hålla för återkommande användning.",
-        "alt": "Montage av frontljusrå i Minnebergsskolans aula"
-      },
-      {
-        "key": "front_provas",
-        "title": "Rån provas innan den tas i drift",
-        "text": "Infästning och funktion kontrollerades innan installationen betraktades som färdig. Scenutrustning ska vara både användbar och säker.",
-        "alt": "Provning av frontljusrå i Minnebergsskolans aula"
-      }
-    ]
+    "key": "duk_monteras",
+    "title": "Projektorduken monteras på höjd",
+    "text": "Montaget krävde åtkomst i hela den höga rumsvolymen och noggrann inmätning mot scen, gradäng och projektor.",
+    "alt": "Montage av projektorduk i Minnebergsskolans aula"
   },
   {
-    "cols": 2,
-    "ratio": "slim",
-    "split": false,
-    "items": [
-      {
-        "key": "rack_monteras",
-        "title": "Rackskåpet byggs samtidigt som lokalen",
-        "text": "Sennheiser, Bose, Crestron, nätverk och anslutningar samlas i en servicebar central i stället för att spridas ut i rummet.",
-        "alt": "Rackskåp under montage i Minnebergsskolans aula"
-      },
-      {
-        "key": "rack_panel",
-        "title": "Anslutningarna samlas vid AV-racket",
-        "text": "Panelen ger tydliga, märkta anslutningar för ljud, bild och nätverk och gör senare service och komplettering enklare.",
-        "alt": "Anslutningspanel vid AV-rack i Minnebergsskolans aula"
-      }
-    ]
-  }
-];
-const learningGrids = [
-  {
-    "cols": 3,
-    "ratio": "land",
-    "split": false,
-    "items": [
-      {
-        "key": "klass_install",
-        "title": "Projektorn kommer på plats före whiteboardytan",
-        "text": "Montagepunkt och bildgeometri behövde vara bestämda innan den slutliga skrivytan färdigställdes. Det är ett typiskt exempel på varför AV måste in tidigt.",
-        "alt": "Projektor installeras före whiteboardyta i klassrum på Minnebergsskolan"
-      },
-      {
-        "key": "klass_touch",
-        "title": "Touch testas och kalibreras",
-        "text": "Driftsättningen omfattar inte bara bild. Den interaktiva funktionen ska svara rätt över hela arbetsytan och fungera likadant i alla klassrum.",
-        "alt": "Test av interaktiv touchfunktion i klassrum"
-      },
-      {
-        "key": "klass_bild",
-        "title": "Bildytan blir en del av undervisningen",
-        "text": "Den kortskjutande lösningen ger stor bild nära väggen, minskar skuggor och gör whiteboardytan användbar både digitalt och analogt.",
-        "alt": "Projektorbild i klassrum på Minnebergsskolan"
-      }
-    ]
+    "key": "front_monteras",
+    "title": "Frontljusrån byggs in",
+    "text": "Ljusrån monterades som permanent infrastruktur, med kablage och infästning som skulle hålla för återkommande användning.",
+    "alt": "Montage av frontljusrå i Minnebergsskolans aula"
   },
   {
-    "cols": 2,
-    "ratio": "land",
-    "split": false,
-    "items": [
-      {
-        "key": "hemkunskap",
-        "title": "Specialfäste när rummet kräver det",
-        "text": "Hemkunskapens geometri passade inte standardmontaget. I stället anpassades infästningen efter lokalen så att bild och arbetsyta fortfarande fungerade rätt.",
-        "alt": "Specialbyggt projektorfäste i hemkunskap"
-      },
-      {
-        "key": "lararrum",
-        "title": "Lärarrum med ovanligt hög fönsterlinje",
-        "text": "En extra lång duk gjorde det möjligt att få bildytan på rätt nivå trots att montagepunkten låg högt över ett stort fönster.",
-        "alt": "Lärarrum med extra lång projektorduk"
-      }
-    ]
+    "key": "front_provas",
+    "title": "Rån provas innan den tas i drift",
+    "text": "Infästning och funktion kontrollerades innan installationen betraktades som färdig. Scenutrustning ska vara både användbar och säker.",
+    "alt": "Provning av frontljusrå i Minnebergsskolans aula"
   },
   {
-    "cols": 3,
-    "ratio": "land",
-    "split": false,
-    "items": [
-      {
-        "key": "horsal",
-        "title": "Hörsal med stor skärm och soundbar",
-        "text": "I en mindre hörsal var tydlig bild och talåtergivning viktigare än ett större PA-system. Lösningen anpassades efter rummets funktion.",
-        "alt": "Hörsal med skärm och soundbar"
-      },
-      {
-        "key": "samlingsrum",
-        "title": "75-tumsskärm i samlingsrum",
-        "text": "Skärm och soundbar ger en tydlig och enkel lösning för möten, genomgångar och gemensam information utan mer teknik än rummet behöver.",
-        "alt": "Samlingsrum med 75 tums skärm och soundbar"
-      },
-      {
-        "key": "rorelserum",
-        "title": "Rörelserummet fick mer ljudkapacitet",
-        "text": "Större volym, aktivitet och rörelse ställer andra krav än ett klassrum. Därför valdes större högtalare och mer kapacitet.",
-        "alt": "Rörelserum med större högtalare på Minnebergsskolan"
-      },
-      {
-        "key": "storre_ljud",
-        "title": "Större rum får större ljudresurser",
-        "text": "När rummets volym och användning förändras behöver även högtalarlösningen förändras. Samma användarlogik behöver inte betyda samma produktpaket.",
-        "alt": "Större undervisningsrum med större ljudsystem"
-      },
-      {
-        "key": "traslojd",
-        "title": "Bild och ljud även i träslöjden",
-        "text": "Praktiska ämnen behöver tydliga gemensamma genomgångar. Här valdes 75-tumsskärm och soundbar i stället för projektor.",
-        "alt": "Träslöjdsal med 75 tums skärm och soundbar"
-      },
-      {
-        "key": "musikrum",
-        "title": "Musikrum med flytande golv",
-        "text": "Musikrummet visar hur byggnadens akustiska och tekniska konstruktion påverkar AV-installationen. Kabelvägar och anslutningar måste samordnas utan att störa den flytande konstruktionen.",
-        "alt": "Musikrum med flytande golvkonstruktion på Minnebergsskolan"
-      }
-    ]
-  }
-];
-const learningPortraitGrids = [
-  {
-    "cols": 2,
-    "ratio": "portrait",
-    "split": false,
-    "items": [
-      {
-        "key": "konferens",
-        "title": "Bordsbrunn för konferens och anslutning",
-        "text": "Anslutningar i bordet gör att användaren kommer åt ström och AV på rätt plats utan lösa kablar över golv och bord.",
-        "alt": "Bordsbrunn i konferensrum på Minnebergsskolan"
-      },
-      {
-        "key": "dansrum",
-        "title": "Dansrum med hög takhöjd",
-        "text": "Rummet har helt andra proportioner och rörelsemönster än klassrummen. AV-tekniken behöver därför placeras så att den inte hamnar i vägen.",
-        "alt": "Dansrum med hög takhöjd på Minnebergsskolan"
-      }
-    ]
-  }
-];
-const hearingGrids = [
-  {
-    "cols": 2,
-    "ratio": "land",
-    "split": false,
-    "items": [
-      {
-        "key": "slinga_aula",
-        "title": "Hörslingan planeras innan golvet stängs",
-        "text": "Kopparfolien följer en projekterad geometri genom aulan. När golvkonstruktionen väl är färdig är systemet osynligt men fortfarande en del av rummets tillgänglighet.",
-        "alt": "Förläggning av hörslinga i Minnebergsskolans aula"
-      },
-      {
-        "key": "slinga_vagg",
-        "title": "Märkta anslutningar före flytspackling",
-        "text": "Folierna förs till definierade anslutningspunkter och märks innan de byggs in. Det gör senare inkoppling, mätning och service möjlig.",
-        "alt": "Märkta kopparfolier till vägganslutning före flytspackling"
-      }
-    ]
+    "key": "rack_monteras",
+    "title": "Rackskåpet byggs samtidigt som lokalen",
+    "text": "Sennheiser, Bose, Crestron, nätverk och anslutningar samlas i en servicebar central i stället för att spridas ut i rummet.",
+    "alt": "Rackskåp under montage i Minnebergsskolans aula",
+    "fit": "contain"
   },
   {
-    "cols": 1,
-    "ratio": "pano",
-    "split": false,
-    "items": [
-      {
-        "key": "slinga_nivaer_l",
-        "title": "Flera nivåer i aula och matsal",
-        "text": "Gradänger och nivåskillnader gör förläggningen mer komplex än en enkel rektangulär slinga. Geometrin måste följa både rummet och de elektromagnetiska kraven.",
-        "alt": "Hörslingeförläggning på flera nivåer i aula och matsal"
-      }
-    ]
+    "key": "rack_panel",
+    "title": "Anslutningarna samlas vid AV-racket",
+    "text": "Panelen ger tydliga, märkta anslutningar för ljud, bild och nätverk och gör senare service och komplettering enklare.",
+    "alt": "Anslutningspanel vid AV-rack i Minnebergsskolans aula",
+    "fit": "contain"
   }
 ];
-const hearingPortraitGrids = [
+const learningLandscape = [
   {
-    "cols": 2,
-    "ratio": "portrait",
-    "split": false,
-    "items": [
-      {
-        "key": "slinga_ovre",
-        "title": "Övre nivå i matsalen",
-        "text": "Förläggningen fortsätter genom de olika nivåerna. Varje del måste följa projekteringen för att skapa rätt fält i den färdiga lokalen.",
-        "alt": "Hörslinga förlagd på övre plan i Minnebergsskolans matsal"
-      },
-      {
-        "key": "slinga_nedre",
-        "title": "Nedre nivå i matsalen",
-        "text": "Samma system byggs in i flera ytor och nivåer innan golven färdigställs. Här är samordningen med byggproduktionen avgörande.",
-        "alt": "Hörslinga förlagd på nedre plan i Minnebergsskolans matsal"
-      }
-    ]
+    "key": "klass_install",
+    "title": "Projektorn kommer på plats före whiteboardytan",
+    "text": "Montagepunkt och bildgeometri behövde vara bestämda innan den slutliga skrivytan färdigställdes. Det är ett typiskt exempel på varför AV måste in tidigt.",
+    "alt": "Projektor installeras före whiteboardyta i klassrum på Minnebergsskolan"
   },
   {
-    "cols": 1,
-    "ratio": "tall",
-    "split": true,
-    "items": [
-      {
-        "key": "slinga_golv",
-        "title": "Från dold slinga till servicebar anslutning",
-        "text": "Den dolda installationen måste avslutas där förstärkare, mätning och felsökning kan nå systemet även efter att väggar och golv är färdiga.",
-        "alt": "Hörslingans anslutning ur golv vid vägg"
-      }
-    ]
+    "key": "klass_touch",
+    "title": "Touch testas och kalibreras",
+    "text": "Driftsättningen omfattar inte bara bild. Den interaktiva funktionen ska svara rätt över hela arbetsytan och fungera likadant i alla klassrum.",
+    "alt": "Test av interaktiv touchfunktion i klassrum"
   },
   {
-    "cols": 1,
-    "ratio": "portrait",
-    "split": true,
-    "items": [
-      {
-        "key": "slinga_bib",
-        "title": "I biblioteket syns inte tekniken längre",
-        "text": "När biblioteket är färdigt ligger hörslingan helt dold under golvet. Tillgängligheten finns där utan att ta visuell plats i miljön.",
-        "alt": "Bibliotek på Minnebergsskolan med dold hörslinga"
-      }
-    ]
-  }
-];
-const infoPortraitGrids = [
+    "key": "klass_bild",
+    "title": "Bildytan blir en del av undervisningen",
+    "text": "Den kortskjutande lösningen ger stor bild nära väggen, minskar skuggor och gör whiteboardytan användbar både digitalt och analogt.",
+    "alt": "Projektorbild i klassrum på Minnebergsskolan"
+  },
   {
-    "cols": 3,
-    "ratio": "portrait",
-    "split": false,
-    "items": [
-      {
-        "key": "info_bib",
-        "title": "Stående infoskärmar i biblioteket",
-        "text": "Det stående formatet utnyttjar smala väggytor och fungerar bra i skolans vertikala flöden mellan våningsdelar.",
-        "alt": "Stående infoskärmar i biblioteket på Minnebergsskolan"
-      },
-      {
-        "key": "info_matsal",
-        "title": "Information i matsalens flöde",
-        "text": "I matsalen valdes placering och format efter hur elever rör sig genom rummet och var informationen faktiskt blir sedd.",
-        "alt": "Informationsskärm i matsalen på Minnebergsskolan"
-      },
-      {
-        "key": "exterior3",
-        "title": "Byggnaden möter den färdiga verksamheten",
-        "text": "Skolans arkitektur och teknik projekterades parallellt. Det gav möjlighet att bygga in funktionerna i stället för att lägga dem ovanpå i efterhand.",
-        "alt": "Minnebergsskolans träbyggnader i Arvika"
-      }
-    ]
-  }
-];
-const infoGrids = [
+    "key": "hemkunskap",
+    "title": "Specialfäste när rummet kräver det",
+    "text": "Hemkunskapens geometri passade inte standardmontaget. I stället anpassades infästningen efter lokalen så att bild och arbetsyta fortfarande fungerade rätt.",
+    "alt": "Specialbyggt projektorfäste i hemkunskap"
+  },
   {
-    "cols": 2,
-    "ratio": "land",
-    "split": false,
-    "items": [
-      {
-        "key": "exterior2",
-        "title": "Färdig skola – tekniken är en del av huset",
-        "text": "När projektet är klart ska AV-systemen kännas integrerade i miljön. De ska hjälpa verksamheten utan att byggnaden upplevs som ett teknikrum.",
-        "alt": "Minnebergsskolans innergård och träfasader"
-      },
-      {
-        "key": "school3",
-        "title": "Helheten är den viktigaste referensen",
-        "text": "Det här var inte ett enskilt klassrum eller en aula, utan en samordnad AV-entreprenad genom en hel ny högstadieskola.",
-        "alt": "Färdig Minnebergsskola i Arvika"
-      }
-    ]
+    "key": "lararrum",
+    "title": "Lärarrum med ovanligt hög fönsterlinje",
+    "text": "En extra lång duk gjorde det möjligt att få bildytan på rätt nivå trots att montagepunkten låg högt över ett stort fönster.",
+    "alt": "Lärarrum med extra lång projektorduk"
+  },
+  {
+    "key": "horsal",
+    "title": "Hörsal med stor skärm och soundbar",
+    "text": "I en mindre hörsal var tydlig bild och talåtergivning viktigare än ett större PA-system. Lösningen anpassades efter rummets funktion.",
+    "alt": "Hörsal med skärm och soundbar"
+  },
+  {
+    "key": "samlingsrum",
+    "title": "75-tumsskärm i samlingsrum",
+    "text": "Skärm och soundbar ger en tydlig och enkel lösning för möten, genomgångar och gemensam information utan mer teknik än rummet behöver.",
+    "alt": "Samlingsrum med 75 tums skärm och soundbar"
+  },
+  {
+    "key": "rorelserum",
+    "title": "Rörelserummet fick mer ljudkapacitet",
+    "text": "Större volym, aktivitet och rörelse ställer andra krav än ett klassrum. Därför valdes större högtalare och mer kapacitet.",
+    "alt": "Rörelserum med större högtalare på Minnebergsskolan"
+  },
+  {
+    "key": "storre_ljud",
+    "title": "Större rum får större ljudresurser",
+    "text": "När rummets volym och användning förändras behöver även högtalarlösningen förändras. Samma användarlogik behöver inte betyda samma produktpaket.",
+    "alt": "Större undervisningsrum med större ljudsystem"
+  },
+  {
+    "key": "traslojd",
+    "title": "Bild och ljud även i träslöjden",
+    "text": "Praktiska ämnen behöver tydliga gemensamma genomgångar. Här valdes 75-tumsskärm och soundbar i stället för projektor.",
+    "alt": "Träslöjdsal med 75 tums skärm och soundbar"
+  },
+  {
+    "key": "musikrum",
+    "title": "Musikrum med flytande golv",
+    "text": "Musikrummet visar hur byggnadens akustiska och tekniska konstruktion påverkar AV-installationen. Kabelvägar och anslutningar måste samordnas utan att störa den flytande konstruktionen.",
+    "alt": "Musikrum med flytande golvkonstruktion på Minnebergsskolan"
   }
 ];
-
+const learningPortrait = [
+  {
+    "key": "konferens",
+    "title": "Bordsbrunn för konferens och anslutning",
+    "text": "Anslutningar i bordet gör att användaren kommer åt ström och AV på rätt plats utan lösa kablar över golv och bord.",
+    "alt": "Bordsbrunn i konferensrum på Minnebergsskolan",
+    "fit": "contain"
+  },
+  {
+    "key": "dansrum",
+    "title": "Dansrum med hög takhöjd",
+    "text": "Rummet har helt andra proportioner och rörelsemönster än klassrummen. AV-tekniken behöver därför placeras så att den inte hamnar i vägen.",
+    "alt": "Dansrum med hög takhöjd på Minnebergsskolan"
+  }
+];
+const hearingLandscape = [
+  {
+    "key": "slinga_aula",
+    "title": "Hörslingan planeras innan golvet stängs",
+    "text": "Kopparfolien följer en projekterad geometri genom aulan. När golvkonstruktionen väl är färdig är systemet osynligt men fortfarande en del av rummets tillgänglighet.",
+    "alt": "Förläggning av hörslinga i Minnebergsskolans aula"
+  },
+  {
+    "key": "slinga_nivaer_l",
+    "title": "Flera nivåer i aula och matsal",
+    "text": "Gradänger och nivåskillnader gör förläggningen mer komplex än en enkel rektangulär slinga. Geometrin måste följa både rummet och de elektromagnetiska kraven.",
+    "alt": "Hörslingeförläggning på flera nivåer i aula och matsal",
+    "wide": true
+  },
+  {
+    "key": "slinga_vagg",
+    "title": "Märkta anslutningar före flytspackling",
+    "text": "Folierna förs till definierade anslutningspunkter och märks innan de byggs in. Det gör senare inkoppling, mätning och service möjlig.",
+    "alt": "Märkta kopparfolier till vägganslutning före flytspackling"
+  }
+];
+const hearingPortrait = [
+  {
+    "key": "slinga_ovre",
+    "title": "Övre nivå i matsalen",
+    "text": "Förläggningen fortsätter genom de olika nivåerna. Varje del måste följa projekteringen för att skapa rätt fält i den färdiga lokalen.",
+    "alt": "Hörslinga förlagd på övre plan i Minnebergsskolans matsal"
+  },
+  {
+    "key": "slinga_nedre",
+    "title": "Nedre nivå i matsalen",
+    "text": "Samma system byggs in i flera ytor och nivåer innan golven färdigställs. Här är samordningen med byggproduktionen avgörande.",
+    "alt": "Hörslinga förlagd på nedre plan i Minnebergsskolans matsal"
+  },
+  {
+    "key": "slinga_golv",
+    "title": "Från dold slinga till servicebar anslutning",
+    "text": "Den dolda installationen måste avslutas där förstärkare, mätning och felsökning kan nå systemet även efter att väggar och golv är färdiga.",
+    "alt": "Hörslingans anslutning ur golv vid vägg"
+  },
+  {
+    "key": "slinga_bib",
+    "title": "I biblioteket syns inte tekniken längre",
+    "text": "När biblioteket är färdigt ligger hörslingan helt dold under golvet. Tillgängligheten finns där utan att ta visuell plats i miljön.",
+    "alt": "Bibliotek på Minnebergsskolan med dold hörslinga"
+  }
+];
+const infoLandscape = [
+  {
+    "key": "exterior2",
+    "title": "Färdig skola – tekniken är en del av huset",
+    "text": "När projektet är klart ska AV-systemen kännas integrerade i miljön. De ska hjälpa verksamheten utan att byggnaden upplevs som ett teknikrum.",
+    "alt": "Minnebergsskolans innergård och träfasader"
+  },
+  {
+    "key": "school3",
+    "title": "Helheten är den viktigaste referensen",
+    "text": "Det här var inte ett enskilt klassrum eller en aula, utan en samordnad AV-entreprenad genom en hel ny högstadieskola.",
+    "alt": "Färdig Minnebergsskola i Arvika"
+  }
+];
+const infoPortrait = [
+  {
+    "key": "info_bib",
+    "title": "Stående infoskärmar i biblioteket",
+    "text": "Det stående formatet utnyttjar smala väggytor och fungerar bra i skolans vertikala flöden mellan våningsdelar.",
+    "alt": "Stående infoskärmar i biblioteket på Minnebergsskolan"
+  },
+  {
+    "key": "info_matsal",
+    "title": "Information i matsalens flöde",
+    "text": "I matsalen valdes placering och format efter hur elever rör sig genom rummet och var informationen faktiskt blir sedd.",
+    "alt": "Informationsskärm i matsalen på Minnebergsskolan"
+  },
+  {
+    "key": "exterior3",
+    "title": "Byggnaden möter den färdiga verksamheten",
+    "text": "Skolans arkitektur och teknik projekterades parallellt. Det gav möjlighet att bygga in funktionerna i stället för att lägga dem ovanpå i efterhand.",
+    "alt": "Minnebergsskolans träbyggnader i Arvika"
+  }
+];
 ---
 
 <!doctype html>
@@ -779,16 +640,14 @@ const infoGrids = [
                   </p>
                 </div>
 
-                {projectGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                ))}
+                <div class="case-photo-grid case-photo-grid--landscape">
+                  {projectLandscape.map((photo) => (
+                    <figure class:list={["case-photo", "case-photo--landscape", photo.wide && "case-photo--wide", photo.fit === "contain" && "case-photo--contain"]}>
+                      <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
+                      <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
+                    </figure>
+                  ))}
+                </div>
               </section>
 
               <section class="case-section" id="aula-matsal" data-case-section>
@@ -832,16 +691,14 @@ const infoGrids = [
                   </p>
                 </div>
 
-                {aulaGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                ))}
+                <div class="case-photo-grid case-photo-grid--landscape">
+                  {aulaLandscape.map((photo) => (
+                    <figure class:list={["case-photo", "case-photo--landscape", photo.wide && "case-photo--wide", photo.fit === "contain" && "case-photo--contain"]}>
+                      <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
+                      <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
+                    </figure>
+                  ))}
+                </div>
 
                 <div class="case-chapter">
                   <h3>Stående montagebilder får vara stående</h3>
@@ -852,16 +709,14 @@ const infoGrids = [
                   </p>
                 </div>
 
-                {aulaPortraitGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                ))}
+                <div class="case-photo-grid case-photo-grid--portrait">
+                  {aulaPortrait.map((photo) => (
+                    <figure class:list={["case-photo", "case-photo--portrait", photo.fit === "contain" && "case-photo--contain"]}>
+                      <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
+                      <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
+                    </figure>
+                  ))}
+                </div>
               </section>
 
               <section class="case-section" id="larandemiljoer" data-case-section>
@@ -907,16 +762,14 @@ const infoGrids = [
                   </p>
                 </div>
 
-                {learningGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                ))}
+                <div class="case-photo-grid case-photo-grid--landscape">
+                  {learningLandscape.map((photo) => (
+                    <figure class:list={["case-photo", "case-photo--landscape", photo.wide && "case-photo--wide", photo.fit === "contain" && "case-photo--contain"]}>
+                      <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
+                      <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
+                    </figure>
+                  ))}
+                </div>
 
                 <div class="case-chapter">
                   <h3>Konferens och rum med hög takhöjd behövde egna lösningar</h3>
@@ -926,16 +779,14 @@ const infoGrids = [
                   </p>
                 </div>
 
-                {learningPortraitGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                ))}
+                <div class="case-photo-grid case-photo-grid--portrait case-photo-grid--portrait-two">
+                  {learningPortrait.map((photo) => (
+                    <figure class:list={["case-photo", "case-photo--portrait", photo.fit === "contain" && "case-photo--contain"]}>
+                      <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
+                      <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
+                    </figure>
+                  ))}
+                </div>
               </section>
 
               <section class="case-section" id="horslingor" data-case-section>
@@ -973,16 +824,14 @@ const infoGrids = [
                   </figcaption>
                 </figure>
 
-                {hearingGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                ))}
+                <div class="case-photo-grid case-photo-grid--landscape">
+                  {hearingLandscape.map((photo) => (
+                    <figure class:list={["case-photo", "case-photo--landscape", photo.wide && "case-photo--wide", photo.fit === "contain" && "case-photo--contain"]}>
+                      <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
+                      <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
+                    </figure>
+                  ))}
+                </div>
 
                 <div class="case-chapter">
                   <h3>Flera nivåer, flera anslutningar – men en sammanhängande funktion</h3>
@@ -993,16 +842,14 @@ const infoGrids = [
                   </p>
                 </div>
 
-                {hearingPortraitGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                ))}
+                <div class="case-photo-grid case-photo-grid--portrait">
+                  {hearingPortrait.map((photo) => (
+                    <figure class:list={["case-photo", "case-photo--portrait", photo.fit === "contain" && "case-photo--contain"]}>
+                      <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
+                      <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
+                    </figure>
+                  ))}
+                </div>
               </section>
 
               <section class="case-section" id="information-helhet" data-case-section>
@@ -1040,16 +887,14 @@ const infoGrids = [
                   </figcaption>
                 </figure>
 
-                {infoPortraitGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                ))}
+                <div class="case-photo-grid case-photo-grid--portrait">
+                  {infoPortrait.map((photo) => (
+                    <figure class="case-photo case-photo--portrait">
+                      <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
+                      <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
+                    </figure>
+                  ))}
+                </div>
 
                 <div class="case-chapter">
                   <h3>Den färdiga skolan är den sista bilden i projekteringen</h3>
@@ -1060,16 +905,14 @@ const infoGrids = [
                   </p>
                 </div>
 
-                {infoGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                ))}
+                <div class="case-photo-grid case-photo-grid--landscape">
+                  {infoLandscape.map((photo) => (
+                    <figure class="case-photo case-photo--landscape">
+                      <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
+                      <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
+                    </figure>
+                  ))}
+                </div>
               </section>
             </div>
 
@@ -1295,15 +1138,12 @@ const infoGrids = [
       }
 
       .case-split__media {
+        min-height: 340px;
         background: var(--avab-grey);
       }
 
-      .case-split--landscape .case-split__media {
-        aspect-ratio: 1.4 / 1;
-      }
-
       .case-split--portrait .case-split__media {
-        aspect-ratio: 3 / 4;
+        min-height: 520px;
       }
 
       .case-split__media img {
@@ -1340,7 +1180,7 @@ const infoGrids = [
       .case-panorama img {
         display: block;
         width: 100%;
-        aspect-ratio: 2.17 / 1;
+        aspect-ratio: 2.12 / 1;
         object-fit: cover;
       }
 
@@ -1356,14 +1196,18 @@ const infoGrids = [
 
       .case-photo-grid + .case-photo-grid { margin-top: 14px; }
 
-      .case-photo-grid--cols-1 { grid-template-columns: minmax(0, 1fr); }
-      .case-photo-grid--cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .case-photo-grid--cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .case-photo-grid--landscape {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
 
-      /* Stående format får smalare rutnät så att korten inte blir orimligt höga */
-      .case-photo-grid--portrait.case-photo-grid--cols-2 { max-width: 714px; }
-      .case-photo-grid--tall.case-photo-grid--cols-3 { max-width: 788px; }
-      .case-photo-grid--slim.case-photo-grid--cols-2 { max-width: 514px; }
+      .case-photo-grid--portrait {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .case-photo-grid--portrait-two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 760px;
+      }
 
       .case-photo {
         display: grid;
@@ -1371,9 +1215,25 @@ const infoGrids = [
         min-width: 0;
       }
 
+      .case-photo--wide {
+        grid-column: 1 / -1;
+      }
+
       .case-photo__media {
         overflow: hidden;
         background: var(--avab-grey);
+      }
+
+      .case-photo--landscape .case-photo__media {
+        aspect-ratio: 4 / 3;
+      }
+
+      .case-photo--landscape.case-photo--wide .case-photo__media {
+        aspect-ratio: 2.05 / 1;
+      }
+
+      .case-photo--portrait .case-photo__media {
+        aspect-ratio: 3 / 4;
       }
 
       .case-photo__media img {
@@ -1383,41 +1243,30 @@ const infoGrids = [
         object-fit: cover;
       }
 
-      /* Bildytan följer bildernas verkliga proportioner i respektive rutnät */
-      .case-photo-grid--pano .case-photo__media { aspect-ratio: 2.17 / 1; }
-      .case-photo-grid--land .case-photo__media { aspect-ratio: 1.4 / 1; }
-      .case-photo-grid--portrait .case-photo__media { aspect-ratio: 3 / 4; }
-      .case-photo-grid--tall .case-photo__media { aspect-ratio: 1 / 2; }
-      .case-photo-grid--slim .case-photo__media { aspect-ratio: 0.46 / 1; }
-
-      /* Ensam stående bild ligger bredvid sin text i stället för ensam i raden */
-      .case-photo-grid--split .case-photo {
-        grid-template-rows: auto;
-        align-items: stretch;
+      .case-photo--contain .case-photo__media {
+        padding: 10px;
+        background: var(--avab-grey);
       }
 
-      .case-photo-grid--split.case-photo-grid--portrait .case-photo {
-        grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
-      }
-
-      .case-photo-grid--split.case-photo-grid--tall .case-photo {
-        grid-template-columns: minmax(0, 200px) minmax(0, 1fr);
-      }
-
-      .case-photo-grid--split.case-photo-grid--tall .case-photo__media {
-        aspect-ratio: 0.46 / 1;
-      }
-
-      .case-photo-grid--split .case-photo figcaption {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 22px 24px;
+      .case-photo--contain .case-photo__media img {
+        object-fit: contain;
       }
 
       .case-photo figcaption {
         padding: 15px 16px 17px;
         background: var(--avab-white);
+      }
+
+      .case-photo-grid--landscape .case-photo:not(.case-photo--wide) figcaption {
+        min-height: 132px;
+      }
+
+      .case-photo-grid--portrait .case-photo figcaption {
+        min-height: 154px;
+      }
+
+      .case-photo-grid--portrait-two .case-photo figcaption {
+        min-height: 132px;
       }
 
       .case-photo h3 {
@@ -1527,16 +1376,8 @@ const infoGrids = [
       }
 
       @media (max-width: 820px) {
-        .case-photo-grid--land.case-photo-grid--cols-3 {
+        .case-photo-grid--portrait {
           grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .case-photo-grid--portrait.case-photo-grid--cols-3 {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .case-photo-grid--portrait.case-photo-grid--cols-2 {
-          max-width: none;
         }
 
         .case-split,
@@ -1549,8 +1390,9 @@ const infoGrids = [
           order: initial;
         }
 
-        .case-split--landscape .case-split__media {
-          aspect-ratio: 1.6 / 1;
+        .case-split__media {
+          min-height: 0;
+          aspect-ratio: 4 / 3;
         }
 
         .case-split--portrait {
@@ -1558,7 +1400,8 @@ const infoGrids = [
         }
 
         .case-split--portrait .case-split__media {
-          aspect-ratio: 3 / 4;
+          min-height: 460px;
+          aspect-ratio: auto;
         }
       }
 
@@ -1566,34 +1409,23 @@ const infoGrids = [
         .minneberg-case { padding: 52px 0 60px; }
         .case-intro { margin-bottom: 36px; }
         .case-section { padding-bottom: 44px; margin-bottom: 44px; }
-        .case-photo-grid--land,
-        .case-photo-grid--pano,
-        .case-photo-grid--portrait {
-          grid-template-columns: minmax(0, 1fr);
+        .case-photo-grid--landscape,
+        .case-photo-grid--portrait,
+        .case-photo-grid--portrait-two {
+          grid-template-columns: 1fr;
           max-width: none;
         }
 
-        .case-photo-grid--tall,
-        .case-photo-grid--slim {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          max-width: none;
-        }
+        .case-photo--wide { grid-column: auto; }
 
-        .case-photo-grid--pano .case-photo__media {
+        .case-photo--landscape.case-photo--wide .case-photo__media {
           aspect-ratio: 16 / 9;
         }
 
-        .case-photo-grid--split.case-photo-grid--portrait .case-photo {
-          grid-template-columns: minmax(0, 1fr);
-          grid-template-rows: auto 1fr;
-        }
-
-        .case-photo-grid--split.case-photo-grid--tall .case-photo {
-          grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
-        }
-
-        .case-photo-grid--split .case-photo figcaption {
-          padding: 16px 17px 18px;
+        .case-photo-grid--landscape .case-photo figcaption,
+        .case-photo-grid--portrait .case-photo figcaption,
+        .case-photo-grid--portrait-two .case-photo figcaption {
+          min-height: 0;
         }
 
         .case-split--portrait {
@@ -1601,11 +1433,8 @@ const infoGrids = [
           max-width: none;
         }
 
-        .case-split--landscape .case-split__media {
-          aspect-ratio: 3 / 2;
-        }
-
         .case-split--portrait .case-split__media {
+          min-height: 0;
           aspect-ratio: 3 / 4;
         }
 
