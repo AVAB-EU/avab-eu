@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import ReferencePage from "../../../layouts/ReferencePage.astro";
+
+const reference = (await getCollection("references")).find(
+  (entry) => entry.data.slug === "/referenser/minnebergsskolan-arvika/",
+);
+
+if (!reference) {
+  throw new Error("Referensen Minnebergsskolan, Arvika saknas i content collection.");
+}
+---
+
+<ReferencePage reference={reference} />
