@@ -49,6 +49,10 @@
 
   /* Layout-system */
   --avab-nav-height: 72px;
+  --avab-section-space: clamp(80px, 7vw, 96px);
+  --avab-section-space-mobile: clamp(48px, 13vw, 56px);
+  --avab-content-gap: clamp(32px, 4vw, 40px);
+  --avab-card-gap: clamp(20px, 2vw, 24px);
 
   /* Tillgänglighet */
   --avab-focus: 3px solid var(--avab-green);
@@ -366,9 +370,14 @@ p {
 }
 .nav-links a:hover,
 .nav-links a:focus-visible,
+.nav-links .nav-link[aria-current],
 .nav-dropdown:hover > .nav-dropdown-trigger,
 .nav-dropdown:has(:focus-visible) > .nav-dropdown-trigger {
   color: var(--avab-green);
+}
+.nav-links .nav-link[aria-current]::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .nav-chevron {
   width: 8px;
@@ -814,7 +823,7 @@ p {
 }
 .mobile-menu-plain a:hover,
 .mobile-menu-plain a:focus-visible,
-.mobile-menu-plain a[aria-current="page"] {
+.mobile-menu-plain a[aria-current] {
   color: var(--avab-green);
 }
 

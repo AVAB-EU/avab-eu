@@ -8,31 +8,24 @@ interface Props {
     ReferenceData,
     "category" | "environment" | "heroTitle" | "heroSubtitle" | "summary" | "heroImage"
   >;
+  variant?: "split" | "immersive";
+  kicker?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
 }
 
-const { data } = Astro.props;
+const {
+  data,
+  variant = "split",
+  kicker = `${data.category} · ${data.environment}`,
+  primaryLabel = "Se AVAB:s omfattning",
+  primaryHref = "#omfattning",
+} = Astro.props;
 ---
 
-<header class="reference-hero reference-hero--split">
-  <div class="avab-container reference-hero__grid">
-    <div class="reference-hero__content-wrap">
-      <div class="reference-hero__content">
-        <span class="reference-kicker">{data.category} · {data.environment}</span>
-        <h1>{data.heroTitle}</h1>
-        <p class="reference-hero-subtitle">{data.heroSubtitle}</p>
-        <p class="reference-hero-lead">{data.summary}</p>
-        <div class="reference-actions">
-          <a class="button button-primary" href="#omfattning">Se AVAB:s omfattning</a>
-          <a
-            class="button button-secondary"
-            href="/kontakt/#kontaktformular"
-            data-contact-intent="project"
-          >Kontakta AVAB</a>
-        </div>
-      </div>
-    </div>
-
-    <figure class="reference-hero__media">
+<header class:list={["reference-hero", `reference-hero--${variant}`]}>
+  {variant === "immersive" && (
+    <figure class="reference-hero__media" aria-hidden={data.heroImage.alt ? undefined : "true"}>
       <img
         src={data.heroImage.src}
         alt={data.heroImage.alt}
@@ -43,5 +36,38 @@ const { data } = Astro.props;
         decoding="async"
       />
     </figure>
+  )}
+
+  <div class="avab-container reference-hero__grid">
+    <div class="reference-hero__content-wrap">
+      <div class="reference-hero__content">
+        <span class="reference-kicker">{kicker}</span>
+        <h1>{data.heroTitle}</h1>
+        <p class="reference-hero-subtitle">{data.heroSubtitle}</p>
+        <p class="reference-hero-lead">{data.summary}</p>
+        <div class="reference-actions">
+          <a class="button button-primary" href={primaryHref}>{primaryLabel}</a>
+          <a
+            class="button button-secondary"
+            href="/kontakt/#kontaktformular"
+            data-contact-intent="project"
+          >Kontakta AVAB</a>
+        </div>
+      </div>
+    </div>
+
+    {variant === "split" && (
+      <figure class="reference-hero__media">
+        <img
+          src={data.heroImage.src}
+          alt={data.heroImage.alt}
+          width={data.heroImage.width}
+          height={data.heroImage.height}
+          style={`object-position: ${data.heroImage.objectPosition ?? "center"}`}
+          fetchpriority="high"
+          decoding="async"
+        />
+      </figure>
+    )}
   </div>
 </header>

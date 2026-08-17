@@ -1,0 +1,37 @@
+---
+export interface ReferenceFaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  id: string;
+  eyebrow: string;
+  title: string;
+  lead?: string;
+  items: ReferenceFaqItem[];
+}
+
+const { id, eyebrow, title, lead, items } = Astro.props;
+---
+
+{items.length > 0 && (
+  <section class="section reference-faq" aria-labelledby={id}>
+    <div class="avab-container">
+      <div class="faq-heading">
+        <div class="eyebrow">{eyebrow}</div>
+        <h2 id={id}>{title}</h2>
+        {lead && <p>{lead}</p>}
+      </div>
+
+      <div class="compact-faq">
+        {items.map((item) => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

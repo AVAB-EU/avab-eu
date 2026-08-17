@@ -3,6 +3,7 @@ import avabLogo from "../assets/images/brand/avab-logotyp-farg.png";
 
 const currentPath = Astro.url.pathname;
 const isActive = (href: string) => currentPath === href;
+const isSectionActive = (href: string) => currentPath === href || currentPath.startsWith(href);
 ---
 
 <a class="skip-link" href="#main">Hoppa till innehåll</a>
@@ -106,8 +107,8 @@ const isActive = (href: string) => currentPath === href;
             </ul>
           </div>
         </li>
-        <li><a class="nav-link hover-underline" href="/referenser/">Referenser</a></li>
-        <li><a class="nav-link hover-underline" href="/om-oss/">Om oss</a></li>
+        <li><a class="nav-link hover-underline" href="/referenser/" aria-current={isSectionActive("/referenser/") ? "true" : undefined}>Referenser</a></li>
+        <li><a class="nav-link hover-underline" href="/om-oss/" aria-current={isActive("/om-oss/") ? "page" : undefined}>Om oss</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
@@ -209,7 +210,7 @@ const isActive = (href: string) => currentPath === href;
       </details>
     </li>
     <li class="mobile-menu-plain">
-      <a href="/referenser/" aria-current={isActive("/referenser/") ? "page" : undefined}>Referenser</a>
+      <a href="/referenser/" aria-current={isSectionActive("/referenser/") ? "true" : undefined}>Referenser</a>
     </li>
     <li class="mobile-menu-plain">
       <a href="/om-oss/" aria-current={isActive("/om-oss/") ? "page" : undefined}>Om oss</a>
