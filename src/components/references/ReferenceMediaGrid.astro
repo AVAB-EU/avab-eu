@@ -1,0 +1,68 @@
+---
+export interface ReferenceMediaItem {
+  src?: string;
+  key?: string;
+  alt: string;
+  title: string;
+  text: string;
+  kicker?: string;
+  objectPosition?: string;
+  width?: number;
+  height?: number;
+}
+
+interface Props {
+  items: ReferenceMediaItem[];
+  columns?: number;
+  ratio?: string;
+  split?: boolean;
+  imageMap?: Readonly<Record<string, string>>;
+  class?: string;
+}
+
+const {
+  items,
+  columns = Math.min(Math.max(items.length, 1), 3),
+  ratio = "land",
+  split = items.length === 1,
+  imageMap = {},
+  class: className,
+} = Astro.props;
+
+const resolvedItems = items.map((item) => {
+  const src = item.src ?? (item.key ? imageMap[item.key] : undefined);
+  if (!src) throw new Error(`ReferenceMediaGrid saknar bildkälla för "${item.title}".`);
+  return { ...item, src };
+});
+---
+
+<div
+  class:list={[
+    "reference-media-grid",
+    `reference-media-grid--cols-${Math.min(Math.max(columns, 1), 3)}`,
+    `reference-media-grid--${ratio}`,
+    split && "reference-media-grid--split",
+    className,
+  ]}
+>
+  {resolvedItems.map((item) => (
+    <figure class="reference-media-card">
+      <div class="reference-media-card__media">
+        <img
+          src={item.src}
+          alt={item.alt}
+          width={item.width}
+          height={item.height}
+          style={item.objectPosition ? `object-position: ${item.objectPosition}` : undefined}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <figcaption>
+        {item.kicker && <span class="reference-media-card__kicker">{item.kicker}</span>}
+        <h3>{item.title}</h3>
+        <p>{item.text}</p>
+      </figcaption>
+    </figure>
+  ))}
+</div>

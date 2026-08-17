@@ -1,0 +1,53 @@
+---
+interface Props {
+  image: {
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+    objectPosition?: string;
+  };
+  kicker?: string;
+  title: string;
+  text: string;
+  variant?: "landscape" | "portrait";
+  reverse?: boolean;
+  class?: string;
+}
+
+const {
+  image,
+  kicker,
+  title,
+  text,
+  variant = "landscape",
+  reverse = false,
+  class: className,
+} = Astro.props;
+---
+
+<figure
+  class:list={[
+    "reference-feature-split",
+    `reference-feature-split--${variant}`,
+    reverse && "reference-feature-split--reverse",
+    className,
+  ]}
+>
+  <div class="reference-feature-split__media">
+    <img
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+      style={image.objectPosition ? `object-position: ${image.objectPosition}` : undefined}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <figcaption>
+    {kicker && <span class="reference-media-card__kicker">{kicker}</span>}
+    <h3>{title}</h3>
+    <p>{text}</p>
+  </figcaption>
+</figure>

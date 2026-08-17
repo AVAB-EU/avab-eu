@@ -1,0 +1,111 @@
+---
+export interface ReferenceAnchorItem {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  items: ReferenceAnchorItem[];
+  title?: string;
+  ariaLabel?: string;
+}
+
+const {
+  items,
+  title = "I projektet",
+  ariaLabel = "Innehåll i projektet",
+} = Astro.props;
+---
+
+{items.length > 0 && (
+  <div class="reference-anchor-nav-wrap" data-reference-anchor-nav>
+    <div class="avab-container">
+      <nav class="reference-anchor-nav" aria-label={ariaLabel}>
+        <span class="reference-anchor-nav__title">{title}</span>
+        {items.map((item) => (
+          <a href={`#${item.id}`} data-reference-anchor-link={item.id}>{item.label}</a>
+        ))}
+      </nav>
+    </div>
+  </div>
+)}
+
+<script>
+  const initializeReferenceAnchorNav = (navWrap: HTMLElement) => {
+    if (navWrap.dataset.referenceAnchorReady === "true") return;
+    navWrap.dataset.referenceAnchorReady = "true";
+
+    const scope = navWrap.closest<HTMLElement>("[data-reference-anchor-scope]") ?? document;
+    const links = Array.from(navWrap.querySelectorAll<HTMLAnchorElement>("[data-reference-anchor-link]"));
+    const sections = links
+      .map((link) => {
+        const id = link.dataset.referenceAnchorLink;
+        return id ? scope.querySelector<HTMLElement>(`#${CSS.escape(id)}`) : null;
+      })
+      .filter((section): section is HTMLElement => Boolean(section));
+    let observer: IntersectionObserver | undefined;
+
+    const setActiveLink = (active?: string) => {
+      links.forEach((link) => {
+        const isActive = link.dataset.referenceAnchorLink === active;
+        link.classList.toggle("is-active", isActive);
+        if (isActive) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    };
+
+    const observeSections = () => {
+      observer?.disconnect();
+      const headerOffset = Number.parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue("--avab-nav-height"),
+      ) || 72;
+      const navOffset = window.matchMedia("(min-width: 681px)").matches
+        ? navWrap.getBoundingClientRect().height
+        : 0;
+      const marker = Math.ceil(headerOffset + navOffset + 24);
+
+      observer = new IntersectionObserver(() => {
+        const active = sections.find((section) => {
+          const box = section.getBoundingClientRect();
+          return box.top <= marker && box.bottom > marker;
+        });
+        if (active) setActiveLink(active.id);
+      }, {
+        rootMargin: `-${marker}px 0px -${Math.max(0, window.innerHeight - marker - 1)}px 0px`,
+        threshold: 0,
+      });
+
+      sections.forEach((section) => observer?.observe(section));
+    };
+
+    setActiveLink(sections[0]?.id);
+    observeSections();
+
+    links.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const id = link.dataset.referenceAnchorLink;
+        const target = id ? scope.querySelector<HTMLElement>(`#${CSS.escape(id)}`) : null;
+        if (!id || !target) return;
+
+        event.preventDefault();
+        const headerOffset = Number.parseFloat(
+          getComputedStyle(document.documentElement).getPropertyValue("--avab-nav-height"),
+        ) || 72;
+        const navOffset = window.matchMedia("(min-width: 681px)").matches
+          ? navWrap.getBoundingClientRect().height
+          : 0;
+        const targetTop = target.getBoundingClientRect().top + window.scrollY
+          - headerOffset - navOffset - 16;
+
+        history.pushState(null, "", `#${id}`);
+        window.scrollTo({ top: targetTop, behavior: "instant" as ScrollBehavior });
+        setActiveLink(id);
+      });
+    });
+
+    window.addEventListener("resize", observeSections, { passive: true });
+  };
+
+  document.querySelectorAll<HTMLElement>("[data-reference-anchor-nav]")
+    .forEach(initializeReferenceAnchorNav);
+</script>

@@ -9,6 +9,10 @@ import ReferenceScale from "../../../components/references/ReferenceScale.astro"
 import ReferenceQuote from "../../../components/references/ReferenceQuote.astro";
 import ReferenceLegacyCta from "../../../components/references/ReferenceLegacyCta.astro";
 import RelatedReferences from "../../../components/references/RelatedReferences.astro";
+import ReferenceAnchorNav from "../../../components/references/ReferenceAnchorNav.astro";
+import ReferenceFaq from "../../../components/references/ReferenceFaq.astro";
+import ReferenceFeatureSplit from "../../../components/references/ReferenceFeatureSplit.astro";
+import ReferenceMediaGrid from "../../../components/references/ReferenceMediaGrid.astro";
 import { absoluteUrl, SITE_URL } from "../../../config/site";
 import "../../../styles/avab.css";
 import "../../../styles/reference-page.css";
@@ -331,20 +335,15 @@ const aulaGrids = [
         "alt": "Dante- och AV-anslutningspanel i läktaren på Minnebergsskolan"
       }
     ]
-  },
-  {
-    "cols": 1,
-    "ratio": "pano",
-    "split": false,
-    "items": [
-      {
-        "key": "yamaha_tf1",
-        "title": "Yamaha TF1 när arrangemanget kräver mer",
-        "text": "Vardagssystemet är enkelt, men en Yamaha TF1 med Dante kan anslutas när skolan behöver fler kanaler och mer avancerad liveteknik.",
-        "alt": "Yamaha TF1 digitalmixer med Dante för aula och musikrum"
-      }
-    ]
   }
+];
+
+const anchorItems = [
+  { id: "uppdraget", label: "Uppdraget" },
+  { id: "aula-matsal", label: "Aula & matsal" },
+  { id: "larandemiljoer", label: "Lärmiljöer" },
+  { id: "horslingor", label: "Hörslingor" },
+  { id: "information-helhet", label: "Info & helhet" },
 ];
 const aulaPortraitGrids = [
   {
@@ -427,7 +426,24 @@ const aulaTimelineSections = [
   {
     title: "Installation, provning och användning",
     text: "När duk, projektor och frontljus var på plats testades bildsystemet. Styrning, Dante och Yamaha-mixern visar hur vardagsfunktionen kan växla till mer avancerade arrangemang.",
-    grids: [aulaGrids[3], aulaGrids[2], aulaGrids[4], aulaGrids[5]],
+    grids: [aulaGrids[3], aulaGrids[2], aulaGrids[4]],
+  },
+];
+
+const aulaClosingCards = [
+  {
+    key: "yamaha_tf1",
+    kicker: "Liveteknik vid behov",
+    title: "Yamaha TF1 när arrangemanget kräver mer",
+    text: "Vardagssystemet är enkelt, men en Yamaha TF1 med Dante kan anslutas när skolan behöver fler kanaler och mer avancerad liveteknik.",
+    alt: "Yamaha TF1 digitalmixer med Dante för aula och musikrum",
+  },
+  {
+    key: "aula_panorama",
+    kicker: "Den färdiga helheten",
+    title: "Aulan ska kännas som en lokal – inte som ett rack med teknik",
+    text: "När installationen är färdig ska matsalen fortfarande vara matsal, samtidigt som rummet snabbt kan växla till presentation, samling eller arrangemang. Det är först då den tekniska helheten är lyckad.",
+    alt: "Färdig aula och matsal på Minnebergsskolan",
   },
 ];
 
@@ -708,15 +724,20 @@ const infoGrids = [
     </nav>
 
     <main id="main">
-      <ReferenceHero data={data} />
+      <ReferenceHero
+        data={data}
+        variant="immersive"
+        kicker="Referens · Minnebergsskolan"
+        primaryLabel="Utforska projektet"
+        primaryHref="#uppdraget"
+      />
       <ReferenceFacts facts={data.facts} />
       {data.scale && <ReferenceScale scale={data.scale} />}
       {data.quote && <ReferenceQuote quote={data.quote} />}
 
-      <section class="minneberg-case" aria-labelledby="case-study-title">
-        <div class="avab-container">
-          <div class="case-layout">
-            <div class="case-content">
+      <section class="minneberg-case" aria-labelledby="case-study-title" data-reference-anchor-scope>
+        <div class="case-intro-wrap">
+          <div class="avab-container">
               <header class="case-intro">
                 <span class="case-kicker">Projektet på djupet</span>
                 <h2 id="case-study-title">Från FFU till färdig AV-miljö i en hel högstadieskola</h2>
@@ -727,8 +748,14 @@ const infoGrids = [
                   efter funktion så att det går att följa hur lösningarna växte fram.
                 </p>
               </header>
+          </div>
+        </div>
 
+        <ReferenceAnchorNav items={anchorItems} />
+
+        <div class="case-content">
               <section class="case-section" id="uppdraget" data-case-section>
+                <div class="avab-container case-section__inner">
                 <div class="case-copy">
                   <span class="case-kicker">01 · Uppdrag & projektering</span>
                   <h2>Hur fick AVAB AV-entreprenaden på Minnebergsskolan i Arvika?</h2>
@@ -751,20 +778,12 @@ const infoGrids = [
                   </p>
                 </div>
 
-                <figure class="case-split case-split--landscape">
-                  <div class="case-split__media">
-                    <img src={embeddedImages.offerering} alt="Offerering och projektering för Minnebergsskolans AV-entreprenad" loading="lazy" decoding="async" />
-                  </div>
-                  <figcaption>
-                    <span class="case-caption-kicker">Från FFU till byggbar lösning</span>
-                    <h3>Offert, mängder och tekniska val behövde hänga ihop</h3>
-                    <p>
-                      Projekteringen omfattade inte bara produkter utan även placeringar, anslutningar, kabelvägar och
-                      gränsdragningar mot andra entreprenader. Det gav ett underlag som gick att bygga efter när
-                      produktionen väl var igång.
-                    </p>
-                  </figcaption>
-                </figure>
+                <ReferenceFeatureSplit
+                  image={{ src: embeddedImages.offerering, alt: "Offerering och projektering för Minnebergsskolans AV-entreprenad" }}
+                  kicker="Från FFU till byggbar lösning"
+                  title="Offert, mängder och tekniska val behövde hänga ihop"
+                  text="Projekteringen omfattade inte bara produkter utan även placeringar, anslutningar, kabelvägar och gränsdragningar mot andra entreprenader. Det gav ett underlag som gick att bygga efter när produktionen väl var igång."
+                />
 
                 <div class="case-chapter">
                   <h3>Ritningar och bygglogistik – samma projekt, två perspektiv</h3>
@@ -776,18 +795,19 @@ const infoGrids = [
                 </div>
 
                 {projectGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
+                  <ReferenceMediaGrid
+                    items={grid.items}
+                    imageMap={embeddedImages}
+                    columns={grid.cols}
+                    ratio={grid.ratio}
+                    split={grid.split || grid.items.length === 1}
+                  />
                 ))}
+                </div>
               </section>
 
               <section class="case-section" id="aula-matsal" data-case-section>
+                <div class="avab-container case-section__inner">
                 <div class="case-copy">
                   <span class="case-kicker">02 · Aula & matsal</span>
                   <h2>Hur byggdes aula och matsal för både vardag och arrangemang?</h2>
@@ -815,32 +835,30 @@ const infoGrids = [
                     </div>
 
                     {phase.grids.map((grid) => (
-                      <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                        {grid.items.map((photo) => (
-                          <figure class="case-photo">
-                            <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                            <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                          </figure>
-                        ))}
-                      </div>
+                      <ReferenceMediaGrid
+                        items={grid.items}
+                        imageMap={embeddedImages}
+                        columns={grid.cols}
+                        ratio={grid.ratio}
+                        split={grid.split || grid.items.length === 1}
+                      />
                     ))}
                   </div>
                 ))}
 
-                <figure class="case-panorama">
-                  <img src={embeddedImages.aula_panorama} alt="Färdig aula och matsal på Minnebergsskolan" loading="lazy" decoding="async" />
-                  <figcaption>
-                    <span class="case-caption-kicker">Den färdiga helheten</span>
-                    <h3>Aulan ska kännas som en lokal – inte som ett rack med teknik</h3>
-                    <p>
-                      När installationen är färdig ska matsalen fortfarande vara matsal, samtidigt som rummet snabbt kan
-                      växla till presentation, samling eller arrangemang. Det är först då den tekniska helheten är lyckad.
-                    </p>
-                  </figcaption>
-                </figure>
+                <ReferenceMediaGrid
+                  items={aulaClosingCards}
+                  imageMap={embeddedImages}
+                  columns={2}
+                  ratio="land"
+                  split={false}
+                  class="case-closing-grid"
+                />
+                </div>
               </section>
 
               <section class="case-section" id="larandemiljoer" data-case-section>
+                <div class="avab-container case-section__inner">
                 <div class="case-copy">
                   <span class="case-kicker">03 · Klassrum, konferens & specialrum</span>
                   <h2>Hur standardiserades AV-tekniken utan att alla rum blev likadana?</h2>
@@ -860,20 +878,13 @@ const infoGrids = [
                   </p>
                 </div>
 
-                <figure class="case-split case-split--landscape case-split--reverse">
-                  <div class="case-split__media">
-                    <img src={embeddedImages.klass_fardig} alt="Färdigt klassrum med interaktiv Epson-laserprojektor och whiteboardyta" loading="lazy" decoding="async" />
-                  </div>
-                  <figcaption>
-                    <span class="case-caption-kicker">Standard där det ger värde</span>
-                    <h3>Samma användarprincip i många klassrum</h3>
-                    <p>
-                      Den kortskjutande Epson-lösningen ger stor interaktiv arbetsyta nära väggen. Whiteboarden kan
-                      användas både digitalt och analogt, samtidigt som laserljuskällan minskar behovet av framtida
-                      lampbyten.
-                    </p>
-                  </figcaption>
-                </figure>
+                <ReferenceFeatureSplit
+                  image={{ src: embeddedImages.klass_fardig, alt: "Färdigt klassrum med interaktiv Epson-laserprojektor och whiteboardyta" }}
+                  kicker="Standard där det ger värde"
+                  title="Samma användarprincip i många klassrum"
+                  text="Den kortskjutande Epson-lösningen ger stor interaktiv arbetsyta nära väggen. Whiteboarden kan användas både digitalt och analogt, samtidigt som laserljuskällan minskar behovet av framtida lampbyten."
+                  reverse
+                />
 
                 <div class="case-chapter">
                   <h3>Klassrummen byggdes som en återkommande grundlösning</h3>
@@ -884,37 +895,25 @@ const infoGrids = [
                 </div>
 
                 {learningGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
+                  <ReferenceMediaGrid items={grid.items} imageMap={embeddedImages} columns={grid.cols} ratio={grid.ratio} split={grid.split || grid.items.length === 1} />
                 ))}
 
                 <div class="case-chapter">
                   <h3>Konferens och rum med hög takhöjd behövde egna lösningar</h3>
                   <p>
-                    Vissa bilder är stående eftersom rummen och detaljerna är stående. De får därför en egen tvåkolumnsrad
-                    i stället för att pressas in i samma format som klassrumsbilderna.
+                    Vissa motiv är stående eftersom rummen och detaljerna är stående. I kortgriden använder de ändå samma
+                    kompakta bildyta som övriga motiv, med medveten beskärning så att sidan behåller sin rytm.
                   </p>
                 </div>
 
                 {learningPortraitGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
+                  <ReferenceMediaGrid items={grid.items} imageMap={embeddedImages} columns={grid.cols} ratio={grid.ratio} split={grid.split || grid.items.length === 1} />
                 ))}
+                </div>
               </section>
 
               <section class="case-section" id="horslingor" data-case-section>
+                <div class="avab-container case-section__inner">
                 <div class="case-copy">
                   <span class="case-kicker">04 · Hörslingor & tillgänglighet</span>
                   <h2>Hur byggdes hörslingorna in i aula, matsal och bibliotek?</h2>
@@ -934,30 +933,17 @@ const infoGrids = [
                   </p>
                 </div>
 
-                <figure class="case-split case-split--portrait case-split--hearing">
-                  <div class="case-split__media">
-                    <img src={embeddedImages.slinga_rak} alt="Rak kopparfolie för hörslinga på betonggolv" loading="lazy" decoding="async" />
-                  </div>
-                  <figcaption>
-                    <span class="case-caption-kicker">Det som försvinner under golvet</span>
-                    <h3>Kopparfolien måste ligga rätt innan någon bygger vidare</h3>
-                    <p>
-                      Den tunna folien ser enkel ut, men placering och geometri styr hur det färdiga magnetfältet blir.
-                      Därför är projektering, inmätning och samordning med golventreprenaden en del av själva
-                      tillgänglighetslösningen.
-                    </p>
-                  </figcaption>
-                </figure>
+                <ReferenceFeatureSplit
+                  image={{ src: embeddedImages.slinga_rak, alt: "Rak kopparfolie för hörslinga på betonggolv" }}
+                  kicker="Det som försvinner under golvet"
+                  title="Kopparfolien måste ligga rätt innan någon bygger vidare"
+                  text="Den tunna folien ser enkel ut, men placering och geometri styr hur det färdiga magnetfältet blir. Därför är projektering, inmätning och samordning med golventreprenaden en del av själva tillgänglighetslösningen."
+                  variant="portrait"
+                  class="reference-feature-split--wide"
+                />
 
                 {hearingGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
+                  <ReferenceMediaGrid items={grid.items} imageMap={embeddedImages} columns={grid.cols} ratio={grid.ratio} split={grid.split || grid.items.length === 1} />
                 ))}
 
                 <div class="case-chapter">
@@ -970,18 +956,13 @@ const infoGrids = [
                 </div>
 
                 {hearingPortraitGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
+                  <ReferenceMediaGrid items={grid.items} imageMap={embeddedImages} columns={grid.cols} ratio={grid.ratio} split={grid.split || grid.items.length === 1} />
                 ))}
+                </div>
               </section>
 
               <section class="case-section" id="information-helhet" data-case-section>
+                <div class="avab-container case-section__inner">
                 <div class="case-copy">
                   <span class="case-kicker">05 · Information & helhet</span>
                   <h2>Hur knöts infoskärmar och övrig AV-teknik ihop i hela skolan?</h2>
@@ -1002,29 +983,15 @@ const infoGrids = [
                   </p>
                 </div>
 
-                <figure class="case-split case-split--landscape">
-                  <div class="case-split__media">
-                    <img src={embeddedImages.info50} alt="Informationsskärm i gemensam yta på Minnebergsskolan" loading="lazy" decoding="async" />
-                  </div>
-                  <figcaption>
-                    <span class="case-caption-kicker">Vardagsteknik som ska bli sedd</span>
-                    <h3>Informationsskärmen är enkel – placeringen är det viktiga</h3>
-                    <p>
-                      Format, höjd och riktning bestämdes efter miljön. När informationssystemet är rätt placerat blir
-                      det en naturlig del av skolans kommunikation i stället för ännu en skärm på väggen.
-                    </p>
-                  </figcaption>
-                </figure>
+                <ReferenceFeatureSplit
+                  image={{ src: embeddedImages.info50, alt: "Informationsskärm i gemensam yta på Minnebergsskolan" }}
+                  kicker="Vardagsteknik som ska bli sedd"
+                  title="Informationsskärmen är enkel – placeringen är det viktiga"
+                  text="Format, höjd och riktning bestämdes efter miljön. När informationssystemet är rätt placerat blir det en naturlig del av skolans kommunikation i stället för ännu en skärm på väggen."
+                />
 
                 {infoPortraitGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
+                  <ReferenceMediaGrid items={grid.items} imageMap={embeddedImages} columns={grid.cols} ratio={grid.ratio} split={grid.split || grid.items.length === 1} />
                 ))}
 
                 <div class="case-chapter">
@@ -1037,52 +1004,22 @@ const infoGrids = [
                 </div>
 
                 {infoGrids.map((grid) => (
-                  <div class:list={["case-photo-grid", `case-photo-grid--cols-${grid.cols}`, `case-photo-grid--${grid.ratio}`, grid.split && "case-photo-grid--split"]}>
-                    {grid.items.map((photo) => (
-                      <figure class="case-photo">
-                        <div class="case-photo__media"><img src={embeddedImages[photo.key]} alt={photo.alt} loading="lazy" decoding="async" /></div>
-                        <figcaption><h3>{photo.title}</h3><p>{photo.text}</p></figcaption>
-                      </figure>
-                    ))}
-                  </div>
+                  <ReferenceMediaGrid items={grid.items} imageMap={embeddedImages} columns={grid.cols} ratio={grid.ratio} split={grid.split || grid.items.length === 1} />
                 ))}
+                </div>
               </section>
-            </div>
-
-            <aside class="case-nav-wrap" aria-label="Innehåll i projektet">
-              <nav class="case-nav">
-                <span class="case-nav-title">I projektet</span>
-                <a href="#uppdraget" data-case-link="uppdraget">Uppdraget</a>
-                <a href="#aula-matsal" data-case-link="aula-matsal">Aula & matsal</a>
-                <a href="#larandemiljoer" data-case-link="larandemiljoer">Lärmiljöer</a>
-                <a href="#horslingor" data-case-link="horslingor">Hörslingor</a>
-                <a href="#information-helhet" data-case-link="information-helhet">Info & helhet</a>
-              </nav>
-            </aside>
-          </div>
         </div>
       </section>
 
       {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
 
-      <section class="section minneberg-faq" id="vanliga-fragor" aria-labelledby="minneberg-faq-title">
-        <div class="avab-container">
-          <div class="faq-heading">
-            <div class="eyebrow">Vanliga frågor om projektet</div>
-            <h2 id="minneberg-faq-title">Minnebergsskolan i Arvika – AV-teknik, projektering och leverans</h2>
-            <p>Snabba svar om projektets omfattning, klassrumslösningen, aulan, hörslingorna och varför AV-tekniken behövde samordnas tidigt med byggprojektet.</p>
-          </div>
-
-          <div class="compact-faq">
-            {faqItems.map((item) => (
-              <details class="faq-item">
-                <summary>{item.q}</summary>
-                <p>{item.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ReferenceFaq
+        id="vanliga-fragor"
+        eyebrow="Vanliga frågor om projektet"
+        title="Minnebergsskolan i Arvika – AV-teknik, projektering och leverans"
+        lead="Snabba svar om projektets omfattning, klassrumslösningen, aulan, hörslingorna och varför AV-tekniken behövde samordnas tidigt med byggprojektet."
+        items={faqItems.map(({ q, a }) => ({ question: q, answer: a }))}
+      />
 
       {renderPageCta && cta && (
         <PageCTA
@@ -1094,6 +1031,7 @@ const infoGrids = [
           secondaryLabel={cta.secondaryLabel}
           secondaryHref={cta.secondaryHref}
           points={cta.points}
+          flush
         />
       )}
       {renderLegacyCta && cta && cta.variant === "legacy" && (
@@ -1103,61 +1041,21 @@ const infoGrids = [
 
     <SiteFooter />
 
-    <script>
-      const caseRoot = document.querySelector(".minneberg-case");
-      if (caseRoot) {
-        const sections = Array.from(caseRoot.querySelectorAll("[data-case-section]"));
-        const links = Array.from(caseRoot.querySelectorAll("[data-case-link]"));
-        let ticking = false;
-
-        const updateActiveLink = () => {
-          const marker = Math.max(140, window.innerHeight * 0.28);
-          let active = sections[0]?.id;
-          for (const section of sections) {
-            if (section.getBoundingClientRect().top <= marker) active = section.id;
-          }
-          links.forEach((link) => {
-            const isActive = link.getAttribute("data-case-link") === active;
-            link.classList.toggle("is-active", isActive);
-            if (isActive) link.setAttribute("aria-current", "location");
-            else link.removeAttribute("aria-current");
-          });
-          ticking = false;
-        };
-
-        const requestUpdate = () => {
-          if (!ticking) {
-            window.requestAnimationFrame(updateActiveLink);
-            ticking = true;
-          }
-        };
-
-        updateActiveLink();
-        window.addEventListener("scroll", requestUpdate, { passive: true });
-        window.addEventListener("resize", requestUpdate, { passive: true });
-      }
-    </script>
-
     <style>
       .minneberg-case {
-        padding: 64px 0 72px;
-        background: var(--avab-light);
+        padding: 0;
+        background: var(--avab-white);
         border-top: 1px solid var(--avab-border);
         border-bottom: 1px solid var(--avab-border);
       }
 
-      .case-layout {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) 178px;
-        gap: 30px;
-        align-items: start;
-      }
-
+      .case-intro-wrap { background: var(--avab-white); }
       .case-content { min-width: 0; }
 
       .case-intro {
         max-width: 850px;
-        margin-bottom: 44px;
+        margin-bottom: 0;
+        padding: var(--avab-section-space) 0;
       }
 
       .case-intro h2 {
@@ -1172,21 +1070,19 @@ const infoGrids = [
       }
 
       .case-section {
-        scroll-margin-top: calc(var(--avab-nav-height, 72px) + 24px);
-        padding-bottom: 52px;
-        margin-bottom: 52px;
-        border-bottom: 1px solid var(--avab-border);
+        scroll-margin-top: 76px;
+        margin: 0;
+        padding: var(--avab-section-space) 0;
+        border-bottom: 0;
+        background: var(--avab-white);
       }
 
-      .case-section:last-child {
-        padding-bottom: 0;
-        margin-bottom: 0;
-        border-bottom: 0;
-      }
+      .case-section:nth-child(even) { background: var(--avab-light); }
+      .case-section__inner { min-width: 0; }
 
       .case-copy {
         max-width: 850px;
-        margin-bottom: 22px;
+        margin-bottom: var(--avab-content-gap);
       }
 
       .case-copy h2 {
@@ -1211,8 +1107,7 @@ const infoGrids = [
 
       .case-answer strong { font-weight: 750; }
 
-      .case-kicker,
-      .case-caption-kicker {
+      .case-kicker {
         display: block;
         margin-bottom: 9px;
         color: var(--avab-green);
@@ -1224,7 +1119,7 @@ const infoGrids = [
 
       .case-chapter {
         max-width: 800px;
-        margin: 30px 0 16px;
+        margin: var(--avab-content-gap) 0 var(--avab-card-gap);
       }
 
       .case-chapter h3 {
@@ -1240,7 +1135,7 @@ const infoGrids = [
       }
 
       .case-timeline-phase {
-        margin-top: clamp(34px, 5vw, 58px);
+        margin-top: var(--avab-content-gap);
       }
 
       .case-timeline-phase + .case-timeline-phase {
@@ -1253,362 +1148,20 @@ const infoGrids = [
         margin-bottom: 22px;
       }
 
-      .case-timeline-phase + .case-panorama {
+      .case-timeline-phase + :global(.reference-media-grid) {
         margin-top: clamp(42px, 6vw, 68px);
       }
 
-      .case-split,
-      .case-panorama,
-      .case-photo {
-        margin: 0;
-        overflow: hidden;
-        background: var(--avab-white);
-        border: 1px solid var(--avab-border);
-        border-radius: var(--avab-radius-sm);
-        box-shadow: var(--avab-shadow-sm);
+      @media (max-width: 767px) {
+        .case-intro { padding: var(--avab-section-space-mobile) 0; }
+        .case-section { padding: var(--avab-section-space-mobile) 0; }
       }
 
-      .case-split {
-        display: grid;
-        grid-template-columns: minmax(0, 1.22fr) minmax(260px, 0.78fr);
-        margin-bottom: 14px;
-      }
-
-      .case-split--reverse {
-        grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
-      }
-
-      .case-split--reverse .case-split__media { order: 2; }
-      .case-split--reverse figcaption { order: 1; }
-
-      .case-split--portrait {
-        grid-template-columns: minmax(260px, 0.62fr) minmax(0, 1.38fr);
-        max-width: 850px;
-      }
-
-      .case-split--hearing {
-        width: 100%;
-        max-width: none;
-      }
-
-      .case-split__media {
-        background: var(--avab-grey);
-      }
-
-      .case-split--landscape .case-split__media {
-        aspect-ratio: 1.4 / 1;
-      }
-
-      .case-split--portrait .case-split__media {
-        aspect-ratio: 3 / 4;
-      }
-
-      .case-split__media img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-      }
-
-      .case-split figcaption {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 26px;
-      }
-
-      .case-split h3,
-      .case-panorama h3 {
-        margin: 0 0 9px;
-        font-size: clamp(1.25rem, 2vw, 1.65rem);
-        line-height: 1.17;
-      }
-
-      .case-split p,
-      .case-panorama p {
-        margin: 0;
-        color: var(--avab-dark-muted);
-      }
-
-      .case-panorama {
-        margin-bottom: 14px;
-      }
-
-      .case-panorama img {
-        display: block;
-        width: 100%;
-        aspect-ratio: 2.17 / 1;
-        object-fit: cover;
-      }
-
-      .case-panorama figcaption {
-        padding: 19px 21px 21px;
-      }
-
-      .case-photo-grid {
-        display: grid;
-        gap: 14px;
-        align-items: stretch;
-      }
-
-      .case-photo-grid + .case-photo-grid { margin-top: 14px; }
-
-      .case-photo-grid--cols-1 { grid-template-columns: minmax(0, 1fr); }
-      .case-photo-grid--cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .case-photo-grid--cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-      /* Stående format får smalare rutnät så att korten inte blir orimligt höga */
-      .case-photo-grid--portrait.case-photo-grid--cols-2 { width: 100%; }
-      .case-photo-grid--tall.case-photo-grid--cols-3 { width: 100%; }
-      .case-photo-grid--slim.case-photo-grid--cols-2 {
-        width: 100%;
-      }
-
-      .case-photo {
-        display: grid;
-        grid-template-rows: auto 1fr;
-        min-width: 0;
-      }
-
-      .case-photo__media {
-        overflow: hidden;
-        background: var(--avab-grey);
-      }
-
-      .case-photo__media img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-      }
-
-      /* Bildytan följer bildernas verkliga proportioner i respektive rutnät */
-      .case-photo-grid--pano .case-photo__media { aspect-ratio: 2.17 / 1; }
-      .case-photo-grid--land .case-photo__media { aspect-ratio: 1.4 / 1; }
-      .case-photo-grid--portrait .case-photo__media { aspect-ratio: 3 / 4; }
-      .case-photo-grid--tall .case-photo__media { aspect-ratio: 1 / 2; }
-      .case-photo-grid--slim .case-photo__media { aspect-ratio: 0.46 / 1; }
-
-      /* Ensam stående bild ligger bredvid sin text i stället för ensam i raden */
-      .case-photo-grid--split .case-photo {
-        grid-template-rows: auto;
-        align-items: stretch;
-      }
-
-      .case-photo-grid--split.case-photo-grid--portrait .case-photo {
-        grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
-      }
-
-      .case-photo-grid--split.case-photo-grid--tall .case-photo {
-        grid-template-columns: minmax(0, 200px) minmax(0, 1fr);
-      }
-
-      .case-photo-grid--split.case-photo-grid--tall .case-photo__media {
-        aspect-ratio: 0.46 / 1;
-      }
-
-      .case-photo-grid--split .case-photo figcaption {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 22px 24px;
-      }
-
-      .case-photo figcaption {
-        padding: 15px 16px 17px;
-        background: var(--avab-white);
-      }
-
-      .case-photo h3 {
-        margin: 0 0 6px;
-        font-size: 1rem;
-        line-height: 1.24;
-      }
-
-      .case-photo p {
-        margin: 0;
-        color: var(--avab-dark-muted);
-        font-size: 0.9rem;
-        line-height: 1.48;
-      }
-
-      .case-nav-wrap {
-        position: relative;
-        align-self: stretch;
-      }
-
-      .case-nav {
-        position: sticky;
-        top: calc(var(--avab-nav-height, 72px) + 22px);
-        display: grid;
-        gap: 2px;
-        padding: 14px;
-        background: var(--avab-white);
-        border: 1px solid var(--avab-border);
-        border-radius: 14px;
-        box-shadow: var(--avab-shadow-sm);
-      }
-
-      .case-nav-title {
-        margin: 0 0 7px;
-        padding: 0 8px;
-        color: var(--avab-dark-muted);
-        font-size: 0.68rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .case-nav a {
-        position: relative;
-        padding: 8px 8px 8px 14px;
-        border-radius: 8px;
-        color: var(--avab-dark-muted);
-        font-size: 0.81rem;
-        font-weight: 700;
-        line-height: 1.22;
-      }
-
-      .case-nav a::before {
-        content: "";
-        position: absolute;
-        left: 5px;
-        top: 50%;
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        background: var(--avab-grey);
-        transform: translateY(-50%);
-      }
-
-      .case-nav a:hover { color: var(--avab-green); }
-      .case-nav a.is-active {
-        color: var(--avab-dark);
-        background: var(--avab-green-soft);
-      }
-
-      .case-nav a.is-active::before {
-        height: 16px;
-        border-radius: 4px;
-        background: var(--avab-green);
-      }
-
-      @media (max-width: 1040px) {
-        .case-layout {
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
+      @media (max-width: 680px) {
+        .case-section {
+          scroll-margin-top: 20px;
         }
 
-        .case-nav-wrap {
-          order: -1;
-          width: 100%;
-          position: sticky;
-          top: var(--avab-nav-height, 72px);
-          z-index: 20;
-          padding: 6px 0;
-          background: var(--avab-light);
-        }
-
-        .case-nav {
-          position: static;
-          display: flex;
-          gap: 5px;
-          overflow-x: auto;
-          padding: 7px;
-          scrollbar-width: none;
-        }
-
-        .case-nav::-webkit-scrollbar { display: none; }
-        .case-nav-title { display: none; }
-        .case-nav a { flex: 0 0 auto; padding: 8px 11px; white-space: nowrap; }
-        .case-nav a::before { display: none; }
-      }
-
-      @media (max-width: 820px) {
-        .case-photo-grid--land.case-photo-grid--cols-3 {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .case-photo-grid--portrait.case-photo-grid--cols-3 {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .case-photo-grid--portrait.case-photo-grid--cols-2 {
-          max-width: none;
-        }
-
-        .case-split,
-        .case-split--reverse {
-          grid-template-columns: 1fr;
-        }
-
-        .case-split--reverse .case-split__media,
-        .case-split--reverse figcaption {
-          order: initial;
-        }
-
-        .case-split--landscape .case-split__media {
-          aspect-ratio: 1.6 / 1;
-        }
-
-        .case-split--portrait {
-          grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
-        }
-
-        .case-split--portrait .case-split__media {
-          aspect-ratio: 3 / 4;
-        }
-      }
-
-      @media (max-width: 620px) {
-        .minneberg-case { padding: 52px 0 60px; }
-        .case-intro { margin-bottom: 36px; }
-        .case-section { padding-bottom: 44px; margin-bottom: 44px; }
-        .case-photo-grid--land,
-        .case-photo-grid--pano,
-        .case-photo-grid--portrait {
-          grid-template-columns: minmax(0, 1fr);
-          max-width: none;
-        }
-
-        .case-photo-grid--tall,
-        .case-photo-grid--slim {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          max-width: none;
-        }
-
-        .case-photo-grid--pano .case-photo__media {
-          aspect-ratio: 16 / 9;
-        }
-
-        .case-photo-grid--split.case-photo-grid--portrait .case-photo {
-          grid-template-columns: minmax(0, 1fr);
-          grid-template-rows: auto 1fr;
-        }
-
-        .case-photo-grid--split.case-photo-grid--tall .case-photo {
-          grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
-        }
-
-        .case-photo-grid--split .case-photo figcaption {
-          padding: 16px 17px 18px;
-        }
-
-        .case-split--portrait {
-          grid-template-columns: 1fr;
-          max-width: none;
-        }
-
-        .case-split--landscape .case-split__media {
-          aspect-ratio: 3 / 2;
-        }
-
-        .case-split--portrait .case-split__media {
-          aspect-ratio: 3 / 4;
-        }
-
-        .case-split figcaption { padding: 20px; }
       }
     </style>
   </body>

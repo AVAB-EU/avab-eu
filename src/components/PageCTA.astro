@@ -10,6 +10,7 @@ interface Props {
   points?: string[];
   ariaLabel?: string;
   id?: string;
+  flush?: boolean;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   points,
   ariaLabel,
   id,
+  flush = false,
 } = Astro.props;
 
 const titleSlug = title
@@ -40,7 +42,7 @@ const sectionLabel = ariaLabel
 ---
 
 <section
-  class:list={["page-cta", { "page-cta--without-points": !hasPoints }]}
+  class:list={["page-cta", { "page-cta--without-points": !hasPoints, "page-cta--flush": flush }]}
   {...sectionLabel}
 >
   <div class="avab-container page-cta__inner">
@@ -87,6 +89,10 @@ const sectionLabel = ariaLabel
       #3f5d1b 100%
     );
     color: #fff;
+  }
+
+  .page-cta.page-cta--flush {
+    margin-bottom: 0;
   }
 
   .page-cta__inner {
