@@ -545,6 +545,10 @@ p {
   background: var(--avab-light);
 }
 
+.nav-dropdown--services .service-menu-list a {
+  font-weight: 500;
+}
+
 .nav-cta {
   display: inline-flex;
   align-items: center;
@@ -1207,6 +1211,9 @@ p {
   color: var(--avab-dark-muted);
   font-size: 0.96rem;
   margin-bottom: 0;
+}
+.value-grid--service-answers .value-card h3 {
+  min-block-size: 2.6em;
 }
 .value-icon {
   display: inline-flex;

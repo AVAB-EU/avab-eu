@@ -256,13 +256,8 @@ const canonicalUrl = "https://www.avab.eu/kontakt/";
         transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
       }
 
-      .quick-card--primary {
-        border-top: 5px solid var(--avab-green);
-        padding-top: 24px;
-      }
-
-      .quick-card:hover,
-      .quick-card:focus-within {
+      .quick-card.clickable-card:hover,
+      .quick-card.clickable-card:focus-within {
         transform: translateY(-4px);
         border-color: rgba(143, 192, 37, 0.65);
         box-shadow: 0 22px 44px rgba(40, 46, 42, 0.12);
@@ -1232,7 +1227,7 @@ const canonicalUrl = "https://www.avab.eu/kontakt/";
     <main id="main">
       <section class="quick-contact" aria-label="Välj kontaktväg">
         <div class="avab-container quick-grid">
-          <article class="quick-card quick-card--primary clickable-card">
+          <article class="quick-card">
             <span class="quick-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -1242,10 +1237,9 @@ const canonicalUrl = "https://www.avab.eu/kontakt/";
             </span>
             <h2>Nytt projekt eller offert</h2>
             <p>För nyinstallation, ombyggnad, projektering, uppgradering eller upphandling.</p>
-            <a class="card-primary-link" href="#kontaktformular" data-contact-intent="project">Starta projektflödet</a>
           </article>
 
-          <article class="quick-card clickable-card">
+          <article class="quick-card">
             <span class="quick-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14.7 6.3a4 4 0 0 0-5-5L7.5 3.5l3 3 2.2-2.2a4 4 0 0 0 2 2Z" />
@@ -1255,7 +1249,6 @@ const canonicalUrl = "https://www.avab.eu/kontakt/";
             </span>
             <h2>Service eller felsökning</h2>
             <p>Beskriv felet, anläggningen, platsen och hur verksamheten påverkas.</p>
-            <a class="card-primary-link" href="#kontaktformular" data-contact-intent="service">Starta serviceflödet</a>
           </article>
 
           <article class="quick-card clickable-card">

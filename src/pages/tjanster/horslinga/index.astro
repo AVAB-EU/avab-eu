@@ -346,6 +346,12 @@ import "../../../styles/avab.css";
     .content-image--diagram { object-fit: contain; background: #fff; }
     .content-image--compact { height: 240px; border-radius: 0; }
     .image-caption { font-size: 0.92rem; margin-top: 12px; color: var(--avab-dark-muted); }
+    .secondary-image {
+      margin: 28px 0 0;
+      padding-top: 28px;
+      border-top: 1px solid var(--avab-border);
+    }
+    .secondary-image .image-caption { margin-bottom: 0; }
 
     @media (max-width: 1024px) {
       .compare-grid { grid-template-columns: 1fr; }
@@ -431,6 +437,14 @@ import "../../../styles/avab.css";
               width="900" height="600" loading="lazy" decoding="async">
           </div>
           <p class="image-caption">Tillgängligt ljud gör att fler kan delta på samma villkor i möten, undervisning och evenemang.</p>
+          <figure class="secondary-image">
+            <div class="image-wrapper">
+              <img src="/assets/Hörslinga förläggning Minnebergsskolan aula.webp"
+                alt="Kopparfolie för hörslinga förläggs i golvet i Minnebergsskolans aula"
+                width="1200" height="900" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="image-caption">På Minnebergsskolan förlades hörslingans kopparfolie enligt den projekterade geometrin innan golvet färdigställdes. När lokalen är klar är installationen dold, men ger hörapparater och cochleaimplantat ett tydligt ljud direkt.</figcaption>
+          </figure>
         </aside>
       </div>
 
@@ -506,7 +520,7 @@ import "../../../styles/avab.css";
               <figcaption class="image-caption">Projekteringen visar var slingan ska ligga, vilka ytor som ska täckas och hur installationen samordnas.</figcaption>
             </figure>
             <figure style="margin-top: 24px;">
-              <img class="content-image" src="/assets/horslinga-annlagning-mats.webp" alt="Tekniker installerar kabel för hörslinga på ett golv" width="1200" height="900" loading="lazy" decoding="async" />
+              <img class="content-image" src="/assets/STI-matning-mindre.webp" alt="Tekniker installerar kabel för hörslinga på ett golv" width="1200" height="900" loading="lazy" decoding="async" />
               <figcaption class="image-caption">Den färdiga anläggningen mäts, justeras och dokumenteras enligt SS-EN IEC 60118-4.</figcaption>
             </figure>
           </div>
@@ -529,7 +543,7 @@ import "../../../styles/avab.css";
           <a class="ref-card animate-in" href="/referenser/minnebergsskolan-arvika/">
             <img src="/assets/modern-trafasad-innergard.webp" alt="Arvika nya högstadium, Minnebergsskolan – SLS i flera zoner" width="1200" height="834" loading="lazy" decoding="async">
             <div class="ref-content">
-              <h3>Arvika nya högstadium (Minnebergsskolan)</h3>
+              <h3>Minnebergsskolan, Arvika</h3>
               <p>SLS i flera zoner för matsal, aula, gradäng och bibliotek i en stor, nybyggd skolmiljö.</p>
             </div>
           </a>
