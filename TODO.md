@@ -36,6 +36,10 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-18._
 - [ ] Verifiera `SiteFooter.astro` efter ändrad sökväg för logotyp.
 - [ ] Välj namnkonvention för `images` respektive `image/partners/` och gör den enhetlig i en separat uppgift.
 
+## Budgetkalkylator
+
+- [ ] Förbättra PDF-underlagets design och säkerställ att AVAB-logotypen visas korrekt i utskrift/PDF.
+
 ### Beslut som ska bevaras
 
 - `AVAB-EU/avab-eu` är gemensam GitHub source of truth för fortsatt arbete.
