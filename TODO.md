@@ -18,8 +18,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-18._
 - [x] Godkänd designbaseline: `https://test2.avab.eu/referenser/minnebergsskolan-arvika/`.
 - [ ] Försona Minneberg-designen med den gemensamma structured-content-arkitekturen utan att ersätta kundens nyare implementation med den äldre AI Content-renderern.
 - [ ] Verifiera Minneberg på desktop och mobil mot designbaslinjen.
-- [ ] **Migrera Säffle simhall som första riktiga migrationspilot.** Teknisk pilotcheckpoint klar: tunn route, shared `ReferencePage`, gemensam ankarnavigering för `extended`, structured FAQ och grön CI. Återstår visuell QA innan pilotpunkten kan stängas.
-- [ ] Validera Säffle vid 1440, 1024, 768, 390 och 375 px samt kontrollera SEO, schema, länkar, bilder och build.
+- [x] **Migrera Säffle simhall som första riktiga migrationspilot.** Godkänd av beställaren 2026-08-18 med tunn route, shared `ReferencePage`, berättande ankarkapitel, utspridda projektbilder, structured FAQ och grön CI.
+- [x] Validera Säffle vid 1440, 1024, 768, 390 och 375 px samt kontrollera SEO, schema, länkar, bilder och build. Slutfört 2026-08-18.
 - [ ] Genomför valideringsstopp: justera endast gemensamma schema/components om Säffle visar ett verkligt generellt behov.
 - [ ] Välj därefter nästa representativa referens för generaliseringstest (inte massmigrering direkt).
 - [ ] Implementera godkänd referensstandard på återstående referenssidor i små, beslutade batcher.

@@ -76,6 +76,9 @@ Den gemensamma referensarkitekturen ska kunna uttrycka följande återkommande m
 13. Konsekvent alignment i överkant för rubriker, text, bilder och kort på desktop.
 14. Innehållsdriven höjd; lika höjd får inte skapa stora tomma ytor.
 15. Enkolumnsflöde på mobil som standard där det förbättrar läsbarheten.
+16. Berättande ankarkapitel där varje ankarlänk har eget textunderlag och relevanta bilder.
+17. Rikt projektmaterial fördelas genom hela sidan efter funktion eller projektfas, inte som ett enda sent bildblock.
+18. SEO-text ska hjälpa inköpare att bedöma AVAB:s verifierade ansvar, kompetens och leverans utan obestyrkta påståenden.
 
 ## Vad som inte ska göras
 

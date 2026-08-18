@@ -14,6 +14,7 @@ import ReferenceResults from "../components/references/ReferenceResults.astro";
 import ReferenceScale from "../components/references/ReferenceScale.astro";
 import ReferenceQuote from "../components/references/ReferenceQuote.astro";
 import ReferenceLegacyCta from "../components/references/ReferenceLegacyCta.astro";
+import ReferenceMediaGrid from "../components/references/ReferenceMediaGrid.astro";
 import ReferenceScope from "../components/references/ReferenceScope.astro";
 import ReferenceTechnicalDetails from "../components/references/ReferenceTechnicalDetails.astro";
 import RelatedReferences from "../components/references/RelatedReferences.astro";
@@ -34,10 +35,14 @@ const robots = data.draft || data.seo.noindex
   ? "noindex, nofollow"
   : "index, follow, max-image-preview:large";
 const isExtended = data.layout === "extended";
+const hasStory = isExtended && Boolean(data.story);
 
 const schemaImages = Array.from(new Set([
   heroImageUrl,
   ...(data.gallery?.images.map((image) => absoluteUrl(image.src)) ?? []),
+  ...(data.story?.chapters.flatMap((chapter) =>
+    chapter.mediaGroups.flatMap((group) => group.images.map((image) => absoluteUrl(image.src)))
+  ) ?? []),
 ]));
 const structuredData = {
   "@context": "https://schema.org",
@@ -97,7 +102,10 @@ const renderPageCta = Boolean(
 );
 const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
 
-const anchorItems = [
+const anchorItems = data.story?.chapters.map((chapter) => ({
+  id: chapter.id,
+  label: chapter.navLabel,
+})) ?? [
   { id: "uppdraget", label: "Uppdraget" },
   { id: "omfattning", label: "Leveransen" },
   ...(data.results ? [{ id: "resultat", label: "Resultatet" }] : []),
@@ -178,9 +186,9 @@ const anchorItems = [
             <div class="reference-case-intro-wrap">
               <div class="avab-container">
                 <header class="reference-case-intro">
-                  <span class="case-kicker">Projektet på djupet</span>
-                  <h2>{data.brief.title}</h2>
-                  <p>{data.scope.lead}</p>
+                  <span class="case-kicker">{data.story?.eyebrow ?? "Projektet på djupet"}</span>
+                  <h2>{data.story?.title ?? data.brief.title}</h2>
+                  <p>{data.story?.lead ?? data.scope.lead}</p>
                 </header>
               </div>
             </div>
@@ -188,6 +196,27 @@ const anchorItems = [
             <ReferenceAnchorNav items={anchorItems} />
 
             <div class="reference-case-content">
+              {hasStory && data.story ? data.story.chapters.map((chapter, chapterIndex) => (
+                <section class="case-section" id={chapter.id} data-case-section>
+                  <div class="avab-container case-section__inner">
+                    <div class="case-copy">
+                      <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
+                      <h2>{chapter.title}</h2>
+                      {chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
+                      {chapter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+                    </div>
+
+                    {chapter.mediaGroups.map((group) => (
+                      <ReferenceMediaGrid
+                        items={group.images}
+                        columns={group.columns}
+                        ratio={group.ratio}
+                        split={group.split || group.images.length === 1}
+                      />
+                    ))}
+                  </div>
+                </section>
+              )) : <>
               <section class="case-section" id="uppdraget" data-case-section>
                 <div class="avab-container case-section__inner">
                   <div class="case-copy">
@@ -208,26 +237,17 @@ const anchorItems = [
                     <p>{data.scope.lead}</p>
                   </div>
 
-                  <ul class="scope-list case-scope-list">
-                    {data.scope.items.map((item) => <li>{item}</li>)}
-                  </ul>
+                  {data.gallery && <ReferenceGallery gallery={data.gallery} embedded />}
 
-                  {data.scope.projectFacts && (
-                    <dl class="case-fact-grid">
-                      {data.scope.projectFacts.map((fact) => (
-                        <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>
-                      ))}
-                    </dl>
-                  )}
                 </div>
               </section>
+              </>}
             </div>
           </section>
 
           {data.scale && <ReferenceScale scale={data.scale} />}
-          {data.results && <ReferenceResults results={data.results} />}
+          {!hasStory && data.results && <ReferenceResults results={data.results} />}
           {data.quote && <ReferenceQuote quote={data.quote} />}
-          {data.gallery && <ReferenceGallery gallery={data.gallery} />}
           {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
           {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
           {data.faq && (

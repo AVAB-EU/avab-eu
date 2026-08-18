@@ -2848,8 +2848,9 @@ h2.snabbt-svar-title::before {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       column-gap: 28px;
       row-gap: 0;
-      max-width: 1060px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: none;
+      margin: 0;
     }
     .compact-faq details.faq-item { padding: 20px 0; }
     .compact-faq summary { font-size: 1.05rem; }

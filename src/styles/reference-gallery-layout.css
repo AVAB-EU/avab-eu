@@ -15,6 +15,23 @@
   min-width: 0;
   margin: 0;
   grid-column: span 3;
+  overflow: hidden;
+  border: 1px solid var(--reference-line);
+  border-radius: var(--avab-radius-sm);
+  background: var(--avab-white);
+  box-shadow: var(--avab-shadow-sm);
+}
+
+.reference-gallery--embedded {
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+.gallery-grid .gallery-image {
+  border-radius: 0;
+}
+
+.gallery-grid .gallery-card figcaption {
+  padding: 18px 20px 20px;
 }
 
 .gallery-grid--single .gallery-card {

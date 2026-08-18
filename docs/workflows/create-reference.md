@@ -124,6 +124,19 @@ För varje bild:
 - använd inte SEO-sökordsstapling i alt-text,
 - ange inte fotograf, plats eller teknisk detalj som inte är känd.
 
+För projekt med flera bilder ska AI först gruppera materialet efter berättelsens delar, exempelvis uppdrag/projektering, styrning, ljud, tillgänglighet, installation och resultat. Bilder ska placeras i relevanta ankarkapitel genom den gemensamma content-modellen. Samla inte allt i ett slutgalleri när bilderna kan förklara innehållet löpande.
+
+Varje ankarkapitel ska innehålla egen förklarande text. Skriv sökbart och konkret för inköpare och projektörer genom att beskriva verifierat behov, AVAB:s ansvar, tekniska val, genomförande och resultat. SEO-text får utveckla samband och förklara kompetens som faktiskt framgår av underlaget, men får inte lägga till nya projektfakta, effekter eller mätvärden.
+
+Gör därefter en redaktionell genomgång av hela sidan:
+
+1. utveckla relevant text där underlaget stödjer mer sammanhang,
+2. kontrollera att miljö, tjänster, teknik, plats och AVAB:s ansvar uttrycks naturligt i rubriker och brödtext,
+3. fördela text och bilder genom ankarkapitlen så sidan får rytm utan att frångå den gemensamma strukturen,
+4. ta bort metatext om sidan, sektionerna, SEO-arbetet eller läsarens navigering,
+5. ta bort AI-fluff, upprepningar och påståenden som inte hjälper en inköpare eller projektör,
+6. korta hellre än att fylla ut när verifierat underlag saknas.
+
 ## 8. Relationer och index
 
 En migrerad referens ska så långt möjligt vara samma datakälla för:
@@ -148,6 +161,7 @@ Minst:
 - alt-text finns,
 - inga tomma standardsektioner renderas,
 - FAQ-data används konsekvent där både synlig FAQ och schema finns,
+- FAQ-rubrik och frågor linjerar mot samma vänsterkant, frågorna fyller hela containern och går från två kolumner på desktop till en kolumn på mobil,
 - PR-check ska passera.
 
 Visuell verifiering krävs innan en migrerad referens betraktas som fullständigt designgodkänd.

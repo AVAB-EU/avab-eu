@@ -159,6 +159,44 @@ const referenceSchema = z
       serviceLabel: z.string().optional(),
       serviceHref: z.string().optional(),
     }),
+    story: z
+      .object({
+        eyebrow: requiredText,
+        title: requiredText,
+        lead: requiredText,
+        chapters: z
+          .array(
+            z.object({
+              id: z.string().regex(/^[a-z0-9-]+$/),
+              navLabel: requiredText,
+              eyebrow: requiredText,
+              title: requiredText,
+              answer: requiredText.optional(),
+              paragraphs: z.array(requiredText).min(1),
+              mediaGroups: z
+                .array(
+                  z.object({
+                    columns: z.number().int().min(1).max(3).default(3),
+                    ratio: z.enum(["land", "pano", "portrait", "tall", "slim"]).default("land"),
+                    split: z.boolean().default(false),
+                    images: z
+                      .array(
+                        imageSchema.extend({
+                          title: requiredText,
+                          text: requiredText,
+                          kicker: requiredText.optional(),
+                        }),
+                      )
+                      .min(1),
+                  }),
+                )
+                .min(1),
+            }),
+          )
+          .min(2)
+          .max(5),
+      })
+      .optional(),
     variants: z
       .object({
         eyebrow: z.string(),
