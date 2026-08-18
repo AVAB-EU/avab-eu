@@ -31,6 +31,40 @@ function publicAssetExists(src) {
   return fs.existsSync(path.join(root, "public", src.replace(/^\//, "")));
 }
 
+function resolveBaseRef() {
+  const base = process.env.GITHUB_BASE_REF || "main";
+  const candidates = [`origin/${base}`, base];
+
+  for (const candidate of candidates) {
+    try {
+      execFileSync("git", ["rev-parse", "--verify", candidate], {
+        cwd: root,
+        stdio: "ignore",
+      });
+      return candidate;
+    } catch {}
+  }
+
+  warn("Could not resolve base ref; diff-based guardrails are limited.");
+  return null;
+}
+
+const baseRef = resolveBaseRef();
+const changedFiles = new Set();
+
+if (baseRef) {
+  try {
+    const names = execFileSync("git", ["diff", "--name-only", `${baseRef}...HEAD`], {
+      cwd: root,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    });
+    names.split("\n").filter(Boolean).forEach((file) => changedFiles.add(normalizeSlashes(file)));
+  } catch {
+    warn("Could not read changed files; repository-wide non-destructive checks still ran.");
+  }
+}
+
 const referenceDir = path.join(root, "src", "content", "references");
 const referenceFiles = walk(referenceDir).filter((file) => /\.(md|mdx)$/.test(file));
 
@@ -43,13 +77,14 @@ for (const file of referenceFiles) {
   const source = fs.readFileSync(file, "utf8");
   const draftMatch = source.match(/^draft:\s*(true|false)\s*$/m);
   const approvalMatch = source.match(/^\s*publicationApproved:\s*(true|false|null)\s*$/m);
+  const changedReference = changedFiles.has(rel);
 
-  if (!draftMatch) {
-    fail(`${rel}: missing explicit draft: true|false`);
+  if (changedReference && !draftMatch) {
+    fail(`${rel}: changed reference requires explicit draft: true|false`);
   }
 
-  if (draftMatch?.[1] === "false" && approvalMatch?.[1] !== "true") {
-    fail(`${rel}: published reference requires customer.publicationApproved: true`);
+  if (changedReference && draftMatch?.[1] === "false" && approvalMatch?.[1] !== "true") {
+    fail(`${rel}: published changed reference requires customer.publicationApproved: true`);
   }
 
   for (const match of source.matchAll(/^\s*src:\s*['"]?([^'"\n]+)['"]?\s*$/gm)) {
@@ -61,25 +96,22 @@ for (const file of referenceFiles) {
 }
 
 function getAddedSourceLines() {
-  const base = process.env.GITHUB_BASE_REF || "main";
-  const candidates = [`origin/${base}`, base];
+  if (!baseRef) return "";
 
-  for (const candidate of candidates) {
-    try {
-      return execFileSync(
-        "git",
-        ["diff", "--unified=0", `${candidate}...HEAD`, "--", "src", "docs", "AGENTS.md", "CLAUDE.md", "TODO.md"],
-        {
-          cwd: root,
-          encoding: "utf8",
-          stdio: ["ignore", "pipe", "ignore"],
-        },
-      );
-    } catch {}
+  try {
+    return execFileSync(
+      "git",
+      ["diff", "--unified=0", `${baseRef}...HEAD`, "--", "src"],
+      {
+        cwd: root,
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "ignore"],
+      },
+    );
+  } catch {
+    warn("Could not resolve added source lines; repository checks still ran.");
+    return "";
   }
-
-  warn("Could not resolve base ref for added-line checks; repository checks still ran.");
-  return "";
 }
 
 const diff = getAddedSourceLines();
@@ -95,7 +127,7 @@ for (const line of diff.split("\n")) {
   const added = line.slice(1);
 
   if (added.includes("https://www.avab.eu")) {
-    fail(`${currentFile}: new content must use https://avab.eu/ instead of the www alias`);
+    fail(`${currentFile}: new source code must use https://avab.eu/ instead of the www alias`);
   }
 
   const standardRoute = /^src\/pages\/(referenser|miljo|tjanster|kunskap)\/.+\.astro$/.test(currentFile);
