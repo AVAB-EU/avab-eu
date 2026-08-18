@@ -1,17 +1,27 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-08-17._
+_Kanonisk projektlista. Senast uppdaterad 2026-08-18._
 
-## Referensmigrering – nästa fas
+## AI Content System
 
-- [x] Inventera samtliga referensroutes och klassificera standard/fördjupad.
-- [x] Frysa Minnebergsskolan som canonical pilot och dokumentera referensstandard version 1.
-- [ ] Migrera första enkla referensen: Nordic Wellness Marieberg.
-- [ ] Validera den enkla referensen vid 1440, 1024, 768, 390 och 375 px.
-- [ ] Migrera Lesjöfors AB som andra enkelkontroll.
-- [ ] Migrera Hanza Mechanics som normal referens.
-- [ ] Migrera Claessons och Säffle som separata bildrika kontrollfall.
-- [ ] Genomför valideringsstopp och lås eventuella nödvändiga justeringar i de gemensamma komponenterna.
+- [x] Samla AI-regler, workflows, standarder och fasdokument i `docs/`.
+- [x] Flytta AI Content-arbetet till gemensamt repo `AVAB-EU/avab-eu`.
+- [x] Skapa `agent/ai-content-system` ovanpå kundens aktuella `main` utan att skriva över kundens nyare kod.
+- [ ] Försona AI-dokumentationen med kundrepots aktuella referensimplementation (`compact` / `standard` / `extended` och befintliga `Reference*`-komponenter).
+- [ ] Säkerställ att guardrails/CI validerar den faktiska content-modellen i kundrepot innan bred migrering.
+- [ ] Lägg till unik preview per PR så kunden kan visuellt godkänna brancher från mobil/chat utan lokal VS Code.
+
+## Referensmigrering – Fas 7
+
+- [x] Inventera referensroutes och etablera structured content + återanvändbara referenskomponenter i kundrepot.
+- [x] Frysa Minnebergsskolan som visuell designpilot.
+- [x] Godkänd designbaseline: `https://test2.avab.eu/referenser/minnebergsskolan-arvika/`.
+- [ ] Försona Minneberg-designen med den gemensamma structured-content-arkitekturen utan att ersätta kundens nyare implementation med den äldre AI Content-renderern.
+- [ ] Verifiera Minneberg på desktop och mobil mot designbaslinjen.
+- [ ] **Migrera Säffle simhall som första riktiga migrationspilot.**
+- [ ] Validera Säffle vid 1440, 1024, 768, 390 och 375 px samt kontrollera SEO, schema, länkar, bilder och build.
+- [ ] Genomför valideringsstopp: justera endast gemensamma schema/components om Säffle visar ett verkligt generellt behov.
+- [ ] Välj därefter nästa representativa referens för generaliseringstest (inte massmigrering direkt).
 - [ ] Implementera godkänd referensstandard på återstående referenssidor i små, beslutade batcher.
 - [ ] Kör slut-QA för index, internlänkar, alt-texter, canonical, drafts, responsivitet och build.
 
@@ -28,6 +38,11 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-17._
 
 ### Beslut som ska bevaras
 
+- `AVAB-EU/avab-eu` är gemensam GitHub source of truth för fortsatt arbete.
+- Nytt AI-/content-arbete ska inte fortsätta parallellt i `KodAiDeas/avab-eu`.
+- `main` ändras inte direkt av AI Content-arbetet; branch + PR används.
+- Minnebergsskolan är designpilot; Säffle simhall är första migrationspilot efter designförsoningen.
+- Kundrepots aktuella kod är implementationens source of truth när den skiljer sig från äldre dokument/brancher.
 - Inga undermappar i `public/assets/`; bilder ligger platt och endast omdöpta.
 - Generiska motivnamn används i filnamn, ortsnamn i alt-text.
 - Visuellt lika men icke-identiska bilder hålls isär.
