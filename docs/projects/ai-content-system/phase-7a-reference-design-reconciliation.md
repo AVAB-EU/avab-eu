@@ -2,6 +2,7 @@
 
 **Status:** Active blocker before further migration  
 **Owner:** AVAB-projektet  
+**Repo:** `AVAB-EU/avab-eu`  
 **Branch:** `agent/ai-content-system`  
 **Design baseline:** `https://test2.avab.eu/referenser/minnebergsskolan-arvika/`  
 **Last reviewed:** 2026-08-18
@@ -10,92 +11,104 @@
 
 Minnebergsskolans live-version på `test2.avab.eu` är visuell source of truth för hur AVAB:s referenssidor ska upplevas under Fas 7.
 
-`agent/ai-content-system` är samtidigt source of truth för den nya tekniska arkitekturen: structured content, Astro Content Collections, Zod-schema, AI-workflows, guardrails och PR-flöde.
+Kundrepots aktuella kod är teknisk implementation source of truth. Den nyare implementationen får inte ersättas av den äldre renderer som byggdes i det separata arbetsrepot.
 
-Fas 7 får därför inte välja mellan designen och arkitekturen. Målet är att förena dem:
+Fas 7A ska därför förena:
 
-`structured content -> gemensam ReferencePage/components -> Minneberg-designens visuella språk`
+`kundrepots structured content + befintliga Reference*-komponenter + Minneberg-designens visuella språk`
+
+## Aktuell teknisk baseline i kundrepot
+
+`src/content.config.ts` har redan en rikare referensmodell än den tidigare AI Content-piloten. Referenser använder bland annat:
+
+- layouts: `compact`, `standard`, `extended`
+- hero, fakta och brief
+- scope och project facts
+- variants och tekniska fördjupningar
+- verifierings-/evidence-fält
+- CTA-varianter
+- bilder med width/height/objectPosition
+- kund/publiceringsfält
+
+Kundrepot har dessutom återanvändbara komponenter som bland annat:
+
+- `ReferenceHero.astro`
+- `ReferenceFacts.astro`
+- `ReferenceBrief.astro`
+- `ReferenceScope.astro`
+- `ReferenceScale.astro`
+- `ReferenceFeatureSplit.astro`
+- `ReferenceMediaGrid.astro`
+- `ReferenceTechnicalDetails.astro`
+- `ReferenceGallery.astro`
+- `ReferenceFaq.astro`
+- `ReferenceQuote.astro`
+- `RelatedReferences.astro`
+- `ReferenceAnchorNav.astro`
+
+Detta komponentlager ska granskas och återanvändas före skapande av nya parallella blocktyper.
 
 ## Varför Fas 7A behövs
 
-Den första generiska `ReferencePage.astro` blev tekniskt ren och byggbar men förenklade bort för många bärande delar av den godkända Minneberg-designen. Det gav en visuell regression trots grön CI.
+Den tidigare AI Content-branchen byggde en alternativ generisk `ReferencePage`/`ReferenceCaseStudy`. Den var tekniskt ren men hade två problem:
 
-Detta visar att build/schema inte räcker som migrationsbevis. Designparitet måste vara ett explicit gate-villkor före fortsatt massmigrering.
+1. den förenklade bort viktiga delar av Minnebergs godkända design,
+2. kundrepot hade samtidigt hunnit utveckla en rikare och mer relevant implementation.
+
+Lärdomen är att dokumentation och AI-regler ska migreras, men implementation får inte skrivas över utan reconciliation mot aktuell kod.
 
 ## Designkontrakt från Minneberg
 
-Den gemensamma referensarkitekturen ska kunna uttrycka följande återkommande mönster utan sidspecifik fullsidig CSS/markup:
+Den gemensamma referensarkitekturen ska kunna uttrycka följande återkommande mönster utan unik fullsidig CSS per referens:
 
 1. Breadcrumbrad under header.
-2. Hero med bakgrundsbild, eyebrow, tydlig H1, ingress och kontrollerade CTA:er.
-3. Helbredds faktaband direkt efter hero.
-4. Växlande ljusa/neutrala sektioner för rytm.
-5. Intro/leveranssektion med rubrik, lead, brödtext och scope-kort.
-6. Tvåkolumnssektioner med text + bild, samt möjlighet att spegelvända ordningen.
-7. Flow-/stegkort när processen behöver förklaras.
-8. Snippet/AEO-rutor som kompletterande kort svar, inte som separat sidmall.
-9. Metrics/proof-strips för verifierade nyckeltal.
-10. Bildgalleri med kontrollerade spännvidder/format och captions.
-11. Tekniska specialblock, exempelvis signalflöde, endast när de bygger på en generell blocktyp.
-12. Tvåkolumns FAQ på desktop och en kolumn på mobil.
-13. Fullbredds avslutande CTA med primär handling, sekundär länk och stödjande lista.
-14. Konsekvent alignment i överkant för text, rubriker, bilder och kort på desktop.
-15. Innehållsdriven höjd; equal-height får inte skapa stora tomma bottenytor.
-16. Enkolumnsflöde på mobil för innehålls-/kortblock som standard.
+2. Hero med verklig projektbild, eyebrow, tydlig H1, ingress och kontrollerade CTA:er.
+3. Tydliga projektfakta tidigt i sidan.
+4. Växlande sektioner som skapar rytm utan att bli en tung säljsida.
+5. Scope/leveransomfattning med tydlig informationshierarki.
+6. Text + bild-sektioner och möjlighet att spegelvända layout när det behövs.
+7. Process-/stegpresentation när den tillför begriplighet.
+8. Verifierade metrics/resultat där underlag finns.
+9. Bildgalleri med captions och korrekt alt-text.
+10. Tekniska fördjupningar utan att varje projekt skapar en egen mall.
+11. FAQ som är läsbar på desktop och mobil.
+12. Avslutande CTA med tydlig primär handling.
+13. Konsekvent alignment i överkant för rubriker, text, bilder och kort på desktop.
+14. Innehållsdriven höjd; lika höjd får inte skapa stora tomma ytor.
+15. Enkolumnsflöde på mobil som standard där det förbättrar läsbarheten.
 
-## Vad som inte ska kopieras rakt av
+## Vad som inte ska göras
 
-Följande i legacy/pilotsidan ska inte bli normal authoring-modell:
-
-- hårdkodad Minneberg-text i `ReferencePage`
-- projektspecifika klassnamn som kräver unik CSS per referens
-- manuellt duplicerad SEO/schema
-- manuellt duplicerade breadcrumbs
-- `www.avab.eu` som canonical källa
-- placeholders eller tillfälliga kommentarer som permanent struktur
-- unika blocktyper som bara finns för att imitera ett enda projekt
-
-## Arkitekturprincip för implementation
-
-Minsta gemensamma uppsättning återanvändbara block ska användas. Schema får utökas när en verklig återkommande designfunktion saknas, men inte med ett fält per Minneberg-sektion.
-
-Föredragen blockfamilj:
-
-- `intro`
-- `cardGrid`
-- `mediaText`
-- `metrics`
-- `steps`
-- `snippet`
-- `gallery`
-- `flow`
-- `faq`
-- `cta`
-
-Varje blocktyp ska ha kontrollerade varianter i renderer/components. Content får inte bära godtyckliga CSS-klasser eller fri HTML för layout.
+- Kopiera inte den gamla `ReferenceCaseStudy.astro` in i kundrepot som ny parallell standard.
+- Ersätt inte kundrepots `content.config.ts` med den äldre AI Content-versionen.
+- Skriv inte över Minneberg-route eller kundens projektbilder med äldre branchversioner.
+- Skapa inte en ny komponent om befintlig `Reference*`-komponent redan löser behovet.
+- Lägg inte godtyckliga CSS-klasser eller fri HTML i content för att imitera en enstaka referens.
+- Återinför inte `www.avab.eu` som canonical källa.
 
 ## Genomförandeordning
 
-1. Kartlägg Minneberg-pilotens sektioner mot generiska blocktyper.
-2. Uppdatera content model/schema endast för återkommande behov som saknas.
-3. Bygg/återanvänd delade referenskomponenter för blocken.
-4. Gör `ReferencePage.astro` till orkestrerare, inte mega-komponent med projektspecifik logik.
-5. Mappa Minnebergs structured content till den nya blockmodellen.
-6. Verifiera `npm run validate`.
-7. Gör visuell jämförelse mot live-baslinjen på desktop och mobil.
-8. När Minneberg är visuellt godkänd: testa Säffle, Hanza och Sörby som variationsprov.
-9. Fortsätt resterande referenser först när dessa tester visar att modellen generaliserar.
+1. Inventera Minneberg-route mot befintliga `Reference*`-komponenter och schema.
+2. Identifiera vilken markup som fortfarande är Minneberg-specifik och vad som redan är gemensamt.
+3. Flytta endast verkligt återkommande mönster till befintliga/gemensamma komponenter.
+4. Anpassa schema endast när ett återkommande content-behov saknas.
+5. Behåll kundrepots bilder, fakta och nyare implementation.
+6. Kör build/validering.
+7. Jämför Minneberg visuellt mot `test2` på desktop och mobil.
+8. När Minneberg är godkänd: använd **Säffle simhall som första riktiga migrationspilot**.
+9. Validera Säffle på flera brytpunkter och kontrollera att ingen ny lokal CSS behövs.
+10. Gör ett valideringsstopp innan nästa referens väljs.
 
 ## Exit criterion för Fas 7A
 
 Fas 7A är klar när:
 
-- Minneberg renderas via structured content + gemensamma komponenter,
-- layouten visuellt följer live-baslinjen,
-- inga sidspecifika fullsidestyles krävs i route/content,
-- canonical/metadata/schema kommer från den nya arkitekturen,
-- desktop och mobil är granskade,
-- `npm run validate` passerar,
-- minst två ytterligare representativa referenser kan använda samma blockmodell utan specialhack.
+- Minneberg använder kundrepots structured content och gemensamma referenskomponenter i den utsträckning som är rimlig,
+- sidan visuellt följer godkänd test2-baseline,
+- ingen äldre parallell renderer behövs,
+- canonical/metadata/schema följer `https://avab.eu/`,
+- desktop och mobil är verifierade,
+- build/validering passerar,
+- Säffle simhall fungerar som första migrationspilot med samma arkitektur utan specialhack.
 
-Först därefter återupptas massmigreringen i Fas 7.
+Först därefter går Fas 7 vidare till fler referenser.
