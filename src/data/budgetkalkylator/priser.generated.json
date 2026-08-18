@@ -2,9 +2,7 @@
   "meta": {
     "currency": "SEK",
     "vat": "exclusive",
-    "warrantyRate": 0.1,
-    "source": "Webbexport",
-    "generatedFrom": "AVAB-budgetkalkyl-master.xlsx"
+    "warrantyRate": 0.1
   },
   "areas": {
     "sporthall": {

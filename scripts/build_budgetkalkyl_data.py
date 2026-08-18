@@ -104,7 +104,7 @@ def main() -> None:
     if not exported:
         raise ValueError("Webbexport innehåller inga exporterbara rader.")
     payload = {
-        "meta": {"currency": "SEK", "vat": "exclusive", "warrantyRate": 0.10, "source": SHEET, "generatedFrom": WORKBOOK.name, "exportedRows": exported},
+        "meta": {"currency": "SEK", "vat": "exclusive", "warrantyRate": 0.10},
         "areas": areas,
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
