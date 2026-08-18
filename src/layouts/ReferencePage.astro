@@ -31,6 +31,7 @@ const updatedDate = data.updatedDate.toISOString().slice(0, 10);
 const robots = data.draft || data.seo.noindex
   ? "noindex, nofollow"
   : "index, follow, max-image-preview:large";
+const isExtended = data.layout === "extended";
 
 const schemaImages = Array.from(new Set([
   heroImageUrl,
@@ -84,18 +85,6 @@ const structuredData = {
   ],
 };
 
-const anchorItems = data.layout === "extended"
-  ? [
-      { id: "uppdraget", label: "Uppdraget" },
-      { id: "leveransen", label: "Leveransen" },
-      ...(data.results ? [{ id: "resultatet", label: "Resultatet" }] : []),
-      ...(data.gallery ? [{ id: "bilder", label: "Bilder" }] : []),
-      ...(data.technicalDetails ? [{ id: "tekniken", label: "Tekniken" }] : []),
-      ...(data.relevance ? [{ id: "relevans", label: "Relevans" }] : []),
-      ...(data.faq ? [{ id: "fragor-svar", label: "Frågor & svar" }] : []),
-    ]
-  : [];
-
 const cta = data.cta;
 const renderPageCta = Boolean(
   cta?.enabled &&
@@ -105,6 +94,15 @@ const renderPageCta = Boolean(
   cta.primaryHref,
 );
 const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
+
+const anchorItems = [
+  { id: "uppdraget", label: "Uppdraget" },
+  { id: "omfattning", label: "Leveransen" },
+  ...(data.results ? [{ id: "resultat", label: "Resultatet" }] : []),
+  ...(data.gallery ? [{ id: "bilder", label: "Bilder" }] : []),
+  ...(data.technicalDetails ? [{ id: "tekniken", label: "Tekniken" }] : []),
+  ...(data.faq ? [{ id: "reference-faq-title", label: "FAQ" }] : []),
+].slice(0, 5);
 ---
 
 <!doctype html>
@@ -150,7 +148,7 @@ const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
     />
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
-  <body class={`reference-page reference-page--${data.layout}`}>
+  <body class:list={["reference-page", `reference-page--${data.layout}`, isExtended && "reference-page--case-study"]}>
     <SiteHeader />
     <nav class="reference-breadcrumbs" aria-label="Brödsmulor">
       <div class="avab-container">
@@ -162,31 +160,109 @@ const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
       </div>
     </nav>
 
-    <main id="main" data-reference-anchor-scope>
-      <ReferenceHero data={data} />
-      <ReferenceFacts facts={data.facts} />
-      {anchorItems.length > 0 && <ReferenceAnchorNav items={anchorItems} />}
-
-      <div id="uppdraget"><ReferenceBrief brief={data.brief} /></div>
-      <div id="leveransen"><ReferenceScope scope={data.scope} variants={data.variants} /></div>
-      {data.scale && <ReferenceScale scale={data.scale} />}
-      {data.results && <div id="resultatet"><ReferenceResults results={data.results} /></div>}
-      {data.quote && <ReferenceQuote quote={data.quote} />}
-      {data.gallery && <div id="bilder"><ReferenceGallery gallery={data.gallery} /></div>}
-      {data.technicalDetails && <div id="tekniken"><ReferenceTechnicalDetails details={data.technicalDetails} /></div>}
-      {data.relevance && <div id="relevans"><ReferenceRelevance relevance={data.relevance} /></div>}
-      {data.faq && (
-        <div id="fragor-svar">
-          <ReferenceFaq
-            id="reference-faq-title"
-            eyebrow={data.faq.eyebrow}
-            title={data.faq.title}
-            lead={data.faq.lead}
-            items={data.faq.items}
+    <main id="main">
+      {isExtended ? (
+        <>
+          <ReferenceHero
+            data={data}
+            variant="immersive"
+            kicker={`${data.category} · ${data.title}`}
+            primaryLabel="Utforska projektet"
+            primaryHref="#uppdraget"
           />
-        </div>
+          <ReferenceFacts facts={data.facts} />
+
+          <section class="reference-case" data-reference-anchor-scope>
+            <div class="reference-case-intro-wrap">
+              <div class="avab-container">
+                <header class="reference-case-intro">
+                  <span class="case-kicker">Projektet på djupet</span>
+                  <h2>{data.brief.title}</h2>
+                  <p>{data.scope.lead}</p>
+                </header>
+              </div>
+            </div>
+
+            <ReferenceAnchorNav items={anchorItems} />
+
+            <div class="reference-case-content">
+              <section class="case-section" id="uppdraget" data-case-section>
+                <div class="avab-container case-section__inner">
+                  <div class="case-copy">
+                    <span class="case-kicker">01 · {data.brief.eyebrow}</span>
+                    <h2>{data.brief.title}</h2>
+                    <p class="case-answer"><strong>{data.brief.result}</strong></p>
+                    <p>{data.brief.need}</p>
+                    <p>{data.brief.responsibility}</p>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="omfattning" data-case-section>
+                <div class="avab-container case-section__inner">
+                  <div class="case-copy">
+                    <span class="case-kicker">02 · {data.scope.eyebrow}</span>
+                    <h2>{data.scope.title}</h2>
+                    <p>{data.scope.lead}</p>
+                  </div>
+
+                  <ul class="scope-list case-scope-list">
+                    {data.scope.items.map((item) => <li>{item}</li>)}
+                  </ul>
+
+                  {data.scope.projectFacts && (
+                    <dl class="case-fact-grid">
+                      {data.scope.projectFacts.map((fact) => (
+                        <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>
+                      ))}
+                    </dl>
+                  )}
+                </div>
+              </section>
+            </div>
+          </section>
+
+          {data.scale && <ReferenceScale scale={data.scale} />}
+          {data.results && <ReferenceResults results={data.results} />}
+          {data.quote && <ReferenceQuote quote={data.quote} />}
+          {data.gallery && <ReferenceGallery gallery={data.gallery} />}
+          {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
+          {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
+          {data.faq && (
+            <ReferenceFaq
+              id="reference-faq-title"
+              eyebrow={data.faq.eyebrow}
+              title={data.faq.title}
+              lead={data.faq.lead}
+              items={data.faq.items}
+            />
+          )}
+          {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
+        </>
+      ) : (
+        <>
+          <ReferenceHero data={data} />
+          <ReferenceFacts facts={data.facts} />
+          <ReferenceBrief brief={data.brief} />
+          <ReferenceScope scope={data.scope} variants={data.variants} />
+          {data.scale && <ReferenceScale scale={data.scale} />}
+          {data.results && <ReferenceResults results={data.results} />}
+          {data.quote && <ReferenceQuote quote={data.quote} />}
+          {data.gallery && <ReferenceGallery gallery={data.gallery} />}
+          {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
+          {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
+          {data.faq && (
+            <ReferenceFaq
+              id="reference-faq-title"
+              eyebrow={data.faq.eyebrow}
+              title={data.faq.title}
+              lead={data.faq.lead}
+              items={data.faq.items}
+            />
+          )}
+          {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
+        </>
       )}
-      {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
 
       {renderPageCta && cta && (
         <PageCTA
@@ -198,6 +274,7 @@ const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
           secondaryLabel={cta.secondaryLabel}
           secondaryHref={cta.secondaryHref}
           points={cta.points}
+          flush={isExtended}
         />
       )}
       {renderLegacyCta && cta && cta.variant === "legacy" && (
