@@ -20,78 +20,47 @@ const reference = (await getCollection("references")).find(
   (entry) => entry.data.slug === "/referenser/saffle-simhall/",
 );
 
-if (!reference) {
-  throw new Error("Referensen Säffle simhall saknas i content collection.");
-}
+if (!reference) throw new Error("Referensen Säffle simhall saknas i content collection.");
 
 const data = reference.data;
-const embeddedImages = {
-  poolHero: "/assets/saffle-simhall-50m-bassang.webp",
-  poolRight: "/assets/saffle-simhall-50m-bassang-hoger-2.webp",
-  poolAntennas: "/assets/saffle-simhall-50m-bassang-hoger-antenner.webp",
-  poolLeft: "/assets/saffle-simhall-50m-bassang-vanster-2.webp",
-  childrenPool: "/assets/saffle-simhall-barnpool.webp",
-  cafe: "/assets/saffle-simhall-cafe-entre.webp",
-  multihall: "/assets/saffle-simhall-multihall-hogtalare.webp",
-  relaxDmx: "/assets/saffle-simhall-relax-dmx.webp",
-  relax: "/assets/saffle-simhall-relax.webp",
-  rackDmx: "/assets/saffle-simhall-teknikrack-dmx.webp",
-  rackMicrophone: "/assets/saffle-simhall-teknikrack-mikrofon.webp",
-  rack: "/assets/saffle-simhall-teknikrack.webp",
-  touch: "/assets/saffle-simhall-touchpanel-2.webp",
+const images = {
+  poolHero: "https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-50m-hogt-palm-vatten-parkering-2-1024x576.webp",
+  pool: "https://avab.eu/wp-content/uploads/2023/03/1920x1080-Saffle-simhall-50m-hogt-vatten-1024x576.webp",
+  antennas: "https://avab.eu/wp-content/uploads/2024/05/Sennheiser-tradlos-mikrofon-antenn-Saffle-simhall.webp",
+  relax: "https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-relax-1024x576.webp",
+  relaxDmx: "https://avab.eu/wp-content/uploads/2023/03/1920x1080-AVAB-Saffle-simhall-spa-rosa-bad-1024x576.webp",
+  childrenPool: "https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-barnpool-1024x576.webp",
+  cafe: "https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-reception-1024x576.webp",
+  touch: "https://avab.eu/wp-content/uploads/2024/05/Saffle-simhall-Crestron-1024x576.webp",
 } as const;
 
 const pageData = {
   ...data,
   heroImage: {
-    src: embeddedImages.poolHero,
+    src: images.poolHero,
     alt: "50-metersbassängen i Säffle simhall",
-    width: 1600,
-    height: 1067,
-    objectPosition: "center 48%",
+    width: 1024,
+    height: 576,
+    objectPosition: "center",
   },
 };
 
 const canonicalUrl = absoluteUrl(data.slug);
-const heroImageUrl = absoluteUrl(pageData.heroImage.src);
 const publishedDate = data.publishedDate.toISOString().slice(0, 10);
 const updatedDate = "2026-08-18";
-const robots = data.draft || data.seo.noindex
-  ? "noindex, nofollow"
-  : "index, follow, max-image-preview:large";
+const robots = data.draft || data.seo.noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large";
 const seoTitle = data.seo.title;
 const seoDescription = data.seo.description;
 const ogTitle = "Säffle simhall – samlad styrning av ljud, ljus och tillgänglighet";
 
 const faqItems = [
-  {
-    q: "Vad levererade AVAB till Säffle simhall?",
-    a: "AVAB levererade, monterade och driftsatte Crestronstyrning, RGB-belysning och ljudsystem. Projektet omfattade också trådlösa mikrofonsystem och hörslingor i utvalda delar av anläggningen.",
-  },
-  {
-    q: "Vad styrs med Crestron i Säffle simhall?",
-    a: "Crestron används som gemensamt gränssnitt för att hantera ljud, belysning och hörslingor. Målet var att personalen skulle kunna styra flera AV-funktioner från en sammanhållen lösning.",
-  },
-  {
-    q: "Hur löstes mikrofontäckningen i 50-metersbassängen?",
-    a: "Det trådlösa mikrofonsystemet kompletterades med två mikrofonantenner för att ge täckning i den 50 meter långa bassängmiljön.",
-  },
-  {
-    q: "Var installerades ljudsystem i anläggningen?",
-    a: "Ljudsystem installerades i tävlingsbassängen, multipoolen, barnpoolen, relaxavdelningen och kiosk/café.",
-  },
-  {
-    q: "Var installerades hörslingor?",
-    a: "Hörslingor installerades i konferensrum och på läktare som en del av anläggningens tillgänglighetslösning.",
-  },
-  {
-    q: "Hur är belysningen i relaxavdelningen uppbyggd?",
-    a: "Relaxavdelningen har RGB-belysning och DMX-styrda, vattenkylda armaturer som ingår i den styrda miljön.",
-  },
-  {
-    q: "När färdigställdes AVAB:s arbete i Säffle simhall?",
-    a: "Projektet färdigställdes i december 2019. Assemblin El AB var beställare och Säfflebostäder AB var slutkund.",
-  },
+  { q: "Vad levererade AVAB till Säffle simhall?", a: "AVAB levererade, monterade och driftsatte Crestronstyrning, RGB-belysning och ljudsystem. Projektet omfattade också trådlösa mikrofonsystem och hörslingor i utvalda delar av anläggningen." },
+  { q: "Vad styrs med Crestron i Säffle simhall?", a: "Crestron används som gemensamt gränssnitt för att hantera ljud, belysning och hörslingor." },
+  { q: "Hur löstes mikrofontäckningen i 50-metersbassängen?", a: "Det trådlösa mikrofonsystemet kompletterades med två mikrofonantenner för att ge täckning i den 50 meter långa bassängmiljön." },
+  { q: "Var installerades ljudsystem?", a: "Ljudsystem installerades i tävlingsbassängen, multipoolen, barnpoolen, relaxavdelningen och kiosk/café." },
+  { q: "Var installerades hörslingor?", a: "Hörslingor installerades i konferensrum och på läktare." },
+  { q: "Hur är belysningen i relaxavdelningen uppbyggd?", a: "Relaxavdelningen har RGB-belysning och DMX-styrda, vattenkylda armaturer." },
+  { q: "När färdigställdes projektet?", a: "Projektet färdigställdes i december 2019. Assemblin El AB var beställare och Säfflebostäder AB var slutkund." },
 ];
 
 const structuredData = {
@@ -105,20 +74,11 @@ const structuredData = {
       datePublished: publishedDate,
       dateModified: updatedDate,
       inLanguage: "sv-SE",
-      image: [heroImageUrl],
+      image: [images.poolHero],
       author: { "@type": "Organization", name: "AVAB", url: `${SITE_URL}/` },
       publisher: { "@type": "Organization", name: "AVAB", url: `${SITE_URL}/` },
       mainEntityOfPage: { "@id": `${canonicalUrl}#webpage` },
-      contentLocation: {
-        "@type": "Place",
-        name: "Säffle simhall",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Säffle",
-          addressRegion: "Värmland",
-          addressCountry: "SE",
-        },
-      },
+      contentLocation: { "@type": "Place", name: "Säffle simhall", address: { "@type": "PostalAddress", addressLocality: "Säffle", addressRegion: "Värmland", addressCountry: "SE" } },
       about: [
         { "@type": "Thing", name: "AV-teknik för simhall" },
         { "@type": "Thing", name: "Crestronstyrning" },
@@ -126,11 +86,6 @@ const structuredData = {
         { "@type": "Thing", name: "Hörslinga" },
         { "@type": "Thing", name: "RGB- och DMX-belysning" },
         ...data.archive.technologies.map((name) => ({ "@type": "Thing", name })),
-      ],
-      mentions: [
-        { "@type": "Brand", name: "Crestron" },
-        { "@type": "Organization", name: "Assemblin El AB" },
-        { "@type": "Organization", name: "Säfflebostäder AB" },
       ],
     },
     {
@@ -150,10 +105,6 @@ const structuredData = {
         { "@type": "WebPageElement", name: "Relax och ljus", url: `${canonicalUrl}#relax-ljus` },
         { "@type": "WebPageElement", name: "Helheten", url: `${canonicalUrl}#helheten` },
       ],
-      speakable: {
-        "@type": "SpeakableSpecification",
-        cssSelector: ["h1", ".case-answer", "#vanliga-fragor"],
-      },
     },
     {
       "@type": "BreadcrumbList",
@@ -167,26 +118,15 @@ const structuredData = {
     {
       "@type": "FAQPage",
       "@id": `${canonicalUrl}#faq`,
-      mainEntity: faqItems.map((item) => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: { "@type": "Answer", text: item.a },
-      })),
+      mainEntity: faqItems.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })),
     },
   ],
 };
 
 const cta = data.cta;
-const renderPageCta = Boolean(
-  cta?.enabled &&
-  cta.variant === "page" &&
-  cta.title &&
-  cta.primaryLabel &&
-  cta.primaryHref,
-);
+const renderPageCta = Boolean(cta?.enabled && cta.variant === "page" && cta.title && cta.primaryLabel && cta.primaryHref);
 const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
-
-const anchorItems = [
+const anchors = [
   { href: "#uppdraget", label: "Uppdraget", shortLabel: "Uppdrag" },
   { href: "#bassang-ljud", label: "50-metersbassängen", shortLabel: "Bassängen" },
   { href: "#styrning-tillganglighet", label: "Styrning & tillgänglighet", shortLabel: "Styrning" },
@@ -194,7 +134,6 @@ const anchorItems = [
   { href: "#helheten", label: "Helheten", shortLabel: "Helheten" },
 ];
 ---
-
 <!doctype html>
 <html lang="sv">
   <head>
@@ -206,465 +145,123 @@ const anchorItems = [
     <meta name="author" content="AVAB" />
     <meta name="theme-color" content="#282E29" />
     <link rel="canonical" href={canonicalUrl} />
-
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="sv_SE" />
     <meta property="og:site_name" content="AVAB" />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={seoDescription} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content={heroImageUrl} />
-    <meta property="og:image:width" content={String(pageData.heroImage.width)} />
-    <meta property="og:image:height" content={String(pageData.heroImage.height)} />
-    <meta property="og:image:alt" content={pageData.heroImage.alt} />
+    <meta property="og:image" content={images.poolHero} />
     <meta property="article:published_time" content={publishedDate} />
     <meta property="article:modified_time" content={updatedDate} />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={seoDescription} />
-    <meta name="twitter:image" content={heroImageUrl} />
-    <meta name="twitter:image:alt" content={pageData.heroImage.alt} />
-
+    <meta name="twitter:image" content={images.poolHero} />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="image" fetchpriority="high" href={pageData.heroImage.src} />
+    <link rel="preload" as="image" fetchpriority="high" href={images.poolHero} />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
-
   <body class={`reference-page reference-page--${data.layout} reference-page--saffle`}>
     <SiteHeader />
-
     <nav class="reference-breadcrumbs" aria-label="Brödsmulor">
-      <div class="avab-container">
-        <ol>
-          <li><a href="/">Start</a></li>
-          <li><a href="/referenser/">Referenser</a></li>
-          <li><span aria-current="page">Säffle simhall</span></li>
-        </ol>
-      </div>
+      <div class="avab-container"><ol><li><a href="/">Start</a></li><li><a href="/referenser/">Referenser</a></li><li><span aria-current="page">Säffle simhall</span></li></ol></div>
     </nav>
-
     <main id="main">
-      <ReferenceHero
-        data={pageData}
-        variant="immersive"
-        kicker="Referens · Säffle simhall"
-        primaryLabel="Utforska projektet"
-        primaryHref="#uppdraget"
-      />
+      <ReferenceHero data={pageData} variant="immersive" kicker="Referens · Säffle simhall" primaryLabel="Utforska projektet" primaryHref="#uppdraget" />
       <ReferenceFacts facts={data.facts} />
       {data.scale && <ReferenceScale scale={data.scale} />}
 
       <section class="saffle-case" aria-labelledby="case-study-title" data-reference-anchor-scope>
-        <div class="case-intro-wrap">
-          <div class="avab-container">
-            <header class="case-intro">
-              <span class="case-kicker">Projektet på djupet</span>
-              <h2 id="case-study-title">En simhall där ljud, ljus och tillgänglighet samlas i samma styrning</h2>
-              <p>
-                Säffle simhall består av flera miljöer med olika behov: 50-metersbassäng, multipool, barnpool,
-                relax och kiosk/café. AVAB:s uppdrag var att leverera, montera och driftsätta en lösning där
-                centrala AV-funktioner kan hanteras på ett sammanhållet sätt.
-              </p>
-            </header>
-          </div>
-        </div>
-
-        <ReferenceAnchorNav items={anchorItems} />
+        <div class="case-intro-wrap"><div class="avab-container"><header class="case-intro">
+          <span class="case-kicker">Projektet på djupet</span>
+          <h2 id="case-study-title">En simhall där ljud, ljus och tillgänglighet samlas i samma styrning</h2>
+          <p>Säffle simhall består av flera miljöer med olika behov: 50-metersbassäng, multipool, barnpool, relax och kiosk/café. AVAB:s uppdrag var att leverera, montera och driftsätta en lösning där centrala AV-funktioner kan hanteras på ett sammanhållet sätt.</p>
+        </header></div></div>
+        <ReferenceAnchorNav items={anchors} />
 
         <div class="case-content">
-          <section class="case-section" id="uppdraget" data-case-section>
-            <div class="avab-container case-section__inner">
-              <div class="case-copy">
-                <span class="case-kicker">01 · Uppdraget</span>
-                <h2>Vad omfattade AVAB:s leverans till Säffle simhall?</h2>
-                <p class="case-answer">
-                  <strong>AVAB levererade, monterade och driftsatte Crestronstyrning, RGB-belysning och ljudsystem, kompletterat med trådlösa mikrofoner och hörslingor.</strong>
-                </p>
-                <p>
-                  Assemblin El AB var beställare och Säfflebostäder AB slutkund. Projektet färdigställdes i
-                  december 2019. Ljudsystemet skulle fungera i tävlingsbassäng, multipool, barnpool, relax och
-                  kiosk/café, samtidigt som ljud, belysning och hörslingor skulle kunna nås från en gemensam styrning.
-                </p>
-                <p>
-                  Det gör projektet till en systemreferens snarare än en produktreferens: flera funktioner och
-                  verksamhetsytor behöver fungera tillsammans i den dagliga driften.
-                </p>
-              </div>
-
-              <ReferenceFeatureSplit
-                image={{ src: embeddedImages.cafe, alt: "Entré och café i Säffle simhall", width: 1200, height: 800 }}
-                kicker="Flera verksamhetsytor"
-                title="AV-systemet fortsätter utanför bassängrummet"
-                text="Kiosk/café ingick i de ytor där AVAB installerade ljud. Det visar varför anläggningen behövde behandlas som en sammanhängande helhet."
-              />
-
-              <ReferenceMediaGrid
-                items={[
-                  {
-                    key: "cafe",
-                    title: "Ljud även i kiosk och café",
-                    text: "Ljudsystemet följer verksamheten utanför bassängrummen och blir en del av den gemensamma användarlogiken.",
-                    alt: "Entré och cafémiljö i Säffle simhall",
-                    width: 1200,
-                    height: 800,
-                  },
-                  {
-                    key: "rack",
-                    title: "Central teknik bakom användargränssnittet",
-                    text: "Tekniken samlas i rack för driftsättning och service medan personalen möter ett enklare gränssnitt ute i anläggningen.",
-                    alt: "Teknikrack i Säffle simhall",
-                    width: 1000,
-                    height: 1498,
-                  },
-                ]}
-                imageMap={embeddedImages}
-                columns={2}
-                ratio="land"
-                split={false}
-              />
+          <section class="case-section" id="uppdraget" data-case-section><div class="avab-container case-section__inner">
+            <div class="case-copy"><span class="case-kicker">01 · Uppdraget</span><h2>Vad omfattade AVAB:s leverans till Säffle simhall?</h2>
+              <p class="case-answer"><strong>AVAB levererade, monterade och driftsatte Crestronstyrning, RGB-belysning och ljudsystem, kompletterat med trådlösa mikrofoner och hörslingor.</strong></p>
+              <p>Assemblin El AB var beställare och Säfflebostäder AB slutkund. Projektet färdigställdes i december 2019. Ljudsystemet skulle fungera i tävlingsbassäng, multipool, barnpool, relax och kiosk/café, samtidigt som ljud, belysning och hörslingor skulle kunna nås från en gemensam styrning.</p>
             </div>
-          </section>
+            <ReferenceFeatureSplit image={{ src: images.cafe, alt: "Entré och café i Säffle simhall" }} kicker="Flera verksamhetsytor" title="AV-systemet fortsätter utanför bassängrummet" text="Kiosk/café ingick i de ytor där AVAB installerade ljud. Det visar varför anläggningen behövde behandlas som en sammanhängande helhet." />
+          </div></section>
 
-          <section class="case-section" id="bassang-ljud" data-case-section>
-            <div class="avab-container case-section__inner">
-              <div class="case-copy">
-                <span class="case-kicker">02 · 50-metersbassängen</span>
-                <h2>Hur löstes ljud och trådlösa mikrofoner över den stora bassängytan?</h2>
-                <p class="case-answer">
-                  <strong>50-metersbassängen fick ljudsystem och trådlösa mikrofoner. Två mikrofonantenner användes för att ge täckning i den långa bassängmiljön.</strong>
-                </p>
-                <p>
-                  En 50-metersbassäng innebär långa avstånd och en verksamhet där information och aktiviteter
-                  behöver fungera från olika delar av rummet. Systemets delar behöver därför placeras för den
-                  faktiska ytan, inte bara för teknikrummet.
-                </p>
-              </div>
-
-              <ReferenceFeatureSplit
-                image={{ src: embeddedImages.poolAntennas, alt: "Mikrofonantenner vid 50-metersbassängen i Säffle simhall", width: 1200, height: 800 }}
-                kicker="Trådlös täckning"
-                title="Två antenner för mikrofonerna i 50-metersbassängen"
-                text="Antennerna kompletterar det trådlösa mikrofonsystemet och ger täckning över den stora bassängmiljön."
-                reverse
-              />
-
-              <ReferenceMediaGrid
-                items={[
-                  {
-                    key: "poolRight",
-                    title: "Ljudet ska täcka en lång publik miljö",
-                    text: "Bassängens skala gör tydlig täckning viktig både vid aktiviteter och när mikrofon används för information.",
-                    alt: "Översikt över 50-metersbassängen i Säffle simhall",
-                    width: 1200,
-                    height: 800,
-                  },
-                  {
-                    key: "poolLeft",
-                    title: "Samma system ska fungera från flera delar av lokalen",
-                    text: "Bilderna visar varför ljud och mikrofontäckning behöver hanteras som en helhet över bassängrummet.",
-                    alt: "Lång vy över 50-metersbassängen i Säffle simhall",
-                    width: 1200,
-                    height: 800,
-                  },
-                  {
-                    key: "poolHero",
-                    title: "Den färdiga 50-metersbassängen",
-                    text: "Här ska ljud, trådlösa mikrofoner och styrning fungera i den dagliga driften.",
-                    alt: "Färdig 50-metersbassäng i Säffle simhall",
-                    width: 1600,
-                    height: 1067,
-                  },
-                ]}
-                imageMap={embeddedImages}
-                columns={3}
-                ratio="land"
-                split={false}
-              />
+          <section class="case-section" id="bassang-ljud" data-case-section><div class="avab-container case-section__inner">
+            <div class="case-copy"><span class="case-kicker">02 · 50-metersbassängen</span><h2>Hur löstes ljud och trådlösa mikrofoner över den stora bassängytan?</h2>
+              <p class="case-answer"><strong>50-metersbassängen fick ljudsystem och trådlösa mikrofoner. Två mikrofonantenner användes för att ge täckning i den långa bassängmiljön.</strong></p>
+              <p>En 50-metersbassäng innebär långa avstånd och en verksamhet där information och aktiviteter behöver fungera från olika delar av rummet. Systemets delar behöver därför placeras för den faktiska ytan, inte bara för teknikrummet.</p>
             </div>
-          </section>
+            <ReferenceFeatureSplit image={{ src: images.antennas, alt: "Mikrofonantenner vid 50-metersbassängen i Säffle simhall" }} kicker="Trådlös täckning" title="Två antenner för mikrofonerna i 50-metersbassängen" text="Antennerna kompletterar det trådlösa mikrofonsystemet och ger täckning över den stora bassängmiljön." reverse />
+            <ReferenceMediaGrid items={[
+              { src: images.pool, title: "Ljudet ska täcka en lång publik miljö", text: "Bassängens skala gör tydlig täckning viktig både vid aktiviteter och när mikrofon används för information.", alt: "Översikt över 50-metersbassängen i Säffle simhall" },
+              { src: images.poolHero, title: "Den färdiga 50-metersbassängen", text: "Här ska ljud, trådlösa mikrofoner och styrning fungera i den dagliga driften.", alt: "Färdig 50-metersbassäng i Säffle simhall" },
+            ]} columns={2} ratio="land" split={false} />
+          </div></section>
 
-          <section class="case-section" id="styrning-tillganglighet" data-case-section>
-            <div class="avab-container case-section__inner">
-              <div class="case-copy">
-                <span class="case-kicker">03 · Styrning & tillgänglighet</span>
-                <h2>Hur samlades ljud, ljus och hörslingor för personalen?</h2>
-                <p class="case-answer">
-                  <strong>Crestronstyrningen samlar ljud, belysning och hörslingor i ett gemensamt gränssnitt. Hörslingor installerades i konferensrum och på läktare.</strong>
-                </p>
-                <p>
-                  En stor anläggning blir snabbt svår att använda om varje delsystem har sin egen kontroll.
-                  Styrningen gör att personalen kan nå rätt funktion utan att arbeta direkt i teknikracket.
-                  Tillgänglighetsfunktionerna är samtidigt definierade system som går att driftsätta och serva.
-                </p>
-              </div>
-
-              <ReferenceFeatureSplit
-                image={{ src: embeddedImages.touch, alt: "Crestronstyrning med zonval i Säffle simhall", width: 1200, height: 801 }}
-                kicker="Ett gränssnitt mot flera system"
-                title="Användaren väljer funktion – tekniken bakom får vara komplex"
-                text="Touchpanelen visar hur olika delar av anläggningen kan nås från samma styrmiljö."
-              />
-
-              <ReferenceMediaGrid
-                items={[
-                  {
-                    key: "rackMicrophone",
-                    title: "Trådlösa mikrofoner i teknikracket",
-                    text: "Mikrofonsystemet arbetar tillsammans med antennerna ute vid 50-metersbassängen.",
-                    alt: "Trådlösa mikrofonmottagare i teknikrack i Säffle simhall",
-                    width: 1200,
-                    height: 801,
-                  },
-                  {
-                    key: "rackDmx",
-                    title: "DMX och styrning samlat centralt",
-                    text: "Belysningsstyrningen är en av funktionerna som samlas i den centrala installationen och nås via det övergripande systemet.",
-                    alt: "DMX-utrustning i teknikrack i Säffle simhall",
-                    width: 1200,
-                    height: 801,
-                  },
-                  {
-                    key: "touch",
-                    title: "Enkel vardagsstyrning ute i anläggningen",
-                    text: "Personalen möter en touchpanel i stället för de enskilda apparaterna och signalvägarna bakom systemet.",
-                    alt: "Crestron touchpanel i Säffle simhall",
-                    width: 1200,
-                    height: 801,
-                  },
-                ]}
-                imageMap={embeddedImages}
-                columns={3}
-                ratio="land"
-                split={false}
-              />
+          <section class="case-section" id="styrning-tillganglighet" data-case-section><div class="avab-container case-section__inner">
+            <div class="case-copy"><span class="case-kicker">03 · Styrning & tillgänglighet</span><h2>Hur samlades ljud, ljus och hörslingor för personalen?</h2>
+              <p class="case-answer"><strong>Crestronstyrningen samlar ljud, belysning och hörslingor i ett gemensamt gränssnitt. Hörslingor installerades i konferensrum och på läktare.</strong></p>
+              <p>En stor anläggning blir snabbt svår att använda om varje delsystem har sin egen kontroll. Styrningen gör att personalen kan nå rätt funktion från ett sammanhållet gränssnitt.</p>
             </div>
-          </section>
+            <ReferenceFeatureSplit image={{ src: images.touch, alt: "Crestronstyrning i Säffle simhall" }} kicker="Ett gränssnitt mot flera system" title="Användaren väljer funktion – tekniken bakom får vara komplex" text="Touchpanelen visar hur olika delar av anläggningen kan nås från samma styrmiljö." />
+          </div></section>
 
-          <section class="case-section" id="relax-ljus" data-case-section>
-            <div class="avab-container case-section__inner">
-              <div class="case-copy">
-                <span class="case-kicker">04 · Relax & ljus</span>
-                <h2>Hur kombinerades ljud och styrd färgbelysning i relaxavdelningen?</h2>
-                <p class="case-answer">
-                  <strong>Relaxavdelningen ingår i ljudsystemet och kompletterades med RGB-belysning samt DMX-styrda, vattenkylda armaturer.</strong>
-                </p>
-                <p>
-                  I relaxmiljön blir ljuset en tydlig del av upplevelsen. Den styrda RGB-belysningen kan förändra
-                  rummets karaktär medan DMX ger kontroll över de vattenkylda armaturerna. Samtidigt fortsätter
-                  ljudsystemet genom relaxen.
-                </p>
-              </div>
-
-              <ReferenceFeatureSplit
-                image={{ src: embeddedImages.relaxDmx, alt: "Relaxpool i Säffle simhall med styrd färgbelysning", width: 1200, height: 800 }}
-                kicker="RGB och DMX"
-                title="Färgbelysningen förändrar hela relaxmiljön"
-                text="De DMX-styrda, vattenkylda armaturerna är en del av relaxavdelningens RGB-lösning och visar tydligt hur styrningen påverkar själva miljön."
-                reverse
-              />
-
-              <ReferenceMediaGrid
-                items={[
-                  {
-                    key: "relax",
-                    title: "Relaxavdelningen i dagsljus",
-                    text: "Här ingår ljud i AVAB:s leverans samtidigt som tekniken behöver integreras diskret i den färdiga miljön.",
-                    alt: "Relaxavdelning med pool i Säffle simhall",
-                    width: 1200,
-                    height: 800,
-                  },
-                  {
-                    key: "childrenPool",
-                    title: "Barnpoolen är en egen ljudmiljö",
-                    text: "Barnpoolen är en av verksamhetsytorna där AVAB installerade ljudsystem, tillsammans med tävlingsbassäng, multipool, relax och café.",
-                    alt: "Barnpool i Säffle simhall",
-                    width: 1200,
-                    height: 800,
-                  },
-                ]}
-                imageMap={embeddedImages}
-                columns={2}
-                ratio="land"
-                split={false}
-              />
+          <section class="case-section" id="relax-ljus" data-case-section><div class="avab-container case-section__inner">
+            <div class="case-copy"><span class="case-kicker">04 · Relax & ljus</span><h2>Hur kombinerades ljud och styrd färgbelysning i relaxavdelningen?</h2>
+              <p class="case-answer"><strong>Relaxavdelningen ingår i ljudsystemet och kompletterades med RGB-belysning samt DMX-styrda, vattenkylda armaturer.</strong></p>
+              <p>I relaxmiljön blir ljuset en tydlig del av upplevelsen. Den styrda RGB-belysningen kan förändra rummets karaktär medan DMX ger kontroll över de vattenkylda armaturerna.</p>
             </div>
-          </section>
+            <ReferenceFeatureSplit image={{ src: images.relaxDmx, alt: "Relaxpool i Säffle simhall med styrd färgbelysning" }} kicker="RGB och DMX" title="Färgbelysningen förändrar hela relaxmiljön" text="De DMX-styrda, vattenkylda armaturerna är en del av relaxavdelningens RGB-lösning." reverse />
+            <ReferenceMediaGrid items={[
+              { src: images.relax, title: "Relaxavdelningen i dagsljus", text: "Här ingår ljud i AVAB:s leverans samtidigt som tekniken behöver integreras diskret i den färdiga miljön.", alt: "Relaxavdelning med pool i Säffle simhall" },
+              { src: images.childrenPool, title: "Barnpoolen är en egen ljudmiljö", text: "Barnpoolen är en av verksamhetsytorna där AVAB installerade ljudsystem.", alt: "Barnpool i Säffle simhall" },
+            ]} columns={2} ratio="land" split={false} />
+          </div></section>
 
-          <section class="case-section" id="helheten" data-case-section>
-            <div class="avab-container case-section__inner">
-              <div class="case-copy">
-                <span class="case-kicker">05 · Helheten</span>
-                <h2>Vad blir resultatet när flera AV-funktioner behandlas som ett system?</h2>
-                <p class="case-answer">
-                  <strong>Personalen får en gemensam styrlogik samtidigt som ljud, mikrofoner, hörslingor och belysning kan anpassas efter olika delar av anläggningen.</strong>
-                </p>
-                <p>
-                  Tävlingsbassängen behöver lång mikrofontäckning. Relaxen behöver styrt ljus. Konferensrum och
-                  läktare behöver hörslinga. Kiosk/café och andra verksamhetsytor behöver ljud. Funktionerna är
-                  olika, men användaren ska inte behöva uppleva dem som separata tekniköar.
-                </p>
-                <p>
-                  Värdet ligger därför både i att varje del fungerar och i att systemen går att använda tillsammans,
-                  att den centrala tekniken går att serva och att styrningen är begriplig efter överlämning.
-                </p>
-              </div>
-
-              <ReferenceFeatureSplit
-                image={{ src: embeddedImages.rack, alt: "Komplett teknikrack i Säffle simhall", width: 1000, height: 1498 }}
-                kicker="Tekniken bakom helheten"
-                title="Central teknik, enkel användning ute i verksamheten"
-                text="Rack och styrning behöver vara strukturerade för drift och service. Samtidigt möter personalen ett betydligt enklare gränssnitt i de publika delarna av anläggningen."
-                variant="portrait"
-                class="reference-feature-split--wide"
-              />
-
-              <ReferenceMediaGrid
-                items={[
-                  {
-                    key: "multihall",
-                    title: "Högtalare i multihallen",
-                    text: "Bilden visar hur ljudteknik integrerats även i en aktivitetsyta utanför bassängrummet.",
-                    alt: "Högtalare monterade i multihall vid Säffle simhall",
-                    width: 1200,
-                    height: 801,
-                  },
-                  {
-                    key: "cafe",
-                    title: "Ljud även i kiosk och café",
-                    text: "Kiosk/café ingick i de ytor där AVAB installerade ljud, vilket gör den gemensamma styrningen relevant långt utanför själva bassängen.",
-                    alt: "Entré och cafémiljö i Säffle simhall",
-                    width: 1200,
-                    height: 800,
-                  },
-                ]}
-                imageMap={embeddedImages}
-                columns={2}
-                ratio="land"
-                split={false}
-              />
+          <section class="case-section" id="helheten" data-case-section><div class="avab-container case-section__inner">
+            <div class="case-copy"><span class="case-kicker">05 · Helheten</span><h2>Vad blir resultatet när flera AV-funktioner behandlas som ett system?</h2>
+              <p class="case-answer"><strong>Personalen får en gemensam styrlogik samtidigt som ljud, mikrofoner, hörslingor och belysning kan anpassas efter olika delar av anläggningen.</strong></p>
+              <p>Tävlingsbassängen behöver lång mikrofontäckning. Relaxen behöver styrt ljus. Konferensrum och läktare behöver hörslinga. Kiosk/café och andra verksamhetsytor behöver ljud. Funktionerna är olika, men användaren ska inte behöva uppleva dem som separata tekniköar.</p>
             </div>
-          </section>
+            <ReferenceMediaGrid items={[
+              { src: images.cafe, title: "Ljudsystemet följer verksamheten", text: "Cafémiljön är en av flera zoner som gör att den gemensamma styrningen får värde i hela anläggningen.", alt: "Entré och café i Säffle simhall" },
+              { src: images.poolHero, title: "Helheten är den viktigaste referensen", text: "Säffle simhall visar hur ljud, trådlösa mikrofoner, hörslingor, RGB/DMX och Crestronstyrning kan samlas i en publik anläggning.", alt: "50-metersbassängen i Säffle simhall" },
+            ]} columns={2} ratio="land" split={false} />
+          </div></section>
         </div>
       </section>
 
       {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
-
-      <ReferenceFaq
-        id="vanliga-fragor"
-        eyebrow="Vanliga frågor om projektet"
-        title="Säffle simhall – ljud, styrning, hörslingor och RGB-belysning"
-        lead="Snabba svar om AVAB:s leverans, Crestronstyrningen, mikrofontäckningen i 50-metersbassängen, hörslingorna och belysningen i relaxavdelningen."
-        items={faqItems.map(({ q, a }) => ({ question: q, answer: a }))}
-      />
-
-      {renderPageCta && cta && (
-        <PageCTA
-          eyebrow={cta.eyebrow}
-          title={cta.title!}
-          text={cta.text}
-          primaryLabel={cta.primaryLabel!}
-          primaryHref={cta.primaryHref!}
-          secondaryLabel={cta.secondaryLabel}
-          secondaryHref={cta.secondaryHref}
-          points={cta.points}
-          flush
-        />
-      )}
-      {renderLegacyCta && cta && cta.variant === "legacy" && (
-        <ReferenceLegacyCta cta={cta} />
-      )}
+      <ReferenceFaq id="vanliga-fragor" eyebrow="Vanliga frågor om projektet" title="Säffle simhall – ljud, styrning, hörslingor och RGB-belysning" lead="Snabba svar om AVAB:s leverans och lösningen i Säffle simhall." items={faqItems.map(({ q, a }) => ({ question: q, answer: a }))} />
+      {renderPageCta && cta && <PageCTA eyebrow={cta.eyebrow} title={cta.title!} text={cta.text} primaryLabel={cta.primaryLabel!} primaryHref={cta.primaryHref!} secondaryLabel={cta.secondaryLabel} secondaryHref={cta.secondaryHref} points={cta.points} flush />}
+      {renderLegacyCta && cta && cta.variant === "legacy" && <ReferenceLegacyCta cta={cta} />}
     </main>
-
     <SiteFooter />
-
     <style>
-      .saffle-case {
-        padding: 0;
-        background: var(--avab-white);
-        border-top: 1px solid var(--avab-border);
-        border-bottom: 1px solid var(--avab-border);
-      }
-
+      .saffle-case { padding: 0; background: var(--avab-white); border-top: 1px solid var(--avab-border); border-bottom: 1px solid var(--avab-border); }
       .case-intro-wrap { background: var(--avab-white); }
-      .case-content { min-width: 0; }
-
-      .case-intro {
-        max-width: 850px;
-        margin-bottom: 0;
-        padding: var(--avab-section-space) 0;
-      }
-
-      .case-intro h2 {
-        max-width: 22ch;
-        margin: 0 0 16px;
-      }
-
-      .case-intro p {
-        max-width: 78ch;
-        margin: 0;
-        color: var(--avab-dark-muted);
-      }
-
-      .case-section {
-        scroll-margin-top: 76px;
-        margin: 0;
-        padding: var(--avab-section-space) 0;
-        border-bottom: 0;
-        background: var(--avab-white);
-      }
-
+      .case-content, .case-section__inner { min-width: 0; }
+      .case-intro { max-width: 850px; margin-bottom: 0; padding: var(--avab-section-space) 0; }
+      .case-intro h2 { max-width: 22ch; margin: 0 0 16px; }
+      .case-intro p { max-width: 78ch; margin: 0; color: var(--avab-dark-muted); }
+      .case-section { scroll-margin-top: 76px; margin: 0; padding: var(--avab-section-space) 0; border-bottom: 0; background: var(--avab-white); }
       .case-section:nth-child(even) { background: var(--avab-light); }
-      .case-section__inner { min-width: 0; }
-
-      .case-copy {
-        max-width: 850px;
-        margin-bottom: var(--avab-content-gap);
-      }
-
-      .case-copy h2 {
-        max-width: 24ch;
-        margin: 0 0 16px;
-      }
-
+      .case-copy { max-width: 850px; margin-bottom: var(--avab-content-gap); }
+      .case-copy h2 { max-width: 24ch; margin: 0 0 16px; }
       .case-copy p { max-width: 78ch; }
-
-      .case-answer {
-        margin: 0 0 18px;
-        padding: 15px 17px;
-        max-width: 78ch;
-        background: var(--avab-white);
-        border-left: 4px solid var(--avab-green);
-        border-radius: 0 10px 10px 0;
-        box-shadow: var(--avab-shadow-sm);
-        color: var(--avab-dark);
-      }
-
+      .case-answer { margin: 0 0 18px; padding: 15px 17px; max-width: 78ch; background: var(--avab-white); border-left: 4px solid var(--avab-green); border-radius: 0 10px 10px 0; box-shadow: var(--avab-shadow-sm); color: var(--avab-dark); }
       .case-answer strong { font-weight: 750; }
-
-      .case-kicker {
-        display: block;
-        margin-bottom: 9px;
-        color: var(--avab-green);
-        font-size: 0.76rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      @media (max-width: 767px) {
-        .case-intro { padding: var(--avab-section-space-mobile) 0; }
-        .case-section { padding: var(--avab-section-space-mobile) 0; }
-      }
-
-      @media (max-width: 680px) {
-        .case-section { scroll-margin-top: 20px; }
-      }
+      .case-kicker { display: block; margin-bottom: 9px; color: var(--avab-green); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+      @media (max-width: 767px) { .case-intro, .case-section { padding-top: var(--avab-section-space-mobile); padding-bottom: var(--avab-section-space-mobile); } }
+      @media (max-width: 680px) { .case-section { scroll-margin-top: 20px; } }
     </style>
   </body>
 </html>
