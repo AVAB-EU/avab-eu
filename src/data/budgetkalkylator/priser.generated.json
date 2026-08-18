@@ -1,0 +1,385 @@
+{
+  "meta": {
+    "currency": "SEK",
+    "vat": "exclusive",
+    "warrantyRate": 0.1
+  },
+  "areas": {
+    "sporthall": {
+      "label": "Sporthall och arena",
+      "isTestValue": false,
+      "groups": {
+        "hallType": {
+          "simple": {
+            "label": "Halltyp och grundlogik",
+            "type": "Fast",
+            "price": 0,
+            "hours": 0,
+            "quote": false,
+            "note": "Enkel sporthall vald."
+          },
+          "dividable": {
+            "label": "Halltyp och grundlogik",
+            "type": "Fast",
+            "price": 25000,
+            "hours": 4,
+            "quote": false,
+            "note": "Delbar hall med A/B-logik."
+          },
+          "stands": {
+            "label": "Halltyp och grundlogik",
+            "type": "Fast",
+            "price": 18000,
+            "hours": 5,
+            "quote": false,
+            "note": "Hall med läktare och publiklogik."
+          },
+          "sti": {
+            "label": "Halltyp och grundlogik",
+            "type": "Fast",
+            "price": 30000,
+            "hours": 8,
+            "quote": false,
+            "note": "Hall med fördjupad taluppfattbarhet."
+          }
+        },
+        "basePackage": {
+          "simple": {
+            "label": "Basljud sporthall",
+            "type": "Fast",
+            "price": 98000,
+            "hours": 18,
+            "quote": false,
+            "note": "Budgetpost för huvudljud och grundläggande drift."
+          },
+          "dsp": {
+            "label": "Basljud sporthall",
+            "type": "Fast",
+            "price": 123000,
+            "hours": 22,
+            "quote": false,
+            "note": "Budgetpost för huvudljud med DSP och zonlogik."
+          }
+        },
+        "standsSound": {
+          "none": {
+            "label": "Läktarljud",
+            "type": "Fast",
+            "price": 0,
+            "hours": 0,
+            "quote": false,
+            "note": ""
+          },
+          "eight12": {
+            "label": "Läktarljud för sporthall",
+            "type": "Fast",
+            "price": 60000,
+            "hours": 12,
+            "quote": false,
+            "note": "Budgetpost för separat ljud mot läktare."
+          }
+        },
+        "control": {
+          "knob": {
+            "label": "Styrning",
+            "type": "Fast",
+            "price": 6500,
+            "hours": 2,
+            "quote": false,
+            "note": "Vridreglage och enkel användning."
+          },
+          "touch": {
+            "label": "Styrning",
+            "type": "Fast",
+            "price": 29000,
+            "hours": 5,
+            "quote": false,
+            "note": "Touchpanel och tydliga användarlägen."
+          }
+        },
+        "loopPlan": {
+          "none": {
+            "label": "Hörslinga, Auracast och tillgänglighet",
+            "type": "Fast",
+            "price": 0,
+            "hours": 0,
+            "quote": false,
+            "note": ""
+          },
+          "standard": {
+            "label": "Hörslinga, Auracast och tillgänglighet",
+            "type": "Fast",
+            "price": 148000,
+            "hours": 36,
+            "quote": false,
+            "note": "Budgetpost för standardplan."
+          },
+          "custom": {
+            "label": "Hörslinga, Auracast och tillgänglighet",
+            "type": "Offert",
+            "price": 0,
+            "hours": 0,
+            "quote": true,
+            "note": "Annan planstorlek kräver separat offert."
+          }
+        },
+        "auracast": {
+          "none": {
+            "label": "Hörslinga, Auracast och tillgänglighet",
+            "type": "Fast",
+            "price": 0,
+            "hours": 0,
+            "quote": false,
+            "note": ""
+          },
+          "basic": {
+            "label": "Hörslinga, Auracast och tillgänglighet",
+            "type": "Fast",
+            "price": 36000,
+            "hours": 5,
+            "quote": false,
+            "note": "Auracast som komplement."
+          }
+        },
+        "sti": {
+          "none": {
+            "label": "STI och inmätning",
+            "type": "Fast",
+            "price": 0,
+            "hours": 0,
+            "quote": false,
+            "note": ""
+          },
+          "050": {
+            "label": "STI och inmätning",
+            "type": "Fast",
+            "price": 24000,
+            "hours": 8,
+            "quote": false,
+            "note": "Budgetpost för STI 0,50."
+          },
+          "060": {
+            "label": "STI och inmätning",
+            "type": "Fast",
+            "price": 39000,
+            "hours": 12,
+            "quote": false,
+            "note": "Budgetpost för STI 0,60."
+          },
+          "070": {
+            "label": "STI och inmätning",
+            "type": "Offert",
+            "price": 0,
+            "hours": 0,
+            "quote": true,
+            "note": "Högre STI-krav behöver separat projektering."
+          }
+        },
+        "unit": {
+          "handMic": {
+            "label": "Mikrofoner och anslutning",
+            "type": "Enhet",
+            "price": 7900,
+            "hours": 0.5,
+            "quote": false,
+            "note": "Pris per trådlös handmikrofon."
+          },
+          "headset": {
+            "label": "Mikrofoner och anslutning",
+            "type": "Enhet",
+            "price": 9200,
+            "hours": 0.5,
+            "quote": false,
+            "note": "Pris per trådlöst headset."
+          },
+          "bluetooth": {
+            "label": "Mikrofoner och anslutning",
+            "type": "Enhet",
+            "price": 4200,
+            "hours": 0.5,
+            "quote": false,
+            "note": "Pris per Bluetooth-mottagare."
+          },
+          "zoneSmall": {
+            "label": "Extra ljudzoner",
+            "type": "Enhet",
+            "price": 18500,
+            "hours": 6,
+            "quote": false,
+            "note": "Zon 20–50 m²."
+          },
+          "zoneMedium": {
+            "label": "Extra ljudzoner",
+            "type": "Enhet",
+            "price": 29500,
+            "hours": 8,
+            "quote": false,
+            "note": "Zon 50–100 m²."
+          },
+          "zoneLarge": {
+            "label": "Extra ljudzoner",
+            "type": "Enhet",
+            "price": 46000,
+            "hours": 12,
+            "quote": false,
+            "note": "Zon 100–200 m²."
+          }
+        },
+        "stands": {
+          "small": {
+            "label": "Läktare grundpaket",
+            "type": "Fast",
+            "price": 34000,
+            "hours": 8,
+            "quote": false,
+            "note": "Läktare 8–20 m², före tillgänglighetsmultiplikator."
+          },
+          "medium": {
+            "label": "Läktare grundpaket",
+            "type": "Fast",
+            "price": 52000,
+            "hours": 12,
+            "quote": false,
+            "note": "Läktare 20–40 m², före tillgänglighetsmultiplikator."
+          },
+          "large": {
+            "label": "Läktare grundpaket",
+            "type": "Fast",
+            "price": 79000,
+            "hours": 18,
+            "quote": false,
+            "note": "Läktare 40–80 m², före tillgänglighetsmultiplikator."
+          },
+          "quote": {
+            "label": "Läktare grundpaket",
+            "type": "Offert",
+            "price": 0,
+            "hours": 0,
+            "quote": true,
+            "note": "Större än 80 m² kräver offert."
+          }
+        },
+        "checks": {
+          "ab04": {
+            "label": "Entreprenad, dokumentation och krav",
+            "type": "Regel",
+            "price": 0,
+            "hours": 0,
+            "quote": false,
+            "note": "AB 04 markerat."
+          },
+          "abt06": {
+            "label": "Entreprenad, dokumentation och krav",
+            "type": "Regel",
+            "price": 0,
+            "hours": 0,
+            "quote": false,
+            "note": "ABT 06 markerat."
+          },
+          "avabInstall": {
+            "label": "Entreprenad, dokumentation och krav",
+            "type": "Regel",
+            "price": 0,
+            "hours": 0,
+            "quote": false,
+            "note": "AVAB installerar allt."
+          },
+          "electricianInstall": {
+            "label": "Entreprenad, dokumentation och krav",
+            "type": "Regel",
+            "price": 0,
+            "hours": 0,
+            "quote": false,
+            "note": "Elektriker installerar efter AVAB:s ritning."
+          },
+          "documentation": {
+            "label": "Entreprenad, dokumentation och krav",
+            "type": "Fast",
+            "price": 12000,
+            "hours": 4,
+            "quote": false,
+            "note": "Relationshandling och dokumentation."
+          },
+          "fireAlarm": {
+            "label": "Entreprenad, dokumentation och krav",
+            "type": "Regel",
+            "price": 0,
+            "hours": 0,
+            "quote": false,
+            "note": "Brandlarm tystar ljudanläggningen."
+          },
+          "quoteSystems": {
+            "label": "Entreprenad, dokumentation och krav",
+            "type": "Offert",
+            "price": 0,
+            "hours": 0,
+            "quote": true,
+            "note": "Rastsignal eller talat utrymningslarm kräver separat offert."
+          },
+          "warranty5": {
+            "label": "Garanti och materialhantering",
+            "type": "Procent",
+            "price": 0,
+            "hours": 0,
+            "quote": false,
+            "note": "5 års garantitid. 10 % påslag på subtotal i nuvarande HTML-logik."
+          }
+        },
+        "standAccess": {
+          "none": {
+            "multiplier": 0.25,
+            "extra": 0,
+            "hourMultiplier": 0.35,
+            "note": "Förberedelse utan separat tillgänglighetslösning."
+          },
+          "loop": {
+            "multiplier": 1,
+            "extra": 0,
+            "hourMultiplier": 1,
+            "note": "Hörslinga för läktare."
+          },
+          "auracast": {
+            "multiplier": 0.55,
+            "extra": 12000,
+            "hourMultiplier": 0.65,
+            "note": "Auracast för läktare."
+          },
+          "both": {
+            "multiplier": 1.25,
+            "extra": 16000,
+            "hourMultiplier": 1.2,
+            "note": "Hörslinga och Auracast för läktare."
+          }
+        },
+        "ledPitch": {
+          "none": {
+            "label": "LED-vägg",
+            "sqm": 0,
+            "start": 0
+          },
+          "p25": {
+            "label": "LED-vägg",
+            "sqm": 58000,
+            "start": 28000
+          },
+          "p39": {
+            "label": "LED-vägg",
+            "sqm": 41000,
+            "start": 26000
+          },
+          "p49": {
+            "label": "LED-vägg",
+            "sqm": 34000,
+            "start": 24000
+          },
+          "quote": {
+            "label": "LED-vägg",
+            "sqm": 0,
+            "start": 0,
+            "quote": true
+          }
+        }
+      }
+    }
+  }
+}
