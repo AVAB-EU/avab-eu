@@ -21,7 +21,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-18._
 - [x] **Migrera Säffle simhall som första riktiga migrationspilot.** Godkänd av beställaren 2026-08-18 med tunn route, shared `ReferencePage`, berättande ankarkapitel, utspridda projektbilder, structured FAQ och grön CI.
 - [x] Validera Säffle vid 1440, 1024, 768, 390 och 375 px samt kontrollera SEO, schema, länkar, bilder och build. Slutfört 2026-08-18.
 - [x] Genomför valideringsstopp: Säffle och Minneberg använder samma schema, routeprincip, layout och gemensamma referenskomponenter utan ytterligare sidspecifik CSS. Slutfört 2026-08-18.
-- [ ] Välj därefter nästa representativa referens för generaliseringstest (inte massmigrering direkt).
+- [x] Välj därefter nästa representativa referens för generaliseringstest (inte massmigrering direkt). Sörby sportcenter valdes 2026-08-18.
+- [x] **Migrera Sörby sportcenter som generaliseringstest.** Godkänd av beställaren 2026-08-18 med fem ankarkapitel, 21 projektbilder, FAQ, SEO/schema, responsiv kontroll och grön build.
 - [ ] Implementera godkänd referensstandard på återstående referenssidor i små, beslutade batcher.
 - [ ] Kör slut-QA för index, internlänkar, alt-texter, canonical, drafts, responsivitet och build.
 
