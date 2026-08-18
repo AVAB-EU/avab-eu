@@ -16,11 +16,11 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-18._
 - [x] Inventera referensroutes och etablera structured content + återanvändbara referenskomponenter i kundrepot.
 - [x] Frysa Minnebergsskolan som visuell designpilot.
 - [x] Godkänd designbaseline: `https://test2.avab.eu/referenser/minnebergsskolan-arvika/`.
-- [ ] Försona Minneberg-designen med den gemensamma structured-content-arkitekturen utan att ersätta kundens nyare implementation med den äldre AI Content-renderern.
-- [ ] Verifiera Minneberg på desktop och mobil mot designbaslinjen.
+- [x] Försona Minneberg-designen med den gemensamma structured-content-arkitekturen utan att ersätta kundens nyare implementation med den äldre AI Content-renderern. Slutfört 2026-08-18 med samma `ReferencePage` och `story`-modell som Säffle.
+- [x] Verifiera Minneberg på desktop och mobil mot designbaslinjen. Slutfört 2026-08-18 med bevarade fem ankarkapitel och 49 projektbilder.
 - [x] **Migrera Säffle simhall som första riktiga migrationspilot.** Godkänd av beställaren 2026-08-18 med tunn route, shared `ReferencePage`, berättande ankarkapitel, utspridda projektbilder, structured FAQ och grön CI.
 - [x] Validera Säffle vid 1440, 1024, 768, 390 och 375 px samt kontrollera SEO, schema, länkar, bilder och build. Slutfört 2026-08-18.
-- [ ] Genomför valideringsstopp: justera endast gemensamma schema/components om Säffle visar ett verkligt generellt behov.
+- [x] Genomför valideringsstopp: Säffle och Minneberg använder samma schema, routeprincip, layout och gemensamma referenskomponenter utan ytterligare sidspecifik CSS. Slutfört 2026-08-18.
 - [ ] Välj därefter nästa representativa referens för generaliseringstest (inte massmigrering direkt).
 - [ ] Implementera godkänd referensstandard på återstående referenssidor i små, beslutade batcher.
 - [ ] Kör slut-QA för index, internlänkar, alt-texter, canonical, drafts, responsivitet och build.
