@@ -5,6 +5,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import ReferenceBrief from "../components/references/ReferenceBrief.astro";
 import ReferenceFacts from "../components/references/ReferenceFacts.astro";
+import ReferenceFaq from "../components/references/ReferenceFaq.astro";
 import ReferenceGallery from "../components/references/ReferenceGallery.astro";
 import ReferenceHero from "../components/references/ReferenceHero.astro";
 import ReferenceRelevance from "../components/references/ReferenceRelevance.astro";
@@ -70,6 +71,15 @@ const structuredData = {
         { "@type": "ListItem", position: 3, name: data.title, item: canonicalUrl },
       ],
     },
+    ...(data.faq ? [{
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      mainEntity: data.faq.items.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    }] : []),
   ],
 };
 
@@ -150,6 +160,15 @@ const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
       {data.gallery && <ReferenceGallery gallery={data.gallery} />}
       {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
       {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
+      {data.faq && (
+        <ReferenceFaq
+          id="reference-faq-title"
+          eyebrow={data.faq.eyebrow}
+          title={data.faq.title}
+          lead={data.faq.lead}
+          items={data.faq.items}
+        />
+      )}
       {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
 
       {renderPageCta && cta && (
