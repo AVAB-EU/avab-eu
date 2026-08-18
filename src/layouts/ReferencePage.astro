@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import PageCTA from "../components/PageCTA.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import ReferenceAnchorNav from "../components/references/ReferenceAnchorNav.astro";
 import ReferenceBrief from "../components/references/ReferenceBrief.astro";
 import ReferenceFacts from "../components/references/ReferenceFacts.astro";
 import ReferenceFaq from "../components/references/ReferenceFaq.astro";
@@ -83,6 +84,18 @@ const structuredData = {
   ],
 };
 
+const anchorItems = data.layout === "extended"
+  ? [
+      { id: "uppdraget", label: "Uppdraget" },
+      { id: "leveransen", label: "Leveransen" },
+      ...(data.results ? [{ id: "resultatet", label: "Resultatet" }] : []),
+      ...(data.gallery ? [{ id: "bilder", label: "Bilder" }] : []),
+      ...(data.technicalDetails ? [{ id: "tekniken", label: "Tekniken" }] : []),
+      ...(data.relevance ? [{ id: "relevans", label: "Relevans" }] : []),
+      ...(data.faq ? [{ id: "fragor-svar", label: "Frågor & svar" }] : []),
+    ]
+  : [];
+
 const cta = data.cta;
 const renderPageCta = Boolean(
   cta?.enabled &&
@@ -149,25 +162,29 @@ const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
       </div>
     </nav>
 
-    <main id="main">
+    <main id="main" data-reference-anchor-scope>
       <ReferenceHero data={data} />
       <ReferenceFacts facts={data.facts} />
-      <ReferenceBrief brief={data.brief} />
-      <ReferenceScope scope={data.scope} variants={data.variants} />
+      {anchorItems.length > 0 && <ReferenceAnchorNav items={anchorItems} />}
+
+      <div id="uppdraget"><ReferenceBrief brief={data.brief} /></div>
+      <div id="leveransen"><ReferenceScope scope={data.scope} variants={data.variants} /></div>
       {data.scale && <ReferenceScale scale={data.scale} />}
-      {data.results && <ReferenceResults results={data.results} />}
+      {data.results && <div id="resultatet"><ReferenceResults results={data.results} /></div>}
       {data.quote && <ReferenceQuote quote={data.quote} />}
-      {data.gallery && <ReferenceGallery gallery={data.gallery} />}
-      {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
-      {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
+      {data.gallery && <div id="bilder"><ReferenceGallery gallery={data.gallery} /></div>}
+      {data.technicalDetails && <div id="tekniken"><ReferenceTechnicalDetails details={data.technicalDetails} /></div>}
+      {data.relevance && <div id="relevans"><ReferenceRelevance relevance={data.relevance} /></div>}
       {data.faq && (
-        <ReferenceFaq
-          id="reference-faq-title"
-          eyebrow={data.faq.eyebrow}
-          title={data.faq.title}
-          lead={data.faq.lead}
-          items={data.faq.items}
-        />
+        <div id="fragor-svar">
+          <ReferenceFaq
+            id="reference-faq-title"
+            eyebrow={data.faq.eyebrow}
+            title={data.faq.title}
+            lead={data.faq.lead}
+            items={data.faq.items}
+          />
+        </div>
       )}
       {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
 
