@@ -198,6 +198,24 @@ relevance:
     - Stora bassängytor som kräver stabil täckning för trådlösa mikrofoner.
     - Miljöer som behöver olika ljud- och ljusinställningar för tävling, träning och avkoppling.
 
+faq:
+  eyebrow: Vanliga frågor
+  title: Frågor och svar om Säffle simhall
+  lead: Kortfattade svar baserade på den verifierade leveransen i projektet.
+  items:
+    - question: Vad levererade AVAB till Säffle simhall?
+      answer: AVAB levererade, monterade och driftsatte Crestronstyrning, ljudsystem, trådlösa mikrofoner, hörslingor samt RGB- och DMX-styrd belysning.
+    - question: Vilka delar av simhallen fick ljudsystem?
+      answer: Ljudsystem installerades i tävlingsbassängen, multipoolen, barnpoolen, relaxavdelningen och kiosk-/caféytan.
+    - question: Hur styr personalen ljud, belysning och hörslingor?
+      answer: Funktionerna samlas i ett gemensamt Crestrongränssnitt så att personalen inte behöver hantera varje tekniskt delsystem separat.
+    - question: Hur löstes mikrofontäckningen i 50-metersbassängen?
+      answer: Två mikrofonantenner installerades för att ge täckning för de trådlösa mikrofonsystemen i 50-metersbassängen.
+    - question: Var installerades hörslingor i Säffle simhall?
+      answer: Hörslingor installerades i konferensrummet och på läktarna.
+    - question: Vilken belysning ingick i leveransen?
+      answer: Leveransen omfattade RGB-belysning samt DMX-styrda, vattenkylda lampor i relaxavdelningen.
+
 relatedReferences:
   eyebrow: Relaterade referenser
   title: Fler projekt med liknande krav
