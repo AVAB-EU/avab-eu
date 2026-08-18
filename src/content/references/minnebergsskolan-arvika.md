@@ -161,6 +161,25 @@ relevance:
     - Undervisningsmiljöer som behöver enhetlig AV-standard
     - Skolor med aula, scen och större samlingar
     - Projekt med krav på hörseltillgänglighet och digital information
+faq:
+  eyebrow: Vanliga frågor
+  title: Vanliga frågor om Minnebergsskolan
+  lead: Kortfattade svar om leveransen, tekniken och projektets upplägg.
+  items:
+    - question: Vad levererade AVAB till Minnebergsskolan i Arvika?
+      answer: AVAB levererade AV-teknik till klassrum, konferens- och lärarrum, aula och matsal, specialrum, bibliotek och gemensamma ytor. Leveransen omfattade bland annat interaktiva Epson-laserprojektorer, ljudsystem, Crestron-styrning, Sennheiser-mikrofoner, Bose DSP med Dante, hörslingor och infoskärmar.
+    - question: Hur fick AVAB uppdraget på Minnebergsskolan?
+      answer: Assemblin informerade AVAB om att den nya högstadieskolan i Arvika skulle byggas. Efter ett lyckat samarbete i Säffle simhall kontaktade AVAB Serneke, som var totalentreprenör. AV-tekniken låg direkt under totalentreprenaden och AVAB offererade utifrån Artifons förfrågningsunderlag med några föreslagna ändringar.
+    - question: Vilken lösning valdes för klassrummen?
+      answer: AVAB föreslog kortskjutande Epson-laserprojektorer med touch i stället för traditionella projektorer med reservlampa. Projektorerna arbetar mot stora whiteboardytor och ger en gemensam interaktiv användarprincip i många undervisningsrum.
+    - question: Vilken teknik finns i aula och matsal?
+      answer: Aula och matsal har Turbosound-högtalare, Bose ljudprocessor med Dante, Sennheiser trådlösa mikrofoner, Crestron-styrning, stor projektorduk, projektor och scenljus. Yamaha TF1 med Dante kan anslutas när lokalen används för mer avancerad liveteknik.
+    - question: Var installerades hörslingor på Minnebergsskolan?
+      answer: Hörslingor förlades bland annat i aula, matsal och bibliotek. Kopparfolie byggdes in i golvkonstruktionen före flytspackling och ytskikt, med märkta anslutningspunkter för inkoppling, mätning och service.
+    - question: Fanns olika AV-lösningar i specialrummen?
+      answer: Ja. Hörsal, samlingsrum, rörelserum, träslöjd, hemkunskap, konferensrum, dansrum och musikrum fick olika lösningar utifrån rummens funktion. Det omfattade bland annat 75-tumsskärmar, soundbars, större högtalare, bordsbrunnar och specialbyggda projektorfästen.
+    - question: Vad visar projektet om AV-projektering i skolor?
+      answer: Minnebergsskolan visar värdet av att AV-tekniken kommer in tidigt i byggprocessen. Projektorer, whiteboardytor, högtalare, hörslingor, infoskärmar, kabelvägar, infästningar och styrning kunde samordnas innan väggar, golv och undertak färdigställdes.
 cta:
   enabled: true
   variant: page

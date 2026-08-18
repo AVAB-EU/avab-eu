@@ -245,6 +245,21 @@ const referenceSchema = z
         items: z.array(z.string()).min(1),
       })
       .optional(),
+    faq: z
+      .object({
+        eyebrow: requiredText,
+        title: requiredText,
+        lead: requiredText.optional(),
+        items: z
+          .array(
+            z.object({
+              question: requiredText,
+              answer: requiredText,
+            }),
+          )
+          .min(1),
+      })
+      .optional(),
     relatedReferences: z
       .object({
         eyebrow: z.string(),

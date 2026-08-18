@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "validate:guardrails": "node scripts/validate-site.mjs",
+    "validate": "npm run validate:guardrails && npm run build",
     "preview": "astro preview",
     "astro": "astro"
   },
