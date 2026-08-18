@@ -57,7 +57,13 @@ def main() -> None:
     if missing:
         raise ValueError("Webbexport saknar obligatoriska kolumner: " + ", ".join(missing))
 
-    areas = {slug: {"label": label, "isTestValue": test, "groups": {}} for slug, label, test in AREA_META.values()}
+    # Endast verifierade områden får publiceras. Testområden ligger kvar i
+    # Excel-mastern men exporteras först när deras testflagga tas bort.
+    areas = {
+        slug: {"label": label, "isTestValue": False, "groups": {}}
+        for slug, label, test in AREA_META.values()
+        if not test
+    }
     seen_ids: set[tuple[str, str]] = set()
     exported = 0
     for row in range(header_row + 1, sheet.max_row + 1):
@@ -66,6 +72,8 @@ def main() -> None:
             continue
         if area_name not in AREA_META:
             raise ValueError(f"Rad {row}: okänt område {area_name!r}.")
+        if AREA_META[area_name][2]:
+            continue
         values = {name: sheet.cell(row, col).value for name, col in headers.items() if name in REQUIRED}
         group = str(values["Grupp"] or "").strip()
         key = str(values["Nyckel"] or "").strip()

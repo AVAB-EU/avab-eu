@@ -75,6 +75,10 @@
   gap: var(--avab-card-gap);
 }
 
+.type-grid {
+  grid-template-columns: minmax(0, 360px);
+}
+
 @media (max-width: 760px) {
   .budget-calculator .section {
     padding-block: var(--avab-section-space-mobile);

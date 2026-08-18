@@ -7,7 +7,7 @@ import "../../styles/budgetkalkylator.css";
 
 const canonical = "https://www.avab.eu/budgetkalkylator-av-teknik/";
 const title = "Budgetkalkylator för AV-teknik | AVAB";
-const description = "Räkna fram en budgetindikation för AV-teknik i sporthall, simhall, konferens, restaurang och gym. Belopp exklusive moms och inte bindande offert.";
+const description = "Räkna fram en budgetindikation för AV-teknik i sporthall och arena. Belopp exklusive moms och inte bindande offert.";
 const structuredData = [
   {
     "@context": "https://schema.org",
@@ -33,7 +33,7 @@ const structuredData = [
     "@type": "FAQPage",
     mainEntity: [
       { "@type": "Question", name: "Är budgetbeloppen bindande?", acceptedAnswer: { "@type": "Answer", text: "Nej. Beloppen är budgetindikationer exklusive moms. För skarp offert krävs genomgång och projektering." } },
-      { "@type": "Question", name: "Vilka områden kan beräknas?", acceptedAnswer: { "@type": "Answer", text: "Sporthall, simhall, konferens, restaurang och gym. Simhall, konferens, restaurang och gym använder märkta teststartvärden." } },
+      { "@type": "Question", name: "Vilket område kan beräknas?", acceptedAnswer: { "@type": "Answer", text: "Sporthall och arena använder verifierade startvärden." } },
       { "@type": "Question", name: "Skickas kontaktuppgifterna till AVAB?", acceptedAnswer: { "@type": "Answer", text: "Nej. Uppgifterna används endast lokalt för utskriftsunderlaget och lämnar inte webbläsaren." } },
     ],
   },
@@ -72,10 +72,10 @@ const structuredData = [
       <section class="budget-hero">
         <div class="avab-container">
           <div class="eyebrow eyebrow-dark">Budgetkalkylator för AV-teknik</div>
-          <h1>Räkna på teknik i sporthall, simhall, konferens, restaurang och gym</h1>
+          <h1>Räkna på teknik i sporthall och arena</h1>
           <p>Bygg en budgetindikation per funktionsdel med data från AVAB:s prisunderlag. Kalkylen visar belopp exklusive moms och är inte en bindande offert.</p>
           <div class="budget-hero-actions"><a class="button button-primary" href="#valj-miljo">Starta kalkylen</a><a class="button button-secondary" href="#instruktion">Så fungerar den</a></div>
-          <div class="budget-hero-chips"><span class="budget-hero-chip">Fem aktiva områden</span><span class="budget-hero-chip">Budget exkl. moms</span><span class="budget-hero-chip">Lokal PDF-utskrift</span></div>
+          <div class="budget-hero-chips"><span class="budget-hero-chip">Verifierade sporthallsvärden</span><span class="budget-hero-chip">Budget exkl. moms</span><span class="budget-hero-chip">Lokal PDF-utskrift</span></div>
         </div>
       </section>
       <BudgetCalculator />
