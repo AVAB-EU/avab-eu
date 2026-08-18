@@ -37,3 +37,50 @@
   margin: 0;
   appearance: none;
 }
+
+/* Kalkylatorn använder samma typografi och layoutskala som AVAB:s övriga sidor. */
+.budget-page button,
+.budget-page input,
+.budget-page select,
+.budget-page textarea {
+  font: inherit;
+}
+
+.budget-hero h1 {
+  max-width: 18ch;
+  font-size: clamp(2.55rem, 4.8vw, 4.05rem);
+  line-height: 1.08;
+  letter-spacing: normal;
+  text-wrap: balance;
+}
+
+.budget-hero p {
+  max-width: 66ch;
+  font-size: 1.22rem;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.budget-calculator .section {
+  padding-block: var(--avab-section-space);
+}
+
+.budget-calculator .section-heading {
+  gap: var(--avab-content-gap);
+  margin-bottom: var(--avab-content-gap);
+}
+
+.instruction-grid,
+.type-grid {
+  gap: var(--avab-card-gap);
+}
+
+@media (max-width: 760px) {
+  .budget-calculator .section {
+    padding-block: var(--avab-section-space-mobile);
+  }
+
+  .budget-hero h1 {
+    font-size: clamp(2.35rem, 10vw, 3.2rem);
+  }
+}
