@@ -8,7 +8,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-18._
 - [x] Flytta AI Content-arbetet till gemensamt repo `AVAB-EU/avab-eu`.
 - [x] Skapa `agent/ai-content-system` ovanpå kundens aktuella `main` utan att skriva över kundens nyare kod.
 - [ ] Försona AI-dokumentationen med kundrepots aktuella referensimplementation (`compact` / `standard` / `extended` och befintliga `Reference*`-komponenter).
-- [ ] Säkerställ att guardrails/CI validerar den faktiska content-modellen i kundrepot innan bred migrering.
+- [x] Säkerställ att guardrails/CI validerar den faktiska content-modellen i kundrepot innan bred migrering.
 - [ ] Lägg till unik preview per PR så kunden kan visuellt godkänna brancher från mobil/chat utan lokal VS Code.
 
 ## Referensmigrering – Fas 7
@@ -18,7 +18,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-18._
 - [x] Godkänd designbaseline: `https://test2.avab.eu/referenser/minnebergsskolan-arvika/`.
 - [ ] Försona Minneberg-designen med den gemensamma structured-content-arkitekturen utan att ersätta kundens nyare implementation med den äldre AI Content-renderern.
 - [ ] Verifiera Minneberg på desktop och mobil mot designbaslinjen.
-- [ ] **Migrera Säffle simhall som första riktiga migrationspilot.**
+- [ ] **Migrera Säffle simhall som första riktiga migrationspilot.** Teknisk pilotcheckpoint klar: tunn route, shared `ReferencePage`, gemensam ankarnavigering för `extended`, structured FAQ och grön CI. Återstår visuell QA innan pilotpunkten kan stängas.
 - [ ] Validera Säffle vid 1440, 1024, 768, 390 och 375 px samt kontrollera SEO, schema, länkar, bilder och build.
 - [ ] Genomför valideringsstopp: justera endast gemensamma schema/components om Säffle visar ett verkligt generellt behov.
 - [ ] Välj därefter nästa representativa referens för generaliseringstest (inte massmigrering direkt).
