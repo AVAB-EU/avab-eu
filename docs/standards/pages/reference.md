@@ -3,7 +3,7 @@
 **Status:** Active  
 **Owner:** AVAB-projektet  
 **Scope:** Alla publika sidor under `/referenser/`  
-**Last reviewed:** 2026-08-17  
+**Last reviewed:** 2026-08-18  
 **Replaces:** `src/docs/AVAB-standard-referensprojekt.md` samt relevanta delar av `src/docs/avab-design-referenssida-inkopare.md`
 
 ## Terminologi
@@ -88,6 +88,7 @@ Undvik:
 - långa stycken utan prioritering
 - onödig teknik som kortifieras bara för att fylla layouten
 - tomma kort eller påtvingad höjd som skapar stora tomrum
+- en ensam normal bildkort på en desktop-rad med ett stort tomt gridutrymme bredvid
 
 ## Sidstruktur
 
@@ -171,9 +172,22 @@ När relevant kan verifiering inkludera:
 - godkänt kundcitat
 - fortsatt service/support
 
-### 8. Bildgalleri
+### 8. Bildgalleri och bildkomposition
 
 Bilder ska vara verkliga projektbilder när sådana finns och kan visa helhetsmiljö, installation, detaljer och färdigt resultat. Alla informativa bilder ska ha relevant alt-text.
+
+Bildlayout väljs efter **berättelsens samband**, inte enbart efter hur många bilder som råkar finnas:
+
+- En bild som berättar en egen del av projektet ska normalt visas som en **liggande bild+text-komposition**, med bilden och förklaringen bredvid varandra på desktop.
+- Bilder som tydligt hör ihop och beskriver samma miljö, fas eller tekniska moment får visas som ett gemensamt kortgrid.
+- Tre sammanhörande bilder visas normalt som **tre jämna kort på samma rad** på bred desktop.
+- Två eller fyra sammanhörande bilder ska balanseras i tvåkolumnsrader.
+- Fem bilder kan balanseras som `3 + 2`; sju som `3 + 2 + 2`; åtta som `3 + 3 + 2`.
+- En vanlig bildkort får **inte** lämnas ensam på en desktop-rad med en tom kolumn eller ett stort tomt fält bredvid.
+- Bilder ska inte grupperas tillsammans enbart för att fylla ett grid. Om motiven inte hör ihop ska de delas upp i separata berättelseblock.
+- På mobil staplas bildkompositionerna naturligt till en kolumn.
+
+Den delade bildkomponenten ska i första hand upprätthålla dessa balansregler automatiskt. AI ska fortfarande avgöra om bilderna semantiskt hör ihop innan de placeras i samma bildgrupp.
 
 ### 9. Kundcitat
 
@@ -264,6 +278,7 @@ En referens är standardmässigt klar när:
 - inga obligatoriska fakta saknas
 - metadata använder `https://avab.eu/`
 - bilder och alt-texter är korrekta
+- bildkompositioner lämnar inte ensamma bildkort med tomma desktop-kolumner
 - layouten använder delade primitives enligt aktuell implementation
 - mobilstandarden är uppfylld
 - build/validering passerar
