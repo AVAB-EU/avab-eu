@@ -22,7 +22,7 @@ seo:
 archive:
   title: Säffle simhall
   image:
-    src: https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-50m-hogt-palm-vatten-parkering-2-1536x864.webp
+    src: /assets/Saffle-simhall-50m-bassang.webp
     alt: Säffle simhalls 50-metersbassäng med vägghögtalare
     width: 1536
     height: 864
@@ -49,7 +49,7 @@ customer:
   referenceAvailableOnRequest: false
 
 heroImage:
-  src: https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-50m-hogt-palm-vatten-parkering-2-1536x864.webp
+  src: /assets/Saffle-simhall-50m-bassang.webp
   alt: Säffle simhalls 50-metersbassäng med vägghögtalare
   width: 1536
   height: 864
@@ -327,21 +327,21 @@ results:
       text: Personalen kan hantera belysning, ljudsystem och hörslingor från ett gemensamt Crestrongränssnitt.
       evidence:
         type: commissioned
-        source: https://avab.eu/saffle-simhall/
+        source: https://avab.eu/referenser/saffle-simhall/
         verifiedAt: 2026-08-05
     - label: Verifierat
       title: Ljud i hela anläggningen
       text: Ljudsystem installerades i tävlingsbassängen, multipoolen, barnpoolen, relaxavdelningen och kiosk-/caféytan.
       evidence:
         type: delivered
-        source: https://avab.eu/saffle-simhall/
+        source: https://avab.eu/referenser/saffle-simhall/
         verifiedAt: 2026-08-05
     - label: Verifierat
       title: Hörslingor för tillgängliga utrop
       text: Hörslingor installerades i konferensrummet och på läktarna.
       evidence:
         type: delivered
-        source: https://avab.eu/saffle-simhall/
+        source: https://avab.eu/referenser/saffle-simhall/
         verifiedAt: 2026-08-05
 
 quote:

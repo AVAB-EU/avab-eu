@@ -1,0 +1,65 @@
+---
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import "../styles/avab.css";
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Sidan hittades inte | AVAB</title>
+  <meta name="description" content="Sidan du sökte finns inte längre eller har flyttat. Gå till startsidan för att hitta rätt på avab.eu." />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    .not-found {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+    }
+    .not-found .avab-container {
+      max-width: 640px;
+      text-align: center;
+      margin: 0 auto;
+      padding: 96px 24px;
+    }
+    .not-found .code {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--avab-muted, #6b7280);
+    }
+    .not-found h1 {
+      margin: 16px 0;
+    }
+  </style>
+</head>
+<body>
+  <SiteHeader />
+
+  <main id="main">
+    <section class="not-found">
+      <div class="avab-container">
+        <p class="code">404</p>
+        <h1>Sidan hittades inte</h1>
+        <p>Länken du följde stämmer inte längre, eller så har sidan flyttat.</p>
+        <p><a class="button button-primary" href="/">Till startsidan</a></p>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</body>
+</html>
