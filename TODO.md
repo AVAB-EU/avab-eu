@@ -23,6 +23,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-18._
 - [x] Genomför valideringsstopp: Säffle och Minneberg använder samma schema, routeprincip, layout och gemensamma referenskomponenter utan ytterligare sidspecifik CSS. Slutfört 2026-08-18.
 - [x] Välj därefter nästa representativa referens för generaliseringstest (inte massmigrering direkt). Sörby sportcenter valdes 2026-08-18.
 - [x] **Migrera Sörby sportcenter som generaliseringstest.** Godkänd av beställaren 2026-08-18 med fem ankarkapitel, 21 projektbilder, FAQ, SEO/schema, responsiv kontroll och grön build.
+- [ ] **Kontrollera ankarmenyn på samtliga referenssidor.** På vissa sidor, bland annat Hanza konferens i Töcksfors, försvinner ankarmenyn eller tappar aktiv länk vid scroll när kapitelrubrikerna inte följer den förväntade numreringen. Inventera rubrikernas numrering samt kopplingen mellan menyernas `href`, sektionernas `id` och aktiv scroll-state. Verifiera att ankarmenyn ligger kvar och markerar rätt kapitel genom hela sidan på desktop och mobil.
 - [ ] Implementera godkänd referensstandard på återstående referenssidor i små, beslutade batcher.
   - [ ] **Pausad på beställarens begäran 2026-08-18.** Starta inga migrationsbatcher förrän beställaren har kompletterat samtliga återstående referenser med bilder och texter. Gör därefter en ny materialinventering och besluta batchindelningen utifrån det kompletta underlaget.
 - [ ] Kör slut-QA för index, internlänkar, alt-texter, canonical, drafts, responsivitet och build.
