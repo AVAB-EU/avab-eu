@@ -27,6 +27,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-18._
 - [ ] Implementera godkänd referensstandard på återstående referenssidor i små, beslutade batcher.
   - [ ] **Pausad på beställarens begäran 2026-08-18.** Starta inga migrationsbatcher förrän beställaren har kompletterat samtliga återstående referenser med bilder och texter. Gör därefter en ny materialinventering och besluta batchindelningen utifrån det kompletta underlaget.
 - [ ] Kör slut-QA för index, internlänkar, alt-texter, canonical, drafts, responsivitet och build.
+- [x] **Go-live-gating 2026-08-19:** `draft: true`-referenser genererades tidigare som fullt publika routes (endast `noindex`-metatagg, ingen faktisk åtkomstspärr). Varje `src/pages/referenser/<slug>/index.astro` returnerar nu `Response(null, {status: 404})` när `reference.data.draft` är sant, så sidan inte längre byggs ut. `customer.publicationApproved` används INTE som blockerare i denna release (fältet är `null` på samtliga 14 referenser och har uppenbarligen inte varit den aktiva mekanismen). Hanza (`draft: false`) förblir därför publik.
+- [ ] **Besluta framtida publiceringsprocess för `customer.publicationApproved`.** Fältet finns i schema men läses ingenstans i kod och är `null` på alla referenser, inklusive redan publicerade (Hanza, Säffle, Minneberg, Sörby). Beställaren behöver besluta: ska fältet bli en faktisk hård spärr (kräver `true` innan sidan kan gå live) eller tas bort/ersättas av en tydligare process för kundens publiceringssamtycke?
 
 ## Bild-SEO
 

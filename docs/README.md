@@ -42,6 +42,7 @@ Om två gällande dokument motsäger varandra ska AI inte välja tyst. Konflikte
 - [`architecture/ai-write-scope.md`](architecture/ai-write-scope.md) – vad en normal innehållsagent får och inte får ändra.
 - [`architecture/content-model.md`](architecture/content-model.md) – gemensam content-riktning; faktisk kod är sanningskälla för implementerade schemas.
 - [`architecture/component-architecture.md`](architecture/component-architecture.md) – målbild för gemensamma layouts, sidtypskomponenter och primitives.
+- [`architecture/wordpress-redirects.md`](architecture/wordpress-redirects.md) – redirect-mappning WordPress → Astro och förberedd (ej installerad) produktions-`.htaccess`.
 
 ### Pågående projekt
 - [`projects/ai-content-system/README.md`](projects/ai-content-system/README.md) – fasplanen för AI-baserat innehållssystem.

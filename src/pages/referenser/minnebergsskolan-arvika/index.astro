@@ -9,6 +9,9 @@ const reference = (await getCollection("references")).find(
 if (!reference) {
   throw new Error("Referensen Minnebergsskolan, Arvika saknas i content collection.");
 }
+if (reference.data.draft) {
+  return new Response(null, { status: 404 });
+}
 ---
 
 <ReferencePage reference={reference} />
