@@ -332,7 +332,7 @@ p {
 .nav-links a,
 .nav-links button {
   font: inherit;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.96rem;
   color: var(--avab-dark-muted);
 }
@@ -456,7 +456,7 @@ p {
   color: var(--avab-dark);
   font: inherit;
   font-size: 1.02rem;
-  font-weight: 800;
+  font-weight: 600;
   text-align: left;
   cursor: default;
   transition: color 0.2s ease, background 0.2s ease;
@@ -502,7 +502,7 @@ p {
   padding: 13px 0;
   color: var(--avab-dark);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 .mega-submenu a:hover,
 .mega-submenu a:focus-visible {
@@ -545,7 +545,7 @@ p {
   padding: 0 28px;
   color: var(--avab-dark);
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
 }
 .service-menu-list a:hover,
@@ -555,7 +555,7 @@ p {
 }
 
 .nav-dropdown--services .service-menu-list a {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .nav-cta {
@@ -564,7 +564,7 @@ p {
   gap: 14px;
 }
 .nav-phone {
-  font-weight: 800;
+  font-weight: 600;
   color: var(--avab-dark);
   white-space: nowrap;
 }
@@ -575,8 +575,8 @@ p {
   padding: 0 22px;
   border-radius: 999px;
   background: var(--avab-green);
-  color: var(--avab-dark);
-  font-weight: 800;
+  color: var(--avab-white);
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   box-shadow: 0 8px 18px var(--avab-green-glow);
@@ -706,7 +706,7 @@ p {
   background: var(--avab-white);
   color: var(--avab-dark);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   list-style: none;
   transition: var(--transition-smooth);
@@ -794,7 +794,7 @@ p {
   padding: 0 20px 0 34px;
   color: var(--avab-dark-muted);
   font-size: 0.96rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 .mobile-menu-links a:hover,
 .mobile-menu-links a:focus-visible,
@@ -802,7 +802,7 @@ p {
   color: var(--avab-green);
 }
 .mobile-menu-links a[aria-current="page"] {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* Om oss - egen fullbreddsrad, samma radstorlek/separator som stängd huvudkategori */
@@ -814,11 +814,13 @@ p {
   background: var(--avab-white);
 }
 .mobile-menu-plain a {
+  display: flex;
+  align-items: center;
   min-height: 56px;
   width: 100%;
   padding: 0 20px;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--avab-dark);
 }
 .mobile-menu-plain a:hover,
@@ -830,6 +832,7 @@ p {
 .mobile-menu-contact {
   width: 100%;
   margin-top: 20px;
+  font-weight: 600;
 }
 
 
