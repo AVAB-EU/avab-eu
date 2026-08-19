@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import PageCTA from "../components/PageCTA.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import ReferenceAnchorNav from "../components/references/ReferenceAnchorNav.astro";
 import ReferenceBrief from "../components/references/ReferenceBrief.astro";
 import ReferenceFacts from "../components/references/ReferenceFacts.astro";
 import ReferenceFaq from "../components/references/ReferenceFaq.astro";
@@ -13,12 +14,15 @@ import ReferenceResults from "../components/references/ReferenceResults.astro";
 import ReferenceScale from "../components/references/ReferenceScale.astro";
 import ReferenceQuote from "../components/references/ReferenceQuote.astro";
 import ReferenceLegacyCta from "../components/references/ReferenceLegacyCta.astro";
+import ReferenceMediaGrid from "../components/references/ReferenceMediaGrid.astro";
 import ReferenceScope from "../components/references/ReferenceScope.astro";
 import ReferenceTechnicalDetails from "../components/references/ReferenceTechnicalDetails.astro";
 import RelatedReferences from "../components/references/RelatedReferences.astro";
 import { absoluteUrl, SITE_URL } from "../config/site";
 import "../styles/avab.css";
 import "../styles/reference-page.css";
+import "../styles/reference-case-study.css";
+import "../styles/reference-gallery-layout.css";
 
 interface Props { reference: CollectionEntry<"references"> }
 const { reference } = Astro.props;
@@ -30,10 +34,15 @@ const updatedDate = data.updatedDate.toISOString().slice(0, 10);
 const robots = data.draft || data.seo.noindex
   ? "noindex, nofollow"
   : "index, follow, max-image-preview:large";
+const isExtended = data.layout === "extended";
+const hasStory = isExtended && Boolean(data.story);
 
 const schemaImages = Array.from(new Set([
   heroImageUrl,
   ...(data.gallery?.images.map((image) => absoluteUrl(image.src)) ?? []),
+  ...(data.story?.chapters.flatMap((chapter) =>
+    chapter.mediaGroups.flatMap((group) => group.images.map((image) => absoluteUrl(image.src)))
+  ) ?? []),
 ]));
 const structuredData = {
   "@context": "https://schema.org",
@@ -92,6 +101,18 @@ const renderPageCta = Boolean(
   cta.primaryHref,
 );
 const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
+
+const anchorItems = data.story?.chapters.map((chapter) => ({
+  id: chapter.id,
+  label: chapter.navLabel,
+})) ?? [
+  { id: "uppdraget", label: "Uppdraget" },
+  { id: "omfattning", label: "Leveransen" },
+  ...(data.results ? [{ id: "resultat", label: "Resultatet" }] : []),
+  ...(data.gallery ? [{ id: "bilder", label: "Bilder" }] : []),
+  ...(data.technicalDetails ? [{ id: "tekniken", label: "Tekniken" }] : []),
+  ...(data.faq ? [{ id: "reference-faq-title", label: "FAQ" }] : []),
+].slice(0, 5);
 ---
 
 <!doctype html>
@@ -137,7 +158,7 @@ const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
     />
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
-  <body class={`reference-page reference-page--${data.layout}`}>
+  <body class:list={["reference-page", `reference-page--${data.layout}`, isExtended && "reference-page--case-study"]}>
     <SiteHeader />
     <nav class="reference-breadcrumbs" aria-label="Brödsmulor">
       <div class="avab-container">
@@ -150,26 +171,120 @@ const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
     </nav>
 
     <main id="main">
-      <ReferenceHero data={data} />
-      <ReferenceFacts facts={data.facts} />
-      <ReferenceBrief brief={data.brief} />
-      <ReferenceScope scope={data.scope} variants={data.variants} />
-      {data.scale && <ReferenceScale scale={data.scale} />}
-      {data.results && <ReferenceResults results={data.results} />}
-      {data.quote && <ReferenceQuote quote={data.quote} />}
-      {data.gallery && <ReferenceGallery gallery={data.gallery} />}
-      {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
-      {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
-      {data.faq && (
-        <ReferenceFaq
-          id="reference-faq-title"
-          eyebrow={data.faq.eyebrow}
-          title={data.faq.title}
-          lead={data.faq.lead}
-          items={data.faq.items}
-        />
+      {isExtended ? (
+        <>
+          <ReferenceHero
+            data={data}
+            variant="immersive"
+            kicker={`${data.category} · ${data.title}`}
+            primaryLabel="Utforska projektet"
+            primaryHref="#uppdraget"
+          />
+          <ReferenceFacts facts={data.facts} />
+
+          <section class="reference-case" data-reference-anchor-scope>
+            <div class="reference-case-intro-wrap">
+              <div class="avab-container">
+                <header class="reference-case-intro">
+                  <span class="case-kicker">{data.story?.eyebrow ?? "Projektet på djupet"}</span>
+                  <h2>{data.story?.title ?? data.brief.title}</h2>
+                  <p>{data.story?.lead ?? data.scope.lead}</p>
+                </header>
+              </div>
+            </div>
+
+            <ReferenceAnchorNav items={anchorItems} />
+
+            <div class="reference-case-content">
+              {hasStory && data.story ? data.story.chapters.map((chapter, chapterIndex) => (
+                <section class="case-section" id={chapter.id} data-case-section>
+                  <div class="avab-container case-section__inner">
+                    <div class="case-copy">
+                      <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
+                      <h2>{chapter.title}</h2>
+                      {chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
+                      {chapter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+                    </div>
+
+                    {chapter.mediaGroups.map((group) => (
+                      <ReferenceMediaGrid
+                        items={group.images}
+                        columns={group.columns}
+                        ratio={group.ratio}
+                        split={group.split || group.images.length === 1}
+                      />
+                    ))}
+                  </div>
+                </section>
+              )) : <>
+              <section class="case-section" id="uppdraget" data-case-section>
+                <div class="avab-container case-section__inner">
+                  <div class="case-copy">
+                    <span class="case-kicker">01 · {data.brief.eyebrow}</span>
+                    <h2>{data.brief.title}</h2>
+                    <p class="case-answer"><strong>{data.brief.result}</strong></p>
+                    <p>{data.brief.need}</p>
+                    <p>{data.brief.responsibility}</p>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="omfattning" data-case-section>
+                <div class="avab-container case-section__inner">
+                  <div class="case-copy">
+                    <span class="case-kicker">02 · {data.scope.eyebrow}</span>
+                    <h2>{data.scope.title}</h2>
+                    <p>{data.scope.lead}</p>
+                  </div>
+
+                  {data.gallery && <ReferenceGallery gallery={data.gallery} embedded />}
+
+                </div>
+              </section>
+              </>}
+            </div>
+          </section>
+
+          {data.scale && <ReferenceScale scale={data.scale} />}
+          {!hasStory && data.results && <ReferenceResults results={data.results} />}
+          {data.quote && <ReferenceQuote quote={data.quote} />}
+          {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
+          {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
+          {data.faq && (
+            <ReferenceFaq
+              id="reference-faq-title"
+              eyebrow={data.faq.eyebrow}
+              title={data.faq.title}
+              lead={data.faq.lead}
+              items={data.faq.items}
+            />
+          )}
+          {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
+        </>
+      ) : (
+        <>
+          <ReferenceHero data={data} />
+          <ReferenceFacts facts={data.facts} />
+          <ReferenceBrief brief={data.brief} />
+          <ReferenceScope scope={data.scope} variants={data.variants} />
+          {data.scale && <ReferenceScale scale={data.scale} />}
+          {data.results && <ReferenceResults results={data.results} />}
+          {data.quote && <ReferenceQuote quote={data.quote} />}
+          {data.gallery && <ReferenceGallery gallery={data.gallery} />}
+          {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
+          {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
+          {data.faq && (
+            <ReferenceFaq
+              id="reference-faq-title"
+              eyebrow={data.faq.eyebrow}
+              title={data.faq.title}
+              lead={data.faq.lead}
+              items={data.faq.items}
+            />
+          )}
+          {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
+        </>
       )}
-      {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
 
       {renderPageCta && cta && (
         <PageCTA
@@ -181,6 +296,7 @@ const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
           secondaryLabel={cta.secondaryLabel}
           secondaryHref={cta.secondaryHref}
           points={cta.points}
+          flush={isExtended}
         />
       )}
       {renderLegacyCta && cta && cta.variant === "legacy" && (

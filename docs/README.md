@@ -30,6 +30,7 @@ Om två gällande dokument motsäger varandra ska AI inte välja tyst. Konflikte
 ### AI-workflows
 - [`workflows/ai-page-authoring.md`](workflows/ai-page-authoring.md) – **router och gemensamt startflöde** för alla nya/ändrade publika sidor.
 - [`workflows/create-reference.md`](workflows/create-reference.md) – skapa eller migrera `reference`; använder implementerad content collection.
+- [`reference-material-chatgpt-prompt.md`](../reference-material-chatgpt-prompt.md) – nedladdningsbar instruktion för text- och bildunderlag till referensmigreringen.
 - [`workflows/create-standard-page.md`](workflows/create-standard-page.md) – skapa `environment`, `service` eller `knowledge` utan att låtsas att schema/template finns när de ännu saknas.
 - [`workflows/modify-existing-page.md`](workflows/modify-existing-page.md) – ändra befintlig sida med minsta korrekta scope.
 - [`workflows/special-page-change.md`](workflows/special-page-change.md) – ändra startsida, kontakt och andra `special`-routes.

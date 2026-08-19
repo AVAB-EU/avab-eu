@@ -6,13 +6,13 @@ title: Säffle simhall
 shortTitle: Säffle simhall
 heroTitle: Säffle simhall
 heroSubtitle: Samlad styrning för ljud, ljus och tillgänglighet
-summary: AVAB levererade, monterade och driftsatte Crestronstyrning, RGB-belysning och ljudsystem i en publik simhall med flera verksamhetsytor.
+summary: AVAB levererade, monterade och driftsatte en samordnad AV-lösning med Crestronstyrning, ljud, mikrofoner, hörslingor samt RGB- och DMX-belysning för Säffle simhalls många verksamhetsytor.
 publishedDate: 2026-06-23
 updatedDate: 2026-08-05
 
 seo:
   title: Säffle simhall – Crestron, ljud och hörslinga | Referens | AVAB
-  description: AVAB levererade, monterade och driftsatte Crestronstyrning, RGB-belysning, ljudsystem, trådlösa mikrofoner och hörslingor i Säffle simhall.
+  description: Se hur AVAB samordnade Crestronstyrning, ljudsystem, mikrofoner, hörslingor och DMX-belysning i Säffle simhall – från teknikrack till färdiga verksamhetsytor.
   ogTitle: Säffle simhall – samlad styrning för ljud, ljus och tillgänglighet
   ogDescription: Crestronstyrning, ljudsystem i hela anläggningen, trådlösa mikrofoner, hörslingor och RGB-belysning i Säffle simhall.
   twitterTitle: Säffle simhall – Crestron, ljud och hörslinga | AVAB
@@ -101,6 +101,222 @@ scope:
   serviceLabel: Läs om lösningar för simhall
   serviceHref: /miljo/simhall/
 
+story:
+  eyebrow: Projektet på djupet
+  title: Från teknikrack till ljud, ljus och styrning i hela simhallen
+  lead: Säffle simhall visar hur AVAB kombinerar systemintegration, installation och driftsättning i en publik anläggning där bassänger, relax, barnytor och café har olika behov men ska kunna hanteras som en sammanhängande helhet.
+  chapters:
+    - id: uppdraget
+      navLabel: Uppdraget
+      eyebrow: Uppdrag och helhet
+      title: Hur skapades en gemensam AV-lösning för simhallens olika verksamhetsytor?
+      answer: AVAB levererade, monterade och driftsatte en lösning där Crestronstyrning samlar ljud, belysning och hörslingor, samtidigt som varje del av anläggningen har teknik anpassad efter sin funktion.
+      paragraphs:
+        - En 50-metersbassäng, barnpool, multibassäng, relaxavdelning och café används på olika sätt. Tävlingsverksamhet och utrop ställer andra krav än avkoppling eller publik service, men personalen behöver ändå ett begripligt sätt att hantera anläggningen.
+        - Uppdraget omfattade därför både den centrala systemstrukturen och installationer ute i verksamhetsytorna. AVAB:s arbete sträckte sig från teknikrack och inkopplingspunkter till högtalare, mikrofontäckning, hörslingor och styrd belysning.
+      mediaGroups:
+        - columns: 3
+          ratio: land
+          images:
+            - src: /assets/Saffle-simhall-50m-bassang.webp
+              alt: Översikt över 50-metersbassängen och installerade högtalare i Säffle simhall
+              width: 6000
+              height: 4000
+              title: En stor bassängmiljö med flera funktioner
+              text: Översikten visar skalan på den publika anläggning där ljud och trådlösa mikrofoner ska fungera över stora ytor.
+            - src: /assets/Saffle-simhall-café-entré.webp
+              alt: Entré- och caféyta med väggmonterade högtalare i Säffle simhall
+              width: 6000
+              height: 4000
+              title: Ljud även i entré och café
+              text: Ljudsystemet omfattar också café- och entréytan, som har ett annat användningsmönster än bassängrummen.
+            - src: /assets/Saffle-simhall-barnpool.webp
+              alt: Barnpool med väggmonterade högtalare i Säffle simhall
+              width: 6000
+              height: 4000
+              title: Barnpoolen är en egen verksamhetsyta
+              text: Även barnpoolen ingår i ljudsystemets täckning och visar bredden i den samordnade leveransen.
+
+    - id: styrning
+      navLabel: Styrningen
+      eyebrow: Crestron och systemintegration
+      title: Hur gjorde AVAB flera tekniska delsystem hanterbara för personalen?
+      answer: Ett gemensamt Crestrongränssnitt ger personalen åtkomst till ljud och belysning för bland annat 50-metersbassäng, lekbassäng, relax, multibassäng och café utan att varje delsystem behöver hanteras separat.
+      paragraphs:
+        - Styrsystemets uppgift är att göra den bakomliggande tekniken begriplig i vardagen. På panelen väljer användaren verksamhetsyta och funktion, medan signalhantering, ljudutrustning och övrig systemteknik arbetar i bakgrunden.
+        - >-
+          Bilderna visar hela kedjan: det synliga användargränssnittet, en fast anslutningspunkt för extern AV-utrustning och teknikracket där ljud, mikrofoner, styrning och hörslingor samlas. Det är i samspelet mellan dessa nivåer som AVAB:s integrationskompetens blir konkret.
+      mediaGroups:
+        - columns: 3
+          ratio: land
+          images:
+            - src: /assets/Saffle-simhall-touch-panel-1.webp
+              alt: Personal använder Crestronpanelen för ljud och belysning i Säffle simhall
+              width: 6024
+              height: 4020
+              title: Gemensam styrning nära verksamheten
+              text: Panelen samlar de funktioner personalen behöver använda utan att visa systemets tekniska komplexitet.
+            - src: /assets/Saffle-simhall-touch-panel-2.webp
+              alt: Närbild av Crestronmeny för bassänger, relax och café i Säffle simhall
+              width: 6024
+              height: 4020
+              title: Verksamhetsytorna väljs i samma gränssnitt
+              text: Menyn visar hur ljud och belysning kan hanteras utifrån anläggningens olika delar och aktiviteter.
+            - src: /assets/Saffle-simhall-inkopplings-panel.webp
+              alt: Märkt inkopplingspanel för AV-utrustning i Säffle simhall
+              width: 6000
+              height: 4000
+              title: Tydlig anslutning för extern AV-utrustning
+              text: En fast och märkt inkopplingspunkt minskar behovet av provisoriska anslutningar när verksamheten behöver komplettera grundsystemet.
+        - columns: 1
+          ratio: portrait
+          split: true
+          images:
+            - src: /assets/Saffle-simhall-teknikrack.webp
+              alt: Komplett teknikrack med styrning, ljud och hörslingeförstärkare i Säffle simhall
+              width: 1366
+              height: 2047
+              title: Systemintegrationen samlad i teknikracket
+              text: Racket visar den tekniska infrastrukturen bakom gränssnittet, med utrustning för mikrofoner, ljuddistribution, Crestronstyrning och hörslingor.
+
+    - id: ljud-mikrofoner
+      navLabel: Ljud & mikrofoner
+      eyebrow: Ljudsystem och trådlös täckning
+      title: Hur fördelades ljud och mikrofontäckning över bassänger, läktare och publika ytor?
+      answer: Ljudsystem installerades i tävlingsbassäng, multibassäng, barnpool, relaxavdelning och kiosk/café, medan två mikrofonantenner ger täckning för trådlösa mikrofonsystem i 50-metersbassängen.
+      paragraphs:
+        - I en simhall behöver högtalarplaceringen fungera tillsammans med stora vattenytor, långa avstånd och flera samtidiga aktiviteter. Bilderna från 50-metersbassängen visar hur högtalarna fördelas längs rummets sidor och hur läktaren ingår i samma ljudmiljö.
+        - Mikrofonantennerna är placerade vid läktarsidan för att stödja de trådlösa systemen över bassängytan. Mikrofonmottagare och ljudutrustning är samtidigt samlade i teknikracket, vilket ger en tydlig kedja från användarens mikrofon till anläggningens högtalare.
+      mediaGroups:
+        - columns: 3
+          ratio: land
+          images:
+            - src: /assets/Saffle-simhall-50m-bassang-hoger.webp
+              alt: Högtalare längs läktarsidan av 50-metersbassängen i Säffle simhall
+              width: 2048
+              height: 1365
+              title: Ljud längs bassängens högra sida
+              text: Högtalarna följer den långa bassängmiljön och ger ljud mot både bassäng och läktare.
+            - src: /assets/Saffle-simhall-50m-bassang-vanster.webp
+              alt: Väggmonterade högtalare vid fönstersidan av 50-metersbassängen i Säffle simhall
+              width: 6000
+              height: 4000
+              title: Högtalare integrerade vid fönstersidan
+              text: Installationen är fördelad även längs motsatt sida för att möta rummets längd och användning.
+            - src: /assets/Saffle-simhall-50m-bassang-hoger-antenner.webp
+              alt: Två mikrofonantenner vid läktaren i Säffle simhalls 50-metersbassäng
+              width: 2048
+              height: 1365
+              title: Två antenner för trådlösa mikrofoner
+              text: Antennerna är en verifierad del av leveransen för mikrofontäckning i 50-metersbassängen.
+        - columns: 2
+          ratio: land
+          images:
+            - src: /assets/Saffle-simhall-multihall-hogtalare.webp
+              alt: Högtalare och projektor vid multibassängen i Säffle simhall
+              width: 6024
+              height: 4020
+              title: Ljud och projektion i multibassängen
+              text: Multibassängen har både högtalare och projektor för en yta som används till flera typer av aktivitet.
+            - src: /assets/Saffle-simhall-café-vaning2.webp
+              alt: Högtalare längs övre café- och publikplanet i Säffle simhall
+              width: 6000
+              height: 4000
+              title: Ljudet fortsätter genom publikytorna
+              text: Väggmonterade högtalare ger ljud även längs det övre planet utanför bassängytorna.
+
+    - id: ljus-miljoer
+      navLabel: Ljus & miljöer
+      eyebrow: RGB, DMX och verksamhetsanpassning
+      title: Hur anpassades teknik och belysning till simhallens olika miljöer?
+      answer: Relaxavdelningen fick ljudtäckning och DMX-styrda, vattenkylda lampor, samtidigt som barnpool, bastu och multibassäng ingår i en anläggning där teknikens funktion behöver anpassas efter varje yta.
+      paragraphs:
+        - Relaxavdelningen visar tydligt hur belysning kan vara en del av rummets funktion och karaktär. De vattenkylda lamporna styrs via DMX, vilket gör att ljussättningen kan hanteras inom samma övergripande leverans som ljud och övrig styrning.
+        - Barnpool, bastu och multibassäng har andra uppgifter och visuella uttryck. Genom att visa de färdiga miljöerna tillsammans med tekniken blir det lättare för en inköpare att bedöma AVAB:s erfarenhet av att arbeta i en anläggning med många olika verksamhetskrav.
+      mediaGroups:
+        - columns: 2
+          ratio: land
+          images:
+            - src: /assets/Saffle-simhall-relax.webp
+              alt: Ljus relaxavdelning med pool och vilstolar i Säffle simhall
+              width: 6000
+              height: 4000
+              title: Relaxavdelningen i normal belysning
+              text: Miljön kombinerar ljudtäckning med belysning som kan anpassas efter avdelningens användning.
+            - src: /assets/Saffle-simhall-relax-DMX.webp
+              alt: Relaxpool med lila DMX-styrt undervattensljus i Säffle simhall
+              width: 6000
+              height: 4000
+              title: DMX-styrt ljus förändrar rummets karaktär
+              text: De vattenkylda lamporna ger en tydlig ljuseffekt i poolen och ingår i den styrda belysningslösningen.
+        - columns: 3
+          ratio: land
+          images:
+            - src: /assets/Saffle-simhall-barnpool-grotta.webp
+              alt: Lekgrotta och färgstark fondvägg i barnpoolen på Säffle simhall
+              width: 6000
+              height: 4000
+              title: Barnpoolens lekfulla miljö
+              text: Barnpoolen visar en annan typ av verksamhetsyta än tävlingsbassängen och relaxen.
+            - src: /assets/Saffle-simhall-bastu.webp
+              alt: Bastu med träpanel och infälld belysning i Säffle simhall
+              width: 6000
+              height: 4000
+              title: Tekniken behöver passa även mindre miljöer
+              text: Bastun är en del av den varierade badanläggning där installationernas placering måste följa rummets funktion.
+            - src: /assets/Saffle-multihall-projektor.webp
+              alt: Projektor monterad högt på väggen vid multibassängen i Säffle simhall
+              width: 6000
+              height: 4000
+              title: Projektion för multibassängens aktiviteter
+              text: Den högt placerade projektorn kompletterar ljudsystemet i en flexibel del av anläggningen.
+
+    - id: resultat
+      navLabel: Resultatet
+      eyebrow: Leverans, driftsättning och verifiering
+      title: Vad visar Säffle simhall om AVAB:s kompetens i komplexa badanläggningar?
+      answer: Referensen visar en genomförd leverans där AVAB kombinerade central styrning, distribuerat ljud, trådlösa mikrofoner, hörslingor och styrd belysning samt ansvarade för montage och driftsättning.
+      paragraphs:
+        - För en inköpare är värdet i referensen inte en enskild produkt utan bredden i det genomförda uppdraget. Samma leverans omfattar användargränssnitt, signalhantering, ljud i flera miljöer, mikrofontäckning över en stor bassäng, hörseltillgänglighet och DMX-styrt ljus.
+        - Bilderna visar både den färdiga publika miljön och utrustningen bakom den. Tillsammans ger de underlag för att bedöma AVAB:s förmåga att gå från installation och systemintegration till en driftsatt helhet som personalen kan hantera från ett gemensamt gränssnitt.
+      mediaGroups:
+        - columns: 2
+          ratio: land
+          images:
+            - src: /assets/Saffle-simhall-teknikrack-DMX.webp
+              alt: DMX- och styrutrustning i teknikrack på Säffle simhall
+              width: 6024
+              height: 4020
+              title: Styr- och DMX-teknik bakom belysningen
+              text: Teknikracket visar hur ljusstyrningen är en integrerad del av den samlade anläggningen.
+            - src: /assets/Saffle-simhall-teknikrack-mikrofon.webp
+              alt: Mikrofonmottagare och ljudutrustning i teknikrack på Säffle simhall
+              width: 6024
+              height: 4020
+              title: Mikrofon- och ljudsystem samlade för drift
+              text: Mottagare, signalutrustning och anslutningar samlas på en servicebar plats bakom den dagliga användningen.
+        - columns: 3
+          ratio: land
+          images:
+            - src: /assets/Saffle-simhall-50m-bassang-hoger-2.webp
+              alt: Läktarsida med högtalare vid 50-metersbassängen i Säffle simhall
+              width: 6000
+              height: 4000
+              title: Färdig ljudinstallation längs läktaren
+              text: Den långa raden av högtalare visar hur ljudsystemet följer bassängens publika sida.
+            - src: /assets/Saffle-simhall-50m-bassang-vanster-2.webp
+              alt: Högtalare och 50-metersbassäng sedda från fönstersidan i Säffle simhall
+              width: 6000
+              height: 4000
+              title: Ljudsystemet i den färdiga bassängmiljön
+              text: Högtalarna är integrerade i den ljusa bassänghallen och fördelade längs hela verksamhetsytan.
+            - src: /assets/Saffle-simhall-50m-bassang-vanster-3.webp
+              alt: Färdig 50-metersbassäng med högtalare längs fönsterväggen i Säffle simhall
+              width: 6000
+              height: 4000
+              title: Helheten efter montage och driftsättning
+              text: Den avslutande översikten visar den färdiga miljö där ljud, mikrofoner och styrning ska fungera i vardagen.
+
 results:
   eyebrow: Resultat och verifiering
   title: Flera funktioner samlade för enklare hantering
@@ -140,30 +356,45 @@ quote:
 
 gallery:
   eyebrow: Bildberättelse
-  title: Tre miljöer i den färdiga anläggningen
-  lead: Bilderna visar separata verksamhetsytor där ljud och belysning behöver fungera utifrån olika aktiviteter.
+  title: Styrning, ljud och ljus i den färdiga anläggningen
+  lead: Bilderna visar hur den gemensamma styrningen knyter ihop ljud, mikrofoner, projektion och belysning i simhallens olika verksamhetsytor.
   images:
-    - src: https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-reception-1024x576.webp
-      alt: Reception och caféyta i Säffle simhall med väggmonterade högtalare
-      caption: Ljudsystemet omfattar även kiosk- och caféytan, en av anläggningens flera verksamhetsdelar.
-      width: 1024
-      height: 576
-    - src: https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-relax-1024x576.webp
-      alt: Relaxpool med vilstolar och palmer i Säffle simhall
-      caption: Relaxavdelningen har ljudtäckning och vattenkylda lampor som styrs via DMX.
-      width: 1024
-      height: 576
-    - src: https://avab.eu/wp-content/uploads/2023/02/1920x1080-Saffle-simhall-barnpool-1024x576.webp
-      alt: Barnpool med lekfigurer och palmer i Säffle simhall
-      caption: Barnpoolen är en av de separata verksamhetsytor som omfattas av anläggningens ljudsystem.
-      width: 1024
-      height: 576
+    - src: /assets/Saffle-simhall-touch-panel-1.webp
+      alt: Personal styr ljud och belysning via en Crestronpanel i Säffle simhall
+      caption: Crestronpanelen samlar styrningen av ljud och belysning för anläggningens olika delar.
+      width: 6024
+      height: 4020
+    - src: /assets/Saffle-simhall-50m-bassang-hoger-antenner.webp
+      alt: Två mikrofonantenner vid 50-metersbassängens läktare i Säffle simhall
+      caption: Två mikrofonantenner ger täckning för trådlösa mikrofoner i 50-metersbassängen.
+      width: 2048
+      height: 1365
+    - src: /assets/Saffle-simhall-multihall-hogtalare.webp
+      alt: Väggmonterade högtalare och projektor vid multibassängen i Säffle simhall
+      caption: Högtalare och projektion är integrerade i multibassängens flexibla verksamhetsyta.
+      width: 6024
+      height: 4020
+    - src: /assets/Saffle-simhall-relax-DMX.webp
+      alt: Relaxpool i Säffle simhall belyst med lila DMX-styrt undervattensljus
+      caption: Relaxavdelningens vattenkylda lampor styrs via DMX för anpassad ljussättning.
+      width: 6000
+      height: 4000
+    - src: /assets/Saffle-simhall-teknikrack-mikrofon.webp
+      alt: Mikrofonmottagare och ljudutrustning i teknikrack på Säffle simhall
+      caption: Mikrofon- och ljudutrustningen samlas i teknikracket bakom den dagliga användningen.
+      width: 6024
+      height: 4020
+    - src: /assets/Saffle-simhall-inkopplings-panel.webp
+      alt: Märkt inkopplingspanel för AV-utrustning i Säffle simhall
+      caption: Den fasta inkopplingspunkten ger verksamheten en tydlig anslutning för extern AV-utrustning.
+      width: 6000
+      height: 4000
 
 technicalDetails:
-  eyebrow: Teknisk fördjupning
-  title: Tekniken finns tillgänglig utan att dominera sidan
-  lead: Inköpare och projektörer kan öppna den tekniska sammanfattningen vid behov.
-  summaryLabel: Visa teknisk sammanfattning
+  eyebrow: System och installation
+  title: Ljud, styrning och tillgänglighet i samma system
+  lead: Leveransen omfattar den centrala Crestronstyrningen, ljud i fem verksamhetsytor, trådlösa mikrofoner, hörslingor samt RGB- och DMX-styrd belysning.
+  summaryLabel: Se system och installationer
   items:
     - Överordnad Crestronstyrning
     - Ljudsystem i anläggningens bassäng-, relax- och caféytor
@@ -187,16 +418,34 @@ technicalDetails:
       href: /miljo/simhall/
 
 relevance:
-  eyebrow: Överförbar erfarenhet
-  title: Därför är referensen relevant för liknande upphandlingar
-  lead: Referensen visar en driftsatt lösning i en korrosiv publik miljö med flera verksamhetsytor och tillgänglighetskrav.
+  eyebrow: För kommande simhallsprojekt
+  title: Delar som behöver fungera tillsammans
+  lead: Säffle simhall visar hur ljud, mikrofoner, hörslingor, belysning och styrning kan samordnas när en badanläggning rymmer flera verksamheter.
   items:
-    - Publika anläggningar med flera samtidiga aktiviteter och användargrupper.
-    - Simhallar där fukt och klorångor ställer särskilda krav på tekniken.
-    - Verksamheter som vill hantera ljud, belysning och hörslingor i ett gemensamt gränssnitt.
-    - Anläggningar där utrop och aktiviteter ska vara tillgängliga även för personer med hörselnedsättning.
-    - Stora bassängytor som kräver stabil täckning för trådlösa mikrofoner.
-    - Miljöer som behöver olika ljud- och ljusinställningar för tävling, träning och avkoppling.
+    - Gemensam Crestronstyrning för ljud, belysning och hörslingor.
+    - Ljudsystem för tävlingsbassäng, multibassäng, barnpool, relax och café.
+    - Högtalarplacering och mikrofonantenner anpassade för den stora 50-metersbassängen.
+    - Hörslingor i konferensrum och på läktare för tillgängliga utrop och aktiviteter.
+    - RGB- och DMX-styrd belysning för relaxavdelningens olika användningslägen.
+    - Montage, inkoppling och driftsättning av den samlade AV-lösningen.
+
+faq:
+  eyebrow: Vanliga frågor
+  title: Frågor och svar om Säffle simhall
+  lead: Kortfattade svar baserade på den verifierade leveransen i projektet.
+  items:
+    - question: Vad levererade AVAB till Säffle simhall?
+      answer: AVAB levererade, monterade och driftsatte Crestronstyrning, ljudsystem, trådlösa mikrofoner, hörslingor samt RGB- och DMX-styrd belysning.
+    - question: Vilka delar av simhallen fick ljudsystem?
+      answer: Ljudsystem installerades i tävlingsbassängen, multipoolen, barnpoolen, relaxavdelningen och kiosk-/caféytan.
+    - question: Hur styr personalen ljud, belysning och hörslingor?
+      answer: Funktionerna samlas i ett gemensamt Crestrongränssnitt så att personalen inte behöver hantera varje tekniskt delsystem separat.
+    - question: Hur löstes mikrofontäckningen i 50-metersbassängen?
+      answer: Två mikrofonantenner installerades för att ge täckning för de trådlösa mikrofonsystemen i 50-metersbassängen.
+    - question: Var installerades hörslingor i Säffle simhall?
+      answer: Hörslingor installerades i konferensrummet och på läktarna.
+    - question: Vilken belysning ingick i leveransen?
+      answer: Leveransen omfattade RGB-belysning samt DMX-styrda, vattenkylda lampor i relaxavdelningen.
 
 relatedReferences:
   eyebrow: Relaterade referenser

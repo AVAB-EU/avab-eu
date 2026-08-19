@@ -1,6 +1,6 @@
 # Fas 7A – Designförsoning för Referenser
 
-**Status:** Active blocker before further migration  
+**Status:** Completed
 **Owner:** AVAB-projektet  
 **Repo:** `AVAB-EU/avab-eu`  
 **Branch:** `agent/ai-content-system`  
@@ -76,6 +76,9 @@ Den gemensamma referensarkitekturen ska kunna uttrycka följande återkommande m
 13. Konsekvent alignment i överkant för rubriker, text, bilder och kort på desktop.
 14. Innehållsdriven höjd; lika höjd får inte skapa stora tomma ytor.
 15. Enkolumnsflöde på mobil som standard där det förbättrar läsbarheten.
+16. Berättande ankarkapitel där varje ankarlänk har eget textunderlag och relevanta bilder.
+17. Rikt projektmaterial fördelas genom hela sidan efter funktion eller projektfas, inte som ett enda sent bildblock.
+18. SEO-text ska hjälpa inköpare att bedöma AVAB:s verifierade ansvar, kompetens och leverans utan obestyrkta påståenden.
 
 ## Vad som inte ska göras
 
@@ -112,3 +115,7 @@ Fas 7A är klar när:
 - Säffle simhall fungerar som första migrationspilot med samma arkitektur utan specialhack.
 
 Först därefter går Fas 7 vidare till fler referenser.
+
+## Slutresultat 2026-08-18
+
+Minnebergsskolan och Säffle simhall använder nu samma strukturerade `story`-modell, tunna routeprincip, gemensamma `ReferencePage` och befintliga `Reference*`-komponenter. Minnebergs fem ankarkapitel och 49 projektbilder bevarades i contentmodellen utan lokal fullsidemarkup eller sidspecifik CSS. Båda piloterna har byggts och jämförts på desktop och mobil. Fas 7A:s exit criterion är därmed uppfyllt.

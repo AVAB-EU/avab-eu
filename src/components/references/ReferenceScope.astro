@@ -16,9 +16,6 @@ const { scope, variants } = Astro.props;
         <span class="reference-kicker">{scope.eyebrow}</span>
         <h2>{scope.title}</h2>
         <p>{scope.lead}</p>
-        <ul class="scope-list">
-          {scope.items.map((item) => <li>{item}</li>)}
-        </ul>
       </section>
 
       {variants && (
@@ -39,20 +36,5 @@ const { scope, variants } = Astro.props;
       )}
     </article>
 
-    {scope.projectFacts && (
-      <aside class="reference-sidebar" aria-label="Projektfakta">
-        <h2>Projektfakta</h2>
-        <dl class="sidebar-facts">
-          {scope.projectFacts.map((fact) => (
-            <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>
-          ))}
-        </dl>
-        {scope.serviceLabel && scope.serviceHref && (
-          <a class="button button-primary sidebar-action" href={scope.serviceHref}>
-            {scope.serviceLabel}
-          </a>
-        )}
-      </aside>
-    )}
   </div>
 </section>

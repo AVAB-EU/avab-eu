@@ -3,7 +3,7 @@
 **Status:** Active  
 **Owner:** AVAB-projektet  
 **Scope:** Alla publika sidor under `/referenser/`  
-**Last reviewed:** 2026-08-17  
+**Last reviewed:** 2026-08-18  
 **Replaces:** `src/docs/AVAB-standard-referensprojekt.md` samt relevanta delar av `src/docs/avab-design-referenssida-inkopare.md`
 
 ## Terminologi
@@ -88,6 +88,7 @@ Undvik:
 - långa stycken utan prioritering
 - onödig teknik som kortifieras bara för att fylla layouten
 - tomma kort eller påtvingad höjd som skapar stora tomrum
+- en ensam normal bildkort på en desktop-rad med ett stort tomt gridutrymme bredvid
 
 ## Sidstruktur
 
@@ -158,6 +159,16 @@ Fördjupande sektioner används när de tillför verkligt värde:
 
 Mindre projekt ska inte fyllas ut till långa artiklar.
 
+För referenser med flera tydliga delar ska fördjupningen byggas som **berättande kapitel**. Varje länk i ankarnavigeringen ska leda till ett faktiskt innehållsavsnitt med:
+
+- en fråge- eller nyttobaserad H2,
+- ett kort direkt svar,
+- minst ett förklarande brödtextstycke,
+- relevanta projektbilder när sådana finns,
+- tydlig koppling till AVAB:s verifierade ansvar, arbetssätt eller leverans.
+
+Ankarlänkar får inte endast leda till en ensam kortgrid, faktaruta eller rubrik utan förklarande text. Texten ska ge inköpare och projektörer underlag för att förstå behov, tekniska val, samordning, installation och resultat utan att fabricera projektfakta.
+
 ### 7. Resultat och verifiering
 
 Resultatet ska beskrivas konkret. Använd inte obestyrkta påståenden som exakta besparingar eller att kunden är mycket nöjd utan underlag.
@@ -171,19 +182,48 @@ När relevant kan verifiering inkludera:
 - godkänt kundcitat
 - fortsatt service/support
 
-### 8. Bildgalleri
+### 8. Bildgalleri och bildkomposition
 
 Bilder ska vara verkliga projektbilder när sådana finns och kan visa helhetsmiljö, installation, detaljer och färdigt resultat. Alla informativa bilder ska ha relevant alt-text.
 
-### 9. Kundcitat
+När ett projekt har ett rikt bildmaterial ska bilderna normalt **fördelas över sidans berättande kapitel** i stället för att samlas i ett enda stort galleri. Målet är att varje bild ska förklara den text som ligger närmast och skapa rytm genom hela referensen. Ett separat galleri används främst för kompletterande motiv som inte naturligt hör hemma i ett kapitel.
+
+Använd så många relevanta och publicerbara projektbilder som stärker inköparens förståelse, men undvik nära dubbletter om de inte visar olika placeringar, installationssteg eller funktioner. Varje bild ska ha en egen meningsfull alt-text och förklarande bildtext.
+
+Bildlayout väljs efter **berättelsens samband**, inte enbart efter hur många bilder som råkar finnas:
+
+- En bild som berättar en egen del av projektet ska normalt visas som en **liggande bild+text-komposition**, med bilden och förklaringen bredvid varandra på desktop.
+- Bilder som tydligt hör ihop och beskriver samma miljö, fas eller tekniska moment får visas som ett gemensamt kortgrid.
+- Tre sammanhörande bilder visas normalt som **tre jämna kort på samma rad** på bred desktop.
+- Två eller fyra sammanhörande bilder ska balanseras i tvåkolumnsrader.
+- Fem bilder kan balanseras som `3 + 2`; sju som `3 + 2 + 2`; åtta som `3 + 3 + 2`.
+- En vanlig bildkort får **inte** lämnas ensam på en desktop-rad med en tom kolumn eller ett stort tomt fält bredvid.
+- Bilder ska inte grupperas tillsammans enbart för att fylla ett grid. Om motiven inte hör ihop ska de delas upp i separata berättelseblock.
+- På mobil staplas bildkompositionerna naturligt till en kolumn.
+
+Den delade bildkomponenten ska i första hand upprätthålla dessa balansregler automatiskt. AI ska fortfarande avgöra om bilderna semantiskt hör ihop innan de placeras i samma bildgrupp.
+
+### 9. FAQ
+
+FAQ-sektionen ska använda samma huvudcontainer som sidans övriga innehåll:
+
+- eyebrow, rubrik och ingress ska linjera med containerns vänsterkant,
+- frågelistan ska fylla hela containerbredden utan extra centrerad maxbredd eller inre sidindrag,
+- på bred desktop visas frågorna normalt i två balanserade kolumner,
+- på mobil visas frågorna i en kolumn,
+- avdelare och öppningsikoner ska följa respektive frågerads hela tillgängliga bredd.
+
+Regeln gäller alla migrerade referenser och ska lösas i den gemensamma FAQ-komponenten eller globala referensstilen, inte med sidspecifik CSS.
+
+### 10. Kundcitat
 
 Kundcitat visas endast när citatet är äkta och publicering är godkänd. Namn, företag och roll får bara visas enligt godkännande.
 
-### 10. Relaterade tjänster och referenser
+### 11. Relaterade tjänster och referenser
 
 Varje referens ska normalt länka till relevanta tjänster och kan länka till närliggande referenser. Relationerna ska på sikt komma från strukturerad data, inte manuellt kopierade kort.
 
-### 11. CTA/kontakt
+### 12. CTA/kontakt
 
 Sidan avslutas med gemensam CTA/kontaktsektion. Den ska inte kopieras som unik markup i varje referens.
 
@@ -199,6 +239,24 @@ Texten ska vara:
 - fokuserad på kundens behov, AVAB:s ansvar och resultat
 
 Undvik sökordsstapling, generiska säljklyschor, interna förkortningar utan förklaring och påståenden utan underlag.
+
+### Innehållsdjup, SEO och en levande sida
+
+AI ska utveckla referensen med så mycket **relevant och verifierad text** som projektunderlaget medger. Målet är att både besökare och sökmotorer tydligt ska förstå:
+
+- vilken typ av projekt och miljö det gäller,
+- vilket behov eller problem som skulle lösas,
+- vad AVAB ansvarade för,
+- vilka system, tjänster och tekniska val som ingick,
+- hur projektering, samordning, installation eller driftsättning genomfördes när det finns underlag,
+- hur lösningen används och vilket verifierbart resultat som uppnåddes,
+- vilken konkret kompetens projektet visar för liknande behov.
+
+Texten ska skrivas för den externa besökaren, särskilt inköpare, projektörer och beställare. Publicerad text får inte tala om hur sidan är byggd, varför en sektion finns, hur SEO ska fungera eller att läsaren kan “öppna en sammanfattning vid behov”. Undvik AI-fluff, metatext, tomma övergångar och generella påståenden som inte tillför projektinformation.
+
+Sidan ska kännas levande genom att berättande text, verkliga projektbilder, bildtexter, tekniska detaljer och verifierade resultat fördelas genom de gemensamma ankarkapitlen. Den visuella variationen får inte bryta den beslutade referensstrukturen eller skapa sidspecifik fullsidemarkup.
+
+AI får förklara samband och utveckla språk kring kända fakta, men får aldrig skapa nya fakta enbart för att göra sidan längre. Om underlaget är tunt ska texten vara kortare och konkret i stället för utfylld med antaganden.
 
 ## Publiceringskrav
 
@@ -223,6 +281,8 @@ Valfria uppgifter ska inte renderas som tomma rubriker eller tomma kort.
 
 - Canonical och absoluta webbplats-URL:er ska använda **`https://avab.eu/`**, aldrig `www` som canonical källa.
 - SEO-title och description ska vara unika och sakliga.
+- Viktiga sökbegrepp ska uppstå naturligt genom konkreta beskrivningar av miljö, leverans, teknik, tjänster och ort; samma fras får inte staplas för ranking.
+- Rubriker och brödtext ska tillsammans ge semantisk täckning av projektets verifierade behov, AVAB:s arbete och resultat, inte endast en kort sammanfattning följd av bilder.
 - Strukturerad data ska centraliseras i template/layout när referensmodellen implementeras.
 - Metadata ska inte kräva handkopierade URL-varianter i varje ny referens.
 
@@ -264,6 +324,7 @@ En referens är standardmässigt klar när:
 - inga obligatoriska fakta saknas
 - metadata använder `https://avab.eu/`
 - bilder och alt-texter är korrekta
+- bildkompositioner lämnar inte ensamma bildkort med tomma desktop-kolumner
 - layouten använder delade primitives enligt aktuell implementation
 - mobilstandarden är uppfylld
 - build/validering passerar
