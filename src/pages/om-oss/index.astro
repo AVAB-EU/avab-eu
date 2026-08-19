@@ -36,19 +36,11 @@ const heroImage = "/assets/om-oss-hero-bild.webp";
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <style>
-    .hero.hero--about h1 {
-      max-width: 23ch;
-      font-size: clamp(2.35rem, 4vw, 3.55rem);
-      line-height: 1.1;
-    }
-
-    .hero.hero--about .lead {
-      max-width: 72ch;
-      font-size: clamp(1.05rem, 1.35vw, 1.18rem);
-      line-height: 1.65;
-    }
-
     .environment-copy {
       max-width: 980px;
     }
@@ -169,7 +161,7 @@ const heroImage = "/assets/om-oss-hero-bild.webp";
   </nav>
 
   <main id="main">
-    <section class="hero hero--about" style={`--hero-image: url('${heroImage}');`}>
+    <section class="hero" style={`--hero-image: url('${heroImage}');`}>
       <div class="avab-container">
         <div class="hero-inner animate-in">
           <div class="eyebrow">Om AVAB</div>
