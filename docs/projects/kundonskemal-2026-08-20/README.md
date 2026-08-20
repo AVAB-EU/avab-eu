@@ -19,30 +19,34 @@ Detta projektunderlag samlar kundens återkoppling inför nästa förbättringsa
 ## Viktig princip
 Undvik att lösa återkommande fel med lokal CSS eller sidspecifika undantag. När samma symptom finns på flera sidor ska shared component, design-token eller sidstandard granskas först.
 
-## OBLIGATORISK REGEL – BILDER HANTERAS MANUELLT
-**Alla kundönskemål som innebär att välja, byta, ersätta, lägga till, generera, retuschera eller på annat sätt ändra en bild ska utföras manuellt av Andreas/kundteamet. AI eller automatiserade arbetsflöden får inte genomföra sådana bildändringar.**
+## OBLIGATORISK REGEL – ANSVARSFÖRDELNING FÖR BILDER
+Bildarbete delas upp i två tydliga kategorier.
 
-Det gäller bland annat:
-- hero-bilder,
-- bilder i kort, lösningar, teknikområden och referenssektioner,
-- byte mellan namngivna referensbilder,
-- tillägg av nya bilder,
-- AI-retuschering eller generativ bildbearbetning, inklusive Lesjöfors-golvet.
+### Andreas/kundteamet gör manuellt
+- crop/beskärning av befintlig bild,
+- focal point/positionering när motivet behöver justeras visuellt,
+- retuschering eller korrigering av en befintlig bild,
+- annan bildbearbetning där själva bildinnehållet förändras, exempelvis Lesjöfors-golvet.
 
-AI får däremot:
-- markera var kunden efterfrågat ett bildbyte,
-- kontrollera tekniska egenskaper som filstorlek, dimensioner, lazy loading och LCP,
-- rätta länkar som ligger på bild/kort utan att byta själva bilden,
-- justera layout, crop/focal-position eller presentation av en redan vald bild när uppgiften uttryckligen gäller presentation och inte bildvalet.
+### AI får göra
+- byta ut en bild helt mot en annan befintlig bild i `assets`,
+- lägga in en ny befintlig bild från `assets`,
+- uppdatera bildreferenser i kod/content,
+- välja rätt bild i `assets` när uppgiften är entydig.
 
-Bildrelaterade punkter i fasplan och TODO ska därför ses som **manuella uppgifter**, inte uppgifter som en AI-agent får utföra själv.
+### Föredragen arbetsmetod
+När det är möjligt ska Andreas/kundteamet före körning ange exakt vilken bildfil i `assets` som ska användas på vilken plats. Då ska AI följa den bildmappningen och inte göra ett eget kreativt bildval.
+
+Om bildbyte efterfrågas men ingen bildfil är angiven får AI inventera `assets` och välja den mest relevanta befintliga bilden utifrån sidans innehåll och filernas användning. Vid verklig tveksamhet ska uppgiften flaggas som osäker i stället för att ett godtyckligt val görs.
+
+Teknisk optimering som filstorlek, dimensioner, loading, lazy loading, LCP och länkar runt bilder får också hanteras av AI så länge det inte innebär retuschering/crop av själva bildinnehållet.
 
 ## Blockerande kundbeslut
 - Header: endast `Kontakt` eller även telefonnummer?
 - Kanoniskt namn för restaurangmiljön.
 - Skillnaden mellan `Hur vi jobbar` och `Vår leverans`.
 - Verifierat pris för aktuellt erbjudande.
-- Manuellt valda/godkända ersättningsbilder där kunden efterfrågat bildändring.
+- Bildmappning för de bildbyten där Andreas/kundteamet vill styra exakt vilken asset som ska användas.
 - Förtydligande av `Lagom hantera dokument (Andreas)`.
 - Exakt WOT-fetmarkering.
 
