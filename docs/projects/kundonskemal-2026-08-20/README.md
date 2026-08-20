@@ -19,12 +19,30 @@ Detta projektunderlag samlar kundens återkoppling inför nästa förbättringsa
 ## Viktig princip
 Undvik att lösa återkommande fel med lokal CSS eller sidspecifika undantag. När samma symptom finns på flera sidor ska shared component, design-token eller sidstandard granskas först.
 
+## OBLIGATORISK REGEL – BILDER HANTERAS MANUELLT
+**Alla kundönskemål som innebär att välja, byta, ersätta, lägga till, generera, retuschera eller på annat sätt ändra en bild ska utföras manuellt av Andreas/kundteamet. AI eller automatiserade arbetsflöden får inte genomföra sådana bildändringar.**
+
+Det gäller bland annat:
+- hero-bilder,
+- bilder i kort, lösningar, teknikområden och referenssektioner,
+- byte mellan namngivna referensbilder,
+- tillägg av nya bilder,
+- AI-retuschering eller generativ bildbearbetning, inklusive Lesjöfors-golvet.
+
+AI får däremot:
+- markera var kunden efterfrågat ett bildbyte,
+- kontrollera tekniska egenskaper som filstorlek, dimensioner, lazy loading och LCP,
+- rätta länkar som ligger på bild/kort utan att byta själva bilden,
+- justera layout, crop/focal-position eller presentation av en redan vald bild när uppgiften uttryckligen gäller presentation och inte bildvalet.
+
+Bildrelaterade punkter i fasplan och TODO ska därför ses som **manuella uppgifter**, inte uppgifter som en AI-agent får utföra själv.
+
 ## Blockerande kundbeslut
 - Header: endast `Kontakt` eller även telefonnummer?
 - Kanoniskt namn för restaurangmiljön.
 - Skillnaden mellan `Hur vi jobbar` och `Vår leverans`.
 - Verifierat pris för aktuellt erbjudande.
-- Godkända ersättningsbilder.
+- Manuellt valda/godkända ersättningsbilder där kunden efterfrågat bildändring.
 - Förtydligande av `Lagom hantera dokument (Andreas)`.
 - Exakt WOT-fetmarkering.
 
