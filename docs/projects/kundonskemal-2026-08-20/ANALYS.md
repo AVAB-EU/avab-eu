@@ -3,6 +3,19 @@
 ## Syfte
 Detta dokument tolkar kundens samlade återkoppling och skiljer på symptom, rotorsaker, globala standardfrågor, sidunika ändringar och rena innehållsbeslut. Målet är att undvika att samma problem löses manuellt på många sidor.
 
+## OBLIGATORISK REGEL – BILDER HANTERAS MANUELLT
+**Alla önskemål som innebär att välja, byta, ersätta, lägga till, generera, retuschera eller på annat sätt ändra en bild ska utföras manuellt av Andreas/kundteamet. AI får inte genomföra dessa bildändringar.**
+
+Detta gäller samtliga hero-bilder, kortbilder, referensbilder, bilder i lösningar/teknikområden och AI-bearbetning av befintliga bilder. Lesjöfors-punkten om att dammsuga golvet med AI är därför också en manuell uppgift och får inte utföras automatiskt av en AI-agent.
+
+AI får endast hjälpa till runt bilderna genom att exempelvis:
+- dokumentera att en manuell bildändring återstår,
+- kontrollera teknisk prestanda, dimensioner, lazy loading och LCP,
+- rätta länkar som är kopplade till en bild eller ett kort utan att byta bildfil,
+- justera layout/crop/focal-position för en redan manuellt vald bild när uppgiften uttryckligen gäller presentation.
+
+Denna regel har företräde framför formuleringar som `byt bild`, `byt hero`, `lägg till bild`, `ändra bilder` eller liknande i kundens ursprungliga anteckningar.
+
 ## Huvudslutsats
 Kundens lista ska **inte** genomföras sida för sida i den ordning den skrevs. Flera önskemål återkommer och bör lösas som gemensamma komponenter eller standards först.
 
@@ -12,7 +25,7 @@ De viktigaste återkommande problemen är:
 2. Miljösidor och tjänstesidor saknar tillräckligt strikt gemensam sidstandard.
 3. Många kort, piller, FAQ-sektioner, rubrikavstånd och textlinjering avviker mellan sidor.
 4. Internlänkning är inkonsekvent och ibland felaktig.
-5. Bildval, bildkvalitet och bildprestanda behöver hanteras systematiskt istället för ad hoc.
+5. Bildval och bildändringar är manuellt ägda uppgifter; teknisk bildprestanda kan däremot analyseras separat.
 6. Referenser används som innehåll på många sidor men underlaget är inte färdigställt överallt.
 7. Terminologi är inkonsekvent, exempelvis `FAQ`/`Vanliga frågor`, `Restaurang, bar & klubb`/`Bar & Restaurang`, `Hur vi jobbar`/`Vår leverans` och `BYOM`/`BYOD`.
 
@@ -54,11 +67,11 @@ De viktigaste återkommande problemen är:
 **Rekommendation:** Lös globalt med gemensam pill/token-standard istället för separata CSS-fixar per sida.
 
 ### 6. Bildbyten och långsamma bilder
-**Bedömning:** Här blandas tre problem: fel motiv, för låg upplösning och dålig prestanda.
+**Bedömning:** Här blandas två separata ansvarsområden: manuellt bildval/bildbyte och teknisk bildprestanda.
 
-**Logisk lucka:** “Byt bild” säger inget om godkänt ersättningsmaterial.
+**Viktig regel:** Alla bildbyten, nya bilder och bildbearbetningar görs manuellt av Andreas/kundteamet. AI får inte välja eller ersätta bilder.
 
-**Rekommendation:** Varje bildbyte ska ha status `material klart` eller `material saknas`. Prestandaproblem ska mätas separat från bildval.
+**Rekommendation:** Bildönskemål markeras som `MANUELL BILDUPPGIFT`. Prestandaproblem får analyseras tekniskt utan att AI byter bildfil. Om en optimering skulle kräva att bildfilen ersätts ska den lämnas till den manuella bilduppgiften.
 
 ### 7. 3+3, 3+2 och linjering av boxar
 **Bedömning:** Kunden efterfrågar egentligen ett gridsystem, inte enskilda sidfixar.
@@ -100,7 +113,7 @@ Sektioner ska inte användas som visuella behållare för samma innehåll.
 
 **Risk:** Att addera provisoriska referenskort innan referensdata är färdig skapar länkar till halvfärdiga eller noindex-sidor.
 
-**Rekommendation:** Gör materialinventering först och koppla sedan färdigställda referenser via strukturerad data.
+**Rekommendation:** Gör materialinventering först och koppla sedan färdigställda referenser via strukturerad data. Eventuella bildval inom referenserna görs manuellt.
 
 ### 14. Budgetkalkylator på flera miljösidor
 **Bedömning:** Bör implementeras som återanvändbar CTA/komponent.
@@ -120,7 +133,7 @@ Sektioner ska inte användas som visuella behållare för samma innehåll.
 ### 17. “Ljus”, “Bild/skärm”, “Köpcentrum & Galleria”, “Talat utrymningslarm” behöver byggas/byggas om
 **Bedömning:** Dessa är större innehållsprojekt och ska inte blandas in i en bugfixfas.
 
-**Rekommendation:** Lägg dem i egna arbetsbatcher efter att sidstandarderna är låsta.
+**Rekommendation:** Lägg dem i egna arbetsbatcher efter att sidstandarderna är låsta. Bildmaterial i dessa ombyggnader väljs och ändras manuellt.
 
 ---
 
@@ -134,8 +147,9 @@ Sektioner ska inte användas som visuella behållare för samma innehåll.
 6. Hela klickbara kort/CTA-fält ska ha korrekt semantik, hover och keyboard-focus.
 7. Internlänkar ska peka mot kanoniska routes, inte kontakt som fallback om en riktig destinationssida finns.
 8. Referenser hämtas från strukturerad referensdata när det är möjligt.
-9. Bildbyten kräver både godkänt motiv och teknisk kontroll av dimension/filstorlek.
-10. Miljö- och tjänstenamn ska ha en kanonisk terminologi.
+9. **Alla bildval, bildbyten, nytillagda bilder och bildretuscheringar görs manuellt av Andreas/kundteamet och får inte utföras av AI.**
+10. AI får kontrollera bildprestanda och presentation utan att själv välja eller ersätta bildmaterial.
+11. Miljö- och tjänstenamn ska ha en kanonisk terminologi.
 
 ---
 
@@ -146,7 +160,7 @@ Sektioner ska inte användas som visuella behållare för samma innehåll.
 - Vilket namn är kanoniskt: `Restaurang, bar & klubb` eller `Bar & Restaurang`?
 - Ska `Hur vi jobbar` finnas kvar som egen sektion, eller ersättas/flyttas till `Vår leverans` på vissa sidtyper?
 - Vilket nytt pris ska visas i `Aktuellt erbjudande`?
-- Vilka ersättningsbilder är godkända där kunden bara skrivit “byt bild”?
+- Vilka bilder ska Andreas/kundteamet manuellt välja där kunden skrivit `byt bild` eller motsvarande?
 - Ska WOT-text fetmarkeras, och exakt vilka delar?
 - Vad betyder anteckningen `Lagom hantera dokument (Andreas)`? Detta behöver tolkas innan implementation.
 
@@ -158,7 +172,7 @@ Sektioner ska inte användas som visuella behållare för samma innehåll.
 - Ta bort `Tjänst:`.
 - Rätta kända fellänkar.
 - Gemensam spacing och grid-standard.
-- Kontroll av långsam bild.
+- Teknisk kontroll av långsam bild utan automatiskt bildbyte.
 
 ---
 
@@ -175,7 +189,8 @@ Sektioner ska inte användas som visuella behållare för samma innehåll.
 6. Sidspecifika layout- och innehållsfixar.
 7. Nya/ombyggda sidor.
 8. Referenskomplettering när materialet är verifierat.
-9. Slutlig visuell QA och länk-QA.
+9. Manuella bildändringar genomförs separat av Andreas/kundteamet.
+10. Slutlig visuell QA och länk-QA.
 
 ## Rekommenderad princip
 **Fix the system before fixing the pages.** Om ett fel återkommer på fler än en sida ska första frågan vara om komponenten eller standarden är fel, inte hur respektive sida kan specialjusteras.
