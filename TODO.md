@@ -50,6 +50,77 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-20._
 
 - [ ] Förbättra PDF-underlagets design och säkerställ att AVAB-logotypen visas korrekt i utskrift/PDF.
 
+## Kundönskemål 2026-08-20
+
+Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-2026-08-20/`.
+
+### Fas 0 – Beslut, material och inventering
+- [ ] Besluta om headern ska visa endast `Kontakt` eller även telefonnummer.
+- [ ] Välj kanoniskt namn för restaurangmiljön och använd det konsekvent.
+- [ ] Definiera skillnaden mellan `Hur vi jobbar` och `Vår leverans`.
+- [ ] Få verifierat nytt pris för startsidans aktuella erbjudande.
+- [ ] Samla och godkänn alla ersättningsbilder innan breda bildbyten.
+- [ ] Förtydliga `Lagom hantera dokument (Andreas)` och exakt WOT-fetmarkering.
+- [ ] Inventera referensmaterial och färdigställandeår innan referenspausen hävs.
+
+### Fas 1 – Globala komponenter och designregler
+- [ ] Gör footern till en sammanhållen global footer.
+- [ ] Fixa responsiva dropdown-menyer så alla underrubriker går att nå och menyn själv kan scrolla vid låg viewport-höjd.
+- [ ] Implementera beslutad förenkling av header/kontakt.
+- [ ] Standardisera hero-pillers kontrast/opacitet.
+- [ ] Ändra synlig rubrik `FAQ` till `Vanliga frågor` på samtliga sidor.
+- [ ] Ta bort `Tjänst:` på samtliga tjänstesidor via gemensam implementation.
+- [ ] Standardisera spacing, textlinjering, sifferpiller och kortgrid (bl.a. 3+3 och 3+2).
+- [ ] Standardisera hela klickbara kort/CTA-fält med korrekt hover/focus.
+
+### Fas 2 – Tjänstesidor
+- [ ] Dokumentera och implementera gemensam tjänstesidestandard innan bred sidfix.
+- [ ] Bygg Ljus.
+- [ ] Bygg Bild/skärm och koppla Skärmar/projektorer samt Visuell kommunikation korrekt.
+- [ ] Kamera: hero-piller, blixtar, expanderande kort, boxlänkning och Vanliga frågor.
+- [ ] Talat utrymningslarm: bildprestanda och full ombyggnad enligt standard.
+- [ ] Mikrofoner: hero, Claessons, WOT, Mikrofonguiden, 3+3, Radiolänken, vit ruta, miljölinjering och Ekhagsskolan.
+- [ ] Ljudsystem: hero, kabellänk, 3+3, Claessons-bild och internlänkning.
+- [ ] Hörslinga: texter, budgetkalkylator, miljöer, NTI, bilder, hyrljud.nu, Auracast och Vanliga frågor.
+- [ ] Taluppfattbarhet: referenser och miljöer.
+- [ ] Styrsystem: blixtar, 3+2, klickbar hotell/restaurang-ruta och rätt service/support-länk.
+- [ ] Bakgrundsmusik: hero och referenser.
+
+### Fas 3 – Miljösidor
+- [ ] Dokumentera och implementera gemensam miljösidestandard innan bred sidfix.
+- [ ] Sporthall & arena: budgetkalkylator, helklickbar grön CTA och hero-rubrik.
+- [ ] Simhall: hero, Spa/relax/ljus, Infoskärmar, Årjäng och Sälen-korrigeringar.
+- [ ] Ishall: budgetkalkylator, `Det här får du`-linjering och spacing i `Hur vi jobbar`.
+- [ ] Kontor & Konferens: lösningssektion, skärmlänk, BYOD och rätt bildlänk.
+- [ ] Hotell: högupplöst hero och referenser.
+- [ ] Restaurang/bar/klubb: kanoniskt namn, hero, Capri/Terrassen/Teburu/Pinchos, Tempel, textlinjering och Vanliga frågor.
+- [ ] Butik & Retail: hero/GB, piller och bilder.
+- [ ] Köpcentrum & Galleria: full ombyggnad enligt miljöstandard, bilder, boxar, grönt streck, arbetssätt och referenser.
+- [ ] Skola: rätta lösnings-/informationsskärmslänkar och lägg till referenser.
+- [ ] Vård & Sjukhus: hero, rätt bildplacering och nytt upplägg för `Hur vi jobbar`/`Vår leverans`.
+- [ ] Industri: hero-bedömning, teknikbilder, Bilparken/Hanza/Lesjöfors och `Hur vi jobbar`.
+- [ ] Parkering & garage: hero samt teknikbilder/länkar.
+
+### Fas 4 – Startsida
+- [ ] Justera hero-piller enligt global standard.
+- [ ] Justera hero-bildens focal position så högtalaren syns bättre.
+- [ ] Uppdatera aktuellt erbjudande med kundverifierat pris.
+
+### Fas 5 – Referenser
+- [ ] Lägg till strukturerat fält för färdigställandeår och visa endast verifierade år.
+- [ ] Verifiera att materialpausen kan hävas innan nya migrationsbatcher startas.
+- [ ] Bygg/migrera Mullhyttan, Fortnox arena, STC Kil och STC Hammarö när materialet är komplett.
+- [ ] Lesjöfors: bearbeta smutsigt golv med AI endast efter godkännande och utan att förvanska projektet.
+- [ ] Standardisera avstånd mellan `Hur vi jobbar`-piller och rubrik.
+- [ ] Bygg om Lundsberg.
+
+### Fas 6 – Full QA
+- [ ] Kör full internlänkskontroll på hela sajten, inklusive felaktiga Kontakt-fallbacks.
+- [ ] Regressionstesta navigation, footer, Vanliga frågor, grids och hero-crops på desktop/tablet/mobil.
+- [ ] Kontrollera bildprestanda, dimensioner, lazy loading och LCP-kandidater.
+- [ ] Kontrollera alt-texter, canonical, referensår och relevanta schemas.
+- [ ] Kör build/CI och visuell kundgranskning före merge/publicering.
+
 ### Beslut som ska bevaras
 
 - `AVAB-EU/avab-eu` är gemensam GitHub source of truth för fortsatt arbete.
