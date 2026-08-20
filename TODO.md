@@ -1,6 +1,6 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-08-18._
+_Kanonisk projektlista. Senast uppdaterad 2026-08-20._
 
 ## AI Content System
 
@@ -10,6 +10,11 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-18._
 - [ ] Försona AI-dokumentationen med kundrepots aktuella referensimplementation (`compact` / `standard` / `extended` och befintliga `Reference*`-komponenter).
 - [x] Säkerställ att guardrails/CI validerar den faktiska content-modellen i kundrepot innan bred migrering.
 - [ ] Lägg till unik preview per PR så kunden kan visuellt godkänna brancher från mobil/chat utan lokal VS Code.
+
+## Navigation / Header
+
+- [ ] **Implementera hero-baserad auto-hide för den gemensamma headern.** Headern ska vara synlig från sidtoppen genom hela hero-sektionen. Först efter hero ska tydlig scroll ned dölja headern och scroll upp visa den igen. Använd liten scrolltröskel för att undvika fladder, lås headern synlig när desktop-dropdown eller mobilmeny är öppen, respektera `prefers-reduced-motion` och använd en säker fallback på sidor utan hero. Breadcrumb och referenssidornas ankarmeny ska inte få ändrat beteende av misstag. Tillfälligt genomförandeunderlag: `docs/workflows/TEMP-header-scroll-behavior.md`.
+- [ ] **Städa efter godkänd header-scroll-implementation.** När beteendet är implementerat, browserverifierat, godkänt och mergeat ska `docs/workflows/TEMP-header-scroll-behavior.md` raderas och båda tillfälliga header-scroll-punkterna tas bort ur `TODO.md`. Behåll endast permanent dokumentation om implementationen introducerar en generell standard som framtida utveckling behöver känna till.
 
 ## Referensmigrering – Fas 7
 
