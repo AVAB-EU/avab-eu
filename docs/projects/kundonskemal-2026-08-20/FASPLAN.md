@@ -1,5 +1,7 @@
 # Fasplan – kundönskemål 2026-08-20
 
+> **OBLIGATORISK BILDREGEL:** Alla uppgifter som innebär att välja, byta, ersätta, lägga till, generera, retuschera eller på annat sätt ändra en bild är **MANUELLA BILDUPPGIFTER** och ska utföras av Andreas/kundteamet. AI får inte genomföra dem. AI får endast dokumentera dem, kontrollera teknisk bildprestanda, rätta länkar runt bilder och justera presentation/crop/focal-position för redan manuellt vald bild när det uttryckligen efterfrågas.
+
 ## Fas 0 – Beslut, material och inventering
 Målet är att låsa sådant som annars orsakar omarbete.
 
@@ -7,10 +9,10 @@ Målet är att låsa sådant som annars orsakar omarbete.
 - [ ] Besluta kanoniskt namn för restaurangmiljön.
 - [ ] Besluta relationen mellan `Hur vi jobbar` och `Vår leverans`.
 - [ ] Få verifierat nytt pris till startsidans aktuella erbjudande.
-- [ ] Samla/godkänn ersättningsbilder för alla punkter märkta “byt bild”.
+- [ ] **MANUELL BILDUPPGIFT:** Andreas/kundteamet samlar, väljer och godkänner ersättningsbilder för alla punkter märkta `byt bild`, `byt hero`, `lägg till bild`, `ändra bilder` eller motsvarande.
 - [ ] Tolka anteckningen `Lagom hantera dokument (Andreas)` innan arbete startar.
 - [ ] Klargör exakt WOT-fetmarkering.
-- [ ] Inventera vilka referenser som har komplett text, bilder och färdigställandeår.
+- [ ] Inventera vilka referenser som har komplett text, bilder och färdigställandeår. Inventeringen får inte innebära automatiska bildbyten.
 - [ ] Inventera befintliga tjänste- och miljökomponenter innan lokala CSS-fixar görs.
 
 **Exit-kriterium:** blockerande innehållsbeslut och materialstatus är dokumenterade.
@@ -54,20 +56,20 @@ Målet är att rätta problem som påverkar många sidor på en gång.
 
 ### Kamera
 - [ ] Justera transparenta piller i hero.
-- [ ] Ta bort/byta blixtgrafik.
+- [ ] Ta bort/byta blixtgrafik. Om detta innebär bild-/grafikbyte: **MANUELL BILDUPPGIFT**.
 - [ ] Hantera oklar punkt `Lagom hantera dokument` först efter förtydligande.
 - [ ] Ändra expanderande kort enligt ny standard.
 - [ ] På `Kameraövervakning anpassad för er miljö`: sluta länka boxar om de inte representerar verkliga destinationer.
 - [ ] Flytta/korrigera Vanliga frågor.
 
 ### Talat utrymningslarm
-- [ ] Kontrollera långsam bild och optimera/ersätt vid behov.
+- [ ] Kontrollera långsam bild tekniskt: filstorlek, dimensioner, loading och LCP. AI får inte ersätta bilden.
 - [ ] Bygg om sidan enligt tjänstestandard.
-- [ ] Bedöm/byt herobild.
+- [ ] **MANUELL BILDUPPGIFT:** Andreas/kundteamet bedömer och byter eventuell herobild.
 - [ ] Bygg om första stycket.
 
 ### Mikrofoner
-- [ ] Byt hero till egen bild.
+- [ ] **MANUELL BILDUPPGIFT:** byt hero till egen bild.
 - [ ] Lägg till Claessons som relevant referens/innehåll där beslutat.
 - [ ] Besluta och implementera eventuell fetmarkering i WOT.
 - [ ] Uppdatera Mikrofonguiden: Ficksändare och headset, texten `flera bör märkas...`.
@@ -76,13 +78,13 @@ Målet är att rätta problem som påverkar många sidor på en gång.
 - [ ] Linjera vit ruta enligt gemensam grid/spacing.
 - [ ] På miljösektionen: löptext på samma höjd efter rubrik.
 - [ ] Öka luft mellan rubrik och text enligt standard.
-- [ ] Byt Fortnox mot Ekhagsskolan.
+- [ ] Byt Fortnox mot Ekhagsskolan. Om detta avser bild: **MANUELL BILDUPPGIFT**; om det avser referenskort/data kan AI uppdatera text/länk efter verifiering.
 
 ### Ljudsystem
-- [ ] Byt hero.
+- [ ] **MANUELL BILDUPPGIFT:** byt hero.
 - [ ] Rätta länk för `Helheten`/kablar.
 - [ ] `Miljöanpassning`: 3+3-layout.
-- [ ] Referenser: byt bild för Claessons.
+- [ ] **MANUELL BILDUPPGIFT:** referenser – byt bild för Claessons.
 - [ ] Rätta internlänkning i `Hur vi jobbar`.
 
 ### Hörslinga
@@ -90,10 +92,10 @@ Målet är att rätta problem som påverkar många sidor på en gång.
 - [ ] Bygg om text under Minnebergsskolan.
 - [ ] Gör budgetkalkylator-CTA till korrekt helknapp och rätta länken.
 - [ ] `Vanliga miljöer`: lägg till en miljö och kvalitetssäkra text.
-- [ ] Rätta bild/namn: NTI, inte STI.
-- [ ] `Tekniken bakom`: byt bild.
+- [ ] Rätta text/namn till NTI, inte STI. Om kundens punkt även kräver bildbyte är det **MANUELL BILDUPPGIFT**.
+- [ ] **MANUELL BILDUPPGIFT:** `Tekniken bakom` – byt bild.
 - [ ] `Portabel hörslinga`: liten bokstav i `hyrljud.nu`.
-- [ ] `Auracast`: lägg till en bild.
+- [ ] **MANUELL BILDUPPGIFT:** `Auracast` – lägg till en bild.
 - [ ] Kontrollera ytterligare fellänkning till budgetkalkylatorn.
 - [ ] Flytta/korrigera Vanliga frågor.
 
@@ -102,16 +104,16 @@ Målet är att rätta problem som påverkar många sidor på en gång.
 - [ ] Lägg till/korrigera miljöer.
 
 ### Styrsystem
-- [ ] Ta bort blixtgrafik.
+- [ ] Ta bort blixtgrafik. Om detta innebär bild-/grafikändring: **MANUELL BILDUPPGIFT**.
 - [ ] Plattformar: 3+2-layout.
 - [ ] `Smart styrning i praktiken`: gör hotell/restaurang-ruta klickbar om den ska representera destination.
 - [ ] `Service och support`: rätta länk.
 
 ### Bakgrundsmusik
-- [ ] Byt hero.
+- [ ] **MANUELL BILDUPPGIFT:** byt hero.
 - [ ] Addera relevanta referenser.
 
-**Exit-kriterium:** samtliga tjänstesidor följer samma standard och inga kända tjänstelänkar är fel.
+**Exit-kriterium:** samtliga tjänstesidor följer samma standard och inga kända tjänstelänkar är fel. Manuella bildpunkter behöver inte vara utförda av AI för att kod-/strukturfasen ska kunna verifieras, men de ska vara tydligt kvarmarkerade.
 
 ---
 
@@ -127,7 +129,7 @@ Målet är att rätta problem som påverkar många sidor på en gång.
 - [ ] Korrigera hero-rubrik till beslutad terminologi för Sporthall & arena.
 
 ### Simhall
-- [ ] Byt herobild.
+- [ ] **MANUELL BILDUPPGIFT:** byt herobild.
 - [ ] Rätta `Spa, relax, ljus`-länk som går till Säffle simhall.
 - [ ] Rätta `Infoskärmar` som går till Kontakt.
 - [ ] Rätta Årjäng-referens som går till Kontakt.
@@ -143,57 +145,57 @@ Målet är att rätta problem som påverkar många sidor på en gång.
 - [ ] Korrigera avsnittet `Lösning – Därför projekterar vi systemet som en helhet`.
 - [ ] Rätta fellänkning i skärmar.
 - [ ] BYOM -> BYOD.
-- [ ] Bild som går till projektering ska gå till Skärmar/projektorer.
+- [ ] Rätta länken på befintlig bild så den går till Skärmar/projektorer istället för projektering. Bildfilen ska inte bytas av AI.
 
 ### Hotell
-- [ ] Byt hero till bild med högre upplösning.
+- [ ] **MANUELL BILDUPPGIFT:** byt hero till bild med högre upplösning.
 - [ ] Addera referenser.
 
 ### Restaurang / bar / klubb
 - [ ] Lås kanoniskt namn och använd samma i meny, H1 och internlänkar.
-- [ ] Byt herobild.
+- [ ] **MANUELL BILDUPPGIFT:** byt herobild.
 - [ ] Addera Capri, Terrassen, Teburu och Pinchos när referensmaterial är klart.
-- [ ] Byt Claessons-bild mot Tempel där specificerat.
+- [ ] **MANUELL BILDUPPGIFT:** byt Claessons-bild mot Tempel där specificerat.
 - [ ] Linjera löptextens start.
 - [ ] Säkerställ att Vanliga frågor klarar rubrik på tre rader.
 
 ### Butik & Retail
-- [ ] Byt herobild och lägg in GB enligt godkänt material.
+- [ ] **MANUELL BILDUPPGIFT:** byt herobild och lägg in GB enligt manuellt valt/godkänt material.
 - [ ] Korrigera transparent piller.
-- [ ] Ändra angivna bilder.
+- [ ] **MANUELL BILDUPPGIFT:** ändra angivna bilder.
 
 ### Köpcentrum & Galleria
 - [ ] Bygg om sidan efter att miljöstandarden är fastställd.
-- [ ] Byt herobild.
+- [ ] **MANUELL BILDUPPGIFT:** byt herobild.
 - [ ] Skriv om första stycket.
 - [ ] Gör stycke 2 med samma boxstandard som övriga miljösidor.
 - [ ] Rätta felplacerat grönt streck.
-- [ ] Ändra bilder i Lösningar.
+- [ ] **MANUELL BILDUPPGIFT:** ändra bilder i Lösningar.
 - [ ] Ersätt avvikande lösningsboxar med gemensam standard.
 - [ ] Besluta om `Arbetssätt` ska vara kvar eller flyttas till `Vår leverans`.
-- [ ] Bygg om referenssektion och byt bilder.
+- [ ] Bygg om referenssektionens struktur. **Bildbyten i referenssektionen är MANUELLA BILDUPPGIFTER.**
 
 ### Skola
-- [ ] Rätta fel länk/bild i Lösning och informationsskärmar.
+- [ ] Rätta fel länk i Lösning och informationsskärmar. Om kundens punkt även avser fel bild är bilddelen **MANUELL BILDUPPGIFT**.
 - [ ] Lägg till referenser.
 
 ### Vård & Sjukhus
-- [ ] Byt herobild.
-- [ ] Rätta bilder som ligger på fel sektioner.
+- [ ] **MANUELL BILDUPPGIFT:** byt herobild.
+- [ ] **MANUELL BILDUPPGIFT:** rätta bilder som ligger på fel sektioner.
 - [ ] `Hur vi jobbar`: utöka antal block/rutor enligt beslutad standard.
 - [ ] Bedöm om innehåll bör länka/flyttas till `Vår leverans`.
 
 ### Industri
-- [ ] Bedöm eventuellt byte av hero.
-- [ ] Rätta bilder i teknikområden.
+- [ ] **MANUELL BILDUPPGIFT:** bedöm eventuellt byte av hero.
+- [ ] **MANUELL BILDUPPGIFT:** rätta bilder i teknikområden.
 - [ ] Lägg till Bilparken, Hanza och Lesjöfors fjädrar som referenser när materialet är färdigt.
 - [ ] Byt ut `Hur vi jobbar` enligt beslutad standard.
 
 ### Parkering & garage
-- [ ] Byt herobild.
-- [ ] Byt bilder och rätta länkar i teknikområden.
+- [ ] **MANUELL BILDUPPGIFT:** byt herobild.
+- [ ] **MANUELL BILDUPPGIFT:** byt bilder i teknikområden. AI får separat rätta länkarna i teknikområden.
 
-**Exit-kriterium:** alla miljösidor följer gemensam struktur och kända fel är rättade.
+**Exit-kriterium:** alla miljösidor följer gemensam struktur och kända kod-/länkfel är rättade. Manuella bildpunkter ligger kvar tills Andreas/kundteamet utfört dem.
 
 ---
 
@@ -201,7 +203,7 @@ Målet är att rätta problem som påverkar många sidor på en gång.
 
 ### Startsida
 - [ ] Justera hero-piller enligt global standard.
-- [ ] Flytta hero-bildens focal position så högtalaren syns bättre.
+- [ ] Justera hero-bildens focal position så högtalaren syns bättre. Detta ändrar presentationen av befintlig bild och innebär inte att AI väljer eller byter bildfil.
 - [ ] Uppdatera aktuellt erbjudande med verifierat pris.
 
 **Exit-kriterium:** startsidan använder samma globala regler och innehållet är kundverifierat.
@@ -219,13 +221,13 @@ Målet är att rätta problem som påverkar många sidor på en gång.
 - [ ] Fortnox arena.
 - [ ] STC Kil.
 - [ ] STC Hammarö.
-- [ ] Lesjöfors – städa/dammsug golv i bild med AI endast efter godkänd bildbearbetning och kontroll att resultatet inte förvanskar projektet.
+- [ ] **MANUELL BILDUPPGIFT:** Lesjöfors – städa/dammsug golv i bild. AI-agenten får inte utföra retuscheringen eller generativ bildbearbetning.
 - [ ] Justera avstånd mellan `Hur vi jobbar`-piller och rubrik enligt referensstandard.
-- [ ] Bygg om Lundsberg.
+- [ ] Bygg om Lundsberg. Alla bildval/bildbyten inom ombyggnaden är manuella.
 
 **Beroende:** Den tidigare pausen för bred referensmigrering gäller tills materialet är komplett. Kundens nya lista kan vara signal om att material börjar bli tillgängligt, men detta ska verifieras innan pausen hävs.
 
-**Exit-kriterium:** referenser med komplett material är migrerade och metadata är korrekt.
+**Exit-kriterium:** referenser med komplett material är migrerade och metadata är korrekt. Bildändringar genomförs separat manuellt.
 
 ---
 
@@ -237,8 +239,8 @@ Målet är att rätta problem som påverkar många sidor på en gång.
 - [ ] Kontrollera footer på samtliga sidtyper.
 - [ ] Kontrollera `Vanliga frågor` och schema.
 - [ ] Kontrollera tjänste- och miljögrid vid 1440, 1024, 768, 390 och 375 px.
-- [ ] Kontrollera hero-bildernas crop/focal point vid samma brytpunkter.
-- [ ] Kontrollera bilddimensioner, filstorlek, lazy loading och LCP-kandidater.
+- [ ] Kontrollera crop/focal point för de bilder som redan valts manuellt; QA får inte byta bildmaterial.
+- [ ] Kontrollera bilddimensioner, filstorlek, lazy loading och LCP-kandidater. Om åtgärden kräver ny/ersatt bildfil ska den lämnas som manuell bilduppgift.
 - [ ] Kontrollera alt-texter och kanoniska routes.
 - [ ] Kontrollera referensår och att okända år inte visas som gissningar.
 - [ ] Kör build och befintlig CI.
@@ -246,3 +248,5 @@ Målet är att rätta problem som påverkar många sidor på en gång.
 
 ## Arbetsprincip
 En fas ska i normalfallet slutföras och verifieras innan nästa breda fas börjar. Sidunika småfixar får göras parallellt endast när de inte riskerar att skrivas över av pågående standardisering.
+
+**Bildregeln gäller genom hela projektet och får inte kringgås av en AI-agent, även om en äldre punkt eller kundanteckning uttryckligen säger `byt bild`.**
