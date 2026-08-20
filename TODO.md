@@ -37,11 +37,13 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-20._
 
 ## Bild-SEO
 
+> **BILDÄNDRINGAR ÄR MANUELLA:** AI får inte välja, byta, ersätta, lägga till, generera eller retuschera bilder. Sådana ändringar utförs av Andreas/kundteamet. AI får analysera SEO/prestanda och dokumentera vad som behöver göras utan att ersätta bildmaterial.
+
 - [ ] Granska alt-texter; börja med de 17 tidigare flaggade. Ortsnamn hör hemma i alt-text, inte i generiska filnamn.
 - [ ] Pusha `bildstruktur-seo` och skapa PR först när den separata arbetsfasen uttryckligen återupptas och visuell kontroll är klar.
-- [ ] Besluta om `kopcentrum-fasad-kvall-bred.webp`, som tidigare saknade referenser: radera eller ta i bruk.
+- [ ] **MANUELL BILDUPPGIFT:** besluta om `kopcentrum-fasad-kvall-bred.webp`, som tidigare saknade referenser: radera eller ta i bruk.
 - [ ] Verifiera kvarvarande trasiga internlänkar från tidigare inventering.
-- [ ] Spåra eller ersätt saknade originalbilder.
+- [ ] **MANUELL BILDUPPGIFT:** spåra eller ersätt saknade originalbilder. AI får endast dokumentera status.
 - [ ] Kontrollera publika bild-URL:er och hash-länkar manuellt.
 - [ ] Verifiera `SiteFooter.astro` efter ändrad sökväg för logotyp.
 - [ ] Välj namnkonvention för `images` respektive `image/partners/` och gör den enhetlig i en separat uppgift.
@@ -54,14 +56,16 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-20._
 
 Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-2026-08-20/`.
 
+> **OBLIGATORISK REGEL FÖR DENNA ARBETSLISTA:** Alla kundönskemål som innebär att välja, byta, ersätta, lägga till, generera, retuschera eller på annat sätt ändra en bild är **MANUELLA BILDUPPGIFTER** för Andreas/kundteamet. AI-agent får inte utföra dem, även om den ursprungliga kundanteckningen säger `byt bild`, `byt hero`, `ändra bilder`, `lägg till bild` eller liknande.
+
 ### Fas 0 – Beslut, material och inventering
 - [ ] Besluta om headern ska visa endast `Kontakt` eller även telefonnummer.
 - [ ] Välj kanoniskt namn för restaurangmiljön och använd det konsekvent.
 - [ ] Definiera skillnaden mellan `Hur vi jobbar` och `Vår leverans`.
 - [ ] Få verifierat nytt pris för startsidans aktuella erbjudande.
-- [ ] Samla och godkänn alla ersättningsbilder innan breda bildbyten.
+- [ ] **MANUELL BILDUPPGIFT:** Andreas/kundteamet väljer och godkänner alla ersättningsbilder.
 - [ ] Förtydliga `Lagom hantera dokument (Andreas)` och exakt WOT-fetmarkering.
-- [ ] Inventera referensmaterial och färdigställandeår innan referenspausen hävs.
+- [ ] Inventera referensmaterial och färdigställandeår innan referenspausen hävs. AI får inte byta bilder under inventeringen.
 
 ### Fas 1 – Globala komponenter och designregler
 - [ ] Gör footern till en sammanhållen global footer.
@@ -77,47 +81,47 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 - [ ] Dokumentera och implementera gemensam tjänstesidestandard innan bred sidfix.
 - [ ] Bygg Ljus.
 - [ ] Bygg Bild/skärm och koppla Skärmar/projektorer samt Visuell kommunikation korrekt.
-- [ ] Kamera: hero-piller, blixtar, expanderande kort, boxlänkning och Vanliga frågor.
-- [ ] Talat utrymningslarm: bildprestanda och full ombyggnad enligt standard.
-- [ ] Mikrofoner: hero, Claessons, WOT, Mikrofonguiden, 3+3, Radiolänken, vit ruta, miljölinjering och Ekhagsskolan.
-- [ ] Ljudsystem: hero, kabellänk, 3+3, Claessons-bild och internlänkning.
-- [ ] Hörslinga: texter, budgetkalkylator, miljöer, NTI, bilder, hyrljud.nu, Auracast och Vanliga frågor.
+- [ ] Kamera: hero-piller, expanderande kort, boxlänkning och Vanliga frågor. Bild-/grafikändring av blixtar är **MANUELL BILDUPPGIFT**.
+- [ ] Talat utrymningslarm: kontrollera bildprestanda tekniskt och bygg om enligt standard. Eventuellt bildbyte är **MANUELL BILDUPPGIFT**.
+- [ ] Mikrofoner: Claessons, WOT, Mikrofonguiden, 3+3, Radiolänken, vit ruta och miljölinjering. Hero-/referensbildbyten är **MANUELLA BILDUPPGIFTER**.
+- [ ] Ljudsystem: kabellänk, 3+3 och internlänkning. Hero- och Claessons-bildbyten är **MANUELLA BILDUPPGIFTER**.
+- [ ] Hörslinga: texter, budgetkalkylator, miljöer, NTI, hyrljud.nu och Vanliga frågor. Bildbyte i `Tekniken bakom` och ny Auracast-bild är **MANUELLA BILDUPPGIFTER**.
 - [ ] Taluppfattbarhet: referenser och miljöer.
-- [ ] Styrsystem: blixtar, 3+2, klickbar hotell/restaurang-ruta och rätt service/support-länk.
-- [ ] Bakgrundsmusik: hero och referenser.
+- [ ] Styrsystem: 3+2, klickbar hotell/restaurang-ruta och rätt service/support-länk. Bild-/grafikändring av blixtar är **MANUELL BILDUPPGIFT**.
+- [ ] Bakgrundsmusik: referenser. Hero-byte är **MANUELL BILDUPPGIFT**.
 
 ### Fas 3 – Miljösidor
 - [ ] Dokumentera och implementera gemensam miljösidestandard innan bred sidfix.
 - [ ] Sporthall & arena: budgetkalkylator, helklickbar grön CTA och hero-rubrik.
-- [ ] Simhall: hero, Spa/relax/ljus, Infoskärmar, Årjäng och Sälen-korrigeringar.
+- [ ] Simhall: Spa/relax/ljus, Infoskärmar, Årjäng och Sälen-korrigeringar. Hero-byte är **MANUELL BILDUPPGIFT**.
 - [ ] Ishall: budgetkalkylator, `Det här får du`-linjering och spacing i `Hur vi jobbar`.
-- [ ] Kontor & Konferens: lösningssektion, skärmlänk, BYOD och rätt bildlänk.
-- [ ] Hotell: högupplöst hero och referenser.
-- [ ] Restaurang/bar/klubb: kanoniskt namn, hero, Capri/Terrassen/Teburu/Pinchos, Tempel, textlinjering och Vanliga frågor.
-- [ ] Butik & Retail: hero/GB, piller och bilder.
-- [ ] Köpcentrum & Galleria: full ombyggnad enligt miljöstandard, bilder, boxar, grönt streck, arbetssätt och referenser.
-- [ ] Skola: rätta lösnings-/informationsskärmslänkar och lägg till referenser.
-- [ ] Vård & Sjukhus: hero, rätt bildplacering och nytt upplägg för `Hur vi jobbar`/`Vår leverans`.
-- [ ] Industri: hero-bedömning, teknikbilder, Bilparken/Hanza/Lesjöfors och `Hur vi jobbar`.
-- [ ] Parkering & garage: hero samt teknikbilder/länkar.
+- [ ] Kontor & Konferens: lösningssektion, skärmlänk, BYOD och rätt länk på befintlig bild. AI ska inte byta bilden.
+- [ ] Hotell: referenser. Byte till högupplöst hero är **MANUELL BILDUPPGIFT**.
+- [ ] Restaurang/bar/klubb: kanoniskt namn, Capri/Terrassen/Teburu/Pinchos, textlinjering och Vanliga frågor. Hero- och Tempel/Claessons-bildbyten är **MANUELLA BILDUPPGIFTER**.
+- [ ] Butik & Retail: piller. Hero/GB och övriga bildändringar är **MANUELLA BILDUPPGIFTER**.
+- [ ] Köpcentrum & Galleria: full ombyggnad enligt miljöstandard, boxar, grönt streck, arbetssätt och referenser. Alla bildändringar är **MANUELLA BILDUPPGIFTER**.
+- [ ] Skola: rätta lösnings-/informationsskärmslänkar och lägg till referenser. Eventuellt bildbyte är **MANUELL BILDUPPGIFT**.
+- [ ] Vård & Sjukhus: nytt upplägg för `Hur vi jobbar`/`Vår leverans`. Hero och rätt bildplacering är **MANUELLA BILDUPPGIFTER**.
+- [ ] Industri: Bilparken/Hanza/Lesjöfors och `Hur vi jobbar`. Hero- och teknikbildändringar är **MANUELLA BILDUPPGIFTER**.
+- [ ] Parkering & garage: rätta tekniklänkar. Hero- och teknikbildbyten är **MANUELLA BILDUPPGIFTER**.
 
 ### Fas 4 – Startsida
 - [ ] Justera hero-piller enligt global standard.
-- [ ] Justera hero-bildens focal position så högtalaren syns bättre.
+- [ ] Justera hero-bildens focal position så högtalaren syns bättre. Detta gäller presentation av befintlig bild, inte val/byte av bildfil.
 - [ ] Uppdatera aktuellt erbjudande med kundverifierat pris.
 
 ### Fas 5 – Referenser
 - [ ] Lägg till strukturerat fält för färdigställandeår och visa endast verifierade år.
 - [ ] Verifiera att materialpausen kan hävas innan nya migrationsbatcher startas.
-- [ ] Bygg/migrera Mullhyttan, Fortnox arena, STC Kil och STC Hammarö när materialet är komplett.
-- [ ] Lesjöfors: bearbeta smutsigt golv med AI endast efter godkännande och utan att förvanska projektet.
+- [ ] Bygg/migrera Mullhyttan, Fortnox arena, STC Kil och STC Hammarö när materialet är komplett. Alla bildval/bildbyten i referenserna görs manuellt.
+- [ ] **MANUELL BILDUPPGIFT:** Lesjöfors – eventuell AI-retuschering av smutsigt golv utförs manuellt av Andreas/kundteamet; AI-agenten i utvecklingsflödet får inte göra bildbearbetningen.
 - [ ] Standardisera avstånd mellan `Hur vi jobbar`-piller och rubrik.
-- [ ] Bygg om Lundsberg.
+- [ ] Bygg om Lundsberg. Bildändringar inom ombyggnaden görs manuellt.
 
 ### Fas 6 – Full QA
 - [ ] Kör full internlänkskontroll på hela sajten, inklusive felaktiga Kontakt-fallbacks.
 - [ ] Regressionstesta navigation, footer, Vanliga frågor, grids och hero-crops på desktop/tablet/mobil.
-- [ ] Kontrollera bildprestanda, dimensioner, lazy loading och LCP-kandidater.
+- [ ] Kontrollera bildprestanda, dimensioner, lazy loading och LCP-kandidater utan att AI ersätter bildmaterial.
 - [ ] Kontrollera alt-texter, canonical, referensår och relevanta schemas.
 - [ ] Kör build/CI och visuell kundgranskning före merge/publicering.
 
@@ -128,8 +132,10 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 - `main` ändras inte direkt av AI Content-arbetet; branch + PR används.
 - Minnebergsskolan är designpilot; Säffle simhall är första migrationspilot efter designförsoningen.
 - Kundrepots aktuella kod är implementationens source of truth när den skiljer sig från äldre dokument/brancher.
+- **Alla bildval, bildbyten, nya bilder, ersättningsbilder, genererade bilder och bildretuscheringar görs manuellt av Andreas/kundteamet. AI-agent får inte utföra dem.**
+- AI får analysera bildprestanda/SEO, rätta bildrelaterade länkar och justera presentation/crop/focal-position för redan manuellt vald bild när det uttryckligen ingår i uppgiften.
 - Inga undermappar i `public/assets/`; bilder ligger platt och endast omdöpta.
 - Generiska motivnamn används i filnamn, ortsnamn i alt-text.
 - Visuellt lika men icke-identiska bilder hålls isär.
 - De två tidigare raderade gymfilerna förblir raderade; `gym_hero_hammaro_stc.webp` behålls som framtida gym-hero.
-- Val av gym-hero är ett separat innehållsbeslut.
+- Val av gym-hero är ett separat manuellt innehållsbeslut.
