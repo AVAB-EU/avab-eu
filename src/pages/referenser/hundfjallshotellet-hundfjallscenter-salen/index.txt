@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import ReferencePage from "../../../layouts/ReferencePage.astro";
+
+const reference = (await getCollection("references")).find(
+  (entry) => entry.data.slug === "/referenser/hundfjallshotellet-hundfjallscenter-salen/",
+);
+
+if (!reference) {
+  throw new Error("Referensen Hundfjällshotellet saknas i content collection.");
+}
+---
+
+<ReferencePage reference={reference} />
