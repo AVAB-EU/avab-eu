@@ -1,4 +1,4 @@
-name: Deploy test2.avab.eu
+name: Deploy avab.eu
 
 on:
   push:
@@ -23,13 +23,15 @@ jobs:
         run: npm install
 
       - name: Build Astro site
+        env:
+          DEPLOYMENT_URL: https://avab.eu/
         run: npm run build
 
       - name: Deploy dist via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: ftp.avab.eu
-          username: test2@avab.eu
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           protocol: ftp

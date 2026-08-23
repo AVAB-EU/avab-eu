@@ -37,6 +37,7 @@ Om två gällande dokument motsäger varandra ska AI inte välja tyst. Konflikte
 - [`workflows/mobile-qa.md`](workflows/mobile-qa.md) – inventering, prioritering och verifiering av mobil UI.
 
 ### Arkitektur
+- [`architecture/deployment.md`](architecture/deployment.md) – aktivt produktionsflöde, domän, FTP-parametrar och Secrets.
 - [`architecture/documentation-rules.md`](architecture/documentation-rules.md) – dokumenthierarki och livscykel.
 - [`architecture/page-types.md`](architecture/page-types.md) – officiell sidtypskarta + routing till workflows.
 - [`architecture/ai-write-scope.md`](architecture/ai-write-scope.md) – vad en normal innehållsagent får och inte får ändra.

@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { reviewEnvironmentNoindex } from './scripts/review-environment-noindex.mjs';
 
-const deploymentUrl = process.env.DEPLOYMENT_URL ?? 'https://test2.avab.eu';
+const deploymentUrl = process.env.DEPLOYMENT_URL ?? 'https://avab.eu/';
 
 // https://astro.build/config
 export default defineConfig({
