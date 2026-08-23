@@ -1005,10 +1005,10 @@ p {
   justify-content: center;
   min-height: 38px;
   padding: 0 16px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(40, 46, 41, 0.78);
   color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
   font-size: 0.92rem;
   font-weight: 800;
   line-height: 1.2;

@@ -74,9 +74,9 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 - [x] Gör footern till en sammanhållen global footer. **Fas 1A: kodimplementerad och manuellt verifierad på desktop, tablet, mobil och låg viewporthöjd 2026-08-23.**
 - [x] Fixa responsiva dropdown-menyer så alla underrubriker går att nå och menyn själv kan scrolla. **Fas 1A: kodimplementerad och manuellt verifierad på desktop, tablet, mobil och låg viewporthöjd 2026-08-23.**
 - [ ] Implementera beslutad förenkling av header/kontakt.
-- [ ] Standardisera hero-pillers kontrast/opacitet.
-- [ ] Ändra synlig rubrik `FAQ` till `Vanliga frågor` på samtliga sidor.
-- [ ] Ta bort `Tjänst:` på samtliga tjänstesidor via gemensam implementation.
+- [x] Standardisera hero-pillers kontrast/opacitet. **Fas 1B: kodimplementerad, tekniskt verifierad och manuellt browser-QA-verifierad på desktop, tablet och mobil 2026-08-23.**
+- [x] Ändra synlig rubrik `FAQ` till `Vanliga frågor` på samtliga sidor. **Fas 1B: kodimplementerad, tekniskt verifierad och manuellt browser-QA-verifierad 2026-08-23.**
+- [x] Ta bort `Tjänst:` på samtliga tjänstesidor via gemensam implementation. **Fas 1B: kodimplementerad, tekniskt verifierad och manuellt browser-QA-verifierad på de fyra berörda tjänstesidorna 2026-08-23.**
 - [ ] Standardisera spacing, textlinjering, sifferpiller och kortgrid (3+3, 3+2 m.fl.).
 - [x] Standardisera hela klickbara kort/CTA-fält med korrekt hover/focus. **Fas 1A: kod-, semantik- och browser-verifierad 2026-08-23.**
 
