@@ -71,14 +71,14 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 - [ ] Inventera referensmaterial och färdigställandeår innan referenspausen hävs.
 
 ### Fas 1 – Globala komponenter och designregler
-- [ ] Gör footern till en sammanhållen global footer.
-- [ ] Fixa responsiva dropdown-menyer så alla underrubriker går att nå och menyn själv kan scrolla.
+- [x] Gör footern till en sammanhållen global footer. **Fas 1A: kodimplementerad och manuellt verifierad på desktop, tablet, mobil och låg viewporthöjd 2026-08-23.**
+- [x] Fixa responsiva dropdown-menyer så alla underrubriker går att nå och menyn själv kan scrolla. **Fas 1A: kodimplementerad och manuellt verifierad på desktop, tablet, mobil och låg viewporthöjd 2026-08-23.**
 - [ ] Implementera beslutad förenkling av header/kontakt.
 - [ ] Standardisera hero-pillers kontrast/opacitet.
 - [ ] Ändra synlig rubrik `FAQ` till `Vanliga frågor` på samtliga sidor.
 - [ ] Ta bort `Tjänst:` på samtliga tjänstesidor via gemensam implementation.
 - [ ] Standardisera spacing, textlinjering, sifferpiller och kortgrid (3+3, 3+2 m.fl.).
-- [ ] Standardisera hela klickbara kort/CTA-fält med korrekt hover/focus.
+- [x] Standardisera hela klickbara kort/CTA-fält med korrekt hover/focus. **Fas 1A: kod-, semantik- och browser-verifierad 2026-08-23.**
 
 ### Fas 2 – Tjänstesidor
 - [ ] Dokumentera och implementera gemensam tjänstesidestandard innan bred sidfix.
@@ -112,6 +112,7 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 - [ ] Justera hero-piller enligt global standard.
 - [ ] **MANUELL BILDBEARBETNING – Andreas:** flytta/cropa hero-bilden så högtalaren syns bättre.
 - [ ] Uppdatera aktuellt erbjudande med kundverifierat pris.
+- [ ] Besluta och rätta startsidans åtta verifierat saknade destinationsroutes: `/ljus/`, `/visuell-kommunikation/`, `/nedladdningar/checklista-av-sakerhet/` och fem ämnesroutes under `/kunskap/`. Ändra inte korten till Kontakt-fallback utan ett innehållsbeslut.
 
 ### Fas 5 – Referenser
 - [ ] Lägg till strukturerat fält för färdigställandeår och visa endast verifierade år.
