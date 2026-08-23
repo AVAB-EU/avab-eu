@@ -102,17 +102,31 @@ const renderPageCta = Boolean(
 );
 const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
 
-const anchorItems = data.story?.chapters.map((chapter) => ({
+const referenceSections = data.story?.chapters.map((chapter) => ({
   id: chapter.id,
-  label: chapter.navLabel,
+  navLabel: chapter.navLabel,
+  eyebrow: chapter.eyebrow,
 })) ?? [
-  { id: "uppdraget", label: "Uppdraget" },
-  { id: "omfattning", label: "Leveransen" },
-  ...(data.results ? [{ id: "resultat", label: "Resultatet" }] : []),
-  ...(data.gallery ? [{ id: "bilder", label: "Bilder" }] : []),
-  ...(data.technicalDetails ? [{ id: "tekniken", label: "Tekniken" }] : []),
-  ...(data.faq ? [{ id: "reference-faq-title", label: "Vanliga frågor" }] : []),
-].slice(0, 5);
+  { id: "uppdraget", navLabel: "Uppdraget", eyebrow: data.brief.eyebrow },
+  { id: "omfattning", navLabel: "Leveransen", eyebrow: data.scope.eyebrow },
+  ...(data.results ? [{ id: "resultat", navLabel: "Resultatet", eyebrow: data.results.eyebrow }] : []),
+  ...(data.gallery ? [{ id: "bilder", navLabel: "Bilder", eyebrow: data.gallery.eyebrow }] : []),
+  ...(data.technicalDetails ? [{ id: "tekniken", navLabel: "Tekniken", eyebrow: data.technicalDetails.eyebrow }] : []),
+  ...(data.faq ? [{ id: "reference-faq-title", navLabel: "Vanliga frågor", eyebrow: data.faq.eyebrow }] : []),
+];
+
+const numberedReferenceSections = referenceSections.map((section, index) => ({
+  ...section,
+  numberedEyebrow: `${String(index + 1).padStart(2, "0")} · ${section.eyebrow}`,
+}));
+
+const anchorItems = numberedReferenceSections.map((section) => ({
+  id: section.id,
+  label: section.navLabel,
+}));
+
+const sectionEyebrow = (id: string) =>
+  numberedReferenceSections.find((section) => section.id === id)?.numberedEyebrow;
 ---
 
 <!doctype html>
@@ -182,7 +196,7 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
           />
           <ReferenceFacts facts={data.facts} />
 
-          <section class="reference-case" data-reference-anchor-scope>
+          <div class="reference-case" data-reference-anchor-scope>
             <div class="reference-case-intro-wrap">
               <div class="avab-container">
                 <header class="reference-case-intro">
@@ -196,11 +210,11 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
             <ReferenceAnchorNav items={anchorItems} />
 
             <div class="reference-case-content">
-              {hasStory && data.story ? data.story.chapters.map((chapter, chapterIndex) => (
+              {hasStory && data.story ? data.story.chapters.map((chapter) => (
                 <section class="case-section" id={chapter.id} data-case-section>
                   <div class="avab-container case-section__inner">
                     <div class="case-copy">
-                      <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
+                      <span class="case-kicker">{sectionEyebrow(chapter.id)}</span>
                       <h2>{chapter.title}</h2>
                       {chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
                       {chapter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
@@ -220,7 +234,7 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
               <section class="case-section" id="uppdraget" data-case-section>
                 <div class="avab-container case-section__inner">
                   <div class="case-copy">
-                    <span class="case-kicker">01 · {data.brief.eyebrow}</span>
+                    <span class="case-kicker">{sectionEyebrow("uppdraget")}</span>
                     <h2>{data.brief.title}</h2>
                     <p class="case-answer"><strong>{data.brief.result}</strong></p>
                     <p>{data.brief.need}</p>
@@ -232,33 +246,31 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
               <section class="case-section" id="omfattning" data-case-section>
                 <div class="avab-container case-section__inner">
                   <div class="case-copy">
-                    <span class="case-kicker">02 · {data.scope.eyebrow}</span>
+                    <span class="case-kicker">{sectionEyebrow("omfattning")}</span>
                     <h2>{data.scope.title}</h2>
                     <p>{data.scope.lead}</p>
                   </div>
-
-                  {data.gallery && <ReferenceGallery gallery={data.gallery} embedded />}
 
                 </div>
               </section>
               </>}
             </div>
-          </section>
-
           {data.scale && <ReferenceScale scale={data.scale} />}
-          {!hasStory && data.results && <ReferenceResults results={data.results} />}
+          {!hasStory && data.results && <ReferenceResults results={data.results} eyebrow={sectionEyebrow("resultat")} />}
           {data.quote && <ReferenceQuote quote={data.quote} />}
-          {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
+          {!hasStory && data.gallery && <ReferenceGallery gallery={data.gallery} eyebrow={sectionEyebrow("bilder")} />}
+          {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} eyebrow={sectionEyebrow("tekniken")} />}
           {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
           {data.faq && (
             <ReferenceFaq
               id="reference-faq-title"
-              eyebrow={data.faq.eyebrow}
+              eyebrow={sectionEyebrow("reference-faq-title") ?? data.faq.eyebrow}
               title={data.faq.title}
               lead={data.faq.lead}
               items={data.faq.items}
             />
           )}
+          </div>
           {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
         </>
       ) : (

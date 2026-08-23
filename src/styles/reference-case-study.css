@@ -82,14 +82,22 @@
   font-weight: 750;
 }
 
-.reference-page--case-study .case-kicker {
+.reference-page--case-study .case-kicker,
+.reference-page--case-study .reference-section-eyebrow {
   display: block;
   margin-bottom: 9px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--avab-green);
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.reference-page--case-study .reference-section-eyebrow::before {
+  display: none;
 }
 
 .reference-page--case-study .case-scope-list {

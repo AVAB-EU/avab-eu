@@ -23,6 +23,7 @@ Om två gällande dokument motsäger varandra ska AI inte välja tyst. Konflikte
 
 ### Globala standarder
 - [`standards/global/mobile.md`](standards/global/mobile.md) – mobil/responsiv UI för alla publika sidor.
+- [`standards/global/layout.md`](standards/global/layout.md) – gemensamma spacing-, processkort-, grid- och FAQ-regler.
 
 ### Sidstandarder
 - [`standards/pages/reference.md`](standards/pages/reference.md) – canonical standard för alla referenser under `/referenser/`.

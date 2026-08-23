@@ -29,7 +29,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-23._
 - [x] Valideringsstopp: Säffle och Minneberg använder samma schema, routeprincip och gemensamma komponenter.
 - [x] Välj Sörby sportcenter som generaliseringstest.
 - [x] Migrera Sörby sportcenter som generaliseringstest.
-- [ ] Kontrollera ankarmenyn på samtliga referenssidor, inklusive Hanza.
+- [ ] Kontrollera ankarmenyn på samtliga referenssidor. **Shared scope, sektionsankare och stöd för samtliga faktiska menyval är tekniskt korrigerade i Fas 1C; Hanza är manuellt browser-QA-verifierad genom Resultat och senare sektioner 2026-08-23. Övriga referenser återstår.**
 - [ ] Implementera godkänd referensstandard på återstående referenssidor i små batcher.
   - [ ] **Pausad på beställarens begäran 2026-08-18.** Starta inga migrationsbatcher förrän återstående referenser har komplett text och bildmaterial.
 - [ ] Kör slut-QA för index, internlänkar, alt-texter, canonical, drafts, responsivitet och build.
@@ -78,13 +78,15 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 - [x] Ändra synlig rubrik `FAQ` till `Vanliga frågor` på samtliga sidor. **Fas 1B: kodimplementerad, tekniskt verifierad och manuellt browser-QA-verifierad 2026-08-23.**
 - [x] Ta bort `Tjänst:` på samtliga tjänstesidor via gemensam implementation. **Fas 1B: kodimplementerad, tekniskt verifierad och manuellt browser-QA-verifierad på de fyra berörda tjänstesidorna 2026-08-23.**
 - [ ] Standardisera spacing, textlinjering, sifferpiller och kortgrid (3+3, 3+2 m.fl.).
+  - [x] **Fas 1C global standard:** konsoliderad `.flow-card`, kanoniskt processpill, spacing-primitives, opt-in-grid för 3+3/3+2, tvåkolumns-FAQ, säker flerradig FAQ-rubrik och dynamiskt numrerade referens-eyebrows är kodimplementerade och tekniskt verifierade 2026-08-23. Kameraövervakningens FAQ och den globala referens-eyebrow-standarden är manuellt browser-QA-verifierade 2026-08-23 på Hanza och Lesjöfors (desktop/mobil), med Minneberg som regressionstest.
+  - [ ] Applicera grid, spacing och bredare textlinjering sidspecifikt i Fas 2/3 och verifiera den globala Fas 1C-standarden manuellt i browser före godkännande.
 - [x] Standardisera hela klickbara kort/CTA-fält med korrekt hover/focus. **Fas 1A: kod-, semantik- och browser-verifierad 2026-08-23.**
 
 ### Fas 2 – Tjänstesidor
 - [ ] Dokumentera och implementera gemensam tjänstesidestandard innan bred sidfix.
 - [ ] Bygg Ljus.
 - [ ] Bygg Bild/skärm och koppla Skärmar/projektorer samt Visuell kommunikation korrekt.
-- [ ] Kamera: hero-piller, blixtgrafik, expanderande kort, boxlänkning och Vanliga frågor.
+- [ ] Kamera: hero-piller, blixtgrafik, expanderande kort, boxlänkning och Vanliga frågor. **FAQ-layouten är manuellt browser-QA-verifierad i Fas 1C 2026-08-23; övriga delpunkter återstår.**
 - [ ] Talat utrymningslarm: bildprestanda, eventuell hero-asset och full ombyggnad enligt standard.
 - [ ] Mikrofoner: hero-asset, Claessons, WOT, Mikrofonguiden, 3+3, Radiolänken, vit ruta, miljölinjering och Ekhagsskolan.
 - [ ] Ljudsystem: hero-asset, kabellänk, 3+3, Claessons-bild och internlänkning.

@@ -4,24 +4,25 @@ import type { CollectionEntry } from "astro:content";
 type Gallery = NonNullable<CollectionEntry<"references">["data"]["gallery"]>;
 interface Props {
   gallery: Gallery;
-  embedded?: boolean;
+  eyebrow?: string;
 }
-const { gallery, embedded = false } = Astro.props;
+const { gallery, eyebrow = gallery.eyebrow } = Astro.props;
 const imageCount = gallery.images.length;
 const galleryClass = imageCount === 1
   ? "gallery-grid gallery-grid--single"
   : `gallery-grid gallery-grid--count-${Math.min(imageCount, 8)}`;
-const Wrapper = embedded ? "div" : "section";
 ---
 
-<Wrapper
-  class:list={[!embedded && "reference-section", embedded && "reference-gallery--embedded"]}
-  aria-labelledby="bilder"
+<section
+  class="reference-section"
+  id="bilder"
+  aria-labelledby="bilder-title"
+  data-reference-anchor-section
 >
-  <div class:list={[!embedded && "avab-container"]}>
+  <div class="avab-container">
     <div class="reference-section-heading">
-      <span class="reference-kicker">{gallery.eyebrow}</span>
-      <h2 id="bilder">{gallery.title}</h2>
+      <span class="reference-kicker reference-section-eyebrow">{eyebrow}</span>
+      <h2 id="bilder-title">{gallery.title}</h2>
       {gallery.lead && <p>{gallery.lead}</p>}
     </div>
     <div class={galleryClass}>
@@ -42,4 +43,4 @@ const Wrapper = embedded ? "div" : "section";
       ))}
     </div>
   </div>
-</Wrapper>
+</section>

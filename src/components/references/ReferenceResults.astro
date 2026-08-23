@@ -2,15 +2,23 @@
 import type { CollectionEntry } from "astro:content";
 
 type Results = NonNullable<CollectionEntry<"references">["data"]["results"]>;
-interface Props { results: Results }
-const { results } = Astro.props;
+interface Props {
+  results: Results;
+  eyebrow?: string;
+}
+const { results, eyebrow = results.eyebrow } = Astro.props;
 ---
 
-<section class="reference-section reference-section--soft" aria-labelledby="resultat">
+<section
+  class="reference-section reference-section--soft"
+  id="resultat"
+  aria-labelledby="resultat-title"
+  data-reference-anchor-section
+>
   <div class="avab-container">
     <div class="reference-section-heading">
-      <span class="reference-kicker">{results.eyebrow}</span>
-      <h2 id="resultat">{results.title}</h2>
+      <span class="reference-kicker reference-section-eyebrow">{eyebrow}</span>
+      <h2 id="resultat-title">{results.title}</h2>
       {results.lead && <p>{results.lead}</p>}
     </div>
     <div class="reference-summary-grid">

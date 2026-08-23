@@ -3,8 +3,8 @@
    ------------------------------------------------------------
    Denna fil innehåller BASEN + SIGNATURKOMPONENTERNA som ska
    vara identiska på varje sida (förstasida + alla undersidor).
-   Sidspecifika komponenter (t.ex. .expert-card, .byod-banner,
-   .compact-faq, .calculator-band) ligger kvar i respektive sidas
+   Sidspecifika komponenter (t.ex. .expert-card, .byod-banner och
+   .calculator-band) ligger kvar i respektive sidas
    egna <style>-block eller per-sid-fil.
 
    Kanoniska beslut (enade efter diff mellan förstasida & undersida):
@@ -53,6 +53,12 @@
   --avab-section-space-mobile: clamp(48px, 13vw, 56px);
   --avab-content-gap: clamp(32px, 4vw, 40px);
   --avab-card-gap: clamp(20px, 2vw, 24px);
+  --avab-related-gap: 12px;
+  --avab-heading-intro-gap: 20px;
+  --avab-block-gap: 32px;
+  --avab-section-content-gap: 42px;
+  --avab-card-padding: 24px;
+  --avab-process-pill-size: 38px;
 
   /* Tillgänglighet */
   --avab-focus: 3px solid var(--avab-green);
@@ -271,12 +277,46 @@ p {
   align-items: stretch;
 }
 
+.grid-balanced {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--avab-card-gap);
+}
+
+.grid-balanced > * {
+  min-width: 0;
+}
+
+.grid-balanced--2 > * {
+  flex: 0 1 calc((100% - var(--avab-card-gap)) / 2);
+}
+
+.grid-balanced--3 > * {
+  flex: 0 1 calc((100% - (2 * var(--avab-card-gap))) / 3);
+}
+
+.avab-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--avab-content-gap);
+}
+
+.avab-stack > * {
+  margin-block: 0;
+}
+
+.avab-stack--related { gap: var(--avab-related-gap); }
+.avab-stack--heading { gap: var(--avab-heading-intro-gap); }
+.avab-stack--blocks { gap: var(--avab-block-gap); }
+
 .section-heading {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 32px;
+  gap: var(--avab-block-gap);
   align-items: end;
-  margin-bottom: 42px;
+  margin-bottom: var(--avab-section-content-gap);
   max-width: 980px;
 }
 
@@ -1284,26 +1324,33 @@ p {
 
 /* Processteg (numrerat) – kanonisk "flow-card" */
 .flow-card {
-  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--avab-card-padding);
   border-radius: var(--avab-radius-sm);
   background: var(--avab-white);
   border: 1px solid var(--avab-border);
   box-shadow: var(--avab-shadow-sm);
 }
 .flow-card strong {
+  display: block;
+  margin-bottom: var(--avab-related-gap);
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--avab-green);
+}
+.flow-card strong:has(> em) {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
-  font-size: 1.05rem;
   color: var(--avab-dark);
 }
-.flow-card strong em {
+.flow-card strong > em {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: var(--avab-process-pill-size);
+  height: var(--avab-process-pill-size);
   border-radius: 999px;
   background: var(--avab-green);
   color: var(--avab-dark);
@@ -1316,7 +1363,7 @@ p {
 .flow-card span {
   display: block;
   color: var(--avab-dark-muted);
-  font-size: 0.96rem;
+  font-size: 0.95rem;
 }
 
 
@@ -1473,7 +1520,40 @@ a.ref-card:focus-visible,
 
 
 /* ---- 14. FAQ-dragspel ------------------------------------ */
-.faq-list { margin-top: 32px; }
+.section .faq-heading {
+  max-width: 760px;
+  margin: 0 0 30px;
+  text-align: left;
+}
+.section .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
+.section .faq-heading h2 {
+  max-width: 680px;
+  margin-bottom: var(--avab-related-gap);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+.section .faq-heading p {
+  max-width: 760px;
+  margin-bottom: var(--avab-heading-intro-gap);
+  color: var(--avab-dark-muted);
+}
+
+.section .faq-list,
+.section .compact-faq {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  column-gap: 28px;
+  row-gap: 0;
+  width: 100%;
+  max-width: none;
+}
+.section .faq-list { margin-top: var(--avab-block-gap); }
+.section .compact-faq { margin: 0; }
+.section .faq-list > details,
+.section .compact-faq > details {
+  width: 100%;
+}
 
 details.faq-item {
   padding: 24px 0;
@@ -1517,6 +1597,23 @@ details.faq-item p {
   padding-right: 40px;
   font-size: 1.05rem;
 }
+
+.section .compact-faq details.faq-item { padding: 20px 0; }
+.section .compact-faq summary {
+  align-items: flex-start;
+  gap: var(--avab-related-gap);
+  overflow-wrap: anywhere;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+.section .compact-faq summary::after {
+  align-self: flex-start;
+  margin-left: auto;
+  line-height: 1;
+}
+.section .compact-faq details.faq-item p { font-size: 0.98rem; }
+.section .compact-faq details.faq-item:nth-child(1),
+.section .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
 
 
 /* ---- 15. Fullbredds-CTA ---------------------------------- */
@@ -1815,6 +1912,9 @@ a.footer-contact-row:focus-visible {
 /* ---- 17. Responsivt -------------------------------------- */
 @media (max-width: 1120px) {
   .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-balanced--3 > * {
+    flex-basis: calc((100% - var(--avab-card-gap)) / 2);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1881,6 +1981,17 @@ a.footer-contact-row:focus-visible {
   .procurement-container { gap: 12px; }
 
   .grid-3 { grid-template-columns: 1fr; }
+
+  .grid-balanced--2 > *,
+  .grid-balanced--3 > * {
+    flex-basis: 100%;
+  }
+
+  .section .faq-list,
+  .section .compact-faq {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .section .compact-faq details.faq-item:nth-child(2) { border-top: none; }
 
   .fullwidth-cta { padding: 48px 28px; }
 
@@ -2733,10 +2844,6 @@ h2.snabbt-svar-title::before {
 .env-card p { flex: 1; margin-bottom: 0; padding-right: 24px; font-size: 1rem; }
 
 .flow-grid-horizontal { grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
-.flow-card { display: flex; flex-direction: column; padding: 24px; border: 1px solid var(--avab-border); border-radius: var(--avab-radius-sm); background: var(--avab-white); box-shadow: var(--avab-shadow-sm); }
-.flow-card strong { display: block; min-height: 3rem; margin-bottom: 12px; color: var(--avab-green); font-size: 1.05rem; line-height: 1.4; }
-.flow-card span { color: var(--avab-dark-muted); font-size: 0.95rem; }
-
 .video-text-layout { grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; align-items: start; }
 .video-text-box,
 .video-wrapper { border: 1px solid var(--avab-border); border-radius: var(--avab-radius); background: var(--avab-white); box-shadow: var(--avab-shadow-sm); }
@@ -2756,10 +2863,10 @@ h2.snabbt-svar-title::before {
 
 .faq-card { overflow: hidden; margin-bottom: 16px; border: 1px solid var(--avab-border); border-radius: var(--avab-radius-sm); background: var(--avab-white); box-shadow: var(--avab-shadow-sm); transition: var(--transition-smooth); }
 .faq-card:hover { border-color: rgba(143, 192, 37, 0.5); }
-.faq-top { display: flex; align-items: center; justify-content: space-between; padding: 24px; cursor: pointer; list-style: none; }
+.faq-top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--avab-related-gap); padding: 24px; cursor: pointer; list-style: none; }
 .faq-top::-webkit-details-marker { display: none; }
-.faq-top h3 { margin: 0; color: var(--avab-dark); font-size: 1.15rem; font-weight: 700; }
-.faq-icon { color: var(--avab-green); font-size: 1.5rem; font-weight: 700; transition: transform 0.3s ease; }
+.faq-top h3 { min-width: 0; margin: 0; overflow-wrap: anywhere; color: var(--avab-dark); font-size: 1.15rem; font-weight: 700; }
+.faq-icon { flex: 0 0 auto; margin-left: auto; color: var(--avab-green); font-size: 1.5rem; font-weight: 700; line-height: 1; transition: transform 0.3s ease; }
 .faq-card[open] .faq-icon { transform: rotate(45deg); color: var(--avab-dark); }
 .faq-expandable { display: grid; grid-template-rows: 0fr; opacity: 0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
 .faq-expand-inner { overflow: hidden; }
@@ -2855,32 +2962,9 @@ h2.snabbt-svar-title::before {
     }
     .calculator-band .button:hover { background: var(--avab-dark); color: #fff; }
 
-    /* ---- FAQ: vänsterställd rubrik + tvåkolumnslayout ---- */
-    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
-    .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
-    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 20px; max-width: 760px; }
-
-    .compact-faq {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 28px;
-      row-gap: 0;
-      width: 100%;
-      max-width: none;
-      margin: 0;
-    }
-    .compact-faq details.faq-item { padding: 20px 0; }
-    .compact-faq summary { font-size: 1.05rem; }
-    .compact-faq details.faq-item p { font-size: 0.98rem; }
-    .compact-faq details.faq-item:nth-child(1),
-    .compact-faq details.faq-item:nth-child(2) { border-top: 1px solid var(--avab-border); }
-
     /* ---- Responsivt (sidspecifikt) ---- */
     @media (max-width: 768px) {
       .calculator-band { grid-template-columns: 1fr; padding: 24px; }
-      .compact-faq { grid-template-columns: 1fr; }
-    .compact-faq details.faq-item:nth-child(2) { border-top: none; }
     }
 
 @media (max-width: 768px) {

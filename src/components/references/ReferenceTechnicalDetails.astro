@@ -2,16 +2,24 @@
 import type { CollectionEntry } from "astro:content";
 
 type TechnicalDetails = NonNullable<CollectionEntry<"references">["data"]["technicalDetails"]>;
-interface Props { details: TechnicalDetails }
-const { details } = Astro.props;
+interface Props {
+  details: TechnicalDetails;
+  eyebrow?: string;
+}
+const { details, eyebrow = details.eyebrow } = Astro.props;
 ---
 
-<section class="reference-section reference-section--soft">
+<section
+  class="reference-section reference-section--soft"
+  id="tekniken"
+  aria-labelledby="tekniken-title"
+  data-reference-anchor-section
+>
   <div class="avab-container reference-content-grid">
     <article class="reference-article">
       <div class="reference-section-heading">
-        <span class="reference-kicker">{details.eyebrow}</span>
-        <h2>{details.title}</h2>
+        <span class="reference-kicker reference-section-eyebrow">{eyebrow}</span>
+        <h2 id="tekniken-title">{details.title}</h2>
         {details.lead && <p>{details.lead}</p>}
       </div>
       <details class="technical-details">

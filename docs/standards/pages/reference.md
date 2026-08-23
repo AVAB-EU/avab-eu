@@ -169,6 +169,12 @@ För referenser med flera tydliga delar ska fördjupningen byggas som **berätta
 
 Ankarlänkar får inte endast leda till en ensam kortgrid, faktaruta eller rubrik utan förklarande text. Texten ska ge inköpare och projektörer underlag för att förstå behov, tekniska val, samordning, installation och resultat utan att fabricera projektfakta.
 
+Ankarnavigeringen ska ligga i en gemensam scope-container som omfattar samtliga sektioner den länkar till. Varje ankarmål ska ha sitt `id` på sektionens wrapper, inte enbart på rubriken, så active-state gäller genom hela avsnittet. Resultat, bilder, teknisk fördjupning och Vanliga frågor ska följa samma strukturella princip som berättande kapitel. Ankarmenyn får inte begränsas av en wrapper som slutar före ett senare ankarmål.
+
+Alla huvudsektioner som ingår i referensens ankarnavigation ska använda samma gröna, numrerade eyebrow-standard. Numret ska vara tvåsiffrigt och genereras från sektionens faktiska DOM-/navigationsordning, exempelvis `01 · Uppdraget`, `02 · Leveransomfattning` och `03 · Resultatet`. Om en valfri sektion saknas ska efterföljande nummer räknas om utan hopp.
+
+Sektionsdefinitionen i den delade referenslayouten ska vara gemensam källa för ankarmeny-item, section-id, eyebrow och ordning. Nummer får inte hårdkodas på enskilda referenssidor och nya lokala eyebrow-varianter ska undvikas. ID och navigation är fortsatt semantiskt separata från den synliga eyebrow-texten; eyebrow får aldrig användas som tekniskt ankare.
+
 ### 7. Resultat och verifiering
 
 Resultatet ska beskrivas konkret. Använd inte obestyrkta påståenden som exakta besparingar eller att kunden är mycket nöjd utan underlag.
