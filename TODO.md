@@ -3,7 +3,7 @@
 _Kanonisk projektlista. Senast uppdaterad 2026-08-23._
 
 ## Go-live / deployment
-- [x] Verifiera produktions-FTP-användare, faktisk webbroot (`server-dir`) och GitHub Actions-secrets `FTP_HOST`, `FTP_USERNAME` och `FTP_PASSWORD` innan första deploy-testet mot `avab.eu`.
+- [x] GO-LIVE/deploy-verifieringen mot `avab.eu` är genomförd; produktions-FTP, webbroot, GitHub Actions-secrets och den tillfälliga deploy-markören har verifierats.
 - [ ] Inventera och exkludera gamla backup-/preview-routes (bland annat `index-gammal` och `preview-miljo-*`) från produktionsbuild och sitemap i ett separat, verifierat scope.
 
 ## AI Content System
