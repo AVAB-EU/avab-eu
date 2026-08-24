@@ -48,6 +48,7 @@ Om två gällande dokument motsäger varandra ska AI inte välja tyst. Konflikte
 
 ### Pågående projekt
 - [`projects/ai-content-system/README.md`](projects/ai-content-system/README.md) – fasplanen för AI-baserat innehållssystem.
+- [`projects/wordpress-redirect-audit.md`](projects/wordpress-redirect-audit.md) – read-only inventering av gamla WordPress-URL:er, nuvarande redirectstatus och SEO-prioritering.
 - [`projects/ai-content-system/phase-0-audit.md`](projects/ai-content-system/phase-0-audit.md) – nulägesinventering och risker.
 - [`projects/ai-content-system/phase-2-component-audit.md`](projects/ai-content-system/phase-2-component-audit.md) – faktisk duplicering och komponentkandidater.
 - [`projects/ai-content-system/phase-4-workflows.md`](projects/ai-content-system/phase-4-workflows.md) – workflow-kontrakt och deterministiska exempel.

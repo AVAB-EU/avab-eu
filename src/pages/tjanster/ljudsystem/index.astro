@@ -216,7 +216,14 @@ import "../../../styles/avab.css";
       margin-top: 28px;
     }
     .snippet-box strong { display: flex; align-items: center; gap: 8px; font-size: 1.1rem; margin-bottom: 8px; color: var(--avab-dark); }
-    .snippet-box strong::before { content: "⚡"; font-size: 1.05rem; }
+    .snippet-box strong::before {
+  content: "";
+  width: 1.8rem;
+  height: 1.8rem;
+  display: inline-block;
+  background: url("/assets/avab-blixt-rodorange.png") center / contain no-repeat;
+  flex: 0 0 auto;
+}
     .snippet-box p { margin-bottom: 0; font-size: 1.05rem; }
 
     /* ---- Miljökort ---- */
@@ -549,7 +556,7 @@ import "../../../styles/avab.css";
             <div class="eyebrow">Hur vi jobbar</div>
             <h2>Räkna först, montera sen, mät efteråt</h2>
             <!-- KNOWN EXISTING DEAD LINK – ACCEPTED FOR THIS RELEASE -->
-            <p class="lead-dark">Ett ljudsystem som ska fungera i många år behöver också förvaltas: injustering, uppdateringar och utbyggnad hanteras via <a class="text-link" href="/service-support/">service och support</a>.</p>
+            <p class="lead-dark">Ett ljudsystem som ska fungera i många år behöver också förvaltas: injustering, uppdateringar och utbyggnad hanteras via <a class="text-link" href="/tjanster/garanti-och-service/">service och support</a>.</p>
           </div>
         </div>
 

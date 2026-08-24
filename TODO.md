@@ -17,6 +17,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-24._
 ## Navigation / Header
 - [ ] **Implementera hero-baserad auto-hide för den gemensamma headern.** Headern ska vara synlig genom hero-sektionen, döljas vid tydlig scroll ned efter hero och visas vid scroll upp. Lås headern synlig när dropdown/mobilmeny är öppen, respektera `prefers-reduced-motion` och påverka inte breadcrumb/referensankarmeny av misstag. Underlag: `docs/workflows/TEMP-header-scroll-behavior.md`.
 - [ ] **Städa efter godkänd header-scroll-implementation.** Radera TEMP-underlaget och tillfälliga TODO-punkter när implementationen är godkänd och mergead.
+- [ ] **Visa scrollbar i desktop-navigationens dropdown endast vid verklig overflow.** Låt dropdownen få naturlig höjd upp till en viewport-baserad `max-height` i stället för att alltid tvinga en fast höjd. Behåll `overflow-y: auto` på rätt intern panel så att webbläsaren visar scrollbar först när `scrollHeight > clientHeight`, och ta bort eller begränsa `scrollbar-gutter: stable` där den skapar ett permanent spår. Lösningen får inte dölja faktisk overflow eller försämra tangentbords-/fokusnavigation. Verifiera både Miljöer, Tjänster och Vår leverans vid normal desktop, mindre desktop samt låg viewporthöjd, inklusive att innehållet går att nå utan layoutskifte eller klippning.
 
 ## Referensmigrering – Fas 7
 - [x] Inventera referensroutes och etablera structured content + återanvändbara referenskomponenter.
@@ -75,6 +76,7 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 - [x] Gör footern till en sammanhållen global footer. **Fas 1A: kodimplementerad och manuellt verifierad på desktop, tablet, mobil och låg viewporthöjd 2026-08-23.**
 - [x] Fixa responsiva dropdown-menyer så alla underrubriker går att nå och menyn själv kan scrolla. **Fas 1A: kodimplementerad och manuellt verifierad på desktop, tablet, mobil och låg viewporthöjd 2026-08-23.**
 - [ ] Implementera beslutad förenkling av header/kontakt.
+- [ ] Skapa och implementera en gemensam standard för CTA-knappar i hero: första knappen ska följa den befintliga gröna primärstilen, den andra den befintliga vita sekundärstilen och en eventuell tredje knapp ska vara grå med transparens och svart text.
 - [x] Standardisera hero-pillers kontrast/opacitet. **Fas 1B: kodimplementerad, tekniskt verifierad och manuellt browser-QA-verifierad på desktop, tablet och mobil 2026-08-23.**
 - [x] Ändra synlig rubrik `FAQ` till `Vanliga frågor` på samtliga sidor. **Fas 1B: kodimplementerad, tekniskt verifierad och manuellt browser-QA-verifierad 2026-08-23.**
 - [x] Ta bort `Tjänst:` på samtliga tjänstesidor via gemensam implementation. **Fas 1B: kodimplementerad, tekniskt verifierad och manuellt browser-QA-verifierad på de fyra berörda tjänstesidorna 2026-08-23.**

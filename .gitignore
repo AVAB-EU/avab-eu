@@ -33,3 +33,6 @@ pnpm-debug.log*
 
 # personal Claude Code permissions (machine-specific)
 .claude/settings.local.json
+
+# local customer meeting review dashboard
+tools/review/kundmote-2026-08-24.html
