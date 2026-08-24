@@ -2,7 +2,7 @@
 
 Status: Active  
 Owner: AVAB  
-Last reviewed: 2026-08-23
+Last reviewed: 2026-08-24
 
 Den här standarden definierar återanvändbara layoutregler för publika AVAB-sidor. Den kompletterar `mobile.md`; faktisk markup och `src/styles/avab.css` är sanningskälla för implementationen.
 
@@ -54,6 +54,18 @@ Primitiven ska appliceras per sida efter innehålls- och browser-QA. Mikrofoner,
 FAQ-listor använder `.compact-faq` eller det äldre kompatibla namnet `.faq-list`. På bred layout visas posterna i två lika breda kolumner och flödar radvis i naturlig DOM- och tangentbordsordning. Vid högst 768 px går layouten till en kolumn med full bredd. Breakpointen styrs endast av tillgänglig horisontell bredd; viewporthöjd påverkar inte kolumnantalet.
 
 FAQ-poster får ha innehållsdriven höjd. Plus-/accordion-ikonen ska vara stabil till höger även när frågan bryts över flera rader. Sidspecifik gridordning eller kolumnindelning får inte användas.
+
+## CTA-hierarki i hero
+
+När en hero innehåller flera handlingar används följande visuella hierarki:
+
+1. `.button-primary` för den viktigaste handlingen: grön yta och mörk text.
+2. `.button-secondary` för den näst viktigaste handlingen: vit yta och mörk text.
+3. `.button-quiet` för en eventuell tredje handling: halvtransparent grå yta och mörk text.
+
+En tredje CTA ska alltid vara visuellt underordnad primär och sekundär CTA. En hero bör normalt inte innehålla fler än tre handlingar.
+
+På mobil staplas knapparna i samma prioritetsordning och ska behålla minst 44 px klickyta enligt `mobile.md`.
 
 ## Lokal CSS och fortsatt migrering
 

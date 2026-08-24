@@ -57,6 +57,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-08-24._
 
 Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-2026-08-20/`.
 
+> **Status 2026-08-24:** Arbetet är återupptaget efter kundmötet. Kundens beslut från mötet dokumenteras i TODO och projektunderlaget. Fas 1C avslutas efter kvarvarande browser-QA av hero-CTA-standarden; därefter fortsätter arbetet med nästa avgränsade globala fas innan bred sidmigrering.
+
 > **OBLIGATORISK ANSVARSFÖRDELNING FÖR BILDER:**
 > - AI: kompletta bildbyten, nya befintliga bilder från `assets`, uppdatering av bildreferenser och val av relevant asset när uppgiften är entydig.
 > - Andreas/kundteamet: crop, focal point, retuschering, korrigering och annan bearbetning av själva bildinnehållet.
@@ -76,7 +78,7 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 - [x] Gör footern till en sammanhållen global footer. **Fas 1A: kodimplementerad och manuellt verifierad på desktop, tablet, mobil och låg viewporthöjd 2026-08-23.**
 - [x] Fixa responsiva dropdown-menyer så alla underrubriker går att nå och menyn själv kan scrolla. **Fas 1A: kodimplementerad och manuellt verifierad på desktop, tablet, mobil och låg viewporthöjd 2026-08-23.**
 - [ ] Implementera beslutad förenkling av header/kontakt.
-- [ ] Skapa och implementera en gemensam standard för CTA-knappar i hero: första knappen ska följa den befintliga gröna primärstilen, den andra den befintliga vita sekundärstilen och en eventuell tredje knapp ska vara grå med transparens och svart text.
+- [ ] Skapa och implementera en gemensam standard för CTA-knappar i hero: första knappen ska följa den befintliga gröna primärstilen, den andra den befintliga vita sekundärstilen och en eventuell tredje knapp ska vara grå med transparens och svart text. **Global standard och CSS är implementerade 2026-08-24; browser-QA på representativa heroes och obligatoriska mobilbredder återstår före godkännande.**
 - [x] Standardisera hero-pillers kontrast/opacitet. **Fas 1B: kodimplementerad, tekniskt verifierad och manuellt browser-QA-verifierad på desktop, tablet och mobil 2026-08-23.**
 - [x] Ändra synlig rubrik `FAQ` till `Vanliga frågor` på samtliga sidor. **Fas 1B: kodimplementerad, tekniskt verifierad och manuellt browser-QA-verifierad 2026-08-23.**
 - [x] Ta bort `Tjänst:` på samtliga tjänstesidor via gemensam implementation. **Fas 1B: kodimplementerad, tekniskt verifierad och manuellt browser-QA-verifierad på de fyra berörda tjänstesidorna 2026-08-23.**

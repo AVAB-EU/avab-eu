@@ -1135,6 +1135,20 @@ p {
   transform: translateY(-2px);
 }
 
+/* Tertiär hero-CTA: visuellt lugnare än den vita sekundärknappen. */
+.hero-actions .button-quiet {
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--avab-dark);
+  border-color: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+}
+.hero-actions .button-quiet:hover {
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--avab-dark);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.14);
+}
+
 .button-light {
   background: var(--avab-white);
   color: var(--avab-dark);
