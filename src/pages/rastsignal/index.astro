@@ -2,6 +2,7 @@
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import PageCTA from "../../components/PageCTA.astro";
+import NoticeBox from "../../components/NoticeBox.astro";
 import "../../styles/avab.css";
 ---
 
@@ -366,12 +367,11 @@ import "../../styles/avab.css";
             <h3>Tidsnoggrannhet</h3>
             <p>Synka systemet mot nätverkstid eller annan tidkälla för stabil drift och automatiska tidsomställningar.</p>
           </article>
-
-          <article class="value-card">
-            <h3>Tydlig avgränsning</h3>
-            <p>Rastsignal är ett informationssystem och ska inte ersätta brandlarm, talat utrymningslarm eller inrymningslarm.</p>
-          </article>
         </div>
+
+        <NoticeBox variant="attention" title="Tydlig avgränsning">
+          <p>Rastsignal är ett informationssystem och ska inte ersätta brandlarm, talat utrymningslarm eller inrymningslarm.</p>
+        </NoticeBox>
       </div>
     </section>
 

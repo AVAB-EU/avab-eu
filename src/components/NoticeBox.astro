@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  variant?: "info" | "attention";
+  class?: string;
+}
+
+const {
+  title,
+  variant = "info",
+  class: className,
+} = Astro.props;
+
+const showAttentionIcon = variant === "attention";
+---
+
+<aside
+  class:list={["notice-box", "accent-rail", `notice-box--${variant}`, className]}
+  role="note"
+>
+  <div class="notice-box__heading">
+    {showAttentionIcon && (
+      <img
+        class="notice-box__icon"
+        src="/assets/avab-blixt-rodorange.png"
+        alt=""
+        width="30"
+        height="36"
+        loading="lazy"
+        decoding="async"
+        aria-hidden="true"
+      />
+    )}
+    <strong class="notice-box__title">{title}</strong>
+  </div>
+  <div class="notice-box__content">
+    <slot />
+  </div>
+</aside>

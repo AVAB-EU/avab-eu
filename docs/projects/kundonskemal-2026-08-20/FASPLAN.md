@@ -9,7 +9,7 @@
 - [ ] Få verifierat nytt pris till startsidans aktuella erbjudande.
 - [ ] Skapa om möjligt bildmappning för önskade kompletta bildbyten: sida/sektion -> fil i `assets`.
 - [ ] Tolka `Lagom hantera dokument (Andreas)`.
-- [ ] Klargör exakt WOT-fetmarkering.
+- [x] Definiera global WOT-/läsbarhetsregel: struktur först, betoning sedan. Sidspecifik tillämpning görs i senare sidfaser.
 - [ ] Inventera referenser med komplett text, bilder och färdigställandeår.
 - [ ] Inventera befintliga tjänste- och miljökomponenter innan lokala CSS-fixar.
 
@@ -30,6 +30,8 @@
 - [ ] Definiera klickbara helkort/helfält med korrekt hover, focus och semantik.
 - [ ] Definiera gemensam sektionstandard för `Hur vi jobbar`/sifferpiller.
 - [ ] Säkerställ att `Vanliga frågor` klarar flerradiga rubriker.
+- [x] Fas 1D avslutad 2026-08-24: global `NoticeBox` är implementerad med neutral `info` utan blixt och selektiv `attention` med AVAB:s rödorange blixt. Endast Rastsignal och Kameraövervakning använder `attention`; de nio tidigare generella blixtboxarna är neutrala `info`-boxar och deras texter är SEO-/läsbarhetsgranskade som A. BEHÅLL. WOT-/readability-standarden är dokumenterad. Teknisk QA samt manuell browser-QA på desktop och mobil är godkända 2026-08-24.
+- [x] Fas 1D: dokumentera global WOT-/läsbarhetsstandard utan bred sidspecifik textredigering.
 
 ---
 

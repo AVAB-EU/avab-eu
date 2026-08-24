@@ -67,6 +67,34 @@ En tredje CTA ska alltid vara visuellt underordnad primär och sekundär CTA. En
 
 På mobil staplas knapparna i samma prioritetsordning och ska behålla minst 44 px klickyta enligt `mobile.md`.
 
+## Notice-box och AVAB-blixt
+
+`NoticeBox` är den kanoniska komponenten för en avgränsad upplysning utanför sidans vanliga brödtextflöde. Neutral information och särskild uppmärksamhet ska hållas semantiskt åtskilda.
+
+Komponenten har två avsiktliga varianter:
+
+- `info` för en neutral upplysning utan ikon
+- `attention` för en uttrycklig uppmärksamhets-/varningssignal med den rödorange AVAB-blixten
+
+AVAB-blixten är en selektiv attention-signal, inte en dekorativ standardikon. Den får inte användas för vanliga frågor, definitioner eller generell information och ska aldrig läggas till enbart för visuell enhetlighet. `attention` använder `/assets/avab-blixt-rodorange.png`; själva bilden har tom alt-text och är dold för hjälpmedel eftersom boxens rubrik och text redan kommunicerar betydelsen. Komponenten återanvänder den globala `.accent-rail`, men `.accent-rail` förblir en fristående primitiv för andra kort och sektioner.
+
+`info` är normalvariant för relevanta definitioner och korta faktasvar. `attention` kräver en individuell innehållsbedömning och får endast användas när innehållet markerar en viktig begränsning, risk eller annan särskild uppmärksamhet. Rastsignals avgränsning mot brandlarm, talat utrymningslarm och inrymningslarm är uttryckligen godkänd användning. Kameraövervakningens box om juridiska villkor har inventerats och bedömts motsvara samma begränsande funktion; övriga kamerafrågor är neutral information utan blixt.
+
+Notice-box ska inte användas för vanlig brödtext, generiska kort, säljbudskap, dekoration eller enbart för att göra en lång text mer visuell. En vanlig informations-/content-box ska behålla sin egen semantik när innehållet inte kräver en avgränsad presentation.
+
+Exempel:
+
+```astro
+<NoticeBox
+  variant="attention"
+  title="Tydlig avgränsning"
+>
+  <p>Rastsignal är ett informationssystem och ska inte ersätta larmfunktioner.</p>
+</NoticeBox>
+```
+
+Migrering från `.snippet-box` ska göras efter individuell innehållsbedömning. Klassnamnet är inte tillräckligt för automatisk konvertering, och befintliga boxtexter får inte tas bort eller skrivas om som bieffekt av migrationen.
+
 ## Lokal CSS och fortsatt migrering
 
 Nya sidor ska återanvända reglerna ovan. Befintliga lokala kopior tas bort först när respektive sidtyp migreras och visuellt verifieras. Bred textlinjering, sidspecifik kortordning och applicering av 3+3/3+2 hör till senare sidarbete och markeras inte som klara av denna standard.

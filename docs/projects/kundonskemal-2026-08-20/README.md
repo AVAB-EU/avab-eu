@@ -5,6 +5,7 @@ Detta projektunderlag samlar kundens återkoppling inför nästa förbättringsa
 ## Dokument
 - `ANALYS.md` – kritisk analys, rotorsaker, logiska luckor, beslut och prioritering.
 - `FASPLAN.md` – genomförandeplan i faser med konkreta checkboxar och exit-kriterier.
+- `fas-1d-notice-inventory.md` – klassificering, korrigerat kundbeslut och textbedömning för notice-/snippet-boxar.
 - `TODO.md` i reporoten – kanonisk projektlista med sammanfattade faser och länk till detta underlag.
 
 ## Rekommenderad arbetsordning
@@ -48,7 +49,7 @@ Teknisk optimering som filstorlek, dimensioner, loading, lazy loading, LCP och l
 - Verifierat pris för aktuellt erbjudande.
 - Bildmappning för de bildbyten där Andreas/kundteamet vill styra exakt vilken asset som ska användas.
 - Förtydligande av `Lagom hantera dokument (Andreas)`.
-- Exakt WOT-fetmarkering.
+- WOT-regeln är beslutad globalt; sidspecifik tillämpning görs kontrollerat i senare sidfaser.
 
 ## Source of truth
 Detta underlag kompletterar befintliga standards och workflows. Kundrepots aktuella kod och redan beslutade standarder har företräde vid konflikt. Referensarbete ska fortsatt följa `docs/standards/pages/reference.md` och befintliga beslut i `TODO.md`.

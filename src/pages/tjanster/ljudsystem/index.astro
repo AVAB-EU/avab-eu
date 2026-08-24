@@ -2,6 +2,7 @@
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
+import NoticeBox from "../../../components/NoticeBox.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -205,27 +206,6 @@ import "../../../styles/avab.css";
 
   <!-- Sidspecifika komponenter -->
   <style>
-    /* ---- AEO-svarsruta (snippet-box) ---- */
-    .snippet-box {
-      padding: 24px 28px;
-      padding-left: 40px;
-      border-radius: var(--avab-radius-sm);
-      background: var(--avab-white);
-      border: 1px solid var(--avab-border);
-      box-shadow: var(--avab-shadow-sm);
-      margin-top: 28px;
-    }
-    .snippet-box strong { display: flex; align-items: center; gap: 8px; font-size: 1.1rem; margin-bottom: 8px; color: var(--avab-dark); }
-    .snippet-box strong::before {
-  content: "";
-  width: 1.8rem;
-  height: 1.8rem;
-  display: inline-block;
-  background: url("/assets/avab-blixt-rodorange.png") center / contain no-repeat;
-  flex: 0 0 auto;
-}
-    .snippet-box p { margin-bottom: 0; font-size: 1.05rem; }
-
     /* ---- Miljökort ---- */
     .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px; margin-top: 8px; }
     .platform-card {
@@ -346,10 +326,9 @@ import "../../../styles/avab.css";
           <h2>Ljudet märks mest när det inte fungerar</h2>
           <p class="lead-dark">Skrapigt utrop i en sporthall, musik som är för hög i ena änden av gymmet och ohörbar i den andra, en aula där bara halva publiken uppfattar talet. Nästan alltid beror det på fel systemval, fel högtalarplacering eller att ingen räknat på lokalen innan installation.</p>
           <p>Därför börjar ett bra ljudsystem inte med en produktlista, utan med en fråga: vad ska ljudet göra i just den här lokalen? Svaret avgör allt från systemtyp och antal zoner till kablage, styrning och mätkrav.</p>
-          <div class="snippet-box accent-rail">
-            <strong>Vad är ett professionellt ljudsystem?</strong>
+          <NoticeBox variant="info" title="Vad är ett professionellt ljudsystem?">
             <p>Ett professionellt ljudsystem är högtalare, förstärkare, DSP, källor, mikrofoner, kablage och styrning som tillsammans är dimensionerade för lokalens storlek, akustik, användning och miljö, och som verifieras med mätning efter installation.</p>
-          </div>
+          </NoticeBox>
         </div>
 
         <aside class="card">

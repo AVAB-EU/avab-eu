@@ -24,6 +24,7 @@ Om två gällande dokument motsäger varandra ska AI inte välja tyst. Konflikte
 ### Globala standarder
 - [`standards/global/mobile.md`](standards/global/mobile.md) – mobil/responsiv UI för alla publika sidor.
 - [`standards/global/layout.md`](standards/global/layout.md) – gemensamma spacing-, processkort-, grid- och FAQ-regler.
+- [`standards/global/content-readability.md`](standards/global/content-readability.md) – global WOT-/läsbarhetsstandard: struktur först, betoning sedan.
 
 ### Sidstandarder
 - [`standards/pages/reference.md`](standards/pages/reference.md) – canonical standard för alla referenser under `/referenser/`.

@@ -2,6 +2,7 @@
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
+import NoticeBox from "../../../components/NoticeBox.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -205,20 +206,6 @@ import "../../../styles/avab.css";
 
   <!-- Sidspecifika komponenter -->
   <style>
-    /* ---- AEO-svarsruta (snippet-box) ---- */
-    .snippet-box {
-      padding: 24px 28px;
-      padding-left: 40px;
-      border-radius: var(--avab-radius-sm);
-      background: var(--avab-white);
-      border: 1px solid var(--avab-border);
-      box-shadow: var(--avab-shadow-sm);
-      margin-top: 28px;
-    }
-    .snippet-box strong { display: flex; align-items: center; gap: 8px; font-size: 1.1rem; margin-bottom: 8px; color: var(--avab-dark); }
-    .snippet-box strong::before { content: "⚡"; font-size: 1.05rem; }
-    .snippet-box p { margin-bottom: 0; font-size: 1.05rem; }
-
     /* ---- Formelruta ---- */
     .formula {
       font-family: "SF Mono", "Consolas", monospace;
@@ -345,10 +332,9 @@ import "../../../styles/avab.css";
           <h2>Fel kabel kan fungera, tills den inte gör det</h2>
           <p class="lead-dark">AVAB hjälper med kabelval, kontaktering, projektering och installation av kablage för ljud, bild, ljus, nätverk, hörslingor, trådlösa mikrofoner, styrsystem, kameraövervakning och talat utrymningslarm.</p>
           <p>Fel kabel kan fungera på kort avstånd, men ge spänningsfall, brus, tappad data, svag RF-signal, dålig taluppfattbarhet eller svår felsökning när anläggningen växer eller ska servas.</p>
-          <div class="snippet-box accent-rail">
-            <strong>Hur väljer man rätt kabel?</strong>
+          <NoticeBox variant="info" title="Hur väljer man rätt kabel?">
             <p>Rätt kabel väljs efter signaltyp, effekt, längd, miljö, kontakt, installationstyp och framtida service. Högtalarkabel, nätverkskabel, DMX-kabel, antennkabel, XLR, hörslingekabel och plintkablage har olika krav.</p>
-          </div>
+          </NoticeBox>
         </div>
 
         <aside class="card">

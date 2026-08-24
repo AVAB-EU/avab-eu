@@ -2,6 +2,7 @@
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
+import NoticeBox from "../../../components/NoticeBox.astro";
 import "../../../styles/avab.css";
 ---
 
@@ -352,11 +353,10 @@ import "../../../styles/avab.css";
       <p>Att navigera i lagstiftningen behöver dock inte vara ett hinder. När ni anlitar oss på AVAB guidar vi er genom hela processen. Vi bistår med underlag för era intresseavvägningar och ser till att ni har rätt skyltning på plats från dag ett.</p>
       <p>Eftersom regelverket kan vara snårigt har vi dessutom tränat upp vår egen chatt-bot, <strong>Lagom</strong>. Lagom är expert på svensk kamerajuridik och Brottsbalken.</p>
       
-      <div class="snabbt-svar" style="margin-top: auto;">
-        <h2 class="snabbt-svar-title">Är kameraövervakning tillåten?</h2>
+      <NoticeBox variant="attention" title="Är kameraövervakning tillåten?">
         <p>Ja, om den följer GDPR och kamerabevakningslagen och används med tydligt syfte, korrekt information och rätt hantering.<br><br>
         <strong>Ställ er juridiska fråga direkt till Lagom här bredvid!</strong></p>
-      </div>
+      </NoticeBox>
     </div>
     
     <div id="lagom-expert-box" style="width: 100%; max-width: 450px; margin: 0 auto; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-shadow: var(--avab-shadow-lg); border-radius: var(--avab-radius-sm); overflow: hidden; border: 1px solid var(--avab-border);">
