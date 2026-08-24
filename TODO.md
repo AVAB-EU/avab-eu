@@ -1,6 +1,6 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-08-23._
+_Kanonisk projektlista. Senast uppdaterad 2026-08-24._
 
 ## Go-live / deployment
 - [x] GO-LIVE/deploy-verifieringen mot `avab.eu` är genomförd; produktions-FTP, webbroot, GitHub Actions-secrets och den tillfälliga deploy-markören har verifierats.
@@ -67,7 +67,8 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 - [ ] Definiera skillnaden mellan `Hur vi jobbar` och `Vår leverans`.
 - [ ] Få verifierat nytt pris för startsidans aktuella erbjudande.
 - [ ] Skapa om möjligt bildmappning för alla större bildbyten.
-- [ ] Förtydliga `Lagom hantera dokument (Andreas)` och exakt WOT-fetmarkering.
+- [ ] Förtydliga `Lagom hantera dokument (Andreas)`.
+- [x] **WOT definierat:** WOT = “Wall of Text”, intern term för textblock som är svåra att skanna på grund av längd, täthet eller svag visuell hierarki.
 - [ ] Inventera referensmaterial och färdigställandeår innan referenspausen hävs.
 
 ### Fas 1 – Globala komponenter och designregler
@@ -80,6 +81,7 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 - [ ] Standardisera spacing, textlinjering, sifferpiller och kortgrid (3+3, 3+2 m.fl.).
   - [x] **Fas 1C global standard:** konsoliderad `.flow-card`, kanoniskt processpill, spacing-primitives, opt-in-grid för 3+3/3+2, tvåkolumns-FAQ, säker flerradig FAQ-rubrik och dynamiskt numrerade referens-eyebrows är kodimplementerade och tekniskt verifierade 2026-08-23. Kameraövervakningens FAQ och den globala referens-eyebrow-standarden är manuellt browser-QA-verifierade 2026-08-23 på Hanza och Lesjöfors (desktop/mobil), med Minneberg som regressionstest.
   - [ ] Applicera grid, spacing och bredare textlinjering sidspecifikt i Fas 2/3 och verifiera den globala Fas 1C-standarden manuellt i browser före godkännande.
+- [ ] **Skapa och implementera global standard för textläsbarhet/WOT-hantering.** Struktur först, betoning sedan: dela naturligt långa stycken, använd underrubrik/lista/box/grid när innehållet motiverar det och använd därefter selektiv `<strong>` för viktiga ord eller korta fraser. Fetstil ska hjälpa skanning och får inte användas som dekoration eller keyword stuffing. Som riktvärde: normalt 1–3 meningsbärande betoningar per vanligt stycke, undvik hela meningar och upprepad betoning av samma begrepp. Regeln ska dokumenteras så att AI-agenter gör konsekventa bedömningar på tjänste-, miljö- och referenssidor.
 - [x] Standardisera hela klickbara kort/CTA-fält med korrekt hover/focus. **Fas 1A: kod-, semantik- och browser-verifierad 2026-08-23.**
 
 ### Fas 2 – Tjänstesidor
