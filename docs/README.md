@@ -28,6 +28,7 @@ Om två gällande dokument motsäger varandra ska AI inte välja tyst. Konflikte
 - [`standards/pages/reference.md`](standards/pages/reference.md) – canonical standard för alla referenser under `/referenser/`.
 
 ### AI-workflows
+- [`workflows/local-development-and-deploy.md`](workflows/local-development-and-deploy.md) – lokalt Git/VS Code-flöde från uppdaterad `main` till PR, automatisk deploy och produktionsverifiering.
 - [`workflows/ai-page-authoring.md`](workflows/ai-page-authoring.md) – **router och gemensamt startflöde** för alla nya/ändrade publika sidor.
 - [`workflows/create-reference.md`](workflows/create-reference.md) – skapa eller migrera `reference`; använder implementerad content collection.
 - [`reference-material-chatgpt-prompt.md`](../reference-material-chatgpt-prompt.md) – nedladdningsbar instruktion för text- och bildunderlag till referensmigreringen.
