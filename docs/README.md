@@ -28,6 +28,7 @@ Om två gällande dokument motsäger varandra ska AI inte välja tyst. Konflikte
 
 ### Sidstandarder
 - [`standards/pages/reference.md`](standards/pages/reference.md) – canonical standard för alla referenser under `/referenser/`.
+- [`standards/pages/service.md`](standards/pages/service.md) – kanonisk struktur- och implementationsstandard för tjänstesidor under `/tjanster/`.
 
 ### AI-workflows
 - [`workflows/ai-page-authoring.md`](workflows/ai-page-authoring.md) – **router och gemensamt startflöde** för alla nya/ändrade publika sidor.

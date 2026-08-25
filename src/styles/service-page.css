@@ -1,0 +1,32 @@
+/* Shared presentation for service-page content cards.
+   Layout is provided by the global grid-balanced primitives. */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 3vw, 32px);
+  border: 1px solid var(--avab-border);
+  border-radius: var(--avab-radius);
+  background: var(--avab-white);
+  box-shadow: var(--avab-shadow-sm);
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: var(--avab-dark-muted);
+  font-size: 0.98rem;
+}
+
+.service-card p:last-child {
+  margin-bottom: 0;
+}
+
+.service-card .bullet-list {
+  margin-top: 12px;
+}
+
+.service-card .bullet-list li {
+  font-size: 0.95rem;
+}

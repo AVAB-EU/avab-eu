@@ -1,7 +1,10 @@
 ﻿---
 import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
 import PageCTA from "../../../components/PageCTA.astro";
+import NoticeBox from "../../../components/NoticeBox.astro";
 import "../../../styles/avab.css";
+import "../../../styles/service-page.css";
 ---
 
 <!DOCTYPE html>
@@ -226,7 +229,6 @@ import "../../../styles/avab.css";
   }
   </script>
 
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -241,22 +243,8 @@ import "../../../styles/avab.css";
   <!-- Delad designsystem-CSS -->
   <!-- Sidspecifika komponenter -->
   <style>
-    /* ---- AEO-svarsruta (snippet-box) ---- */
-    .snippet-box {
-      padding: 28px;
-      padding-left: 40px;
-      border-radius: var(--avab-radius-sm);
-      background: var(--avab-white);
-      border: 1px solid var(--avab-border);
-      box-shadow: var(--avab-shadow-sm);
-      margin-top: 28px;
-    }
-    .snippet-box strong { display: block; font-size: 1.1rem; margin-bottom: 8px; color: var(--avab-dark); }
-    .snippet-box p { margin-bottom: 0; font-size: 1.05rem; }
-
     /* ---- Definitionskort (tagg + titel + text) ---- */
-    .definition-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 32px; }
-    .definition-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .definition-grid { margin-top: 32px; }
     .definition-card { background: var(--avab-white); border: 1px solid var(--avab-border); border-radius: var(--avab-radius-sm); padding: 24px; box-shadow: var(--avab-shadow-sm); }
     .definition-card .tag { display: inline-flex; margin-bottom: 14px; padding: 6px 12px; border-radius: 999px; background: var(--avab-green); color: var(--avab-dark); font-weight: 800; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
     .definition-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
@@ -278,10 +266,7 @@ import "../../../styles/avab.css";
     .leakage-band { background: linear-gradient(135deg, var(--avab-dark), #1f241f); color: #fff; border-radius: var(--avab-radius); padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; box-shadow: var(--avab-shadow-lg); }
     .leakage-band h2, .leakage-band h3 { color: #fff; }
     .leakage-band p { color: rgba(255, 255, 255, 0.86); }
-    .leakage-band .snippet-box { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); }
-    .leakage-band .snippet-box strong { color: #fff; }
-    .leakage-band .snippet-box p { color: rgba(255, 255, 255, 0.86); }
-
+    .leakage-band .notice-box p { color: var(--avab-dark-muted); }
     /* ---- Budget-/kalkylband ---- */
     .calculator-band {
       margin-top: 30px;
@@ -303,8 +288,8 @@ import "../../../styles/avab.css";
     .calculator-band .button:hover { background: var(--avab-dark); color: #fff; }
 
     /* ---- Prisindikator ---- */
-    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-    .price-card { background: var(--avab-white); border: 1px solid var(--avab-border); border-radius: var(--avab-radius); padding: 36px 32px; box-shadow: var(--avab-shadow-sm); text-align: center; display: flex; flex-direction: column; min-height: 340px; }
+    .price-grid { margin-top: 48px; }
+    .price-card { background: var(--avab-white); border: 1px solid var(--avab-border); border-radius: var(--avab-radius); padding: 36px 32px; box-shadow: var(--avab-shadow-sm); text-align: center; display: flex; flex-direction: column; }
     .price-card.featured { border: 2px solid var(--avab-green); box-shadow: var(--avab-shadow-lg); }
     .price-label { display: inline-flex; align-items: center; justify-content: center; gap: 8px; align-self: center; padding: 8px 18px; border-radius: 999px; background: var(--avab-light); border: 1px solid var(--avab-border); color: var(--avab-dark); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 28px; }
     .price-label.green { background: var(--avab-green); border-color: var(--avab-green); }
@@ -313,11 +298,6 @@ import "../../../styles/avab.css";
     .price-note { margin-top: 40px; padding: 28px 28px 28px 40px; border-radius: var(--avab-radius-sm); background: var(--avab-green-soft); max-width: 820px; }
     .price-note strong { display: block; margin-bottom: 10px; color: var(--avab-dark); }
     .price-note p { margin-bottom: 0; }
-
-    /* ---- Interna länkpiller (miljöer/tjänster) ---- */
-    .link-pills { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
-    .link-pills a { display: inline-flex; align-items: center; background: var(--avab-white); color: var(--avab-dark); border: 1px solid var(--avab-border); font-weight: 700; padding: 14px 24px; border-radius: 999px; font-size: 1.05rem; transition: var(--transition-smooth); box-shadow: var(--avab-shadow-sm); }
-    .link-pills a:hover { background: var(--avab-green); border-color: var(--avab-green); transform: translateY(-2px); box-shadow: 0 8px 16px rgba(143, 192, 37, 0.2); }
 
     /* ---- Klickbara miljö-rutor (Vanliga miljöer) ---- */
     .miljo-links { display: grid; gap: 12px; margin-top: 4px; }
@@ -339,9 +319,6 @@ import "../../../styles/avab.css";
     a.definition-card.cta-green:hover { transform: translateY(-4px); box-shadow: 0 22px 44px var(--avab-green-glow); }
     a.definition-card.cta-green:hover .go::after { transform: translateX(4px); }
 
-    /* ---- Bildplatshållare (endast för diagram/illustrationer som ska bli AVAB:s egna) ---- */
-    .image-placeholder { min-height: 320px; width: 100%; border-radius: var(--avab-radius-sm); border: 2px dashed rgba(40, 46, 42, 0.22); background: linear-gradient(135deg, #f7f8f7 0%, #e9eae9 100%); display: flex; align-items: center; justify-content: center; text-align: center; padding: 32px; color: var(--avab-dark-muted); font-weight: 800; }
-    .image-placeholder span { display: block; max-width: 36ch; }
     .content-image { display: block; width: 100%; height: 320px; object-fit: cover; border-radius: var(--avab-radius-sm); }
     .content-image--diagram { object-fit: contain; background: #fff; }
     .content-image--compact { height: 240px; border-radius: 0; }
@@ -352,16 +329,15 @@ import "../../../styles/avab.css";
       border-top: 1px solid var(--avab-border);
     }
     .secondary-image .image-caption { margin-bottom: 0; }
+    .faq-quick-answers { margin-top: 48px; }
+    .faq-quick-answers h3 { margin-bottom: 24px; }
 
     @media (max-width: 1024px) {
       .compare-grid { grid-template-columns: 1fr; }
-      .definition-grid { grid-template-columns: 1fr 1fr; }
       .leakage-band { grid-template-columns: 1fr; gap: 40px; }
     }
     @media (max-width: 768px) {
-      .definition-grid { grid-template-columns: 1fr; }
       .calculator-band { grid-template-columns: 1fr; padding: 24px; }
-      .price-grid { grid-template-columns: 1fr; }
       .mini-row { grid-template-columns: 1fr; gap: 2px; }
       .leakage-band { padding: 40px 24px 40px 40px; }
     }
@@ -424,10 +400,9 @@ import "../../../styles/avab.css";
           <p class="lead-dark">En hörslinga är ett trådlöst ljudsystem för personer med hörapparat eller cochleaimplantat. Ljudet skickas inte som vanligt högtalarljud genom rummet, utan som ett magnetfält som mottagarens telespole kan ta emot direkt.</p>
           <p>Hörslinga kallas också teleslinga, induktionsslinga eller induktiv hörslinga. Orden beskriver samma grundprincip: en slingförstärkare driver kabel eller kopparfolie som skapar ett magnetfält över lyssningsytan. Det gör att talet kan bli tydligare, särskilt i lokaler där ekon, avstånd och bakgrundsljud annars gör det svårt att uppfatta vad som sägs.</p>
           <p>Många elektriker, projektörer och inköpare vet att hörslingan ska finnas med, men inte alltid varför eller vilken lösning som krävs. I en FFU blir den lätt bara en punkt i handlingen. Vi hjälper er att omvandla den punkten till rätt system, rätt omfattning och ett underlag som går att upphandla.</p>
-          <div class="snippet-box accent-rail">
-            <strong>Kort teknisk sammanfattning</strong>
+          <NoticeBox variant="info" title="Kort teknisk sammanfattning">
             <p>Hörslinga skickar ljud direkt till hörapparater och cochleaimplantat med telespole. PLS passar ofta mindre rum, medan SLS används i större eller mer krävande lokaler där man behöver jämnare täckning och bättre kontroll på läckage.</p>
-          </div>
+          </NoticeBox>
         </div>
         <aside class="card animate-in" style="animation-delay: 0.1s;">
           <div class="image-wrapper">
@@ -468,7 +443,7 @@ import "../../../styles/avab.css";
           <p>I en ekande sporthall, aula eller kyrka kan ett kraftigare ljudsystem ibland göra problemet större. Alla hör mer ljud, men det blir inte automatiskt lättare att förstå orden.</p>
           <p>För många med hörapparat handlar utmaningen inte bara om volym. Det handlar om att skilja tal från rumsakustik, sorl, ventilation, publikljud och avstånd till talaren.</p>
           <p>När lokalen tillgänglighetsanpassas med rätt ljudöverföring kan fler vara med på samma villkor – utan att be om speciallösningar eller sitta på en särskild plats.</p>
-          <p style="font-weight: 700; color: var(--avab-dark); margin-bottom: 0;">Hörslingan skickar ljudet direkt till användarens egen mottagare. Det gör tekniken viktig där information, undervisning, gudstjänst, möten eller säkerhet måste fungera för alla.</p>
+          <p style="margin-bottom: 0;">Hörslingan skickar ljudet direkt till användarens egen mottagare. Det gör tekniken viktig där information, undervisning, gudstjänst, möten eller säkerhet måste fungera för alla.</p>
         </article>
         <aside class="card">
           <h3>Vanliga miljöer</h3>
@@ -493,7 +468,7 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-balanced grid-balanced--3">
           <article class="flow-card"><strong><em>1</em> FFU och behov</strong><span>Vi går igenom handlingar, lokalens användning, publikytor, ljudsystem, tillgänglighetskrav och entreprenadgränser.</span></article>
           <article class="flow-card"><strong><em>2</em> Rätt system</strong><span>Vi väljer PLS, SLS, diskslinga, Auracast eller en kombination utifrån storlek, rörelse, sekretess, metall och angränsande rum.</span></article>
           <article class="flow-card"><strong><em>3</em> Projektering</strong><span>Vi tar fram slingritning, zoner, kabel- eller foliemängd, förstärkare och underlag för budget, FFU och upphandling.</span></article>
@@ -539,7 +514,7 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <div class="ref-grid">
+        <div class="grid-balanced grid-balanced--3">
           <a class="ref-card animate-in" href="/referenser/minnebergsskolan-arvika/">
             <img src="/assets/modern-trafasad-innergard.webp" alt="Arvika nya högstadium, Minnebergsskolan – SLS i flera zoner" width="1200" height="834" loading="lazy" decoding="async">
             <div class="ref-content">
@@ -578,7 +553,7 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <div class="grid-2" style="align-items: stretch;">
+        <div class="grid-balanced grid-balanced--2">
           <div class="flow-card"><strong><em>1</em> Ljudkälla</strong><span>Mikrofon, mixer, konferenssystem eller befintligt ljudsystem skickar talet vidare.</span></div>
           <div class="flow-card"><strong><em>2</em> Förstärkare</strong><span>Slingförstärkaren anpassar signalen och driver kabeln eller folien i lokalen.</span></div>
           <div class="flow-card"><strong><em>3</em> Slinga</strong><span>Kabeln skapar ett magnetfält som bär ljudinformationen över lyssningsytan.</span></div>
@@ -596,7 +571,7 @@ import "../../../styles/avab.css";
 
         <h3 style="margin-top: 56px;">Mottagare: hörapparat, cochleaimplantat och externa mottagare</h3>
         <p class="lead-dark">Hörslingor används främst av personer som har hörapparat eller cochleaimplantat med telespole, ofta kallat T-läge. Det går även att erbjuda separata mottagare för personer utan egen T-spole.</p>
-        <div class="definition-grid">
+        <div class="definition-grid grid-balanced grid-balanced--3">
           <div class="definition-card"><span class="tag">T-läge</span><h3>Hörapparat med telespole</h3><p>Användaren aktiverar T-läge och tar emot ljudet direkt från hörslingans magnetfält.</p></div>
           <div class="definition-card"><span class="tag">CI</span><h3>Cochleaimplantat</h3><p>Många implantat kan ta emot slingljud via telespole eller kompatibla tillbehör.</p></div>
           <div class="definition-card"><span class="tag">Extra</span><h3>Separat slingmottagare</h3><p>Kan användas med hörlurar när besökaren inte har egen hörapparat med T-spole.</p></div>
@@ -677,10 +652,9 @@ import "../../../styles/avab.css";
             <h2>Magnetfält följer inte väggarna</h2>
             <p>En hörslinga skapar ett magnetfält, och det fältet stannar inte automatiskt vid rummets väggar. I många lokaler är det inget problem, men i skolor, vård, konferensrum och byggnader med flera närliggande rum kan läckage bli avgörande.</p>
             <p>Med SLS kan man forma fältet mer kontrollerat och använda stopp- eller kontrollslingor för att begränsa spridningen utanför den yta där ljudet ska tas emot.</p>
-            <div class="snippet-box accent-rail">
-              <strong>Viktigt att säga ärligt</strong>
+            <NoticeBox variant="attention" title="Viktigt att säga ärligt">
               <p>SLS betyder inte att signalen aldrig lämnar rummet. Det betyder att läckaget kan begränsas kraftigt när systemet projekteras och installeras rätt.</p>
-            </div>
+            </NoticeBox>
           </div>
           <img class="content-image content-image--diagram" src="/assets/faltstyrka-simulering-3d.webp" alt="Jämförelse och simulering av hörslingans magnetfält inom och utanför lyssningsytan" width="2000" height="1000" loading="lazy" decoding="async" />
         </div>
@@ -696,7 +670,7 @@ import "../../../styles/avab.css";
           <p>Auracast är en Bluetooth LE Audio-baserad teknik där en ljudkälla kan sända ljud till många kompatibla mottagare samtidigt. Det öppnar för flera parallella ljudflöden, till exempel olika zoner, språk, skärmar eller salar.</p>
           <p>I kyrkor, kulturbyggnader, hyrda lokaler och andra miljöer där man har små eller inga möjligheter att påverka lokalen fysiskt kan Auracast vara en lösning. Man slipper lägga slinga i golvet men kan ändå erbjuda tillgängligt ljud.</p>
           <p>För användare med hörapparat eller cochleaimplantat med T-spole kan man även använda en Auracast-mottagare tillsammans med halsslinga. Då tas ljudet emot trådlöst och skickas vidare till T-spolen via halsslingan.</p>
-          <div class="definition-grid definition-grid--two">
+          <div class="definition-grid grid-balanced grid-balanced--2">
             <div class="definition-card"><span class="tag">Styrka</span><p>Mycket bra där man inte vill bryta upp golv, påverka ytskikt eller göra större ingrepp i lokalen.</p></div>
             <div class="definition-card"><span class="tag">Möjlighet</span><p>Kan ge flera trådlösa ljudzoner och fungera med mottagare + halsslinga för T-spole.</p></div>
             <div class="definition-card"><span class="tag">Begränsning</span><p>I sporthallar där användaren rör sig mycket är mottagare med halsslinga sämre. Där är SLS normalt rätt.</p></div>
@@ -721,7 +695,7 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-balanced grid-balanced--3">
           <div class="definition-card"><span class="tag">Skola</span><h3>Ofta SLS i större ytor</h3><p>Aula, specialsalar och sporthallar kräver kontroll. Mindre rum kan ibland lösas med PLS.</p></div>
           <div class="definition-card"><span class="tag">Sporthall</span><h3>SLS när människor rör sig</h3><p>Sporthallar kräver fast installerad lösning. Mottagare med halsslinga fungerar sämre när användaren rör sig mycket.</p></div>
           <div class="definition-card"><span class="tag">Kyrka</span><h3>SLS, PLS eller Auracast</h3><p>I kyrkor med känsliga golv eller kulturvärden kan Auracast vara mycket intressant. I andra kan traditionell hörslinga vara bäst.</p></div>
@@ -749,7 +723,7 @@ import "../../../styles/avab.css";
           <p class="lead-dark">Vid nybyggnation och större renovering av publika samlingslokaler behöver ljudöverföring till hörhjälpmedel hanteras tidigt. I många underlag används gränsen 50 personer som praktisk utgångspunkt för när hörslinga eller motsvarande system ska kravställas.</p>
           <p>Formulera inte bara "hörslinga ingår". Ange vilken yta som ska täckas, om läckage ska begränsas, vilken standard mätningen ska följa, hur dokumentation ska levereras och vem som ansvarar för injustering mot ljudsystemet.</p>
           <p>Glöm inte heller skyltningen: publika lokaler med hörslinga bör märkas med den internationella hörslingesymbolen så att besökare ser att de kan slå om till T-läge på sin hörapparat.</p>
-          <p style="font-weight: 700; color: var(--avab-dark); margin-bottom: 0;">Det gör det enklare för elektriker, projektörer och entreprenörer att hitta rätt omfattning i FFU – och minskar risken att slingan blir en sen nödlösning.</p>
+          <p style="margin-bottom: 0;">Det gör det enklare för elektriker, projektörer och entreprenörer att hitta rätt omfattning i FFU – och minskar risken att slingan blir en sen nödlösning.</p>
         </div>
 
         <aside class="card animate-in" style="animation-delay: 0.1s;">
@@ -776,7 +750,7 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <div class="price-grid">
+        <div class="price-grid grid-balanced grid-balanced--3">
           <article class="price-card">
             <div class="price-label">PLS / mindre rum</div>
             <div class="price">10–30 kkr</div>
@@ -800,15 +774,26 @@ import "../../../styles/avab.css";
           <strong>Vad kostar en hörslinga?</strong>
           <p>En mindre PLS-lösning börjar ofta runt 10 000–30 000 kr, medan SLS i större lokaler oftast hamnar mellan 40 000 och 150 000 kr. Auracast, mottagare med halsslinga och hybridlösningar landar ofta på 100 000–200 000 kr beroende på antal zoner, sändare, integration och hur systemet ska användas.</p>
         </div>
+
+        <aside class="faq-quick-answers animate-in" aria-labelledby="projektering-kort">
+          <h3 id="projektering-kort">Korta svar inför projektering</h3>
+          <div class="grid-balanced grid-balanced--3">
+            <article class="service-card accent-rail"><strong>Vad passar PLS till?</strong><p>PLS passar ofta mindre rum där en enkel perimeterslinga ger tillräcklig täckning och läckage inte är kritiskt.</p></article>
+            <article class="service-card accent-rail"><strong>Vad passar SLS till?</strong><p>SLS passar större, mer komplexa eller sekretesskänsliga lokaler där man behöver jämnare täckning och bättre kontroll på magnetfältet.</p></article>
+            <article class="service-card accent-rail"><strong>Hörslinga eller Auracast?</strong><p>Det beror på lokalen. Auracast är starkt där man inte kan påverka byggnaden, medan SLS är bättre i stora aktiva ytor som sporthallar.</p></article>
+          </div>
+        </aside>
       </div>
     </section>
 
     <!-- 12. FAQ + slut-CTA -->
     <section class="section" id="faq">
-      <div class="avab-container two-col" style="align-items: start;">
+      <div class="avab-container">
         <div>
-          <div class="eyebrow">Vanliga frågor</div>
-          <h2>Frågor om hörslinga, SLS och Auracast</h2>
+          <div class="faq-heading">
+            <div class="eyebrow">Snabba svar</div>
+            <h2>Vanliga frågor om hörslinga, SLS och Auracast</h2>
+          </div>
           <div class="faq-list">
             <details class="faq-item" open>
               <summary>Vad är en hörslinga?</summary>
@@ -877,13 +862,6 @@ import "../../../styles/avab.css";
           </div>
         </div>
 
-        <aside class="animate-in">
-          <div class="eyebrow">Snabba svar</div>
-          <h2>Korta svar inför projektering</h2>
-          <div class="snippet-box accent-rail" style="margin-top: 0;"><strong>Vad passar PLS till?</strong><p>PLS passar ofta mindre rum där en enkel perimeterslinga ger tillräcklig täckning och läckage inte är kritiskt.</p></div>
-          <div class="snippet-box accent-rail"><strong>Vad passar SLS till?</strong><p>SLS passar större, mer komplexa eller sekretesskänsliga lokaler där man behöver jämnare täckning och bättre kontroll på magnetfältet.</p></div>
-          <div class="snippet-box accent-rail"><strong>Hörslinga eller Auracast?</strong><p>Det beror på lokalen. Auracast är starkt där man inte kan påverka byggnaden, medan SLS är bättre i stora aktiva ytor som sporthallar.</p></div>
-        </aside>
       </div>
 
     </section>
@@ -906,49 +884,6 @@ import "../../../styles/avab.css";
 
   </main>
 
-  <footer class="site-footer">
-    <div class="avab-container">
-      <div class="footer-grid">
-        <div>
-          <a class="brand" href="/" aria-label="AVAB – till startsidan">
-            <span class="brand-dot" aria-hidden="true"></span>
-            AVAB
-          </a>
-          <p>Tillgängligt ljud för skolor, kyrkor, sporthallar, vård, konferens och publika miljöer – hörslinga, PLS, SLS, diskslinga och Auracast. Projektering, installation, mätning och certifiering över hela Sverige.</p>
-        </div>
-
-        <nav aria-label="Sidlänkar">
-          <h2>Genvägar</h2>
-          <ul class="footer-links">
-            <li><a href="#funktion">Så fungerar det</a></li>
-            <li><a href="#slingtyper">Slingtyper</a></li>
-            <li><a href="#auracast">Auracast</a></li>
-            <li><a href="#krav">Krav &amp; upphandling</a></li>
-            <li><a href="#referenser">Referenser</a></li>
-            <li><a href="#faq">Vanliga frågor</a></li>
-          </ul>
-        </nav>
-
-        <div>
-          <h2>Kontakt</h2>
-          <address class="footer-contact" style="font-style: normal;">
-            <a href="tel:+46548202080">054-8202080</a>
-            <a href="mailto:info@avab.eu">info@avab.eu</a>
-            <span>Skraggevägen 4<br>663 41 Hammarö, Värmland</span>
-          </address>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© <span id="year">2026</span> AVAB. Alla rättigheter förbehållna.</span>
-        <span>Org.nr 556977-1776 · <a href="/integritetspolicy/" style="color: inherit; text-decoration: underline;">Integritetspolicy</a></span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const year = document.getElementById('year');
-    if (year) year.textContent = String(new Date().getFullYear());
-  </script>
+  <SiteFooter />
 </body>
 </html>

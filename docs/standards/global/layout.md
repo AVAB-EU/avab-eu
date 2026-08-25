@@ -55,6 +55,19 @@ FAQ-listor använder `.compact-faq` eller det äldre kompatibla namnet `.faq-lis
 
 FAQ-poster får ha innehållsdriven höjd. Plus-/accordion-ikonen ska vara stabil till höger även när frågan bryts över flera rader. Sidspecifik gridordning eller kolumnindelning får inte användas.
 
+### FAQ är sista innehållssektionen
+
+När en publik sida har Vanliga frågor ska FAQ alltid vara den sista innehållssektionen före sidans avslutande CTA. Normal avslutning är:
+
+1. övrigt sidinnehåll,
+2. Vanliga frågor,
+3. slut-CTA,
+4. footer.
+
+Informationssektioner, guidekapitel, kort/grid, teknisk fördjupning, miljöer, referenser, process, `Hur vi jobbar`, `Vår leverans`, specialsektioner, kalkylatorer, korta svar eller liknande innehåll får inte placeras efter FAQ. Regeln gäller alla publika sidtyper.
+
+Ett verkligt undantag måste vara uttryckligen beslutat och dokumenterat för den berörda sidan eller sidtypen. AI får inte själv skapa eller anta ett undantag och får inte placera innehåll efter FAQ för att förbättra variation, rytm eller konvertering.
+
 ## CTA-hierarki i hero
 
 När en hero innehåller flera handlingar används följande visuella hierarki:

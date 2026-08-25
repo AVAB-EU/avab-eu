@@ -1,6 +1,6 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-08-24._
+_Kanonisk projektlista. Senast uppdaterad 2026-08-25._
 
 ## Go-live / deployment
 - [x] GO-LIVE/deploy-verifieringen mot `avab.eu` är genomförd; produktions-FTP, webbroot, GitHub Actions-secrets och den tillfälliga deploy-markören har verifierats.
@@ -85,12 +85,23 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 - [ ] Standardisera spacing, textlinjering, sifferpiller och kortgrid (3+3, 3+2 m.fl.).
   - [x] **Fas 1C global standard:** konsoliderad `.flow-card`, kanoniskt processpill, spacing-primitives, opt-in-grid för 3+3/3+2, tvåkolumns-FAQ, säker flerradig FAQ-rubrik och dynamiskt numrerade referens-eyebrows är kodimplementerade och tekniskt verifierade 2026-08-23. Kameraövervakningens FAQ och den globala referens-eyebrow-standarden är manuellt browser-QA-verifierade 2026-08-23 på Hanza och Lesjöfors (desktop/mobil), med Minneberg som regressionstest.
   - [ ] Applicera grid, spacing och bredare textlinjering sidspecifikt i Fas 2/3 och verifiera den globala Fas 1C-standarden manuellt i browser före godkännande.
-- [x] **Fas 1D – global notice-box och selektiv AVAB-blixt avslutad 2026-08-24.** Global `NoticeBox` är implementerad: `info` är neutral utan blixt och `attention` använder AVAB:s rödorange blixt. Endast Rastsignal och Kameraövervakning använder `attention` i denna implementation; de nio tidigare generella blixtboxarna använder neutral `info` utan duplicerad lokal box-CSS. Befintliga texter är SEO-/läsbarhetsgranskade och bedömda **A. BEHÅLL**. WOT-/readability-standarden är dokumenterad. Build, guardrails, byggd HTML och `git diff --check` är godkända, och manuell browser-QA på desktop och mobil är godkänd 2026-08-24.
+- [x] **Fas 1D – global notice-box och selektiv AVAB-blixt avslutad 2026-08-24.** Global `NoticeBox` är implementerad: `info` är neutral utan blixt och `attention` använder AVAB:s rödorange blixt. Vid Fas 1D-avslutet använde endast Rastsignal och Kameraövervakning `attention`; i Fas 2A har Hörslingas uttryckliga begränsning om magnetfältsläckage bedömts individuellt och lagts till som en tredje motiverad användning. De nio tidigare generella blixtboxarna använder fortsatt neutral `info` utan duplicerad lokal box-CSS. Befintliga Fas 1D-texter är SEO-/läsbarhetsgranskade och bedömda **A. BEHÅLL**. WOT-/readability-standarden är dokumenterad. Build, guardrails, byggd HTML och `git diff --check` är godkända, och manuell browser-QA på desktop och mobil är godkänd 2026-08-24.
 - [x] **Fas 1D – global standard för textläsbarhet/WOT-hantering.** Struktur först, betoning sedan: dela naturligt långa stycken, använd underrubrik/lista/box/grid när innehållet motiverar det och använd därefter selektiv `<strong>` för viktiga ord eller korta fraser. Fetstil ska hjälpa skanning och får inte användas som dekoration eller keyword stuffing. Som riktvärde: normalt 1–3 meningsbärande betoningar per vanligt stycke, undvik hela meningar och upprepad betoning av samma begrepp. **Dokumenterad i `docs/standards/global/content-readability.md` 2026-08-24; bred WOT-redigering hör till senare sidspecifika faser.**
 - [x] Standardisera hela klickbara kort/CTA-fält med korrekt hover/focus. **Fas 1A: kod-, semantik- och browser-verifierad 2026-08-23.**
+- [x] Dokumentera global ordningsregel: när FAQ finns är `Vanliga frågor` alltid sista innehållssektionen före slut-CTA; AI får inte skapa undantag utan uttryckligt dokumenterat beslut.
+- [ ] Tillämpa FAQ-sist-regeln i senare avgränsat scope på `/` (Kunskapsbank ligger efter FAQ i samma sektion) och `/referenser/saffle-simhall/` (`RelatedReferences` renderas efter FAQ via `ReferencePage`). Ändra inte dessa routes som del av Fas 2A-pilotens strukturkorrigering.
 
 ### Fas 2 – Tjänstesidor
-- [ ] Dokumentera och implementera gemensam tjänstesidestandard innan bred sidfix.
+- [x] **Fas 2A – standard, huvudpilot och generaliseringstest avslutad 2026-08-25.** Kanonisk tjänstesidestandard är dokumenterad med Hörslinga som huvudpilot och Mikrofoner som generaliseringstest. Ljudsystem är inte pilot eller facit men dess generella CSS-/grid-/FAQ-städning behålls. FAQ är globalt sista innehållssektion före slut-CTA och Hörslingas `Korta svar inför projektering` ligger före FAQ. Build med 76 sidor, guardrails, byggd HTML, assets, UTF-8/CRLF och diffkontroll är godkända. Hörslinga, Mikrofoner och Ljudsystem är manuellt visuellt godkända på desktop och mobil. Fas 2A omfattar standard och piloter, inte bred tjänstemigrering.
+  - [x] Inventera samtliga faktiska routes under `src/pages/tjanster/` och dokumentera avvikelser i `docs/projects/kundonskemal-2026-08-20/fas-2a-service-inventory.md`.
+  - [x] Dokumentera kanonisk tjänstesidestandard i `docs/standards/pages/service.md`.
+  - [x] Migrera Hörslinga som huvudpilot utan att ändra verifierade fakta eller urval; behåll motiverade guide- och specialsektioner.
+  - [x] Migrera Mikrofoner som generaliseringstest utan att ändra verifierade fakta eller urval.
+  - [x] Klassificera Ljudsystems befintliga Fas 2A-diff: generell teknisk städning bör behållas; den pilotdrivna styckesdelningen redovisas separat och ingen rollback görs automatiskt.
+  - [x] Genomför teknisk QA för den nya pilotuppsättningen: build med 76 sidor, guardrails, byggd HTML, assets, UTF-8/CRLF och diffkontroll godkända 2026-08-25.
+  - [x] Genomför manuell visuell QA på desktop och mobil för Hörslinga, Mikrofoner och Ljudsystem; godkänd 2026-08-25.
+- [ ] **Fas 2B+ – bred tjänstesidemigrering.** Migrera övriga tjänster i separata, verifierade delsteg; standardens existens betyder inte att sidorna är färdigbyggda.
+  - [ ] Verifiera beslutad active-state för leveransstegens `Vår leverans`: uppgiftsunderlaget anger opacity, medan aktuell kod använder `aria-current="page"` och `.card--current` med kant/skugga.
 - [ ] Bygg Ljus.
 - [ ] Bygg Bild/skärm och koppla Skärmar/projektorer samt Visuell kommunikation korrekt.
 - [ ] Kamera: hero-piller, blixtgrafik, expanderande kort, boxlänkning och Vanliga frågor. **FAQ-layouten är manuellt browser-QA-verifierad i Fas 1C 2026-08-23; övriga delpunkter återstår.**

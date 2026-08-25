@@ -30,17 +30,28 @@
 - [ ] Definiera klickbara helkort/helfält med korrekt hover, focus och semantik.
 - [ ] Definiera gemensam sektionstandard för `Hur vi jobbar`/sifferpiller.
 - [ ] Säkerställ att `Vanliga frågor` klarar flerradiga rubriker.
-- [x] Fas 1D avslutad 2026-08-24: global `NoticeBox` är implementerad med neutral `info` utan blixt och selektiv `attention` med AVAB:s rödorange blixt. Endast Rastsignal och Kameraövervakning använder `attention`; de nio tidigare generella blixtboxarna är neutrala `info`-boxar och deras texter är SEO-/läsbarhetsgranskade som A. BEHÅLL. WOT-/readability-standarden är dokumenterad. Teknisk QA samt manuell browser-QA på desktop och mobil är godkända 2026-08-24.
+- [x] Fas 1D avslutad 2026-08-24: global `NoticeBox` är implementerad med neutral `info` utan blixt och selektiv `attention` med AVAB:s rödorange blixt. Vid Fas 1D-avslutet använde endast Rastsignal och Kameraövervakning `attention`; Hörslingas uttryckliga läckagebegränsning tillkom efter individuell bedömning i Fas 2A. De nio tidigare generella blixtboxarna är fortsatt neutrala `info`-boxar och deras texter är SEO-/läsbarhetsgranskade som A. BEHÅLL. WOT-/readability-standarden är dokumenterad. Teknisk QA samt manuell browser-QA på desktop och mobil är godkända 2026-08-24.
 - [x] Fas 1D: dokumentera global WOT-/läsbarhetsstandard utan bred sidspecifik textredigering.
 
 ---
 
 ## Fas 2 – Tjänstesidestandard och tjänstesidor
 
-### Standard först
-- [ ] Dokumentera tjänstesidans kanoniska struktur.
-- [ ] Fastställ hero, piller, sektioner, kortgrid, referenser, miljöer, arbetssätt och Vanliga frågor.
-- [ ] Säkerställ återanvändning av shared components.
+### Fas 2A – standard och två piloter – avslutad 2026-08-25
+- [x] Inventera samtliga faktiska tjänstesidor och dokumentera gemensamma mönster, lokal CSS och avvikelser.
+- [x] Dokumentera tjänstesidans kanoniska struktur i `docs/standards/pages/service.md`.
+- [x] Fastställ obligatoriska och valfria principer för hero, piller, sektioner, kortgrid, referenser, miljöer, arbetssätt och Vanliga frågor.
+- [x] Använd Hörslinga som huvudpilot och Mikrofoner som generaliseringstest. Ljudsystem är inte pilot eller facit.
+- [x] Konsolidera huvudpilotens och generaliseringstestets gemensamma kortstil och använd globala grid-, process-, FAQ-, NoticeBox- och CTA-primitiver utan att ta bort motiverade specialsektioner.
+- [x] Godkänn teknisk QA för Hörslinga och Mikrofoner: build med 76 sidor, guardrails, byggd HTML, assets, UTF-8/CRLF och diffkontroll godkända 2026-08-25.
+- [x] Godkänn manuell visuell QA på desktop och mobil för Hörslinga, Mikrofoner och Ljudsystem; godkänd 2026-08-25.
+- [x] Säkerställ att FAQ är sista innehållssektion före slut-CTA på de tre granskade sidorna och att `Korta svar inför projektering` ligger före FAQ på Hörslinga.
+
+**Exit-kriterium Fas 2A – uppfyllt 2026-08-25:** Standard, inventering, huvudpilot Hörslinga och generaliseringstest Mikrofoner är tekniskt och visuellt verifierade. Ljudsystems generella tekniska städning behålls som regression/teknisk kontroll men sidan är inte pilot. Ingen annan tjänst är markerad som migrerad genom att standarden finns.
+
+### Fas 2B+ – bred migrering i separata delsteg
+
+Nedanstående tjänster behåller sina egna öppna uppgifter och ska migreras senare. Fas 2A ändrar inte deras status.
 
 ### Ljus
 - [ ] Bygg tjänstesidan Ljus.
