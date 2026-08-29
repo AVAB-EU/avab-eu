@@ -1,0 +1,79 @@
+---
+export interface LandingAnchorItem {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  items: LandingAnchorItem[];
+  ariaLabel?: string;
+}
+
+const {
+  items,
+  ariaLabel = "Tjänster på sidan",
+} = Astro.props;
+---
+
+<div class="landing-anchor-nav-wrap" data-landing-anchor-nav>
+  <div class="avab-container">
+    <nav class="landing-anchor-nav" aria-label={ariaLabel}>
+      {items.map((item) => (
+        <a href={`#${item.id}`} data-landing-anchor-link={item.id}>{item.label}</a>
+      ))}
+    </nav>
+  </div>
+</div>
+
+<script>
+  const initializeLandingAnchorNav = (navWrap: HTMLElement) => {
+    if (navWrap.dataset.landingAnchorReady === "true") return;
+    navWrap.dataset.landingAnchorReady = "true";
+
+    const links = Array.from(navWrap.querySelectorAll<HTMLAnchorElement>("[data-landing-anchor-link]"));
+    const sections = links
+      .map((link) => {
+        const id = link.dataset.landingAnchorLink;
+        return id ? document.getElementById(id) : null;
+      })
+      .filter((section): section is HTMLElement => Boolean(section));
+
+    const setActive = (id: string) => {
+      links.forEach((link) => {
+        const active = link.dataset.landingAnchorLink === id;
+        link.classList.toggle("is-active", active);
+        if (active) {
+          link.setAttribute("aria-current", "location");
+          const nav = link.closest<HTMLElement>(".landing-anchor-nav");
+          if (nav) {
+            const linkLeft = link.offsetLeft;
+            const linkRight = linkLeft + link.offsetWidth;
+            if (linkLeft < nav.scrollLeft) nav.scrollLeft = linkLeft;
+            else if (linkRight > nav.scrollLeft + nav.clientWidth) {
+              nav.scrollLeft = linkRight - nav.clientWidth;
+            }
+          }
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    };
+
+    if (!("IntersectionObserver" in window) || sections.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (visible?.target.id) setActive(visible.target.id);
+    }, {
+      rootMargin: "-35% 0px -55% 0px",
+      threshold: 0,
+    });
+
+    sections.forEach((section) => observer.observe(section));
+  };
+
+  document.querySelectorAll<HTMLElement>("[data-landing-anchor-nav]")
+    .forEach(initializeLandingAnchorNav);
+</script>

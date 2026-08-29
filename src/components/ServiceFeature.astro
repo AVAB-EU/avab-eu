@@ -1,0 +1,59 @@
+---
+interface Props {
+  id: string;
+  group?: string;
+  eyebrow?: string;
+  title: string;
+  text: string;
+  href: string;
+  ctaLabel: string;
+  image: string;
+  imageAlt: string;
+  variant: "full" | "split" | "split-reverse" | "editorial" | "dark";
+  mode?: "default" | "technical";
+  loading?: "eager" | "lazy";
+}
+
+const {
+  id,
+  group,
+  eyebrow,
+  title,
+  text,
+  href,
+  ctaLabel,
+  image,
+  imageAlt,
+  variant,
+  mode = "default",
+  loading = "lazy",
+} = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={["service-feature", `service-feature--${variant}`, `service-feature--${mode}`]}
+  aria-labelledby={`${id}-title`}
+>
+  <div class="avab-container service-feature__inner">
+    {group && <p class="service-feature__group">{group}</p>}
+    <div class="service-feature__composition">
+      <div class="service-feature__media">
+        <img
+          src={image}
+          alt={imageAlt}
+          width="1200"
+          height="800"
+          loading={loading}
+          decoding="async"
+        />
+      </div>
+      <div class="service-feature__content">
+        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+        <h2 id={`${id}-title`}>{title}</h2>
+        <p class="service-feature__text">{text}</p>
+        <a class="button service-feature__cta" href={href}>{ctaLabel}</a>
+      </div>
+    </div>
+  </div>
+</section>

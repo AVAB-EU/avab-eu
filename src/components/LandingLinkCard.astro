@@ -1,0 +1,27 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  text: string;
+  image?: string;
+  imageAlt?: string;
+  eyebrow?: string;
+  featured?: boolean;
+}
+
+const { href, title, text, image, imageAlt = "", eyebrow, featured = false } = Astro.props;
+---
+
+<a class:list={["landing-link-card", { "landing-link-card--featured": featured }]} href={href}>
+  {image && (
+    <div class="landing-link-card__media">
+      <img src={image} alt={imageAlt} width="900" height="600" loading="lazy" decoding="async" />
+    </div>
+  )}
+  <div class="landing-link-card__content">
+    {eyebrow && <span class="landing-link-card__eyebrow">{eyebrow}</span>}
+    <h3>{title}</h3>
+    <p>{text}</p>
+    <span class="landing-link-card__cta" aria-hidden="true">Utforska miljön <span>→</span></span>
+  </div>
+</a>
