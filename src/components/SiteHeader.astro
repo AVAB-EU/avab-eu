@@ -74,11 +74,13 @@ const isSectionActive = (href: string) => currentPath === href || currentPath.st
             </ul>
           </div>
         </li>
-        <li class="nav-dropdown nav-dropdown--services">
-          <button class="nav-link hover-underline nav-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-menu-services" data-desktop-menu-trigger>
-            Tjänster
-            <span class="nav-chevron" aria-hidden="true"></span>
-          </button>
+        <li class="nav-dropdown nav-dropdown--services nav-dropdown--with-parent-link">
+          <div class="nav-parent">
+            <a class="nav-link nav-parent-link hover-underline" href="/tjanster/" aria-current={isSectionActive("/tjanster/") ? "true" : undefined}>Tjänster</a>
+            <button class="nav-dropdown-trigger nav-parent-toggle" type="button" aria-label="Visa undermeny för Tjänster" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-menu-services" data-desktop-menu-trigger>
+              <span class="nav-chevron" aria-hidden="true"></span>
+            </button>
+          </div>
           <div id="desktop-menu-services" class="service-menu" aria-label="Tjänster" data-desktop-menu>
             <ul class="service-menu-list">
               <li><a href="/tjanster/ljudsystem/">Ljudsystem</a></li>
@@ -186,6 +188,7 @@ const isSectionActive = (href: string) => currentPath === href || currentPath.st
     <li>
       <details class="mobile-menu-group">
         <summary>Tjänster</summary>
+        <a class="mobile-menu-overview" href="/tjanster/" aria-current={isActive("/tjanster/") ? "page" : undefined}>Översikt över alla tjänster <span aria-hidden="true">→</span></a>
         <ul class="mobile-menu-links">
           <li><a href="/tjanster/ljudsystem/" aria-current={isActive("/tjanster/ljudsystem/") ? "page" : undefined}>Ljudsystem</a></li>
           <li><a href="/tjanster/mikrofoner/" aria-current={isActive("/tjanster/mikrofoner/") ? "page" : undefined}>Mikrofoner</a></li>
