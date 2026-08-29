@@ -1,6 +1,6 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-08-26._
+_Kanonisk projektlista. Senast uppdaterad 2026-08-29._
 
 ## Go-live / deployment
 - [x] GO-LIVE/deploy-verifieringen mot `avab.eu` är genomförd; produktions-FTP, webbroot, GitHub Actions-secrets och den tillfälliga deploy-markören har verifierats.
@@ -84,29 +84,31 @@ Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-
 
 Underlag: `docs/projects/kundonskemal-2026-08-20/design-farg-och-landningssidor.md`.
 
-- [ ] Inventera befintliga globala färgvariabler, sektionskomponenter, knappvarianter, pills och kort innan ny färgimplementation.
-- [ ] Definiera en återanvändbar global grön sektionsvariant i stället för sidspecifik CSS.
-- [ ] Säkerställ kontrast, text/länk/button/pill/focus-states samt responsiv spacing på grön bakgrund.
-- [ ] Välj 1–2 befintliga sektioner som pilot för den gröna varianten och kundgranska före bred utrullning.
-- [ ] Använd gröna sektioner selektivt som säljande/accentuerande ytor; undvik flera tunga gröna sektioner direkt efter varandra och långa tekniska textblock på mörk/grön yta.
-- [ ] Inventera vilka befintliga sidor som faktiskt vinner på en grön sektionsvariant innan utrullning i små batcher.
+- [x] Inventera befintliga globala färgvariabler, sektionskomponenter, knappvarianter, pills och kort innan ny färgimplementation. **Genomfört i PR #29.**
+- [x] Definiera en återanvändbar global grön sektionsvariant i stället för sidspecifik CSS. **Genomfört i PR #29 med bland annat `--avab-green-dark` och `ContentSection`.**
+- [x] Säkerställ kontrast, text/länk/button/pill/focus-states samt responsiv spacing på grön bakgrund. **Tekniskt verifierat i PR #29.**
+- [x] Välj pilot för den gröna varianten och visuellt godkänn designriktningen före fortsatt arbete. **Miljölandningen godkänd av Andreas 2026-08-29; kundjusteringar hanteras efter merge.**
+- [x] Använd gröna sektioner selektivt som säljande/accentuerande ytor; undvik flera tunga gröna sektioner direkt efter varandra och långa tekniska textblock på mörk/grön yta. **Princip implementerad i PR #29.**
+- [ ] Inventera vilka ytterligare befintliga sidor som faktiskt vinner på en grön sektionsvariant innan eventuell bredare utrullning. **Separat framtida scope; inte blockerande för Fas 1B.**
 
 ### Fas 1C – Landningssidor för Miljöer och Tjänster
 
 Underlag: `docs/projects/kundonskemal-2026-08-20/design-farg-och-landningssidor.md`.
 
-- [ ] Verifiera befintlig kanonisk route för Tjänster och nuvarande beteende för `/miljo/`; skapa inga parallella URL:er utan beslut.
-- [ ] Inventera samtliga miljö- och tjänsteundersidor som ska exponeras från respektive landningssida.
-- [ ] Gör huvudnavigationens `Miljöer` och `Tjänster` till riktiga destinationslänkar samtidigt som undermenyerna fortfarande är tillgängliga.
-- [ ] Definiera separat och tillgängligt touch/mobilbeteende för att öppna undermeny respektive följa huvudlänken.
-- [ ] Bygg `/miljo/` först som designpilot: säljande hero, värdeerbjudande, kreativ miljööversikt, behov/problem, referenser, grön säljsektion och avslutande CTA.
-- [ ] Kundgranska Miljölandningen på desktop och mobil och frys godkända återanvändbara mönster innan Tjänster byggs.
-- [ ] Bygg Tjänstelandningen med samma designsystem men egen berättelse: kundvärde, kreativ tjänsteöversikt, hur tjänster kombineras, miljökorslänkar, referenser och CTA.
-- [ ] Säkerställ att landningssidorna är inspirerande/säljande medan undersidorna förblir informativa och ämnesspecifika.
-- [ ] Undvik duplicerad text mellan landnings- och undersidor; landningssidorna ska täcka bred sökintention och vägledning, undersidorna specifik fördjupning.
-- [ ] Säkerställ unik H1/title/meta description, canonical till `https://avab.eu/`, breadcrumb, sitemap och relevant schema för båda landningssidorna.
-- [ ] Verifiera internlänkning mellan Miljöer, Tjänster, relevanta undersidor och Referenser.
-- [ ] Regressionstesta navigation, tangentbord, focus, touch, desktop/tablet/mobil och build/CI före merge.
+**Status: genomförd och mergead via PR #29 den 2026-08-29. Eventuella kundjusteringar görs som nya avgränsade ändringar.**
+
+- [x] Verifiera befintlig kanonisk route för Tjänster och nuvarande beteende för `/miljo/`; skapa inga parallella URL:er utan beslut.
+- [x] Inventera samtliga miljö- och tjänsteundersidor som ska exponeras från respektive landningssida.
+- [x] Gör huvudnavigationens `Miljöer` och `Tjänster` till riktiga destinationslänkar samtidigt som undermenyerna fortfarande är tillgängliga.
+- [x] Definiera separat och tillgängligt touch/mobilbeteende för att öppna undermeny respektive följa huvudlänken.
+- [x] Bygg `/miljo/` som säljande landningssida med hero, värdeerbjudande, kreativ miljööversikt, behov/problem, referenser, grön säljsektion och avslutande CTA.
+- [x] Visuellt granska Miljölandningen på desktop och mobil och godkänn återanvändbara mönster. **Godkänd av Andreas 2026-08-29; kundfeedback hanteras efter merge vid behov.**
+- [x] Bygg `/tjanster/` med samma designsystem men egen berättelse och visuell tjänsteresa med ankarmeny, logiska tjänstegrupper, varierade feature-layouter, referenser och CTA.
+- [x] Säkerställ att landningssidorna är inspirerande/säljande medan undersidorna förblir informativa och ämnesspecifika.
+- [x] Undvik duplicerad text mellan landnings- och undersidor; landningssidorna täcker bred sökintention och vägledning, undersidorna specifik fördjupning.
+- [x] Säkerställ unik H1/title/meta description, canonical, breadcrumb, sitemap och relevant schema för båda landningssidorna.
+- [x] Verifiera crawlbara länkar från landningssidorna till relevanta undersidor och referenser.
+- [x] Regressionstesta navigation, tangentbord/focus, touch, desktop/mobil och build/CI före merge. **Build, validate och diff-check godkända före PR #29 merge.**
 
 ### Fas 2 – Tjänstesidor
 - [ ] Dokumentera och implementera gemensam tjänstesidestandard innan bred sidfix.
