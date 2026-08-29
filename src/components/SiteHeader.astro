@@ -15,11 +15,13 @@ const isSectionActive = (href: string) => currentPath === href || currentPath.st
     </a>
     <nav aria-label="Huvudmeny">
       <ul class="nav-links">
-        <li class="nav-dropdown">
-          <button class="nav-link hover-underline nav-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-menu-environments" data-desktop-menu-trigger>
-            Miljöer
-            <span class="nav-chevron" aria-hidden="true"></span>
-          </button>
+        <li class="nav-dropdown nav-dropdown--with-parent-link">
+          <div class="nav-parent">
+            <a class="nav-link nav-parent-link hover-underline" href="/miljo/" aria-current={isSectionActive("/miljo/") ? "true" : undefined}>Miljöer</a>
+            <button class="nav-dropdown-trigger nav-parent-toggle" type="button" aria-label="Visa undermeny för Miljöer" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-menu-environments" data-desktop-menu-trigger>
+              <span class="nav-chevron" aria-hidden="true"></span>
+            </button>
+          </div>
           <div id="desktop-menu-environments" class="mega-menu" aria-label="Miljöer" data-desktop-menu>
             <ul class="mega-categories" aria-label="Miljökategorier">
               <li class="mega-category">
@@ -143,6 +145,7 @@ const isSectionActive = (href: string) => currentPath === href || currentPath.st
     <li>
       <details class="mobile-menu-group">
         <summary>Miljöer</summary>
+        <a class="mobile-menu-overview" href="/miljo/" aria-current={isActive("/miljo/") ? "page" : undefined}>Översikt över alla miljöer <span aria-hidden="true">→</span></a>
         <details class="mobile-menu-subgroup">
           <summary>Sport</summary>
           <ul class="mobile-menu-links">

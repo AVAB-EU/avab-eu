@@ -1,0 +1,25 @@
+---
+interface Props {
+  surface?: "default" | "soft" | "green";
+  id?: string;
+  class?: string;
+  labelledby?: string;
+}
+
+const {
+  surface = "default",
+  id,
+  class: className,
+  labelledby,
+} = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={["content-section", `content-section--${surface}`, className]}
+  aria-labelledby={labelledby}
+>
+  <div class="avab-container content-section__inner">
+    <slot />
+  </div>
+</section>
