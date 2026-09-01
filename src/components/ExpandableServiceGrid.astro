@@ -51,7 +51,7 @@ const { groups } = Astro.props;
 
     cards.forEach((card) => {
       card.addEventListener("pointerenter", () => activate(card, true));
-      card.addEventListener("focus", () => activate(card));
+      card.addEventListener("focusin", () => activate(card));
     });
 
     row.addEventListener("pointerleave", reset);
