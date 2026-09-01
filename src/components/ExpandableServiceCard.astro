@@ -10,22 +10,21 @@ const { service, index } = Astro.props;
 const headingId = `service-${service.title.toLowerCase().replaceAll(/[^a-zåäö0-9]+/g, "-")}`;
 ---
 
-<article class="expandable-service-card" data-service-card data-index={index} tabindex="0" aria-labelledby={headingId}>
+<a class="expandable-service-card" data-service-card data-index={index} href={service.href} aria-labelledby={headingId}>
   <img src={service.image} alt={service.imageAlt} width="800" height="600" loading="lazy" decoding="async" />
   <span class="expandable-service-card__shade" aria-hidden="true"></span>
   <span class="expandable-service-card__content">
     <span class="expandable-service-card__group">{service.group}</span>
     <span class="expandable-service-card__heading">
       <h4 id={headingId}>{service.title}</h4>
-      <span aria-hidden="true">↗</span>
     </span>
     <span class="expandable-service-card__details">
       <span>{service.expandedText}</span>
-      <a class="expandable-service-card__cta" href={service.href}>Läs mer <span aria-hidden="true">→</span></a>
+      <span class="expandable-service-card__cta">Läs mer <span aria-hidden="true">→</span></span>
     </span>
     <span class="expandable-service-card__summary">{service.shortText}</span>
   </span>
-</article>
+</a>
 
 <style>
   .expandable-service-card {
@@ -91,12 +90,6 @@ const headingId = `service-${service.title.toLowerCase().replaceAll(/[^a-zåäö
     line-height: 1.2;
   }
 
-  .expandable-service-card__heading > span {
-    flex: 0 0 auto;
-    color: var(--avab-green);
-    font-size: 1.4rem;
-  }
-
   .expandable-service-card__details,
   .expandable-service-card__summary {
     display: block;
@@ -115,14 +108,13 @@ const headingId = `service-${service.title.toLowerCase().replaceAll(/[^a-zåäö
     margin-top: 16px;
     padding-top: 12px;
     border-top: 1px solid rgba(255, 255, 255, 0.22);
-    color: var(--avab-white);
+    color: var(--avab-green);
     font-weight: 800;
   }
 
   .expandable-service-card__cta span { color: var(--avab-green); }
 
-  .expandable-service-card__cta:hover { color: var(--avab-white); text-decoration: none !important; }
-  .expandable-service-card__cta:focus-visible { outline: 3px solid var(--avab-green); outline-offset: 3px; }
+  .expandable-service-card:hover { color: var(--avab-white); text-decoration: none !important; }
   .expandable-service-card:focus-visible { outline: 3px solid var(--avab-green); outline-offset: 4px; }
 
   @media (hover: hover) and (pointer: fine) and (min-width: 901px) {
@@ -142,7 +134,7 @@ const headingId = `service-${service.title.toLowerCase().replaceAll(/[^a-zåäö
     }
 
     .expandable-service-card[data-expanded="true"] .expandable-service-card__details,
-    .expandable-service-card:focus-within .expandable-service-card__details {
+    .expandable-service-card:focus-visible .expandable-service-card__details {
       max-height: 190px;
       opacity: 1;
       visibility: visible;
@@ -151,14 +143,14 @@ const headingId = `service-${service.title.toLowerCase().replaceAll(/[^a-zåäö
     }
 
     .expandable-service-card[data-expanded="true"] .expandable-service-card__cta,
-    .expandable-service-card:focus-within .expandable-service-card__cta {
+    .expandable-service-card:focus-visible .expandable-service-card__cta {
       opacity: 1;
       transform: translateY(0);
       transition-delay: 230ms;
     }
 
     .expandable-service-card[data-expanded="true"] img,
-    .expandable-service-card:focus-within img { transform: scale(1.018); }
+    .expandable-service-card:focus-visible img { transform: scale(1.018); }
   }
 
   @media (max-width: 900px), (hover: none), (pointer: coarse) {
