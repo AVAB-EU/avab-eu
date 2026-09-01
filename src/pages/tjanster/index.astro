@@ -1,129 +1,38 @@
 ---
 import ContentSection from "../../components/ContentSection.astro";
-import LandingAnchorNav from "../../components/LandingAnchorNav.astro";
 import PageCTA from "../../components/PageCTA.astro";
 import ReferenceCard from "../../components/ReferenceCard.astro";
-import ServiceFeature from "../../components/ServiceFeature.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import { environments, references, technologies } from "../../data/referenser";
 import "../../styles/avab.css";
 
 const services = [
-  {
-    id: "ljudsystem",
-    group: "Höra & kommunicera",
-    eyebrow: "Ljud som når fram",
-    title: "Ljudsystem",
-    text: "Från tal och utrop till musik och matchljud. Vi formar ljudet efter rummets akustik, verksamhetens tempo och de människor som ska lyssna.",
-    href: "/tjanster/ljudsystem/",
-    ctaLabel: "Utforska ljudsystem",
-    image: "/assets/takhogtalare-installation-takvy.webp",
-    imageAlt: "Diskret installerade takhögtalare i en modern lokal",
-    variant: "full" as const,
-  },
-  {
-    id: "mikrofoner",
-    eyebrow: "Rösten i centrum",
-    title: "Mikrofoner",
-    text: "Rätt mikrofon gör mötet, lektionen, träningspasset eller scenen enklare. Lösningen anpassas efter rörelse, användare och störningar i miljön.",
-    href: "/tjanster/mikrofoner/",
-    ctaLabel: "Se mikrofonlösningar",
-    image: "/assets/mikrofoner-hero.webp",
-    imageAlt: "Mikrofoner för tal, möten och presentation",
-    variant: "split" as const,
-  },
-  {
-    id: "taluppfattbarhet",
-    eyebrow: "Mätbar tydlighet",
-    title: "Taluppfattbarhet",
-    text: "Det räcker inte att ljudet är starkt. Vi mäter, analyserar och projekterar för att orden ska gå att urskilja där informationen verkligen behöver nå fram.",
-    href: "/tjanster/taluppfattbarhet/",
-    ctaLabel: "Läs om taluppfattbarhet",
-    image: "/assets/STI-matning-hero.webp",
-    imageAlt: "Tekniker utför mätning av taluppfattbarhet",
-    variant: "editorial" as const,
-  },
-  {
-    id: "horslinga",
-    group: "Tillgänglighet & information",
-    eyebrow: "Ljud för fler",
-    title: "Hörslinga",
-    text: "En genomtänkt hörslinga bygger in tillgänglighet i lokalen från början och ger ett stabilt, direkt ljud för den som använder hörapparat.",
-    href: "/tjanster/horslinga/",
-    ctaLabel: "Utforska hörslinga",
-    image: "/assets/horslinga-installation-golv.webp",
-    imageAlt: "Installation av hörslingekabel i ett golv",
-    variant: "split-reverse" as const,
-  },
-  {
-    id: "rastsignal",
-    eyebrow: "Rätt signal på rätt plats",
-    title: "Rastsignal",
-    text: "Skolans signaler ska vara tydliga utan att störa mer än nödvändigt. Zonindelning och enkel styrning skapar struktur för både elever och personal.",
-    href: "/rastsignal/",
-    ctaLabel: "Läs om rastsignalsystem",
-    image: "/assets/skola-flyg-vy-hero.webp",
-    imageAlt: "Skolområde sett från luften",
-    variant: "full" as const,
-  },
-  {
-    id: "talat-utrymningslarm",
-    group: "Säkerhet",
-    eyebrow: "När budskapet är kritiskt",
-    title: "Talat utrymningslarm",
-    text: "Tydliga röstmeddelanden hjälper människor att agera rätt när varje sekund räknas. Vi projekterar systemen för säker funktion och verifierbar hörbarhet.",
-    href: "/tjanster/talat-utrymningslarm/",
-    ctaLabel: "Utforska talat utrymningslarm",
-    image: "/assets/Talat-utrymmningslarm-hero.webp",
-    imageAlt: "Högtalarsystem för talat utrymningslarm i publik miljö",
-    variant: "dark" as const,
-  },
-  {
-    id: "kameraovervakning",
-    eyebrow: "Överblick med precision",
-    title: "Kameraövervakning",
-    text: "Kameror, sökfunktioner och lagring sätts samman efter platsens risker och vardag. Resultatet ska ge användbar överblick, inte bara fler bilder.",
-    href: "/tjanster/kameraovervakning/",
-    ctaLabel: "Se kameraövervakning",
-    image: "/assets/overvakningskamera-fasad-hero.webp",
-    imageAlt: "Övervakningskamera monterad på en byggnadsfasad",
-    variant: "split" as const,
-  },
-  {
-    id: "bakgrundsmusik",
-    group: "Upplevelse & kontroll",
-    eyebrow: "Rätt känsla över tid",
-    title: "Bakgrundsmusik",
-    text: "Musiken påverkar hur en plats upplevs. Vi skapar jämn täckning, rätt nivåer och smidig zonstyrning för miljöer där atmosfären är en del av erbjudandet.",
-    href: "/tjanster/bakgrundsmusik/",
-    ctaLabel: "Utforska bakgrundsmusik",
-    image: "/assets/Bakrundsmusik-restaurang-hundfjällscenter.webp",
-    imageAlt: "Restaurangmiljö där bakgrundsmusik bidrar till atmosfären",
-    variant: "full" as const,
-  },
-  {
-    id: "styrsystem-integration",
-    eyebrow: "Helheten i ett gränssnitt",
-    title: "Styrsystem & integration",
-    text: "När ljud, bild, ljus och säkerhet ska samspela samlar vi funktionerna i en styrning som är tydlig för användaren och hållbar för verksamheten.",
-    href: "/tjanster/styrsystem-integration/",
-    ctaLabel: "Se styrsystem och integration",
-    image: "/assets/styrpanel-pa-travagg.webp",
-    imageAlt: "Styrpanel för samlad kontroll av AV-teknik",
-    variant: "dark" as const,
-    mode: "technical" as const,
-  },
+  { group: "Ljud & kommunikation", title: "Ljudsystem", text: "Ljudlösningar för tydligt tal, musik och utrop i professionella miljöer.", href: "/tjanster/ljudsystem/" },
+  { group: "Ljud & kommunikation", title: "Mikrofoner", text: "Rätt mikrofonlösning för möten, undervisning, träning och scen.", href: "/tjanster/mikrofoner/" },
+  { group: "Ljud & kommunikation", title: "Taluppfattbarhet", text: "Mätning och projektering som gör tal tydligt där det behöver nå fram.", href: "/tjanster/taluppfattbarhet/" },
+  { group: "Tillgänglighet & information", title: "Hörslinga", text: "Tillgängligt och direkt ljud för personer som använder hörapparat.", href: "/tjanster/horslinga/" },
+  { group: "Tillgänglighet & information", title: "Rastsignal", text: "Tydliga, zonindelade signaler som skapar struktur i skolans vardag.", href: "/rastsignal/" },
+  { group: "Säkerhet", title: "Talat utrymningslarm", text: "Tydliga röstmeddelanden för säker och vägledande utrymning.", href: "/tjanster/talat-utrymningslarm/" },
+  { group: "Säkerhet", title: "Kameraövervakning", text: "Kameror, lagring och sökfunktioner anpassade efter platsens behov.", href: "/tjanster/kameraovervakning/" },
+  { group: "Upplevelse & kontroll", title: "Bakgrundsmusik", text: "Jämn ljudtäckning och enkel zonstyrning för rätt atmosfär.", href: "/tjanster/bakgrundsmusik/" },
+  { group: "Upplevelse & kontroll", title: "Styrsystem & integration", text: "Samlad och användarvänlig styrning av ljud, bild, ljus och säkerhet.", href: "/tjanster/styrsystem-integration/" },
 ];
 
-const anchorItems = services.map(({ id, title }) => ({ id, label: title }));
+const deliverySteps = [
+  { title: "Projektering", href: "/tjanster/projektering/" },
+  { title: "Installation", href: "/tjanster/installation/" },
+  { title: "Driftsättning", href: "/tjanster/driftsattning/" },
+  { title: "Certifiering", href: "/tjanster/certifiering/" },
+  { title: "Överlämning", href: "/tjanster/overlamning/" },
+  { title: "Garanti & service", href: "/tjanster/garanti-och-service/" },
+];
+
 const featuredReferences = references.filter((reference) => reference.featured).slice(0, 3);
 const pageTitle = "AV-tjänster för ljud, bild, säkerhet och styrning | AVAB";
-const pageDescription = "Utforska AVAB:s tjänster inom ljudsystem, mikrofoner, tillgänglighet, säkerhet, bakgrundsmusik och styrsystem för professionella miljöer.";
+const pageDescription = "Översikt över AVAB:s tjänster inom ljud, kommunikation, tillgänglighet, säkerhet, bakgrundsmusik och styrsystem.";
 const canonical = "https://avab.eu/tjanster/";
-const heroAsset = "/assets/av-projektering-laptop-ritningar.webp";
-const heroImage = `https://avab.eu${heroAsset}`;
-
+const socialImage = "https://avab.eu/assets/av-projektering-laptop-ritningar.webp";
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -146,7 +55,7 @@ const breadcrumbSchema = {
     <link rel="canonical" href={canonical} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
-    <meta property="og:image" content={heroImage} />
+    <meta property="og:image" content={socialImage} />
     <meta property="og:image:alt" content="AV-projektering med ritningar och tekniskt underlag" />
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
@@ -159,62 +68,61 @@ const breadcrumbSchema = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="preload" as="image" href={heroAsset} fetchpriority="high" />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </head>
   <body>
     <SiteHeader />
     <main id="main">
-      <header class="hero">
-        <img class="hero-image" src={heroAsset} alt="" width="1200" height="900" fetchpriority="high" />
-        <div class="avab-container hero-content">
-          <div class="eyebrow">Kompetens som fungerar tillsammans</div>
-          <h1>Teknik som ska höras, synas och fungera</h1>
-          <p>AVAB kombinerar ljud, kommunikation, tillgänglighet, säkerhet, upplevelse och styrning utifrån verksamhetens verkliga behov.</p>
-          <div class="actions">
-            <a class="button button-primary" href="#ljudsystem">Utforska tjänsterna</a>
-            <a class="button button-secondary" href="/kontakt/">Prata med AVAB</a>
-          </div>
+      <header class="service-overview-hero">
+        <div class="avab-container service-overview-hero__inner">
+          <nav class="service-overview-breadcrumbs" aria-label="Brödsmulor">
+            <ol><li><a href="/">Start</a></li><li aria-current="page">Tjänster</li></ol>
+          </nav>
+          <h1>Tjänster</h1>
+          <p>Ljud, bild, säkerhet och styrning – från projektering till färdig anläggning.</p>
+          <a class="button button-primary" href="/kontakt/">Kontakta oss</a>
         </div>
       </header>
 
-      <LandingAnchorNav items={anchorItems} />
-
-      <ContentSection labelledby="service-intro-title">
-        <div class="landing-heading">
-          <p class="eyebrow">Vi börjar med funktionen</p>
-          <h2 id="service-intro-title">Du behöver inte veta vilken teknik som behövs</h2>
-          <p>Berätta vad människor ska kunna höra, se, förstå eller styra. Vi kombinerar rätt kompetenser efter verksamheten, miljön och det som ska fungera i vardagen.</p>
+      <ContentSection labelledby="service-directory-title">
+        <div class="service-overview-heading">
+          <p class="eyebrow">Våra tjänster</p>
+          <h2 id="service-directory-title">Hitta rätt lösning</h2>
+        </div>
+        <div class="service-card-grid">
+          {services.map((service) => (
+            <a class="service-card" href={service.href}>
+              <span class="service-card__body"><span class="service-card__group">{service.group}</span><strong>{service.title}</strong><span>{service.text}</span></span>
+              <span class="service-card__cta">Läs mer <span aria-hidden="true">→</span></span>
+            </a>
+          ))}
         </div>
       </ContentSection>
 
-      <div class="service-journey">
-        {services.map((service) => <ServiceFeature {...service} />)}
-      </div>
+      <ContentSection surface="soft" labelledby="delivery-title">
+        <div class="delivery-overview">
+          <div class="delivery-overview__intro">
+            <p class="eyebrow">Vår leverans</p>
+            <h2 id="delivery-title">Från idé till fungerande anläggning</h2>
+            <p>AVAB kan hjälpa genom hela leveransen – från planering och installation till överlämning och långsiktig service.</p>
+          </div>
+          <ul class="delivery-links">
+            {deliverySteps.map((step) => <li><a href={step.href}>{step.title}<span aria-hidden="true">→</span></a></li>)}
+          </ul>
+        </div>
+      </ContentSection>
 
-      <ContentSection surface="soft" labelledby="service-references-title">
-        <div class="landing-heading">
-          <p class="eyebrow">Kompetenser i samspel</p>
-          <h2 id="service-references-title">Tjänster som möts i verkliga projekt</h2>
-          <p>Se hur AVAB kombinerar flera teknikområden till lösningar som fungerar i helt olika verksamheter.</p>
+      <ContentSection labelledby="service-references-title">
+        <div class="service-overview-heading service-overview-heading--split">
+          <div><p class="eyebrow">Referenser</p><h2 id="service-references-title">Tjänster i verkliga projekt</h2></div>
+          <a class="button button-secondary" href="/referenser/">Se alla referenser</a>
         </div>
         <div class="ref-grid">
           {featuredReferences.map((reference) => <ReferenceCard reference={reference} environments={environments} technologies={technologies} />)}
         </div>
-        <div class="section-actions"><a class="button button-secondary" href="/referenser/">Se alla referenser</a></div>
       </ContentSection>
 
-      <PageCTA
-        flush
-        eyebrow="En väg in till hela lösningen"
-        title="Vad behöver fungera bättre hos er?"
-        text="Beskriv verksamheten, miljön och målet. Vi hjälper er att kombinera rätt tjänster och ta nästa steg från behov till fungerande lösning."
-        primaryLabel="Prata med AVAB"
-        primaryHref="/kontakt/"
-        secondaryLabel="Se våra referenser"
-        secondaryHref="/referenser/"
-        points={["Rätt kompetenser för uppgiften", "En genomtänkt teknisk helhet", "Stöd från projektering till drift"]}
-      />
+      <PageCTA flush title="Osäker på vilken lösning ni behöver?" text="Berätta vad ni vill lösa så hjälper vi er vidare." primaryLabel="Kontakta AVAB" primaryHref="/kontakt/" />
     </main>
     <SiteFooter />
   </body>

@@ -1,6 +1,19 @@
 # Designförändring – färg och landningssidor för Miljöer/Tjänster
 
-_Status: besluts- och implementeringsunderlag_
+_Status: historiskt besluts- och implementeringsunderlag; landningssideriktningen ersatt 2026-09-01_
+
+> **Nytt kundbeslut 2026-09-01 efter PR #29:** Den tidigare riktningen nedan var korrekt för dåvarande beställning men har ersatts efter ny kundfeedback. `/miljo/` ska inte längre vara en publik landningssida; miljöundersidorna ligger kvar och `Miljöer` är en navigationskategori som öppnar dem. `/tjanster/` ligger kvar men ska vara en kompakt katalog med nio huvudtjänster, en separat översikt över leveransstegen, tre referenser och en avslutande CTA. Återanvändbara komponenter och designprinciper från PR #29 behålls där de fortfarande är generellt användbara.
+
+## Gällande riktning från 2026-09-01
+
+- `/miljo/` avvecklas som sida och ska inte genereras i sitemap.
+- Befintliga routes under `/miljo/<slug>/` ändras inte.
+- Desktopnavigationens `Miljöer` är en dropdown-trigger utan destinationslänk; mobilnavigationen öppnar miljögrupperna direkt.
+- `/tjanster/` behåller canonical och breadcrumb men kortas till en skannbar översikt.
+- Den långa tjänsteresan och ankarnavigationen används inte på den kompakta översikten.
+- Tidigare implementation ska inte beskrivas som felaktig; kundens beslut och sidornas uppdrag har ändrats efter PR #29.
+
+Följande äldre avsnitt bevaras som historik för designprimitives och förklaringen till PR #29, men är inte längre normerande för `/miljo/` eller den långa versionen av `/tjanster/`.
 
 ## Bakgrund
 AVAB:s webbplats behöver kännas mer levande, inspirerande och tydligare säljande utan att förlora den rena och professionella grunddesignen.
