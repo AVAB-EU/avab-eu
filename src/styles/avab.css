@@ -329,7 +329,23 @@ p {
   border-left: 1px solid rgba(40, 46, 42, 0.08);
 }
 .nav-links > li {
+  position: relative;
   border-right: 1px solid rgba(40, 46, 42, 0.08);
+}
+.nav-links > li[data-section-active]::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  height: 3px;
+  background: var(--avab-green);
+}
+.nav-links > li[data-section-active] > .nav-link,
+.nav-links > li[data-section-active] > .nav-parent .nav-link,
+.nav-links > li[data-section-active] > .nav-parent .nav-parent-toggle {
+  color: var(--avab-green);
 }
 .nav-links a,
 .nav-links button {
@@ -3167,15 +3183,34 @@ h2.snabbt-svar-title::before {
 .mobile-menu-overview { display: flex; align-items: center; justify-content: space-between; min-height: 52px; margin: 8px 0; padding: 10px 16px; border-radius: 10px; background: var(--avab-green-soft); color: var(--avab-dark); font-weight: 800; }
 
 /* Compact service directory. */
-.service-overview-hero { background: var(--avab-dark); color: var(--avab-white); }
-.service-overview-hero__inner { padding-top: clamp(48px, 7vw, 84px); padding-bottom: clamp(52px, 7vw, 88px); }
+.service-overview-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--avab-dark);
+  color: var(--avab-white);
+}
+.service-overview-hero::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 0 0 0 48%;
+  background:
+    linear-gradient(90deg, var(--avab-dark) 0%, rgba(40,46,42,.72) 34%, rgba(40,46,42,.28) 100%),
+    url("/assets/av-projektering-laptop-ritningar.webp") center / cover no-repeat;
+  opacity: .72;
+}
+.service-overview-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(40,46,42,1) 0%, rgba(40,46,42,.96) 40%, rgba(40,46,42,.28) 100%);
+  pointer-events: none;
+}
+.service-overview-hero__inner { position: relative; padding-top: clamp(48px, 7vw, 84px); padding-bottom: clamp(52px, 7vw, 88px); }
 .service-overview-hero h1 { max-width: 760px; margin-bottom: 14px; color: var(--avab-white); font-size: clamp(2.8rem, 6vw, 5rem); }
 .service-overview-hero p { max-width: 720px; margin: 0 0 28px; color: rgba(255,255,255,.9); font-size: clamp(1.08rem, 2vw, 1.35rem); }
-.service-overview-breadcrumbs { margin-bottom: clamp(28px, 4vw, 44px); font-size: .9rem; }
-.service-overview-breadcrumbs ol { display: flex; gap: 10px; margin: 0; padding: 0; list-style: none; }
-.service-overview-breadcrumbs li + li::before { content: "/"; margin-right: 10px; color: rgba(255,255,255,.5); }
-.service-overview-breadcrumbs a { color: rgba(255,255,255,.78); text-decoration: underline; text-underline-offset: 4px; }
-.service-overview-breadcrumbs [aria-current="page"] { color: var(--avab-white); }
 .service-overview-heading { margin-bottom: 30px; }
 .service-overview-heading h2 { margin: 0; }
 .service-overview-heading--split { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
@@ -3251,6 +3286,8 @@ h2.snabbt-svar-title::before {
   .landing-link-card--featured { grid-column: 1 / -1; }
   .need-grid,
   .environment-directory { grid-template-columns: 1fr; }
+  .service-overview-hero::before { inset: 0; opacity: .42; }
+  .service-overview-hero::after { background: linear-gradient(90deg, rgba(40,46,42,.98) 0%, rgba(40,46,42,.88) 72%, rgba(40,46,42,.64) 100%); }
   .service-overview-hero__inner { padding-top: 36px; padding-bottom: 56px; }
   .service-overview-heading--split { align-items: stretch; flex-direction: column; }
   .service-overview-heading--split .button { align-self: flex-start; }
