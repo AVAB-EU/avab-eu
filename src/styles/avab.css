@@ -441,7 +441,7 @@ p {
   top: 100%;
   z-index: 120;
   width: min(360px, calc(100vw - 48px));
-  height: min(308px, calc(100dvh - var(--avab-nav-height) - 16px));
+  max-height: calc(100dvh - var(--avab-nav-height) - 16px);
   overflow: hidden;
   background: var(--avab-white);
   border-top: 3px solid var(--avab-green);
@@ -476,10 +476,9 @@ p {
 }
 .mega-categories {
   width: 360px;
-  height: 100%;
+  max-height: calc(100dvh - var(--avab-nav-height) - 16px);
   overflow-y: auto;
   overscroll-behavior-y: contain;
-  scrollbar-gutter: stable;
   background: var(--avab-white);
   border-right: 1px solid var(--avab-border);
   padding: 18px 0;
@@ -531,7 +530,6 @@ p {
   padding: 26px 32px;
   overflow-y: auto;
   overscroll-behavior-y: contain;
-  scrollbar-gutter: stable;
   background: var(--avab-white);
   opacity: 0;
   visibility: hidden;
@@ -567,7 +565,6 @@ p {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior-y: contain;
-  scrollbar-gutter: stable;
   background: var(--avab-white);
   border-top: 3px solid var(--avab-green);
   border-radius: 0 0 var(--avab-radius-sm) var(--avab-radius-sm);
