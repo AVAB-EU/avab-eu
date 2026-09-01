@@ -1,0 +1,344 @@
+---
+import PageCTA from "../../components/PageCTA.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import "../../styles/avab.css";
+import "../../styles/knowledge-page.css";
+
+const pageTitle = "Kunskap om ljud, bild, ljus och AV-teknik | AVAB";
+const pageDescription =
+  "Fördjupa dig i AVAB:s kunskap om ljud, bild, ljus, kameraövervakning och smart styrning. Hitta guider och vägledning för AV-teknik som ska fungera i verkligheten.";
+const canonicalUrl = "https://avab.eu/kunskap/";
+
+const topics = [
+  {
+    id: "ljud",
+    eyebrow: "Ljud",
+    title: "Ljudlig kunskap",
+    intro:
+      "Fördjupa dig i hur kabelval, taluppfattbarhet och tillgängligt ljud påverkar en anläggning – från de första tekniska valen till en lösning som fungerar i lokalen.",
+    cards: [
+      {
+        type: "Guide",
+        title: "Kablar och kontakter för AV-teknik",
+        text: "En praktisk genomgång av kabelval för ljud, bild, ljus, nätverk, hörslingor och mikrofoner.",
+        href: "/kunskap/kablar-kontakter/",
+        image: "/assets/takhogtalare-rad-takinstallation.webp",
+        imageAlt: "Rad med takhögtalare i en AV-installation",
+      },
+      {
+        type: "Fördjupning",
+        title: "Taluppfattbarhet i publika lokaler",
+        text: "Läs om hur AVAB mäter, analyserar och förbättrar tydligt tal i lokaler där akustiken ställer höga krav.",
+        href: "/tjanster/taluppfattbarhet/",
+        image: "/assets/STI-matning-hero.webp",
+        imageAlt: "Mätutrustning för kontroll av taluppfattbarhet",
+      },
+      {
+        type: "Fördjupning",
+        title: "Hörslinga och tillgängligt ljud",
+        text: "En introduktion till projektering, installation, mätning och certifiering av hörslingor och andra lösningar för tillgängligt ljud.",
+        href: "/tjanster/horslinga/",
+        image: "/assets/horslinga-installation-golv.webp",
+        imageAlt: "Installation av hörslinga i golvkonstruktion",
+      },
+    ],
+  },
+  {
+    id: "bild",
+    eyebrow: "Bild",
+    title: "Bildligt talat",
+    intro:
+      "Skärmar, projektorer och videolösningar behöver fungera tillsammans med rummets ljud, anslutningar och styrning. Här finns vägledning från verkliga AV-miljöer.",
+    cards: [
+      {
+        type: "Guide",
+        title: "Signaler, nätverk och bildanslutningar",
+        text: "Kabelguiden förklarar bland annat HDMI, nätverkskabel och andra anslutningar som binder samman moderna AV-system.",
+        href: "/kunskap/kablar-kontakter/",
+        image: "/assets/av-projektering-laptop-ritningar.webp",
+        imageAlt: "Laptop och tekniska ritningar för AV-projektering",
+      },
+      {
+        type: "Miljö",
+        title: "Bildteknik i kontor och konferensrum",
+        text: "Se hur skärmar, kameror, mikrofoner och styrning samspelar i moderna mötesrum och hybridmöten.",
+        href: "/miljo/kontor-konferens/",
+        image: "/assets/konferensrum-stor-skarm-bord.webp",
+        imageAlt: "Konferensrum med stor skärm och mötesbord",
+      },
+      {
+        type: "Tjänst",
+        title: "Installation av bild och AV-teknik",
+        text: "Läs om installation av projektorer, skärmar, styrsystem och övrig AV-teknik med fokus på montage, kabel och funktion.",
+        href: "/tjanster/installation/",
+        image: "/assets/installation-hero.webp",
+        imageAlt: "Tekniker installerar AV-utrustning",
+      },
+    ],
+  },
+  {
+    id: "ljus",
+    eyebrow: "Ljus",
+    title: "Så lysande",
+    intro:
+      "Ljus är ofta en integrerad del av den tekniska helheten. Det nuvarande innehållet är begränsat, men de här sidorna visar hur ljus, styrning och AV möts i praktiken.",
+    cards: [
+      {
+        type: "Guide",
+        title: "DMX, kabel och styrsignal",
+        text: "Kabelguiden går igenom vad som skiljer DMX-kabel från vanlig ljudkabel och vad som är viktigt i fasta installationer.",
+        href: "/kunskap/kablar-kontakter/",
+        image: "/assets/Crestronstyrning enkel grafik.webp",
+        imageAlt: "Styrgränssnitt för integrerad AV-teknik",
+      },
+      {
+        type: "Miljö",
+        title: "Ljus och styrning i simhall",
+        text: "Se hur färgljus, DMX, KNX och central styrning kan ingå i en komplett teknisk lösning för simhallar och badhus.",
+        href: "/miljo/simhall/",
+        image: "/assets/poolbelysning-fargljus.webp",
+        imageAlt: "Färgbelysning i en bassängmiljö",
+      },
+      {
+        type: "Miljö",
+        title: "Ljud och ljus för restaurang, bar och klubb",
+        text: "Läs om zonstyrt ljud, ljusscenarier, bild och styrsystem i miljöer som behöver kunna växla karaktär.",
+        href: "/miljo/restaurang-bar-klubb/",
+        image: "/assets/claessons-restaurang.webp",
+        imageAlt: "Restaurangmiljö med integrerat ljud och ljus",
+      },
+    ],
+  },
+  {
+    id: "kameraovervakning",
+    eyebrow: "Kameraövervakning",
+    title: "Säkerhet med bättre överblick",
+    intro:
+      "Kameraövervakning börjar med platsens behov. Fördjupa dig i funktioner, integration och hur lösningen kan anpassas för olika verksamheter.",
+    cards: [
+      {
+        type: "Tjänst",
+        title: "Kameraövervakning och smart sökning",
+        text: "Läs om modern kameraövervakning med projektering, lagring, sökfunktioner och integration för olika verksamheter.",
+        href: "/tjanster/kameraovervakning/",
+        image: "/assets/overvakningskamera-fasad-hero.webp",
+        imageAlt: "Övervakningskamera monterad på en fasad",
+      },
+      {
+        type: "Miljö",
+        title: "Teknik för parkering och garage",
+        text: "Se hur kameraövervakning kan kombineras med ANPR, intercom, vägvisning och annan teknik i parkeringsmiljöer.",
+        href: "/miljo/parkering-garage/",
+        image: "/assets/kopcentrum-fasad-kvall.webp",
+        imageAlt: "Köpcentrum och parkeringsmiljö i kvällsljus",
+      },
+      {
+        type: "Miljö",
+        title: "Kamera och AV-teknik i butik",
+        text: "Läs om hur kameraövervakning, digital signage, bakgrundsmusik och central styrning kan samlas i butik och retail.",
+        href: "/miljo/butik-retail/",
+        image: "/assets/kopcentrum-galleria-kameraövervakning-hero.webp",
+        imageAlt: "Kameraövervakning i en kommersiell miljö",
+      },
+    ],
+  },
+  {
+    id: "smart-styrning",
+    eyebrow: "Smart styrning",
+    title: "Smart styrd information",
+    intro:
+      "När flera tekniska system ska användas av samma verksamhet blir ett tydligt gränssnitt och genomtänkt integration avgörande för vardagen.",
+    cards: [
+      {
+        type: "Tjänst",
+        title: "Styrsystem och integration",
+        text: "Fördjupa dig i hur ljud, bild och ljus kan samlas i tydliga styrsystem som är enklare att använda.",
+        href: "/tjanster/styrsystem-integration/",
+        image: "/assets/styrpanel-pa-travagg.webp",
+        imageAlt: "Styrpanel för ljud, bild och integrerad teknik",
+      },
+      {
+        type: "Fördjupning",
+        title: "Rastsignal, scheman och zoner",
+        text: "Läs om rastsignalsystem med automatiska signaler, scheman, zoner och talmeddelanden för skolans vardag.",
+        href: "/rastsignal/",
+        image: "/assets/rastsignal-schoolbell-sb11.webp",
+        imageAlt: "Signalapparat för ett modernt rastsignalsystem",
+      },
+      {
+        type: "Miljö",
+        title: "Central styrning i simhall",
+        text: "Se hur ljudzoner, KNX, DMX, infoskärmar och andra funktioner kan hanteras i en sammanhängande simhallslösning.",
+        href: "/miljo/simhall/",
+        image: "/assets/styrpanel-ljudzoner.webp",
+        imageAlt: "Styrpanel för ljudzoner i en simhall",
+      },
+    ],
+  },
+] as const;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${canonicalUrl}#webpage`,
+  url: canonicalUrl,
+  name: pageTitle,
+  description: pageDescription,
+  inLanguage: "sv-SE",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "AVAB",
+    url: "https://avab.eu/",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Start",
+      item: "https://avab.eu/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Kunskap",
+      item: canonicalUrl,
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="theme-color" content="#282e29" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="sv_SE" />
+    <meta property="og:site_name" content="AVAB" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content="https://avab.eu/assets/av-projektering-laptop-ritningar.webp" />
+    <meta property="og:image:alt" content="Laptop och ritningar för projektering av AV-teknik" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  </head>
+  <body>
+    <SiteHeader />
+
+    <main id="main">
+      <section class="knowledge-hero" aria-labelledby="knowledge-title">
+        <div class="knowledge-hero__image" aria-hidden="true"></div>
+        <div class="avab-container knowledge-hero__inner">
+          <div class="knowledge-hero__content">
+            <p class="knowledge-kicker">Kunskapsbank</p>
+            <h1 id="knowledge-title">Kunskap</h1>
+            <p class="knowledge-hero__statement">Du har frågorna, vi har svaren.</p>
+            <p class="knowledge-hero__lead">
+              Din guide till djupare insikter och förståelse inom ljud, bild,
+              ljus, kameraövervakning och smart styrning.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="knowledge-intro" aria-labelledby="knowledge-intro-title">
+        <div class="avab-container knowledge-intro__grid">
+          <div>
+            <p class="knowledge-kicker knowledge-kicker--dark">Teknik som blir begriplig</p>
+            <h2 id="knowledge-intro-title">Hitta rätt väg genom AV-tekniken</h2>
+          </div>
+          <div class="knowledge-intro__copy">
+            <p>
+              Här samlar vi guider och fördjupning för dig som vill förstå hur
+              tekniken hänger ihop innan du väljer, projekterar eller utvecklar
+              en anläggning.
+            </p>
+            <p>
+              Börja med ett ämne nedan. Varje kort leder direkt till en befintlig
+              guide, tjänst eller miljösida med mer information.
+            </p>
+          </div>
+        </div>
+
+        <nav class="topic-nav avab-container" aria-label="Ämnen i kunskapsbanken">
+          {topics.map((topic) => <a href={`#${topic.id}`}>{topic.eyebrow}</a>)}
+        </nav>
+      </section>
+
+      <div class="knowledge-topics">
+        {topics.map((topic, topicIndex) => (
+          <section
+            id={topic.id}
+            class:list={["knowledge-topic", { "knowledge-topic--soft": topicIndex % 2 === 1 }]}
+            aria-labelledby={`${topic.id}-title`}
+          >
+            <div class="avab-container">
+              <header class="knowledge-topic__header">
+                <p class="knowledge-kicker knowledge-kicker--dark">{topic.eyebrow}</p>
+                <h2 id={`${topic.id}-title`}>{topic.title}</h2>
+                <p>{topic.intro}</p>
+              </header>
+
+              <div class="knowledge-grid">
+                {topic.cards.map((card) => (
+                  <a class="knowledge-card" href={card.href}>
+                    <div class="knowledge-card__media">
+                      <img
+                        src={card.image}
+                        alt={card.imageAlt}
+                        width="900"
+                        height="600"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <div class="knowledge-card__body">
+                      <span class="knowledge-card__type">{card.type}</span>
+                      <h3>{card.title}</h3>
+                      <p>{card.text}</p>
+                      <span class="knowledge-card__cta" aria-hidden="true">Läs mer <span>→</span></span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <PageCTA
+        eyebrow="Behöver du hjälp med nästa steg?"
+        title="Vi hjälper dig göra kunskapen till en fungerande lösning"
+        text="Berätta om lokalen, verksamheten eller den tekniska utmaningen så hjälper vi dig vidare."
+        primaryLabel="Kontakta oss"
+        primaryHref="/kontakt/"
+        flush={true}
+      />
+    </main>
+
+    <SiteFooter />
+  </body>
+</html>
