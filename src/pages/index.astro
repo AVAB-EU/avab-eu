@@ -1,4 +1,5 @@
 ﻿---
+import { AVAB_PHONE } from "../config/site";
 import heroHomeSaffleSimhall from "../assets/images/industries/saffle-simhall-hero.webp";
 import PageCTA from "../components/PageCTA.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -53,7 +54,7 @@ const heroImage = heroHomeSaffleSimhall.src;
     "logo": "https://avab.eu/logo.png",
     "@id": "https://avab.eu/",
     "url": "https://avab.eu/",
-    "telephone": "+46548202080",
+    "telephone": AVAB_PHONE.main.e164,
     "email": "info@avab.eu",
     "areaServed": "Sverige",
     "address": {
