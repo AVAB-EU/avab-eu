@@ -4,7 +4,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-01._
 
 ## Go-live / deployment
 - [x] GO-LIVE/deploy-verifieringen mot `avab.eu` är genomförd; produktions-FTP, webbroot, GitHub Actions-secrets och den tillfälliga deploy-markören har verifierats.
-- [ ] Inventera och exkludera gamla backup-/preview-routes (bland annat `index-gammal` och `preview-miljo-*`) från produktionsbuild och sitemap i ett separat, verifierat scope.
+- [x] Inventera och exkludera gamla backup-/preview-routes (bland annat `index-gammal` och `preview-miljo-*`) från produktionsbuild och sitemap i ett separat, verifierat scope. **Verifierat 2026-09-01: 24 arbetsroutes borttagna; build och sitemap rena.**
 
 ## AI Content System
 - [x] Samla AI-regler, workflows, standarder och fasdokument i `docs/`.
