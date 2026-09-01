@@ -1,4 +1,5 @@
 ---
+import { AVAB_PHONE } from "../../config/site";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import PageCTA from "../../components/PageCTA.astro";
@@ -59,7 +60,7 @@ const heroImage = "/assets/om-oss-hero-bild.webp";
       "@type": "Organization",
       "name": "AVAB",
       "url": "https://avab.eu/",
-      "telephone": "+46548202080",
+      "telephone": AVAB_PHONE.main.e164,
       "foundingDate": "1990",
       "address": {
         "@type": "PostalAddress",
@@ -172,7 +173,7 @@ const heroImage = "/assets/om-oss-hero-bild.webp";
 
           <div class="hero-bottom">
             <div class="hero-actions">
-              <a class="button button-primary" href="tel:+46548202080">Ring 054 820 20 80</a>
+              <a class="button button-primary" href={AVAB_PHONE.main.href}>Ring {AVAB_PHONE.main.display}</a>
               <a class="button button-secondary" href="/referenser/">Se våra referenser</a>
               <a class="button button-quiet" href="#var-historia">Läs vår historia</a>
             </div>
