@@ -3197,8 +3197,8 @@ h2.snabbt-svar-title::before {
   content: "";
   position: absolute;
   z-index: -2;
-  inset: 0 0 0 48%;
-  background: url("/assets/av-projektering-laptop-ritningar.webp") center / cover no-repeat;
+  inset: 0;
+  background: url("/assets/tjanster-hero-integrerad-av-teknik.webp") center / cover no-repeat;
 }
 .service-overview-hero::after {
   content: "";
@@ -3286,7 +3286,6 @@ h2.snabbt-svar-title::before {
   .landing-link-card--featured { grid-column: 1 / -1; }
   .need-grid,
   .environment-directory { grid-template-columns: 1fr; }
-  .service-overview-hero::before { inset: 0; }
   .service-overview-hero__inner { padding-top: 36px; padding-bottom: 56px; }
   .service-overview-heading--split { align-items: stretch; flex-direction: column; }
   .service-overview-heading--split .button { align-self: flex-start; }
