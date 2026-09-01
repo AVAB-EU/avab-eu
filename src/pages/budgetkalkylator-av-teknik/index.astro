@@ -1,4 +1,5 @@
 ---
+import { AVAB_PHONE } from "../../config/site";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import BudgetCalculator from "../../components/budgetkalkylator/BudgetCalculator.astro";
@@ -25,7 +26,7 @@ const structuredData = [
     operatingSystem: "Web",
     url: canonical,
     description,
-    provider: { "@type": "Organization", name: "AVAB", url: "https://avab.eu/", telephone: "+46548202080" },
+    provider: { "@type": "Organization", name: "AVAB", url: "https://avab.eu/", telephone: AVAB_PHONE.main.e164 },
     offers: { "@type": "Offer", price: "0", priceCurrency: "SEK", description: "Kostnadsfri budgetindikator; inte en bindande offert." },
   },
   {
