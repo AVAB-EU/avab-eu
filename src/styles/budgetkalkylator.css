@@ -61,6 +61,23 @@
   line-height: 1.65;
 }
 
+.budget-hero {
+  background: url("/assets/inomhusarena-plan-laktare-bred.webp") center / cover;
+}
+
+.budget-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--avab-hero-overlay);
+  pointer-events: none;
+}
+
+.budget-hero > .avab-container {
+  position: relative;
+  z-index: 1;
+}
+
 .budget-calculator .section {
   padding-block: var(--avab-section-space);
 }

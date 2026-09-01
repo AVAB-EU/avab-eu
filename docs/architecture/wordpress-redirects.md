@@ -3,11 +3,17 @@
 ```text
 Status: Active
 Owner: Go-live
-Last reviewed: 2026-08-19
+Last reviewed: 2026-09-01
 Replaces: —
 ```
 
 Dokumenterar mappningen mellan gamla WordPress-URL:er på `avab.eu` och nya Astro-routes, samt vad som redan är implementerat kontra vad som kräver serverkonfiguration vid cutover.
+
+## Avvecklad `/miljo/`-landning
+
+Kundbeslutet 2026-09-01 avvecklar den nyligen publicerade landningssidan `/miljo/`, men behåller alla miljöundersidor. Ingen redirect har införts: startsidan eller en enskild miljö är inte en semantiskt likvärdig ersättare, och en sådan redirect skulle därför bli missvisande.
+
+Aktuell hantering är vanlig 404 när routefilen tas bort. Rekommendationen är att först kontrollera trafik, externa länkar och sökindex efter driftsättning. Om borttagningen ska signaleras explicit och servermiljön kan verifieras bör `/miljo/` därefter svara med **410 Gone** via serverkonfiguration. En framtida redirect är endast lämplig om en ny, verkligt motsvarande kategoridestination beslutas. Detta beslut ska tas och verifieras separat; ingen automatisk redirect ska läggas till i Astro-konfigurationen.
 
 ## Implementerat i Astro (`astro.config.mjs` → `redirects`)
 

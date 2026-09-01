@@ -1,6 +1,6 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-08-29._
+_Kanonisk projektlista. Senast uppdaterad 2026-09-01._
 
 ## Go-live / deployment
 - [x] GO-LIVE/deploy-verifieringen mot `avab.eu` är genomförd; produktions-FTP, webbroot, GitHub Actions-secrets och den tillfälliga deploy-markören har verifierats.
@@ -96,6 +96,11 @@ Underlag: `docs/projects/kundonskemal-2026-08-20/design-farg-och-landningssidor.
 Underlag: `docs/projects/kundonskemal-2026-08-20/design-farg-och-landningssidor.md`.
 
 **Status: genomförd och mergead via PR #29 den 2026-08-29. Eventuella kundjusteringar görs som nya avgränsade ändringar.**
+
+> **Riktningen ersatt av kundbeslut 2026-09-01 efter PR #29.** Det tidigare arbetet genomfördes enligt dåvarande beslut. Nu ska `/miljo/` avvecklas som landningssida medan miljöundersidorna behålls och `Miljöer` blir navigationskategori. `/tjanster/` behålls som en kompakt tjänsteöversikt. Generellt användbara komponenter och designprinciper från fasen ska behållas.
+
+- [x] Implementera kundbeslutet 2026-09-01 i avgränsad branch: ta bort `/miljo/` som route, justera navigationen och bygg om `/tjanster/` till kompakt översikt.
+- [ ] Efter driftsättning: kontrollera trafik, externa länkar och indexering för tidigare `/miljo/`; besluta därefter om verifierad 410-hantering ska införas på servernivå. Ingen redirect till startsidan ska införas utan ny motsvarande destination.
 
 - [x] Verifiera befintlig kanonisk route för Tjänster och nuvarande beteende för `/miljo/`; skapa inga parallella URL:er utan beslut.
 - [x] Inventera samtliga miljö- och tjänsteundersidor som ska exponeras från respektive landningssida.

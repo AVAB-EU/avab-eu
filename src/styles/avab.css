@@ -31,6 +31,7 @@
   --avab-green-glow: rgba(143, 192, 37, 0.4);
   --avab-dark: #282E29;
   --avab-dark-muted: #3A433D;
+  --avab-hero-overlay: rgba(40, 46, 41, 0.72);
   --avab-grey: #E9EAE9;
   --avab-light: #F4F5F4;
   --avab-white: #ffffff;
@@ -329,7 +330,23 @@ p {
   border-left: 1px solid rgba(40, 46, 42, 0.08);
 }
 .nav-links > li {
+  position: relative;
   border-right: 1px solid rgba(40, 46, 42, 0.08);
+}
+.nav-links > li[data-section-active]::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  height: 3px;
+  background: var(--avab-green);
+}
+.nav-links > li[data-section-active] > .nav-link,
+.nav-links > li[data-section-active] > .nav-parent .nav-link,
+.nav-links > li[data-section-active] > .nav-parent .nav-parent-toggle {
+  color: var(--avab-green);
 }
 .nav-links a,
 .nav-links button {
@@ -425,12 +442,12 @@ p {
   top: 100%;
   z-index: 120;
   width: min(360px, calc(100vw - 48px));
-  height: min(308px, calc(100dvh - var(--avab-nav-height) - 16px));
-  overflow: hidden;
-  background: var(--avab-white);
-  border-top: 3px solid var(--avab-green);
-  border-radius: 0 0 var(--avab-radius-sm) var(--avab-radius-sm);
-  box-shadow: 0 28px 60px rgba(40, 46, 42, 0.18);
+  max-height: calc(100dvh - var(--avab-nav-height));
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
@@ -450,22 +467,20 @@ p {
   visibility: visible;
   transform: translateY(0);
 }
-.mega-menu:has(.mega-category:hover),
-.mega-menu:has(.mega-category :focus-visible) {
-  width: min(720px, calc(100vw - 48px));
-}
 .mega-categories,
 .mega-submenu {
   list-style: none;
 }
 .mega-categories {
   width: 360px;
-  height: 100%;
+  max-height: calc(100dvh - var(--avab-nav-height));
   overflow-y: auto;
   overscroll-behavior-y: contain;
-  scrollbar-gutter: stable;
   background: var(--avab-white);
+  border-top: 3px solid var(--avab-green);
   border-right: 1px solid var(--avab-border);
+  border-radius: 0 0 var(--avab-radius-sm) var(--avab-radius-sm);
+  box-shadow: 0 28px 60px rgba(40, 46, 42, 0.18);
   padding: 18px 0;
 }
 .mega-category {
@@ -505,18 +520,20 @@ p {
 }
 .mega-submenu {
   position: absolute;
-  top: 3px;
-  left: 360px;
-  right: 0;
-  bottom: 0;
+  top: 0;
+  left: 100%;
+  width: min(360px, calc(100vw - 408px));
+  max-height: calc(100dvh - var(--avab-nav-height));
   display: grid;
   align-content: start;
   gap: 0;
   padding: 26px 32px;
   overflow-y: auto;
   overscroll-behavior-y: contain;
-  scrollbar-gutter: stable;
   background: var(--avab-white);
+  border-top: 3px solid var(--avab-green);
+  border-radius: 0 0 var(--avab-radius-sm) var(--avab-radius-sm);
+  box-shadow: 18px 28px 42px rgba(40, 46, 42, 0.16);
   opacity: 0;
   visibility: hidden;
   transform: translateX(-8px);
@@ -551,7 +568,6 @@ p {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior-y: contain;
-  scrollbar-gutter: stable;
   background: var(--avab-white);
   border-top: 3px solid var(--avab-green);
   border-radius: 0 0 var(--avab-radius-sm) var(--avab-radius-sm);
@@ -907,13 +923,21 @@ p {
 /* Varje sida sätter sin egen hero-bild med modifierklass. */
 .hero {
   position: relative;
+  isolation: isolate;
   min-height: 600px;
   display: flex;
   align-items: stretch;
   color: #fff;
-  background:
-    linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.32) 58%, rgba(40, 46, 41, 0.66) 100%),
-    var(--hero-image, linear-gradient(135deg, var(--avab-dark), #1f241f)) center / cover no-repeat;
+  background: var(--hero-image, none) center / cover no-repeat var(--avab-dark);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--avab-hero-overlay);
+  pointer-events: none;
 }
 
 .hero--home {
@@ -925,6 +949,8 @@ p {
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 2;
   min-height: inherit;
   max-width: 1040px;
   padding: 70px 0 40px;
@@ -966,7 +992,7 @@ p {
 
 .hero > .hero-image + .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   min-height: inherit;
   padding: 92px 0 56px;
   display: flex;
@@ -977,14 +1003,7 @@ p {
 }
 
 .hero > .hero-image + .hero-content::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 -40vw;
-  z-index: -1;
-  width: min(960px, 92vw);
-  background:
-    linear-gradient(90deg, rgba(40, 46, 41, 0.82) 0%, rgba(40, 46, 41, 0.48) 58%, transparent 100%);
-  pointer-events: none;
+  content: none;
 }
 
 .hero > .hero-image + .hero-content p {
@@ -3166,6 +3185,43 @@ h2.snabbt-svar-title::before {
 
 .mobile-menu-overview { display: flex; align-items: center; justify-content: space-between; min-height: 52px; margin: 8px 0; padding: 10px 16px; border-radius: 10px; background: var(--avab-green-soft); color: var(--avab-dark); font-weight: 800; }
 
+/* Compact service directory. */
+.service-overview-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--avab-dark);
+  color: var(--avab-white);
+}
+.service-overview-hero::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background: url("/assets/tjanster-hero-integrerad-av-teknik.webp") center / cover no-repeat;
+}
+.service-overview-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--avab-hero-overlay);
+  pointer-events: none;
+}
+.service-overview-hero__inner { position: relative; padding-top: clamp(48px, 7vw, 84px); padding-bottom: clamp(52px, 7vw, 88px); }
+.service-overview-hero h1 { max-width: 760px; margin-bottom: 14px; color: var(--avab-white); font-size: clamp(2.8rem, 6vw, 5rem); }
+.service-overview-hero p { max-width: 720px; margin: 0 0 28px; color: rgba(255,255,255,.9); font-size: clamp(1.08rem, 2vw, 1.35rem); }
+.service-overview-heading { margin-bottom: 30px; }
+.service-overview-heading h2 { margin: 0; }
+.service-overview-heading--split { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+.delivery-overview { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(40px, 7vw, 88px); align-items: start; }
+.delivery-overview__intro p:last-child { max-width: 600px; margin-bottom: 0; font-size: 1.08rem; }
+.delivery-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.delivery-links a { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 18px; border: 1px solid var(--avab-border); border-radius: var(--avab-radius-sm); background: var(--avab-white); color: var(--avab-dark); font-weight: 750; }
+.delivery-links a:hover { border-color: var(--avab-green); text-decoration: none !important; }
+.delivery-links a:focus-visible { outline: 3px solid var(--avab-green); outline-offset: 3px; }
+.delivery-links a span { color: var(--avab-green); }
+
 @media (max-width: 900px) {
   .service-feature--split .service-feature__composition,
   .service-feature--split-reverse .service-feature__composition,
@@ -3178,6 +3234,7 @@ h2.snabbt-svar-title::before {
   .landing-link-card--featured { grid-column: span 6; }
   .need-grid,
   .environment-directory { grid-template-columns: repeat(2, 1fr); }
+  .delivery-overview { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
@@ -3204,6 +3261,10 @@ h2.snabbt-svar-title::before {
   .landing-link-card--featured { grid-column: 1 / -1; }
   .need-grid,
   .environment-directory { grid-template-columns: 1fr; }
+  .service-overview-hero__inner { padding-top: 36px; padding-bottom: 56px; }
+  .service-overview-heading--split { align-items: stretch; flex-direction: column; }
+  .service-overview-heading--split .button { align-self: flex-start; }
+  .delivery-links { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
