@@ -132,7 +132,13 @@ const headingId = `service-${service.title.toLowerCase().replaceAll(/[^a-zåäö
       opacity: 0;
       visibility: hidden;
       transform: translateY(12px);
-      transition: max-height 400ms ease, opacity 250ms ease, transform 400ms ease, visibility 0s linear 400ms;
+      transition: max-height 420ms ease, opacity 320ms ease, transform 320ms ease, visibility 0s linear 420ms;
+    }
+
+    .expandable-service-card__cta {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 300ms ease, transform 300ms ease;
     }
 
     .expandable-service-card[data-expanded="true"] .expandable-service-card__details,
@@ -141,7 +147,14 @@ const headingId = `service-${service.title.toLowerCase().replaceAll(/[^a-zåäö
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
-      transition-delay: 0s, 100ms, 0s, 0s;
+      transition-delay: 0s, 150ms, 150ms, 0s;
+    }
+
+    .expandable-service-card[data-expanded="true"] .expandable-service-card__cta,
+    .expandable-service-card:focus-within .expandable-service-card__cta {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 230ms;
     }
 
     .expandable-service-card[data-expanded="true"] img,
@@ -162,6 +175,10 @@ const headingId = `service-${service.title.toLowerCase().replaceAll(/[^a-zåäö
   @media (prefers-reduced-motion: reduce) {
     .expandable-service-card img,
     .expandable-service-card__shade,
-    .expandable-service-card__details { transition-duration: 0.01ms; }
+    .expandable-service-card__details,
+    .expandable-service-card__cta {
+      transition-duration: 0.01ms;
+      transition-delay: 0ms;
+    }
   }
 </style>
