@@ -4,6 +4,16 @@ import avabLogo from "../assets/images/brand/avab-logotyp-farg.png";
 const currentPath = Astro.url.pathname;
 const isActive = (href: string) => currentPath === href;
 const isSectionActive = (href: string) => currentPath === href || currentPath.startsWith(href);
+const isEnvironmentActive = currentPath.startsWith("/miljo/");
+const deliveryRoutes = [
+  "/tjanster/projektering/",
+  "/tjanster/installation/",
+  "/tjanster/driftsattning/",
+  "/tjanster/certifiering/",
+  "/tjanster/overlamning/",
+  "/tjanster/garanti-och-service/",
+];
+const isDeliveryActive = deliveryRoutes.some((href) => currentPath === href || currentPath.startsWith(href));
 ---
 
 <a class="skip-link" href="#main">Hoppa till innehåll</a>
@@ -15,8 +25,8 @@ const isSectionActive = (href: string) => currentPath === href || currentPath.st
     </a>
     <nav aria-label="Huvudmeny">
       <ul class="nav-links">
-        <li class="nav-dropdown">
-          <button class="nav-link hover-underline nav-dropdown-trigger" type="button" aria-label="Visa undermeny för Miljöer" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-menu-environments" data-desktop-menu-trigger>
+        <li class="nav-dropdown" data-section-active={isEnvironmentActive ? "" : undefined}>
+          <button class="nav-link hover-underline nav-dropdown-trigger" aria-current={isEnvironmentActive ? "true" : undefined} type="button" aria-label="Visa undermeny för Miljöer" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-menu-environments" data-desktop-menu-trigger>
             Miljöer
             <span class="nav-chevron" aria-hidden="true"></span>
           </button>
@@ -72,7 +82,7 @@ const isSectionActive = (href: string) => currentPath === href || currentPath.st
             </ul>
           </div>
         </li>
-        <li class="nav-dropdown nav-dropdown--services nav-dropdown--with-parent-link">
+        <li class="nav-dropdown nav-dropdown--services nav-dropdown--with-parent-link" data-section-active={isSectionActive("/tjanster/") && !isDeliveryActive ? "" : undefined}>
           <div class="nav-parent">
             <a class="nav-link nav-parent-link hover-underline" href="/tjanster/" aria-current={isSectionActive("/tjanster/") ? "true" : undefined}>Tjänster</a>
             <button class="nav-dropdown-trigger nav-parent-toggle" type="button" aria-label="Visa undermeny för Tjänster" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-menu-services" data-desktop-menu-trigger>
@@ -93,8 +103,8 @@ const isSectionActive = (href: string) => currentPath === href || currentPath.st
             </ul>
           </div>
         </li>
-        <li class="nav-dropdown nav-dropdown--services">
-          <button class="nav-link hover-underline nav-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-menu-delivery" data-desktop-menu-trigger>
+        <li class="nav-dropdown nav-dropdown--services" data-section-active={isDeliveryActive ? "" : undefined}>
+          <button class="nav-link hover-underline nav-dropdown-trigger" aria-current={isDeliveryActive ? "true" : undefined} type="button" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-menu-delivery" data-desktop-menu-trigger>
             Vår leverans
             <span class="nav-chevron" aria-hidden="true"></span>
           </button>
@@ -332,11 +342,29 @@ const isSectionActive = (href: string) => currentPath === href || currentPath.st
       });
     }
 
+    const fineHoverQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+
     dropdowns.forEach((dropdown) => {
       const trigger = dropdown.querySelector<HTMLButtonElement>("[data-desktop-menu-trigger]");
       if (!trigger) return;
 
-      trigger.addEventListener("click", () => {
+      dropdown.addEventListener("pointerenter", () => {
+        if (!fineHoverQuery.matches) return;
+        closeAll(dropdown);
+        setOpen(dropdown, true);
+      });
+
+      dropdown.addEventListener("pointerleave", () => {
+        if (!fineHoverQuery.matches) return;
+        setOpen(dropdown, false);
+      });
+
+      trigger.addEventListener("click", (event) => {
+        if (fineHoverQuery.matches && event.detail > 0) {
+          // Mouse users get transient hover/focus behavior instead of a sticky clicked-open state.
+          setOpen(dropdown, true);
+          return;
+        }
         const nextOpen = !dropdown.hasAttribute("data-open");
         closeAll(dropdown);
         setOpen(dropdown, nextOpen);
