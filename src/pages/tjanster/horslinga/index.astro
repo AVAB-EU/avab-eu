@@ -1,4 +1,5 @@
 ﻿---
+import { AVAB_PHONE } from "../../../config/site";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
 import "../../../styles/avab.css";
@@ -51,7 +52,7 @@ import "../../../styles/avab.css";
       "name": "AVAB",
       "url": "https://avab.eu/",
       "logo": "https://avab.eu/logo.png",
-      "telephone": "+46548202080",
+      "telephone": AVAB_PHONE.main.e164,
       "email": "info@avab.eu",
       "address": {
         "@type": "PostalAddress",
@@ -395,7 +396,7 @@ import "../../../styles/avab.css";
           <div class="hero-actions">
             <a class="button button-primary" href="/kontakt/">Boka kostnadsfri rådgivning</a>
             <a class="button button-secondary" href="#referenser">Se våra referenser</a>
-            <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
+            <a class="button button-quiet" href={AVAB_PHONE.main.href}>Ring {AVAB_PHONE.main.display}</a>
           </div>
         </div>
       </div>
@@ -932,7 +933,7 @@ import "../../../styles/avab.css";
         <div>
           <h2>Kontakt</h2>
           <address class="footer-contact" style="font-style: normal;">
-            <a href="tel:+46548202080">054 820 20 80</a>
+            <a href={AVAB_PHONE.main.href}>{AVAB_PHONE.main.display}</a>
             <a href="mailto:info@avab.eu">info@avab.eu</a>
             <span>Skraggevägen 4<br>663 41 Hammarö, Värmland</span>
           </address>
