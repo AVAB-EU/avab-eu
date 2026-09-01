@@ -444,9 +444,9 @@ p {
   max-height: calc(100dvh - var(--avab-nav-height));
   overflow: visible;
   background: transparent;
-  border-top: 3px solid var(--avab-green);
-  border-radius: 0 0 var(--avab-radius-sm) var(--avab-radius-sm);
-  box-shadow: 0 28px 60px rgba(40, 46, 42, 0.18);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
@@ -466,10 +466,6 @@ p {
   visibility: visible;
   transform: translateY(0);
 }
-.mega-menu:has(.mega-category:hover),
-.mega-menu:has(.mega-category :focus-visible) {
-  width: min(720px, calc(100vw - 48px));
-}
 .mega-categories,
 .mega-submenu {
   list-style: none;
@@ -480,7 +476,10 @@ p {
   overflow-y: auto;
   overscroll-behavior-y: contain;
   background: var(--avab-white);
+  border-top: 3px solid var(--avab-green);
   border-right: 1px solid var(--avab-border);
+  border-radius: 0 0 var(--avab-radius-sm) var(--avab-radius-sm);
+  box-shadow: 0 28px 60px rgba(40, 46, 42, 0.18);
   padding: 18px 0;
 }
 .mega-category {
@@ -521,8 +520,8 @@ p {
 .mega-submenu {
   position: absolute;
   top: 0;
-  left: 360px;
-  right: 0;
+  left: 100%;
+  width: min(360px, calc(100vw - 408px));
   max-height: calc(100dvh - var(--avab-nav-height));
   display: grid;
   align-content: start;
@@ -531,8 +530,9 @@ p {
   overflow-y: auto;
   overscroll-behavior-y: contain;
   background: var(--avab-white);
-  border-radius: 0 0 var(--avab-radius-sm) 0;
-  box-shadow: 18px 28px 42px rgba(40, 46, 42, 0.12);
+  border-top: 3px solid var(--avab-green);
+  border-radius: 0 0 var(--avab-radius-sm) var(--avab-radius-sm);
+  box-shadow: 18px 28px 42px rgba(40, 46, 42, 0.16);
   opacity: 0;
   visibility: hidden;
   transform: translateX(-8px);
