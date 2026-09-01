@@ -8,17 +8,25 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import { environments, references, technologies } from "../../data/referenser";
 import { serviceOverviewGroups } from "../../data/services";
 import "../../styles/avab.css";
+import "../../styles/services-showcase.css";
 
 const deliverySteps = [
-  { title: "Projektering", href: "/tjanster/projektering/" },
-  { title: "Installation", href: "/tjanster/installation/" },
-  { title: "Driftsättning", href: "/tjanster/driftsattning/" },
-  { title: "Certifiering", href: "/tjanster/certifiering/" },
-  { title: "Överlämning", href: "/tjanster/overlamning/" },
-  { title: "Garanti & service", href: "/tjanster/garanti-och-service/" },
+  { title: "Projektering", description: "Planering, behovsanalys och rätt teknisk lösning från start.", href: "/tjanster/projektering/" },
+  { title: "Installation", description: "Professionell montering och genomförande anpassat efter miljön.", href: "/tjanster/installation/" },
+  { title: "Driftsättning", description: "Systemen trimmas, testas och görs redo för verklig användning.", href: "/tjanster/driftsattning/" },
+  { title: "Certifiering", description: "Verifiering och dokumentation där lösningen kräver det.", href: "/tjanster/certifiering/" },
+  { title: "Överlämning", description: "En tydlig övergång till kundens vardag med genomgång och stöd.", href: "/tjanster/overlamning/" },
+  { title: "Garanti & service", description: "Trygg support och långsiktig funktion efter leverans.", href: "/tjanster/garanti-och-service/" },
 ];
 
-const featuredReferences = references.filter((reference) => reference.featured).slice(0, 3);
+const featuredReferenceSlugs = [
+  "/referenser/hundfjallshotellet-hundfjallscenter-salen/",
+  "/referenser/minnebergsskolan-arvika/",
+  "/referenser/saffle-simhall/",
+];
+const featuredReferences = featuredReferenceSlugs
+  .map((slug) => references.find((reference) => reference.slug === slug))
+  .filter((reference): reference is (typeof references)[number] => Boolean(reference));
 const pageTitle = "AV-tjänster för ljud, bild, säkerhet och styrning | AVAB";
 const pageDescription = "Översikt över AVAB:s tjänster inom ljud, kommunikation, tillgänglighet, säkerhet, bakgrundsmusik och styrsystem.";
 const canonical = "https://avab.eu/tjanster/";
@@ -79,30 +87,56 @@ const breadcrumbSchema = {
         <ExpandableServiceGrid groups={serviceOverviewGroups} />
       </ContentSection>
 
-      <ContentSection surface="soft" labelledby="delivery-title">
-        <div class="delivery-overview">
-          <div class="delivery-overview__intro">
-            <p class="eyebrow">Vår leverans</p>
+      <div class="services-showcase">
+        <div class="services-showcase__glow" aria-hidden="true"></div>
+      <section class="delivery-showcase" aria-labelledby="delivery-title">
+        <div class="avab-container delivery-showcase__inner">
+          <div class="delivery-showcase__intro">
+            <p class="delivery-showcase__eyebrow">Vår leverans</p>
             <h2 id="delivery-title">Från idé till fungerande anläggning</h2>
             <p>AVAB kan hjälpa genom hela leveransen – från planering och installation till överlämning och långsiktig service.</p>
           </div>
-          <ul class="delivery-links">
-            {deliverySteps.map((step) => <li><a href={step.href}>{step.title}<span aria-hidden="true">→</span></a></li>)}
-          </ul>
+          <ol class="delivery-process">
+            {deliverySteps.map((step, index) => (
+              <li>
+                <a href={step.href}>
+                  <span class="delivery-process__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                  <span class="delivery-process__copy">
+                    <strong>{step.title}</strong>
+                    <span>{step.description}</span>
+                  </span>
+                  <span class="delivery-process__arrow" aria-hidden="true">→</span>
+                </a>
+              </li>
+            ))}
+          </ol>
         </div>
-      </ContentSection>
+      </section>
 
-      <ContentSection labelledby="service-references-title">
-        <div class="service-overview-heading service-overview-heading--split">
-          <div><p class="eyebrow">Referenser</p><h2 id="service-references-title">Tjänster i verkliga projekt</h2></div>
-          <a class="button button-secondary" href="/referenser/">Se alla referenser</a>
+      <section class="reference-showcase" aria-labelledby="service-references-title">
+        <div class="avab-container reference-showcase__intro">
+          <div class="reference-showcase__heading">
+            <p class="reference-showcase__eyebrow">Referenser</p>
+            <h2 id="service-references-title">Tjänster i verkliga projekt</h2>
+            <p>Se hur AVAB:s lösningar används i verkliga projekt – från skolor och simhallar till hotell och andra tekniskt krävande miljöer.</p>
+          </div>
+          <div class="reference-showcase__actions">
+            <a class="reference-showcase__all" href="/referenser/">Se alla referenser <span aria-hidden="true">→</span></a>
+          </div>
         </div>
-        <div class="ref-grid">
-          {featuredReferences.map((reference) => <ReferenceCard reference={reference} environments={environments} technologies={technologies} />)}
+        <div class="reference-showcase__cases">
+          <ol class="featured-cases" aria-label="Utvalda referensprojekt">
+            {featuredReferences.map((reference, index) => (
+              <li class:list={["featured-cases__item", index === 0 && "featured-cases__item--primary"]}>
+                <ReferenceCard reference={reference} environments={environments} technologies={technologies} />
+              </li>
+            ))}
+          </ol>
         </div>
-      </ContentSection>
+      </section>
+      </div>
 
-      <PageCTA flush title="Osäker på vilken lösning ni behöver?" text="Berätta vad ni vill lösa så hjälper vi er vidare." primaryLabel="Kontakta AVAB" primaryHref="/kontakt/" />
+      <PageCTA title="Osäker på vilken lösning ni behöver?" text="Berätta vad ni vill lösa så hjälper vi er vidare." primaryLabel="Kontakta AVAB" primaryHref="/kontakt/" />
     </main>
     <SiteFooter />
   </body>
