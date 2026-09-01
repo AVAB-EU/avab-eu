@@ -41,8 +41,7 @@ import "../../../styles/avab.css";
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <!-- JSON-LD 1: Service -->
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Hörslinga, teleslinga, diskslinga, SLS, PLS och Auracast",
@@ -101,8 +100,7 @@ import "../../../styles/avab.css";
       "Tillgänglighet och taluppfattbarhet"
     ],
     "description": "AVAB projekterar, installerar, mäter och certifierar hörslingor, teleslingor, induktiva hörslingor, diskslingor, PLS, SLS och Auracast-lösningar för skolor, kyrkor, sporthallar, vård, konferens och publika lokaler i hela Sverige."
-  }
-  </script>
+  })} />
 
   <!-- JSON-LD 2: FAQPage (svaren matchar den synliga FAQ:n ord för ord) -->
   <script type="application/ld+json">
