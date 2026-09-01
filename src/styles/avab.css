@@ -441,7 +441,7 @@ p {
   top: 100%;
   z-index: 120;
   width: min(360px, calc(100vw - 48px));
-  height: min(308px, calc(100dvh - var(--avab-nav-height)));
+  height: min(var(--mega-menu-content-height, 308px), calc(100dvh - var(--avab-nav-height)));
   overflow: hidden;
   background: var(--avab-white);
   border-top: 3px solid var(--avab-green);
@@ -476,7 +476,7 @@ p {
 }
 .mega-categories {
   width: 360px;
-  height: 100%;
+  height: min(308px, 100%);
   overflow-y: auto;
   overscroll-behavior-y: contain;
   background: var(--avab-white);
@@ -523,7 +523,8 @@ p {
   top: 0;
   left: 360px;
   right: 0;
-  height: 100%;
+  min-height: min(308px, 100%);
+  max-height: 100%;
   display: grid;
   align-content: start;
   gap: 0;
