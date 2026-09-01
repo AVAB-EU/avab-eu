@@ -52,8 +52,7 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Teknik för köpcentrum och galleria",
@@ -92,8 +91,7 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
       "Service och dokumentation"
     ],
     "description": "AVAB projekterar, installerar, certifierar, driftsätter och dokumenterar teknik för köpcentrum, gallerior, handelsplatser och parkeringsmiljöer. Lösningarna omfattar zonstyrt bakgrundsljud, Digital Signage, väggmonterade skärmar, totems, LED-väggar, kameraövervakning, garage, PA, tross, styrning, serviceavtal och tekniskt underlag för upphandling."
-  }
-  </script>
+  })} />
 
   <script type="application/ld+json">
   {
