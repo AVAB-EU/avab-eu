@@ -332,16 +332,6 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
     const mobileQuery = window.matchMedia("(max-width: 900px)");
     let keyboardNavigation = false;
 
-    function syncMegaMenuHeight(category: HTMLElement) {
-      const megaMenu = category.closest<HTMLElement>(".mega-menu");
-      const categories = megaMenu?.querySelector<HTMLElement>(".mega-categories");
-      const submenu = category.querySelector<HTMLElement>(".mega-submenu");
-      if (!megaMenu || !categories || !submenu) return;
-
-      const contentHeight = Math.max(categories.scrollHeight, submenu.scrollHeight);
-      megaMenu.style.setProperty("--mega-menu-content-height", `${contentHeight}px`);
-    }
-
     function setOpen(dropdown: HTMLElement, open: boolean) {
       const trigger = dropdown.querySelector<HTMLButtonElement>("[data-desktop-menu-trigger]");
       dropdown.toggleAttribute("data-open", open);
@@ -355,11 +345,6 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
     }
 
     const fineHoverQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
-
-    document.querySelectorAll<HTMLElement>(".mega-category").forEach((category) => {
-      category.addEventListener("pointerenter", () => syncMegaMenuHeight(category));
-      category.addEventListener("focusin", () => syncMegaMenuHeight(category));
-    });
 
     dropdowns.forEach((dropdown) => {
       const trigger = dropdown.querySelector<HTMLButtonElement>("[data-desktop-menu-trigger]");
