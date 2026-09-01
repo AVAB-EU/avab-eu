@@ -1,4 +1,5 @@
 ---
+import { AVAB_PHONE } from "../../config/site";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import PageCTA from "../../components/PageCTA.astro";
@@ -38,8 +39,7 @@ import "../../styles/avab.css";
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": "https://avab.eu/integritetspolicy/#policy",
@@ -53,7 +53,7 @@ import "../../styles/avab.css";
       "url": "https://avab.eu/",
       "logo": "https://avab.eu/logo.png",
       "image": "https://avab.eu/assets/takhogtalare-installation-takvy.webp",
-      "telephone": "+46548202080",
+      "telephone": AVAB_PHONE.main.e164,
       "email": "info@avab.eu",
       "sameAs": [
         "https://www.linkedin.com/company/avab",
@@ -69,11 +69,9 @@ import "../../styles/avab.css";
       }
     },
     "areaServed": "Sverige"
-  }
-  </script>
+  })} />
 
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
@@ -114,12 +112,11 @@ import "../../styles/avab.css";
         "name": "Hur kontaktar jag AVAB om personuppgifter?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Du kan kontakta AVAB via e-post på info@avab.eu eller telefon 054 820 20 80 om du har frågor om personuppgifter, registerutdrag, rättelse, radering eller begränsning av behandling."
+          "text": `Du kan kontakta AVAB via e-post på info@avab.eu eller telefon ${AVAB_PHONE.main.display} om du har frågor om personuppgifter, registerutdrag, rättelse, radering eller begränsning av behandling.`
         }
       }
     ]
-  }
-  </script>
+  })} />
 
   <script type="application/ld+json">
   {
@@ -594,7 +591,7 @@ import "../../styles/avab.css";
                 <p>Skraggevägen 4</p>
                 <p>663 41 Hammarö</p>
                 <p>E-post: <a href="mailto:info@avab.eu">info@avab.eu</a></p>
-                <p>Telefon: <a href="tel:+46548202080">054 820 20 80</a></p>
+                <p>Telefon: <a href={AVAB_PHONE.main.href}>{AVAB_PHONE.main.display}</a></p>
               </address>
             </section>
 
@@ -693,7 +690,7 @@ import "../../styles/avab.css";
           <details class="faq-item">
             <summary>Hur kontaktar jag AVAB om personuppgifter?</summary>
             <p>
-              Du kan kontakta AVAB via e-post på info@avab.eu eller telefon 054 820 20 80
+              Du kan kontakta AVAB via e-post på info@avab.eu eller telefon {AVAB_PHONE.main.display}
               om du har frågor om personuppgifter, registerutdrag, rättelse, radering
               eller begränsning av behandling.
             </p>

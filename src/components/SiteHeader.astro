@@ -1,4 +1,5 @@
 ---
+import { AVAB_PHONE } from "../config/site";
 import avabLogo from "../assets/images/brand/avab-logotyp-farg.png";
 
 const currentPath = Astro.url.pathname;
@@ -116,7 +117,7 @@ const isSectionActive = (href: string) => currentPath === href || currentPath.st
       </ul>
     </nav>
     <div class="nav-cta">
-      <a class="nav-phone" href="tel:+46548202080"><span>☎</span> 054 820 20 80</a>
+      <a class="nav-phone" href={AVAB_PHONE.main.href}><span>☎</span> {AVAB_PHONE.main.display}</a>
       <a class="nav-button" href="/kontakt/">Kontakta oss</a>
     </div>
     <button

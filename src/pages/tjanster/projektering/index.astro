@@ -1,4 +1,5 @@
 ---
+import { AVAB_PHONE } from "../../../config/site";
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
@@ -133,7 +134,7 @@ import "../../../styles/avab.css";
           <p class="lead">Bra AV-teknik börjar långt innan någon skruvar upp en högtalare, projektor eller styrpanel. AVAB hjälper fastighetsägare, kommuner, byggbolag, elektriker och verksamheter att projektera ljud, bild, styrning, hörslinga, kamera och tillgänglighet utifrån lokalens faktiska användning.</p>
           <div class="hero-bottom">
             <div class="hero-actions">
-              <a class="button button-primary" href="tel:+46548202080">Ring 054 820 20 80</a>
+              <a class="button button-primary" href={AVAB_PHONE.main.href}>Ring {AVAB_PHONE.main.display}</a>
               <a class="button button-secondary" href="#snabba-svar">Snabba svar</a>
               <a class="button button-quiet" href="#var-leverans">Se hela leveransen</a>
             </div>
@@ -287,7 +288,7 @@ import "../../../styles/avab.css";
       primaryLabel="Kontakta AVAB"
       primaryHref="/kontakt/"
       secondaryLabel="Ring 054 820 20 80"
-      secondaryHref="tel:+46548202080"
+      secondaryHref={AVAB_PHONE.main.href}
       points={[
         "Genomgång av ritningar och verksamhetsbehov",
         "Systemprincip och zonindelning",

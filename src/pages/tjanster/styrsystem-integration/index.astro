@@ -1,4 +1,5 @@
 ---
+import { AVAB_PHONE } from "../../../config/site";
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
@@ -40,8 +41,7 @@ import "../../../styles/avab.css";
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Styrsystem och integration för AV-teknik",
@@ -51,7 +51,7 @@ import "../../../styles/avab.css";
       "url": "https://avab.eu/",
       "logo": "https://avab.eu/logo.png",
       "image": "https://avab.eu/assets/styrpanel-pa-travagg.webp",
-      "telephone": "+46548202080",
+      "telephone": AVAB_PHONE.main.e164,
       "email": "info@avab.eu",
       "sameAs": [
         "https://www.linkedin.com/company/avab",
@@ -78,8 +78,7 @@ import "../../../styles/avab.css";
       "DMX KNX Dante integration"
     ],
     "description": "AVAB projekterar, installerar och driftsätter styrsystem och integration för AV-teknik: Crestron, Q-SYS, Biamp, Bose och Yamaha samlas i lösningar där ljud, bild, ljus, zoner, sensorer och driftlägen styrs från ett gränssnitt, i simhallar, sporthallar, konferensrum, hotell, gym, restauranger och industri."
-  }
-  </script>
+  })} />
 
   <script type="application/ld+json">
   {
@@ -328,7 +327,7 @@ import "../../../styles/avab.css";
           <div class="hero-actions">
             <a class="button button-primary" href="/kontakt/">Skicka ritningar eller boka genomgång</a>
             <a class="button button-secondary" href="#referenser">Se referenser</a>
-            <a class="button button-quiet" href="tel:+46548202080">Ring 054 820 20 80</a>
+            <a class="button button-quiet" href={AVAB_PHONE.main.href}>Ring {AVAB_PHONE.main.display}</a>
           </div>
         </div>
       </div>
