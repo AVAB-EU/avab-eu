@@ -1,0 +1,164 @@
+---
+import type { ServiceOverviewItem } from "../data/services";
+
+interface Props {
+  service: ServiceOverviewItem;
+  index: number;
+}
+
+const { service, index } = Astro.props;
+---
+
+<a class="expandable-service-card" data-service-card data-index={index} href={service.href}>
+  <img src={service.image} alt={service.imageAlt} width="800" height="600" loading="lazy" decoding="async" />
+  <span class="expandable-service-card__shade" aria-hidden="true"></span>
+  <span class="expandable-service-card__content">
+    <span class="expandable-service-card__group">{service.group}</span>
+    <span class="expandable-service-card__heading">
+      <strong>{service.title}</strong>
+      <span aria-hidden="true">↗</span>
+    </span>
+    <span class="expandable-service-card__details">
+      <span>{service.expandedText}</span>
+      <span class="expandable-service-card__cta">Läs mer <span aria-hidden="true">→</span></span>
+    </span>
+    <span class="expandable-service-card__summary">{service.shortText}</span>
+  </span>
+</a>
+
+<style>
+  .expandable-service-card {
+    position: relative;
+    min-width: 0;
+    min-height: 390px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: var(--avab-radius-sm);
+    background: var(--avab-dark);
+    color: var(--avab-white);
+    box-shadow: var(--avab-shadow-sm);
+    isolation: isolate;
+    text-decoration: none;
+  }
+
+  .expandable-service-card img {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 450ms ease;
+  }
+
+  .expandable-service-card__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(0deg, rgba(24, 30, 25, 0.96) 0%, rgba(24, 30, 25, 0.58) 58%, rgba(24, 30, 25, 0.18) 100%);
+    transition: background-color 400ms ease;
+  }
+
+  .expandable-service-card__content {
+    width: 100%;
+    padding: clamp(22px, 3vw, 30px);
+  }
+
+  .expandable-service-card__group {
+    display: block;
+    margin-bottom: 10px;
+    color: #e4edcf;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .expandable-service-card__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .expandable-service-card__heading strong {
+    color: var(--avab-white);
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    line-height: 1.2;
+  }
+
+  .expandable-service-card__heading > span {
+    flex: 0 0 auto;
+    color: var(--avab-green);
+    font-size: 1.4rem;
+  }
+
+  .expandable-service-card__details,
+  .expandable-service-card__summary {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.55;
+  }
+
+  .expandable-service-card__details { margin-top: 16px; }
+  .expandable-service-card__summary { display: none; margin-top: 12px; }
+
+  .expandable-service-card__cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    color: var(--avab-white);
+    font-weight: 800;
+  }
+
+  .expandable-service-card__cta span { color: var(--avab-green); }
+
+  .expandable-service-card:hover { color: var(--avab-white); text-decoration: none !important; }
+  .expandable-service-card:focus-visible { outline: 3px solid var(--avab-green); outline-offset: 4px; }
+
+  @media (hover: hover) and (pointer: fine) and (min-width: 901px) {
+    .expandable-service-card__details {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: max-height 400ms ease, opacity 250ms ease, transform 400ms ease, visibility 0s linear 400ms;
+    }
+
+    .expandable-service-card[data-expanded="true"] .expandable-service-card__details,
+    .expandable-service-card:focus-visible .expandable-service-card__details {
+      max-height: 190px;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition-delay: 0s, 100ms, 0s, 0s;
+    }
+
+    .expandable-service-card[data-expanded="true"] img,
+    .expandable-service-card:focus-visible img { transform: scale(1.018); }
+  }
+
+  @media (max-width: 900px), (hover: none), (pointer: coarse) {
+    .expandable-service-card { min-height: 360px; }
+    .expandable-service-card__details { margin-top: 12px; }
+  }
+
+  @media (max-width: 600px) {
+    .expandable-service-card { min-height: 330px; }
+    .expandable-service-card__content { padding: 22px; }
+    .expandable-service-card__heading strong { font-size: 1.35rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .expandable-service-card img,
+    .expandable-service-card__shade,
+    .expandable-service-card__details { transition-duration: 0.01ms; }
+  }
+</style>

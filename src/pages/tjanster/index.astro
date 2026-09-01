@@ -1,23 +1,13 @@
 ---
 import ContentSection from "../../components/ContentSection.astro";
+import ExpandableServiceGrid from "../../components/ExpandableServiceGrid.astro";
 import PageCTA from "../../components/PageCTA.astro";
 import ReferenceCard from "../../components/ReferenceCard.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import { environments, references, technologies } from "../../data/referenser";
+import { serviceOverviewGroups } from "../../data/services";
 import "../../styles/avab.css";
-
-const services = [
-  { group: "Ljud & kommunikation", title: "Ljudsystem", text: "Ljudlösningar för tydligt tal, musik och utrop i professionella miljöer.", href: "/tjanster/ljudsystem/" },
-  { group: "Ljud & kommunikation", title: "Mikrofoner", text: "Rätt mikrofonlösning för möten, undervisning, träning och scen.", href: "/tjanster/mikrofoner/" },
-  { group: "Ljud & kommunikation", title: "Taluppfattbarhet", text: "Mätning och projektering som gör tal tydligt där det behöver nå fram.", href: "/tjanster/taluppfattbarhet/" },
-  { group: "Tillgänglighet & information", title: "Hörslinga", text: "Tillgängligt och direkt ljud för personer som använder hörapparat.", href: "/tjanster/horslinga/" },
-  { group: "Tillgänglighet & information", title: "Rastsignal", text: "Tydliga, zonindelade signaler som skapar struktur i skolans vardag.", href: "/rastsignal/" },
-  { group: "Säkerhet", title: "Talat utrymningslarm", text: "Tydliga röstmeddelanden för säker och vägledande utrymning.", href: "/tjanster/talat-utrymningslarm/" },
-  { group: "Säkerhet", title: "Kameraövervakning", text: "Kameror, lagring och sökfunktioner anpassade efter platsens behov.", href: "/tjanster/kameraovervakning/" },
-  { group: "Upplevelse & kontroll", title: "Bakgrundsmusik", text: "Jämn ljudtäckning och enkel zonstyrning för rätt atmosfär.", href: "/tjanster/bakgrundsmusik/" },
-  { group: "Upplevelse & kontroll", title: "Styrsystem & integration", text: "Samlad och användarvänlig styrning av ljud, bild, ljus och säkerhet.", href: "/tjanster/styrsystem-integration/" },
-];
 
 const deliverySteps = [
   { title: "Projektering", href: "/tjanster/projektering/" },
@@ -86,14 +76,7 @@ const breadcrumbSchema = {
           <p class="eyebrow">Våra tjänster</p>
           <h2 id="service-directory-title">Hitta rätt lösning</h2>
         </div>
-        <div class="service-card-grid">
-          {services.map((service) => (
-            <a class="service-card" href={service.href}>
-              <span class="service-card__body"><span class="service-card__group">{service.group}</span><strong>{service.title}</strong><span>{service.text}</span></span>
-              <span class="service-card__cta">Läs mer <span aria-hidden="true">→</span></span>
-            </a>
-          ))}
-        </div>
+        <ExpandableServiceGrid groups={serviceOverviewGroups} />
       </ContentSection>
 
       <ContentSection surface="soft" labelledby="delivery-title">
