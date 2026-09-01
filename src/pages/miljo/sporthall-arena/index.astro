@@ -47,8 +47,7 @@ import "../../../styles/avab.css";
     Google kan ge manuell åtgärd (penalty) för påhittad recensionsmarkering.
     Byt även ut sameAs-länkar, logo-URL och org.nr mot riktiga värden.
   -->
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "AV-teknik för sporthall och arena",
@@ -85,8 +84,7 @@ import "../../../styles/avab.css";
       "LED-vägg arena"
     ],
     "description": "AVAB projekterar, installerar och driftsätter kompletta AV-lösningar för sporthallar och idrottshallar: ljud, zoner, styrning, hörslinga, Auracast, STI, FFU, dokumentation och upphandlingsstöd."
-  }
-  </script>
+  })} />
 
   <script type="application/ld+json">
   {
