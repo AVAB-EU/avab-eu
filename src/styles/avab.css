@@ -31,6 +31,7 @@
   --avab-green-glow: rgba(143, 192, 37, 0.4);
   --avab-dark: #282E29;
   --avab-dark-muted: #3A433D;
+  --avab-hero-overlay: rgba(40, 46, 41, 0.72);
   --avab-grey: #E9EAE9;
   --avab-light: #F4F5F4;
   --avab-white: #ffffff;
@@ -922,13 +923,21 @@ p {
 /* Varje sida sätter sin egen hero-bild med modifierklass. */
 .hero {
   position: relative;
+  isolation: isolate;
   min-height: 600px;
   display: flex;
   align-items: stretch;
   color: #fff;
-  background:
-    linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.32) 58%, rgba(40, 46, 41, 0.66) 100%),
-    var(--hero-image, linear-gradient(135deg, var(--avab-dark), #1f241f)) center / cover no-repeat;
+  background: var(--hero-image, none) center / cover no-repeat var(--avab-dark);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--avab-hero-overlay);
+  pointer-events: none;
 }
 
 .hero--home {
@@ -940,6 +949,8 @@ p {
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 2;
   min-height: inherit;
   max-width: 1040px;
   padding: 70px 0 40px;
@@ -981,7 +992,7 @@ p {
 
 .hero > .hero-image + .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   min-height: inherit;
   padding: 92px 0 56px;
   display: flex;
@@ -992,14 +1003,7 @@ p {
 }
 
 .hero > .hero-image + .hero-content::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 -40vw;
-  z-index: -1;
-  width: min(960px, 92vw);
-  background:
-    linear-gradient(90deg, rgba(40, 46, 41, 0.82) 0%, rgba(40, 46, 41, 0.48) 58%, transparent 100%);
-  pointer-events: none;
+  content: none;
 }
 
 .hero > .hero-image + .hero-content p {
@@ -3194,17 +3198,14 @@ h2.snabbt-svar-title::before {
   position: absolute;
   z-index: -2;
   inset: 0 0 0 48%;
-  background:
-    linear-gradient(90deg, var(--avab-dark) 0%, rgba(40,46,42,.72) 34%, rgba(40,46,42,.28) 100%),
-    url("/assets/av-projektering-laptop-ritningar.webp") center / cover no-repeat;
-  opacity: .72;
+  background: url("/assets/av-projektering-laptop-ritningar.webp") center / cover no-repeat;
 }
 .service-overview-hero::after {
   content: "";
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: linear-gradient(90deg, rgba(40,46,42,1) 0%, rgba(40,46,42,.96) 40%, rgba(40,46,42,.28) 100%);
+  background: var(--avab-hero-overlay);
   pointer-events: none;
 }
 .service-overview-hero__inner { position: relative; padding-top: clamp(48px, 7vw, 84px); padding-bottom: clamp(52px, 7vw, 88px); }
@@ -3285,8 +3286,7 @@ h2.snabbt-svar-title::before {
   .landing-link-card--featured { grid-column: 1 / -1; }
   .need-grid,
   .environment-directory { grid-template-columns: 1fr; }
-  .service-overview-hero::before { inset: 0; opacity: .42; }
-  .service-overview-hero::after { background: linear-gradient(90deg, rgba(40,46,42,.98) 0%, rgba(40,46,42,.88) 72%, rgba(40,46,42,.64) 100%); }
+  .service-overview-hero::before { inset: 0; }
   .service-overview-hero__inner { padding-top: 36px; padding-bottom: 56px; }
   .service-overview-heading--split { align-items: stretch; flex-direction: column; }
   .service-overview-heading--split .button { align-self: flex-start; }
