@@ -42,7 +42,10 @@ const { groups } = Astro.props;
         const index = card.dataset.index;
         if (!index) return;
         row.dataset.active = index;
-        cards.forEach((item) => item.toggleAttribute("data-expanded", item === card));
+        cards.forEach((item) => {
+          if (item === card) item.dataset.expanded = "true";
+          else item.removeAttribute("data-expanded");
+        });
       };
 
       if (delayed) hoverTimer = window.setTimeout(apply, 175);
