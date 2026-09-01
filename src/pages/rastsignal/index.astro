@@ -39,8 +39,7 @@ import "../../styles/avab.css";
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://avab.eu/rastsignal/#service",
@@ -114,8 +113,7 @@ import "../../styles/avab.css";
         }
       ]
     }
-  }
-  </script>
+  })} />
 
   <script type="application/ld+json">
   {
