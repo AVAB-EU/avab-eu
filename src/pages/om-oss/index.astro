@@ -47,8 +47,7 @@ const heroImage = "/assets/om-oss-hero-bild.webp";
     }
   </style>
 
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "@id": "https://avab.eu/om-oss/#webpage",
@@ -84,8 +83,7 @@ const heroImage = "/assets/om-oss-hero-bild.webp";
         "Driftsättning och service"
       ]
     }
-  }
-  </script>
+  })} />
 
   <script type="application/ld+json">
   {
