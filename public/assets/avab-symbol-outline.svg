@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 656" fill="none">
+  <defs>
+    <linearGradient id="avab-outline" x1="58" y1="580" x2="454" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#cfd5d2" />
+      <stop offset="0.52" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#e2e6e4" />
+    </linearGradient>
+  </defs>
+  <path d="M34 640 260 76 486 640" stroke="url(#avab-outline)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M160 640 260 362 360 640" stroke="url(#avab-outline)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
