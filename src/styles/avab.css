@@ -523,7 +523,7 @@ p {
   top: 3px;
   left: 360px;
   right: 0;
-  bottom: 0;
+  max-height: calc(100% - 3px);
   display: grid;
   align-content: start;
   gap: 0;
