@@ -1,4 +1,5 @@
 ﻿---
+import { AVAB_PHONE } from "../../../config/site";
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
@@ -62,7 +63,7 @@ const { title = "Köpcentrum & galleria | Ljud, signage, LED & kameraövervaknin
       "name": "AVAB",
       "url": "https://avab.eu/",
       "logo": "https://avab.eu/logo.png",
-      "telephone": "+46548202080",
+      "telephone": AVAB_PHONE.main.e164,
       "email": "info@avab.eu",
       "address": {
         "@type": "PostalAddress",
