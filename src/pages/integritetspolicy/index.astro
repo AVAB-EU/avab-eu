@@ -1,4 +1,5 @@
 ---
+import { AVAB_PHONE } from "../../config/site";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import PageCTA from "../../components/PageCTA.astro";
@@ -114,7 +115,7 @@ import "../../styles/avab.css";
         "name": "Hur kontaktar jag AVAB om personuppgifter?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Du kan kontakta AVAB via e-post på info@avab.eu eller telefon 054 820 20 80 om du har frågor om personuppgifter, registerutdrag, rättelse, radering eller begränsning av behandling."
+          "text": "Du kan kontakta AVAB via e-post på info@avab.eu eller telefon {AVAB_PHONE.main.display} om du har frågor om personuppgifter, registerutdrag, rättelse, radering eller begränsning av behandling."
         }
       }
     ]
@@ -594,7 +595,7 @@ import "../../styles/avab.css";
                 <p>Skraggevägen 4</p>
                 <p>663 41 Hammarö</p>
                 <p>E-post: <a href="mailto:info@avab.eu">info@avab.eu</a></p>
-                <p>Telefon: <a href="tel:+46548202080">054 820 20 80</a></p>
+                <p>Telefon: <a href={AVAB_PHONE.main.href}>{AVAB_PHONE.main.display}</a></p>
               </address>
             </section>
 
