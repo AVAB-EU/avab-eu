@@ -380,7 +380,7 @@
     color: #ffffff;
     font-size: clamp(1.45rem, 1.75vw, 1.9rem);
     line-height: 1.22;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
     text-wrap: balance;
     transition: color 220ms ease;
   }
@@ -395,15 +395,48 @@
     line-height: 1.62;
   }
 
-  .reference-showcase :is(.ref-pills) { gap: 7px; margin-bottom: 24px; }
+  .reference-showcase :is(.ref-pills) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px 20px;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .reference-showcase :is(.ref-pills)::before {
+    content: "Tjänster i projektet";
+    flex: 0 0 100%;
+    margin-bottom: 2px;
+    color: #8fc025;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
   .reference-showcase :is(.ref-pills li:nth-child(n + 4)) { display: none; }
 
   .reference-showcase :is(.ref-pills li) {
-    border: 1px solid rgba(230, 232, 230, 0.16);
-    background: rgba(74, 106, 133, 0.18);
-    color: #e6e8e6;
-    font-size: 0.7rem;
-    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-size: 0.86rem;
+    font-weight: 800;
+  }
+
+  .reference-showcase :is(.ref-pills li)::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #8fc025;
+    box-shadow: 0 0 8px rgba(143, 192, 37, 0.42);
   }
 
   .reference-showcase :is(.ref-cta) {
@@ -428,7 +461,10 @@
   .reference-showcase :is(.ref-card:hover .ref-cta)::after,
   .reference-showcase :is(.ref-card:focus-visible .ref-cta)::after { transform: translateX(5px); }
 
-  .featured-cases__item--primary :is(.ref-content h3) { font-size: clamp(1.8rem, 2.6vw, 2.65rem); }
+  .featured-cases__item--primary :is(.ref-content h3) {
+    font-size: clamp(1.65rem, 1.8vw, 2rem);
+    line-height: 1.15;
+  }
 
   @media (max-width: 1000px) {
     .featured-cases__item--primary :is(.ref-card) { grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr); }
