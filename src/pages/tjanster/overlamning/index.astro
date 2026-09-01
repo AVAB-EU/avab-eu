@@ -1,4 +1,5 @@
 ---
+import { AVAB_PHONE } from "../../../config/site";
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
@@ -136,7 +137,7 @@ const heroImage = "/assets/Overlamning-saffle-hero.webp";
           <p class="lead">När installation, driftsättning och verifiering är klar ska anläggningen lämnas över till dem som faktiskt ska använda och förvalta den. AVAB samlar relevant dokumentation, går igenom funktionerna och skapar en tydlig övergång från projekt till daglig drift.</p>
           <div class="hero-bottom">
             <div class="hero-actions">
-              <a class="button button-primary" href="tel:+46548202080">Ring 054 820 20 80</a>
+              <a class="button button-primary" href={AVAB_PHONE.main.href}>Ring {AVAB_PHONE.main.display}</a>
               <a class="button button-secondary" href="#snabba-svar">Snabba svar</a>
               <a class="button button-quiet" href="#var-leverans">Se hela leveransen</a>
             </div>
@@ -292,7 +293,7 @@ const heroImage = "/assets/Overlamning-saffle-hero.webp";
       primaryLabel="Kontakta AVAB"
       primaryHref="/kontakt/"
       secondaryLabel="Ring 054-8202080"
-      secondaryHref="tel:+46548202080"
+      secondaryHref={AVAB_PHONE.main.href}
       points={[
         "Funktionsgenomgång med användare och drift",
         "Relevant dokumentation och protokoll",
