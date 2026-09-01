@@ -81,7 +81,7 @@ const sectionLabel = ariaLabel
   .page-cta {
     width: 100%;
     margin-top: 0;
-    margin-bottom: 100px;
+    margin-bottom: 0;
     background: linear-gradient(
       135deg,
       var(--avab-dark, #282e29) 0%,
@@ -90,6 +90,22 @@ const sectionLabel = ariaLabel
     );
     color: #fff;
   }
+
+  .page-cta::before,
+  .page-cta::after {
+    content: "";
+    display: block;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      var(--avab-dark, #282e29) 0%,
+      var(--avab-green-dark, #425c19) 72%,
+      var(--avab-green, #8fc025) 100%
+    );
+  }
+
+  .page-cta::before { height: 5px; }
+  .page-cta::after { height: 15px; }
 
   .page-cta.page-cta--flush {
     margin-bottom: 0;
