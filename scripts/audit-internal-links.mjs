@@ -346,13 +346,17 @@ for (const p of pages.values()) {
 /* -------------------------------------------------------------------------- */
 
 const sitemapRoutes = new Set();
-for (const f of allFiles.filter((x) => /sitemap.*\.xml$/i.test(x))) {
+for (const f of allFiles.filter(
+  (x) => /sitemap.*\.xml$/i.test(x) && !/sitemap-index\.xml$/i.test(x),
+)) {
   const xml = readFileSync(f, 'utf8');
   const re = /<loc>([^<]+)<\/loc>/g;
   let m;
   while ((m = re.exec(xml))) {
     try {
       const u = new URL(m[1]);
+      // Skip nested sitemap references (e.g. the sitemap-index -> sitemap-0.xml loc).
+      if (u.pathname.endsWith('.xml')) continue;
       if (SITE_HOSTS.has(u.hostname.toLowerCase())) sitemapRoutes.add(u.pathname);
     } catch {
       /* ignore */
