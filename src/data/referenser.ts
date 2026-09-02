@@ -45,7 +45,7 @@ export const environments: FilterOption[] = [
 // href pekar mot relevant tjänste-/kunskapssida där en sådan finns.
 export const technologies: FilterOption[] = [
   { id: "ljud", label: "Ljud", href: "/tjanster/ljudsystem/" },
-  { id: "bild", label: "Bild & skärmar", href: "/tjanster/skarmar-projektorer/" },
+  { id: "bild", label: "Bild & skärmar", href: "/tjanster/visuell-kommunikation/" },
   { id: "ljus", label: "Ljus", href: "/miljo/gym/" },
   { id: "styrsystem", label: "Styrsystem", href: "/tjanster/styrsystem-integration/" },
   { id: "crestron", label: "Crestron" },
@@ -209,5 +209,16 @@ export const references: Reference[] = [
       "Appstyrd ljudanläggning i åtta zoner för gym, spinning- och roddsal, entré och omklädningsrum, med infällda högtalare och basar.",
     environments: ["skola", "gym"],
     technologies: ["ljud", "bild", "bakgrundsmusik", "projektering"],
+  },
+  {
+    title: "Galleria Duvan, Karlstad",
+    slug: "/referenser/galleria-duvan/",
+    location: "Karlstad",
+    image: "/assets/kopcentrum-fasad-kvall.webp",
+    imageAlt: "Galleria Duvan i Karlstad kvällstid",
+    excerpt:
+      "Under uppbyggnad – digital signage i Galleria Duvan i Karlstad med två fristående totemskärmar på 55 tum och 700 nits för publik information.",
+    environments: ["kopcentrum-galleria", "butik-retail"],
+    technologies: ["bild"],
   },
 ];
