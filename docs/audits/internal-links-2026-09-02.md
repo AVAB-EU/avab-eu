@@ -5,7 +5,7 @@
 - **Metod:** `npm run build` → analys av byggd `dist/` som sanningskälla, följt av source-provenance i `src/**`.
 - **Verktyg:** `scripts/audit-internal-links.mjs` (deterministiskt, read-only, återanvändbart i CI).
 - **Status vid inventering:** Endast inventering. Inga länkar, sidor, redirects, `.htaccess`, `astro.config` eller innehåll ändrades.
-- **Uppföljning:** Fas A genomförd 2026-09-02 – se [avsnitt 10](#10-fas-a--åtgärdslogg-2026-09-02). Fynd-tabellerna nedan beskriver tillståndet **vid inventeringen** och är inte uppdaterade i efterhand; aktuell status per fynd står i avsnitt 10.
+- **Uppföljning:** Fas A (systemiska P0-fel) genomförd 2026-09-02 – se [avsnitt 10](#10-fas-a--åtgärdslogg-2026-09-02). Fas C (draft/noindex, sitemap, internlänkning) genomförd 2026-09-02 – se [avsnitt 11](#11-fas-c--draftnoindex-sitemap-och-internlänkning-2026-09-02). Fynd-tabellerna i avsnitt 1–7 beskriver tillståndet **vid inventeringen** och är inte uppdaterade i efterhand; aktuell status står i avsnitt 10–11.
 
 ---
 
@@ -326,3 +326,195 @@ Inga ändringar i `.htaccess`, redirects, `astro.config.mjs`, content entries, k
 ### Kvarvarande P0 efter Fas A (29 poster – utanför Fas A-scope)
 
 Oförändrade sedan inventeringen: saknade sidor `/tjanster/konferensteknik/`, `/service-support/`, `/kravstallning/`, `/kunskap/ratt-kabel-av-teknik/`, `/tjanster/ljus/`, `/tjanster/natverk-switchar-router-fiber/`, `/projektering/systemintegration/`, 6 × `/kameraovervakning/*`, samt saknade referens-detaljsidor (`fortnox-arena-vaxjo`, `stc-kil-gym`, `mullhyttans-sporthall`, `hanza-mechanics-tocksfors`, `loka-brunn`, `gotetorpsskolan-hammaro`, `skolhagen-stockholm`, `stockfallets-skola-karlstad`) – plus den blockerade anchoren `/kontakt/#ladda-upp-underlag`. Se avsnitt 2 och 7.
+
+---
+
+## 11. Fas C – draft/noindex, sitemap och internlänkning (2026-09-02)
+
+Fas C städar publiceringsmodellen för draft/noindex-referenser: sitemap, sitewide footer och referensöversikten. Kvarvarande riktiga 404:er (avsnitt 2/7) rördes inte.
+
+> **Justering efter Fas C0 (2026-09-02):** delen som filtrerade bort draft/noindex-referenser ur `/referenser/`-översikten (11.5) **backades ut** före merge. Fas C0 bekräftade att draft-metadata är avsiktlig och att det dokumenterade go-live-beslutet är *reachable-men-noindex*; att dölja referenserna ur översikten är ett separat publicerings-/UX-beslut som ännu inte är fattat. `/referenser/` beter sig därför som på `main` (15 kort). Sitemap-filtret och footerändringen behölls (SEO-städning). Se **11.12**.
+
+### 11.1 Inventering av referens-content
+
+15 entries i `src/content/references/`. Statusfälten `draft`, `seo.noindex`, `customer.publicationApproved`:
+
+| Slug | draft | seo.noindex | publicationApproved | Status |
+|---|---|---|---|---|
+| `/referenser/hanza-konferens-tocksfors/` | false | false | **null** | **PUBLICERAD** |
+| `/referenser/arjangs-simhall/` | true | true | null | DRAFT |
+| `/referenser/claessons-restaurang-konferens/` | true | true | null | DRAFT |
+| `/referenser/ekhagsskolan-dals-langed/` | true | true | null | DRAFT |
+| `/referenser/friskis-solstadens-sportcenter/` | true | true | null | DRAFT |
+| `/referenser/galleria-duvan/` | true | true | null | DRAFT |
+| `/referenser/hundfjallshotellet-hundfjallscenter-salen/` | true | true | null | DRAFT |
+| `/referenser/kroppkarrs-ip-fotboll/` | true | true | null | DRAFT |
+| `/referenser/lesjofors-ab/` | true | true | null | DRAFT |
+| `/referenser/lundsbergs-skola-gym/` | true | true | null | DRAFT |
+| `/referenser/minnebergsskolan-arvika/` | true | true | null | DRAFT |
+| `/referenser/nordic-wellness-orebro-marieberg/` | true | true | null | DRAFT |
+| `/referenser/saffle-simhall/` | true | true | null | DRAFT |
+| `/referenser/sannerudshallen-kil/` | true | true | null | DRAFT |
+| `/referenser/sorby-sporthall-kumla/` | true | true | null | DRAFT |
+
+**PUBLICERAD: 1 · DRAFT: 14 · NOINDEX: 14 (= draft) · PUBLICERINGSSTATUS OKLAR: 0.**
+
+Alla 15 byggs som publika routes (varje `src/pages/referenser/<slug>/index.astro` gör `getCollection("references").find(...)`). `draft` styr: (a) `robots: noindex, nofollow` i `src/layouts/ReferencePage.astro`, (b) exkludering ur `/referenser/`-översikten (men se bugg i 11.5). `customer.publicationApproved` och `referenceAvailableOnRequest` läses **inte** någonstans i koden – ren metadata.
+
+### 11.2 Statusinkonsekvenser
+
+| # | Referens | Inkonsekvens | Åtgärd |
+|---|---|---|---|
+| 1 | `hanza-konferens-tocksfors` | `draft: false` + `seo.noindex: false` men `publicationApproved: null` (föredragen modell: `true` för publicerad) | **Ej ändrad.** Kräver verifierat publiceringsunderlag. Rapporteras för mänskligt beslut. |
+| 2 | 14 draft-referenser | Inga – `draft: true` + `seo.noindex: true` + `publicationApproved: null` är konsekvent draft-modell | — |
+
+Inga `draft:false + noindex:true`- eller `draft:true + noindex:false`-motsägelser. Sitemap inkluderade tidigare 14 noindex-routes (åtgärdat, 11.3). Sitewide footer länkade tidigare till 5 draft-referenser (åtgärdat, 11.4).
+
+### 11.3 A – Sitemap
+
+**Före:** `@astrojs/sitemap` kördes utan `filter`. `sitemap-0.xml` innehöll alla 14 draft/noindex-referenssidor.
+
+**Efter:** Ny beroendefri helper `src/data/reference-publication.mjs` härleder draft/noindex-slugs direkt ur frontmatter i `src/content/references/*.md` (ingen hårdkodad slug-lista – content är source of truth). `astro.config.mjs`:
+
+```js
+sitemap({ filter: (page) => !isNonPublicReferenceUrl(page) })
+```
+
+- Indexerbara routes: oförändrade.
+- Redirect-stubbar: oförändrade (Astro tar redan bort `type: redirect` ur sitemap – den modellen rörs inte).
+- Canonical-domän: fortsatt `https://avab.eu/` (`config.site`).
+- Route-struktur: oförändrad.
+
+**Faktiska sitemap-routes: 55 → 41** (14 draft-referenser borttagna; `/referenser/` och `/referenser/hanza-konferens-tocksfors/` kvar).
+
+**Sitemap vs indexerbara sidor:** 41 = 41 – exakt paritet, ingen avsiktlig skillnad kvarstår. Före Fas C var differensen (55 mot 41) exakt de 14 draft-sidorna.
+
+### 11.4 B – Footer
+
+`src/components/SiteFooter.astro`, kolumnen "Utvalda projekt". **Alla 5 länkarna gick till draft/noindex-referenser:**
+
+| Borttagen footer-länk | Status |
+|---|---|
+| `/referenser/saffle-simhall/` | draft/noindex |
+| `/referenser/sorby-sporthall-kumla/` | draft/noindex |
+| `/referenser/nordic-wellness-orebro-marieberg/` | draft/noindex |
+| `/referenser/ekhagsskolan-dals-langed/` | draft/noindex |
+| `/referenser/hundfjallshotellet-hundfjallscenter-salen/` | draft/noindex |
+
+Ingen av dem har en publicerad motsvarighet → de ersattes **inte** med gissade referenser. De fem `<li>` byttes mot **en** länk till den publicerade, indexerbara översikten:
+
+```html
+<li><a href="/referenser/">Alla referensprojekt</a></li>
+```
+
+- Kolumn, rubrik ("Utvalda projekt"), `foot-col`-struktur och all CSS oförändrad (ingen grid-/designändring).
+- Ingen ändring av kontakt, telefon, juridik, sociala länkar eller "Genvägar".
+- Nettoeffekt: footern ger inte längre sitewide internlänkvärde till draft-referenser, men behåller en publicerad navigationsväg till referenser (som tidigare saknades i footern).
+- `src/components/SiteFooter1.astro` innehåller samma 5 länkar men **importeras inte någonstans** (död kod, ej i bygget) – lämnad orörd, se 11.9.
+
+### 11.5 C – Referensöversikten (`/referenser/`) — BACKAD EFTER FAS C0
+
+> Ändringen nedan applicerades först men **återställdes** i Fas C0-justeringen (se 11.12). `src/pages/referenser/index.astro` är oförändrad mot `main`. Beskrivningen behålls som logg över vad som prövades och varför det inte behölls.
+
+**Bugg (teknisk skuld – kvarstår, ej åtgärdad):** `src/pages/referenser/index.astro` filtrerar `getCollection("references").filter(e => !e.data.draft)`, men slår sedan ihop resultatet med den **äldre hårdkodade datakällan** `src/data/referenser.ts`:
+
+```js
+const migratedSlugs = new Set(contentReferences.map(r => r.slug)); // efter draft-filter -> bara hanza
+const references = [
+  ...legacyReferences.filter(r => !migratedSlugs.has(r.slug)),      // => alla 14 draft-slugs slank igenom
+  ...contentReferences,
+];
+```
+
+`src/data/referenser.ts` innehåller alla 14 draft-referenser som hårdkodade objekt. Draft-filtret är därmed verkningslöst – översikten visar **15 kort** (14 draft + hanza) och 14 interna länkar från en indexerbar sida till noindex-sidor. **Detta är oförändrat efter Fas C0** – se motivering i 11.12.
+
+**Prövad (och återställd) fix:** ett tilläggsvillkor `!e.data.seo.noindex` på content-filtret plus filtrering av `legacyReferences` mot draft/noindex-slugs. Effekten var att `/referenser/` visade **1 kort** (endast `hanza`). Fas C0 fastslog att detta är ett publicerings-/UX-beslut, inte SEO-städning, och ändringen backades. `/referenser/` är åter identisk med `main`.
+
+`src/data/referenser.ts` rekommenderas fortfarande avvecklas när alla referenser finns i content collection – **teknisk skuld**, ej i Fas C-scope.
+
+### 11.6 D – Klassificering av kvarvarande interna länkar till draft/noindex
+
+Interna länkförekomster med noindex-destination: **437 → 162** (−275) efter Fas C0-justeringen (footer + sitemap kvar, översiktsfiltret backat).
+
+| Kategori | Källa | Före | Efter | Status |
+|---|---|---|---|---|
+| SITEWIDE / FOOTER | `SiteFooter.astro` (× ~56 sidor) | ~275 | **0** | Åtgärdad (11.4) |
+| ÖVERSIKT | `/referenser/` (content + legacy-merge) → 14 draft | 14 | 14 | **Ej åtgärdad – backad efter Fas C0** (11.12). "Reachable-men-noindex" = översikten får lista dem; att dölja är ett separat publiceringsbeslut. |
+| ÖVERSIKT | Startsidans `#referenser`-grid (hårdkodad HTML i `src/pages/index.astro`) → 5 draft (`saffle-simhall`, `sorby-sporthall-kumla`, `minnebergsskolan-arvika`, `hundfjallshotellet…`, `galleria-duvan`) | 5 | 5 | **Ej åtgärdad – publiceringsbeslut** (11.9). |
+| ÖVERSIKT | `/tjanster/` "Tjänster i verkliga projekt" – `featuredReferenceSlugs` hårdkodar 3 draft (`hundfjallshotellet…`, `minnebergsskolan-arvika`, `saffle-simhall`) i `src/pages/tjanster/index.astro` | 3 | 3 | **Ej åtgärdad – publiceringsbeslut** (11.9). Filtrering tömmer sektionen helt. |
+| RELATERAD REFERENS | `hanza-konferens-tocksfors.md` `relatedReferences` → `/referenser/minnebergsskolan-arvika/` (via `RelatedReferences.astro`) | 1 | 1 | **REVIEW** – enskild frontmatter-post på publicerad sida. Ej värt komponentrefaktor för 1 länk. |
+| RELATERAD REFERENS | draft→draft (`saffle`, `hundfjallshotellet` `relatedReferences`) | flera | flera | REVIEW (noindex→noindex, låg prioritet – försvinner när draft publiceras/tas bort) |
+| IN-CONTENT | Enskilda brödtextlänkar: `/om-oss/` (6), `/tjanster/{ljudsystem,styrsystem-integration,horslinga,mikrofoner,visuell-kommunikation,taluppfattbarhet}/` (~25), `/miljo/{simhall,skola,gym,hotell,restaurang-bar-klubb,sporthall-arena,utomhusidrott}/` (~13) | ~44 | ~44 | **REVIEW** – Fas C rör inte enskilda innehållslänkar sida för sida. |
+| ANNAT | Länkar **från** draft-referenssidor (breadcrumb, inbördes related, egna kort) – källan är noindex | ~95 | ~95 | Ingen SEO-påverkan (noindex-källa). Löses när draft publiceras/tas bort. |
+| ANNAT | Redirect-stubbar `/saffle-simhall/`, `/minnebergsskolan-arvika/` → draft-mål | 2 | 2 | Utanför scope (redirects rörs inte). |
+
+**Kvar från indexerbara sidor: ~67 förekomster** (`/referenser/`-översikten 14, startsidans grid 5, `/tjanster/` showcase 3, `/om-oss/` 6, tjänste-brödtext ~25, miljö-brödtext ~13, hanza relatedReferences 1). Inga sitewide, inga i footer, inga i delade layout-komponenter. `/referenser/`-översikten ingår igen efter Fas C0-justeringen.
+
+### 11.7 E – Draft/noindex-konsistens
+
+- **14 draft-referenser:** konsekventa (`draft: true` + `seo.noindex: true` + `publicationApproved: null`). Ingen teknisk korrigering behövd.
+- **`hanza-konferens-tocksfors`:** `draft: false` + `seo.noindex: false` men `publicationApproved: null`. Ingen självklar teknisk fix – att sätta `publicationApproved: true` kräver verifierat underlag. **Ej ändrad. Rapporteras (11.9).**
+- Inga status-motsägelser i övrigt. `referenceAvailableOnRequest: false` på alla 15 – oanvänt fält.
+- Inga `publicationApproved`-ändringar gjorda.
+
+### 11.8 Ändrade filer
+
+| Fil | Ändring |
+|---|---|
+| `src/data/reference-publication.mjs` | **Ny.** Beroendefri parser som härleder `nonPublicReferenceSlugs` / `publishedReferenceSlugs` / `isNonPublicReferenceUrl()` ur `src/content/references/*.md`-frontmatter. Endast för `astro.config.mjs` (sitemap). |
+| `astro.config.mjs` | Importerar helpern; `sitemap()` → `sitemap({ filter: (page) => !isNonPublicReferenceUrl(page) })`. Inga redirects/route-ändringar. |
+| `src/components/SiteFooter.astro` | "Utvalda projekt": 5 draft-referenslänkar → 1 länk till `/referenser/`. Ingen design-/struktur-/CSS-ändring. |
+| `scripts/audit-internal-links.mjs` | Mät-fix: `sitemapUrls` räknar inte längre `sitemap-index.xml`:s `<loc>` mot `sitemap-0.xml` (hoppar `.xml`-pathnames). Fortsatt read-only och deterministiskt. |
+
+`src/pages/referenser/index.astro` ändrades först men **backades i Fas C0-justeringen** – ingen nettoförändring mot `main`. Se 11.12.
+
+**Ej ändrat:** `.htaccess`, redirects, route-struktur, `src/content/references/*` (inga frontmatter-ändringar), `src/data/referenser.ts`, `src/pages/referenser/index.astro`, `src/pages/index.astro`, `src/pages/tjanster/index.astro`, `ReferencePage.astro`, footer-design, navigation, någon `publicationApproved`. Ingen ny sida/route/referens. Ingen commit, ingen push.
+
+### 11.9 Frågor som kräver mänskligt publiceringsbeslut
+
+1. **Ska `/referenser/`-översikten visa draft-referenser?** 14 av 15 referenser är `draft: true` men listas i översikten (via `src/data/referenser.ts`). Fas C0 bekräftade go-live-beslutet "reachable-men-noindex" → översikten lämnas oförändrad. Om den i stället ska visa endast publicerade referenser krävs ett publiceringsbeslut per kund (`draft: false` + `publicationApproved: true`), inte ett filter som tömmer sidan. Se Fas C0-rapport.
+2. **`hanza-konferens-tocksfors` har `publicationApproved: null`** trots att den är publicerad/indexerad. Bekräfta kundgodkännande och sätt `true`, alternativt bekräfta att fältet inte används och ska tas bort ur schemat.
+3. **Startsidans `#referenser`-grid** (`src/pages/index.astro`) länkar 5 draft-referenser från sajtens mest auktoritativa sida. Kräver publicerade referenser att visa, eller ett beslut att kortrutan ska visa färre/andra projekt (inkl. rubrik-copy "6 projekt").
+4. **`/tjanster/`-sidans referens-showcase** (`featuredReferenceSlugs` i `src/pages/tjanster/index.astro`) pekar på 3 draft-referenser. Samma beslut som punkt 3.
+5. **Förtroendebandet på `/referenser/`** nämner draft-projekt i klartext (siffror, ej länkar). Behåll eller ersätt när publiceringsläget är avgjort.
+6. **Teknisk skuld:** `src/data/referenser.ts` dubblerar content collection och bör avvecklas när migreringen är klar. `src/components/SiteFooter1.astro` + `src/components/SiteHeader1.astro` är död kod med gamla draft-länkar.
+
+### 11.10 Före/efter (Fas C, efter C0-justering)
+
+| Mått | Före (main) | Efter (merge-läge) |
+|---|---|---|
+| Byggda HTML-sidor | 69 | 69 |
+| Indexerbara sidor | 41 | 41 |
+| Sitemap-routes (faktiska `<loc>`) | 55 | **41** |
+| Sitemap-routes som är noindex | 14 | **0** |
+| Sitemap-routes utan intern länkväg | 0 | 0 |
+| P0-poster (förekomster) | 29 (30) | 29 (30) |
+| P1-poster | 0 | 0 |
+| P2-poster (förekomster) | 436 (485) | **189 (210)** |
+| P2 noindex-förekomster | 437 | **162** |
+| – varav från indexerbara källsidor | ~330 | **67** |
+| Orphan-sidor | 0 | 0 |
+| Svagt internlänkade (≤2) | 0 | 0 |
+
+Inga nya P0, inga nya trasiga anchors, inga nya orphans, inga nya P2-poster. Ingen indexerbar publicerad referens försvann ur sitemap. `/referenser/`-översikten oförändrad mot `main` (15 kort).
+
+> Referensvärden vid full Fas C **före** C0-justeringen (översiktsfiltret aktivt): P2 175 (196), P2 noindex 148, varav 53 från indexerbara källor, `/referenser/` = 1 kort. Backningen återför 14 översiktslänkar.
+
+### 11.11 Validering (efter C0-justering)
+
+| Kommando | Resultat |
+|---|---|
+| `npm run build` | OK – Complete, 56 sidor |
+| `node scripts/audit-internal-links.mjs` | OK – exit 0 (siffror i 11.10) |
+| `GITHUB_BASE_REF=upstream/main npm run validate` | OK – exit 0, guardrails: "passed for 15 reference content entries" |
+| `git diff --check` | OK – exit 0, rent |
+
+### 11.12 Fas C0 – justering inför merge (2026-09-02)
+
+Fas C0 var en read-only-inventering av draft/noindex-metadata. Slutsats: metadatan är **avsiktlig** (git-historik "migrate X as draft", `TODO.md` 2026-08-19 "draft-referenser är reachable-men-noindex, inte hårt gatade", migrering pausad på beställarens begäran 2026-08-18, `publicationApproved` medvetet metadata-only enligt commit `8cc5227`).
+
+**Backat:** ändringen i `src/pages/referenser/index.astro` (11.5) som filtrerade bort draft/noindex ur översikten. Filen är åter identisk med `main`; `/referenser/` visar samma 15 referenser som före Fas C.
+
+**Behållet:** sitemap-filtret (`astro.config.mjs` + `src/data/reference-publication.mjs`), footerändringen (`SiteFooter.astro`), audit-scriptets sitemap-räkningsfix, denna logg.
+
+**Skäl:** att ta bort noindex-sidor ur sitemap och sitewide footer är SEO-städning i linje med "noindex". Att dölja dem ur `/referenser/` är ett separat publicerings-/UX-beslut som inte är fattat. Kvarstår som öppen fråga (11.9 punkt 1).
