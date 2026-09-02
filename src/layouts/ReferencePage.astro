@@ -178,7 +178,7 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
             variant="immersive"
             kicker={`${data.category} · ${data.title}`}
             primaryLabel="Utforska projektet"
-            primaryHref="#uppdraget"
+            primaryHref={`#${anchorItems[0]?.id ?? "uppdraget"}`}
           />
           <ReferenceFacts facts={data.facts} />
 
