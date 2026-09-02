@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Platshållare för projektbild – referens under uppbyggnad">
+  <rect width="1600" height="1000" fill="#eceae6"/>
+  <rect x="40" y="40" width="1520" height="920" fill="none" stroke="#c7c4bd" stroke-width="4" stroke-dasharray="18 14"/>
+  <g fill="#8a877f" font-family="'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif" text-anchor="middle">
+    <text x="800" y="470" font-size="72" font-weight="700">Bild inväntas</text>
+    <text x="800" y="560" font-size="40" font-weight="500">Referensen är under uppbyggnad</text>
+  </g>
+</svg>

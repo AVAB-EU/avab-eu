@@ -1,0 +1,442 @@
+---
+import { AVAB_PHONE } from "../../../config/site";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import PageCTA from "../../../components/PageCTA.astro";
+import "../../../styles/avab.css";
+
+const pageTitle = "Visuell kommunikation, digital signage, skärmar & projektorer | AVAB";
+const pageDescription =
+  "AVAB projekterar och installerar digital signage, informationsskärmar, projektorer, LED-väggar och professionella bildsystem med HDBaseT och AV over IP.";
+const canonical = "https://avab.eu/tjanster/visuell-kommunikation/";
+const socialImage = "https://avab.eu/assets/digital-signage.webp";
+
+const faq = [
+  {
+    q: "När ska man välja projektor i stället för en stor skärm?",
+    a: "Projektor passar när bildytan behöver vara mycket stor, när rummet har god ljuskontroll eller när installationen ska vara diskret, till exempel i aulor, klassrum och samlingssalar. En professionell skärm passar bättre där ljuset är starkt, där bilden ska vara skarp dygnet runt eller där drifttiden är hög. Kastavstånd, objektiv, duk och ljusförhållanden avgör vilket alternativ som blir bäst.",
+  },
+  {
+    q: "Vad är skillnaden mellan HDBaseT och AV over IP?",
+    a: "HDBaseT skickar bild, ljud och styrning över en dedikerad partkabel mellan två punkter, ofta upp till cirka 100 meter. AV over IP distribuerar i stället bild och ljud som nätverkstrafik över switchar, vilket gör det enklare att skala till många källor och skärmar. AV over IP ställer högre krav på nätverket, med rätt bandbredd, multicast och VLAN.",
+  },
+  {
+    q: "Kan digital signage styras centralt för flera skärmar?",
+    a: "Ja. Med central innehållshantering kan spellistor, kampanjer, information och wayfinding planeras och schemaläggas för många skärmar samtidigt, med behörigheter per plats eller avdelning. Skärmar kan grupperas så att rätt budskap visas på rätt plats.",
+  },
+  {
+    q: "Kan AVAB projektera bildtekniken innan byggnaden är färdig?",
+    a: "Ja. AVAB tar gärna in bildteknik, skärmlägen, kabelvägar, nätverk och infästningar redan i projekteringsskedet. Då hamnar tomrör, el, bärande infästningar och nätverksuttag rätt från början, och risken för dyra omtag minskar.",
+  },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Start", item: "https://avab.eu/" },
+    { "@type": "ListItem", position: 2, name: "Tjänster", item: "https://avab.eu/#tjanster" },
+    { "@type": "ListItem", position: 3, name: "Visuell kommunikation", item: canonical },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Visuell kommunikation",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "AVAB",
+    url: "https://avab.eu/",
+    logo: "https://avab.eu/logo.png",
+    image: socialImage,
+    telephone: AVAB_PHONE.main.e164,
+    email: "info@avab.eu",
+    sameAs: [
+      "https://www.linkedin.com/company/avab",
+      "https://www.facebook.com/avab",
+    ],
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Skraggevägen 4",
+      postalCode: "663 41",
+      addressLocality: "Hammarö",
+      addressRegion: "Värmland",
+      addressCountry: "SE",
+    },
+  },
+  areaServed: "Sverige",
+  serviceType: [
+    "Digital signage",
+    "Informationsskärmar",
+    "Projektorer och storbild",
+    "Professionella displayer",
+    "LED-väggar",
+    "HDBaseT och AV over IP",
+    "Signaldistribution AV",
+  ],
+  description:
+    "AVAB projekterar, installerar och driftsätter visuell kommunikation: digital signage, informationsskärmar, projektorer, professionella displayer, LED-väggar och signaldistribution med HDMI, USB-C, HDBaseT, AV over IP och fiber.",
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${canonical}#webpage`,
+  url: canonical,
+  name: pageTitle,
+  description: pageDescription,
+  inLanguage: "sv-SE",
+  isPartOf: { "@type": "WebSite", name: "AVAB", url: "https://avab.eu/" },
+  datePublished: "2026-09-02",
+  dateModified: "2026-09-02",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", ".lead", ".compact-faq"],
+  },
+};
+
+const environments = [
+  { href: "/miljo/skola/", title: "Skola", text: "Klassrum, aula och gemensamma ytor med bild, storbild och information som fungerar likadant varje dag." },
+  { href: "/miljo/kontor-konferens/", title: "Kontor & konferens", text: "Mötesrum och reception med professionella displayer, tydlig anslutning och boknings- och driftinformation." },
+  { href: "/miljo/sporthall-arena/", title: "Sporthall & arena", text: "Storbild, LED-ytor och resultat- och evenemangsinformation som syns för både plan och läktare." },
+  { href: "/miljo/kopcentrum-galleria/", title: "Köpcentrum & galleria", text: "Totems, wayfinding och kampanjytor med central innehållshantering för många skärmar och platser." },
+  { href: "/miljo/butik-retail/", title: "Butik & retail", text: "Skyltfönster, kampanjytor och vägledning som styrs centralt och följer kedjans arbetssätt." },
+  { href: "/miljo/hotell/", title: "Hotell", text: "Reception, konferens och publika ytor med information, wayfinding och en enhetlig visuell profil." },
+];
+
+const referenceCases = [
+  {
+    href: "/referenser/minnebergsskolan-arvika/",
+    img: "/assets/Minnebergsskolan-3.webp",
+    w: 850,
+    h: 619,
+    alt: "Informationsskärm och undervisningsteknik på Minnebergsskolan i Arvika",
+    title: "Minnebergsskolan, Arvika",
+    text: "AVAB levererade AV-teknik för klassrum, hörsalar och en aula med storbild, samt informationsskärmar i skolans gemensamma ytor.",
+  },
+  {
+    href: "/referenser/hanza-konferens-tocksfors/",
+    img: "/assets/hanza-lilla-konferensrummet-fardigt.webp",
+    w: 1200,
+    h: 900,
+    alt: "Konferensrum hos Hanza Mechanics i Töcksfors med professionell display och rumsbokning från AVAB",
+    title: "Hanza Mechanics, Töcksfors",
+    text: "Två nya konferensrum med professionella displayer, trådlös presentation och Teams/BYOD, samt paneler som visar bokningsstatus utanför fyra rum.",
+  },
+  {
+    href: "/referenser/sorby-sporthall-kumla/",
+    img: "/assets/sorby-sporthall-idrottshall-oversikt.webp",
+    w: 1600,
+    h: 1060,
+    alt: "Färdig idrottshall på Sörby sportcenter i Kumla med fast installerad teknik från AVAB",
+    title: "Sörby sportcenter, Kumla",
+    text: "Flexibel sporthall för skola, träning, match och arrangemang med ljud, trådlösa mikrofoner och ett anpassat Crestron-gränssnitt.",
+  },
+];
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDescription} />
+  <meta property="og:image" content={socialImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="900" />
+  <meta property="og:image:alt" content="Digital skärm för visuell kommunikation, kampanjer och information" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={pageDescription} />
+  <meta name="twitter:image" content={socialImage} />
+  <meta name="twitter:image:alt" content="Digital skärm för visuell kommunikation, kampanjer och information" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preload" as="image" fetchpriority="high"
+    href="/assets/digital-signage.webp"
+    imagesrcset="/assets/digital-signage.webp 1200w"
+    imagesizes="100vw">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="https://avab.eu/">Start</a></li>
+        <li><a href="https://avab.eu/#tjanster">Tjänster</a></li>
+        <li><span aria-current="page">Visuell kommunikation</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero" style="--hero-image:url('/assets/digital-signage.webp');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Visuell kommunikation</div>
+
+        <h1>Rätt bild, på rätt plats, från rätt källa</h1>
+
+        <p class="lead">
+          Digital signage, informationsskärmar, projektorer, professionella displayer och LED-väggar – tillsammans med signaldistributionen som får allt att fungera i vardagen.
+        </p>
+
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/kontakt/">Skicka ritningar eller boka genomgång</a>
+            <a class="button button-secondary" href="#miljoer">Se miljöer och referenser</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band" aria-label="Snabbfakta visuell kommunikation">
+    <div class="fact-grid">
+      <div class="fact"><span>Innehåll</span><strong>Digital signage</strong></div>
+      <div class="fact"><span>Publika ytor</span><strong>Informationsskärmar</strong></div>
+      <div class="fact"><span>Stor bild</span><strong>Projektorer</strong></div>
+      <div class="fact"><span>Bildyta</span><strong>LED &amp; storbild</strong></div>
+      <div class="fact"><span>Signal</span><strong>Signaldistribution</strong></div>
+      <div class="fact"><span>Leverans</span><strong>Från ritning till drift</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section section--light" id="helheten">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Helheten</div>
+          <h2>Visuell kommunikation är mer än skärmen på väggen</h2>
+          <p>En skärm eller projektor löser sällan uppgiften ensam. Det som avgör om budskapet når fram är bildytan, var den placeras, vilket innehåll som visas, hur signalen tar sig dit, vad nätverket klarar och hur allt ska styras i vardagen.</p>
+          <p>Därför projekterar vi bildyta, placering, innehåll, signalväg, nätverk och styrning som ett sammanhängande system. När delarna planeras tillsammans blir installationen enklare, driften stabilare och det går att bygga vidare utan att börja om.</p>
+          <p>Sammantaget omfattar visuell kommunikation digital signage, informationsskärmar, projektorer, professionella displayer och LED-väggar, tillsammans med signaldistributionen – HDMI, USB-C, HDBaseT, AV over IP och fiber – som binder ihop källor, skärmar, nätverk och styrning.</p>
+        </div>
+
+        <aside class="card solution-card accent-rail">
+          <h3>Det här projekteras tillsammans</h3>
+          <ul class="bullet-list">
+            <li>Bildyta och teknik: skärm, projektor, display eller LED efter miljön.</li>
+            <li>Placering, siktlinjer, ljusförhållanden och infästning.</li>
+            <li>Innehåll, spellistor och central hantering.</li>
+            <li>Signalväg: HDMI, USB-C, HDBaseT, AV over IP och fiber.</li>
+            <li>Nätverk, bandbredd, behörigheter och IT-samordning.</li>
+            <li>Styrning, driftlägen och underlag för service.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="digital-signage">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Digital signage &amp; informationsskärmar</div>
+          <h2>Information och budskap som styrs centralt</h2>
+          <p>Informationsskärmar, totems och kampanjytor gör det möjligt att nå många människor samtidigt i publika miljöer. Med central innehållshantering planeras och schemaläggs spellistor, kampanjer, driftinformation och wayfinding för många skärmar, med behörigheter per plats eller avdelning.</p>
+          <p>Vägledning och wayfinding hjälper besökare att hitta rätt, medan kampanj- och informationsytor kan uppdateras utan att någon behöver gå till varje skärm. Skärmar grupperas så att rätt budskap visas på rätt plats, i <a class="text-link" href="/miljo/kopcentrum-galleria/">köpcentrum</a>, <a class="text-link" href="/miljo/butik-retail/">butik</a>, <a class="text-link" href="/miljo/skola/">skola</a> och andra publika miljöer.</p>
+        </div>
+        <div class="image-wrapper">
+          <img src="/assets/digital-signage-totum.webp" alt="Digital signage-totem med information och wayfinding i publik miljö" width="900" height="600" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="projektorer">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Projektorer &amp; skolmiljö</div>
+          <h2>Stor bild där rummet och ljuset tillåter det</h2>
+          <p>Projektor passar när bildytan behöver vara stor och installationen diskret, till exempel i aulor, klassrum och samlingssalar. Valet av projektor, objektiv och kastavstånd styrs av rummets mått, takhöjd och var duken kan sitta. Ljusförhållanden avgör ljusstyrka och dukval, och interaktiv bild gör att undervisningen kan ske direkt på ytan.</p>
+          <p>I skolmiljö handlar det om att läraren ska kunna starta lektionen, inte felsöka tekniken. Läs mer om <a class="text-link" href="/miljo/skola/">teknik för skola och utbildning</a> och se hur bildtekniken byggdes i referensprojektet <a class="text-link" href="/referenser/minnebergsskolan-arvika/">Minnebergsskolan i Arvika</a>.</p>
+        </div>
+        <aside class="card solution-card accent-rail">
+          <h3>Det här avgör projektorlösningen</h3>
+          <ul class="bullet-list">
+            <li>Kastavstånd och objektiv utifrån rummets mått.</li>
+            <li>Duk, storlek och placering i förhållande till sikt.</li>
+            <li>Ljusförhållanden, fönster och möjlighet att mörklägga.</li>
+            <li>Interaktiv bild för undervisning direkt på ytan.</li>
+            <li>Infästning, kabelväg och enkel service.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="displayer">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Professionella displayer</div>
+          <h2>Skärmar byggda för hög drifttid</h2>
+          <p>Professionella displayer skiljer sig från konsumentskärmar genom längre drifttid, högre ljusstyrka, stöd för stående eller liggande orientering och montage som klarar publika miljöer. De är gjorda för att gå igång varje dag och för att kunna servas utan att hela installationen påverkas.</p>
+          <p>I konferens- och mötesrum är det viktigt att skärmen är enkel att ansluta till och att serviceåtkomsten är planerad från start. Läs mer om <a class="text-link" href="/miljo/kontor-konferens/">kontor och konferens</a> och se konferensrummen i referensprojektet <a class="text-link" href="/referenser/hanza-konferens-tocksfors/">Hanza Mechanics i Töcksfors</a>.</p>
+        </div>
+        <div class="image-wrapper">
+          <img src="/assets/konferensrum-stor-skarm-bord.webp" alt="Professionell display i ett modernt konferens- och mötesrum" width="1200" height="900" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="led">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">LED &amp; stora bildytor</div>
+          <h2>När bildytan ska vara riktigt stor och ljusstark</h2>
+          <p>En LED-vägg byggs av moduler och kan göras stor utan att bilden delas av ramar. Pixel pitch avgör hur nära betraktaren kan stå med bibehållen upplösning, och ljusstyrkan gör att ytan fungerar även i ljusa lokaler. Infästning och bärande konstruktion behöver dimensioneras tidigt, och serviceåtkomst framifrån eller bakifrån påverkar både montage och drift.</p>
+          <p>I sporthall och arena används stora bildytor för resultat, klocka, reklam och evenemangsinformation som ska synas för både plan och läktare. Läs mer om <a class="text-link" href="/miljo/sporthall-arena/">sporthall och arena</a> och se den flexibla hallen i referensprojektet <a class="text-link" href="/referenser/sorby-sporthall-kumla/">Sörby sportcenter i Kumla</a>.</p>
+        </div>
+        <aside class="card solution-card accent-rail">
+          <h3>Det här dimensioneras för LED</h3>
+          <ul class="bullet-list">
+            <li>Pixel pitch och betraktningsavstånd.</li>
+            <li>Upplösning och total bildyta.</li>
+            <li>Ljusstyrka i förhållande till lokalens ljus.</li>
+            <li>Infästning och bärande konstruktion.</li>
+            <li>Serviceåtkomst framifrån eller bakifrån.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="signaldistribution">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Signaldistribution</div>
+          <h2>HDBaseT, AV over IP och fiber</h2>
+          <p>Bilden är bara så bra som vägen fram till skärmen. Vid källan används oftast HDMI eller USB-C. För längre sträckor mellan två punkter används HDBaseT över partkabel, ofta upp till cirka 100 meter. När många källor och skärmar ska nå varandra distribueras bild och ljud i stället som AV over IP över switchar, och fiber används där avstånden eller störmiljön kräver det.</p>
+          <p>AV over IP ställer högre krav på nätverket. Bandbredd, switchar och nätverksdesign behöver planeras tillsammans med kundens IT, och multicast och VLAN används där lösningen kräver det. Signalvägen projekteras ihop med <a class="text-link" href="/tjanster/projektering/">projekteringen</a>, <a class="text-link" href="/tjanster/styrsystem-integration/">styrsystem och integration</a> och rätt <a class="text-link" href="/kunskap/kablar-kontakter/">kablar och kontakter</a>.</p>
+        </div>
+        <div class="image-wrapper">
+          <img src="/assets/sorby-sporthall-teknikrack.webp" alt="Teknikrack med switchar och utrustning för signaldistribution av ljud och bild" width="1200" height="795" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="miljoer">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Miljöer</div>
+            <h2>Visuell kommunikation i olika verksamheter</h2>
+            <p class="lead-dark">Samma grundprinciper, olika behov. Här är miljöer där bildyta, innehåll, signalväg och styrning behöver planeras tillsammans.</p>
+          </div>
+        </div>
+
+        <div class="env-grid">
+          {environments.map((env) => (
+            <article class="env-card">
+              <h3><a href={env.href}>{env.title}</a></h3>
+              <p>{env.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="referenser">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Referenser</div>
+            <h2>Bildteknik som fungerar i drift</h2>
+            <p class="lead-dark">Från klassrum och konferensrum till en flexibel sporthall. Tre projekt där bildyta, innehåll och signalväg planerats som en helhet.</p>
+          </div>
+        </div>
+
+        <div class="proof-strip">
+          <div class="proof-item"><strong>35+ års erfarenhet</strong><span>Ljud, bild och installation.</span></div>
+          <div class="proof-item"><strong>Från ritning till drift</strong><span>Projektering, installation och driftsättning.</span></div>
+          <div class="proof-item"><strong>HDBaseT &amp; AV over IP</strong><span>Signaldistribution för två punkter eller många.</span></div>
+          <div class="proof-item"><strong>AVAB eller elektriker</strong><span>Vi installerar eller samordnar.</span></div>
+        </div>
+
+        <div class="grid-3">
+          {referenceCases.map((ref) => (
+            <article class="ref-card">
+              <img src={ref.img} alt={ref.alt} width={ref.w} height={ref.h} loading="lazy" decoding="async">
+              <div class="ref-content">
+                <h3>{ref.title}</h3>
+                <p>{ref.text}</p>
+                <a href={ref.href}>Se referensprojekt</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="faq">
+      <div class="avab-container">
+        <div class="faq-heading">
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Snabba svar om visuell kommunikation</h2>
+          <p>Korta svar för fastighetsägare, verksamheter, kommuner och elektriker som planerar bildteknik.</p>
+        </div>
+
+        <div class="compact-faq">
+          {faq.map((item) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <PageCTA
+      eyebrow="Ta in oss tidigt"
+      title="Ska ni bygga eller bygga om en miljö med skärmar, projektorer eller LED?"
+      text="AVAB hjälper er att projektera, installera och driftsätta visuell kommunikation för publika miljöer, mötesrum och anläggningar, med bildyta, innehåll, signalväg, nätverk och styrning planerade som en helhet."
+      primaryLabel="Boka kostnadsfri genomgång"
+      primaryHref="/kontakt/"
+      secondaryLabel="Läs om projektering"
+      secondaryHref="/tjanster/projektering/"
+      points={[
+        "Digital signage, informationsskärmar, projektorer, displayer och LED.",
+        "Signaldistribution med HDMI, USB-C, HDBaseT, AV over IP och fiber.",
+        "Nätverk och IT-samordning för AV over IP.",
+        "Projektering, installation, driftsättning och underlag för service.",
+      ]}
+    />
+  </main>
+
+  <SiteFooter />
+</body>
+</html>

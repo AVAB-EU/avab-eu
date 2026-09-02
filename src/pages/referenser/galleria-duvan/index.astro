@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import ReferencePage from "../../../layouts/ReferencePage.astro";
+
+const reference = (await getCollection("references")).find(
+  (entry) => entry.data.slug === "/referenser/galleria-duvan/",
+);
+
+if (!reference) {
+  throw new Error("Referensen Galleria Duvan saknas i content collection (src/content/references/galleria-duvan.md).");
+}
+---
+
+<ReferencePage reference={reference} />
