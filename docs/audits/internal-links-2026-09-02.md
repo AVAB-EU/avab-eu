@@ -5,7 +5,7 @@
 - **Metod:** `npm run build` → analys av byggd `dist/` som sanningskälla, följt av source-provenance i `src/**`.
 - **Verktyg:** `scripts/audit-internal-links.mjs` (deterministiskt, read-only, återanvändbart i CI).
 - **Status vid inventering:** Endast inventering. Inga länkar, sidor, redirects, `.htaccess`, `astro.config` eller innehåll ändrades.
-- **Uppföljning:** Fas A (systemiska P0-fel) genomförd 2026-09-02 – se [avsnitt 10](#10-fas-a--åtgärdslogg-2026-09-02). Fas C (draft/noindex, sitemap, internlänkning) genomförd 2026-09-02 – se [avsnitt 11](#11-fas-c--draftnoindex-sitemap-och-internlänkning-2026-09-02). Fynd-tabellerna i avsnitt 1–7 beskriver tillståndet **vid inventeringen** och är inte uppdaterade i efterhand; aktuell status står i avsnitt 10–11.
+- **Uppföljning:** Fas A (systemiska P0-fel) genomförd 2026-09-02 – se [avsnitt 10](#10-fas-a--åtgärdslogg-2026-09-02). Fas C (draft/noindex, sitemap, internlänkning) genomförd 2026-09-02 – se [avsnitt 11](#11-fas-c--draftnoindex-sitemap-och-internlänkning-2026-09-02). Fas B (kvarvarande riktiga 404-destinationer, beslut + verifierade fixar) genomförd 2026-09-04 – se [avsnitt 12](#12-fas-b--kvarvarande-riktiga-404-destinationer-2026-09-04). Fynd-tabellerna i avsnitt 1–7 beskriver tillståndet **vid inventeringen** och är inte uppdaterade i efterhand; aktuell status står i avsnitt 10–12.
 
 ---
 
@@ -518,3 +518,109 @@ Fas C0 var en read-only-inventering av draft/noindex-metadata. Slutsats: metadat
 **Behållet:** sitemap-filtret (`astro.config.mjs` + `src/data/reference-publication.mjs`), footerändringen (`SiteFooter.astro`), audit-scriptets sitemap-räkningsfix, denna logg.
 
 **Skäl:** att ta bort noindex-sidor ur sitemap och sitewide footer är SEO-städning i linje med "noindex". Att dölja dem ur `/referenser/` är ett separat publicerings-/UX-beslut som inte är fattat. Kvarstår som öppen fråga (11.9 punkt 1).
+
+---
+
+## 12. Fas B – kvarvarande riktiga 404-destinationer (2026-09-04)
+
+- **Branch:** `seo/p0-404-beslut`
+- **Metod:** ny baseline (`npm run build` + `node scripts/audit-internal-links.mjs`) mot `upstream/main` efter Fas A + Fas C. Provenance i `src/**`. Varje unik trasig destination klassificerad som exakt en av `BUILD PAGE`, `FIX LINK`, `REMOVE LINK`, `REVIEW`, `ACCEPTED`. Endast entydigt verifierade fall ändrades.
+- **Ingen** ny sida, redirect, referens, anchor, sitemap-, footer- eller draft/noindex-ändring.
+
+### 12.1 Baseline före Fas B
+
+| Mått | Värde |
+|---|---|
+| P0-poster (förekomster) | **29 (30)** |
+| P1-poster | 0 |
+| P2-poster (förekomster) | 189 |
+| Byggda HTML-sidor | 69 |
+| Indexerbara sidor | 41 |
+| Sitemap-routes | 41 |
+| Orphan-sidor | 0 |
+
+Baseline oförändrad mot slutläget för Fas A/C (avsnitt 10–11). Samtliga 29 P0-poster bär redan HTML-kommentaren `<!-- KNOWN EXISTING DEAD LINK – ACCEPTED FOR THIS RELEASE -->` i källan – dvs. de var kända och medvetet parkerade i föregående release, inte oavsiktligt brutna.
+
+### 12.2 Beslut per unik destination
+
+22 unika trasiga destinationer (21 saknade sidor + 1 saknad anchor). Varje förekommer exakt en gång nedan.
+
+| Destination | Förek. | Source files | Klass | Föreslagen åtgärd | Säker att fixa nu? |
+|---|---|---|---|---|---|
+| `/service-support/` | 3 | `tjanster/ljudsystem`, `tjanster/styrsystem-integration`, `tjanster/talat-utrymningslarm` | **FIX LINK** | → `/tjanster/garanti-och-service/` (verifierad: sidans `<title>`/`<h1>` = "Service och garanti", meta-beskrivning "AVAB erbjuder service, felsökning, support … underhåll av ljudsystem, styrsystem …"; länktext "service och support" i alla tre) | **Ja – fixad** |
+| `/kunskap/ratt-kabel-av-teknik/` | 1 | `tjanster/ljudsystem` | **FIX LINK** | → `/kunskap/kablar-kontakter/` (verifierad: enda kunskaps-underartikeln, ämne = kablar & kontakter; länktext "kablage och kontakter") | **Ja – fixad** |
+| `/referenser/hanza-mechanics-tocksfors/` | 1 | `om-oss` (ref-card) | **FIX LINK** | → `/referenser/hanza-konferens-tocksfors/` (verifierad: publicerad referens med `title: Hanza Mechanics, Töcksfors`, `name: Hanza Mechanics`; enda Hanza-referensen; alla `hanza-mechanics-*`-assets hör till samma projekt; startsidans motsvarande kort med identisk "modern industrimiljö"-framing länkar redan dit) | **Ja – fixad** |
+| `/tjanster/konferensteknik/` | 4 | `kunskap/kablar-kontakter`, `tjanster/ljudsystem`, `tjanster/mikrofoner`, `tjanster/styrsystem-integration` (+ teknikfilter i `src/data/referenser.ts`) | **BUILD PAGE** | Planerad tjänstesida. Underlag finns: länktext/kontext på 4 tjänstesidor ("vår konferensteknik", "konferensljud och konferensteknik"), nav-filterpost `konferens → /tjanster/konferensteknik/`, startsidans sektion `#konferens-tjanst` ("Konferensrum som tjänst (BYOD)"). Saknas: själva sidan (scope, copy, schema, ev. relation till `/miljo/kontor-konferens/`). Bygg inte i Fas B. | Nej |
+| `/tjanster/ljus/` | 1 | `kunskap/kablar-kontakter` ("Se även ljus") | **REVIEW** | Ingen ljus-tjänstesida finns; ingår inte i `src/data/services.ts`. Enstaka "se även". Beslut: `REMOVE LINK` (ta bort `<a>`, behåll ordet) eller `BUILD PAGE` om ljus ska bli tjänsteområde. Kräver beslut om tjänsteutbud – gissas inte. | Nej |
+| `/tjanster/natverk-switchar-router-fiber/` | 1 | `kunskap/kablar-kontakter` ("Se även nätverk, switchar och fiber") | **REVIEW** | Ingen nätverks-tjänstesida finns; ingår inte i `services.ts`. Nätverk vävs in i mycket innehåll men har ingen egen sida. Beslut: `REMOVE LINK` eller `BUILD PAGE`. Gissas inte. | Nej |
+| `/kravstallning/` | 1 | `tjanster/kameraovervakning` (hero-CTA "Ladda ner vår checklista för kravställning →") | **REVIEW** | Nedladdnings-/lead-magnet-destination. Ingen sida och ingen fil finns. Kräver innehållsbeslut: finns checklistan, ska den vara sida eller PDF? Varken `FIX LINK` (inget mål) eller `REMOVE LINK` (CTA med reellt syfte) är entydigt. | Nej |
+| `/projektering/systemintegration/` | 1 | `tjanster/kameraovervakning` ("Läs mer om systemintegration →") | **REVIEW** | Trolig `FIX LINK` → `/tjanster/styrsystem-integration/` (services.ts: "Styrsystem & integration"; kortets rubrik = "Integration – när kameraövervakning blir riktigt stark"). Men sökvägen antyder en projektering-undersida och valet står mellan två tjänster → bekräftelse krävs, gissas inte. | Nej |
+| `/kameraovervakning/gdpr/` | 1 | `tjanster/kameraovervakning` (länk **inuti** sektionen `id="lagar-gdpr"`) | **REVIEW** | Innehållet finns redan på huvudtjänstesidan i just den sektion länken sitter i (självrefererande). Beslut: `REMOVE LINK` (redundant) eller `BUILD PAGE` (juridisk fördjupningssida). Inga nya anchors skapas för grön audit. | Nej |
+| `/kameraovervakning/skola/` | 1 | `tjanster/kameraovervakning` (env-grid) | **BUILD PAGE** | Del av planerat kluster "kameraövervakning per miljö" (6 kort, varav `hotell` redan pekar på `/miljo/hotell/`). Underlag: kortrubrik + kort beskrivning per miljö. Saknas: sidorna, bilder, djупinnehåll. Bygg inte i Fas B. Alternativ: `FIX LINK` till `/miljo/skola/` avvisad – miljösidan är AV-generell, inte kameraspecifik (ingen tydlig semantisk matchning). | Nej |
+| `/kameraovervakning/butik/` | 1 | `tjanster/kameraovervakning` (env-grid) | **BUILD PAGE** | Som ovan (motsv. `/miljo/butik-retail/` är AV-generell). | Nej |
+| `/kameraovervakning/parkering/` | 1 | `tjanster/kameraovervakning` (env-grid) | **BUILD PAGE** | Som ovan (motsv. `/miljo/parkering-garage/`). | Nej |
+| `/kameraovervakning/industri/` | 1 | `tjanster/kameraovervakning` (env-grid) | **BUILD PAGE** | Som ovan (motsv. `/miljo/industri/`). | Nej |
+| `/kameraovervakning/galleria/` | 1 | `tjanster/kameraovervakning` (env-grid) | **BUILD PAGE** | Som ovan (motsv. `/miljo/kopcentrum-galleria/`). | Nej |
+| `/referenser/fortnox-arena-vaxjo/` | 3 | `miljo/sporthall-arena`, `om-oss` (brödtext + ref-card) | **BUILD PAGE** | Projektet nämns uttryckligen ("den första riktigt stora fasta installationen", "Arena · Milstolpe"). Underlag: 3 kort-/textblock (arena/milstolpe, styrning & integration, inkopplingspaneler + trådlösa mikrofoner). Saknas: content entry, bilder, mätvärden, kundgodkännande. Redirecta inte till `/referenser/`. | Nej |
+| `/referenser/stc-kil-gym/` | 2 | `miljo/gym`, `tjanster/mikrofoner` | **BUILD PAGE** | Reellt gymprojekt (STC nämns även i proof-strip). Underlag: 2 kortbeskrivningar + asset `mikrofoner-stc-hammaro.webp` (kortet på `mikrofoner` täcker "STC Hammarö & STC Kil"). Saknas: content entry, Kil-specifika bilder. | Nej |
+| `/referenser/mullhyttans-sporthall/` | 1 | `miljo/sporthall-arena` | **BUILD PAGE** | Underlag: 1 kortbeskrivning + asset `hallbyggnad-fasad-byggarbetsplats.webp`. Saknas: allt övrigt referensinnehåll. | Nej |
+| `/referenser/loka-brunn/` | 1 | `tjanster/styrsystem-integration` | **BUILD PAGE** | Underlag: 1 kortbeskrivning ("Loka Brunn konferens & spa … Crestron, motoriserad duk, ljusstyrning …") + asset `victoriasalen-lokabrunn-konferens.webp`. Saknas: content entry m.m. | Nej |
+| `/referenser/gotetorpsskolan-hammaro/` | 1 | `rastsignal` (referenskort) | **BUILD PAGE** | Rastsignal-skolreferens med specifik kortcopy. Saknas: content entry, bilder, kundgodkännande. Alternativ `REMOVE LINK` om projektet inte ska ha sida – kräver beslut. | Nej |
+| `/referenser/stockfallets-skola-karlstad/` | 1 | `rastsignal` (referenskort) | **BUILD PAGE** | Som ovan ("tidsstyrt rastsignalsystem i två zoner, vädertåliga högtalare på fasad och sporthall"). | Nej |
+| `/referenser/skolhagen-stockholm/` | 1 | `rastsignal` (referenskort) | **BUILD PAGE** | Som ovan ("Schoolbell-lösning med touchpanel, appstyrning, lovläge …"). | Nej |
+| `/kontakt/#ladda-upp-underlag` | 1 | `tjanster/talat-utrymningslarm` (knapp "Skicka projektunderlag") | **REVIEW** | Kvar från Fas A. `/kontakt/` har `#kontaktformular` (4-stegsformulär **utan** filuppladdning) och en not om att bilagor skickas i mejlet efteråt. Länktexten säger "ladda upp" men funktionen saknas. Byt **inte** till `#kontaktformular` för grön audit. Beslut krävs: (a) lägg filuppladdning + riktig `#ladda-upp-underlag`-sektion på `/kontakt/`, (b) ändra CTA-text + peka på `#kontaktformular`, eller (c) `REMOVE LINK` av fragmentet. | Nej |
+
+### 12.3 Faktiska ändringar i Fas B
+
+Endast entydigt verifierade `FIX LINK`. Inga sidor, redirects, referenser, anchors eller draft/sitemap/footer rördes.
+
+| Fil | Rad(er) | Ändring |
+|---|---|---|
+| `src/pages/tjanster/ljudsystem/index.astro` | ~355–356 | `href="/kunskap/ratt-kabel-av-teknik/"` → `href="/kunskap/kablar-kontakter/"`; stale `KNOWN EXISTING DEAD LINK`-kommentar borttagen |
+| `src/pages/tjanster/ljudsystem/index.astro` | ~550–551 | `href="/service-support/"` → `href="/tjanster/garanti-och-service/"`; stale kommentar borttagen |
+| `src/pages/tjanster/styrsystem-integration/index.astro` | ~569–570 | `href="/service-support/"` → `href="/tjanster/garanti-och-service/"`; stale kommentar borttagen |
+| `src/pages/tjanster/talat-utrymningslarm/index.astro` | ~618–619 | `href="/service-support/"` → `href="/tjanster/garanti-och-service/"`; stale kommentar borttagen |
+| `src/pages/om-oss/index.astro` | ~399–400 | `href="/referenser/hanza-mechanics-tocksfors/"` → `href="/referenser/hanza-konferens-tocksfors/"`; stale kommentar borttagen |
+
+4 filer, 5 länkförekomster (3 poster). Länktext, layout, ordning och övrig copy oförändrade. Målet `/tjanster/garanti-och-service/` och `/kunskap/kablar-kontakter/` är indexerbara publika sidor; `/referenser/hanza-konferens-tocksfors/` är den enda publicerade (ej `noindex`) referensen → ingen ny P2-noindex-länk skapades.
+
+### 12.4 Lämnat orört (kräver senare fas eller mänskligt beslut)
+
+**BUILD PAGE (bygg i senare fas, bygg inte nu):**
+- `/tjanster/konferensteknik/` – planerad tjänstesida (4 källor + nav-filter + startsektion).
+- `/kameraovervakning/{skola,butik,parkering,industri,galleria}/` – kluster kameraövervakning per miljö (5 sidor).
+- `/referenser/fortnox-arena-vaxjo/`, `/referenser/stc-kil-gym/`, `/referenser/mullhyttans-sporthall/`, `/referenser/loka-brunn/` – saknade referensdetaljsidor med partiellt underlag (kortcopy, vissa assets).
+- `/referenser/gotetorpsskolan-hammaro/`, `/referenser/stockfallets-skola-karlstad/`, `/referenser/skolhagen-stockholm/` – Rastsignalens skolreferenser (kortcopy finns, övrigt underlag saknas).
+
+**REVIEW (kräver kund-/människobeslut):**
+- `/tjanster/ljus/` – REMOVE LINK eller BUILD PAGE (tjänsteutbudsbeslut).
+- `/tjanster/natverk-switchar-router-fiber/` – REMOVE LINK eller BUILD PAGE (tjänsteutbudsbeslut).
+- `/kravstallning/` – innehållsbeslut: existerar checklistan, sida eller PDF?
+- `/projektering/systemintegration/` – trolig FIX LINK → `/tjanster/styrsystem-integration/`, kräver bekräftelse (val mellan två tjänster).
+- `/kameraovervakning/gdpr/` – REMOVE LINK (redundant självlänk) eller BUILD PAGE (juridisk fördjupning).
+- `/kontakt/#ladda-upp-underlag` – UX-/innehållsbeslut (filuppladdning saknas i formuläret).
+
+### 12.5 Före/efter (Fas B)
+
+| Mått | Före Fas B | Efter Fas B |
+|---|---|---|
+| P0-poster (förekomster) | 29 (30) | **24 (25)** |
+| P1-poster | 0 | 0 |
+| P2-poster (förekomster) | 189 | **189** |
+| Byggda HTML-sidor | 69 | 69 |
+| Indexerbara sidor | 41 | 41 |
+| Sitemap-routes | 41 | 41 |
+| Sitemap-routes som är noindex | 0 | 0 |
+| Orphan-sidor | 0 | 0 |
+| Svagt internlänkade (≤2) | 0 | 0 |
+
+5 P0-förekomster (3 poster) åtgärdade via verifierad `FIX LINK`. Inga nya P0, inga nya trasiga anchors, inga nya redirects, inga nya P2-poster, ingen ökning av P1. Draft/noindex-logiken från Fas C orörd; sitemap oförändrad; `/referenser/`-urvalet oförändrat (15 kort).
+
+### 12.6 Validering (Fas B)
+
+| Kommando | Resultat |
+|---|---|
+| `npm run build` | OK – Complete, 56 sidor |
+| `node scripts/audit-internal-links.mjs` | OK – exit 0, P0 24, P1 0, P2 189 |
+| `GITHUB_BASE_REF=upstream/main npm run validate` | OK – exit 0, "Guardrail validation passed for 15 reference content entries" |
+| `git diff --check` | OK – exit 0, rent |
