@@ -1,6 +1,36 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-09-01._
+_Kanonisk projektlista. Senast uppdaterad 2026-09-04._
+
+## Checkpoint – internlänksarbete pausat 2026-09-04
+
+> **Status:** arbetet pausas här i väntan på kundens svar nästa vecka. Starta inte nästa BUILD PAGE-fas innan kundunderlaget har kommit in eller ett nytt beslut har tagits.
+
+- [x] Fas A – systemiska internlänks-/ankarfel är genomförd och mergead via PR #42.
+- [x] Fas C – draft/noindex, sitemap och footer är genomförd och mergead via PR #43.
+- [x] Fas B – kvarvarande riktiga 404-destinationer är inventerad och tre säkra länkmål är verifierat rättade i commit `b8794a7`.
+- [ ] **OBS före återstart:** PR #44 (`SEO: fix verified internal 404 links`) är stängd utan merge och remote-branchen `seo/p0-404-beslut` finns inte längre. Innan nytt SEO-arbete fortsätter ska commit `b8794a7` återställas/cherry-pickas till en ny branch, valideras och mergas till `main` om ändringarna fortfarande är önskade.
+- [ ] Vänta på kundens innehåll/underlag för följande sidor:
+  - `/tjanster/konferensteknik/`
+  - `/kameraovervakning/skola/`
+  - `/kameraovervakning/butik/`
+  - `/kameraovervakning/parkering/`
+  - `/kameraovervakning/industri/`
+  - `/kameraovervakning/galleria/`
+  - `/referenser/fortnox-arena-vaxjo/`
+  - `/referenser/stc-kil-gym/`
+  - `/referenser/mullhyttans-sporthall/`
+  - `/referenser/loka-brunn/`
+  - `/referenser/gotetorpsskolan-hammaro/`
+  - `/referenser/stockfallets-skola-karlstad/`
+  - `/referenser/skolhagen-stockholm/`
+- [ ] REVIEW – kräver separat mänskligt beslut innan bygg/fix: `/tjanster/ljus/`, `/tjanster/natverk-switchar-router-fiber/`, `/kravstallning/`, `/projektering/systemintegration/`, `/kameraovervakning/gdpr/`, `/kontakt/#ladda-upp-underlag`.
+- [ ] När kunden svarar: jämför nytt material mot listan ovan och skapa små separata BUILD PAGE-faser, inte en stor batch.
+- [ ] Kör internlänksauditen igen efter varje byggfas: `npm run build` → `node scripts/audit-internal-links.mjs` → `npm run validate` → `git diff --check`.
+
+**Skriv detta nästa gång arbetet återupptas:**
+
+> `Återuppta AVAB från checkpointen 2026-09-04 i TODO.md. Kontrollera först status för commit b8794a7 / PR #44 och kundens nya underlag. Föreslå sedan nästa minsta säkra fas innan någon kod ändras.`
 
 ## Go-live / deployment
 - [x] GO-LIVE/deploy-verifieringen mot `avab.eu` är genomförd; produktions-FTP, webbroot, GitHub Actions-secrets och den tillfälliga deploy-markören har verifierats.
