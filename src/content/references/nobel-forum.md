@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/nobel-forum/
 layout: extended
 title: Nobel Forum
@@ -17,7 +17,7 @@ seo:
   ogDescription: Äldre analog ljusstyrning ersattes med programmerbar Crestronstyrning utan att förändra rummets befintliga uttryck.
   twitterTitle: Nobel Forum – modernisering av äldre ljusstyrning | AVAB
   twitterDescription: Referens om hur äldre analog ljusstyrning moderniserades med Crestron samtidigt som befintliga reglage kunde behållas.
-  noindex: true
+  noindex: false
 
 archive:
   title: Nobel Forum
@@ -42,7 +42,7 @@ customer:
   name: Nobel Forum
   publicDisplay: Nobel Forum
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 
 heroImage:
