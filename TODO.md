@@ -5,6 +5,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-14._
 ## Nya notiser 2026-09-14
 - [ ] **Byt organisationsnummer på hela webbplatsen.** Inventera först samtliga förekomster av nuvarande organisationsnummer och uppdatera alla publika visningar samt tekniska förekomster där numret används, exempelvis kontaktuppgifter, footer, metadata och strukturerad data. Verifiera efteråt att inget gammalt organisationsnummer finns kvar i produktionskoden.
 - [ ] **Uppdatera footerns copyright-rad till exakt `© 2026 AVAB Sverige AB`.** Kontrollera att den ersätter nuvarande formulering och visas konsekvent på hela webbplatsen via den gemensamma footern.
+- [ ] **Sätt upp fungerande mailflöde för det befintliga dynamiska offertformuläret.** Formuläret finns redan; koppla det till en säker server-/mailtjänst så att varje inskickad offertförfrågan skickas till `info@avab.eu` och en kopia/bekräftelse skickas till den e-postadress kunden angivit i formuläret. Säkerställ att avsändaradress/reply-to är korrekt, att mailen inte bygger på klienthemligheter i frontend och att spam-/missbruksskydd finns. Testa hela flödet i produktion, inklusive lyckad leverans till AVAB, kundkopia, felmeddelande vid misslyckad sändning och rimlig loggning utan känsliga personuppgifter.
 
 ## Checkpoint – internlänksarbete pausat 2026-09-04
 
