@@ -131,6 +131,10 @@
   font-weight: 750;
 }
 
+.reference-page--case-study .case-scope-service {
+  margin: 24px 0 0;
+}
+
 /* Extended references use the approved Minneberg rhythm for the existing
    shared blocks after the opening case-study chapters. */
 .reference-page--case-study > body,

@@ -5,8 +5,9 @@ type ReferenceData = CollectionEntry<"references">["data"];
 interface Props {
   scope: ReferenceData["scope"];
   variants?: ReferenceData["variants"];
+  showDetails?: boolean;
 }
-const { scope, variants } = Astro.props;
+const { scope, variants, showDetails = false } = Astro.props;
 ---
 
 <section class="reference-section reference-section--soft" id="omfattning">
@@ -16,6 +17,31 @@ const { scope, variants } = Astro.props;
         <span class="reference-kicker">{scope.eyebrow}</span>
         <h2>{scope.title}</h2>
         <p>{scope.lead}</p>
+
+        {showDetails && (
+          <>
+            <ul class="scope-list case-scope-list">
+              {scope.items.map((item) => <li>{item}</li>)}
+            </ul>
+
+            {scope.projectFacts && (
+              <dl class="case-fact-grid">
+                {scope.projectFacts.map((fact) => (
+                  <div>
+                    <dt>{fact.label}</dt>
+                    <dd>{fact.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+
+            {scope.serviceLabel && scope.serviceHref && (
+              <p class="case-scope-service">
+                <a class="text-link" href={scope.serviceHref}>{scope.serviceLabel}</a>
+              </p>
+            )}
+          </>
+        )}
       </section>
 
       {variants && (
