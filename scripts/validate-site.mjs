@@ -130,7 +130,7 @@ for (const line of diff.split("\n")) {
     fail(`${currentFile}: new source code must use https://avab.eu/ instead of the www alias`);
   }
 
-  const standardRoute = /^src\/pages\/(referenser|miljo|tjanster|kunskap)\/.+\.astro$/.test(currentFile);
+  const standardRoute = /^src\/pages\/(referenser|miljo|tjanster|kunskap|kameraovervakning)\/.+\.astro$/.test(currentFile);
   if (standardRoute && /<style(?:\s|>)/.test(added)) {
     fail(`${currentFile}: new page-specific <style> blocks are forbidden for standard page types`);
   }
