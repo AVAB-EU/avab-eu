@@ -4,6 +4,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-14._
 
 ## Nya notiser 2026-09-14
 - [ ] **Byt organisationsnummer på hela webbplatsen.** Inventera först samtliga förekomster av nuvarande organisationsnummer och uppdatera alla publika visningar samt tekniska förekomster där numret används, exempelvis kontaktuppgifter, footer, metadata och strukturerad data. Verifiera efteråt att inget gammalt organisationsnummer finns kvar i produktionskoden.
+- [ ] **Uppdatera footerns copyright-rad till exakt `© 2026 AVAB Sverige AB`.** Kontrollera att den ersätter nuvarande formulering och visas konsekvent på hela webbplatsen via den gemensamma footern.
 
 ## Checkpoint – internlänksarbete pausat 2026-09-04
 
