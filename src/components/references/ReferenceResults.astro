@@ -13,7 +13,7 @@ const { results } = Astro.props;
       <h2 id="resultat">{results.title}</h2>
       {results.lead && <p>{results.lead}</p>}
     </div>
-    <div class="reference-summary-grid">
+    <div class="reference-summary-grid reference-summary-grid--results">
       {results.items.map((result) => (
         <article class="reference-summary">
           {result.label && <span class="reference-summary-number">{result.label}</span>}
