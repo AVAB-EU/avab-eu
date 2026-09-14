@@ -245,8 +245,11 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
             </div>
           </section>
 
+          {hasStory && (
+            <ReferenceScope scope={data.scope} variants={data.variants} showDetails />
+          )}
           {data.scale && <ReferenceScale scale={data.scale} />}
-          {!hasStory && data.results && <ReferenceResults results={data.results} />}
+          {data.results && <ReferenceResults results={data.results} />}
           {data.quote && <ReferenceQuote quote={data.quote} />}
           {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
           {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
