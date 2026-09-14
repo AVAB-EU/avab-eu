@@ -108,6 +108,15 @@ export const serviceOverviewGroups: ServiceOverviewGroup[] = [
         image: "/assets/styrpanel-pa-travagg.webp",
         imageAlt: "Styrpanel monterad på trävägg",
       },
+      {
+        title: "Modernisering av äldre ljusstyrning",
+        group: "Kontroll & upplevelse",
+        shortText: "Identifiering, felsökning och modernisering av äldre ljusstyrning.",
+        expandedText: "Ny funktion i befintlig installation. AVAB identifierar och felsöker äldre ljusstyrning och moderniserar den för LED och dagens styrsystem, utan att byta ut allt.",
+        href: "/tjanster/modernisering-avab-ljusstyrning/",
+        image: "/assets/nobel-forum-aldre-avab-ljusstyrning.webp",
+        imageAlt: "Del av den äldre analoga AVAB-ljusstyrningen på Nobel Forum före moderniseringen",
+      },
     ],
   },
 ];
