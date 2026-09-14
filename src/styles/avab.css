@@ -1034,6 +1034,13 @@ p {
   gap: 16px;
 }
 
+/* Generell, återanvändbar sekundär hjälprad på mörk hero (t.ex. under CTA-knappar).
+   Samma ljusa, dämpade textton som redan används i .footer-tagline – tydligt
+   läsbar mot .hero-bakgrunden men visuellt svagare än .hero .lead och CTA-knapparna. */
+.hero-helper-text {
+  color: rgba(255, 255, 255, 0.74);
+}
+
 .hero-pills {
   display: flex;
   flex-wrap: wrap;
