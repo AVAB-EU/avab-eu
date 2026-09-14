@@ -3,7 +3,7 @@
 **Status:** Active  
 **Owner:** AVAB-projektet  
 **Scope:** Alla publika sidor under `/referenser/`  
-**Last reviewed:** 2026-08-18  
+**Last reviewed:** 2026-09-14
 **Replaces:** `src/docs/AVAB-standard-referensprojekt.md` samt relevanta delar av `src/docs/avab-design-referenssida-inkopare.md`
 
 ## Terminologi
@@ -89,6 +89,16 @@ Undvik:
 - onödig teknik som kortifieras bara för att fylla layouten
 - tomma kort eller påtvingad höjd som skapar stora tomrum
 - en ensam normal bildkort på en desktop-rad med ett stort tomt gridutrymme bredvid
+
+### Vertikal linjering i jämförbara grids
+
+När återanvändbara kort i samma visuella rad har nivåerna label/eyebrow, rubrik,
+brödtext och eventuell CTA ska motsvarande nivåer börja på samma höjd. Låt den
+längsta nivån styra radens naturliga höjd, i första hand med intern gridstruktur
+eller `subgrid`, inte med godtyckliga fasta pixelhöjder. När komponenten går till
+en kolumn på mobil ska höjdsynkroniseringen återställas så att innehållet följer
+sitt naturliga flöde utan stora tomrum. Principen gäller jämförbara kortgrids,
+inte löpande artikeltext eller berättande kapitel.
 
 ## Sidstruktur
 
