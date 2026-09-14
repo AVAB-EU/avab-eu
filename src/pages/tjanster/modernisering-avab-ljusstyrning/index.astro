@@ -1,0 +1,551 @@
+---
+import { AVAB_PHONE } from "../../../config/site";
+import PageCTA from "../../../components/PageCTA.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import "../../../styles/avab.css";
+
+const pageTitle = "Äldre AVAB ljusstyrning – modernisering av LD/LC | AVAB";
+const pageDescription =
+  "Har ni en äldre AVAB LD-, LC- eller LDX-ljusstyrning? Vi hjälper till att identifiera, felsöka och modernisera systemet för LED och modern styrning.";
+const canonical = "https://avab.eu/tjanster/modernisering-avab-ljusstyrning/";
+const socialImage = "https://avab.eu/assets/nobel-forum-aldre-avab-ljusstyrning.webp";
+const ogTitle = "Har ni en äldre AVAB-ljusstyrning?";
+const ogDescription =
+  "LD, LC, LDX eller annan äldre dimmerstyrning? Vi identifierar befintlig teknik och hjälper er modernisera till LED och moderna styrsystem.";
+
+const breadcrumbs = [
+  { label: "Start", href: "/" },
+  { label: "Tjänster", href: "/tjanster/" },
+  { label: "Modernisering av äldre ljusstyrning", href: "/tjanster/modernisering-avab-ljusstyrning/" },
+];
+
+const faq = [
+  {
+    q: "Går det att ersätta en gammal AVAB LD-dimmer?",
+    a: "Ja. Först behöver systemets uppbyggnad, last, manöverpanel och befintliga kablage identifieras. Därefter kan vi avgöra om bara regulatorn behöver ersättas eller om delar av styrningen också bör moderniseras.",
+  },
+  {
+    q: "Kan en LC-manöverpanel behållas?",
+    a: "I vissa fall. Det beror på paneltyp, signal och vilket nytt styrsystem som används. I andra fall kan själva fronten eller reglagen behållas medan elektroniken bakom byts.",
+  },
+  {
+    q: "Kan LC-POT ersättas?",
+    a: "Ja, potentiometerstyrning går att ersätta eller integrera på olika sätt. Den äldre LC-POT-lösningen använder en särskild vridpotentiometer och ett särskilt triggkort.",
+  },
+  {
+    q: "Finns reservdelar till gamla LD- och LC-system?",
+    a: "Tillgången varierar beroende på modell och komponent. Vi börjar därför alltid med att identifiera systemet. I många fall är en kontrollerad modernisering bättre långsiktigt än att bygga vidare på allt äldre elektronik.",
+  },
+  {
+    q: "Jag har en gammal AVAB-dimmer som fungerar med glödljus. Kan jag bara sätta i LED?",
+    a: "Inte nödvändigtvis. LED-lampan måste vara dimbar och kompatibel med dimmern. Last, minsta effekt, dimringsprincip och eventuellt drivdon behöver kontrolleras.",
+  },
+  {
+    q: "Varför flimrar mina LED-lampor när jag dimrar?",
+    a: "Vanliga orsaker är inkompatibel dimmer eller drivdon, fel dimringsprincip eller att lasten är för låg.",
+  },
+  {
+    q: "Vad är skillnaden mellan framkant och bakkant?",
+    a: "Det är två olika metoder för fasdimring. Framkant används traditionellt bland annat för glödljus och konventionella transformatorer, medan bakkant ofta passar elektroniska transformatorer och många LED-laster bättre.",
+  },
+  {
+    q: "Kan en gammal 0–10 V-anläggning moderniseras?",
+    a: "Ja. Först behöver vi kontrollera hur styrningen är uppbyggd och vad signalen driver. LDX-system användes bland annat för externa 0–10 V-dimmers samt 0–10/1–10 V lysrörsdon.",
+  },
+  {
+    q: "Kan man gå från gammal analog styrning till DALI?",
+    a: "Ofta är det möjligt, men det kan kräva byte av drivdon och kontroll av befintligt kablage. DALI är ett digitalt protokoll och skiljer sig tekniskt från analog 0–10/1–10 V-styrning.",
+  },
+  {
+    q: "Kan gamla reglage användas tillsammans med Crestron?",
+    a: "Ja, beroende på hur reglagen fungerar elektriskt. Nobel Forum är ett exempel där nya potentiometrar i den befintliga panelen används som ingång till ett Crestron-styrsystem.",
+  },
+  {
+    q: "Måste hela anläggningen bytas?",
+    a: "Nej. Det är precis därför vi gör en inventering först. Målet är att behålla fungerande delar när det är tekniskt och ekonomiskt rimligt.",
+  },
+  {
+    q: "Kan ni arbeta tillsammans med vår elektriker?",
+    a: "Ja. Det är ofta vårt föredragna arbetssätt. Elektrikern hanterar den fasta elinstallationen medan AVAB arbetar med systemdesign, kompatibilitet, styrning, programmering och driftsättning.",
+  },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Modernisering av äldre ljusstyrningar",
+  url: canonical,
+  image: socialImage,
+  provider: {
+    "@type": "LocalBusiness",
+    name: "AVAB",
+    url: "https://avab.eu/",
+    logo: "https://avab.eu/logo.png",
+    telephone: AVAB_PHONE.main.e164,
+    email: "info@avab.eu",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Skraggevägen 4",
+      postalCode: "663 41",
+      addressLocality: "Hammarö",
+      addressRegion: "Värmland",
+      addressCountry: "SE",
+    },
+  },
+  areaServed: "Sverige",
+  serviceType: "Modernisering av äldre ljusstyrningar",
+  description: pageDescription,
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${canonical}#webpage`,
+  url: canonical,
+  name: pageTitle,
+  description: pageDescription,
+  image: socialImage,
+  inLanguage: "sv-SE",
+  isPartOf: { "@type": "WebSite", name: "AVAB", url: "https://avab.eu/" },
+  datePublished: "2026-09-14",
+  dateModified: "2026-09-14",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", ".lead", ".compact-faq"],
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: breadcrumbs.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.label,
+    item: new URL(item.href, "https://avab.eu").href,
+  })),
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
+const systemGroups = [
+  {
+    title: "LD-regulatorer",
+    text: "LD 2.2, LD 2.2-X, LD 2.2-A och LD 5.5.",
+  },
+  {
+    title: "LDX",
+    text: "System för bland annat externa analoga 0–10 V-dimmers och 0–10/1–10 V lysrörsdon.",
+  },
+  {
+    title: "LC-manövrering",
+    text: "LC-manöverpanel, LC-POT och regulator/manövergrupp.",
+  },
+  {
+    title: "Kort och elektronik",
+    text: "Styrkort, slavstyrkort, triggkort och DMX-styrkort.",
+  },
+  {
+    title: "Analoga signaler",
+    text: "0–10 V, 1–10 V och potentiometerstyrning.",
+  },
+  {
+    title: "Sammankopplade regulatorer",
+    text: "Master- och slavregulator i en gemensam äldre installation.",
+  },
+];
+
+const symptoms = [
+  "Flimmer eller blinkning vid dimring.",
+  "Problem vid låg nivå eller när ljuset ska dimras hela vägen ner.",
+  "Lampor som inte slocknar korrekt.",
+  "Dimmer eller drivdon som surrar.",
+  "Potentiometer eller manöverpanel som har slutat fungera.",
+  "Problem efter byte från glödljus eller halogen till LED.",
+  "Behov av ljusscener, sensorer eller central styrning.",
+];
+
+const processSteps = [
+  { title: "1. Identifiering", text: "Samla bilder, modellbeteckningar, ritningar och befintlig dokumentation. Identifiera panel, regulatorer, ljuskällor och drivdon." },
+  { title: "2. Inventering av lasten", text: "Kontrollera vad varje kanal driver och dokumentera effekt och antal ljuskällor där det är möjligt." },
+  { title: "3. Analys av styrningen", text: "Identifiera panel, potentiometer, kort och styrsignal samt avgör vad som kan återanvändas." },
+  { title: "4. Moderniseringsnivå", text: "Avgör om en del kan ersättas eller om modern fasdimring, nya drivdon, DALI, DMX eller överordnad styrning behövs." },
+  { title: "5. Programmering och funktion", text: "Bygg de funktioner som behövs, exempelvis ljusnivåer, scener, start och stopp, sensorer eller integration." },
+  { title: "6. Provning och dokumentation", text: "Prova hela ljusområdet, även låga nivåer där kompatibilitetsproblem med LED ofta visar sig, och dokumentera lösningen." },
+];
+
+const environments = [
+  { href: null, title: "Teater, kulturhus & museum", text: "Miljöer där äldre installationer och arkitektoniska detaljer kan ha ett värde att bevara." },
+  { href: null, title: "Aula & samlingssal", text: "Lokaler där ljusnivåer, scener och enkel manövrering behöver fungera för olika användningar." },
+  { href: "/miljo/skola/", title: "Skola & utbildning", text: "Klassrum, aula och gemensamma ytor där äldre styrning kan möta nya ljuskällor och verksamhetskrav." },
+  { href: "/miljo/hotell/", title: "Hotell & konferens", text: "Konferens-, restaurang- och publika ytor där arkitektur, drift och ljusscener behöver fungera tillsammans." },
+  { href: "/miljo/kyrka/", title: "Kyrka & samlingslokal", text: "Rum där paneler, armaturer och befintlig infrastruktur kan vara viktiga delar av helhetsmiljön." },
+  { href: "/miljo/restaurang-bar-klubb/", title: "Restaurang & eventmiljö", text: "Verksamheter där ljusscener och central styrning kan behöva moderniseras utan onödiga ingrepp." },
+];
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="AVAB" />
+  <meta name="theme-color" content="#282E29" />
+
+  <meta property="og:title" content={ogTitle} />
+  <meta property="og:description" content={ogDescription} />
+  <meta property="og:image" content={socialImage} />
+  <meta property="og:image:width" content="783" />
+  <meta property="og:image:height" content="972" />
+  <meta property="og:image:alt" content="Äldre analog AVAB-ljusstyrning före modernisering" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={pageDescription} />
+  <meta name="twitter:image" content={socialImage} />
+  <meta name="twitter:image:alt" content="Äldre analog AVAB-ljusstyrning före modernisering" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" fetchpriority="high" href="/assets/nobel-forum-aldre-avab-ljusstyrning.webp" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        {breadcrumbs.map((item, index) => (
+          <li>
+            {index < breadcrumbs.length - 1
+              ? <a href={item.href}>{item.label}</a>
+              : <span aria-current="page">{item.label}</span>}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero" style="--hero-image:url('/assets/nobel-forum-aldre-avab-ljusstyrning.webp');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">Tjänst: Modernisering &amp; retrofit av ljusstyrning</div>
+        <h1>Modernisering av äldre AVAB LD-, LC- och LDX-ljusstyrningar</h1>
+        <p class="lead">
+          Behåll det som fungerar. Modernisera det som behöver bytas. Äldre AVAB-ljusstyrningar finns fortfarande i drift. När en regulator, panel, potentiometer eller del av elektroniken börjar ge upp behöver hela installationen inte automatiskt rivas ut. AVAB hjälper till att identifiera, felsöka och modernisera anläggningen.
+        </p>
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/kontakt/#kontaktformular">Skicka bilder på er anläggning</a>
+            <a class="button button-secondary" href="/referenser/nobel-forum/">Se moderniseringen på Nobel Forum</a>
+          </div>
+          <p><small>Bilder bifogas i mejlet som öppnas efter kontaktformulärets sista steg.</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band" aria-label="Snabbfakta om modernisering av äldre ljusstyrning">
+    <div class="fact-grid fact-grid--4">
+      <div class="fact"><span>Äldre system</span><strong>LD, LC, LDX, potentiometer och analog styrning</strong></div>
+      <div class="fact"><span>Ljuskällor</span><strong>Glödljus, halogen, lysrör och LED</strong></div>
+      <div class="fact"><span>Styrning</span><strong>Fasdimring, 0–10 V, 1–10 V, DMX, DALI och integration</strong></div>
+      <div class="fact"><span>Leverans</span><strong>Identifiering, projektering, programmering och driftsättning</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section section--light" id="identifiering">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Identifiering</div>
+            <h2>Har ni något av det här i anläggningen?</h2>
+            <p class="lead-dark">Gamla AVAB-system byggdes i flera varianter. En okänd beteckning behöver inte stoppa arbetet: en bild på panelen, regulatorn eller kretskortet kan vara tillräcklig för att börja identifiera systemet.</p>
+            <p>Historiska AVAB LD- och AVAB LDX-installationer har förekommit bland annat i teatrar, konserthus, museum, hotell, restauranger, kyrkor, kontor och samlingssalar.</p>
+            <p>Oavsett om ni söker efter en AVAB dimmer, AVAB LC-manöverpanel, AVAB LC-POT, AVAB regulator, AVAB styrkort eller AVAB triggkort börjar arbetet med identifiering. Det gäller också om ni bara vet att ni har en gammal AVAB ljusstyrning eller behöver ersätta en AVAB dimmer.</p>
+          </div>
+        </div>
+        <div class="content-grid">
+          {systemGroups.map((group) => (
+            <article>
+              <h3>{group.title}</h3>
+              <p>{group.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="symptom">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Vanliga symptom</div>
+          <h2>När är det dags att modernisera?</h2>
+          <p>Ett äldre styrsystem kan fungera i årtionden. Problem uppstår ofta när en komponent går sönder, reservdelar blir svårare att hitta eller äldre belysning ersätts med LED.</p>
+          <p>Symptomen betyder inte automatiskt att felet sitter i regulatorn. Systemets uppbyggnad och lasten ska identifieras först.</p>
+        </div>
+        <aside class="card solution-card accent-rail">
+          <h3>Tecken att undersöka</h3>
+          <ul class="bullet-list">
+            {symptoms.map((symptom) => <li>{symptom}</li>)}
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--light" id="led">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">LED och kompatibilitet</div>
+          <h2>LED förändrar förutsättningarna</h2>
+          <p>En gammal dimmer kan ha fungerat problemfritt med glödljus eller halogen i 25–30 år och ändå få problem efter en LED-konvertering. Elektroniken i LED-lampan eller drivdonet blir en del av lasten.</p>
+          <p>För en fungerande lösning behöver ljuskälla, drivdon och dimmer vara kompatibla. Utgå inte automatiskt från dimmerns gamla glödljuseffekt när LED installeras.</p>
+        </div>
+        <aside class="card solution-card accent-rail">
+          <h3>Det här behöver kontrolleras</h3>
+          <ul class="bullet-list">
+            <li><strong>Effekt per kanal:</strong> lasten kan bli en bråkdel efter LED-konvertering.</li>
+            <li><strong>Minsta last:</strong> en dimmer kan behöva viss belastning för stabil funktion.</li>
+            <li><strong>Maximal last:</strong> LED belastar inte alltid dimmern som en resistiv glödlampa.</li>
+            <li><strong>Drivdon:</strong> kontrollera om det är gjort för fasdimring, 1–10 V, DALI, PWM eller annan styrprincip.</li>
+            <li><strong>Dimringsprincip:</strong> identifiera om lasten ska köras med framkant eller bakkant.</li>
+            <li><strong>Befintlig transformator:</strong> äldre lågvoltshalogen kan ha magnetiska eller elektroniska transformatorer med olika krav.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="fasdimring">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Dimringsprincip</div>
+            <h2>Framkant eller bakkant?</h2>
+            <p class="lead-dark">Det är två olika metoder för fasdimring. Välj inte dimringsprincip på känsla – identifiera lasten först.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Framkantsdimring – leading edge</h3>
+            <p>Används traditionellt bland annat med glödljus, resistiva laster och konventionella transformatorer. Metoden förekommer även med vissa dimbara LED-laster.</p>
+          </article>
+          <article class="card">
+            <h3>Bakkantsdimring – trailing edge</h3>
+            <p>Används ofta tillsammans med elektroniska transformatorer och moderna LED-laster och kan ge bättre funktion vid låga effekter. Det betyder inte att bakkant alltid är rätt för LED.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="styrprinciper">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Signaler och protokoll</div>
+          <h2>Alla ljusstyrningar är inte fasdimmers</h2>
+          <p>En fastighet kan innehålla flera generationer teknik samtidigt: 230 V fasdimring, 0–10 V ljusstyrning, 1–10 V ljusstyrning, DMX, DALI, relästyrning och potentiometerstyrning.</p>
+          <p>LDX-system dokumenteras bland annat för externa analoga 0–10 V-dimmers och 0–10/1–10 V lysrörsdon. DALI är ett digitalt belysningsprotokoll med separat styrledning, medan 1–10 V använder analog styrspänning mellan styrdon och drivdon.</p>
+        </div>
+        <aside class="card solution-card accent-rail">
+          <h3>Moderniseringen kan innebära</h3>
+          <ul class="bullet-list">
+            <li>Ny universaldimmer.</li>
+            <li>Nya LED-drivdon.</li>
+            <li>Protokollkonvertering.</li>
+            <li>Överordnat styrsystem.</li>
+          </ul>
+          <p>Vilken lösning som är rätt avgörs efter inventering.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="bevara">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Retrofit</div>
+          <h2>Det bästa bytet är inte alltid en total utrivning</h2>
+          <p>Vi börjar hellre med frågan: <strong>Vad kan vi behålla?</strong> Fungerande delar kan ha både tekniskt och arkitektoniskt värde.</p>
+          <p>Paneler, armaturer, kabelvägar, kapslingar och delar av infrastrukturen kan i vissa projekt behållas om de fungerar och kan användas säkert.</p>
+        </div>
+        <aside class="card solution-card accent-rail">
+          <h3>Möjliga fördelar</h3>
+          <ul class="bullet-list">
+            <li>Mindre ingrepp.</li>
+            <li>Mindre ny kabeldragning.</li>
+            <li>Kortare installationstid.</li>
+            <li>Bibehållen arkitektur.</li>
+            <li>Enklare väg till modern styrning.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--light" id="nobel-forum">
+      <div class="avab-container">
+        <div class="two-col">
+          <div>
+            <div class="eyebrow">Referensprojekt</div>
+            <h2>Originalutseendet bevarades på Nobel Forum</h2>
+            <p class="lead-dark">Ibland är den bästa moderniseringen den som knappt syns.</p>
+            <p>En äldre analog ljusstyrning i ett mötesrum på Nobel Forum vid Karolinska Institutet slutade fungera. Kravet var att de befintliga kromade reglagen skulle behållas.</p>
+            <p>Potentiometrarna byttes, men panelen behölls. De nya reglagen läses av av ett Crestron CP3-styrsystem, som hanterar belysningen via en fyrkanals Crestron DIN-1DIMU4 universaldimmer.</p>
+            <p>För användaren ser rummet i stort sett ut som tidigare. Bakom panelen är styrningen modern, programmerbar och möjlig att bygga vidare på.</p>
+            <a class="button button-primary" href="/referenser/nobel-forum/">Läs referensen från Nobel Forum</a>
+          </div>
+          <div class="image-wrapper image-wrapper--bounded">
+            <img src="/assets/nobel-forum-modernisering-ljusstyrning-elskap.webp" alt="AVAB-tekniker arbetar i elcentralen vid modernisering av ljusstyrningen på Nobel Forum" width="840" height="1800" loading="lazy" decoding="async" />
+          </div>
+        </div>
+        <div class="reference-gallery">
+          <figure class="gallery-item">
+            <img src="/assets/nobel-forum-aldre-avab-ljusstyrning.webp" alt="Del av den äldre analoga AVAB-ljusstyrningen på Nobel Forum före moderniseringen" width="783" height="972" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="/assets/nobel-forum-crestron-din-1dimu4-dimmer.webp" alt="Crestron DIN-1DIMU4 universaldimmer installerad vid moderniseringen på Nobel Forum" width="840" height="1800" loading="lazy" decoding="async" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Arbetsprocess</div>
+            <h2>Så moderniserar vi en äldre ljusstyrning</h2>
+            <p class="lead-dark">Att modernisera ljusstyrning börjar med att identifiera det som finns och därefter välja en moderniseringsnivå som passar anläggningen.</p>
+          </div>
+        </div>
+        <div class="content-grid">
+          {processSteps.map((step) => (
+            <article>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
+        </div>
+        <div class="snabbt-svar">
+          <p><strong>Fast elinstallation utförs av registrerat elinstallationsföretag.</strong> AVAB arbetar gärna tillsammans med kundens elektriker från inventering till färdig driftsättning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="integration">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Överordnad styrning</div>
+          <h2>Ett modernt styrsystem kan göra mer än att dimra</h2>
+          <p>Ett modernt överordnat system kan hantera ljusscener, närvaro och sensorer, tidsscheman, motoriserade funktioner, ljud, bild och projektorer, DMX, statusindikering och integration mot annan fastighetsteknik.</p>
+          <p>Det betyder inte att varje gammal dimmer ska ersättas med ett stort automationssystem. Lösningen ska dimensioneras efter behov och kunna byggas vidare på.</p>
+          <a class="text-link" href="/tjanster/styrsystem-integration/">Läs om styrsystem och integration</a>
+        </div>
+        <aside class="card solution-card accent-rail">
+          <h3>Behovet styr omfattningen</h3>
+          <ul class="bullet-list">
+            <li>Ljusnivåer, scener och tidsscheman.</li>
+            <li>Närvaro, sensorer och status.</li>
+            <li>Motoriserade funktioner.</li>
+            <li>Ljud, bild, projektorer och DMX.</li>
+            <li>Integration mot annan fastighetsteknik.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="miljoer">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Miljöer</div>
+            <h2>Äldre ljusstyrning i olika verksamheter</h2>
+            <p class="lead-dark">Behovet kan se olika ut, men arbetet börjar på samma sätt: identifiera anläggningen, lasten och vad som är värt att behålla.</p>
+          </div>
+        </div>
+        <div class="env-grid">
+          {environments.map((environment) => (
+            <article class={environment.href ? "env-card" : "card"}>
+              <h3>{environment.href ? <a href={environment.href}>{environment.title}</a> : environment.title}</h3>
+              <p>{environment.text}</p>
+            </article>
+          ))}
+        </div>
+        <p class="environment-note">För mötesrum och andra arbetsplatser finns även vår sida om <a class="text-link" href="/miljo/kontor-konferens/">kontor och konferens</a>.</p>
+      </div>
+    </section>
+
+    <section class="section section--light" id="faq">
+      <div class="avab-container">
+        <div class="faq-heading">
+          <div class="eyebrow">Vanliga frågor</div>
+          <h2>Snabba svar om äldre AVAB-ljusstyrningar</h2>
+          <p>Svar för elektriker, fastighetsägare, kommuner och verksamheter som behöver identifiera eller modernisera ett äldre system.</p>
+        </div>
+        <div class="compact-faq">
+          {faq.map((item) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Information om namnet AVAB">
+      <div class="avab-container">
+        <aside class="answer">
+          <span class="label">Om namnet AVAB</span>
+          <p>AVAB Sverige AB är ett separat bolag och är inte tillverkaren av de äldre AVAB Elektronik-systemen eller en del av ElectroNord/avab.se. Vi arbetar däremot med felsökning, modernisering och integration av äldre ljusstyrningar.</p>
+        </aside>
+      </div>
+    </section>
+
+    <PageCTA
+      eyebrow="Börja med tre bilder"
+      title="Har ni en äldre ljusstyrning framför er just nu?"
+      text="AVAB – från gammal analog styrning till modern, dokumenterad och utbyggbar teknik. Bilderna bifogas i mejlet som öppnas efter kontaktformulärets sista steg. Webbplatsen har ingen direkt filuppladdning."
+      primaryLabel="Skicka bilder på anläggningen"
+      primaryHref="/kontakt/#kontaktformular"
+      secondaryLabel={`Ring ${AVAB_PHONE.main.display}`}
+      secondaryHref={AVAB_PHONE.main.href}
+      points={[
+        "Ljuset flimrar efter LED-byte.",
+        "En kanal har slutat fungera.",
+        "Potentiometern är trasig.",
+        "Vi vill behålla panelerna men byta styrsystem.",
+        "Väggpanelen eller reglagen.",
+        "Insidan av styrskåpet.",
+        "Etikett eller modellbeteckning på regulator eller kretskort.",
+      ]}
+    />
+  </main>
+
+  <SiteFooter />
+</body>
+</html>

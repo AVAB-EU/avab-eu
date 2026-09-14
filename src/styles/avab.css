@@ -1236,6 +1236,11 @@ p {
   object-fit: cover;
 }
 
+.image-wrapper--bounded {
+  height: clamp(320px, 40vw, 460px);
+  align-self: start;
+}
+
 /* Punktlista med grön pil */
 .bullet-list {
   list-style: none;
@@ -1952,6 +1957,10 @@ a.footer-contact-row:focus-visible {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
+.fact-band .fact-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .fact-band .fact {
   display: flex;
   flex-direction: column;
@@ -2181,11 +2190,11 @@ a.footer-contact-row:focus-visible {
 
 .answer {
   align-self: start;
-  padding: 30px;
+  padding: 24px 0 24px 28px;
   border-left: 6px solid var(--avab-green);
-  border-radius: var(--avab-radius-sm);
+  border-radius: 0;
   background: var(--avab-white);
-  box-shadow: var(--avab-shadow-lg);
+  box-shadow: none;
 }
 
 .answer .label {
