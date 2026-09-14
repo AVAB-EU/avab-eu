@@ -229,6 +229,9 @@ technicalDetails:
     - label: Tjänst
       title: Styrsystem och integration
       href: /tjanster/styrsystem-integration/
+    - label: Tjänst
+      title: Modernisering av äldre ljusstyrning
+      href: /tjanster/modernisering-avab-ljusstyrning/
     - label: Miljö
       title: Kontor och konferens
       href: /miljo/kontor-konferens/

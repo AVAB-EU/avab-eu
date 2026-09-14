@@ -140,7 +140,7 @@ const faqSchema = {
 const systemGroups = [
   {
     title: "LD-regulatorer",
-    text: "LD 2.2, LD 2.2-X, LD 2.2-A och LD 5.5.",
+    text: "LD 2.2 kW och LD 5.5 kW samt beteckningarna LD 2.2-X och LD 2.2-A.",
   },
   {
     title: "LDX",
@@ -148,7 +148,7 @@ const systemGroups = [
   },
   {
     title: "LC-manövrering",
-    text: "LC-manöverpanel, LC-POT och regulator/manövergrupp.",
+    text: "LC-manöverpanel, LC-POT och regulator/manövergrupp. Dokumentationen beskriver särskilda triggkort för LC-POT och möjlighet att justera högsta och lägsta ljusnivå.",
   },
   {
     title: "Kort och elektronik",
@@ -176,7 +176,7 @@ const symptoms = [
 
 const processSteps = [
   { title: "1. Identifiering", text: "Samla bilder, modellbeteckningar, ritningar och befintlig dokumentation. Identifiera panel, regulatorer, ljuskällor och drivdon." },
-  { title: "2. Inventering av lasten", text: "Kontrollera vad varje kanal driver och dokumentera effekt och antal ljuskällor där det är möjligt." },
+  { title: "2. Inventering av lasten", text: "Kontrollera om varje kanal driver glödljus, halogen, LED, transformator, lysrör, LED-drivdon eller annan last och dokumentera effekt och antal ljuskällor där det är möjligt." },
   { title: "3. Analys av styrningen", text: "Identifiera panel, potentiometer, kort och styrsignal samt avgör vad som kan återanvändas." },
   { title: "4. Moderniseringsnivå", text: "Avgör om en del kan ersättas eller om modern fasdimring, nya drivdon, DALI, DMX eller överordnad styrning behövs." },
   { title: "5. Programmering och funktion", text: "Bygg de funktioner som behövs, exempelvis ljusnivåer, scener, start och stopp, sensorer eller integration." },
@@ -184,12 +184,12 @@ const processSteps = [
 ];
 
 const environments = [
-  { href: null, title: "Teater, kulturhus & museum", text: "Miljöer där äldre installationer och arkitektoniska detaljer kan ha ett värde att bevara." },
-  { href: null, title: "Aula & samlingssal", text: "Lokaler där ljusnivåer, scener och enkel manövrering behöver fungera för olika användningar." },
-  { href: "/miljo/skola/", title: "Skola & utbildning", text: "Klassrum, aula och gemensamma ytor där äldre styrning kan möta nya ljuskällor och verksamhetskrav." },
-  { href: "/miljo/hotell/", title: "Hotell & konferens", text: "Konferens-, restaurang- och publika ytor där arkitektur, drift och ljusscener behöver fungera tillsammans." },
-  { href: "/miljo/kyrka/", title: "Kyrka & samlingslokal", text: "Rum där paneler, armaturer och befintlig infrastruktur kan vara viktiga delar av helhetsmiljön." },
-  { href: "/miljo/restaurang-bar-klubb/", title: "Restaurang & eventmiljö", text: "Verksamheter där ljusscener och central styrning kan behöva moderniseras utan onödiga ingrepp." },
+  { href: null, title: "Teater, kulturhus & museum", text: "Äldre scen-, salongs- och miljöbelysning där DMX, dimmers och fastighetsljus behöver samspela med arkitektoniska krav." },
+  { href: null, title: "Aula & samlingssal", text: "Lokaler för tal, musik, föreläsningar och scen där ljuset behöver fungera för flera rumsfunktioner." },
+  { href: "/miljo/skola/", title: "Skola & utbildning", text: "Aula, hörsal och gemensamma ytor där äldre ljus ska fungera tillsammans med modern AV-teknik." },
+  { href: "/miljo/hotell/", title: "Hotell & konferens", text: "Mötesrum, restaurang, lounge och eventytor där scenarier och enkel personalstyrning behöver fungera tillsammans." },
+  { href: "/miljo/kyrka/", title: "Kyrka & samlingslokal", text: "Installationer används ofta länge, vilket gör diskreta ingrepp extra värdefulla när ljusstyrningen moderniseras." },
+  { href: "/miljo/restaurang-bar-klubb/", title: "Restaurang & eventmiljö", text: "Olika ljuslägen över dagen och kombinationer av ljus, ljud och eventfunktioner ställer krav på flexibel styrning." },
 ];
 ---
 
@@ -354,11 +354,11 @@ const environments = [
         <div class="grid-2">
           <article class="card">
             <h3>Framkantsdimring – leading edge</h3>
-            <p>Används traditionellt bland annat med glödljus, resistiva laster och konventionella transformatorer. Metoden förekommer även med vissa dimbara LED-laster.</p>
+            <p>I underlaget anges framkant som RL / leading edge. Principen används traditionellt bland annat med glödljus, resistiva laster och konventionella transformatorer och förekommer även med vissa dimbara LED-laster.</p>
           </article>
           <article class="card">
             <h3>Bakkantsdimring – trailing edge</h3>
-            <p>Används ofta tillsammans med elektroniska transformatorer och moderna LED-laster och kan ge bättre funktion vid låga effekter. Det betyder inte att bakkant alltid är rätt för LED.</p>
+            <p>I underlaget anges bakkant som RC / trailing edge. Principen används ofta tillsammans med elektroniska transformatorer och moderna LED-laster och kan ge bättre funktion vid låga effekter. Det betyder inte att bakkant alltid är rätt för LED.</p>
           </article>
         </div>
       </div>
@@ -529,7 +529,7 @@ const environments = [
     <PageCTA
       eyebrow="Börja med tre bilder"
       title="Har ni en äldre ljusstyrning framför er just nu?"
-      text="AVAB – från gammal analog styrning till modern, dokumenterad och utbyggbar teknik. Bilderna bifogas i mejlet som öppnas efter kontaktformulärets sista steg. Webbplatsen har ingen direkt filuppladdning."
+      text="AVAB – från gammal analog styrning till modern, dokumenterad och utbyggbar teknik. Skicka bilderna tillsammans med en kort beskrivning av problemet. Bilderna bifogas i mejlet som öppnas efter kontaktformulärets sista steg. Webbplatsen har ingen direkt filuppladdning."
       primaryLabel="Skicka bilder på anläggningen"
       primaryHref="/kontakt/#kontaktformular"
       secondaryLabel={`Ring ${AVAB_PHONE.main.display}`}
