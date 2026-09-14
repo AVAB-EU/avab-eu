@@ -547,5 +547,14 @@ const environments = [
   </main>
 
   <SiteFooter />
+
+  <style>
+    /* Ljus sekundär hero-textfärg (samma token som .footer-tagline) i stället för
+       den globala p-regelns mörka --avab-dark-muted, som blir nästan osynlig mot
+       den mörka hero-bakgrunden. */
+    .hero-bottom small {
+      color: rgba(255, 255, 255, 0.74);
+    }
+  </style>
 </body>
 </html>
