@@ -360,6 +360,7 @@ const cameraIndustryPageSchema = z.object({
     .object({
       title: requiredText,
       text: requiredText,
+      image: imageSchema.optional(),
     })
     .optional(),
   facts: z
