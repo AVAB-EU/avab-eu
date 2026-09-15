@@ -70,21 +70,28 @@ const breadcrumbSchema = {
   </head>
   <body>
     <SiteHeader />
+
+    <nav class="breadcrumbs" aria-label="Brödsmulor">
+      <div class="avab-container">
+        <ol>
+          <li><a href="/">Start</a></li>
+          <li><span aria-current="page">Tjänster</span></li>
+        </ol>
+      </div>
+    </nav>
+
     <main id="main">
-      <header class="service-overview-hero">
-        <img
-          class="service-overview-hero__symbol"
-          src="/assets/avab-symbol-outline.svg"
-          alt=""
-          width="520"
-          height="640"
-          aria-hidden="true"
-        />
-        <div class="avab-container service-overview-hero__inner">
-          <h1>Tjänster</h1>
-          <p>Ljud, bild, säkerhet och styrning – från projektering till färdig anläggning.</p>
+      <section class="section section--light" style="padding-bottom: 40px;">
+        <div class="avab-container">
+          <div class="section-heading" style="max-width: 820px;">
+            <div>
+              <div class="eyebrow">Tjänster</div>
+              <h1>Tjänster</h1>
+              <p class="lead-dark">Ljud, bild, säkerhet och styrning – från projektering till färdig anläggning.</p>
+            </div>
+          </div>
         </div>
-      </header>
+      </section>
 
       <ContentSection labelledby="service-directory-title">
         <div class="service-overview-heading">
