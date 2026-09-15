@@ -1,6 +1,15 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-09-14._
+_Kanonisk projektlista. Senast uppdaterad 2026-09-15._
+
+## Nästa fas – inventering och modernisering av tjänsteundersidor
+
+> **Fullständig status:** `docs/checkpoints/2026-09-15-tjanster-checkpoint.md`. Projektet ligger still några dagar från och med denna checkpoint.
+
+- [ ] **Prioritet 1 – bygg kameraövervakningens kvarvarande branschsidor:** Skola, Parkering, Industri, Galleria. Utgå från den färdiga `/kameraovervakning/butik/` och återanvänd gemensamma komponenter/data.
+- [ ] **Prioritet 2 – uppdatera `/kameraovervakning/butik/` efter Go Banana-publicering.** Ta bort/skriv om text som säger att referensen kommer "inom kort" (den är nu publicerad) och lägg en naturlig internlänk till `/referenser/go-banana-bergvik/`.
+- [ ] **Prioritet 3 – inventera samtliga undersidor som länkas från `/tjanster/`.** Dokumentera per sida: finns den, är innehållet komplett, följer den AVAB-standarden, behöver hero moderniseras, rätt PageCTA, FAQ-regeln följd, relevanta interna länkar, fungerar mobilvy, föråldrad copy/gamla designmönster. Mynna ut i en prioriterad lista (Klar / Mindre justering / Behöver moderniseras / Saknas). Ändra inga undersidor innan inventeringen är godkänd.
+- [ ] **Gamla stashes ska inte appliceras utan separat granskning** — särskilt stashen med äldre startsida/factband-arbete, som tidigare återinfört gammal/felaktig layout.
 
 ## Nya notiser 2026-09-14
 - [x] **Byt organisationsnummer på hela webbplatsen till `559600-9661`.** Inventerat hela repot; fyra förekomster ersatta och verifierat att det gamla numret inte finns kvar.
