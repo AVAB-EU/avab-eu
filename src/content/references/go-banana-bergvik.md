@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/go-banana-bergvik/
 layout: extended
 title: Go Banana Bergvik
@@ -17,7 +17,7 @@ seo:
   ogDescription: AVAB projekterade och installerade kamerabevakning med zonindelning från entré till lager, samt bakgrundsmusik, hos Go Banana i Bergvik.
   twitterTitle: Go Banana Bergvik – kameraövervakning och bakgrundsmusik | AVAB
   twitterDescription: Referens om zonindelad kamerabevakning och bakgrundsmusik i en butiksmiljö.
-  noindex: true
+  noindex: false
 
 archive:
   title: Go Banana Bergvik
