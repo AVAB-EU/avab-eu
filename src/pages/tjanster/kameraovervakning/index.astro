@@ -2,7 +2,61 @@
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
+import ExpandableCardGrid, { type ExpandableCardGroup } from "../../../components/ExpandableCardGrid.astro";
 import "../../../styles/avab.css";
+
+const cameraEnvironmentGroups: ExpandableCardGroup[] = [
+  {
+    desktopColumns: 3,
+    items: [
+      {
+        title: "Butik",
+        group: "Kameraövervakning",
+        expandedText: "Kameraövervakning för entré, butiksyta, kassazoner, lager och varumottagning.",
+        href: "/kameraovervakning/butik/",
+        image: "/assets/kameraovervakning-butik-go-banana-hero.webp",
+        imageAlt: "Kameraövervakad butiksyta",
+      },
+      {
+        title: "Skola",
+        group: "Kameraövervakning",
+        expandedText: "Kameraövervakning för skolmiljöer med fokus på trygghet, incidenter och integritet.",
+        disabled: true,
+        status: "Kommer snart",
+      },
+      {
+        title: "Parkering",
+        group: "Kameraövervakning",
+        expandedText: "Kameralösningar för garage och parkeringsytor där överblick, fordon och händelser behöver kunna följas upp.",
+        disabled: true,
+        status: "Kommer snart",
+      },
+      {
+        title: "Industri",
+        group: "Kameraövervakning",
+        expandedText: "Kameraövervakning för industriområden, produktionsmiljöer, lager och perimeter.",
+        disabled: true,
+        status: "Kommer snart",
+      },
+      {
+        title: "Galleria",
+        group: "Kameraövervakning",
+        expandedText: "Kamerasystem för större handelsmiljöer med många entréer, flöden och gemensamma ytor.",
+        disabled: true,
+        status: "Kommer snart",
+        image: "/assets/kopcentrum-galleria-kameraövervakning-hero.webp",
+        imageAlt: "Kameraövervakning i publik köpcentrummiljö",
+      },
+      {
+        title: "Boka rådgivning",
+        group: "Nästa steg",
+        expandedText: "Beskriv er miljö och vad ni behöver hjälp med, så hjälper AVAB er vidare med projektering och offert.",
+        href: "/kontakt/",
+        ctaLabel: "Kontakta oss",
+      },
+    ],
+  },
+];
 ---
 
 
@@ -245,11 +299,22 @@ import "../../../styles/avab.css";
 
 <main id="main">
 
-<section class="section camera-intro">
+<section class="section camera-intro" id="kameraovervakning">
   <div class="container animate-in">
     <div class="snabbt-svar bg-gray" style="margin-top: 0; max-width: 800px;">
       <h2 class="snabbt-svar-title">Vad är kameraövervakning?</h2>
       <p>Kameraövervakning är ett system av kameror, lagring och analysverktyg som används för att skapa trygghet, överblick och snabbare förståelse av händelser.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="kamera-miljoval-title" style="background: var(--avab-light); border-top: 1px solid var(--avab-border);">
+  <div class="container animate-in">
+    <div class="eyebrow">Kameraövervakning för olika miljöer</div>
+    <h2 id="kamera-miljoval-title">Välj rätt lösning för er miljö</h2>
+    <p class="lead-dark">Kraven på kamerabevakning skiljer sig mellan butik, skola, parkering, industri och större handelsmiljöer. Välj den miljö som bäst motsvarar er verksamhet.</p>
+    <div style="margin-top: 40px;">
+      <ExpandableCardGrid groups={cameraEnvironmentGroups} />
     </div>
   </div>
 </section>
@@ -470,33 +535,9 @@ import "../../../styles/avab.css";
     <p class="lead-dark">Olika miljöer kräver olika lösningar. Det som är viktigast i en skola är inte detsamma som i en butik, ett hotell, en industrimiljö eller ett parkeringshus. Vi anpassar systemet efter er specifika riskbild och era flöden.</p>
     
     <div class="env-grid">
-      <!-- KNOWN EXISTING DEAD LINK – ACCEPTED FOR THIS RELEASE -->
-      <a href="/kameraovervakning/skola/" class="env-card">
-        <h3>Skola</h3>
-        <p>Trygghet, obehöriga, skadegörelse, incidentutredning och skolspecifik juridik.</p>
-      </a>
-      <a href="/kameraovervakning/butik/" class="env-card">
-        <h3>Butik &amp; Handel</h3>
-        <p>Svinn, organiserade stölder, kassazoner, retailanalys och snabb uppföljning.</p>
-      </a>
       <a href="/miljo/hotell/" class="env-card">
         <h3>Hotell</h3>
         <p>Diskret trygghet, reception, nattdrift, gästyta och back-of-house-kontroll.</p>
-      </a>
-      <!-- KNOWN EXISTING DEAD LINK – ACCEPTED FOR THIS RELEASE -->
-      <a href="/kameraovervakning/parkering/" class="env-card">
-        <h3>Parkering &amp; Garage</h3>
-        <p>ANPR, infart/utfart, wayfinding, lediga platser och trygghet i utsatta ytor.</p>
-      </a>
-      <!-- KNOWN EXISTING DEAD LINK – ACCEPTED FOR THIS RELEASE -->
-      <a href="/kameraovervakning/industri/" class="env-card">
-        <h3>Industri &amp; Logistik</h3>
-        <p>Perimeterövervakning, grindar, logistik, zonkontroll, robust drift och spårbarhet.</p>
-      </a>
-      <!-- KNOWN EXISTING DEAD LINK – ACCEPTED FOR THIS RELEASE -->
-      <a href="/kameraovervakning/galleria/" class="env-card">
-        <h3>Köpcentrum &amp; Galleria</h3>
-        <p>Exakt sökning i publika flöden, realtidsöverblick och trygghet i större ytor.</p>
       </a>
     </div>
 
