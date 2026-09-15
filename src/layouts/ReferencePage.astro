@@ -102,12 +102,14 @@ const renderPageCta = Boolean(
 );
 const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
 
-const anchorItems = data.story?.chapters.map((chapter) => ({
-  id: chapter.id,
-  label: chapter.navLabel,
-})) ?? [
-  { id: "uppdraget", label: "Uppdraget" },
-  { id: "omfattning", label: "Leveransen" },
+const anchorItems = [
+  ...(data.story?.chapters.map((chapter) => ({
+    id: chapter.id,
+    label: chapter.navLabel,
+  })) ?? [
+    { id: "uppdraget", label: "Uppdraget" },
+    { id: "omfattning", label: "Leveransen" },
+  ]),
   ...(data.results ? [{ id: "resultat", label: "Resultatet" }] : []),
   ...(data.gallery ? [{ id: "bilder", label: "Bilder" }] : []),
   ...(data.technicalDetails ? [{ id: "tekniken", label: "Tekniken" }] : []),
