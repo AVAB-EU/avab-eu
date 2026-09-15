@@ -27,10 +27,18 @@ const { scope, variants, showDetails = false } = Astro.props;
             {scope.projectFacts && (
               <dl class="case-fact-grid">
                 {scope.projectFacts.map((fact) => (
-                  <div>
-                    <dt>{fact.label}</dt>
-                    <dd>{fact.value}</dd>
-                  </div>
+                  fact.href ? (
+                    <a class="case-fact case-fact--link" href={fact.href}>
+                      <dt>{fact.label}</dt>
+                      <dd>{fact.value}</dd>
+                      <span class="case-fact__arrow" aria-hidden="true">→</span>
+                    </a>
+                  ) : (
+                    <div class="case-fact">
+                      <dt>{fact.label}</dt>
+                      <dd>{fact.value}</dd>
+                    </div>
+                  )
                 ))}
               </dl>
             )}

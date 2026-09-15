@@ -153,7 +153,7 @@ const referenceSchema = z
       lead: z.string(),
       items: z.array(z.string()).min(1),
       projectFacts: z
-        .array(z.object({ label: z.string(), value: z.string() }))
+        .array(z.object({ label: z.string(), value: z.string(), href: z.string().optional() }))
         .min(1)
         .optional(),
       serviceLabel: z.string().optional(),
