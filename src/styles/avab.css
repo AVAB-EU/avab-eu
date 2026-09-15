@@ -969,6 +969,7 @@ p {
   margin-bottom: 18px;
   max-width: 18ch;
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 .hero .lead {

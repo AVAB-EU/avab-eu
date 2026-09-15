@@ -339,9 +339,97 @@ const referenceSchema = z
     });
   });
 
+const cameraIndustryPageSchema = z.object({
+  slug: z.string().startsWith("/kameraovervakning/").endsWith("/"),
+  industry: requiredText,
+  seo: z.object({
+    title: requiredText,
+    description: requiredText,
+  }),
+  h1: requiredText,
+  hero: z.object({
+    eyebrow: requiredText,
+    lead: requiredText,
+    image: imageSchema,
+    primaryLabel: requiredText,
+    primaryHref: requiredText,
+    secondaryLabel: z.string().optional(),
+    secondaryHref: z.string().optional(),
+  }),
+  principle: z
+    .object({
+      title: requiredText,
+      text: requiredText,
+      image: imageSchema.optional(),
+    })
+    .optional(),
+  facts: z
+    .array(z.object({ label: requiredText, value: requiredText }))
+    .min(1)
+    .optional(),
+  sections: z
+    .array(
+      z.object({
+        id: z.string().regex(/^[a-z0-9-]+$/),
+        eyebrow: z.string().optional(),
+        title: requiredText,
+        paragraphs: z.array(requiredText).min(1),
+        bullets: z.array(requiredText).optional(),
+        image: imageSchema.optional(),
+      }),
+    )
+    .min(1),
+  legalOrientation: z
+    .object({
+      eyebrow: z.string().optional(),
+      title: requiredText,
+      paragraphs: z.array(requiredText).min(1),
+      linkLabel: z.string().optional(),
+      linkHref: z.string().optional(),
+    })
+    .optional(),
+  statistics: z
+    .object({
+      eyebrow: z.string().optional(),
+      title: requiredText,
+      source: requiredText,
+      items: z.array(z.object({ value: requiredText, label: requiredText })).min(1),
+    })
+    .optional(),
+  proof: z
+    .object({
+      eyebrow: z.string().optional(),
+      title: requiredText,
+      text: requiredText,
+      image: imageSchema.optional(),
+      linkLabel: z.string().optional(),
+      linkHref: z.string().optional(),
+    })
+    .optional(),
+  faq: z.object({
+    title: requiredText,
+    items: z.array(z.object({ question: requiredText, answer: requiredText })).min(1),
+  }),
+  cta: z.object({
+    eyebrow: z.string().optional(),
+    title: requiredText,
+    text: z.string().optional(),
+    primaryLabel: requiredText,
+    primaryHref: requiredText,
+    secondaryLabel: z.string().optional(),
+    secondaryHref: z.string().optional(),
+    points: z.array(requiredText).optional(),
+  }),
+});
+
 const references = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/references" }),
   schema: referenceSchema,
 });
 
-export const collections = { references };
+const cameraIndustryPages = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/camera-industry-pages" }),
+  schema: cameraIndustryPageSchema,
+});
+
+export const collections = { references, cameraIndustryPages };

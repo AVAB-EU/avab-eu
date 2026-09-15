@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import CameraIndustryPage from "../../../layouts/CameraIndustryPage.astro";
+
+const page = (await getCollection("cameraIndustryPages")).find(
+  (entry) => entry.data.slug === "/kameraovervakning/butik/",
+);
+
+if (!page) {
+  throw new Error("Kamera-branschsidan för butik saknas i content collection.");
+}
+---
+
+<CameraIndustryPage page={page} />
