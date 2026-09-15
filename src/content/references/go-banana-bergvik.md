@@ -41,7 +41,7 @@ customer:
   name: Go Banana
   publicDisplay: Go Banana
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 
 heroImage:
