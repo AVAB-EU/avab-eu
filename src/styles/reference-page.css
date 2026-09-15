@@ -429,12 +429,12 @@
 }
 .scope-list li {
   position: relative;
-  padding: 17px 0 17px 28px;
+  padding: 22px 24px 22px 48px;
   border-bottom: 1px solid var(--reference-line);
   color: var(--reference-ink);
   font-weight: 700;
 }
-.scope-list li::before { content: "✓"; position: absolute; left: 0; color: var(--avab-green); font-weight: 900; }
+.scope-list li::before { content: "✓"; position: absolute; left: 14px; top: 22px; color: var(--avab-green); font-weight: 900; }
 
 .room-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 30px; }
 .room-card {
