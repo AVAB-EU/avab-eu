@@ -11,7 +11,7 @@ Detta workflow används när en befintlig sida ska uppdateras utan att sidtypen 
 
 ## 1. Identifiera sidtyp och faktisk implementation
 
-Läs route, relevant standard och faktisk kod. Bestäm om sidan är:
+Läs route, relevant standard och faktisk kod. Om sidan är Referens, Miljö eller Tjänst ska `docs/standards/pages/canonical-page-exemplars.md` också läsas och sidan jämföras mot respektive facit när ändringen påverkar struktur eller presentation. Bestäm om sidan är:
 
 - migrerad till content model/template,
 - legacy/fullsidig Astro,
