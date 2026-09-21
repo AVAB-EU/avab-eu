@@ -166,6 +166,7 @@ const faqSchema = {
                   alt={data.principle.image.alt}
                   width={data.principle.image.width}
                   height={data.principle.image.height}
+                  style={data.principle.image.objectPosition ? `object-position: ${data.principle.image.objectPosition};` : undefined}
                   loading="lazy"
                   decoding="async"
                 />
@@ -197,6 +198,7 @@ const faqSchema = {
                   alt={section.image.alt}
                   width={section.image.width}
                   height={section.image.height}
+                  style={section.image.objectPosition ? `object-position: ${section.image.objectPosition};` : undefined}
                   loading="lazy"
                   decoding="async"
                 />
