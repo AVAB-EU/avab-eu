@@ -11,7 +11,7 @@ seo:
 h1: "Exakt sökning och AI-analys som gör inspelat material användbart"
 
 hero:
-  eyebrow: Tjänst: Exakt sökning & AI-analys
+  eyebrow: "Tjänst: Exakt sökning & AI-analys"
   lead: Ett kamerasystem blir betydligt mer användbart när rätt sekvens går att hitta snabbt. AI-stödd analys kan filtrera stora mängder videomaterial och hjälpa användaren att söka efter relevanta personer, fordon och händelser.
   image:
     src: /assets/Kameraovervakning-dahua-hero.webp
