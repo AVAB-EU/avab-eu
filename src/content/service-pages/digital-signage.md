@@ -1,12 +1,12 @@
 ---
-draft: true
+draft: false
 slug: /tjanster/digital-signage/
 service: Digital signage
 
 seo:
   title: Digital signage & informationsskärmar | AVAB
   description: AVAB projekterar och installerar digital signage, informationsskärmar, totems och centralt styrda bildytor för butik, galleria, hotell, skola och publika miljöer.
-  noindex: true
+  noindex: false
 
 h1: "Digital signage som visar rätt information på rätt plats"
 
@@ -106,18 +106,6 @@ sections:
       - Infästning och bärande konstruktion
       - El och nätverk
       - Kabelvägar och serviceåtkomst
-
-proof:
-  eyebrow: Referens
-  title: Galleria Duvan – digital signage i gallerimiljö
-  text: I Galleria Duvan i Karlstad finns verifierat underlag för två fristående totemskärmar på 55 tum och 700 nits ljusstyrka för publik information. Referenssidan är fortfarande under uppbyggnad och ligger noindex.
-  image:
-    src: /assets/kopcentrum-fasad-kvall.webp
-    alt: Galleria Duvan i Karlstad kvällstid
-    width: 1200
-    height: 900
-  linkLabel: Se utkastet för Galleria Duvan
-  linkHref: /referenser/galleria-duvan/
 
 faq:
   title: Vanliga frågor om digital signage
