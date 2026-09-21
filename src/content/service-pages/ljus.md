@@ -11,7 +11,7 @@ seo:
 h1: "Ljus som förstärker rummet och är enkelt att styra"
 
 hero:
-  eyebrow: Tjänst: Ljus
+  eyebrow: "Tjänst: Ljus"
   lead: AVAB projekterar och installerar ljuslösningar för miljöer där belysning ska skapa rätt känsla, stödja verksamheten och kunna styras enkelt tillsammans med ljud, bild och andra tekniska system.
   image:
     src: /assets/gym-interior-bla-ledbelysning.webp
