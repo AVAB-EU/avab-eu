@@ -110,7 +110,6 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
   ...(data.results ? [{ id: "resultat", label: "Resultatet" }] : []),
   ...(data.gallery ? [{ id: "bilder", label: "Bilder" }] : []),
   ...(data.technicalDetails ? [{ id: "tekniken", label: "Tekniken" }] : []),
-  ...(data.faq ? [{ id: "reference-faq-title", label: "FAQ" }] : []),
 ].slice(0, 5);
 ---
 
