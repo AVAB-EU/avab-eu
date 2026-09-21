@@ -11,7 +11,7 @@ seo:
 h1: "Videomöten och BYOM som fungerar med användarens egen dator"
 
 hero:
-  eyebrow: Tjänst: Videomöten & BYOM
+  eyebrow: "Tjänst: Videomöten & BYOM"
   lead: BYOM gör att användaren kan ta med sin egen dator och använda rummets professionella kamera, mikrofoner, högtalare och skärm i Teams, Zoom, Google Meet eller annan mötesplattform.
   image:
     src: /assets/konferensrum-stor-skarm-bord.webp
