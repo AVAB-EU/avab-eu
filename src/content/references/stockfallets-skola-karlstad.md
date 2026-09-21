@@ -128,9 +128,9 @@ story:
       answer: Skolgården och sporthallen har olika funktion, akustik och användare. Därför projekterades rastsignal och sporthallsljud som två separata system i stället för en kompromiss som försöker göra allt.
       paragraphs:
         - En skolgård och en sporthall kan ligga i samma projekt men ställer helt olika krav på ljudtekniken. Utomhus handlar det främst om att information ska nå fram tydligt över en öppen yta. I sporthallen handlar det om tal, musik, trådlös mikrofon, lokala ljudkällor, högre ljudnivåer och möjligheten att dela lokalen i två självständiga verksamheter.
-        - Därför byggdes Stockfallets skola inte med en generell ljudlösning som skulle försöka göra allt. I stället projekterades två system efter respektive miljö. Det är samma princip AVAB använder i andra större AV-projekt: funktionen bestämmer tekniken.
+        - "Därför byggdes Stockfallets skola inte med en generell ljudlösning som skulle försöka göra allt. I stället projekterades två system efter respektive miljö. Det är samma princip AVAB använder i andra större AV-projekt: funktionen bestämmer tekniken."
         - Rastsignalsystemet byggdes som ett separat system för utomhuskommunikation. Centralenheten är en AUDAC MFA216 tillsammans med AUDAC FMP40 för uppspelning av ljudfiler och en AUDAC PDM200 svanhalsmikrofon för manuella meddelanden. Tre AUDAC CHA530 används för ljudspridningen utomhus.
-        - Systemet ger skolan två grundfunktioner: automatiserade signaler och manuella utrop. Återkommande signaler under skoldagen kan hanteras automatiskt, samtidigt som personalen kan använda mikrofonen när information behöver gå ut direkt.
+        - "Systemet ger skolan två grundfunktioner: automatiserade signaler och manuella utrop. Återkommande signaler under skoldagen kan hanteras automatiskt, samtidigt som personalen kan använda mikrofonen när information behöver gå ut direkt."
         - Ett modernt rastsignalsystem behöver inte bara ge en ringsignal. När ljuduppspelning och mikrofonfunktion kombineras kan samma infrastruktur användas för rastsignaler, start- och sluttider, information till elever, praktiska meddelanden och andra återkommande ljudhändelser.
         - Eftersom systemet spelar ljudfiler kan skolan också använda andra förprogrammerade signaler än en traditionell mekanisk skolklocka utan att den grundläggande installationen behöver göras om.
         - Utomhus finns inga väggar och tak som hjälper till att hålla kvar ljudenergin. Därför behöver skolgården betraktas som en yta som ska täckas, inte bara som en plats där några högtalare ska monteras. Högtalarplacering och riktning blir särskilt viktiga för att undvika mycket stark nivå nära en högtalare och svag nivå längre bort.
@@ -159,7 +159,7 @@ story:
         - När hallen delas delas även ljudsystemet automatiskt i två zoner. Respektive hallhalva kan då hantera sin egen ljudkälla och lokala användning utan att verksamheten på andra sidan behöver påverkas. När hallen öppnas återgår ljudanläggningen till gemensam helsal.
         - Den fysiska lokalen och AV-systemet följer alltså samma logik. Den här funktionen är central i en delbar hall eftersom användaren inte ska behöva programmera om ljudet manuellt varje gång ridåväggen flyttas.
         - Hjärnan bakom sporthallens ljud är en Bose ControlSpace ESP-880. DSP:n hanterar signalerna mellan ljudkällor, hallzoner och högtalarsystem. Bakom kulisserna kan systemet hantera routing, nivåer och signalbehandling medan användaren möter betydligt enklare funktioner.
-        - Det är en viktig princip i fasta AV-installationer: komplexiteten ska ligga i programmeringen, inte hos användaren.
+        - "Det är en viktig princip i fasta AV-installationer: komplexiteten ska ligga i programmeringen, inte hos användaren."
       mediaGroups:
         - columns: 1
           ratio: land
