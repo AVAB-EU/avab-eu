@@ -867,6 +867,26 @@
 
 .reference-media-grid--split .reference-media-card p { flex-grow: 0; }
 
+.reference-media-grid--split.reference-media-grid--portrait .reference-media-card {
+  grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
+}
+
+.reference-media-grid--split.reference-media-grid--portrait .reference-media-card__media {
+  height: clamp(320px, 34vw, 480px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--avab-white);
+}
+
+.reference-media-grid--split.reference-media-grid--portrait .reference-media-card__media img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
 .reference-media-card figcaption {
   display: flex;
   flex-direction: column;
@@ -977,6 +997,17 @@
 
   .reference-media-grid--split .reference-media-card figcaption {
     padding: 16px 17px 18px;
+  }
+
+  .reference-media-grid--split.reference-media-grid--portrait .reference-media-card__media {
+    height: clamp(280px, 90vw, 420px);
+    aspect-ratio: auto;
+  }
+
+  .reference-media-grid--split.reference-media-grid--portrait .reference-media-card__media img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
   }
 
   .reference-feature-split {
