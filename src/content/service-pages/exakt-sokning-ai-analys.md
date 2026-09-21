@@ -24,17 +24,17 @@ hero:
   secondaryHref: /tjanster/kameraovervakning/
 
 facts:
-  - label: Syfte
+  - "label: Syfte"
     value: Hitta relevant video snabbare
-  - label: Sökning
+  - "label: Sökning"
     value: Person, fordon och händelse
-  - label: Analys
+  - "label: Analys"
     value: Filtrering av irrelevant material
-  - label: Drift
+  - "label: Drift"
     value: Tydligare utredningsflöde
-  - label: System
+  - "label: System"
     value: Kamera, VMS, lagring och analys
-  - label: Leverans
+  - "label: Leverans"
     value: Projektering till driftsättning
 
 principle:
@@ -54,11 +54,11 @@ principle:
     height: 774
 
 sections:
-  - id: exakt-sokning
+  - "id: exakt-sokning"
     eyebrow: Exakt sökning
     title: Börja med det du redan vet om händelsen
     paragraphs:
-      - När en händelse ska utredas finns ofta någon känd utgångspunkt: tid, plats, en person, ett fordon eller en rörelse genom en viss zon.
+      - "När en händelse ska utredas finns ofta någon känd utgångspunkt: tid, plats, en person, ett fordon eller en rörelse genom en viss zon."
       - Ett modernt VMS kan använda dessa ledtrådar för att minska mängden material som behöver granskas manuellt och hjälpa användaren att gå vidare mellan relevanta kameror och tidsintervall.
     bullets:
       - Sökning utifrån tid och plats
@@ -66,7 +66,7 @@ sections:
       - Växling mellan kameror i samma händelseförlopp
       - Kortare manuellt granskningsarbete
 
-  - id: ai
+  - "id: ai"
     eyebrow: AI-analys
     title: AI används för att sortera och prioritera videomaterial
     paragraphs:
@@ -78,7 +78,7 @@ sections:
       - Händelsefilter som minskar mängden material
       - Analysfunktioner anpassade efter verksamhetens behov
 
-  - id: struktur
+  - "id: struktur"
     eyebrow: Drift
     title: Bra sökning kräver en välstrukturerad kameraanläggning
     paragraphs:
@@ -96,7 +96,7 @@ sections:
       width: 1516
       height: 736
 
-  - id: projektering
+  - "id: projektering"
     eyebrow: Projektering
     title: Analysen behöver definieras innan kamerorna monteras
     paragraphs:
@@ -112,17 +112,17 @@ faq:
   title: Vanliga frågor om exakt sökning och AI i kamerasystem
   lead: Korta svar om vad analysen faktiskt gör och vad som krävs runt omkring.
   items:
-    - question: Vad är exakt sökning i kameraövervakning?
+    - "question: Vad är exakt sökning i kameraövervakning?"
       answer: Exakt sökning innebär att systemet hjälper användaren att filtrera inspelat material och snabbare hitta relevanta personer, fordon eller händelser i stället för att gå igenom all video manuellt.
-    - question: Vad gör AI i ett kamerasystem?
+    - "question: Vad gör AI i ett kamerasystem?"
       answer: AI analyserar bildinnehåll och skapar metadata eller händelser som kan användas för filtrering, klassificering och sökning. Exakta funktioner beror på den valda plattformen.
-    - question: Kan systemet söka efter fordon?
+    - "question: Kan systemet söka efter fordon?"
       answer: Många moderna system kan klassificera och filtrera fordonsrelaterade händelser. Vilka detaljer som går att söka på beror på kamera, VMS och licensierade analysfunktioner.
-    - question: Kan AI ersätta bra kameraplacering?
+    - "question: Kan AI ersätta bra kameraplacering?"
       answer: Nej. Om kameran sitter fel eller bilden saknar rätt detaljnivå blir analysen begränsad. Projektering av bildkvalitet och placering är fortfarande grunden.
-    - question: Behöver alla kameror AI?
+    - "question: Behöver alla kameror AI?"
       answer: Nej. Analys bör användas där den ger verklig nytta. Vissa kameror kan främst ge överblick medan andra zoner behöver mer avancerad sökning.
-    - question: Fungerar sökningen även i inspelat material?
+    - "question: Fungerar sökningen även i inspelat material?"
       answer: Ja, i system som stödjer det används metadata och analys för att söka i historiskt videomaterial och snabbare hitta relevanta sekvenser.
 
 cta:
