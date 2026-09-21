@@ -44,7 +44,7 @@ Alltid:
 8. `docs/standards/pages/canonical-page-exemplars.md`
 9. den kanoniska facit-sidan för sidtypen: `/miljo/simhall/` för Environment eller `/tjanster/horslinga/` för Service; andra befintliga sidor används endast som sekundära regressionsexempel
 
-Dokumenterade mål får inte behandlas som implementerad kod.
+Dokumenterade mål får inte behandlas som implementerad kod. En äldre legacy-sida får inte användas som alternativ designmall när ett kanoniskt facit finns.
 
 ## 3. Kontrollera implementation före skrivning
 
