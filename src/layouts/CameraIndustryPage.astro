@@ -15,6 +15,9 @@ const data = page.data;
 
 const canonicalUrl = absoluteUrl(data.slug);
 const heroImageUrl = absoluteUrl(data.hero.image.src);
+const robots = data.draft || data.seo.noindex
+  ? "noindex, nofollow"
+  : "index, follow, max-image-preview:large";
 
 const breadcrumbs = [
   { label: "Start", href: "/" },
@@ -79,7 +82,7 @@ const faqSchema = {
     <title>{data.seo.title}</title>
     <meta name="description" content={data.seo.description} />
     <link rel="canonical" href={canonicalUrl} />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content={robots} />
     <meta name="author" content="AVAB" />
     <meta name="theme-color" content="#282E29" />
 
@@ -153,7 +156,7 @@ const faqSchema = {
 
     {data.facts && (
       <section class="fact-band" aria-label={`Snabbfakta ${data.industry}`}>
-        <div class="avab-container fact-grid fact-grid--4">
+        <div class={`avab-container fact-grid ${data.facts.length === 6 ? "fact-grid--6" : data.facts.length === 4 ? "fact-grid--4" : ""}`}>
           {data.facts.map((fact) => (
             <div class="fact"><span>{fact.label}</span><strong>{fact.value}</strong></div>
           ))}
@@ -200,7 +203,7 @@ const faqSchema = {
                   </div>
                 </div>
                 {section.bullets && (
-                  <div class="grid-3">
+                  <div class:list={[section.bullets.length === 4 ? "grid-2" : "grid-3"]}>
                     {section.bullets.map((bullet) => {
                       const [title, ...rest] = bullet.split(" – ");
                       return (

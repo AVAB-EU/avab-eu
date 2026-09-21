@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import CameraIndustryPage from "../../../layouts/CameraIndustryPage.astro";
+
+const page = (await getCollection("cameraIndustryPages")).find(
+  (entry) => entry.data.slug === "/kameraovervakning/gdpr/",
+);
+
+if (!page) {
+  throw new Error("Kamerasidan för GDPR & juridik saknas i content collection.");
+}
+---
+
+<CameraIndustryPage page={page} />
