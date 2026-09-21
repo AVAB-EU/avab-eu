@@ -33,3 +33,6 @@ pnpm-debug.log*
 
 # personal Claude Code permissions (machine-specific)
 .claude/settings.local.json
+
+# local customer/source documents – never commit
+docs/source-material/
