@@ -40,6 +40,16 @@ Ingen `draft`, `noindex` eller `customer.publicationApproved` ändras i denna au
 - Status: **indexerbar men metadata/process behöver granskas**
 - Åtgärd: ändra inte approval-fältet automatiskt. Bekräfta om publiceringen redan är kundgodkänd och dokumentera därefter beslutet.
 
+## Publiceringsbeslut – huvudtjänster 2026-09-21
+
+| Sida | Beslut | Skäl |
+|---|---|---|
+| `/tjanster/ljus/` | **REDO ATT INDEXERA** | Verifierat underlag, inga unsupported claims, inga saknade assets, visuellt godkänd |
+| `/tjanster/natverk-switchar-router-fiber/` | **REDO ATT INDEXERA** | Verifierat underlag, inga unsupported/product claims, inga saknade assets, visuellt godkänd |
+| `/tjanster/skarmar-projektorer/` | **SLUTREVIEW** | Coverage ren, men kräver sista mänskliga visuella/content-review före indexering |
+| `/tjanster/digital-signage/` | **SLUTREVIEW** | Coverage ren, men proof/referens använder Galleria Duvan som fortfarande beskrivs som under uppbyggnad |
+| `/tjanster/konferensteknik/` | **BLOCKERAD** | Coverage har `LOCAL SOURCE CHECK: PENDING` mot lokal `Konferensteknik.docx` |
+
 ## B. Nya tjänstesidor – tekniskt byggda, fortfarande draft/noindex
 
 - `/tjanster/konferensteknik/`
