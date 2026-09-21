@@ -33,7 +33,23 @@ function publicAssetExists(src) {
 
 function resolveBaseRef() {
   const base = process.env.GITHUB_BASE_REF || "main";
-  const candidates = [`origin/${base}`, base];
+
+  // In GitHub Actions the checkout remote is normally "origin".
+  // Locally this repository commonly uses "upstream". If we are already
+  // standing on the base branch, compare against the local branch itself so
+  // stale remote-tracking refs cannot make old files look newly changed.
+  let currentBranch = null;
+  try {
+    currentBranch = execFileSync(
+      "git",
+      ["branch", "--show-current"],
+      { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] },
+    ).trim();
+  } catch {}
+
+  const candidates = currentBranch === base
+    ? [base, `upstream/${base}`, `origin/${base}`]
+    : [`upstream/${base}`, `origin/${base}`, base];
 
   for (const candidate of candidates) {
     try {
