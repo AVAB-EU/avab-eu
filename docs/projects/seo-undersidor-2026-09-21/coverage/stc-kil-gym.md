@@ -184,6 +184,10 @@ SOURCE COVERAGE
 
 ## Tekniska kontroller
 
-- Astro/schema/build: väntar på PR-validering.
-- Full renderad HTML-kontroll: väntar på lyckad build.
+- Guardrails: **PASS** för 19 reference content entries.
+- Astro/schema/build: **PASS** i PR #62 via `npm run validate`.
+- Ny route genererad: **PASS** – `/referenser/stc-kil-gym/index.html`.
+- Source coverage: **PASS** – `MISSING SOURCE INFORMATION: 0`.
+- FAQ använder gemensam referenskomponent och ligger direkt före PageCTA eftersom ingen `relatedReferences`-sektion används.
+- Befintliga STC Kil-länkar från Gym och Mikrofoner pekar på den nya routen utan dead-link-kommentar.
 - Browser-QA desktop/tablet/mobil: kräver mänsklig visuell granskning före publicering.
