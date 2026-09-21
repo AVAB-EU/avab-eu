@@ -24,17 +24,17 @@ hero:
   secondaryHref: /tjanster/konferensteknik/
 
 facts:
-  - label: Anslutning
+  - "label: Anslutning"
     value: USB-C, USB och trådlöst efter behov
-  - label: Plattformar
+  - "label: Plattformar"
     value: Teams, Zoom, Google Meet med flera
-  - label: Ljud
+  - "label: Ljud"
     value: Mikrofoner, högtalare och DSP
-  - label: Bild
+  - "label: Bild"
     value: Kamera och skärm i samma mötesflöde
-  - label: Rum
+  - "label: Rum"
     value: Små samtalsrum till större mötesrum
-  - label: Mål
+  - "label: Mål"
     value: Samma enkla start varje gång
 
 principle:
@@ -54,7 +54,7 @@ principle:
     height: 900
 
 sections:
-  - id: hur-det-fungerar
+  - "id: hur-det-fungerar"
     eyebrow: Så fungerar det
     title: En anslutning kopplar datorn till rummets AV-system
     paragraphs:
@@ -66,7 +66,7 @@ sections:
       - Bild från datorn till rummets skärm
       - Laddning och anslutning via samma kabel där lösningen stödjer det
 
-  - id: ljud
+  - "id: ljud"
     eyebrow: Ljud
     title: Distansdeltagaren måste höra hela rummet
     paragraphs:
@@ -78,7 +78,7 @@ sections:
       - Jämn ljudnivå för deltagarna på distans
       - Högtalare placerade för naturligt samtalsljud
 
-  - id: standardisering
+  - "id: standardisering"
     eyebrow: Standardisering
     title: Samma användarflöde minskar supportbehovet
     paragraphs:
@@ -106,17 +106,17 @@ faq:
   title: Vanliga frågor om videomöten och BYOM
   lead: Korta svar om hur BYOM och hybridmöten fungerar i praktiken.
   items:
-    - question: Vad betyder BYOM?
+    - "question: Vad betyder BYOM?"
       answer: BYOM betyder Bring Your Own Meeting. Användaren ansluter sin egen dator och använder rummets installerade kamera, mikrofoner, högtalare och skärm.
-    - question: Fungerar BYOM med Teams och Zoom?
+    - "question: Fungerar BYOM med Teams och Zoom?"
       answer: Ja, när lösningen är rätt byggd fungerar rummets AV-enheter som kamera, mikrofon och högtalare för mötesprogrammet på användarens dator.
-    - question: Behövs en separat rumsdator?
+    - "question: Behövs en separat rumsdator?"
       answer: Inte nödvändigtvis. I en BYOM-lösning är användarens egen dator mötesmotor. Vissa rum kan ändå byggas med både fast mötesplattform och BYOM.
-    - question: Kan en enda USB-C-kabel räcka?
+    - "question: Kan en enda USB-C-kabel räcka?"
       answer: I många lösningar kan en USB-C-anslutning hantera flera funktioner samtidigt, men exakt funktion beror på utrustning, signalväg och hur rummet är projekterat.
-    - question: När behövs separata mikrofoner?
+    - "question: När behövs separata mikrofoner?"
       answer: När rummet är större än vad en videobar eller enkel bordsenhet kan täcka jämnt. Då används ofta tak- eller bordsmikrofoner tillsammans med DSP.
-    - question: Kan flera mötesrum standardiseras?
+    - "question: Kan flera mötesrum standardiseras?"
       answer: Ja. Samma anslutning, märkning och användarflöde i flera rum minskar behovet av utbildning och support.
 
 cta:
