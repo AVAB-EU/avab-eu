@@ -62,6 +62,8 @@ FAQ-formuleringar, CTA-text, AEO/GEO-snippets, internlänkar och liknande som f�
 
 ## Fas 2 – Architecture decision
 
+Utgå visuellt och strukturellt från det kanoniska referensfacit `https://avab.eu/referenser/saffle-simhall/` enligt `docs/standards/pages/canonical-page-exemplars.md`. Äldre referenser används endast för regression och för att se redan implementerade variationer — aldrig som alternativ mall.
+
 Avgör om sidan kan byggas helt med befintlig reference-arkitektur:
 
 - `src/layouts/ReferencePage.astro`
