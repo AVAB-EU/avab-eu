@@ -110,7 +110,6 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
   ...(data.results ? [{ id: "resultat", label: "Resultatet" }] : []),
   ...(data.gallery ? [{ id: "bilder", label: "Bilder" }] : []),
   ...(data.technicalDetails ? [{ id: "tekniken", label: "Tekniken" }] : []),
-  ...(data.faq ? [{ id: "reference-faq-title", label: "FAQ" }] : []),
 ].slice(0, 5);
 ---
 
@@ -260,7 +259,6 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
               </section>
               </>}
             </div>
-          </section>
 
           {hasStory && (
             <ReferenceScope scope={data.scope} variants={data.variants} showDetails />
@@ -280,6 +278,7 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
             />
           )}
           {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
+          </section>
         </>
 
       {renderPageCta && cta && (
