@@ -188,9 +188,9 @@ story:
         - >-
           Varje hallhalva har en egen Bose CC-16. I helsalsläge visar styrningen funktioner för hela hallen och i delat läge arbetar respektive panel med sin zon. En idrottslärare, tränare eller föreningsledare behöver därför inte förstå Dante, DSP eller signalmatriser för att höja ljudet eller välja rätt källa.
         - >-
-          Två handhållna Sennheiser EW-D 835-S ger trådlöst tal. I helsalsläge kan mikrofonerna användas över hela hallen och när lokalen delas hör de till respektive hallzon. Systemet installerades med extern antennlösning så att radioförbindelsen projekteras för det område där användaren faktiskt ska kunna röra sig. Sennheiser anger 134 dB dynamiskt omfång och 1,9 ms systemlatens för EW-D.
+          Två handhållna Sennheiser EW-D 835-S ger trådlöst tal. De används bland annat vid idrottsundervisning, speaker, matcher, cuper, skolarrangemang, prisutdelningar och föreningsaktiviteter. I helsalsläge kan mikrofonerna användas över hela hallen och när lokalen delas hör de till respektive hallzon. Systemet installerades med extern antennlösning så att radioförbindelsen projekteras för det område där användaren faktiskt ska kunna röra sig. Sennheiser anger 134 dB dynamiskt omfång och 1,9 ms systemlatens för EW-D.
         - >-
-          Två Dante AVIO Bluetooth-adaptrar ger en lokal Bluetooth-källa på varje sida. Hall A kan därför spela en musikkälla samtidigt som hall B använder en annan. För användaren är det Bluetooth; bakom kulisserna transporteras signalen digitalt över Dante till Bose-processorn och vidare till rätt zon.
+          Två Dante AVIO Bluetooth-adaptrar ger en lokal Bluetooth-källa på varje sida. Adaptrarna strömförsörjs via PoE och fungerar som nätverksanslutna ljudenheter. Hall A kan därför spela en musikkälla samtidigt som hall B använder en annan. För användaren är det Bluetooth; bakom kulisserna transporteras signalen digitalt över Dante till Bose-processorn och vidare till rätt zon.
         - >-
           Hallen har dessutom två lokala inkopplingspunkter för extern ljudkälla eller mixer via Dante. Det gör att vardagsanvändningen kan vara enkel utan att lokalen blir begränsad när en match, cup, skolavslutning, uppvisning, DJ eller annan produktion behöver mer avancerad teknik.
         - >-
@@ -373,7 +373,7 @@ technicalDetails:
     - "Slutsteg: Yamaha PX8, 2 × 800 W vid 8 ohm och 2 × 1050 W vid 4 ohm"
     - "Trådlöst: 2 × Sennheiser EW-D 835-S med extern antennlösning"
     - "EW-D: 134 dB dynamiskt omfång och 1,9 ms systemlatens"
-    - "Bluetooth: 2 × Dante AVIO Bluetooth, en lokal källa per hallhalva"
+    - "Bluetooth: 2 × Dante AVIO Bluetooth (PoE), en lokal källa per hallhalva"
     - "Extern inkoppling: 2 lokala punkter för mixer eller annan analog produktionskälla via Dante AVIO"
     - "Nätverk: Dante / AES67 över AV-nätverk"
     - "Zonlogik: helsal eller två automatiskt separerade hallhalvor kopplade till ridåväggen"
