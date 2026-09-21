@@ -10,7 +10,7 @@ Detta dokument skiljer normalt innehållsarbete från utvecklingsarbete. En AI s
 
 ## Grundregel
 
-Minsta nödvändiga scope gäller. En begäran om innehåll får inte tyst bli en design-, routing- eller arkitekturändring.
+Minsta nödvändiga scope gäller. En begäran om innehåll får inte tyst bli en design-, routing- eller arkitekturändring. För Referens, Miljö och Tjänst definieras den beslutade visuella/strukturella riktningen i `docs/standards/pages/canonical-page-exemplars.md`.
 
 ## Låg risk – normalt innehållsarbete
 
