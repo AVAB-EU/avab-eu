@@ -126,12 +126,14 @@ legalOrientation:
 proof:
   eyebrow: Referens
   title: Så löste vi det hos Go Banana Bergvik
-  text: AVAB har projekterat och installerat kamerabevakning i en butik hos Go Banana i Bergvik, med zonindelning från entré till lager. Den fullständiga caseberättelsen publiceras separat som referens inom kort.
+  text: AVAB har projekterat och installerat kamerabevakning i en butik hos Go Banana i Bergvik, med zonindelning från entré till lager. Den färdiga referensen visar hur kameravinklar, zoner och sökbar inspelning används i den verkliga butiksmiljön.
   image:
     src: /assets/go-banana-bergvik-kassa-kameravinkel.webp
     alt: Installerad kamera i taket vid kassaområdet hos Go Banana Bergvik
     width: 944
     height: 2048
+  linkLabel: Se referensen Go Banana Bergvik
+  linkHref: /referenser/go-banana-bergvik/
 
 faq:
   title: Vanliga frågor om kameraövervakning i butik
