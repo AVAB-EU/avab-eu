@@ -26,7 +26,7 @@ Beskriver AVAB:s lösningar för en miljö, exempelvis simhall, skola, industri 
 **Routefamilj:** `/tjanster/<slug>/`  
 **Kanoniskt facit:** `/tjanster/horslinga/`
 
-Beskriver en tjänst/kompetens. Målarkitektur: gemensam tjänstemodell där det är praktiskt, med dokumenterade specialsektioner vid verkligt behov. Ny sida routas via `docs/workflows/create-standard-page.md`.
+Beskriver en tjänst/kompetens. Hörslinga är den visuella och strukturella sanningskällan för nya tjänstesidor enligt `docs/standards/pages/canonical-page-exemplars.md`. Målarkitektur: gemensam tjänstemodell där det är praktiskt, med dokumenterade specialsektioner vid verkligt behov. Ny sida routas via `docs/workflows/create-standard-page.md`.
 
 ### `knowledge`
 **Routefamilj:** `/kunskap/<slug>/`
