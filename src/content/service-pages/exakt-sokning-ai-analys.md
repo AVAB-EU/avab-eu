@@ -52,7 +52,7 @@ principle:
     alt: Professionell övervakningskamera monterad på fasad
     width: 2032
     height: 774
-    objectPosition: 20% center
+    objectPosition: 82% center
 
 sections:
   - id: exakt-sokning
