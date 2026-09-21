@@ -15,6 +15,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-21._
 - [x] **Teknisk SEO-slutkontroll genomförd:** sitemap exkluderar structured draft/noindex, internlänksaudit P0=0/P1=0, guardrails och build passerar.
 - [ ] **Prioritet 1 – publiceringsbeslut för huvudtjänster:** Konferensteknik, Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber. Granska visuellt/content och besluta vilka som ska gå från draft/noindex till indexerbara.
 - [ ] **Prioritet 2 – publiceringsbeslut för kameraundersidor:** Skola, Parkering, Industri och Galleria. GDPR kräver separat juridisk färskhetskontroll nära publicering.
+- [ ] **Kamera Butik – uppdatera efter Go Banana-publicering:** ta bort/skriv om eventuell copy om att referensen kommer "inom kort" och lägg en naturlig internlänk till `/referenser/go-banana-bergvik/`.
 - [ ] **Prioritet 3 – referensgodkännande:** publicera endast referenser där text, projektfakta och bilder är verifierade och kunden uttryckligen har godkänt publicering.
 - [ ] **Prioritet 4 – sitewide metadata-audit:** title, meta description, canonical, robots, H1/title, Open Graph/Twitter och structured data.
 - [ ] **Prioritet 5 – Search Console efter publicering:** indexering, queries, impressions, CTR, Google-omskrivna snippets och crawlstatus.
