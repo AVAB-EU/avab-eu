@@ -203,7 +203,7 @@ const faqSchema = {
                   </div>
                 </div>
                 {section.bullets && (
-                  <div class="grid-3">
+                  <div class:list={[section.bullets.length === 4 ? "grid-2" : "grid-3"]}>
                     {section.bullets.map((bullet) => {
                       const [title, ...rest] = bullet.split(" – ");
                       return (
