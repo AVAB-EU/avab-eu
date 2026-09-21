@@ -50,7 +50,7 @@ Om sidan fortfarande är en stor `index.astro`:
 - flytta inte sidan till ny arkitektur som bieffekt av en liten textändring,
 - men dokumentera eller följ befintlig migrationsplan när uppgiften visar ett återkommande problem.
 
-Om användaren uttryckligen vill standardisera sidan är det inte längre en liten contentändring utan migration/arkitekturarbete.
+Om användaren uttryckligen vill standardisera sidan är det inte längre en liten contentändring utan migration/arkitekturarbete. Målet för standardiseringen ska då vara sidtypens kanoniska facit, inte den legacy-sida som råkar ändras.
 
 ## 5. Listing
 
