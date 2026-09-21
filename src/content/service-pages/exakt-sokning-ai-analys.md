@@ -48,11 +48,10 @@ principle:
     - Snabbare väg från rapporterad händelse till relevant sekvens
     - Samma VMS används för både livebild och historik
   image:
-    src: /assets/overvakningskamera-fasad-hero.webp
-    alt: Professionell övervakningskamera monterad på fasad
-    width: 2032
-    height: 774
-    objectPosition: 100% center
+    src: /assets/kameraovervakning-fasad-staende.webp
+    alt: Övervakningskamera monterad på fasad
+    width: 519
+    height: 775
 
 sections:
   - id: exakt-sokning
