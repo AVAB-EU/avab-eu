@@ -110,8 +110,9 @@ scope:
       value: AUDAC MWX65
     - label: Central styrning
       value: AUDAC MTX48
-  serviceLabel: Läs om lösningar för gym
-  serviceHref: /miljo/gym/
+    - label: Läs mer
+      value: Lösningar för gym
+      href: /miljo/gym/
 
 story:
   eyebrow: Projektet på djupet
