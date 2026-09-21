@@ -109,6 +109,15 @@ export const serviceOverviewGroups: ServiceOverviewGroup[] = [
         imageAlt: "Styrpanel monterad på trävägg",
       },
       {
+        title: "Ljus",
+        group: "Kontroll & upplevelse",
+        shortText: "Ljusscenarier, RGB, DMX och styrning för verksamhet och upplevelse.",
+        expandedText: "Ljus som följer verksamheten. AVAB projekterar och installerar ljuslösningar för gym, spa, restaurang, scen, skola och andra publika miljöer – med scenarier, RGB, DMX och integration med övrig teknik.",
+        href: "/tjanster/ljus/",
+        image: "/assets/gym-interior-bla-ledbelysning.webp",
+        imageAlt: "Träningsmiljö med blå LED-belysning",
+      },
+      {
         title: "Modernisering av äldre ljusstyrning",
         group: "Kontroll & upplevelse",
         shortText: "Identifiering, felsökning och modernisering av äldre ljusstyrning.",
