@@ -128,7 +128,7 @@ story:
         - Systemet byggdes kring fyra huvudzoner: gym, A-sal, B-sal och omklädning/lounge. Gymmets bakgrundsmusik kan ligga på en jämn nivå samtidigt som A-salen kör ett energikrävande pass, B-salen använder en egen ljudkälla och omklädningsdelen spelar betydligt lugnare.
         - Utrop kan samtidigt distribueras till de delar av anläggningen där meddelandet behöver höras. Det är kärnan i zonstyrningen: olika verksamheter kan pågå samtidigt utan att slåss om samma ljudinställningar.
         - På den öppna gymytan är jämn ljudspridning viktigare än att några få högtalare kan spela väldigt starkt. Om en stor yta täcks med för få högtalare blir nivån ofta hög nära högtalaren och betydligt svagare längre bort.
-        - Därför installerades 12 AUDAC CIRA824 8-tums takhögtalare över gymytan. CIRA8-serien är gjord för bred spridning från tak och passar en miljö där medlemmarna rör sig mellan konditionsmaskiner, styrketräning och funktionella ytor.
+        - Därför installerades 12 AUDAC CIRA824 8-tums takhögtalare över gymytan. CIRA8-serien är gjord för bred spridning från tak och passar en miljö där medlemmarna rör sig mellan konditionsmaskiner, styrketräning och funktionella ytor. AUDAC använder samma typ av 8-tums CIRA-högtalare i andra flerzonsinstallationer där målet är jämn och diskret takintegrerad ljudspridning.
         - Resultatet ska egentligen inte märkas som teknik. Den som tränar ska uppleva att musiken följer med genom lokalen utan tydliga toppar och döda områden.
         - Ett gym är redan fullt av maskiner, löpband, fria vikter, träningsstationer och gångstråk. Därför integrerades stora delar av högtalarsystemet i taket så att tekniken hörs utan att ta träningsyta eller bli ytterligare utrustning på golvet.
       mediaGroups:
@@ -157,7 +157,7 @@ story:
         - Den stora gruppträningssalen är en helt annan ljudmiljö än den öppna gymytan. Här används musiken aktivt i träningen. Tempo, dynamik och bas blir en del av själva passet, och systemet behöver kunna skapa en fysisk känsla som vanlig bakgrundsmusik inte är byggd för.
         - I A-salen installerade AVAB infällda 8-tums högtalare från AUDAC i kombination med fyra nedpendlade 12-tums basar. Basarna sitter ovanför särskilda galler i undertaket, vilket gör det möjligt att bygga in mer lågfrekevent energi utan att stora subwoofers står på golvet eller längs väggarna.
         - Det kraftigare bassystemet valdes för träningsformer där musikens energi är central, inklusive automatiserade och virtuella gruppträningspass. STC Kil erbjuder virtuell träning från Les Mills på storbildsskärm i gruppträningssalen.
-        - När ett virtuellt pass körs behöver bild och ljud tillsammans bära en större del av upplevelsen. Då blir vanligt bakgrundsljud för tunt. De fyra 12-tums basarna ger den stora salen extra tryck så att musik, rytm och träningsprogram upplevs fysiskt även när passet drivs från förproducerat innehåll.
+        - När ett virtuellt pass körs finns det inte nödvändigtvis en instruktör i salen som kan bära upplevelsen med sin närvaro. Bild och ljud behöver därför tillsammans göra mer av arbetet. Då blir vanligt bakgrundsljud för tunt. De fyra 12-tums basarna ger den stora salen extra tryck så att musik, rytm och träningsprogram upplevs fysiskt även när passet drivs från förproducerat innehåll.
         - Virtuell träning gör gymmet till en AV-miljö. Bild, programljud och fysisk ljudupplevelse behöver fungera tillsammans med rätt ljudzon, lokal ljudkälla, tillräcklig effekt och en installation som kan startas utan att signalvägar behöver byggas om inför varje pass.
         - Redan i ljudprojekteringen fanns därför ett tydligt tänk kring att träningssalarna skulle kunna fungera självständigt. AV-tekniken ska följa träningsformen – inte tvärtom.
       mediaGroups:
@@ -216,7 +216,7 @@ story:
       paragraphs:
         - Omklädningsdelen behöver inte samma nivå, dynamik eller bas som gruppträningssalen. Här handlar ljudet mer om kontinuitet och trivsel. På STC Kil installerades därför sex AUDAC CIRA724 takhögtalare för den zonen.
         - Ljudet kan följa med genom anläggningen men på en nivå och med en karaktär som passar miljön bättre. Samma musik överallt behöver inte betyda samma ljud överallt.
-        - Centralt i systemet sitter en AUDAC MTX48 fyrzons ljudmatris. På STC Kil motsvarar zonerna i praktiken gym, A-sal, B-sal och omklädning/lounge. Förstärkare och central signalhantering ligger samlade i racket medan användarna möter enklare kontroller ute i anläggningen.
+        - Centralt i systemet sitter en AUDAC MTX48 fyrzons ljudmatris. MTX48 är byggd för fyra individuellt styrbara zoner och stödjer väggpaneler samt flera typer av ljudkällor. På STC Kil motsvarar zonerna i praktiken gym, A-sal, B-sal och omklädning/lounge. Förstärkare och central signalhantering ligger samlade i racket medan användarna möter enklare kontroller ute i anläggningen.
         - Ljudanläggningen används även för utrop. Personalen kan behöva nå medlemmarna med praktisk information eller meddelanden inför stängning. I stället för ett separat högtalarsystem kan den funktionen distribueras genom samma ljudinfrastruktur till relevanta zoner.
         - Bra styrning betyder inte att användaren ska få tillgång till varje teknisk parameter. Personalen behöver hantera rätt zon, ljudkälla och lämplig volym men ska normalt inte behöva ändra delningsfilter, förstärkarnivåer, kompression, EQ eller intern signalrouting.
         - De tekniska delarna ställs in vid driftsättningen. När det är gjort ska systemet vara förutsägbart, även när många olika personer använder tekniken under ett år.
@@ -371,7 +371,7 @@ cta:
   variant: page
   eyebrow: Planerar ni ljud för gym eller träningsanläggning?
   title: Ska ni bygga eller uppgradera en träningsanläggning?
-  text: Ett bra gymsystem börjar med verksamheten. Skicka planritning och beskriv vilka ytor som ska ha bakgrundsmusik, gruppträning, virtuella pass, mikrofoner, egna ljudkällor eller utrop så hjälper vi er från projektering till driftsättning.
+  text: Ett bra gymsystem börjar med verksamheten. Skicka planritning och beskriv vilka ytor som ska ha bakgrundsmusik, gruppträning, virtuella pass, mikrofoner, egna ljudkällor eller utrop så hjälper vi er från projektering och installation till injustering och driftsättning. Målet är att medlemmen ska uppleva ljudet medan personalen nästan inte behöver tänka på tekniken.
   primaryLabel: Kontakta AVAB
   primaryHref: /kontakt/
   secondaryLabel: Läs om lösningar för gym
