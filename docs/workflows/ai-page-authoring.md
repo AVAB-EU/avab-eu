@@ -56,8 +56,9 @@ Oavsett route:
 2. `docs/README.md`
 3. `docs/architecture/page-types.md`
 4. `docs/architecture/ai-write-scope.md`
-5. relevant Active sidstandard
-6. valt workflow
+5. `docs/standards/pages/canonical-page-exemplars.md` för Referens, Miljö eller Tjänst
+6. relevant Active sidstandard
+7. valt workflow
 7. faktisk kod/schema/template
 8. `TODO.md` när uppgiften påverkar status, prioritet eller följduppgifter
 
