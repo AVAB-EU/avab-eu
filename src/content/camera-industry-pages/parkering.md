@@ -88,8 +88,8 @@ sections:
     image:
       src: /assets/Kameraovervakning-dahua-hero.webp
       alt: Videohanteringssystem för kameraövervakning med flera kameravyer
-      width: 1500
-      height: 843
+      width: 2032
+      height: 770
 
 faq:
   title: Vanliga frågor om kameraövervakning på parkering
