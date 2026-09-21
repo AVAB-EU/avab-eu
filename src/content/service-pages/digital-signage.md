@@ -24,17 +24,17 @@ hero:
   secondaryHref: /tjanster/visuell-kommunikation/
 
 facts:
-  - "label: Innehåll"
+  - label: Innehåll
     value: Information, wayfinding och kampanjer
-  - "label: Skärmar"
+  - label: Skärmar
     value: Väggskärmar, totems och professionella displayer
-  - "label: Styrning"
+  - label: Styrning
     value: Central innehållshantering
-  - "label: Miljöer"
+  - label: Miljöer
     value: Butik, galleria, hotell, skola och publik lokal
-  - "label: Drift"
+  - label: Drift
     value: Schemaläggning och behörigheter
-  - "label: Leverans"
+  - label: Leverans
     value: Projektering till driftsättning
 
 principle:
@@ -54,7 +54,7 @@ principle:
     height: 600
 
 sections:
-  - "id: innehall"
+  - id: innehall
     eyebrow: Innehåll
     title: Ett system ska göra det enkelt att ändra budskapet
     paragraphs:
@@ -66,7 +66,7 @@ sections:
       - Lokalt eller centralt ansvar beroende på organisation
       - Gruppindelning av skärmar
 
-  - "id: skarmar"
+  - id: skarmar
     eyebrow: Bildytor
     title: Professionella skärmar väljs efter miljö och drifttid
     paragraphs:
@@ -83,7 +83,7 @@ sections:
       width: 1200
       height: 900
 
-  - "id: natverk"
+  - id: natverk
     eyebrow: Nätverk & drift
     title: Innehållshanteringen behöver stabil uppkoppling och tydlig drift
     paragraphs:
@@ -95,7 +95,7 @@ sections:
       - Behörigheter och ansvarsfördelning
       - Dokumentation för drift och service
 
-  - "id: projektering"
+  - id: projektering
     eyebrow: Projektering
     title: Placering och infästning behöver planeras innan lokalen är färdig
     paragraphs:
@@ -123,17 +123,17 @@ faq:
   title: Vanliga frågor om digital signage
   lead: Korta svar om skärmar, innehåll och central drift.
   items:
-    - "question: Vad är digital signage?"
+    - question: "Vad är digital signage?"
       answer: Digital signage är digitala informations- och budskapsytor där innehåll visas på professionella skärmar och kan uppdateras centralt.
-    - "question: Kan flera skärmar styras från samma system?"
+    - question: "Kan flera skärmar styras från samma system?"
       answer: Ja. Skärmar kan grupperas och få olika spellistor, scheman och behörigheter beroende på plats eller avdelning.
-    - "question: Kan innehållet schemaläggas?"
+    - question: "Kan innehållet schemaläggas?"
       answer: Ja. Kampanjer, information och wayfinding kan normalt planeras för olika tider och datum i innehållssystemet.
-    - "question: När behövs en professionell display?"
+    - question: "När behövs en professionell display?"
       answer: När skärmen ska gå många timmar per dygn, sitta i publik miljö eller kräva högre ljusstyrka, stående orientering eller mer robust drift än en vanlig konsumentskärm.
-    - "question: Kan digital signage användas för wayfinding?"
+    - question: "Kan digital signage användas för wayfinding?"
       answer: Ja. Digital signage används ofta för vägledning, kartor, öppettider och annan information som hjälper besökare att hitta rätt.
-    - "question: När bör digital signage planeras i ett byggprojekt?"
+    - question: "När bör digital signage planeras i ett byggprojekt?"
       answer: Innan skärmlägen, väggar, el, nätverk och infästningar är låsta. Tidig projektering minskar risken för sena kabel- och montageproblem.
 
 cta:
