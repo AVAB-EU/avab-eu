@@ -1,69 +1,90 @@
-// Publiceringsstatus för referenser, härledd direkt ur innehållsfilerna i
-// src/content/references/.
+// Publiceringsstatus för strukturerat innehåll, härledd direkt ur content-filerna.
 //
-// Används av astro.config.mjs för sitemap-filtret (draft/noindex-referenser
-// utesluts ur sitemap). Sidkomponenter som körs i Astros pipeline bör i stället
-// använda getCollection("references") direkt – den här modulen läser filsystemet
-// relativt sin egen sökväg och fungerar därför inte efter bundling.
-//
-// Avsiktligt fristående och beroendefri (ingen astro:content, inget YAML-
-// bibliotek) så att den kan köras i astro.config innan content-pipelinen finns.
-// Frontmatter i referensfilerna är enhetlig och kontrollerad.
+// Används av astro.config.mjs för sitemap-filtret så att routes som renderas
+// med draft/noindex inte hamnar i sitemap. Modulen är avsiktligt fristående
+// från astro:content eftersom den körs redan när Astro-konfigurationen laddas.
 
 import { readdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
 
-const REFERENCES_DIR = fileURLToPath(
-  new URL("../content/references/", import.meta.url),
-);
+const CONTENT_DIRS = [
+  {
+    key: "references",
+    dir: fileURLToPath(new URL("../content/references/", import.meta.url)),
+  },
+  {
+    key: "serviceLandingPages",
+    dir: fileURLToPath(new URL("../content/service-pages/", import.meta.url)),
+  },
+  {
+    key: "cameraIndustryPages",
+    dir: fileURLToPath(new URL("../content/camera-industry-pages/", import.meta.url)),
+  },
+];
 
 function frontmatterBlock(source) {
   const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   return match ? match[1] : "";
 }
 
-function parseEntry(fileName) {
-  const raw = readFileSync(join(REFERENCES_DIR, fileName), "utf8");
+function parseEntry(dir, fileName, collection) {
+  const raw = readFileSync(join(dir, fileName), "utf8");
   const fm = frontmatterBlock(raw);
 
   const slug = fm.match(/^slug:\s*["']?(\/[^\s"']+?)["']?\s*$/m)?.[1] ?? null;
-  // draft är en toppnivånyckel; noindex ligger under seo:.
   const draft = /(?:^|\n)draft:\s*true\s*(?:#.*)?$/m.test(fm);
   const noindex = /(?:^|\n)\s+noindex:\s*true\s*(?:#.*)?$/m.test(fm);
 
-  return { fileName, slug, draft, noindex };
+  return { collection, fileName, slug, draft, noindex };
 }
 
-export const referenceEntries = readdirSync(REFERENCES_DIR)
-  .filter((name) => /\.mdx?$/.test(name))
-  .sort()
-  .map(parseEntry);
+function readEntries({ key, dir }) {
+  return readdirSync(dir)
+    .filter((name) => /\.mdx?$/.test(name))
+    .sort()
+    .map((fileName) => parseEntry(dir, fileName, key));
+}
 
-/** Slugs vars referenssida renderas som noindex (draft eller seo.noindex). */
+export const contentPublicationEntries = CONTENT_DIRS.flatMap(readEntries);
+
+export const referenceEntries = contentPublicationEntries.filter(
+  (entry) => entry.collection === "references",
+);
+
 export const nonPublicReferenceSlugs = new Set(
   referenceEntries
     .filter((entry) => entry.slug && (entry.draft || entry.noindex))
     .map((entry) => entry.slug),
 );
 
-/** Slugs för publicerade, indexerbara referenser. */
 export const publishedReferenceSlugs = new Set(
   referenceEntries
     .filter((entry) => entry.slug && !entry.draft && !entry.noindex)
     .map((entry) => entry.slug),
 );
 
-/**
- * Sant om en URL/pathname pekar på en referenssida som inte är publik.
- * Accepterar både full URL och ren pathname.
- */
-export function isNonPublicReferenceUrl(urlOrPath) {
-  let pathname = urlOrPath;
+/** Alla strukturerade routes som renderas med draft eller seo.noindex. */
+export const nonPublicContentSlugs = new Set(
+  contentPublicationEntries
+    .filter((entry) => entry.slug && (entry.draft || entry.noindex))
+    .map((entry) => entry.slug),
+);
+
+function pathnameFromUrl(urlOrPath) {
   try {
-    pathname = new URL(urlOrPath).pathname;
+    return new URL(urlOrPath).pathname;
   } catch {
-    // redan en pathname
+    return urlOrPath;
   }
-  return nonPublicReferenceSlugs.has(pathname);
+}
+
+/** Bakåtkompatibel kontroll för referenser. */
+export function isNonPublicReferenceUrl(urlOrPath) {
+  return nonPublicReferenceSlugs.has(pathnameFromUrl(urlOrPath));
+}
+
+/** Sant om URL:en tillhör en strukturerad draft/noindex-sida. */
+export function isNonPublicContentUrl(urlOrPath) {
+  return nonPublicContentSlugs.has(pathnameFromUrl(urlOrPath));
 }
