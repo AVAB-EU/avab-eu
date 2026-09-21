@@ -34,7 +34,7 @@ Identifiera därefter om användaren vill:
 ## 3. Route till rätt workflow
 
 ### Ny eller migrerad Referens
-→ `docs/workflows/create-reference.md`
+→ `docs/workflows/REFERENCE-PAGE-WORKFLOW.md` + `docs/workflows/REFERENCE-PAGE-MASTERPROMPT.md` + Säffle simhall som kanoniskt facit
 
 ### Ny Miljö, Tjänst eller Kunskap
 → `docs/workflows/create-standard-page.md`
