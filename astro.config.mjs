@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { reviewEnvironmentNoindex } from './scripts/review-environment-noindex.mjs';
-import { isNonPublicReferenceUrl } from './src/data/reference-publication.mjs';
+import { isNonPublicContentUrl } from './src/data/reference-publication.mjs';
 
 const deploymentUrl = process.env.DEPLOYMENT_URL ?? 'https://avab.eu/';
 
@@ -11,9 +11,9 @@ export default defineConfig({
   site: deploymentUrl,
   integrations: [
     reviewEnvironmentNoindex({ deploymentUrl }),
-    // Draft/noindex-referenser (härledda ur src/content/references/) hålls utanför
-    // sitemap. Indexerbara routes och redirect-stubbar påverkas inte.
-    sitemap({ filter: (page) => !isNonPublicReferenceUrl(page) }),
+    // Strukturerade draft/noindex-sidor (referenser, tjänster och kamera)
+    // hålls utanför sitemap. Indexerbara routes och redirect-stubbar påverkas inte.
+    sitemap({ filter: (page) => !isNonPublicContentUrl(page) }),
   ],
   redirects: {
     '/miljo/sporthall': '/miljo/sporthall-arena',
