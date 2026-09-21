@@ -20,7 +20,7 @@ Identifiera först:
 - `listing`
 - `special`
 
-Använd route, sidans syfte och faktisk kod. Välj inte mall enbart för att två sidor ser lika ut.
+Använd route, sidans syfte och faktisk kod. Välj inte mall enbart för att två sidor ser lika ut. För `reference`, `environment` och `service` är kanoniskt facit redan beslutat i `docs/standards/pages/canonical-page-exemplars.md` och ska användas före äldre sidor.
 
 ## 2. Klassificera uppgiftstyp
 
