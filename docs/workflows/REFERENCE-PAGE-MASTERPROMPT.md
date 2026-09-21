@@ -20,7 +20,7 @@ PROJEKT
 - Slug: <t.ex. "mullhyttans-sporthall" → /referenser/mullhyttans-sporthall/>
 - Sourcefil: <exakt lokal path, t.ex. "docs/source-material/Referens X.docx">
 - Bildpaket: <exakt lista eller mapp, t.ex. "13 WebP-assets i public/assets, se lista nedan" eller "inga bilder ännu, ska tillhandahållas separat">
-- Visuell referens (valfritt): <t.ex. "layoutmässigt likt Säffle simhall" — enbart som visuell inspiration, inte att kopiera blint>
+- Visuellt/strukturellt facit: `https://avab.eu/referenser/saffle-simhall/` (fast, inte valfritt). Eventuell ytterligare referens får endast anges som sekundärt regressionsexempel.
 - Feature-branch: <t.ex. "seo/referens-mullhyttans-sporthall">
 
 INSTRUKTION
