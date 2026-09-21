@@ -104,6 +104,8 @@ AI får förbättra formulering, struktur, rubriker, SEO-copy och alt-text så l
 
 ## 8. Återanvänd faktisk implementation
 
+För Referens, Miljö och Tjänst ska återanvändningen samtidigt jämföras mot respektive kanoniskt facit. Om befintliga komponenter inte kan återge facit utan lokal specialkod är det ett arkitekturbehov, inte skäl att välja en äldre layout.
+
 Prioritetsordning:
 
 1. befintlig content model/schema,
