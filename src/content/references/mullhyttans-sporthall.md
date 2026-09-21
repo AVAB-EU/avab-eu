@@ -405,6 +405,9 @@ technicalDetails:
     - label: Tjänst
       title: Projektering
       href: /tjanster/projektering/
+    - label: Referenser
+      title: Fler referensprojekt
+      href: /referenser/
 
 relevance:
   eyebrow: Vad projektet visar
