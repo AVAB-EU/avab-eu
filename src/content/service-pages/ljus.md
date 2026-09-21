@@ -1,12 +1,12 @@
 ---
-draft: true
+draft: false
 slug: /tjanster/ljus/
 service: Ljus
 
 seo:
   title: Ljus & ljusstyrning för gym, scen, spa och publik miljö | AVAB
   description: AVAB projekterar och installerar ljuslösningar med scenljus, effektljus, RGB-belysning, DMX och styrning för gym, restaurang, spa, skola och publika miljöer.
-  noindex: true
+  noindex: false
 
 h1: "Ljus som förstärker rummet och är enkelt att styra"
 
