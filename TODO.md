@@ -1,14 +1,23 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-09-15._
+_Kanonisk projektlista. Senast uppdaterad 2026-09-21._
 
-## Nästa fas – inventering och modernisering av tjänsteundersidor
+## Nästa fas – publicering, indexering och SEO-optimering
 
-> **Fullständig status:** `docs/checkpoints/2026-09-15-tjanster-checkpoint.md`. Projektet ligger still några dagar från och med denna checkpoint.
+> **Aktuell status 2026-09-21:** den stora tekniska SEO-/undersidesfasen är genomförd. Build, guardrails och internlänksaudit är gröna med **P0 = 0** och **P1 = 0**. Se `docs/audits/publicering-indexering-2026-09-21.md`.
+>
+> Äldre checkpoints längre ned i dokumentet är historik. De ska inte användas som aktuell startpunkt om de motsägs av denna status.
 
-- [ ] **Prioritet 1 – bygg kameraövervakningens kvarvarande branschsidor:** Skola, Parkering, Industri, Galleria. Utgå från den färdiga `/kameraovervakning/butik/` och återanvänd gemensamma komponenter/data.
-- [ ] **Prioritet 2 – uppdatera `/kameraovervakning/butik/` efter Go Banana-publicering.** Ta bort/skriv om text som säger att referensen kommer "inom kort" (den är nu publicerad) och lägg en naturlig internlänk till `/referenser/go-banana-bergvik/`.
-- [ ] **Prioritet 3 – inventera samtliga undersidor som länkas från `/tjanster/`.** Dokumentera per sida: finns den, är innehållet komplett, följer den AVAB-standarden, behöver hero moderniseras, rätt PageCTA, FAQ-regeln följd, relevanta interna länkar, fungerar mobilvy, föråldrad copy/gamla designmönster. Mynna ut i en prioriterad lista (Klar / Mindre justering / Behöver moderniseras / Saknas). Ändra inga undersidor innan inventeringen är godkänd.
+- [x] **Kameraövervakningens branschsidor byggda:** Skola, Parkering, Industri och Galleria använder gemensam content/layout-arkitektur.
+- [x] **Nya tjänsteundersidor byggda:** Konferensteknik, Videomöten/BYOD, Skärmar & projektorer, Digital signage, Exakt sökning/AI-analys, Ljus samt Nätverk/switchar/fiber.
+- [x] **Kvarvarande planerade 404-länkmål hanterade:** kravställning och systemintegration pekar till verifierade befintliga destinationssidor; GDPR-sidan är byggd.
+- [x] **Nya referenser byggda:** Fortnox Arena, STC Kil, Mullhyttan, Stockfallets skola, Skolhagenskolan, Loka Brunn och Götetorpsskolan.
+- [x] **Teknisk SEO-slutkontroll genomförd:** sitemap exkluderar structured draft/noindex, internlänksaudit P0=0/P1=0, guardrails och build passerar.
+- [ ] **Prioritet 1 – publiceringsbeslut för huvudtjänster:** Konferensteknik, Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber. Granska visuellt/content och besluta vilka som ska gå från draft/noindex till indexerbara.
+- [ ] **Prioritet 2 – publiceringsbeslut för kameraundersidor:** Skola, Parkering, Industri och Galleria. GDPR kräver separat juridisk färskhetskontroll nära publicering.
+- [ ] **Prioritet 3 – referensgodkännande:** publicera endast referenser där text, projektfakta och bilder är verifierade och kunden uttryckligen har godkänt publicering.
+- [ ] **Prioritet 4 – sitewide metadata-audit:** title, meta description, canonical, robots, H1/title, Open Graph/Twitter och structured data.
+- [ ] **Prioritet 5 – Search Console efter publicering:** indexering, queries, impressions, CTR, Google-omskrivna snippets och crawlstatus.
 - [ ] **Gamla stashes ska inte appliceras utan separat granskning** — särskilt stashen med äldre startsida/factband-arbete, som tidigare återinfört gammal/felaktig layout.
 
 ## Nya notiser 2026-09-14
@@ -26,7 +35,9 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-15._
 
 ## Checkpoint – internlänksarbete pausat 2026-09-04
 
-> **Status:** arbetet pausas här i väntan på kundens svar nästa vecka. Starta inte nästa BUILD PAGE-fas innan kundunderlaget har kommit in eller ett nytt beslut har tagits.
+> **HISTORISK CHECKPOINT:** ersatt av statusen 2026-09-21 högst upp i TODO.md. Behålls som spårbar projektlogg men ska inte användas som aktuell arbetsinstruktion.
+>
+> Ursprunglig status: arbetet pausades här i väntan på kundens svar.
 
 - [x] Fas A – systemiska internlänks-/ankarfel är genomförd och mergead via PR #42.
 - [x] Fas C – draft/noindex, sitemap och footer är genomförd och mergead via PR #43.
