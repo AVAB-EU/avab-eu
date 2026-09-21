@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import ServiceLandingPage from "../../../layouts/ServiceLandingPage.astro";
+
+const page = (await getCollection("serviceLandingPages")).find(
+  (entry) => entry.data.slug === "/tjanster/konferensteknik/",
+);
+
+if (!page) {
+  throw new Error("Tjänstesidan för konferensteknik saknas i content collection.");
+}
+---
+
+<ServiceLandingPage page={page} />

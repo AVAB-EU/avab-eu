@@ -1,0 +1,270 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PageCTA from "../components/PageCTA.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { absoluteUrl, SITE_URL } from "../config/site";
+import "../styles/avab.css";
+
+interface Props {
+  page: CollectionEntry<"serviceLandingPages">;
+}
+
+const { page } = Astro.props;
+const data = page.data;
+const canonicalUrl = absoluteUrl(data.slug);
+const heroImageUrl = absoluteUrl(data.hero.image.src);
+const robots = data.draft || data.seo.noindex
+  ? "noindex, nofollow"
+  : "index, follow, max-image-preview:large";
+
+const breadcrumbs = [
+  { label: "Start", href: "/" },
+  { label: "Tjänster", href: "/#tjanster" },
+  { label: data.service, href: data.slug },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: data.h1,
+  url: canonicalUrl,
+  image: heroImageUrl,
+  provider: {
+    "@type": "LocalBusiness",
+    name: "AVAB",
+    url: `${SITE_URL}/`,
+  },
+  areaServed: "Sverige",
+  serviceType: data.service,
+  description: data.seo.description,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: breadcrumbs.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.label,
+    item: absoluteUrl(item.href),
+  })),
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: data.faq.items.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
+---
+
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{data.seo.title}</title>
+    <meta name="description" content={data.seo.description} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="author" content="AVAB" />
+    <meta name="theme-color" content="#282E29" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="sv_SE" />
+    <meta property="og:site_name" content="AVAB" />
+    <meta property="og:title" content={data.seo.title} />
+    <meta property="og:description" content={data.seo.description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={heroImageUrl} />
+    <meta property="og:image:width" content={String(data.hero.image.width)} />
+    <meta property="og:image:height" content={String(data.hero.image.height)} />
+    <meta property="og:image:alt" content={data.hero.image.alt} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={data.seo.title} />
+    <meta name="twitter:description" content={data.seo.description} />
+    <meta name="twitter:image" content={heroImageUrl} />
+    <meta name="twitter:image:alt" content={data.hero.image.alt} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" fetchpriority="high" href={data.hero.image.src} />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </head>
+  <body>
+    <SiteHeader />
+
+    <nav class="breadcrumbs" aria-label="Brödsmulor">
+      <div class="avab-container">
+        <ol>
+          {breadcrumbs.map((item, index) => (
+            <li>
+              {index < breadcrumbs.length - 1
+                ? <a href={item.href}>{item.label}</a>
+                : <span aria-current="page">{item.label}</span>}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </nav>
+
+    <section class="hero" style={`--hero-image:url('${data.hero.image.src}');`}>
+      <div class="avab-container">
+        <div class="hero-inner animate-in">
+          <div class="eyebrow">{data.hero.eyebrow}</div>
+          <h1>{data.h1}</h1>
+          <p class="lead">{data.hero.lead}</p>
+          <div class="hero-bottom">
+            <div class="hero-actions">
+              <a class="button button-primary" href={data.hero.primaryHref}>{data.hero.primaryLabel}</a>
+              {data.hero.secondaryLabel && data.hero.secondaryHref && (
+                <a class="button button-secondary" href={data.hero.secondaryHref}>{data.hero.secondaryLabel}</a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {data.facts && (
+      <section class="fact-band" aria-label={`Snabbfakta ${data.service}`}>
+        <div class="fact-grid">
+          {data.facts.map((fact) => (
+            <div class="fact"><span>{fact.label}</span><strong>{fact.value}</strong></div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <main id="main">
+      {data.principle && (
+        <section class="section section--light" id="princip">
+          <div class="avab-container two-col">
+            <div>
+              {data.principle.eyebrow && <div class="eyebrow">{data.principle.eyebrow}</div>}
+              <h2>{data.principle.title}</h2>
+              <p class="lead-dark">{data.principle.text}</p>
+              {data.principle.bullets && (
+                <ul class="bullet-list">
+                  {data.principle.bullets.map((bullet) => <li>{bullet}</li>)}
+                </ul>
+              )}
+            </div>
+            {data.principle.image && (
+              <div class="image-wrapper">
+                <img
+                  src={data.principle.image.src}
+                  alt={data.principle.image.alt}
+                  width={data.principle.image.width}
+                  height={data.principle.image.height}
+                  style={data.principle.image.objectPosition ? `object-position: ${data.principle.image.objectPosition};` : undefined}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {data.sections.map((section, index) => (
+        <section class:list={["section", index % 2 === 1 && "section--light"]} id={section.id}>
+          <div class:list={["avab-container", section.image && "two-col"]}>
+            <div>
+              {section.eyebrow && <div class="eyebrow">{section.eyebrow}</div>}
+              <h2>{section.title}</h2>
+              {section.paragraphs.map((paragraph, pIndex) => (
+                <p class:list={[pIndex === 0 && "lead-dark"]}>{paragraph}</p>
+              ))}
+              {section.bullets && (
+                <ul class="bullet-list">
+                  {section.bullets.map((bullet) => <li>{bullet}</li>)}
+                </ul>
+              )}
+            </div>
+            {section.image && (
+              <div class="image-wrapper">
+                <img
+                  src={section.image.src}
+                  alt={section.image.alt}
+                  width={section.image.width}
+                  height={section.image.height}
+                  style={section.image.objectPosition ? `object-position: ${section.image.objectPosition};` : undefined}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            )}
+          </div>
+        </section>
+      ))}
+
+      {data.proof && (
+        <section class="section section--light" id="referens">
+          <div class="avab-container two-col">
+            <div>
+              {data.proof.eyebrow && <div class="eyebrow">{data.proof.eyebrow}</div>}
+              <h2>{data.proof.title}</h2>
+              <p class="lead-dark">{data.proof.text}</p>
+              {data.proof.linkLabel && data.proof.linkHref && (
+                <a class="button button-primary" href={data.proof.linkHref}>{data.proof.linkLabel}</a>
+              )}
+            </div>
+            {data.proof.image && (
+              <div class="image-wrapper image-wrapper--bounded">
+                <img
+                  src={data.proof.image.src}
+                  alt={data.proof.image.alt}
+                  width={data.proof.image.width}
+                  height={data.proof.image.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      <section class="section" id="faq">
+        <div class="avab-container">
+          <div class="faq-heading">
+            <div class="eyebrow">Vanliga frågor</div>
+            <h2>{data.faq.title}</h2>
+            {data.faq.lead && <p>{data.faq.lead}</p>}
+          </div>
+          <div class="compact-faq">
+            {data.faq.items.map((item) => (
+              <details class="faq-item">
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <PageCTA
+        eyebrow={data.cta.eyebrow}
+        title={data.cta.title}
+        text={data.cta.text}
+        primaryLabel={data.cta.primaryLabel}
+        primaryHref={data.cta.primaryHref}
+        secondaryLabel={data.cta.secondaryLabel}
+        secondaryHref={data.cta.secondaryHref}
+        points={data.cta.points}
+      />
+    </main>
+
+    <SiteFooter />
+  </body>
+</html>

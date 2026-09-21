@@ -100,6 +100,15 @@ export const serviceOverviewGroups: ServiceOverviewGroup[] = [
         imageAlt: "Restaurangmiljö med integrerad bakgrundsmusik",
       },
       {
+        title: "Nätverk, switchar & fiber",
+        group: "Kontroll & upplevelse",
+        shortText: "Nätverk för AV med PoE, Dante, AV-over-IP, VLAN och fiber.",
+        expandedText: "När ljud, bild, kamera och styrning går över nätverket behöver infrastrukturen vara en del av AV-projekteringen. AVAB hjälper till med switchkrav, PoE, VLAN, Dante, AV-over-IP, koppar och fiber.",
+        href: "/tjanster/natverk-switchar-router-fiber/",
+        image: "/assets/sorby-sporthall-teknikrack.webp",
+        imageAlt: "Teknikrack med nätverksswitchar och AV-utrustning",
+      },
+      {
         title: "Styrsystem & integration",
         group: "Kontroll & upplevelse",
         shortText: "Samlad och användarvänlig styrning av lokalens teknik.",
@@ -107,6 +116,15 @@ export const serviceOverviewGroups: ServiceOverviewGroup[] = [
         href: "/tjanster/styrsystem-integration/",
         image: "/assets/styrpanel-pa-travagg.webp",
         imageAlt: "Styrpanel monterad på trävägg",
+      },
+      {
+        title: "Ljus",
+        group: "Kontroll & upplevelse",
+        shortText: "Ljusscenarier, RGB, DMX och styrning för verksamhet och upplevelse.",
+        expandedText: "Ljus som följer verksamheten. AVAB projekterar och installerar ljuslösningar för gym, spa, restaurang, scen, skola och andra publika miljöer – med scenarier, RGB, DMX och integration med övrig teknik.",
+        href: "/tjanster/ljus/",
+        image: "/assets/gym-interior-bla-ledbelysning.webp",
+        imageAlt: "Träningsmiljö med blå LED-belysning",
       },
       {
         title: "Modernisering av äldre ljusstyrning",
