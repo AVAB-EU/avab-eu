@@ -10,6 +10,7 @@ const { groups } = Astro.props;
 
 const cardGroups: ExpandableCardGroup[] = groups.map((group) => ({
   title: group.title,
+  desktopColumns: group.desktopColumns,
   items: group.services.map((service) => ({
     title: service.title,
     group: service.group,
