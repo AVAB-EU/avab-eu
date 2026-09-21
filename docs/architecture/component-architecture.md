@@ -14,6 +14,8 @@ Målet är att en standardsida ska kunna ändra innehåll utan att AI eller reda
 
 Återkommande presentation ska implementeras en gång och återanvändas.
 
+För Referens, Miljö och Tjänst ska komponentarkitekturen byggas runt respektive kanoniskt facit i `docs/standards/pages/canonical-page-exemplars.md`: Säffle simhall, Simhall och Hörslinga. Facit ska översättas till generiska komponenter och primitives, inte kopieras som fullsidig markup eller lokal CSS.
+
 En ny standardsida ska normalt inte skapa ny lokal CSS eller kopiera markup från en annan hel sida.
 
 ## Ansvarsnivåer
