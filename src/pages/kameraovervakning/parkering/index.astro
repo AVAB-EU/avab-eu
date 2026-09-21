@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import CameraIndustryPage from "../../../layouts/CameraIndustryPage.astro";
+
+const page = (await getCollection("cameraIndustryPages")).find(
+  (entry) => entry.data.slug === "/kameraovervakning/parkering/",
+);
+
+if (!page) {
+  throw new Error("Kamera-branschsidan för parkering saknas i content collection.");
+}
+---
+
+<CameraIndustryPage page={page} />
