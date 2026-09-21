@@ -12,7 +12,7 @@ Varje publik sida ska klassificeras innan en AI väljer standard, workflow eller
 
 ### `reference`
 **Routefamilj:** `/referenser/<slug>/`  
-**Pilot:** `/referenser/minnebergsskolan-arvika/`
+**Kanoniskt facit:** `/referenser/saffle-simhall/`
 
 Verifierbart kundcase/referens. Målarkitekturen är nu implementerad som första pilot med Astro Content Collection + schema + gemensam referensrenderer. En normal ny/migrerad referens ska följa `docs/workflows/create-reference.md` och ska inte kräva unik CSS eller fullsidig markup.
 
