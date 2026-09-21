@@ -15,6 +15,9 @@ const data = page.data;
 
 const canonicalUrl = absoluteUrl(data.slug);
 const heroImageUrl = absoluteUrl(data.hero.image.src);
+const robots = data.draft || data.seo.noindex
+  ? "noindex, nofollow"
+  : "index, follow, max-image-preview:large";
 
 const breadcrumbs = [
   { label: "Start", href: "/" },
@@ -79,7 +82,7 @@ const faqSchema = {
     <title>{data.seo.title}</title>
     <meta name="description" content={data.seo.description} />
     <link rel="canonical" href={canonicalUrl} />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content={robots} />
     <meta name="author" content="AVAB" />
     <meta name="theme-color" content="#282E29" />
 
