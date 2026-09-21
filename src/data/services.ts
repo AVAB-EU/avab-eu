@@ -128,6 +128,15 @@ export const serviceOverviewGroups: ServiceOverviewGroup[] = [
         imageAlt: "Övervakningskamera installerad på en fasad",
       },
       {
+        title: "Exakt sökning & AI",
+        group: "Kontroll & upplevelse",
+        shortText: "Sök snabbare i inspelat material med analys som stödjer utredningen.",
+        expandedText: "AI-stödd analys och metadata hjälper användaren att filtrera videomaterial och hitta relevanta personer, fordon eller händelser snabbare.",
+        href: "/tjanster/exakt-sokning-ai-analys/",
+        image: "/assets/Kameraovervakning-dahua-hero.webp",
+        imageAlt: "Gränssnitt för kameraövervakning med flera kameravyer",
+      },
+      {
         title: "Bakgrundsmusik",
         group: "Kontroll & upplevelse",
         shortText: "Jämn ljudtäckning och enkel zonstyrning för rätt atmosfär.",
