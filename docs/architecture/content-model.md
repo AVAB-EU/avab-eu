@@ -15,7 +15,7 @@ Projektet kör Astro 6.4.7 och använder Astro Content Collections för referens
 
 - Collection-konfiguration: `src/content.config.ts`
 - Referensdata: `src/content/references/`
-- Gemensam rendering: `src/components/references/ReferencePage.astro`
+- Gemensam rendering: `src/layouts/ReferencePage.astro`
 - Kanoniskt referensfacit: `https://avab.eu/referenser/saffle-simhall/` enligt `docs/standards/pages/canonical-page-exemplars.md`
 - Befintlig URL behålls via en tunn routefil under `src/pages/referenser/<slug>/index.astro` under migrationsperioden.
 
