@@ -18,7 +18,7 @@ Verifierbart kundcase/referens. Säffle simhall är den visuella och strukturell
 
 ### `environment`
 **Routefamilj:** `/miljo/<slug>/`  
-**Pilot/riktningsreferens:** `/miljo/simhall/`
+**Kanoniskt facit:** `/miljo/simhall/`
 
 Beskriver AVAB:s lösningar för en miljö, exempelvis simhall, skola, industri eller gym. Målarkitektur: gemensamma miljöprimitives/sektioner med kontrollerade variationer. Ny sida routas via `docs/workflows/create-standard-page.md`. Content-schema/template ska verifieras i faktisk kod innan det antas finnas.
 
