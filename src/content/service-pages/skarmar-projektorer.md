@@ -24,17 +24,17 @@ hero:
   secondaryHref: /tjanster/konferensteknik/
 
 facts:
-  - label: Bild
+  - "label: Bild"
     value: Skärmar, projektorer och dukar
-  - label: Miljö
+  - "label: Miljö"
     value: Mötesrum, skola, hall och publik lokal
-  - label: Projektering
+  - "label: Projektering"
     value: Siktlinjer, ljus och rätt bildstorlek
-  - label: Signal
+  - "label: Signal"
     value: HDMI, USB-C, nätverk och AV-over-IP
-  - label: Montage
+  - "label: Montage"
     value: Vägg, tak eller speciallösning
-  - label: Leverans
+  - "label: Leverans"
     value: Projektering till driftsättning
 
 principle:
@@ -54,7 +54,7 @@ principle:
     height: 4000
 
 sections:
-  - id: skarm
+  - "id: skarm"
     eyebrow: Skärmar
     title: Skärm passar när rummet behöver en ljusstark och enkel bildyta
     paragraphs:
@@ -71,7 +71,7 @@ sections:
       width: 1200
       height: 900
 
-  - id: projektor
+  - "id: projektor"
     eyebrow: Projektorer & dukar
     title: Projektor är rätt när bilden behöver bli riktigt stor
     paragraphs:
@@ -88,7 +88,7 @@ sections:
       width: 2048
       height: 956
 
-  - id: signal
+  - "id: signal"
     eyebrow: Signal & anslutning
     title: Bilden behöver en stabil väg från källan till skärmen
     paragraphs:
@@ -100,7 +100,7 @@ sections:
       - AV-over-IP eller professionell distribution i större system
       - Styrning av källa och bildläge från gemensamt gränssnitt
 
-  - id: montage
+  - "id: montage"
     eyebrow: Montage & projektering
     title: Montage och kabelvägar behöver planeras innan ytskikten är klara
     paragraphs:
@@ -129,17 +129,17 @@ faq:
   title: Vanliga frågor om skärmar och projektorer
   lead: Korta svar om val, placering och projektering av bildsystem.
   items:
-    - question: När är skärm bättre än projektor?
+    - "question: När är skärm bättre än projektor?"
       answer: Skärm passar ofta bäst i små och medelstora rum, särskilt där det är ljust och användaren vill ha snabb start utan duk eller projektor.
-    - question: När är projektor bättre än skärm?
+    - "question: När är projektor bättre än skärm?"
       answer: Projektor är ofta rätt när bildytan behöver bli större än vad en vanlig skärm praktiskt kan ge, till exempel i större konferenssalar, aulor eller hallar.
-    - question: Hur stor skärm behöver vi?
+    - "question: Hur stor skärm behöver vi?"
       answer: Det beror på betraktningsavstånd, typ av innehåll och hur många som ska kunna läsa mindre detaljer. Bildstorleken bör dimensioneras tillsammans med rummets möblering.
-    - question: Kan projektorn döljas eller integreras i rummet?
+    - "question: Kan projektorn döljas eller integreras i rummet?"
       answer: Ja. Projektorer kan monteras i tak, på vägg eller med specialfästen beroende på kastavstånd, serviceåtkomst och hur installationen ska se ut.
-    - question: Kan skärm och projektor styras från samma panel?
+    - "question: Kan skärm och projektor styras från samma panel?"
       answer: Ja. I ett integrerat system kan källa, skärm, projektor, motoriserad duk och andra funktioner styras från ett gemensamt gränssnitt.
-    - question: När bör bildsystemet projekteras?
+    - "question: När bör bildsystemet projekteras?"
       answer: Innan kabelvägar, el, nätverk, väggar, tak och möblering är låsta. Tidig projektering gör placering och montage betydligt enklare.
 
 cta:
