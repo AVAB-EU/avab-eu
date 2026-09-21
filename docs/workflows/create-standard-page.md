@@ -60,7 +60,7 @@ AI ska uttryckligen avgöra om sidtypen har:
 Skapa/uppdatera strukturerat content enligt den faktiska modellen.
 
 ### Om schema/template saknas
-Skapa inte automatiskt en ny stor fullsidig `index.astro` för att komma runt arkitekturen.
+Skapa inte automatiskt en ny stor fullsidig `index.astro` för att komma runt arkitekturen. Vid ett uttryckligt arkitekturuppdrag ska den nya gemensamma modellen byggas runt facit-sidan för sidtypen: Simhall för Environment och Hörslinga för Service.
 
 Gör i stället något av följande beroende på uppgiftens scope:
 
