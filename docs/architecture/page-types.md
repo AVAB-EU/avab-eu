@@ -23,7 +23,8 @@ Verifierbart kundcase/referens. Säffle simhall är den visuella och strukturell
 Beskriver AVAB:s lösningar för en miljö, exempelvis simhall, skola, industri eller gym. Målarkitektur: gemensamma miljöprimitives/sektioner med kontrollerade variationer. Ny sida routas via `docs/workflows/create-standard-page.md`. Content-schema/template ska verifieras i faktisk kod innan det antas finnas.
 
 ### `service`
-**Routefamilj:** `/tjanster/<slug>/`
+**Routefamilj:** `/tjanster/<slug>/`  
+**Kanoniskt facit:** `/tjanster/horslinga/`
 
 Beskriver en tjänst/kompetens. Målarkitektur: gemensam tjänstemodell där det är praktiskt, med dokumenterade specialsektioner vid verkligt behov. Ny sida routas via `docs/workflows/create-standard-page.md`.
 
