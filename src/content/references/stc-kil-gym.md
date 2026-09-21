@@ -125,8 +125,8 @@ story:
       answer: Gym, A-sal, B-sal och omklädning/lounge kan ha sin egen nivå, ljudkälla och funktion samtidigt som de delar samma centrala infrastruktur och utropsfunktion.
       paragraphs:
         - STC Kil är ett tydligt exempel på varför en träningsanläggning inte ska behandlas som en enda stor ljudyta. I den öppna gymytan ska musiken ligga jämnt över lokalen och skapa energi utan att bli påträngande. I gruppträningssalen ska systemet kunna spela betydligt starkare och återge fysisk bas, medan omklädning och lounge behöver lägre nivåer.
-        - Systemet byggdes kring fyra huvudzoner: gym, A-sal, B-sal och omklädning/lounge. Gymmets bakgrundsmusik kan ligga på en jämn nivå samtidigt som A-salen kör ett energikrävande pass, B-salen använder en egen ljudkälla och omklädningsdelen spelar betydligt lugnare.
-        - Utrop kan samtidigt distribueras till de delar av anläggningen där meddelandet behöver höras. Det är kärnan i zonstyrningen: olika verksamheter kan pågå samtidigt utan att slåss om samma ljudinställningar.
+        - "Systemet byggdes kring fyra huvudzoner: gym, A-sal, B-sal och omklädning/lounge. Gymmets bakgrundsmusik kan ligga på en jämn nivå samtidigt som A-salen kör ett energikrävande pass, B-salen använder en egen ljudkälla och omklädningsdelen spelar betydligt lugnare."
+        - "Utrop kan samtidigt distribueras till de delar av anläggningen där meddelandet behöver höras. Det är kärnan i zonstyrningen: olika verksamheter kan pågå samtidigt utan att slåss om samma ljudinställningar."
         - På den öppna gymytan är jämn ljudspridning viktigare än att några få högtalare kan spela väldigt starkt. Om en stor yta täcks med för få högtalare blir nivån ofta hög nära högtalaren och betydligt svagare längre bort.
         - Därför installerades 12 AUDAC CIRA824 8-tums takhögtalare över gymytan. CIRA8-serien är gjord för bred spridning från tak och passar en miljö där medlemmarna rör sig mellan konditionsmaskiner, styrketräning och funktionella ytor. AUDAC använder samma typ av 8-tums CIRA-högtalare i andra flerzonsinstallationer där målet är jämn och diskret takintegrerad ljudspridning.
         - Resultatet ska egentligen inte märkas som teknik. Den som tränar ska uppleva att musiken följer med genom lokalen utan tydliga toppar och döda områden.
@@ -185,11 +185,11 @@ story:
       paragraphs:
         - Vid instruktörsledda pass ska rösten vara tydlig även när musiken spelar starkt. Instruktören behöver samtidigt kunna röra sig, demonstrera övningar och ha båda händerna fria.
         - Därför installerades trådlösa Sennheiser EW100 G4-system för gruppträningen. Ett headset håller mikrofonen på ett mer konsekvent avstånd och ger rörelsefrihet, men mikrofonen fungerar bara bra tillsammans med rätt högtalarplacering, förstärkning, gainstruktur och signalbehandling. Mikrofon, högtalare, förstärkning och signalbehandling behöver projekteras som ett system.
-        - Målet för användaren är enkelt: instruktören ska slå på mikrofonen och börja passet.
+        - "Målet för användaren är enkelt: instruktören ska slå på mikrofonen och börja passet."
         - Instruktören ska heller inte behöva gå till receptionen eller teknikrummet för att anpassa ljudet inför ett pass. I salen installerades därför lokal AUDAC-styrning med MWX65-paneler som ger tillgång till bland annat ljudkälla och volym samt lokala anslutningar för mikrofon och linjesignal.
         - Det placerar den dagliga kontrollen där den används utan att exponera hela den bakomliggande systemkonfigurationen. Instruktören ser funktionerna som behövs. Teknikern ser resten.
         - Gruppträningspass behöver ofta sin egen musik, till exempel en särskild spellista, ett färdigt träningsprogram eller ljud från ett virtuellt pass. Genom zonindelning och lokala ingångar kan A-salen välja en egen källa utan att ändra bakgrundsmusiken på gymytan.
-        - B-salen hade inte samma kapacitetskrav som A-salen och byggdes därför mer kompakt med AUDAC ATEO6-högtalare, AUDAC NOBA8A-bas, lokal MWX65-panel och egen trådlös mikrofonlösning. Principen är densamma: salen ska kunna styra sin egen musik, volym och instruktörsmikrofon utan att påverka övriga gymmet.
+        - "B-salen hade inte samma kapacitetskrav som A-salen och byggdes därför mer kompakt med AUDAC ATEO6-högtalare, AUDAC NOBA8A-bas, lokal MWX65-panel och egen trådlös mikrofonlösning. Principen är densamma: salen ska kunna styra sin egen musik, volym och instruktörsmikrofon utan att påverka övriga gymmet."
         - Det visar varför träningssalar inte bör dimensioneras identiskt bara för att de ligger i samma byggnad. Rummet och verksamheten bestämmer systemet.
       mediaGroups:
         - columns: 2
@@ -244,7 +244,7 @@ story:
         - STC Kil används för väldigt olika former av träning. Någon kan träna individuellt med lugn bakgrundsnivå samtidigt som A-salen kör ett virtuellt Les Mills-pass på storbild med betydligt starkare programljud och fyra 12-tums basar. Ett annat pass behöver trådlös instruktörsmikrofon, medan B-salen samtidigt kan användas separat.
         - Zonstyrningen försöker inte hitta en kompromiss som fungerar halvbra överallt. Varje del får rätt ljud för sin verksamhet.
         - Ett gymprojekt bör därför inte börja med frågan hur många högtalare som behövs. En bättre start är vad som ska hända i de olika ytorna. Gymytan behöver jämnt bakgrundsljud. A-salen behöver mer energi och bas. B-salen behöver egen gruppträningsfunktion. Instruktörerna behöver trådlösa mikrofoner. Omklädningen behöver diskret ljud. Personalen behöver kunna göra utrop.
-        - Allt måste fungera tillsammans utan att användaren behöver stå framför ett mixerbord. Det är så AVAB ser på ljudsystem för gym och träningsanläggningar: tekniken ska följa verksamheten i stället för att begränsa den.
+        - "Allt måste fungera tillsammans utan att användaren behöver stå framför ett mixerbord. Det är så AVAB ser på ljudsystem för gym och träningsanläggningar: tekniken ska följa verksamheten i stället för att begränsa den."
       mediaGroups:
         - columns: 1
           ratio: portrait
@@ -293,15 +293,15 @@ technicalDetails:
   lead: De verifierade projektdetaljerna visar hur olika högtalartyper, bas, mikrofoner, zonmatris och användarpaneler kombinerades efter respektive träningsmiljös behov.
   summaryLabel: Visa teknisk sammanfattning
   items:
-    - Gymyta: 12 × AUDAC CIRA824 8-tums takhögtalare
-    - A-sal: infällda 8-tums AUDAC-högtalare
-    - A-sal: 4 × nedpendlade 12-tums basar ovanför takgaller
-    - A-sal: gruppträning samt automatiserade och virtuella pass
-    - B-sal: AUDAC ATEO6 och AUDAC NOBA8A
-    - Omklädning/lounge: 6 × AUDAC CIRA724
-    - Gruppträning: trådlösa Sennheiser EW100 G4-system
-    - Lokal styrning: AUDAC MWX65-paneler
-    - Central zonmatris: AUDAC MTX48 med fyra individuellt styrbara zoner
+    - "Gymyta: 12 × AUDAC CIRA824 8-tums takhögtalare"
+    - "A-sal: infällda 8-tums AUDAC-högtalare"
+    - "A-sal: 4 × nedpendlade 12-tums basar ovanför takgaller"
+    - "A-sal: gruppträning samt automatiserade och virtuella pass"
+    - "B-sal: AUDAC ATEO6 och AUDAC NOBA8A"
+    - "Omklädning/lounge: 6 × AUDAC CIRA724"
+    - "Gruppträning: trådlösa Sennheiser EW100 G4-system"
+    - "Lokal styrning: AUDAC MWX65-paneler"
+    - "Central zonmatris: AUDAC MTX48 med fyra individuellt styrbara zoner"
     - Lokala ljudanslutningar för separata källor i träningssalarna
     - Receptionsstyrning och utrop via samma centrala ljudinfrastruktur
     - Avancerade parametrar ställs in vid driftsättning medan användarna möter enklare vardagskontroller
