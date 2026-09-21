@@ -100,3 +100,8 @@ Rapportera kort men konkret efter Fas 6:
 - Om projektet faktiskt kräver en ny layoutvariant (Fas 2-stopp), förvänta dig att Claude stannar och rapporterar innan någon kod skrivs. Det är avsett beteende, inte ett fel i prompten.
 - Om du redan vet att sidan kommer kräva ett arkitekturbeslut (ny komponentvariant, ändrad global CSS), säg det uttryckligen i uppgiften från start — då kan Fas 2 hanteras som en medveten avvikelse i stället för ett stopp.
 - Visual gate (Fas 7) är alltid ett stopp, oavsett hur tydlig sourcen är. Fast path i workflowet gäller bara Fas 0–6.
+
+
+## Layoutregel
+
+Använd alltid `layout: extended`. `compact` och `standard` är avvecklade och får inte användas eller återinföras.
