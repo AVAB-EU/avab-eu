@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 type Results = NonNullable<CollectionEntry<"references">["data"]["results"]>;
 interface Props { results: Results }
 const { results } = Astro.props;
+const resultCountClass = `reference-summary-grid--count-${results.items.length}`;
 ---
 
 <section class="reference-section reference-section--soft" aria-labelledby="resultat">
@@ -13,7 +14,7 @@ const { results } = Astro.props;
       <h2 id="resultat">{results.title}</h2>
       {results.lead && <p>{results.lead}</p>}
     </div>
-    <div class="reference-summary-grid reference-summary-grid--results">
+    <div class:list={["reference-summary-grid", "reference-summary-grid--results", resultCountClass]}>
       {results.items.map((result) => (
         <article class="reference-summary">
           {result.label && <span class="reference-summary-number">{result.label}</span>}
