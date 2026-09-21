@@ -5,13 +5,13 @@ service: Konferensteknik
 
 seo:
   title: Konferensteknik för mötesrum | Ljud, bild & styrning | AVAB
-  description: AVAB projekterar och installerar konferensteknik för små och stora mötesrum: skärmar, kameror, mikrofoner, DSP, BYOM, trådlös presentation och styrning.
+  description: "AVAB projekterar och installerar konferensteknik för små och stora mötesrum: skärmar, kameror, mikrofoner, DSP, BYOM, trådlös presentation och styrning."
   noindex: true
 
 h1: "Konferensteknik som gör mötet enkelt att starta"
 
 hero:
-  eyebrow: Tjänst: Konferensteknik
+  eyebrow: "Tjänst: Konferensteknik"
   lead: AVAB projekterar och installerar konferensteknik för små mötesrum, styrelserum och större salar där ljud, bild, kamera, anslutning och styrning behöver fungera som en sammanhängande lösning.
   image:
     src: /assets/konferensrum-stor-skarm-bord.webp
