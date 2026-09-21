@@ -11,7 +11,7 @@ seo:
 h1: "Skärmar och projektorer som passar rummet – inte bara specifikationen"
 
 hero:
-  eyebrow: Tjänst: Skärmar & projektorer
+  eyebrow: "Tjänst: Skärmar & projektorer"
   lead: AVAB projekterar och installerar bildlösningar för konferensrum, skolor, hallar och publika miljöer där storlek, ljus, siktlinjer och användning avgör om skärm, projektor eller flera bildytor är rätt val.
   image:
     src: /assets/konferensrum-stor-skarm-bord.webp
