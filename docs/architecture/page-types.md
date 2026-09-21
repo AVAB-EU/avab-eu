@@ -14,7 +14,7 @@ Varje publik sida ska klassificeras innan en AI väljer standard, workflow eller
 **Routefamilj:** `/referenser/<slug>/`  
 **Kanoniskt facit:** `/referenser/saffle-simhall/`
 
-Verifierbart kundcase/referens. Säffle simhall är den visuella och strukturella sanningskällan för nya referenser enligt `docs/standards/pages/canonical-page-exemplars.md`. Målarkitekturen är implementerad med Astro Content Collection + schema + gemensam referensrenderer. En normal ny/migrerad referens ska följa `docs/workflows/create-reference.md` och ska inte kräva unik CSS eller fullsidig markup.
+Verifierbart kundcase/referens. Säffle simhall är den visuella och strukturella sanningskällan för nya referenser enligt `docs/standards/pages/canonical-page-exemplars.md`. Målarkitekturen är implementerad med Astro Content Collection + schema + gemensam referensrenderer. En normal ny/migrerad referens ska följa `docs/workflows/REFERENCE-PAGE-WORKFLOW.md` och ska inte kräva unik CSS eller fullsidig markup.
 
 ### `environment`
 **Routefamilj:** `/miljo/<slug>/`  
