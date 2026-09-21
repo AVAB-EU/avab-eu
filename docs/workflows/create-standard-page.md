@@ -41,7 +41,8 @@ Alltid:
 5. `docs/architecture/ai-write-scope.md`
 6. relevant Active sidstandard om den finns
 7. faktisk kod/schema/template för sidtypen om den finns
-8. representativa befintliga sidor av samma typ
+8. `docs/standards/pages/canonical-page-exemplars.md`
+9. den kanoniska facit-sidan för sidtypen: `/miljo/simhall/` för Environment eller `/tjanster/horslinga/` för Service; andra befintliga sidor används endast som sekundära regressionsexempel
 
 Dokumenterade mål får inte behandlas som implementerad kod.
 
