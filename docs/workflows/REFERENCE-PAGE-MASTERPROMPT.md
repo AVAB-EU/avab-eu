@@ -43,7 +43,7 @@ Specifikt:
    REQUIRED SOURCE FACT / OPTIONAL PRODUCT CONTEXT / EXTERNAL FACT TO VERIFY /
    SEO TARGET / STRUCTURAL-COPY INPUT.
 
-4. Avgör enligt Fas 2 om sidan kan byggas helt med befintlig reference-arkitektur
+4. Jämför först den planerade sidan mot Säffle simhall, som är kanoniskt facit för referenser. Avgör därefter enligt Fas 2 om sidan kan byggas helt med befintlig reference-arkitektur
    (ReferencePage.astro, komponenter i src/components/references/, befintliga
    ratio/split/layout-kombinationer för mediaGroups). Default är INGEN NY
    KOMPONENT, INGEN NY LAYOUTVARIANT, INGEN SIDESPECIFIK CSS. Om ett verkligt
