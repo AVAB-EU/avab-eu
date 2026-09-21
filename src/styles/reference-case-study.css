@@ -67,6 +67,18 @@
   color: var(--avab-dark-muted);
 }
 
+.reference-page--case-study .case-copy-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(240px, 1fr);
+  align-items: start;
+  gap: var(--avab-content-gap);
+  margin-bottom: var(--avab-content-gap);
+}
+
+.reference-page--case-study .case-copy-row .case-copy {
+  margin-bottom: 0;
+}
+
 .reference-page--case-study .case-answer {
   margin: 0 0 18px;
   padding: 15px 17px;
@@ -242,6 +254,10 @@
   .reference-page--case-study .reference-section-heading h2,
   .reference-page--case-study .reference-block h2 {
     font-size: clamp(1.9rem, 9vw, 2.7rem);
+  }
+
+  .reference-page--case-study .case-copy-row {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

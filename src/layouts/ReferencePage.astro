@@ -196,27 +196,46 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
             <ReferenceAnchorNav items={anchorItems} />
 
             <div class="reference-case-content">
-              {hasStory && data.story ? data.story.chapters.map((chapter, chapterIndex) => (
-                <section class="case-section" id={chapter.id} data-case-section>
-                  <div class="avab-container case-section__inner">
-                    <div class="case-copy">
-                      <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
-                      <h2>{chapter.title}</h2>
-                      {chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
-                      {chapter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-                    </div>
-
-                    {chapter.mediaGroups.map((group) => (
-                      <ReferenceMediaGrid
-                        items={group.images}
-                        columns={group.columns}
-                        ratio={group.ratio}
-                        split={group.split || group.images.length === 1}
-                      />
-                    ))}
+              {hasStory && data.story ? data.story.chapters.map((chapter, chapterIndex) => {
+                const sidebarGroup = chapter.mediaGroups.find((group) => group.layout === "sidebar");
+                const otherGroups = chapter.mediaGroups.filter((group) => group !== sidebarGroup);
+                const copyBlock = (
+                  <div class="case-copy">
+                    <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
+                    <h2>{chapter.title}</h2>
+                    {chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
+                    {chapter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
                   </div>
-                </section>
-              )) : <>
+                );
+                return (
+                  <section class="case-section" id={chapter.id} data-case-section>
+                    <div class="avab-container case-section__inner">
+                      {sidebarGroup ? (
+                        <div class="case-copy-row">
+                          {copyBlock}
+                          <ReferenceMediaGrid
+                            items={sidebarGroup.images}
+                            columns={sidebarGroup.columns}
+                            ratio={sidebarGroup.ratio}
+                            split={false}
+                            layout={sidebarGroup.layout}
+                          />
+                        </div>
+                      ) : copyBlock}
+
+                      {otherGroups.map((group) => (
+                        <ReferenceMediaGrid
+                          items={group.images}
+                          columns={group.columns}
+                          ratio={group.ratio}
+                          split={group.split || group.images.length === 1}
+                          layout={group.layout}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                );
+              }) : <>
               <section class="case-section" id="uppdraget" data-case-section>
                 <div class="avab-container case-section__inner">
                   <div class="case-copy">

@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import ReferencePage from "../../../layouts/ReferencePage.astro";
+
+const reference = (await getCollection("references")).find(
+  (entry) => entry.data.slug === "/referenser/mullhyttans-sporthall/",
+);
+
+if (!reference) {
+  throw new Error("Reference content missing for /referenser/mullhyttans-sporthall/");
+}
+---
+
+<ReferencePage reference={reference} />
