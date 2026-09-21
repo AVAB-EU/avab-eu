@@ -151,6 +151,12 @@ SOURCE COVERAGE
 
 ## Tekniska kontroller
 
-- Astro/schema/build: väntar på PR-validering
-- Internal-link audit: täcks av projektets ordinarie QA efter build
-- Browser-QA desktop/tablet/mobil: kräver mänsklig/visuell granskning före publicering
+- Astro/schema/build: **PASS** i PR #61 via `npm run validate`.
+- Guardrails: **PASS** för 18 reference content entries.
+- Astro build: **PASS**, 61 sidor byggda.
+- Ny route genererad: **PASS** – `/referenser/fortnox-arena-vaxjo/index.html`.
+- Scoped internal-link verification: **PASS** – Sporthall & arena, Ljudsystem, Mikrofoner, Styrsystem & integration, Projektering och Kontakt finns som faktiska routes. Befintliga Fortnox-länkar från Sporthall & arena och Om oss pekar nu på den nya routen utan dead-link-kommentar.
+- FAQ-struktur: **PASS** – referensen använder gemensamma `ReferenceFaq`/`compact-faq`, två kolumner på desktop och en kolumn på mobil enligt befintlig standard.
+- FAQ → CTA-ordning: **PASS** strukturellt – ingen `relatedReferences` används, så FAQ ligger direkt före PageCTA i `ReferencePage`.
+- Fullt `audit-internal-links.mjs`: inte en del av nuvarande PR-workflow; ska köras lokalt/vid nästa fulla QA om separat körmiljö används.
+- Browser-QA desktop/tablet/mobil: kräver mänsklig/visuell granskning före publicering.
