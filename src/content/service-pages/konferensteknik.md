@@ -24,17 +24,17 @@ hero:
   secondaryHref: /miljo/kontor-konferens/
 
 facts:
-  - label: Rum
+  - "label: Rum"
     value: Små mötesrum till större konferenssalar
-  - label: Ljud
+  - "label: Ljud"
     value: Mikrofoner, DSP, AEC och högtalare
-  - label: Bild
+  - "label: Bild"
     value: Skärmar, projektorer och kameror
-  - label: Anslutning
+  - "label: Anslutning"
     value: USB-C, BYOM och trådlös presentation
-  - label: Styrning
+  - "label: Styrning"
     value: Gemensamt användarflöde
-  - label: Leverans
+  - "label: Leverans"
     value: Projektering till driftsättning
 
 principle:
@@ -54,7 +54,7 @@ principle:
     height: 900
 
 sections:
-  - id: ljud
+  - "id: ljud"
     eyebrow: Ljud & mikrofoner
     title: Alla deltagare behöver höras tydligt
     paragraphs:
@@ -71,7 +71,7 @@ sections:
       width: 1200
       height: 900
 
-  - id: bild
+  - "id: bild"
     eyebrow: Bild & presentation
     title: Skärm och kamera behöver projekteras tillsammans med rummet
     paragraphs:
@@ -83,7 +83,7 @@ sections:
       - Trådlös presentation eller kabelanslutning efter användningssätt
       - Möjlighet till flera bildytor i större rum
 
-  - id: anslutning
+  - "id: anslutning"
     eyebrow: BYOM & användarflöde
     title: Användaren ska kunna ta med sin egen dator
     paragraphs:
@@ -95,7 +95,7 @@ sections:
       - Möjlighet att standardisera samma arbetssätt i flera rum
       - Färre manuella steg för användaren
 
-  - id: styrning
+  - "id: styrning"
     eyebrow: Styrning & integration
     title: Ett tryck ska kunna starta rätt mötesläge
     paragraphs:
@@ -112,7 +112,7 @@ sections:
       width: 1200
       height: 900
 
-  - id: projektering
+  - "id: projektering"
     eyebrow: Projektering & drift
     title: Konferenstekniken behöver in tidigt i byggprojektet
     paragraphs:
@@ -141,19 +141,19 @@ faq:
   title: Vanliga frågor om konferensteknik
   lead: Korta svar om hur mötesrum, hybridmöten och AV-teknik brukar planeras.
   items:
-    - question: Vad behöver ett modernt konferensrum för AV-teknik?
+    - "question: Vad behöver ett modernt konferensrum för AV-teknik?"
       answer: Ett modernt konferensrum behöver vanligtvis skärm, kamera, mikrofoner, högtalare, anslutning för användarens dator och ett enkelt sätt att starta mötet. Exakt lösning anpassas efter rummets storlek, akustik och arbetssätt.
-    - question: Vad innebär BYOM?
+    - "question: Vad innebär BYOM?"
       answer: BYOM betyder Bring Your Own Meeting. Användaren ansluter sin egen dator och använder rummets professionella kamera, mikrofoner, högtalare och skärm i exempelvis Teams, Zoom eller Google Meet.
-    - question: Behövs separata mikrofoner i större mötesrum?
+    - "question: Behövs separata mikrofoner i större mötesrum?"
       answer: Ofta ja. Större rum behöver vanligtvis bättre täckning än en enkel videobar kan ge, till exempel med takmikrofoner eller bordsmikrofoner och DSP med ekosläckning.
-    - question: Kan alla mötesrum få samma användarflöde?
+    - "question: Kan alla mötesrum få samma användarflöde?"
       answer: Ja. Genom att standardisera anslutning, styrning och mötesfunktioner kan små och stora rum fungera på ett liknande sätt, vilket minskar supportbehovet.
-    - question: Kan konferenstekniken styras från en touchpanel?
+    - "question: Kan konferenstekniken styras från en touchpanel?"
       answer: Ja. I större rum kan ett styrsystem samla skärm, projektor, ljud, kamera, ljus och andra funktioner i ett gemensamt gränssnitt.
-    - question: När bör konferenstekniken tas in i byggprojektet?
+    - "question: När bör konferenstekniken tas in i byggprojektet?"
       answer: Innan möblering, kabelvägar, eluttag, nätverk, tak, väggar och skärmplacering är låsta. Tidig projektering minskar risken för sena kompletteringar.
-    - question: Kan AVAB arbeta tillsammans med lokal elektriker?
+    - "question: Kan AVAB arbeta tillsammans med lokal elektriker?"
       answer: Ja. AVAB kan ta fram projektering och underlag, programmera och driftsätta systemet medan installationen samordnas med lokal elektriker eller annan entreprenör.
 
 cta:
