@@ -1,9 +1,12 @@
 # Workflow: skapa eller uppdatera Referens
 
-**Status:** Active  
-**Owner:** AVAB-projektet  
-**Scope:** `reference`  
+**Status:** Deprecated
+**Owner:** AVAB-projektet
+**Scope:** `reference`
 **Last reviewed:** 2026-08-17
+**Replaced by:** [`docs/workflows/REFERENCE-PAGE-WORKFLOW.md`](REFERENCE-PAGE-WORKFLOW.md) och [`docs/workflows/REFERENCE-PAGE-MASTERPROMPT.md`](REFERENCE-PAGE-MASTERPROMPT.md)
+
+> **Detta dokument är legacy och ska inte användas för nya referenssidor.** Det innehåller bland annat en föråldrad uppgift om att content ska ligga i `src/content/references/<id>.json` — den faktiska, implementerade konventionen är `src/content/references/<slug>.md` med YAML-frontmatter. Nya referenser ska följa `docs/workflows/REFERENCE-PAGE-WORKFLOW.md` (process och gates) tillsammans med `docs/workflows/REFERENCE-PAGE-MASTERPROMPT.md` (startprompt). Resten av detta dokument behålls oförändrat nedan som historik.
 
 ## Syfte
 
