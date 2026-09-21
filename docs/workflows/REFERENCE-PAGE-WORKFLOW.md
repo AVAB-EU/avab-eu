@@ -73,7 +73,7 @@ Avgör om sidan kan byggas helt med befintlig reference-arkitektur:
 
 **Default: INGEN NY KOMPONENT. INGEN NY LAYOUTVARIANT. INGEN SIDESPECIFIK CSS.**
 
-**Referenslayout är alltid `extended`.** De tidigare layoutvärdena `compact` och `standard` är avvecklade och får inte användas, återinföras eller användas som genväg för tunt källunderlag. Om source är tunn ska innehållet vara kortare inom den aktuella `extended`-arkitekturen, eller sidan pausas om publiceringskraven inte kan uppfyllas.
+**Referenslayout är alltid `extended`, och Säffle simhall är visuellt/strukturellt facit.** De tidigare layoutvärdena `compact` och `standard` är avvecklade och får inte användas, återinföras eller användas som genväg för tunt källunderlag. Om source är tunn ska innehållet vara kortare inom den aktuella `extended`-arkitekturen, eller sidan pausas om publiceringskraven inte kan uppfyllas.
 
 Standardreferenser ska normalt kunna representeras med de befintliga `ratio`/`split`/`layout`-kombinationerna för mediaGroups. Prova alltid en befintlig kombination innan en ny variant övervägs.
 
