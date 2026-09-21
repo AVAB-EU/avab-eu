@@ -1,12 +1,12 @@
 ---
-draft: true
+draft: false
 slug: /tjanster/skarmar-projektorer/
 service: Skärmar & projektorer
 
 seo:
   title: Skärmar & projektorer för mötesrum, skola och publik miljö | AVAB
   description: AVAB projekterar och installerar skärmar, projektorer och projektordukar för konferensrum, skolor, hallar och publika miljöer.
-  noindex: true
+  noindex: false
 
 h1: "Skärmar och projektorer som passar rummet – inte bara specifikationen"
 
