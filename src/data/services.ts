@@ -100,6 +100,15 @@ export const serviceOverviewGroups: ServiceOverviewGroup[] = [
         imageAlt: "Restaurangmiljö med integrerad bakgrundsmusik",
       },
       {
+        title: "Nätverk, switchar & fiber",
+        group: "Kontroll & upplevelse",
+        shortText: "Nätverk för AV med PoE, Dante, AV-over-IP, VLAN och fiber.",
+        expandedText: "När ljud, bild, kamera och styrning går över nätverket behöver infrastrukturen vara en del av AV-projekteringen. AVAB hjälper till med switchkrav, PoE, VLAN, Dante, AV-over-IP, koppar och fiber.",
+        href: "/tjanster/natverk-switchar-router-fiber/",
+        image: "/assets/sorby-sporthall-teknikrack.webp",
+        imageAlt: "Teknikrack med nätverksswitchar och AV-utrustning",
+      },
+      {
         title: "Styrsystem & integration",
         group: "Kontroll & upplevelse",
         shortText: "Samlad och användarvänlig styrning av lokalens teknik.",
