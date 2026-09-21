@@ -60,15 +60,15 @@ facts:
   - label: Uppdrag
     value: Modernisering av äldre ljusstyrning
   - label: Styrsystem
-    value: Crestron CP3
+    value: Crestron processor
   - label: Dimring
-    value: Crestron DIN-1DIMU4
+    value: Crestron dimmer
 
 brief:
   eyebrow: Uppdraget på 30 sekunder
   title: Bevara uttrycket – modernisera tekniken
   need: Den äldre analoga ljusstyrningen i ett mötesrum hade slutat fungera samtidigt som rummets befintliga kromade reglage skulle behållas för att inte förändra det arkitektoniska uttrycket.
-  responsibility: AVAB identifierade hur det befintliga användargränssnittet kunde återanvändas, ersatte potentiometrarna och byggde en ny styrlösning med Crestron CP3 och en fyrkanals universaldimmer.
+  responsibility: AVAB identifierade hur det befintliga användargränssnittet kunde återanvändas, ersatte potentiometrarna och byggde en ny styrlösning med Crestron kontrollprocessor och en fyrkanals universaldimmer.
   result: Användaren möter i stort sett samma reglage som tidigare, medan tekniken bakom panelen nu är modern, programmerbar och möjlig att bygga vidare på.
 
 scope:
@@ -79,8 +79,8 @@ scope:
     - Inventering av befintlig analog ljusstyrning och reglage
     - Bevarande av den befintliga kromade panelens uttryck
     - Byte av äldre potentiometrar mot nya reglage
-    - Crestron CP3 som överordnat styrsystem
-    - Crestron DIN-1DIMU4 fyrkanals universaldimmer
+    - Crestron kontrollprocessor som överordnat styrsystem
+    - Crestron fyrkanals universaldimmer
     - Programmering och anpassning av styrlogik
     - Provning och driftsättning av dimmerfunktionen
   projectFacts:
@@ -91,9 +91,9 @@ scope:
     - label: Lösning
       value: Retrofit av befintlig ljusstyrning
     - label: Överordnad styrning
-      value: Crestron CP3
+      value: Crestron kontrollprocessor
     - label: Dimmer
-      value: Crestron DIN-1DIMU4
+      value: Crestron 4-kanalsdimmer
     - label: Princip
       value: Befintligt uttryck – ny teknik bakom
   serviceLabel: Läs om styrsystem och integration
@@ -134,10 +134,10 @@ story:
       navLabel: Lösningen
       eyebrow: Crestron och återanvändning
       title: Hur kunde de gamla reglagen fortsätta fungera med ett nytt styrsystem?
-      answer: De äldre potentiometrarna ersattes med nya reglage som läses av av ett Crestron CP3-styrsystem, som därefter styr belysningen via en Crestron DIN-1DIMU4 universaldimmer.
+      answer: De äldre potentiometrarna ersattes med nya reglage som läses av av ett Crestron styrsystem, som därefter styr belysningen via en Crestron universaldimmer.
       paragraphs:
-        - Den befintliga panelen kunde behållas, men potentiometrarna bakom reglagen byttes. Reglagens värden används nu som indata till ett Crestron CP3-styrsystem.
-        - Styrsystemet hanterar logiken och skickar därefter rätt styrning vidare till en fyrkanals Crestron DIN-1DIMU4 universaldimmer. På så sätt kunde användarupplevelsen bevaras samtidigt som tekniken bakom blev programmerbar och möjlig att anpassa till olika typer av laster.
+        - Den befintliga panelen kunde behållas, men potentiometrarna bakom reglagen byttes. Reglagens värden används nu som indata till ett Crestron styrsystem.
+        - Styrsystemet hanterar logiken och skickar därefter rätt styrning vidare till en fyrkanals Crestron universaldimmer. På så sätt kunde användarupplevelsen bevaras samtidigt som tekniken bakom blev programmerbar och möjlig att anpassa till olika typer av laster.
         - Den exakta modellserien för den ursprungliga äldre ljusstyrningen har inte verifierats. Därför beskriver vi installationen som en äldre analog AVAB-ljusstyrning utan att tillskriva den en specifik LD-, LC- eller LDX-modell.
       mediaGroups:
         - columns: 3
@@ -150,11 +150,11 @@ story:
               title: Nya reglage bakom befintligt uttryck
               text: Potentiometrarna ersattes medan den synliga panelen och dess uttryck kunde behållas.
             - src: /assets/nobel-forum-crestron-din-1dimu4-dimmer.webp
-              alt: Crestron DIN-1DIMU4 fyrkanals universaldimmer installerad i elcentralen på Nobel Forum
+              alt: Crestron fyrkanals universaldimmer installerad i elcentralen på Nobel Forum
               width: 840
               height: 1800
               title: Ny dimmerteknik i centralen
-              text: Crestron DIN-1DIMU4 hanterar belysningen som en del av den nya programmerbara styrlösningen.
+              text: Crestrondimmern hanterar belysningen som en del av den nya programmerbara styrlösningen.
             - src: /assets/nobel-forum-modernisering-ljusstyrning-elskap.webp
               alt: AVAB-tekniker arbetar i elcentralen vid modernisering av ljusstyrningen på Nobel Forum
               width: 840
@@ -201,13 +201,13 @@ results:
         source: Projektunderlag Nobel Forum
     - label: Verifierat
       title: Ny programmerbar styrning
-      text: De nya reglagen läses av av ett Crestron CP3-styrsystem som hanterar styrlogiken för belysningen.
+      text: De nya reglagen läses av av ett Crestron styrsystem som hanterar styrlogiken för belysningen.
       evidence:
         type: delivered
         source: Projektunderlag Nobel Forum
     - label: Verifierat
       title: Universaldimmer för fyra kanaler
-      text: Belysningen styrs via en Crestron DIN-1DIMU4 fyrkanals universaldimmer.
+      text: Belysningen styrs via en Crestron fyrkanals universaldimmer.
       evidence:
         type: delivered
         source: Projektunderlag Nobel Forum
@@ -218,9 +218,9 @@ technicalDetails:
   lead: Den tekniska lösningen är tillgänglig för projektörer och tekniskt ansvariga utan att dominera referensens huvudberättelse.
   summaryLabel: Visa teknisk sammanfattning
   items:
-    - Crestron CP3 överordnat styrsystem
+    - Crestron överordnat styrsystem
     - Analoga ingångar för avläsning av potentiometrar
-    - Crestron DIN-1DIMU4 fyrkanals universaldimmer
+    - Crestron fyrkanals universaldimmer
     - Stöd för både framkants- och bakkantsdimring beroende på ansluten last
     - Fyra dimmerkanaler
     - Programmerbar styrlogik
@@ -258,7 +258,7 @@ faq:
     - question: Måste hela den gamla ljusstyrningen bytas?
       answer: Nej. Först behöver installationen inventeras. Om paneler, kablage eller andra delar fortfarande fungerar och kan användas säkert kan de ibland behållas medan styrningen moderniseras.
     - question: Kan äldre analog styrning ersättas med Crestron?
-      answer: Ja, beroende på hur installationen är uppbyggd. Nobel Forum visar en lösning där nya potentiometrar används som indata till ett Crestron CP3-styrsystem som i sin tur styr en modern dimmer.
+      answer: Ja, beroende på hur installationen är uppbyggd. Nobel Forum visar en lösning där nya potentiometrar används som indata till ett Crestron styrsystem som i sin tur styr en modern dimmer.
     - question: Vad behöver kontrolleras vid byte från glödljus eller halogen till LED?
       answer: Bland annat ansluten effekt, minsta last, typ av LED-drivdon och vilken dimringsprincip lasten kräver. Dimmer, drivdon och ljuskälla behöver fungera tillsammans.
     - question: Kan samma styrsystem senare hantera mer än belysning?
