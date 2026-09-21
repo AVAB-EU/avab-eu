@@ -179,6 +179,7 @@ const referenceSchema = z
                     columns: z.number().int().min(1).max(3).default(3),
                     ratio: z.enum(["land", "pano", "portrait", "tall", "slim"]).default("land"),
                     split: z.boolean().default(false),
+                    layout: z.enum(["grid", "mixed-pair", "sidebar"]).default("grid"),
                     images: z
                       .array(
                         imageSchema.extend({

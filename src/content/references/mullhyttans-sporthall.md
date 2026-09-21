@@ -154,7 +154,7 @@ story:
       mediaGroups:
         - columns: 1
           ratio: portrait
-          split: true
+          layout: sidebar
           images:
             - src: /assets/05-mullhyttans-sporthall-yamaha-cbr15-hogtalare.webp
               alt: Yamaha CBR15-högtalare riktade mot lyssningsytorna i Mullhyttans sporthall
