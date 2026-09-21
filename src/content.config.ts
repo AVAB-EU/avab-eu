@@ -423,6 +423,66 @@ const cameraIndustryPageSchema = z.object({
   }),
 });
 
+const serviceLandingPageSchema = z.object({
+  draft: z.boolean().default(false),
+  slug: z.string().startsWith("/tjanster/").endsWith("/"),
+  service: requiredText,
+  seo: z.object({
+    title: requiredText,
+    description: requiredText,
+    noindex: z.boolean().default(false),
+  }),
+  h1: requiredText,
+  hero: z.object({
+    eyebrow: requiredText,
+    lead: requiredText,
+    image: imageSchema,
+    primaryLabel: requiredText,
+    primaryHref: requiredText,
+    secondaryLabel: z.string().optional(),
+    secondaryHref: z.string().optional(),
+  }),
+  facts: z.array(z.object({ label: requiredText, value: requiredText })).min(1).optional(),
+  principle: z.object({
+    eyebrow: z.string().optional(),
+    title: requiredText,
+    text: requiredText,
+    image: imageSchema.optional(),
+    bullets: z.array(requiredText).optional(),
+  }).optional(),
+  sections: z.array(z.object({
+    id: z.string().regex(/^[a-z0-9-]+$/),
+    eyebrow: z.string().optional(),
+    title: requiredText,
+    paragraphs: z.array(requiredText).min(1),
+    bullets: z.array(requiredText).optional(),
+    image: imageSchema.optional(),
+  })).min(1),
+  proof: z.object({
+    eyebrow: z.string().optional(),
+    title: requiredText,
+    text: requiredText,
+    image: imageSchema.optional(),
+    linkLabel: z.string().optional(),
+    linkHref: z.string().optional(),
+  }).optional(),
+  faq: z.object({
+    title: requiredText,
+    lead: z.string().optional(),
+    items: z.array(z.object({ question: requiredText, answer: requiredText })).min(1),
+  }),
+  cta: z.object({
+    eyebrow: z.string().optional(),
+    title: requiredText,
+    text: z.string().optional(),
+    primaryLabel: requiredText,
+    primaryHref: requiredText,
+    secondaryLabel: z.string().optional(),
+    secondaryHref: z.string().optional(),
+    points: z.array(requiredText).optional(),
+  }),
+});
+
 const references = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/references" }),
   schema: referenceSchema,
@@ -433,4 +493,9 @@ const cameraIndustryPages = defineCollection({
   schema: cameraIndustryPageSchema,
 });
 
-export const collections = { references, cameraIndustryPages };
+const serviceLandingPages = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/service-pages" }),
+  schema: serviceLandingPageSchema,
+});
+
+export const collections = { references, cameraIndustryPages, serviceLandingPages };
