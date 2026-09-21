@@ -53,7 +53,7 @@ En specialroute kan senare omklassificeras om flera sidor visar samma stabila m�
 
 ### Skapa/migrera
 
-- Referens → `create-reference.md` + reference-standard.
+- Referens → `REFERENCE-PAGE-WORKFLOW.md` + `REFERENCE-PAGE-MASTERPROMPT.md` + reference-standard + kanoniskt facit Säffle simhall.
 - Miljö → `create-standard-page.md` + relevant Active standard när sådan finns.
 - Tjänst → `create-standard-page.md` + relevant Active standard när sådan finns.
 - Kunskap → `create-standard-page.md` + relevant Active standard när sådan finns.
