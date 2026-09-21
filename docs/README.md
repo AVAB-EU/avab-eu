@@ -104,7 +104,9 @@ Exempel:
 ny referens
 → pageType: reference
 → task: create
-→ workflows/create-reference.md
+→ workflows/REFERENCE-PAGE-WORKFLOW.md
+→ workflows/REFERENCE-PAGE-MASTERPROMPT.md
+→ standards/pages/canonical-page-exemplars.md (Säffle simhall)
 → standards/pages/reference.md
 → faktisk content collection/schema
 ```
