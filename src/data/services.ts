@@ -11,11 +11,13 @@ export interface ServiceOverviewItem {
 export interface ServiceOverviewGroup {
   title: string;
   services: ServiceOverviewItem[];
+  desktopColumns?: number;
 }
 
 export const serviceOverviewGroups: ServiceOverviewGroup[] = [
   {
     title: "Ljud & kommunikation",
+    desktopColumns: 3,
     services: [
       {
         title: "Ljudsystem",
@@ -48,6 +50,7 @@ export const serviceOverviewGroups: ServiceOverviewGroup[] = [
   },
   {
     title: "Tillgänglighet & säkerhet",
+    desktopColumns: 3,
     services: [
       {
         title: "Hörslinga",
@@ -79,7 +82,41 @@ export const serviceOverviewGroups: ServiceOverviewGroup[] = [
     ],
   },
   {
+    title: "Bild & möten",
+    desktopColumns: 3,
+    services: [
+      {
+        title: "Konferensteknik",
+        group: "Bild & möten",
+        shortText: "Mötesrum där ljud, bild, kamera och styrning fungerar som en helhet.",
+        expandedText: "Konferensteknik som är enkel i vardagen. AVAB projekterar och installerar mötesrum med skärmar, kameror, mikrofoner, DSP, BYOM, presentation och styrning.",
+        href: "/tjanster/konferensteknik/",
+        image: "/assets/konferensrum-stor-skarm-bord.webp",
+        imageAlt: "Modernt konferensrum med stor skärm och integrerad AV-teknik",
+      },
+      {
+        title: "Skärmar & projektorer",
+        group: "Bild & möten",
+        shortText: "Rätt bildyta, placering och signalväg för lokalen och användningen.",
+        expandedText: "AVAB hjälper till att välja och installera professionella skärmar, projektorer och bildlösningar utifrån siktlinjer, ljusförhållanden, bildstorlek och hur lokalen faktiskt används.",
+        href: "/tjanster/skarmar-projektorer/",
+        image: "/assets/konferensrum-stor-skarm-bord.webp",
+        imageAlt: "Stor bildskärm i professionell mötesmiljö",
+      },
+      {
+        title: "Digital signage",
+        group: "Bild & möten",
+        shortText: "Informationsskärmar och digital kommunikation för publika miljöer.",
+        expandedText: "Digital signage samlar skärmar, innehåll, signaldistribution och central hantering i en lösning för information, orientering och kommunikation.",
+        href: "/tjanster/digital-signage/",
+        image: "/assets/digital-signage.webp",
+        imageAlt: "Digital signage och informationsskärm i publik miljö",
+      },
+    ],
+  },
+  {
     title: "Kontroll & upplevelse",
+    desktopColumns: 3,
     services: [
       {
         title: "Kameraövervakning",
@@ -125,15 +162,6 @@ export const serviceOverviewGroups: ServiceOverviewGroup[] = [
         href: "/tjanster/ljus/",
         image: "/assets/gym-interior-bla-ledbelysning.webp",
         imageAlt: "Träningsmiljö med blå LED-belysning",
-      },
-      {
-        title: "Modernisering av äldre ljusstyrning",
-        group: "Kontroll & upplevelse",
-        shortText: "Identifiering, felsökning och modernisering av äldre ljusstyrning.",
-        expandedText: "Ny funktion i befintlig installation. AVAB identifierar och felsöker äldre ljusstyrning och moderniserar den för LED och dagens styrsystem, utan att byta ut allt.",
-        href: "/tjanster/modernisering-avab-ljusstyrning/",
-        image: "/assets/nobel-forum-aldre-avab-ljusstyrning.webp",
-        imageAlt: "Del av den äldre analoga AVAB-ljusstyrningen på Nobel Forum före moderniseringen",
       },
     ],
   },
