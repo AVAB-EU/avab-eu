@@ -15,8 +15,8 @@ Projektet kör Astro 6.4.7 och använder Astro Content Collections för referens
 
 - Collection-konfiguration: `src/content.config.ts`
 - Referensdata: `src/content/references/`
-- Gemensam rendering: `src/components/references/ReferencePage.astro`
-- Pilot: `src/content/references/minnebergsskolan-arvika.json`
+- Gemensam rendering: `src/layouts/ReferencePage.astro`
+- Kanoniskt referensfacit: `https://avab.eu/referenser/saffle-simhall/` enligt `docs/standards/pages/canonical-page-exemplars.md`
 - Befintlig URL behålls via en tunn routefil under `src/pages/referenser/<slug>/index.astro` under migrationsperioden.
 
 Astro-schemat validerar entry-data vid build. En referens som saknar obligatoriska fält eller har ogiltig slug ska därför inte kunna passera normal build.
@@ -146,8 +146,6 @@ Migrera en referens i taget:
 5. kör build och visuell regression
 6. ta först därefter bort eventuell legacy-data som inte längre behövs
 
-## Pilotstatus
+## Kanoniskt presentationsfacit
 
-Minnebergsskolan är första implementerade pilot. Den bevisar content collection + schema + gemensam rendering + samma data i referenskortet.
-
-Piloten är inte mall för att massmigrera resterande referenser utan regressionstest. Nästa referenser ska migreras stegvis efter att pilotens rendering granskats.
+Säffle simhall är beslutat visuellt och strukturellt facit för sidtypen Referens. Content-modellen ska ge den gemensamma renderern tillräcklig strukturerad data för att reproducera den riktningen generiskt. Minnebergsskolan och andra befintliga referenser kan användas som regressionsexempel men får inte ersätta Säffle som mall.

@@ -12,20 +12,21 @@ Varje publik sida ska klassificeras innan en AI väljer standard, workflow eller
 
 ### `reference`
 **Routefamilj:** `/referenser/<slug>/`  
-**Pilot:** `/referenser/minnebergsskolan-arvika/`
+**Kanoniskt facit:** `/referenser/saffle-simhall/`
 
-Verifierbart kundcase/referens. Målarkitekturen är nu implementerad som första pilot med Astro Content Collection + schema + gemensam referensrenderer. En normal ny/migrerad referens ska följa `docs/workflows/create-reference.md` och ska inte kräva unik CSS eller fullsidig markup.
+Verifierbart kundcase/referens. Säffle simhall är den visuella och strukturella sanningskällan för nya referenser enligt `docs/standards/pages/canonical-page-exemplars.md`. Målarkitekturen är implementerad med Astro Content Collection + schema + gemensam referensrenderer. En normal ny/migrerad referens ska följa `docs/workflows/REFERENCE-PAGE-WORKFLOW.md` och ska inte kräva unik CSS eller fullsidig markup.
 
 ### `environment`
 **Routefamilj:** `/miljo/<slug>/`  
-**Pilot/riktningsreferens:** `/miljo/simhall/`
+**Kanoniskt facit:** `/miljo/simhall/`
 
-Beskriver AVAB:s lösningar för en miljö, exempelvis simhall, skola, industri eller gym. Målarkitektur: gemensamma miljöprimitives/sektioner med kontrollerade variationer. Ny sida routas via `docs/workflows/create-standard-page.md`. Content-schema/template ska verifieras i faktisk kod innan det antas finnas.
+Beskriver AVAB:s lösningar för en miljö, exempelvis simhall, skola, industri eller gym. Simhall är den visuella och strukturella sanningskällan för nya miljösidor enligt `docs/standards/pages/canonical-page-exemplars.md`. Målarkitektur: gemensamma miljöprimitives/sektioner med kontrollerade variationer. Ny sida routas via `docs/workflows/create-standard-page.md`. Content-schema/template ska verifieras i faktisk kod innan det antas finnas.
 
 ### `service`
-**Routefamilj:** `/tjanster/<slug>/`
+**Routefamilj:** `/tjanster/<slug>/`  
+**Kanoniskt facit:** `/tjanster/horslinga/`
 
-Beskriver en tjänst/kompetens. Målarkitektur: gemensam tjänstemodell där det är praktiskt, med dokumenterade specialsektioner vid verkligt behov. Ny sida routas via `docs/workflows/create-standard-page.md`.
+Beskriver en tjänst/kompetens. Hörslinga är den visuella och strukturella sanningskällan för nya tjänstesidor enligt `docs/standards/pages/canonical-page-exemplars.md`. Målarkitektur: gemensam tjänstemodell där det är praktiskt, med dokumenterade specialsektioner vid verkligt behov. Ny sida routas via `docs/workflows/create-standard-page.md`.
 
 ### `knowledge`
 **Routefamilj:** `/kunskap/<slug>/`
@@ -52,7 +53,7 @@ En specialroute kan senare omklassificeras om flera sidor visar samma stabila m�
 
 ### Skapa/migrera
 
-- Referens → `create-reference.md` + reference-standard.
+- Referens → `REFERENCE-PAGE-WORKFLOW.md` + `REFERENCE-PAGE-MASTERPROMPT.md` + reference-standard + kanoniskt facit Säffle simhall.
 - Miljö → `create-standard-page.md` + relevant Active standard när sådan finns.
 - Tjänst → `create-standard-page.md` + relevant Active standard när sådan finns.
 - Kunskap → `create-standard-page.md` + relevant Active standard när sådan finns.

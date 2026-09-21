@@ -103,7 +103,7 @@ const referenceSchema = z
   .object({
     draft: z.boolean().default(false),
     slug: z.string().startsWith("/referenser/").endsWith("/"),
-    layout: z.enum(["compact", "standard", "extended"]),
+    layout: z.literal("extended"),
     title: requiredText,
     shortTitle: requiredText,
     heroTitle: requiredText,

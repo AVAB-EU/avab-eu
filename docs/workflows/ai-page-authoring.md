@@ -20,7 +20,7 @@ Identifiera först:
 - `listing`
 - `special`
 
-Använd route, sidans syfte och faktisk kod. Välj inte mall enbart för att två sidor ser lika ut.
+Använd route, sidans syfte och faktisk kod. Välj inte mall enbart för att två sidor ser lika ut. För `reference`, `environment` och `service` är kanoniskt facit redan beslutat i `docs/standards/pages/canonical-page-exemplars.md` och ska användas före äldre sidor.
 
 ## 2. Klassificera uppgiftstyp
 
@@ -34,7 +34,7 @@ Identifiera därefter om användaren vill:
 ## 3. Route till rätt workflow
 
 ### Ny eller migrerad Referens
-→ `docs/workflows/create-reference.md`
+→ `docs/workflows/REFERENCE-PAGE-WORKFLOW.md` + `docs/workflows/REFERENCE-PAGE-MASTERPROMPT.md` + Säffle simhall som kanoniskt facit
 
 ### Ny Miljö, Tjänst eller Kunskap
 → `docs/workflows/create-standard-page.md`
@@ -56,8 +56,9 @@ Oavsett route:
 2. `docs/README.md`
 3. `docs/architecture/page-types.md`
 4. `docs/architecture/ai-write-scope.md`
-5. relevant Active sidstandard
-6. valt workflow
+5. `docs/standards/pages/canonical-page-exemplars.md` för Referens, Miljö eller Tjänst
+6. relevant Active sidstandard
+7. valt workflow
 7. faktisk kod/schema/template
 8. `TODO.md` när uppgiften påverkar status, prioritet eller följduppgifter
 
@@ -102,6 +103,8 @@ Exempel:
 AI får förbättra formulering, struktur, rubriker, SEO-copy och alt-text så länge faktainnehållet inte ändras.
 
 ## 8. Återanvänd faktisk implementation
+
+För Referens, Miljö och Tjänst ska återanvändningen samtidigt jämföras mot respektive kanoniskt facit. Om befintliga komponenter inte kan återge facit utan lokal specialkod är det ett arkitekturbehov, inte skäl att välja en äldre layout.
 
 Prioritetsordning:
 

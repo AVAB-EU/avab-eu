@@ -6,6 +6,16 @@
 **Last reviewed:** 2026-09-14
 **Replaces:** `src/docs/AVAB-standard-referensprojekt.md` samt relevanta delar av `src/docs/avab-design-referenssida-inkopare.md`
 
+## Kanoniskt facit
+
+Den visuella och strukturella sanningskällan för alla referenser är:
+
+`https://avab.eu/referenser/saffle-simhall/`
+
+Nya referenser och nya referenskomponenter ska byggas så att de följer Säffle simhalls informationshierarki, sektionernas rytm, spacing, bildbehandling, ankarnavigering, fakta-/teknikpresentation, FAQ- och CTA-principer samt mobilbeteende när motsvarande innehåll finns. Facit ska implementeras genom gemensamma komponenter och `layout: extended` — aldrig genom kopierad fullsidig markup eller sidspecifik CSS.
+
+Äldre referenser är regressionsexempel, inte alternativa mallar. Se `docs/standards/pages/canonical-page-exemplars.md` för tolkningsregler och tillåtna avvikelser.
+
 ## Terminologi
 
 Den publika termen är alltid **Referenser**. URL-strukturen är alltid `/referenser/`. Använd inte `/referensprojekt/` i nya filer, länkar, metadata eller dokumentation.

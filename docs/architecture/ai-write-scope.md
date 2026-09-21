@@ -10,7 +10,7 @@ Detta dokument skiljer normalt innehållsarbete från utvecklingsarbete. En AI s
 
 ## Grundregel
 
-Minsta nödvändiga scope gäller. En begäran om innehåll får inte tyst bli en design-, routing- eller arkitekturändring.
+Minsta nödvändiga scope gäller. En begäran om innehåll får inte tyst bli en design-, routing- eller arkitekturändring. För Referens, Miljö och Tjänst definieras den beslutade visuella/strukturella riktningen i `docs/standards/pages/canonical-page-exemplars.md`.
 
 ## Låg risk – normalt innehållsarbete
 
@@ -40,7 +40,7 @@ AI får inte ändra följande som en bieffekt av vanlig sidproduktion:
 - `.github/workflows/`
 - deploy-/hostingkonfiguration
 
-Sådana ändringar ska beskrivas som utvecklingsarbete, granskas bredare och regressionstestas på berörda sidtyper.
+Sådana ändringar ska beskrivas som utvecklingsarbete, granskas bredare och regressionstestas på berörda sidtyper. Om ändringen görs för att matcha sidtypens facit ska den lösas generellt i delad arkitektur; AI får inte kopiera facit-sidans hela markup eller skapa projektnamngiven CSS som genväg.
 
 ## Befintligt läge under migration
 

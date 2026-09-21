@@ -11,7 +11,7 @@ Detta workflow används när en befintlig sida ska uppdateras utan att sidtypen 
 
 ## 1. Identifiera sidtyp och faktisk implementation
 
-Läs route, relevant standard och faktisk kod. Bestäm om sidan är:
+Läs route, relevant standard och faktisk kod. Om sidan är Referens, Miljö eller Tjänst ska `docs/standards/pages/canonical-page-exemplars.md` också läsas och sidan jämföras mot respektive facit när ändringen påverkar struktur eller presentation. Bestäm om sidan är:
 
 - migrerad till content model/template,
 - legacy/fullsidig Astro,
@@ -50,7 +50,7 @@ Om sidan fortfarande är en stor `index.astro`:
 - flytta inte sidan till ny arkitektur som bieffekt av en liten textändring,
 - men dokumentera eller följ befintlig migrationsplan när uppgiften visar ett återkommande problem.
 
-Om användaren uttryckligen vill standardisera sidan är det inte längre en liten contentändring utan migration/arkitekturarbete.
+Om användaren uttryckligen vill standardisera sidan är det inte längre en liten contentändring utan migration/arkitekturarbete. Målet för standardiseringen ska då vara sidtypens kanoniska facit, inte den legacy-sida som råkar ändras.
 
 ## 5. Listing
 

@@ -20,7 +20,7 @@ PROJEKT
 - Slug: <t.ex. "mullhyttans-sporthall" → /referenser/mullhyttans-sporthall/>
 - Sourcefil: <exakt lokal path, t.ex. "docs/source-material/Referens X.docx">
 - Bildpaket: <exakt lista eller mapp, t.ex. "13 WebP-assets i public/assets, se lista nedan" eller "inga bilder ännu, ska tillhandahållas separat">
-- Visuell referens (valfritt): <t.ex. "layoutmässigt likt Säffle simhall" — enbart som visuell inspiration, inte att kopiera blint>
+- Visuellt/strukturellt facit: `https://avab.eu/referenser/saffle-simhall/` (fast, inte valfritt). Eventuell ytterligare referens får endast anges som sekundärt regressionsexempel.
 - Feature-branch: <t.ex. "seo/referens-mullhyttans-sporthall">
 
 INSTRUKTION
@@ -43,7 +43,7 @@ Specifikt:
    REQUIRED SOURCE FACT / OPTIONAL PRODUCT CONTEXT / EXTERNAL FACT TO VERIFY /
    SEO TARGET / STRUCTURAL-COPY INPUT.
 
-4. Avgör enligt Fas 2 om sidan kan byggas helt med befintlig reference-arkitektur
+4. Jämför först den planerade sidan mot Säffle simhall, som är kanoniskt facit för referenser. Avgör därefter enligt Fas 2 om sidan kan byggas helt med befintlig reference-arkitektur
    (ReferencePage.astro, komponenter i src/components/references/, befintliga
    ratio/split/layout-kombinationer för mediaGroups). Default är INGEN NY
    KOMPONENT, INGEN NY LAYOUTVARIANT, INGEN SIDESPECIFIK CSS. Om ett verkligt
@@ -100,3 +100,8 @@ Rapportera kort men konkret efter Fas 6:
 - Om projektet faktiskt kräver en ny layoutvariant (Fas 2-stopp), förvänta dig att Claude stannar och rapporterar innan någon kod skrivs. Det är avsett beteende, inte ett fel i prompten.
 - Om du redan vet att sidan kommer kräva ett arkitekturbeslut (ny komponentvariant, ändrad global CSS), säg det uttryckligen i uppgiften från start — då kan Fas 2 hanteras som en medveten avvikelse i stället för ett stopp.
 - Visual gate (Fas 7) är alltid ett stopp, oavsett hur tydlig sourcen är. Fast path i workflowet gäller bara Fas 0–6.
+
+
+## Layoutregel
+
+Använd alltid `layout: extended`. `compact` och `standard` är avvecklade och får inte användas eller återinföras.

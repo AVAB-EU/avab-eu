@@ -8,7 +8,7 @@
 
 ## Syfte
 
-AVAB ska ha ett sammanhängande responsivt designsystem, inte en separat och nedbantad mobildesign. Denna standard ska användas före sidspecifika mobilfixar. Om samma problem finns på flera sidor ska grundorsaken lösas i delad CSS, komponent eller mall.
+AVAB ska ha ett sammanhängande responsivt designsystem, inte en separat och nedbantad mobildesign. För Referens, Miljö och Tjänst ska mobilbeteendet även jämföras mot respektive kanoniskt facit i `docs/standards/pages/canonical-page-exemplars.md`. Denna standard ska användas före sidspecifika mobilfixar. Om samma problem finns på flera sidor ska grundorsaken lösas i delad CSS, komponent eller mall.
 
 ## Grundprinciper
 
@@ -19,6 +19,7 @@ AVAB ska ha ett sammanhängande responsivt designsystem, inte en separat och ned
 5. **En tydlig primär handling per sektion.**
 6. **Tillgänglighet är en del av mobilstandarden.**
 7. **Verifiera faktisk rendering.** Kodändring är inte klar utan visuell kontroll.
+8. **Facit betyder avsiktligt beteende, inte buggar.** Om en kanonisk facit-sida bryter mot denna globala mobilstandard ska grundfelet lösas generellt; felet får inte kopieras till nya sidor.
 
 ## Obligatoriska kontrollbredder
 

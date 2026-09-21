@@ -25,7 +25,8 @@ Om två gällande dokument motsäger varandra ska AI inte välja tyst. Konflikte
 - [`standards/global/mobile.md`](standards/global/mobile.md) – mobil/responsiv UI för alla publika sidor.
 
 ### Sidstandarder
-- [`standards/pages/reference.md`](standards/pages/reference.md) – canonical standard för alla referenser under `/referenser/`.
+- [`standards/pages/canonical-page-exemplars.md`](standards/pages/canonical-page-exemplars.md) – kanoniska sidfacit: Säffle simhall för Referens, Simhall för Miljö och Hörslinga för Tjänst.
+- [`standards/pages/reference.md`](standards/pages/reference.md) – canonical innehållsstandard för alla referenser under `/referenser/`; presentationen ska följa Säffle simhall enligt sidfacit.
 
 ### AI-workflows
 - [`workflows/local-development-and-deploy.md`](workflows/local-development-and-deploy.md) – lokalt Git/VS Code-flöde från uppdaterad `main` till PR, automatisk deploy och produktionsverifiering.
@@ -95,7 +96,7 @@ Markdown ska inte användas för att duplicera implementation som kan göras sä
 
 ## Route efter sidtyp och uppgift
 
-AI ska börja i `docs/workflows/ai-page-authoring.md` och först klassificera **sidtyp + uppgiftstyp**.
+AI ska börja i `docs/workflows/ai-page-authoring.md` och först klassificera **sidtyp + uppgiftstyp**. För Referens, Miljö och Tjänst ska `docs/standards/pages/canonical-page-exemplars.md` därefter användas som visuell och strukturell sanningskälla innan någon äldre sida väljs som mall.
 
 Exempel:
 
@@ -103,7 +104,9 @@ Exempel:
 ny referens
 → pageType: reference
 → task: create
-→ workflows/create-reference.md
+→ workflows/REFERENCE-PAGE-WORKFLOW.md
+→ workflows/REFERENCE-PAGE-MASTERPROMPT.md
+→ standards/pages/canonical-page-exemplars.md (Säffle simhall)
 → standards/pages/reference.md
 → faktisk content collection/schema
 ```

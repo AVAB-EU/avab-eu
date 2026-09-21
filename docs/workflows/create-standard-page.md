@@ -41,9 +41,10 @@ Alltid:
 5. `docs/architecture/ai-write-scope.md`
 6. relevant Active sidstandard om den finns
 7. faktisk kod/schema/template för sidtypen om den finns
-8. representativa befintliga sidor av samma typ
+8. `docs/standards/pages/canonical-page-exemplars.md`
+9. den kanoniska facit-sidan för sidtypen: `/miljo/simhall/` för Environment eller `/tjanster/horslinga/` för Service; andra befintliga sidor används endast som sekundära regressionsexempel
 
-Dokumenterade mål får inte behandlas som implementerad kod.
+Dokumenterade mål får inte behandlas som implementerad kod. En äldre legacy-sida får inte användas som alternativ designmall när ett kanoniskt facit finns.
 
 ## 3. Kontrollera implementation före skrivning
 
@@ -59,7 +60,7 @@ AI ska uttryckligen avgöra om sidtypen har:
 Skapa/uppdatera strukturerat content enligt den faktiska modellen.
 
 ### Om schema/template saknas
-Skapa inte automatiskt en ny stor fullsidig `index.astro` för att komma runt arkitekturen.
+Skapa inte automatiskt en ny stor fullsidig `index.astro` för att komma runt arkitekturen. Vid ett uttryckligt arkitekturuppdrag ska den nya gemensamma modellen byggas runt facit-sidan för sidtypen: Simhall för Environment och Hörslinga för Service.
 
 Gör i stället något av följande beroende på uppgiftens scope:
 

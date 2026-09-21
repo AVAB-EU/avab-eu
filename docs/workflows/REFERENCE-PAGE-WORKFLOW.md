@@ -62,6 +62,8 @@ FAQ-formuleringar, CTA-text, AEO/GEO-snippets, internlänkar och liknande som f�
 
 ## Fas 2 – Architecture decision
 
+Utgå visuellt och strukturellt från det kanoniska referensfacit `https://avab.eu/referenser/saffle-simhall/` enligt `docs/standards/pages/canonical-page-exemplars.md`. Äldre referenser används endast för regression och för att se redan implementerade variationer — aldrig som alternativ mall.
+
 Avgör om sidan kan byggas helt med befintlig reference-arkitektur:
 
 - `src/layouts/ReferencePage.astro`
@@ -70,6 +72,8 @@ Avgör om sidan kan byggas helt med befintlig reference-arkitektur:
 - befintliga schemafält i `src/content.config.ts`: `hero`, `facts`, `brief`, `scope`, `story.chapters[].mediaGroups` (med `columns`, `ratio`: `land`/`pano`/`portrait`/`tall`/`slim`, `split`, `layout`: `grid`/`mixed-pair`/`sidebar`), `results`, `technicalDetails`, `relevance`, `faq`, `cta`
 
 **Default: INGEN NY KOMPONENT. INGEN NY LAYOUTVARIANT. INGEN SIDESPECIFIK CSS.**
+
+**Referenslayout är alltid `extended`, och Säffle simhall är visuellt/strukturellt facit.** De tidigare layoutvärdena `compact` och `standard` är avvecklade och får inte användas, återinföras eller användas som genväg för tunt källunderlag. Om source är tunn ska innehållet vara kortare inom den aktuella `extended`-arkitekturen, eller sidan pausas om publiceringskraven inte kan uppfyllas.
 
 Standardreferenser ska normalt kunna representeras med de befintliga `ratio`/`split`/`layout`-kombinationerna för mediaGroups. Prova alltid en befintlig kombination innan en ny variant övervägs.
 
