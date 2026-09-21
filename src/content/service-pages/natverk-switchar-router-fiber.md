@@ -1,12 +1,12 @@
 ---
-draft: true
+draft: false
 slug: /tjanster/natverk-switchar-router-fiber/
 service: Nätverk, switchar & fiber
 
 seo:
   title: Nätverk, switchar & fiber för AV-system | AVAB
   description: AVAB projekterar nätverk för AV-teknik med PoE, Dante, AES67, AV-over-IP, switchar, VLAN och fiber för kamera, ljud, styrning och bilddistribution.
-  noindex: true
+  noindex: false
 
 h1: "Nätverk för AV-system som är byggda för drift"
 
