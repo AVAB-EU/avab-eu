@@ -3,7 +3,7 @@
 **Route:** `/kameraovervakning/gdpr/`  
 **Sidtyp:** Camera guidance page  
 **Layout:** `CameraIndustryPage`  
-**Status:** Draft/noindex
+**Status:** Ready for publication
 
 ## Primära rättskällor / vägledning
 
@@ -38,7 +38,7 @@ Sidan är juridisk orientering, inte individuell juridisk rådgivning. AVAB:s ro
 
 ## Publiceringsgate
 
-- `draft: true`
-- `seo.noindex: true`
-- mänsklig visuell granskning krävs
-- juridiskt innehåll bör kontrolläsas igen mot IMY nära publicering
+- `draft: false`
+- `seo.noindex: false`
+- visuellt godkänd
+- juridiken kontrolläst mot aktuell IMY-vägledning 2026-09-21

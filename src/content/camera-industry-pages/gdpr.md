@@ -1,12 +1,12 @@
 ---
-draft: true
+draft: false
 slug: /kameraovervakning/gdpr/
 industry: GDPR & juridik
 
 seo:
   title: Kameraövervakning, GDPR & kamerabevakningslagen | AVAB
   description: "Orientering om GDPR och kamerabevakningslagen för verksamheter: syfte, rättslig grund, intresseavvägning, skyltning, lagringstid och behörighet."
-  noindex: true
+  noindex: false
 
 h1: "Kamera­övervakning, GDPR och kamerabevakningslagen"
 
