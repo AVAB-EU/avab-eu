@@ -6,7 +6,7 @@ title: Fortnox Arena Växjö
 shortTitle: Fortnox Arena
 heroTitle: Fortnox Arena, Växjö – installationen som förändrade AVAB
 heroSubtitle: Vår första riktigt stora fasta installation – arenaljud för vardag, match och evenemang
-summary: Fortnox Arena blev AVAB:s första riktigt stora fasta installation: en permanent arenaljudlösning med trådlösa mikrofoner, fasta inkopplingsmöjligheter och enkel styrning för både daglig verksamhet och större arrangemang.
+summary: "Fortnox Arena blev AVAB:s första riktigt stora fasta installation: en permanent arenaljudlösning med trådlösa mikrofoner, fasta inkopplingsmöjligheter och enkel styrning för både daglig verksamhet och större arrangemang."
 publishedDate: 2026-09-21
 updatedDate: 2026-09-21
 
@@ -187,7 +187,7 @@ story:
       paragraphs:
         - Erfarenheten från eventvärlden hade lärt AVAB hur mycket ljud som krävs när en lokal är full av människor. Fortnox Arena lärde oss nästa del: den fasta installationen måste byggas för verksamheten när ljudteknikern har åkt hem. Vi började ställa frågor som vad verksamheten ska göra, vem som ska använda tekniken, vad som måste fungera utan teknisk personal, vad en extern tekniker behöver kunna ansluta, hur behoven kan förändras och om systemet går att serva och bygga vidare på. Produkterna kommer efter de frågorna.
         - Flera av projektets viktigaste lärdomar är fortfarande aktuella: dimensionera för en full och verklig miljö, inte bara en tom hall; gör avancerad teknik enkel för användaren; planera fasta anslutningar från början; lämna en professionell väg för extern produktion; bygg för service och se hela signalvägen från mikrofon och källa till styrning, förstärkning, högtalare och användare.
-        - Fortnox Arena blev AVAB:s första riktigt stora fasta installation. Sedan dess har AVAB arbetat vidare med bland annat sporthallar, ishallar, simhallar, skolor, hotell, konferensanläggningar, gym, restauranger, industri och publika utomhusanläggningar. Tekniken har förändrats med exempelvis DSP, Dante, nätverksbaserad AV och programmerade styrsystem, men grundfrågan är densamma: hur gör man professionell teknik enkel och driftsäker för verksamheten?
+        - "Fortnox Arena blev AVAB:s första riktigt stora fasta installation. Sedan dess har AVAB arbetat vidare med bland annat sporthallar, ishallar, simhallar, skolor, hotell, konferensanläggningar, gym, restauranger, industri och publika utomhusanläggningar. Tekniken har förändrats med exempelvis DSP, Dante, nätverksbaserad AV och programmerade styrsystem, men grundfrågan är densamma: hur gör man professionell teknik enkel och driftsäker för verksamheten?"
         - Fortnox Arena är större och mer avancerad än en vanlig kommunal sporthall, men principerna är direkt överförbara. Även en mindre hall kan behöva hantera undervisning, föreningsverksamhet, matcher, speaker, musik, trådlösa mikrofoner, externa ljudkällor och arrangemang. Skillnaden ligger framför allt i omfattningen: bygg systemet för vardagen, men lämna en väg för de större arrangemangen.
       mediaGroups:
         - columns: 1
