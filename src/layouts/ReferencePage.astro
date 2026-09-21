@@ -34,8 +34,7 @@ const updatedDate = data.updatedDate.toISOString().slice(0, 10);
 const robots = data.draft || data.seo.noindex
   ? "noindex, nofollow"
   : "index, follow, max-image-preview:large";
-const isExtended = data.layout === "extended";
-const hasStory = isExtended && Boolean(data.story);
+const hasStory = Boolean(data.story);
 
 const schemaImages = Array.from(new Set([
   heroImageUrl,
@@ -158,7 +157,7 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
     />
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
-  <body class:list={["reference-page", `reference-page--${data.layout}`, isExtended && "reference-page--case-study"]}>
+  <body class:list={["reference-page", "reference-page--extended", "reference-page--case-study"]}>
     <SiteHeader />
     <nav class="reference-breadcrumbs" aria-label="Brödsmulor">
       <div class="avab-container">
@@ -171,8 +170,7 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
     </nav>
 
     <main id="main">
-      {isExtended ? (
-        <>
+      <>
           <ReferenceHero
             data={data}
             variant="immersive"
@@ -283,30 +281,6 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
           )}
           {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
         </>
-      ) : (
-        <>
-          <ReferenceHero data={data} />
-          <ReferenceFacts facts={data.facts} />
-          <ReferenceBrief brief={data.brief} />
-          <ReferenceScope scope={data.scope} variants={data.variants} />
-          {data.scale && <ReferenceScale scale={data.scale} />}
-          {data.results && <ReferenceResults results={data.results} />}
-          {data.quote && <ReferenceQuote quote={data.quote} />}
-          {data.gallery && <ReferenceGallery gallery={data.gallery} />}
-          {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
-          {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
-          {data.faq && (
-            <ReferenceFaq
-              id="reference-faq-title"
-              eyebrow={data.faq.eyebrow}
-              title={data.faq.title}
-              lead={data.faq.lead}
-              items={data.faq.items}
-            />
-          )}
-          {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
-        </>
-      )}
 
       {renderPageCta && cta && (
         <PageCTA
@@ -318,7 +292,7 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
           secondaryLabel={cta.secondaryLabel}
           secondaryHref={cta.secondaryHref}
           points={cta.points}
-          flush={isExtended}
+          flush
         />
       )}
       {renderLegacyCta && cta && cta.variant === "legacy" && (
