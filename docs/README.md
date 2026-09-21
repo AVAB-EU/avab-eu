@@ -96,7 +96,7 @@ Markdown ska inte användas för att duplicera implementation som kan göras sä
 
 ## Route efter sidtyp och uppgift
 
-AI ska börja i `docs/workflows/ai-page-authoring.md` och först klassificera **sidtyp + uppgiftstyp**.
+AI ska börja i `docs/workflows/ai-page-authoring.md` och först klassificera **sidtyp + uppgiftstyp**. För Referens, Miljö och Tjänst ska `docs/standards/pages/canonical-page-exemplars.md` därefter användas som visuell och strukturell sanningskälla innan någon äldre sida väljs som mall.
 
 Exempel:
 
