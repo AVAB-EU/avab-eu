@@ -163,6 +163,6 @@ en gigantisk mall med alla gamla specialfall
 
 ## Migreringsprincip
 
-Migrera representativa sidor först och jämför före/efter. Ta bort gammal markup/CSS först när den nya representationen är verifierad.
+Migrera representativa sidor först och jämför före/efter. För Referens, Miljö och Tjänst ska den visuella regressionen alltid jämföras mot respektive kanoniskt facit; äldre sidor får inte ersätta facit bara för att de är enklare att kopiera. Ta bort gammal markup/CSS först när den nya representationen är verifierad.
 
 Gamla URL:er och innehåll ska bevaras under migrationen.
