@@ -260,7 +260,6 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
               </section>
               </>}
             </div>
-          </section>
 
           {hasStory && (
             <ReferenceScope scope={data.scope} variants={data.variants} showDetails />
@@ -280,6 +279,7 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
             />
           )}
           {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
+          </section>
         </>
 
       {renderPageCta && cta && (
