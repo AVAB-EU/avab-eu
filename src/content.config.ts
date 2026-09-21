@@ -341,11 +341,13 @@ const referenceSchema = z
   });
 
 const cameraIndustryPageSchema = z.object({
+  draft: z.boolean().default(false),
   slug: z.string().startsWith("/kameraovervakning/").endsWith("/"),
   industry: requiredText,
   seo: z.object({
     title: requiredText,
     description: requiredText,
+    noindex: z.boolean().default(false),
   }),
   h1: requiredText,
   hero: z.object({
