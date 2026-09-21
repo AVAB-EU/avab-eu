@@ -3,7 +3,7 @@
 **Route:** `/tjanster/digital-signage/`  
 **Sidtyp:** Service  
 **Kanoniskt facit:** `/tjanster/horslinga/`  
-**Status:** Draft/noindex
+**Status:** Ready for publication
 
 ## Källor
 
@@ -19,7 +19,7 @@
 - professionella displayer och totems
 - wayfinding, kampanj- och informationsinnehåll
 - projektering av skärmlägen, nätverk och infästning
-- Galleria Duvan: 2 × 55 tum, 700 nits, fristående totems (referens fortfarande under uppbyggnad)
+- Galleria Duvan har verifierade kärndata (2 × 55 tum, 700 nits, fristående totems), men referensen är fortfarande under uppbyggnad och används därför inte som proof på den indexerbara tjänstesidan.
 
 ## Gates
 
@@ -29,5 +29,6 @@
 
 ## Publiceringsgate
 
-- `draft: true`
-- `seo.noindex: true`
+- `draft: false`
+- `seo.noindex: false`
+- den ofärdiga Galleria Duvan-referensen exponeras inte som proof på tjänstesidan
