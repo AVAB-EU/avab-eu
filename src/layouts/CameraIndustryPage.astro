@@ -156,7 +156,7 @@ const faqSchema = {
 
     {data.facts && (
       <section class="fact-band" aria-label={`Snabbfakta ${data.industry}`}>
-        <div class="avab-container fact-grid fact-grid--4">
+        <div class={`avab-container fact-grid ${data.facts.length === 6 ? "fact-grid--6" : data.facts.length === 4 ? "fact-grid--4" : ""}`}>
           {data.facts.map((fact) => (
             <div class="fact"><span>{fact.label}</span><strong>{fact.value}</strong></div>
           ))}
