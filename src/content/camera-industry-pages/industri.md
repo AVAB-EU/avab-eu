@@ -16,8 +16,8 @@ hero:
   image:
     src: /assets/overvakningskamera-fasad-hero.webp
     alt: Övervakningskamera monterad på industrifasad
-    width: 2048
-    height: 768
+    width: 2032
+    height: 774
   primaryLabel: Boka en kostnadsfri genomgång
   primaryHref: /kontakt/
   secondaryLabel: Läs om vår projektering
@@ -39,8 +39,8 @@ principle:
   image:
     src: /assets/overvakningskamera-fasad-hero.webp
     alt: Kamera på fasad i industriell miljö
-    width: 2048
-    height: 768
+    width: 2032
+    height: 774
 
 sections:
   - id: varfor
@@ -88,8 +88,8 @@ sections:
     image:
       src: /assets/Kameraovervakning-dahua-hero.webp
       alt: Gränssnitt för professionell kameraövervakning och videohantering
-      width: 1500
-      height: 843
+      width: 2032
+      height: 770
 
 faq:
   title: Vanliga frågor om kameraövervakning för industri
