@@ -11,7 +11,7 @@ seo:
 h1: "Digital signage som visar rätt information på rätt plats"
 
 hero:
-  eyebrow: Tjänst: Digital signage
+  eyebrow: "Tjänst: Digital signage"
   lead: AVAB projekterar och installerar digital signage, informationsskärmar och totems för publika miljöer där innehåll behöver kunna uppdateras centralt och visas på rätt skärm vid rätt tid.
   image:
     src: /assets/digital-signage.webp
