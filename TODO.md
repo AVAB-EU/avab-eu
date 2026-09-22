@@ -9,6 +9,16 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-22._
 - [x] **Produktionsdeploy:** endast workflow i `AVAB-EU/avab-eu` får deploya `avab.eu`.
 - [x] **Senaste UI-fixar säkrade i rätt repo:** factband-standard samt godkänd hero-copy för Götetorpsskolan och Mullhyttans sporthall finns på `main`.
 
+## Checkpoint 2026-09-22 – SEO väntar på kundbesked
+
+- [x] Sitemap/draft/noindex-hanteringen verifierad; `https://avab.eu/sitemap-index.xml` är accepterad i Search Console.
+- [x] Search Console-baslinje och legacy-indexering är dokumenterad.
+- [ ] **Väntar på kundbesked om tre gamla WordPress-URL:er:**
+  - `/author/andreas-avab/` – gammal författarsida.
+  - `/login/` – gammal inloggningssida; kontrollera om någon kund-/medlemsinloggning fortfarande behövs.
+  - `/sample-page/` – gammal WordPress-testsida.
+- [ ] När kunden svarar: dokumentera beslutet och välj korrekt server-/SEO-hantering per URL innan någon ändring görs.
+
 ## Nästa fas – publicering, indexering och SEO-optimering
 
 > **Aktuell status 2026-09-21:** den stora tekniska SEO-/undersidesfasen är genomförd. Build, guardrails och internlänksaudit är gröna med **P0 = 0** och **P1 = 0**. Se `docs/audits/publicering-indexering-2026-09-21.md`.

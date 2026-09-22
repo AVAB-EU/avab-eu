@@ -1,5 +1,12 @@
 # AI-agenter – AVAB
 
+## Repositoryregel
+
+- Arbeta endast i `AVAB-EU/avab-eu`.
+- Skapa brancher, PR:er och commits i detta repo; använd inte parallella forks som alternativ source of truth.
+- Produktionsdeploy får endast utgå från `main` i `AVAB-EU/avab-eu`.
+- Verifiera alltid repository-namnet innan en skrivande GitHub-åtgärd.
+
 Det här dokumentet gäller för Codex och andra AI-agenter som arbetar i AVAB-repot.
 
 ## Startpunkt för projektkunskap
