@@ -245,18 +245,19 @@
 
 .reference-facts-grid {
   display: grid;
-  grid-template-columns: repeat(var(--reference-fact-count, 5), minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
 }
 .reference-fact {
   min-width: 0;
-  min-height: 108px;
+  min-height: clamp(90px, 7.5vw, 108px);
   display: grid;
   grid-row: span 2;
   grid-template-rows: subgrid;
   align-items: center;
   align-content: center;
   justify-items: center;
-  padding: 24px 22px;
+  padding: clamp(15px, 1.8vw, 24px) clamp(8px, 1.5vw, 22px);
   border-right: 1px solid var(--reference-line);
   text-align: center;
 }
@@ -265,7 +266,7 @@
   display: block;
   margin-bottom: 7px;
   color: var(--reference-muted);
-  font-size: 0.7rem;
+  font-size: clamp(0.6rem, 0.78vw, 0.7rem);
   font-weight: 800;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -274,7 +275,7 @@
   display: block;
   max-width: 100%;
   color: var(--reference-ink);
-  font-size: 0.98rem;
+  font-size: clamp(0.76rem, 1.08vw, 0.98rem);
   line-height: 1.38;
   white-space: normal;
   overflow-wrap: break-word;
@@ -631,6 +632,8 @@
   .reference-actions { width: 100%; flex-direction: column; }
   .reference-actions .button { width: 100%; }
   .reference-facts-grid {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
     grid-template-columns: 1fr;
   }
   .reference-fact,
