@@ -3,7 +3,7 @@
 **Route:** `/tjanster/ljus/`  
 **Sidtyp:** Service  
 **Kanoniskt facit:** `/tjanster/horslinga/`  
-**Status:** Draft/noindex
+**Status:** Published/indexable
 
 ## Källor
 
@@ -34,5 +34,6 @@ Sidan beskriver AVAB:s ljus- och ljusstyrningstjänst generellt. Den separata tj
 
 ## Publiceringsgate
 
-- `draft: true`
-- `seo.noindex: true`
+- `draft: false`
+- `seo.noindex: false`
+- sidan är indexerbar i aktuell `main`
