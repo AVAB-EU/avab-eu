@@ -12,6 +12,9 @@ Göra kundrepots befintliga referenssystem till den gemensamma, AI-styrda standa
 
 ## Viktig nulägeskorrigering
 
+> **Historisk notering 2026-09-22:** `KodAiDeas/avab-eu` är nu raderad. Hänvisningar till den forken nedan beskriver en tidigare migrationsfas och är inte en aktiv arbetsväg. Enda source of truth är `AVAB-EU/avab-eu`.
+
+
 Den tidigare AI Content-branchen byggdes i `KodAiDeas/avab-eu` från en äldre bas. Kundrepot `AVAB-EU/avab-eu` hade samtidigt utvecklats kraftigt och är nu gemensam source of truth.
 
 Kundrepot innehåller redan structured content för samtliga 14 aktiva referenser under `src/content/references/` samt en rikare content model och ett större gemensamt `Reference*`-komponentlager.
