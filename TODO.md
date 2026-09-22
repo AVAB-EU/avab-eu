@@ -32,7 +32,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-22._
 - [x] **Kvarvarande planerade 404-länkmål hanterade:** kravställning och systemintegration pekar till verifierade befintliga destinationssidor; GDPR-sidan är byggd.
 - [x] **Nya referenser byggda:** Fortnox Arena, STC Kil, Mullhyttan, Stockfallets skola, Skolhagenskolan, Loka Brunn och Götetorpsskolan.
 - [x] **Teknisk SEO-slutkontroll genomförd:** sitemap exkluderar structured draft/noindex, internlänksaudit P0=0/P1=0, guardrails och build passerar.
-- [ ] **Prioritet 1 – Konferensteknik:** slutreview genomförd mot repo + äldre verifierade AVAB-källor. En saknad del (hörslinga/tillgänglighet) är återinförd. Sidan är fortsatt `draft/noindex` eftersom originalfilen `Konferensteknik.docx` inte är åtkomlig via repo/Drive; publicera först efter punkt-för-punkt-jämförelse mot DOCX eller uttryckligt kundgodkännande att nuvarande underlag ersätter den gaten.
+- [x] **Prioritet 1 – Konferensteknik:** originalfilen `Konferensteknik.docx` är nu jämförd punkt för punkt. Source coverage = 0 saknad information. Sidan är uppdaterad till kundunderlaget och satt till `draft:false` / `seo.noindex:false`; build/guardrails ska verifieras i PR före merge.
 - [x] **Publicerade huvudtjänster:** Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber är nu `draft:false` och `seo.noindex:false`.
 - [ ] **Prioritet 2 – publiceringsbeslut för kameraundersidor:** Skola, Parkering, Industri och Galleria. GDPR kräver separat juridisk färskhetskontroll nära publicering.
 - [ ] **Kamera Butik – uppdatera efter Go Banana-publicering:** ta bort/skriv om eventuell copy om att referensen kommer "inom kort" och lägg en naturlig internlänk till `/referenser/go-banana-bergvik/`.
