@@ -1,0 +1,138 @@
+name: Fix environment factbands once
+
+on:
+  push:
+    branches:
+      - fix/environment-factbands-standard
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Standardize environment factbands
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          targets = {
+              "src/pages/miljo/vard/index.astro": "vard-mobile-secondary",
+              "src/pages/miljo/skola/index.astro": "skola-mobile-secondary",
+              "src/pages/miljo/kyrka/index.astro": "kyrka-mobile-secondary",
+              "src/pages/miljo/ishall/index.astro": "ishall-mobile-secondary",
+              "src/pages/miljo/hotell/index.astro": "hotell-mobile-secondary",
+              "src/pages/miljo/industri/index.astro": "industri-mobile-secondary",
+              "src/pages/miljo/butik-retail/index.astro": "butik-mobile-secondary",
+              "src/pages/miljo/utomhusidrott/index.astro": "utomhus-mobile-secondary",
+              "src/pages/miljo/sporthall-arena/index.astro": "sporthall-mobile-secondary",
+              "src/pages/miljo/kontor-konferens/index.astro": "kontor-mobile-secondary",
+              "src/pages/miljo/parkering-garage/index.astro": "parkering-mobile-secondary",
+              "src/pages/miljo/restaurang-bar-klubb/index.astro": "restaurang-mobile-secondary",
+          }
+
+          for filename, class_name in targets.items():
+              path = Path(filename)
+              text = path.read_text(encoding="utf-8")
+              pattern = re.compile(rf"^[ \t]*\.{re.escape(class_name)}\s*\{{\s*display:\s*none\s*!important;\s*\}}\s*\n?", re.MULTILINE)
+              updated, count = pattern.subn("", text)
+              if count != 1:
+                  raise SystemExit(f"Expected exactly one mobile hide rule for {filename} ({class_name}), found {count}")
+              path.write_text(updated, encoding="utf-8")
+
+          css_path = Path("src/styles/avab.css")
+          css = css_path.read_text(encoding="utf-8")
+          fact_strong = re.compile(
+              r"(\.fact-band \.fact strong \{.*?\n\s*font-size:)\s*1\.02rem;",
+              re.DOTALL,
+          )
+          css_updated, count = fact_strong.subn(r"\1 clamp(0.76rem, 1.08vw, 0.98rem);", css, count=1)
+          if count != 1:
+              raise SystemExit(f"Expected exactly one .fact-band .fact strong font-size declaration, found {count}")
+          css_path.write_text(css_updated, encoding="utf-8")
+
+          for filename, class_name in targets.items():
+              text = Path(filename).read_text(encoding="utf-8")
+              if re.search(rf"\.{re.escape(class_name)}\s*\{{[^}}]*display:\s*none\s*!important", text, re.DOTALL):
+                  raise SystemExit(f"Hide rule still present in {filename}")
+
+          css = css_path.read_text(encoding="utf-8")
+          required = [
+              "grid-auto-flow: column;",
+              "grid-auto-columns: minmax(0, 1fr);",
+              "grid-auto-flow: row;",
+              "grid-template-columns: 1fr;",
+              "font-size: clamp(0.76rem, 1.08vw, 0.98rem);",
+          ]
+          missing = [rule for rule in required if rule not in css]
+          if missing:
+              raise SystemExit(f"Missing expected shared factband rules: {missing}")
+          PY
+
+      - name: Verify scope
+        shell: bash
+        run: |
+          python - <<'PY'
+          import subprocess
+
+          expected = {
+            "src/pages/miljo/vard/index.astro",
+            "src/pages/miljo/skola/index.astro",
+            "src/pages/miljo/kyrka/index.astro",
+            "src/pages/miljo/ishall/index.astro",
+            "src/pages/miljo/hotell/index.astro",
+            "src/pages/miljo/industri/index.astro",
+            "src/pages/miljo/butik-retail/index.astro",
+            "src/pages/miljo/utomhusidrott/index.astro",
+            "src/pages/miljo/sporthall-arena/index.astro",
+            "src/pages/miljo/kontor-konferens/index.astro",
+            "src/pages/miljo/parkering-garage/index.astro",
+            "src/pages/miljo/restaurang-bar-klubb/index.astro",
+            "src/styles/avab.css",
+          }
+          changed = set(filter(None, subprocess.check_output(["git", "diff", "--name-only"], text=True).splitlines()))
+          if changed != expected:
+              raise SystemExit(f"Unexpected changed-file set. Expected {sorted(expected)}, got {sorted(changed)}")
+          PY
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.12.0'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate and build
+        run: npm run validate
+
+      - name: Commit cleanup
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/pages/miljo/vard/index.astro \
+            src/pages/miljo/skola/index.astro \
+            src/pages/miljo/kyrka/index.astro \
+            src/pages/miljo/ishall/index.astro \
+            src/pages/miljo/hotell/index.astro \
+            src/pages/miljo/industri/index.astro \
+            src/pages/miljo/butik-retail/index.astro \
+            src/pages/miljo/utomhusidrott/index.astro \
+            src/pages/miljo/sporthall-arena/index.astro \
+            src/pages/miljo/kontor-konferens/index.astro \
+            src/pages/miljo/parkering-garage/index.astro \
+            src/pages/miljo/restaurang-bar-klubb/index.astro \
+            src/styles/avab.css
+          git commit -m "Standardize environment factbands"
+          git push origin HEAD:fix/environment-factbands-standard
