@@ -1,6 +1,13 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-09-21._
+_Kanonisk projektlista. Senast uppdaterad 2026-09-22._
+
+## Repo och source of truth
+
+- [x] **Enda aktiva repo:** `AVAB-EU/avab-eu` är enda source of truth för AVAB-webben.
+- [x] **Gamla forken borttagen:** `KodAiDeas/avab-eu` är raderad och ska inte användas för utveckling, PR, merge eller deploy.
+- [x] **Produktionsdeploy:** endast workflow i `AVAB-EU/avab-eu` får deploya `avab.eu`.
+- [x] **Senaste UI-fixar säkrade i rätt repo:** factband-standard samt godkänd hero-copy för Götetorpsskolan och Mullhyttans sporthall finns på `main`.
 
 ## Nästa fas – publicering, indexering och SEO-optimering
 
