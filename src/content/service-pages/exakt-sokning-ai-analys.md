@@ -48,7 +48,7 @@ principle:
     - Snabbare väg från rapporterad händelse till relevant sekvens
     - Samma VMS används för både livebild och historik
   image:
-    src: /assets/kameraovervakning-fasad-staende.webp
+    src: /assets/exakt-sokning-ai-analys.webp
     alt: Övervakningskamera monterad på fasad
     width: 519
     height: 775
