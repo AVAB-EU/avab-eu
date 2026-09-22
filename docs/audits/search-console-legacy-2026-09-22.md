@@ -20,11 +20,13 @@ Search Console har fortfarande följande äldre registrerade sitemap-poster:
 | `http://avab.eu/sitemap.xml` | 2014-03-24 | 2022-09-13 | 0 | 126 |
 | `https://avab.eu/sitemap_index.xml` | 2026-03-24 | 2026-08-13 | 1 | 2 |
 
-### Åtgärd
+### Status 2026-09-22
 
-Skicka in `https://avab.eu/sitemap-index.xml` i Search Console. Windsor Search Console-connectorn har inga write actions, så själva submissionen måste göras i Search Console UI.
+`https://avab.eu/sitemap-index.xml` är nu inskickad i Search Console och status är **Lyckades**. Google läste sitemapen 2026-09-22 och rapporterade **51 upptäckta sidor**.
 
-Gamla sitemap-poster ska inte användas som källa för nya beslut. De kan tas bort/fasas ut i GSC när den nya sitemapen är accepterad.
+Serverkontroll visade samtidigt att både `sitemap-index.xml` och `sitemap-0.xml` svarar med `200 OK` och `Content-Type: application/xml`.
+
+De äldre WordPress-sitemap-posterna är därför historiska och ska inte användas som källa för nya beslut. De kan fasas ut ur Search Console när den nya sitemapen är etablerad.
 
 ## Legacy-URL:er – senaste 28 dagarna
 
@@ -86,8 +88,8 @@ Search Console visar redan impressions för AI/kamera-intentioner. Därför är 
 
 ## Nästa mätpunkt
 
-Efter att den nya sitemapen har skickats in:
-- kontrollera att den accepteras utan errors,
+Efter den lyckade sitemap-inlämningen:
+- följ att de 51 upptäckta sidorna fortsätter kunna hämtas utan sitemapfel,
 - följ gamla redirect-URL:er,
 - följ `/tjanster/exakt-sokning-ai-analys/`,
 - följ `/miljo/kontor-konferens/`,
