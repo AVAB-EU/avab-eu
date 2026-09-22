@@ -4,6 +4,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-22._
 
 ## Repo och source of truth
 
+- [ ] **Branchstädning:** ta bort brancher som i `docs/audits/branch-cleanup-2026-09-22.md` är markerade som säkra att radera; behåll och granska de fem brancher som innehåller unikt arbete innan de tas bort.
+
 - [x] **Enda aktiva repo:** `AVAB-EU/avab-eu` är enda source of truth för AVAB-webben.
 - [x] **Gamla forken borttagen:** `KodAiDeas/avab-eu` är raderad och ska inte användas för utveckling, PR, merge eller deploy.
 - [x] **Produktionsdeploy:** endast workflow i `AVAB-EU/avab-eu` får deploya `avab.eu`.
