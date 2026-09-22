@@ -1,25 +1,59 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-09-21._
+_Kanonisk projektlista. Senast uppdaterad 2026-09-22._
 
-## Nästa fas – publicering, indexering och SEO-optimering
+## Checkpoint 2026-09-22 – SEO väntar på kundbesked
 
-> **Aktuell status 2026-09-21:** den stora tekniska SEO-/undersidesfasen är genomförd. Build, guardrails och internlänksaudit är gröna med **P0 = 0** och **P1 = 0**. Se `docs/audits/publicering-indexering-2026-09-21.md`.
+> **Aktuell bas:** `main` vid checkpoint `cbd19967ebb77ca326a74e215e6117965e88d4f4`.
 >
-> Äldre checkpoints längre ned i dokumentet är historik. De ska inte användas som aktuell startpunkt om de motsägs av denna status.
+> Den stora tekniska SEO-fasen är genomförd. Build/guardrails är gröna, internlänksauditen har **P0 = 0 / P1 = 0**, rätt Astro-sitemap är accepterad i Google Search Console och rapporterar **51 upptäckta sidor**. Äldre checkpoints längre ned är historik och ska inte användas som aktuell startpunkt om de motsägs av detta avsnitt.
+>
+> Aktuell SEO-dokumentation: `docs/audits/seo-checkpoint-2026-09-21-night.md` och `docs/audits/search-console-legacy-2026-09-22.md`.
 
-- [x] **Kameraövervakningens branschsidor byggda:** Skola, Parkering, Industri och Galleria använder gemensam content/layout-arkitektur.
-- [x] **Nya tjänsteundersidor byggda:** Konferensteknik, Videomöten/BYOD, Skärmar & projektorer, Digital signage, Exakt sökning/AI-analys, Ljus samt Nätverk/switchar/fiber.
-- [x] **Kvarvarande planerade 404-länkmål hanterade:** kravställning och systemintegration pekar till verifierade befintliga destinationssidor; GDPR-sidan är byggd.
-- [x] **Nya referenser byggda:** Fortnox Arena, STC Kil, Mullhyttan, Stockfallets skola, Skolhagenskolan, Loka Brunn och Götetorpsskolan.
-- [x] **Teknisk SEO-slutkontroll genomförd:** sitemap exkluderar structured draft/noindex, internlänksaudit P0=0/P1=0, guardrails och build passerar.
-- [ ] **Prioritet 1 – publiceringsbeslut för huvudtjänster:** Konferensteknik, Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber. Granska visuellt/content och besluta vilka som ska gå från draft/noindex till indexerbara.
-- [ ] **Prioritet 2 – publiceringsbeslut för kameraundersidor:** Skola, Parkering, Industri och Galleria. GDPR kräver separat juridisk färskhetskontroll nära publicering.
-- [ ] **Kamera Butik – uppdatera efter Go Banana-publicering:** ta bort/skriv om eventuell copy om att referensen kommer "inom kort" och lägg en naturlig internlänk till `/referenser/go-banana-bergvik/`.
-- [ ] **Prioritet 3 – referensgodkännande:** publicera endast referenser där text, projektfakta och bilder är verifierade och kunden uttryckligen har godkänt publicering.
-- [ ] **Prioritet 4 – sitewide metadata-audit:** title, meta description, canonical, robots, H1/title, Open Graph/Twitter och structured data.
-- [ ] **Prioritet 5 – Search Console efter publicering:** indexering, queries, impressions, CTR, Google-omskrivna snippets och crawlstatus.
-- [ ] **Gamla stashes ska inte appliceras utan separat granskning** — särskilt stashen med äldre startsida/factband-arbete, som tidigare återinfört gammal/felaktig layout.
+### Klart i senaste SEO-fasen
+
+- [x] Publicerat/indexerat: **Ljus**, **Nätverk, switchar & fiber**, **Skärmar & projektorer**, **Digital signage**, **Exakt sökning & AI-analys** och **Kamera GDPR**.
+- [x] Kamera Butik uppdaterad med riktig internlänk till den publicerade Go Banana Bergvik-referensen.
+- [x] Sitemap/draft/noindex-hanteringen verifierad; `https://avab.eu/sitemap-index.xml` är accepterad i Search Console.
+- [x] Search Console-baslinje genomförd och legacy-indexering dokumenterad.
+- [x] Metadata/breadcrumbs kompletterade för sidorna under **Vår leverans**.
+- [x] Strategisk internlänkning förbättrad för Kameraövervakning → Exakt sökning/AI och Kontor & konferens → Skärmar & projektorer.
+- [x] Bild-SEO-kontroll genomförd utan fabricerade alt-texter; konkret Lesjöfors/Hanza-altfel rättat.
+- [x] Gamla semantiskt korrekta 301-regler för bland annat `/skola/`, `/simhall/`, `/sporthall/`, `/sakerhetskameror/` och `/om-2/` ska ligga kvar och följas över tid – inte ändras igen enbart för att gamla URL:er fortfarande syns i GSC.
+
+### VÄNTAR PÅ KUNDEN – nästa beslut
+
+Kunden har fått mejl och ska bekräfta om följande gamla WordPress-sidor fortfarande används eller behövs:
+
+- [ ] `/author/andreas-avab/` – gammal författarsida.
+- [ ] `/login/` – gammal inloggningssida; kontrollera särskilt om någon kund-/medlemsinloggning fortfarande behövs.
+- [ ] `/sample-page/` – gammal WordPress-testsida.
+
+**När kunden svarar:**
+1. Dokumentera svaret i denna checkpoint.
+2. Kontrollera faktisk produktionsfunktion/status för respektive URL.
+3. Om verklig motsvarande sida finns → använd relevant **301**.
+4. Om sidan är permanent borttagen utan ersättare → överväg **410 Gone** på servernivå.
+5. Redirecta **inte** slentrianmässigt till startsidan/Kontakt.
+6. Validera Search Console/HTTP-status efter ändringen.
+
+### Övriga SEO-blockerare
+
+- [ ] **Konferensteknik:** fortsatt `draft/noindex` tills `docs/source-material/Konferensteknik.docx` kan jämföras mot sidan.
+- [ ] **Kamera Skola:** local source check saknas.
+- [ ] **Kamera Parkering:** local source check + hero-bildens godkännande saknas.
+- [ ] **Kamera Industri:** local source check saknas.
+- [ ] **Kamera Galleria:** local source check saknas.
+- [ ] **Videomöten/BYOD:** vänta på Konferensteknik samt publicerings-/migrationsbeslut kring befintlig `/videokonferens/` och Lesjöfors-referensen.
+- [ ] **Referenser:** publicera i små batcher först när projektfakta, verkliga bilder och kundens uttryckliga publiceringsgodkännande finns. Hanza är indexerbar men har `publicationApproved: null` och behöver processbeslut.
+
+### Nästa arbete
+
+**Första prioritet:** invänta kundens svar om de tre legacy-URL:erna ovan och gör därefter rätt server-/SEO-hantering.
+
+**Om kundsvaret dröjer och annat arbete ska fortsätta:** ta nästa fristående globala kvalitetspunkt i TODO:n, i första hand **standardisera FAQ på hela avab.eu**, i en separat inventeringsfas innan bred implementation.
+
+**Arbetsregel:** gamla stashes ska inte appliceras utan separat granskning.
 
 ## Nya notiser 2026-09-14
 - [x] **Byt organisationsnummer på hela webbplatsen till `559600-9661`.** Inventerat hela repot; fyra förekomster ersatta och verifierat att det gamla numret inte finns kvar.
