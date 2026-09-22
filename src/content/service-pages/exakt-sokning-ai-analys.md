@@ -1,12 +1,12 @@
 ---
-draft: true
+draft: false
 slug: /tjanster/exakt-sokning-ai-analys/
 service: Exakt sökning & AI-analys
 
 seo:
   title: Exakt sökning & AI-analys för kameraövervakning | AVAB
   description: AVAB bygger kamerasystem där AI-stödd analys och exakt sökning hjälper användaren att snabbare hitta relevant person, fordon eller händelse i inspelat material.
-  noindex: true
+  noindex: false
 
 h1: "Exakt sökning och AI-analys som gör inspelat material användbart"
 
