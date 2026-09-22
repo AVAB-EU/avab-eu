@@ -3,7 +3,7 @@
 **Route:** `/tjanster/skarmar-projektorer/`  
 **Sidtyp:** Service  
 **Kanoniskt facit:** `/tjanster/horslinga/`  
-**Status:** Draft/noindex
+**Status:** Published/indexable
 
 ## Källor
 
@@ -25,5 +25,6 @@ Sidan använder generella tjänstepåståenden om skärmstorlek, projektor, duk,
 
 ## Publiceringsgate
 
-- `draft: true`
-- `seo.noindex: true`
+- `draft: false`
+- `seo.noindex: false`
+- sidan är indexerbar i aktuell `main`
