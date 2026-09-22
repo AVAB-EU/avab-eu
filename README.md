@@ -1,5 +1,12 @@
 ﻿# AVAB Astro-projekt
 
+## Source of truth
+
+- Canonical repository: `AVAB-EU/avab-eu`.
+- All development, pull requests, merges and production deploys must originate from this repository.
+- The former fork `KodAiDeas/avab-eu` has been deleted and must not be recreated or used as a parallel source.
+- Production `avab.eu` is deployed from `main` in this repository.
+
 Det här är den lokala Astro-sidan för AVAB. Målet är att hålla projektet lätt att förstå: sidor i en mapp, gemensam design i en fil och publika bilder på ett ställe.
 
 ## Snabbstart
