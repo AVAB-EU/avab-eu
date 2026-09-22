@@ -94,3 +94,71 @@ Efter den lyckade sitemap-inlämningen:
 - följ `/tjanster/exakt-sokning-ai-analys/`,
 - följ `/miljo/kontor-konferens/`,
 - kontrollera om `/author/andreas-avab/` och `/login/` fortfarande får impressions och vad produktionen svarar med.
+
+
+## Bild-SEO – säker kontroll
+
+Följande kontrollerades i repo:
+
+- Tom `alt=""` på kameraövervakningens hero är samtidigt `aria-hidden="true"` och används dekorativt bakom hero-copy. Den ska därför inte få en fabricerad alt-text.
+- Integritetspolicyn använder tom alt på en dekorativ hero-bild. Ingen SEO-text har lagts till utan ett verkligt innehållssyfte.
+- `Galleria Duvan` innehåller fortfarande `referens-platshallare.svg` och ligger korrekt kvar som draft/noindex.
+- På `/miljo/kontor-konferens/` hittades ett konkret sakfel: en bild med asset `lesjofors-ab.webp` hade alt-text som kallade motivet för Hanza. Detta är rättat i PR #86.
+- Inga bild-alttexter har genererats enbart från filnamn.
+
+## Strategisk internlänkning – åtgärdad kandidat
+
+Search Console visar tydligt sökintresse för kamera + AI samt hög exponering för kontor/konferens.
+
+PR #86 gör därför två avgränsade ändringar:
+
+- `/tjanster/kameraovervakning/` länkar kontextuellt till den publicerade `/tjanster/exakt-sokning-ai-analys/`.
+- `/miljo/kontor-konferens/` länkar bild/skärm-relaterat innehåll till den publicerade `/tjanster/skarmar-projektorer/` i stället för generella Projektering.
+
+Ingen länk läggs till mot blockerade/noindex-sidor enbart för SEO.
+
+## Metadata – åtgärdad kandidat
+
+De sex sidorna under `Vår leverans` har redan unika titles, descriptions och canonicals, men saknade konsekvent social bildmetadata och hade ofullständig breadcrumb-hierarki.
+
+PR #85 kompletterar:
+
+- Projektering
+- Installation
+- Driftsättning
+- Certifiering
+- Överlämning
+- Garanti & service
+
+med:
+
+- `og:image`
+- `twitter:image`
+- `summary_large_image`
+- synlig `Start → Tjänster → sida`
+- motsvarande BreadcrumbList i JSON-LD
+
+Ingen title eller meta description skrivs om utan stöd i Search Console-querydata.
+
+## 301-verifiering – status
+
+Produktionsserverns aktuella `.htaccess` innehåller uttryckliga `Redirect 301`-regler för de viktigaste WordPress-URL:erna, bland annat:
+
+- `/skola/`
+- `/simhall/`
+- `/sporthall/`
+- `/sakerhetskameror/`
+- `/om-2/`
+- `/minnebergsskolan-arvika/`
+- `/saffle-simhall/`
+- `/ljudprojektering/`
+- `/horslingor/`
+- `/bakgrundsljud/`
+- `/taluppfattbarhet-i-publika-lokaler/`
+- `/akustik/`
+
+Samma semantiska destinationer finns även dokumenterade i Astro-konfigurationen.
+
+Search Console kan fortsätta visa impressions på gamla URL:er under Googles omcrawlperiod. Att de syns i GSC är därför inte i sig skäl att byta redirectmål.
+
+Den externa läskälla som användes under auditen returnerade äldre cacheade WordPress-snapshots för flera gamla URL:er och kan därför inte användas som säker live-HTTP-verifiering. Inga redirectregler har ändrats utifrån cachead data.
