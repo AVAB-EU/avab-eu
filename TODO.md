@@ -21,6 +21,23 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-22._
   - `/sample-page/` – gammal WordPress-testsida.
 - [ ] När kunden svarar: dokumentera beslutet och välj korrekt server-/SEO-hantering per URL innan någon ändring görs.
 
+## Checkpoint 2026-09-22 – paus efter Prioritet 1
+
+> Dagens arbete är avslutat. Repo är städat och canonical source of truth är `AVAB-EU/avab-eu`. Endast `main` används som aktiv bas.
+>
+> **Prioritet 1 är klar:** Konferensteknik är jämförd mot uppladdat kundunderlag, source coverage = 0, publicerad och indexerbar. Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber är också publicerade/indexerbara.
+>
+> **Nästa startpunkt i ny chatt:** Prioritet 2 – publiceringsgranskning av kamera-branschsidorna.
+
+### Prioritet 2 – kamera, exakt nästa arbetsblock
+
+- [ ] Inventera `/kameraovervakning/skola/`, `/kameraovervakning/parkering/`, `/kameraovervakning/industri/` och `/kameraovervakning/galleria/` mot aktuell content, metadata, bilder, internlänkar, schema och visuell struktur.
+- [ ] Klassificera varje sida som: **redo att publicera / behöver åtgärd / behöver kundbeslut**.
+- [ ] Ändra inte `draft/noindex` förrän respektive sida är granskad och eventuella blockerare är lösta.
+- [ ] Kontrollera Kamera Butik mot Go Banana och ta bort eventuell gammal "kommer inom kort"-copy om den finns.
+- [ ] Hantera `/kameraovervakning/gdpr/` separat med juridisk färskhetskontroll nära publicering; publicera inte GDPR-sidan automatiskt.
+- [ ] Efter varje eventuell ändring: kör guardrails/build och håll scope till små, separata PR:er.
+
 ## Nästa fas – publicering, indexering och SEO-optimering
 
 > **Aktuell status 2026-09-21:** den stora tekniska SEO-/undersidesfasen är genomförd. Build, guardrails och internlänksaudit är gröna med **P0 = 0** och **P1 = 0**. Se `docs/audits/publicering-indexering-2026-09-21.md`.
