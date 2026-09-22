@@ -46,6 +46,7 @@ principle:
     - Tydligt ljud för deltagare i rummet och på distans
     - Kamera och bild anpassade efter rumsstorlek och möblering
     - Färre separata fjärrkontroller och gränssnitt
+    - Hörslinga och andra tillgänglighetslösningar där verksamheten behöver det
     - Dokumenterad installation som går att förvalta och serva
   image:
     src: /assets/hanza-lilla-konferensrummet-fardigt.webp
@@ -123,6 +124,7 @@ sections:
       - Kabelvägar, el och nätverk
       - Rack och teknikplacering
       - Programmering och driftsättning
+      - Hörslinga och tillgänglighet planerade tillsammans med övrig AV-teknik där det behövs
       - Dokumentation och utbildning
 
 proof:
@@ -149,6 +151,8 @@ faq:
       answer: Ofta ja. Större rum behöver vanligtvis bättre täckning än en enkel videobar kan ge, till exempel med takmikrofoner eller bordsmikrofoner och DSP med ekosläckning.
     - question: "Kan alla mötesrum få samma användarflöde?"
       answer: Ja. Genom att standardisera anslutning, styrning och mötesfunktioner kan små och stora rum fungera på ett liknande sätt, vilket minskar supportbehovet.
+    - question: "Kan hörslinga ingå i konferensrummet?"
+      answer: Ja. Där verksamheten behöver hörselstöd kan hörslinga planeras tillsammans med rummets övriga ljud- och AV-system.
     - question: "Kan konferenstekniken styras från en touchpanel?"
       answer: Ja. I större rum kan ett styrsystem samla skärm, projektor, ljud, kamera, ljus och andra funktioner i ett gemensamt gränssnitt.
     - question: "När bör konferenstekniken tas in i byggprojektet?"
