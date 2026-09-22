@@ -4,9 +4,9 @@ slug: /referenser/gotetorpsskolan-hammaro/
 layout: extended
 title: Götetorpsskolan Hammarö
 shortTitle: Götetorpsskolan
-heroTitle: Götetorpsskolan, Hammarö – rastsignalsystem för skolvardagen
-heroSubtitle: Tydliga signaler, enkel användning och möjlighet att nå ut med information när schemat kräver det
-summary: AVAB levererade ett rastsignalsystem till Götetorpsskolan på Hammarö med fokus på tydliga signaler, enkel användning och möjlighet att nå ut med information i skolvardagen.
+heroTitle: Götetorpsskolan, Hammarö
+heroSubtitle: Rastsignalsystem för skolans vardag
+summary: AVAB levererade ett rastsignalsystem för schemalagda signaler och manuella utrop i skolan.
 publishedDate: 2026-09-21
 updatedDate: 2026-09-21
 
