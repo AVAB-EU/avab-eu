@@ -4,7 +4,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-22._
 
 ## Repo och source of truth
 
-- [ ] **Branchstädning:** ta bort brancher som i `docs/audits/branch-cleanup-2026-09-22.md` är markerade som säkra att radera; behåll och granska de fem brancher som innehåller unikt arbete innan de tas bort.
+- [x] **Branchstädning:** alla gamla arbetsbrancher är borttagna; endast `main` återstår.
 
 - [x] **Enda aktiva repo:** `AVAB-EU/avab-eu` är enda source of truth för AVAB-webben.
 - [x] **Gamla forken borttagen:** `KodAiDeas/avab-eu` är raderad och ska inte användas för utveckling, PR, merge eller deploy.
@@ -32,7 +32,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-22._
 - [x] **Kvarvarande planerade 404-länkmål hanterade:** kravställning och systemintegration pekar till verifierade befintliga destinationssidor; GDPR-sidan är byggd.
 - [x] **Nya referenser byggda:** Fortnox Arena, STC Kil, Mullhyttan, Stockfallets skola, Skolhagenskolan, Loka Brunn och Götetorpsskolan.
 - [x] **Teknisk SEO-slutkontroll genomförd:** sitemap exkluderar structured draft/noindex, internlänksaudit P0=0/P1=0, guardrails och build passerar.
-- [ ] **Prioritet 1 – publiceringsbeslut för huvudtjänster:** Konferensteknik, Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber. Granska visuellt/content och besluta vilka som ska gå från draft/noindex till indexerbara.
+- [ ] **Prioritet 1 – Konferensteknik:** enda kvarvarande huvudtjänst i denna batch som fortfarande är `draft/noindex`. Slutlig source-jämförelse mot kundunderlaget + visuell review krävs före indexering.
+- [x] **Publicerade huvudtjänster:** Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber är nu `draft:false` och `seo.noindex:false`.
 - [ ] **Prioritet 2 – publiceringsbeslut för kameraundersidor:** Skola, Parkering, Industri och Galleria. GDPR kräver separat juridisk färskhetskontroll nära publicering.
 - [ ] **Kamera Butik – uppdatera efter Go Banana-publicering:** ta bort/skriv om eventuell copy om att referensen kommer "inom kort" och lägg en naturlig internlänk till `/referenser/go-banana-bergvik/`.
 - [ ] **Prioritet 3 – referensgodkännande:** publicera endast referenser där text, projektfakta och bilder är verifierade och kunden uttryckligen har godkänt publicering.
@@ -62,7 +63,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-22._
 - [x] Fas A – systemiska internlänks-/ankarfel är genomförd och mergead via PR #42.
 - [x] Fas C – draft/noindex, sitemap och footer är genomförd och mergead via PR #43.
 - [x] Fas B – kvarvarande riktiga 404-destinationer är inventerad och tre säkra länkmål är verifierat rättade i commit `b8794a7`.
-- [ ] **OBS före återstart:** PR #44 (`SEO: fix verified internal 404 links`) är stängd utan merge och remote-branchen `seo/p0-404-beslut` finns inte längre. Innan nytt SEO-arbete fortsätter ska commit `b8794a7` återställas/cherry-pickas till en ny branch, valideras och mergas till `main` om ändringarna fortfarande är önskade.
+- [x] **HISTORISK / SUPERSEDED:** instruktionen att återställa commit `b8794a7` ska inte längre följas. Senare SEO-arbete har ersatt denna checkpoint och aktuell internlänksaudit är P0=0/P1=0.
 - [ ] Vänta på kundens innehåll/underlag för följande sidor:
   - `/tjanster/konferensteknik/`
   - `/kameraovervakning/skola/`
