@@ -1,0 +1,92 @@
+name: Fix environment factband formatting once
+
+on:
+  push:
+    branches:
+      - fix/environment-factbands-standard
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+
+      - name: Restore media-query indentation
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          files = [
+            "src/pages/miljo/vard/index.astro",
+            "src/pages/miljo/skola/index.astro",
+            "src/pages/miljo/kyrka/index.astro",
+            "src/pages/miljo/ishall/index.astro",
+            "src/pages/miljo/hotell/index.astro",
+            "src/pages/miljo/industri/index.astro",
+            "src/pages/miljo/butik-retail/index.astro",
+            "src/pages/miljo/utomhusidrott/index.astro",
+            "src/pages/miljo/sporthall-arena/index.astro",
+            "src/pages/miljo/kontor-konferens/index.astro",
+            "src/pages/miljo/parkering-garage/index.astro",
+            "src/pages/miljo/restaurang-bar-klubb/index.astro",
+          ]
+
+          before = "\n}\n  </style>"
+          after = "\n    }\n  </style>"
+          for filename in files:
+              path = Path(filename)
+              text = path.read_text(encoding="utf-8")
+              if text.count(before) != 1:
+                  raise SystemExit(f"Expected exactly one formatting target in {filename}, found {text.count(before)}")
+              path.write_text(text.replace(before, after, 1), encoding="utf-8")
+          PY
+
+      - name: Verify scope
+        shell: bash
+        run: |
+          python - <<'PY'
+          import subprocess
+          expected = {
+            "src/pages/miljo/vard/index.astro",
+            "src/pages/miljo/skola/index.astro",
+            "src/pages/miljo/kyrka/index.astro",
+            "src/pages/miljo/ishall/index.astro",
+            "src/pages/miljo/hotell/index.astro",
+            "src/pages/miljo/industri/index.astro",
+            "src/pages/miljo/butik-retail/index.astro",
+            "src/pages/miljo/utomhusidrott/index.astro",
+            "src/pages/miljo/sporthall-arena/index.astro",
+            "src/pages/miljo/kontor-konferens/index.astro",
+            "src/pages/miljo/parkering-garage/index.astro",
+            "src/pages/miljo/restaurang-bar-klubb/index.astro",
+          }
+          changed = set(filter(None, subprocess.check_output(["git", "diff", "--name-only"], text=True).splitlines()))
+          if changed != expected:
+              raise SystemExit(f"Unexpected changed-file set. Expected {sorted(expected)}, got {sorted(changed)}")
+          PY
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.12.0'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate and build
+        run: npm run validate
+
+      - name: Commit formatting cleanup
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/pages/miljo/*/index.astro
+          git commit -m "Preserve factband media-query formatting"
+          git push origin HEAD:fix/environment-factbands-standard
