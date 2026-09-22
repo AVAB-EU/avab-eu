@@ -2307,14 +2307,6 @@ a.footer-contact-row:focus-visible {
 }
 
 @media (max-width: 1040px) {
-  .fact-band .fact-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .fact-band .fact:nth-child(n+4) {
-    border-top: 1px solid var(--avab-border);
-  }
-
   .split,
   .split-text-first {
     grid-template-columns: 1fr;
@@ -2351,7 +2343,7 @@ a.footer-contact-row:focus-visible {
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 768px) {
   .fact-band .fact-grid {
     grid-template-columns: 1fr;
   }
