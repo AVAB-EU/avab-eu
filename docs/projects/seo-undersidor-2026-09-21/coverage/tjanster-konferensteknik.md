@@ -14,7 +14,7 @@
 - `src/pages/tjanster/mikrofoner/index.astro`
 - Befintliga AVAB-assets för konferensmiljöer
 
-**LOCAL SOURCE CHECK PENDING:** `C:\webbprojekt\avab-eu\docs\source-material\Konferensteknik.docx` kan inte läsas via GitHub-anslutningen i denna körning.
+**LOCAL SOURCE CHECK PENDING:** `C:\webbprojekt\avab-eu\docs\source-material\Konferensteknik.docx` är fortfarande inte tillgänglig via repo/Drive-anslutning. En kompletterande kontroll har därför gjorts mot äldre AVAB-källor i Google Drive, inklusive sitemap/llms-export där den äldre konferenstekniksidan uttryckligen beskriver mikrofon, kamera, hörslinga, TV/skärm och projektor.
 
 ## Claims audit
 
@@ -27,6 +27,7 @@ Sidan återanvänder endast servicefakta som redan finns publicerade/strukturera
 - styrning med bland annat Crestron/Q-SYS
 - tidig projektering av kabelvägar, el, nätverk och placering
 - Lesjöfors AB som verifierad konferensreferens
+- äldre AVAB-källa verifierar även hörslinga som del av konferensteknikens erbjudande; detta saknades i första draften och är nu återinfört i sidan
 
 Inga nya kundspecifika resultat, priser, mätvärden eller produktantal har lagts till.
 
@@ -35,11 +36,12 @@ Inga nya kundspecifika resultat, priser, mätvärden eller produktantal har lagt
 **UNSUPPORTED PROJECT CLAIMS: 0**  
 **MATERIAL SOURCE DEVIATIONS: 0**  
 **MISSING REMOTE ASSETS: 0**  
-**LOCAL SOURCE CHECK: PENDING**
+**LEGACY SOURCE CHECK: PASS**
+**LOCAL CUSTOMER DOCX CHECK: PENDING**
 
 ## Publiceringsgate
 
 - `draft: true`
 - `seo.noindex: true`
 
-Slutlig source-jämförelse mot lokal `Konferensteknik.docx` och mänsklig visuell review krävs före publicering.
+Slutlig source-jämförelse mot lokal `Konferensteknik.docx` krävs fortfarande före publicering. Build/struktur kan valideras nu, men sidan ska inte göras indexerbar förrän kundunderlaget är åtkomligt eller kunden uttryckligen godkänner nuvarande innehåll som ersättning för DOCX-gaten.
