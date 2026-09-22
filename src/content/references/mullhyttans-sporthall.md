@@ -4,9 +4,9 @@ slug: /referenser/mullhyttans-sporthall/
 layout: extended
 title: Mullhyttans sporthall
 shortTitle: Mullhyttans sporthall
-heroTitle: Mullhyttans sporthall – ljud och hörslinga som följer ridåväggen
-heroSubtitle: En delbar sporthall där ljud, mikrofoner, musikkällor, styrning och tvåzons SLS-hörslinga automatiskt följer hallens fysiska indelning.
-summary: AVAB projekterade och installerade ett komplett ljudsystem med Bose ControlSpace EX-1280, Yamaha CBR15 och PX8, Sennheiser EW-D, Dante, lokal styrning och tvåzons Univox SLS-hörslinga i Mullhyttans sporthall.
+heroTitle: Mullhyttans sporthall
+heroSubtitle: Zonstyrt ljud och hörslinga i en delbar sporthall
+summary: AVAB projekterade och installerade ett zonstyrt ljudsystem med mikrofoner, Dante, lokal styrning och tvåzons SLS-hörslinga som automatiskt följer ridåväggen.
 publishedDate: 2026-09-21
 updatedDate: 2026-09-21
 
