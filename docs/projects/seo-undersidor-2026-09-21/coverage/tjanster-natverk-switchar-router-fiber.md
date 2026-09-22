@@ -3,7 +3,7 @@
 **Route:** `/tjanster/natverk-switchar-router-fiber/`  
 **Sidtyp:** Service  
 **Kanoniskt facit:** `/tjanster/horslinga/`  
-**Status:** Draft/noindex
+**Status:** Published/indexable
 
 ## Källor
 
@@ -34,5 +34,6 @@ Sidan beskriver nätverksinfrastruktur för professionell AV. Den gör inga pås
 
 ## Publiceringsgate
 
-- `draft: true`
-- `seo.noindex: true`
+- `draft: false`
+- `seo.noindex: false`
+- sidan är indexerbar i aktuell `main`
