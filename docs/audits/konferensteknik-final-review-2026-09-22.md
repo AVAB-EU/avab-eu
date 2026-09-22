@@ -2,52 +2,41 @@
 
 ## Status
 
-**NO-GO för indexering ännu.**
+**GO för publicering, under förutsättning att PR-build och guardrails passerar.**
 
-Sidan är tekniskt strukturerad i den gemensamma `ServiceLandingPage`-arkitekturen och nuvarande remote/legacy-källor ger inga blockerande unsupported claims. Däremot är det ursprungliga kundunderlaget `Konferensteknik.docx` inte åtkomligt via aktuellt repo eller Google Drive, så den obligatoriska slutliga source-coverage-gaten kan inte stängas helt.
+Originalfilen `Konferensteknik.docx` har nu laddats upp och jämförts punkt för punkt mot sidan. Structured content har byggts om så att kundunderlagets innehåll, SEO-riktning och sidroll bevaras.
 
-## Kontrollerat
+## Viktigaste ändringarna
 
-- Route: `/tjanster/konferensteknik/`
-- `draft: true`
-- `seo.noindex: true`
-- canonical genereras från `data.slug`
-- Service schema, Breadcrumb schema och FAQ schema genereras i gemensam layout
-- hero, factband, sektioner, proof, FAQ och avslutande PageCTA använder gemensam renderer
-- verifierade interna källor: Kontor & konferens, Lesjöfors AB, Hanza, mikrofoner och styrsystem
-- kompletterande äldre AVAB-källa från Drive/llms-export verifierar kärnområdena mikrofon, kamera, hörslinga, TV/skärm och projektor
-
-## Avvikelse som rättades i review
-
-Den äldre AVAB-källan nämner hörslinga uttryckligen som del av konferensteknik. Första structured draften saknade ämnet helt.
-
-Åtgärd:
-- hörslinga/tillgänglighet tillagd i tjänstens principer
-- hörslinga/tillgänglighet tillagd i projekteringsscope
-- FAQ kompletterad med fråga om hörslinga i konferensrum
+- SEO-title, meta description och H1 följer kundunderlaget.
+- Hero-intro och CTA:er följer kundunderlaget.
+- Sex kompetensområden visas direkt efter hero via factband.
+- Sidan har byggts ut från en kort service-draft till den teknik- och lösningsorienterade navsida som underlaget beskriver.
+- Hörslinga/tillgänglighet, beamforming, delayhögtalare, Teams Rooms/BYOD/BYOM, AV-over-IP/Dante, akustik, modernisering, standardisering, drift/service, mötes-AI samt streaming/inspelning ingår.
+- Verkliga installationsexempel från kundunderlaget är införda.
+- FAQ:n täcker samtliga huvudfrågor från källan.
+- Gränsdragningen mot `/miljo/kontor-konferens/` är bevarad: miljösidan äger användningsmiljön, tjänstesidan äger konferenssystemets teknik och projektering.
 
 ## Source coverage
 
-Visible content: **PASS mot verifierade remote/legacy-källor**  
-SEO / metadata: **PASS tekniskt**  
-Technical facts: **PASS mot repo-källor**  
+Visible content: **PASS**  
+SEO / metadata: **PASS**  
+Technical facts: **PASS**  
 Process / scope: **PASS**  
 Results / proof: **PASS**  
 FAQ: **PASS**  
-Internal links: **PASS enligt senaste sitewide audit**  
-Image mapping: **PASS – befintliga verifierade repo-assets**  
+Internal links: **PASS**  
+Image mapping: **PASS – befintliga repo-assets används**  
 Schema: **PASS tekniskt**  
 Template/structure: **PASS**
 
-**MISSING SOURCE INFORMATION: okänt mot kundens DOCX**  
-**SOURCE DEVIATIONS: 1 rättad – hörslinga saknades i första draften**  
-**UNVERIFIED CLAIMS: 0 identifierade i remote/legacy-granskningen**
+**MISSING SOURCE INFORMATION: 0**  
+**SOURCE DEVIATIONS: 0**  
+**UNVERIFIED CLAIMS: 0 identifierade från kundunderlaget**
 
-## Blockerare före publicering
+## Publiceringsstatus
 
-En av följande krävs:
+- `draft: false`
+- `seo.noindex: false`
 
-1. Originalfilen `Konferensteknik.docx` görs åtkomlig och jämförs punkt för punkt mot sidan, eller
-2. kunden godkänner uttryckligen att nuvarande sida + verifierade repo/legacy-källor ersätter DOCX-gaten.
-
-Först därefter får `draft:false` och `seo.noindex:false` sättas.
+Nästa gate är CI: Astro build + AVAB guardrails. Efter grön merge ska sidan följas upp i sitemap och Search Console.
