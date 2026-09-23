@@ -176,6 +176,17 @@ story:
         - För gästen spelar det naturligtvis ingen roll.
         - Och det är lite av poängen.
         - Teknikvalen ska märkas genom att systemet fungerar – inte genom att kunden behöver förstå dem.
+      mediaGroups:
+        - columns: 1
+          ratio: pano
+          split: true
+          images:
+            - src: /assets/pinchos-karlstad-city-programmering-yamaha-mtx3.webp
+              alt: Programmering av Yamaha-systemet för Pinchos Karlstad City
+              width: 2048
+              height: 956
+              title: Programmering av Yamaha-systemet
+              text: Bakom ett enkelt användargränssnitt finns betydligt mer logik. Signalvägar, zoner, nivåer och ljudbearbetning byggs i DSP:n.
     - id: yamaha-styrning
       navLabel: Yamaha & styrning
       eyebrow: DSP, förstärkning och app
@@ -200,15 +211,10 @@ story:
         - Det tycker vi egentligen borde vara ganska självklart.
         - Avancerat bakom kulisserna. Enkelt framför användaren.
       mediaGroups:
-        - columns: 2
+        - columns: 1
           ratio: pano
+          split: true
           images:
-            - src: /assets/pinchos-karlstad-city-programmering-yamaha-mtx3.webp
-              alt: Programmering av Yamaha-systemet
-              width: 2048
-              height: 956
-              title: Programmering av Yamaha-systemet
-              text: Bakom ett enkelt användargränssnitt finns betydligt mer logik. Signalvägar, zoner, nivåer och ljudbearbetning byggs i DSP:n.
             - src: /assets/pinchos-karlstad-city-zonstyrning-app.webp
               alt: Färdig zonstyrning
               width: 2048
@@ -345,6 +351,17 @@ story:
         - En mindre restaurang med ett fåtal högtalare är en helt annan anläggning än en restaurang med bar, flera rum, uteservering och separata ljudnivåer.
         - Därför börjar vi helst med ritningen.
         - Utifrån den kan vi bedöma ljudtäckning, antal zoner, förstärkning, kabelvägar och lämplig styrning innan någon behöver gissa på antal produkter.
+      mediaGroups:
+        - columns: 1
+          ratio: pano
+          split: true
+          images:
+            - src: /assets/pinchos-karlstad-city-restaurangmiljo-02.webp
+              alt: Färdig restaurangmiljö på Pinchos Karlstad City
+              width: 2048
+              height: 956
+              title: Resultatet – ett ljudsystem som följer verksamheten
+              text: På dagen ska musiken finnas där utan att kräva uppmärksamhet. På kvällen ska den kunna bidra med mer energi.
 
 faq:
   eyebrow: FAQ
