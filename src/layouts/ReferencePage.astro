@@ -35,12 +35,13 @@ const robots = data.draft || data.seo.noindex
   ? "noindex, nofollow"
   : "index, follow, max-image-preview:large";
 const hasStory = Boolean(data.story);
+const documentMode = data.story?.mode === "document";
 
 const schemaImages = Array.from(new Set([
   heroImageUrl,
   ...(data.gallery?.images.map((image) => absoluteUrl(image.src)) ?? []),
   ...(data.story?.chapters.flatMap((chapter) =>
-    chapter.mediaGroups.flatMap((group) => group.images.map((image) => absoluteUrl(image.src)))
+    (chapter.mediaGroups ?? []).flatMap((group) => group.images.map((image) => absoluteUrl(image.src)))
   ) ?? []),
 ]));
 const structuredData = {
@@ -177,30 +178,44 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
             primaryLabel="Utforska projektet"
             primaryHref={`#${anchorItems[0]?.id ?? "uppdraget"}`}
           />
-          <ReferenceFacts facts={data.facts} />
+          <ReferenceFacts facts={data.facts} title={data.factsTitle} />
 
           <section class="reference-case" data-reference-anchor-scope>
-            <div class="reference-case-intro-wrap">
-              <div class="avab-container">
-                <header class="reference-case-intro">
-                  <span class="case-kicker">{data.story?.eyebrow ?? "Projektet på djupet"}</span>
-                  <h2>{data.story?.title ?? data.brief.title}</h2>
-                  <p>{data.story?.lead ?? data.scope.lead}</p>
-                </header>
-              </div>
-            </div>
-
-            <ReferenceAnchorNav items={anchorItems} />
+            {!documentMode && (
+              <>
+                <div class="reference-case-intro-wrap">
+                  <div class="avab-container">
+                    <header class="reference-case-intro">
+                      <span class="case-kicker">{data.story?.eyebrow ?? "Projektet på djupet"}</span>
+                      <h2>{data.story?.title ?? data.brief.title}</h2>
+                      <p>{data.story?.lead ?? data.scope.lead}</p>
+                    </header>
+                  </div>
+                </div>
+                <ReferenceAnchorNav items={anchorItems} />
+              </>
+            )}
 
             <div class="reference-case-content">
-              {hasStory && data.story ? data.story.chapters.map((chapter, chapterIndex) => {
-                const sidebarGroup = chapter.mediaGroups.find((group) => group.layout === "sidebar");
-                const otherGroups = chapter.mediaGroups.filter((group) => group !== sidebarGroup);
+              {hasStory && data.story ? <>
+                {documentMode && data.story.preamble?.length && (
+                  <section class="case-section" data-case-section>
+                    <div class="avab-container case-section__inner">
+                      <div class="case-copy">
+                        {data.story.preamble.map((paragraph) => <p>{paragraph}</p>)}
+                      </div>
+                    </div>
+                  </section>
+                )}
+                {data.story.chapters.map((chapter, chapterIndex) => {
+                const mediaGroups = chapter.mediaGroups ?? [];
+                const sidebarGroup = mediaGroups.find((group) => group.layout === "sidebar");
+                const otherGroups = mediaGroups.filter((group) => group !== sidebarGroup);
                 const copyBlock = (
                   <div class="case-copy">
-                    <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
+                    {!documentMode && <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>}
                     <h2>{chapter.title}</h2>
-                    {chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
+                    {!documentMode && chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
                     {chapter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
                   </div>
                 );
@@ -229,10 +244,16 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
                           layout={group.layout}
                         />
                       ))}
+                      {chapter.afterMediaParagraphs?.length && (
+                        <div class="case-copy">
+                          {chapter.afterMediaParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+                        </div>
+                      )}
                     </div>
                   </section>
                 );
-              }) : <>
+              })}
+              </> : <>
               <section class="case-section" id="uppdraget" data-case-section>
                 <div class="avab-container case-section__inner">
                   <div class="case-copy">
@@ -260,14 +281,14 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
               </>}
             </div>
 
-          {hasStory && (
+          {hasStory && !documentMode && (
             <ReferenceScope scope={data.scope} variants={data.variants} showDetails />
           )}
-          {data.scale && <ReferenceScale scale={data.scale} />}
-          {data.results && <ReferenceResults results={data.results} />}
-          {data.quote && <ReferenceQuote quote={data.quote} />}
-          {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
-          {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
+          {!documentMode && data.scale && <ReferenceScale scale={data.scale} />}
+          {!documentMode && data.results && <ReferenceResults results={data.results} />}
+          {!documentMode && data.quote && <ReferenceQuote quote={data.quote} />}
+          {!documentMode && data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
+          {!documentMode && data.relevance && <ReferenceRelevance relevance={data.relevance} />}
           {data.faq && (
             <ReferenceFaq
               id="reference-faq-title"
@@ -286,6 +307,7 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
           eyebrow={cta.eyebrow}
           title={cta.title!}
           text={cta.text}
+          paragraphs={cta.paragraphs}
           primaryLabel={cta.primaryLabel!}
           primaryHref={cta.primaryHref!}
           secondaryLabel={cta.secondaryLabel}
