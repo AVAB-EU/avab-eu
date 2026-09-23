@@ -13,6 +13,7 @@ interface Props {
   primaryLabel?: string;
   primaryHref?: string;
   hideIntro?: boolean;
+  hideLead?: boolean;
 }
 
 const {
@@ -22,6 +23,7 @@ const {
   primaryLabel = "Se AVAB:s omfattning",
   primaryHref = "#omfattning",
   hideIntro = false,
+  hideLead = false,
 } = Astro.props;
 ---
 
@@ -45,12 +47,8 @@ const {
       <div class="reference-hero__content">
         <span class="reference-kicker">{kicker}</span>
         <h1>{data.heroTitle}</h1>
-        {!hideIntro && (
-          <>
-            <p class="reference-hero-subtitle">{data.heroSubtitle}</p>
-            <p class="reference-hero-lead">{data.summary}</p>
-          </>
-        )}
+        {!hideIntro && <p class="reference-hero-subtitle">{data.heroSubtitle}</p>}
+        {!hideLead && <p class="reference-hero-lead">{data.summary}</p>}
         <div class="reference-actions">
           <a class="button button-primary" href={primaryHref}>{primaryLabel}</a>
           <a
