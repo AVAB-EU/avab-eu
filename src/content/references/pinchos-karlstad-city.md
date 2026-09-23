@@ -51,31 +51,21 @@ heroImage:
 
 presentation:
   pilot: balanced-v1
-  factBandMax: 6
-  hideStoryIntro: true
+  factBandMax: 5
+  hideStoryIntro: false
   hideScope: true
 
 facts:
-  - label: Kund
+  - label: Projekt
     value: Pinchos Karlstad City
   - label: Plats
-    value: Västra Torggatan 1, Karlstad
-  - label: Projektperiod
-    value: Projektering/programmering april 2026, installation och driftsättning maj 2026
+    value: Karlstad
   - label: Miljö
     value: Restaurang, bar och lounge
-  - label: DSP / matris
-    value: Yamaha MTX3
-  - label: Styrning
-    value: Appstyrda ljudzoner utan löpande licensavgift
-  - label: Högtalare
-    value: 3", 5" och 8"
-  - label: Distribution
-    value: Kombination av lågohm och 100V
-  - label: Slutsteg
-    value: Yamaha XMV8140, 8 × 140 W
-  - label: Framtid
-    value: Förberett för ljud på kommande uteservering
+  - label: Uppdrag
+    value: Restaurangljud och zonstyrning
+  - label: Utrustning
+    value: Yamaha MTX3 / XMV8140
 
 brief:
   eyebrow: Uppdraget på 30 sekunder
@@ -109,8 +99,8 @@ scope:
 
 story:
   eyebrow: Projektet på djupet
-  title: Ljudsystem för Pinchos Karlstad City
-  lead: Bakgrund på dagen – energi på kvällen
+  title: Bakgrund på dagen – energi på kvällen
+  lead: På Pinchos Karlstad City har AVAB projekterat, programmerat, installerat och driftsatt ett komplett zonindelat ljudsystem för restaurang, bar, lounge och övriga gästytor. Målet var inte att bygga ett ljudsystem som gästerna lägger märke till. Målet var att skapa ett jämnt, omslutande restaurangljud som följer gästen genom lokalen – behagligt som bakgrundsmusik under lugnare perioder, men med tillräcklig kapacitet för att höja både nivå och energi när restaurangen fylls på kvällar och helger. Det är ljud byggt för kundens kund.
   chapters:
     - id: restaurangljud
       navLabel: Restaurangljud
@@ -349,6 +339,7 @@ story:
 
     - id: resultat-kostnad
       navLabel: Resultat & kostnad
+      anchor: false
       eyebrow: Resultat och nästa steg
       title: Resultatet – ett ljudsystem som följer verksamheten
       flow:
