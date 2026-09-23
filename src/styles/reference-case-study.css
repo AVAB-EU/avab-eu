@@ -266,3 +266,61 @@
     scroll-margin-top: 20px;
   }
 }
+
+
+/* Pinchos pilot: opt-in reference flow. Existing references are unaffected. */
+.reference-page--balanced-pilot .case-copy--pilot-heading {
+  max-width: none;
+  margin-bottom: clamp(24px, 3vw, 36px);
+}
+
+.reference-page--balanced-pilot .reference-pilot-flow {
+  display: grid;
+  gap: clamp(28px, 4vw, 48px);
+}
+
+.reference-page--balanced-pilot .reference-pilot-text {
+  width: 100%;
+  max-width: none;
+}
+
+.reference-page--balanced-pilot .reference-pilot-text h3,
+.reference-page--balanced-pilot .reference-balanced-column h3 {
+  margin: 0 0 14px;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.reference-page--balanced-pilot .reference-pilot-text p,
+.reference-page--balanced-pilot .reference-balanced-column p {
+  max-width: none;
+  margin: 0;
+  color: var(--avab-dark-muted);
+}
+
+.reference-page--balanced-pilot .reference-pilot-text p + p,
+.reference-page--balanced-pilot .reference-balanced-column p + p {
+  margin-top: 0.72rem;
+}
+
+.reference-page--balanced-pilot .reference-balanced-columns {
+  display: grid;
+  grid-template-columns:
+    minmax(0, var(--reference-col-left))
+    minmax(0, var(--reference-col-right));
+  gap: clamp(36px, 5vw, 72px);
+  align-items: start;
+  width: 100%;
+}
+
+.reference-page--balanced-pilot .reference-balanced-column {
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .reference-page--balanced-pilot .reference-balanced-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+}
