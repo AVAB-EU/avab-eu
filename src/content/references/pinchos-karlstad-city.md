@@ -191,24 +191,19 @@ story:
               height: 956
               title: Färdig zonstyrning
               text: Personalen behöver inte möta programmeringen bakom systemet. De ser de funktioner och ljudområden som faktiskt behövs i den dagliga driften.
-        - type: text
+        - type: mediaText
+          image:
+            src: /assets/pinchos-karlstad-city-yamaha-mtx3-xmv8140.webp
+            alt: Yamaha MTX3 och XMV8140
+            width: 1536
+            height: 2048
+            title: Yamaha MTX3 och XMV8140
+            text: DSP, matris och åttakanalsförstärkning utgör kärnan bakom ljudzonerna. Ett kompakt system med stor flexibilitet.
           title: Ett slutsteg – åtta separata kanaler
           paragraphs:
             - Högtalarsystemet drivs från ett Yamaha XMV8140 på 8 × 140 W. Det är det enda slutsteget i anläggningen.
             - Tillsammans med Yamaha MTX3 kan de åtta förstärkarkanalerna användas effektivt för restaurangens olika delar och kombinationen av lågohm och 100V.
             - Vi gillar den typen av systemuppbyggnad. Inte ett teknikrack fullt av produkter för sakens skull, utan så mycket hårdvara som behövs för att lösa uppgiften ordentligt.
-        - type: media
-          columns: 1
-          ratio: portrait
-          split: true
-          compact: true
-          images:
-            - src: /assets/pinchos-karlstad-city-yamaha-mtx3-xmv8140.webp
-              alt: Yamaha MTX3 och XMV8140
-              width: 1536
-              height: 2048
-              title: Yamaha MTX3 och XMV8140
-              text: DSP, matris och åttakanalsförstärkning utgör kärnan bakom ljudzonerna. Ett kompakt system med stor flexibilitet.
         - type: text
           title: Appstyrning utan abonnemang
           paragraphs:
