@@ -4,6 +4,7 @@ import PageCTA from "../components/PageCTA.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import ReferenceAnchorNav from "../components/references/ReferenceAnchorNav.astro";
+import ReferenceBalancedColumns from "../components/references/ReferenceBalancedColumns.astro";
 import ReferenceBrief from "../components/references/ReferenceBrief.astro";
 import ReferenceFacts from "../components/references/ReferenceFacts.astro";
 import ReferenceFaq from "../components/references/ReferenceFaq.astro";
@@ -35,13 +36,17 @@ const robots = data.draft || data.seo.noindex
   ? "noindex, nofollow"
   : "index, follow, max-image-preview:large";
 const hasStory = Boolean(data.story);
+const pilotPresentation = data.presentation?.pilot === "balanced-v1";
 
 const schemaImages = Array.from(new Set([
   heroImageUrl,
   ...(data.gallery?.images.map((image) => absoluteUrl(image.src)) ?? []),
-  ...(data.story?.chapters.flatMap((chapter) =>
-    chapter.mediaGroups.flatMap((group) => group.images.map((image) => absoluteUrl(image.src)))
-  ) ?? []),
+  ...(data.story?.chapters.flatMap((chapter) => [
+    ...(chapter.mediaGroups ?? []).flatMap((group) => group.images.map((image) => absoluteUrl(image.src))),
+    ...(chapter.flow ?? []).flatMap((block) =>
+      block.type === "media" ? block.images.map((image) => absoluteUrl(image.src)) : []
+    ),
+  ]) ?? []),
 ]));
 const structuredData = {
   "@context": "https://schema.org",
@@ -156,7 +161,12 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
     />
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
-  <body class:list={["reference-page", "reference-page--extended", "reference-page--case-study"]}>
+  <body class:list={[
+    "reference-page",
+    "reference-page--extended",
+    "reference-page--case-study",
+    pilotPresentation && "reference-page--balanced-pilot",
+  ]}>
     <SiteHeader />
     <nav class="reference-breadcrumbs" aria-label="Brödsmulor">
       <div class="avab-container">
@@ -177,58 +187,98 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
             primaryLabel="Utforska projektet"
             primaryHref={`#${anchorItems[0]?.id ?? "uppdraget"}`}
           />
-          <ReferenceFacts facts={data.facts} />
+          <ReferenceFacts facts={data.facts} maxItems={data.presentation?.factBandMax} />
 
           <section class="reference-case" data-reference-anchor-scope>
-            <div class="reference-case-intro-wrap">
-              <div class="avab-container">
-                <header class="reference-case-intro">
-                  <span class="case-kicker">{data.story?.eyebrow ?? "Projektet på djupet"}</span>
-                  <h2>{data.story?.title ?? data.brief.title}</h2>
-                  <p>{data.story?.lead ?? data.scope.lead}</p>
-                </header>
+            {!data.presentation?.hideStoryIntro && (
+              <div class="reference-case-intro-wrap">
+                <div class="avab-container">
+                  <header class="reference-case-intro">
+                    <span class="case-kicker">{data.story?.eyebrow ?? "Projektet på djupet"}</span>
+                    <h2>{data.story?.title ?? data.brief.title}</h2>
+                    <p>{data.story?.lead ?? data.scope.lead}</p>
+                  </header>
+                </div>
               </div>
-            </div>
+            )}
 
             <ReferenceAnchorNav items={anchorItems} />
 
             <div class="reference-case-content">
               {hasStory && data.story ? data.story.chapters.map((chapter, chapterIndex) => {
-                const sidebarGroup = chapter.mediaGroups.find((group) => group.layout === "sidebar");
-                const otherGroups = chapter.mediaGroups.filter((group) => group !== sidebarGroup);
+                const mediaGroups = chapter.mediaGroups ?? [];
+                const sidebarGroup = mediaGroups.find((group) => group.layout === "sidebar");
+                const otherGroups = mediaGroups.filter((group) => group !== sidebarGroup);
                 const copyBlock = (
                   <div class="case-copy">
                     <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
                     <h2>{chapter.title}</h2>
                     {chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
-                    {chapter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+                    {(chapter.paragraphs ?? []).map((paragraph) => <p>{paragraph}</p>)}
                   </div>
                 );
                 return (
                   <section class="case-section" id={chapter.id} data-case-section>
                     <div class="avab-container case-section__inner">
-                      {sidebarGroup ? (
-                        <div class="case-copy-row">
-                          {copyBlock}
-                          <ReferenceMediaGrid
-                            items={sidebarGroup.images}
-                            columns={sidebarGroup.columns}
-                            ratio={sidebarGroup.ratio}
-                            split={false}
-                            layout={sidebarGroup.layout}
-                          />
-                        </div>
-                      ) : copyBlock}
+                      {chapter.flow?.length ? (
+                        <>
+                          <div class="case-copy case-copy--pilot-heading">
+                            <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
+                            <h2>{chapter.title}</h2>
+                            {chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
+                          </div>
+                          <div class="reference-pilot-flow">
+                            {chapter.flow.map((block) => {
+                              if (block.type === "text") {
+                                return (
+                                  <section class="reference-pilot-text">
+                                    {block.title && <h3>{block.title}</h3>}
+                                    {block.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+                                  </section>
+                                );
+                              }
+                              if (block.type === "columns") {
+                                return <ReferenceBalancedColumns columns={block.columns} />;
+                              }
+                              return (
+                                <ReferenceMediaGrid
+                                  items={block.images}
+                                  columns={block.columns}
+                                  ratio={block.ratio}
+                                  split={block.split || block.images.length === 1}
+                                  compact={block.compact}
+                                  layout={block.layout}
+                                />
+                              );
+                            })}
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          {sidebarGroup ? (
+                            <div class="case-copy-row">
+                              {copyBlock}
+                              <ReferenceMediaGrid
+                                items={sidebarGroup.images}
+                                columns={sidebarGroup.columns}
+                                ratio={sidebarGroup.ratio}
+                                split={false}
+                                layout={sidebarGroup.layout}
+                              />
+                            </div>
+                          ) : copyBlock}
 
-                      {otherGroups.map((group) => (
-                        <ReferenceMediaGrid
-                          items={group.images}
-                          columns={group.columns}
-                          ratio={group.ratio}
-                          split={group.split || group.images.length === 1}
-                          layout={group.layout}
-                        />
-                      ))}
+                          {otherGroups.map((group) => (
+                            <ReferenceMediaGrid
+                              items={group.images}
+                              columns={group.columns}
+                              ratio={group.ratio}
+                              split={group.split || group.images.length === 1}
+                              layout={group.layout}
+                            />
+                          ))}
+                        </>
+                      )}
                     </div>
                   </section>
                 );
@@ -260,7 +310,7 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
               </>}
             </div>
 
-          {hasStory && (
+          {hasStory && !data.presentation?.hideScope && (
             <ReferenceScope scope={data.scope} variants={data.variants} showDetails />
           )}
           {data.scale && <ReferenceScale scale={data.scale} />}
