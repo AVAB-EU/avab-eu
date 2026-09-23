@@ -188,8 +188,8 @@ const referenceSchema = z
                     images: z
                       .array(
                         imageSchema.extend({
-                          title: requiredText,
-                          text: requiredText,
+                          title: requiredText.optional(),
+                          text: requiredText.optional(),
                           kicker: requiredText.optional(),
                         }),
                       )
