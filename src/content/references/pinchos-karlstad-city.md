@@ -228,18 +228,21 @@ story:
           ratio: portrait
           images:
             - src: /assets/pinchos-karlstad-city-hogtalare-vagg-01.webp
+              objectPosition: 58% 14%
               alt: Väggmonterad högtalare på Pinchos Karlstad City
               width: 956
               height: 2048
               title: Färdig restaurang
               text: Högtalarna är placerade för jämn täckning samtidigt som installationen följer restaurangens visuella uttryck.
             - src: /assets/pinchos-karlstad-city-hogtalare-pelare.webp
+              objectPosition: 70% 12%
               alt: Högtalare monterad vid pelare på Pinchos Karlstad City
               width: 956
               height: 2048
               title: Färdig restaurang
               text: Högtalarna ska passa in – inte ta över.
             - src: /assets/pinchos-karlstad-city-miljo-detalj-01.webp
+              objectPosition: 18% 14%
               alt: Inredningsdetalj på Pinchos Karlstad City
               width: 956
               height: 2048
@@ -250,18 +253,21 @@ story:
           ratio: pano
           images:
             - src: /assets/pinchos-karlstad-city-restaurangmiljo-01.webp
+              objectPosition: 58% 16%
               alt: Färdig restaurangmiljö på Pinchos Karlstad City
               width: 2048
               height: 956
               title: Färdig restaurang
               text: Högtalarna är placerade för jämn täckning samtidigt som installationen följer restaurangens visuella uttryck.
             - src: /assets/pinchos-karlstad-city-bar-ljudzon.webp
+              objectPosition: 50% 18%
               alt: Bar och ljudzon på Pinchos Karlstad City
               width: 2048
               height: 956
               title: Färdig restaurang
               text: Högtalarna är placerade för jämn täckning samtidigt som installationen följer restaurangens visuella uttryck.
             - src: /assets/pinchos-karlstad-city-restaurangmiljo-02.webp
+              objectPosition: 62% 12%
               alt: Färdig restaurangmiljö på Pinchos Karlstad City
               width: 2048
               height: 956
