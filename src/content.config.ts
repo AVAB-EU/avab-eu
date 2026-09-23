@@ -214,6 +214,15 @@ const referenceSchema = z
                   })).length(2),
                 }),
                 z.object({
+                  type: z.literal("mediaText"),
+                  image: imageSchema.extend({
+                    title: requiredText,
+                    text: requiredText,
+                  }),
+                  title: requiredText,
+                  paragraphs: z.array(requiredText).min(1),
+                }),
+                z.object({
                   type: z.literal("media"),
                   columns: z.number().int().min(1).max(3).default(1),
                   ratio: z.enum(["land", "pano", "portrait", "tall", "slim"]).default("land"),
