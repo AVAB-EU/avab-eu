@@ -1,6 +1,7 @@
 ---
 import { AVAB_PHONE } from "../config/site";
 import avabFooterLogo from "../assets/images/brand/avab-logotyp-vit.png";
+import CookieConsent from "./CookieConsent.astro";
 
 const year = new Date().getFullYear();
 ---
@@ -62,10 +63,12 @@ const year = new Date().getFullYear();
   <div class="foot-bottom">
     <div class="avab-container foot-bottom-inner">
       <span>© {year} AVAB Sverige AB. Alla rättigheter förbehållna.</span>
-      <span>Org.nr 559600-9661 <a href="/integritetspolicy/">Integritetspolicy</a></span>
+      <span>Org.nr 559600-9661 <a href="/integritetspolicy/">Integritetspolicy</a> <span aria-hidden="true">·</span> <button class="foot-cookie-settings" type="button" data-cookie-settings>Cookieinställningar</button></span>
     </div>
   </div>
 </footer>
+
+<CookieConsent />
 
 <style>
   .site-footer {
@@ -236,14 +239,25 @@ const year = new Date().getFullYear();
     font-size: 0.85rem;
   }
 
-  .foot-bottom-inner a {
+  .foot-bottom-inner a,
+  .foot-cookie-settings {
     color: inherit;
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
+  .foot-cookie-settings {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+  }
+
   .foot-bottom-inner a:hover,
-  .foot-bottom-inner a:focus-visible {
+  .foot-bottom-inner a:focus-visible,
+  .foot-cookie-settings:hover,
+  .foot-cookie-settings:focus-visible {
     color: var(--footer-text);
   }
 
