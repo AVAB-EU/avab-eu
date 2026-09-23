@@ -346,6 +346,9 @@ story:
                 - En mindre restaurang med ett fåtal högtalare är en helt annan anläggning än en restaurang med bar, flera rum, uteservering och separata ljudnivåer.
                 - Därför börjar vi helst med ritningen.
                 - Utifrån den kan vi bedöma ljudtäckning, antal zoner, förstärkning, kabelvägar och lämplig styrning innan någon behöver gissa på antal produkter.
+                - AVAB hjälper fastighetsägare, restauratörer, byggentreprenörer, elektriker och projektörer med ljudsystem för restaurang från ritning till färdig anläggning.
+                - Vi kan hjälpa till med projektering och FFU, högtalarplacering, ljudzoner, val mellan 100V och lågohm, DSP och styrning, installation, programmering och slutlig driftsättning.
+                - Vi utgår från Karlstad/Hammarö och arbetar med restauranger och kommersiella projekt i Värmland och stora delar av Mellansverige.
 
 faq:
   eyebrow: FAQ
@@ -367,10 +370,15 @@ faq:
 cta:
   enabled: true
   variant: page
-  title: Projekterar ni en restaurang, bar eller hotellmiljö?
-  text: AVAB hjälper fastighetsägare, restauratörer, byggentreprenörer, elektriker och projektörer med ljudsystem för restaurang från ritning till färdig anläggning. Vi kan hjälpa till med projektering och FFU, högtalarplacering, ljudzoner, val mellan 100V och lågohm, DSP och styrning, installation, programmering och slutlig driftsättning. Vi utgår från Karlstad/Hammarö och arbetar med restauranger och kommersiella projekt i Värmland och stora delar av Mellansverige. Bakgrund på dagen – energi på kvällen. Tekniken bakom kan vara avancerad. För gästen ska det bara kännas rätt.
+  eyebrow: Planerar ni en liknande miljö?
+  title: Ta in ljudsystemet tidigt i projektet
+  text: Skicka ritningar eller en kort projektbeskrivning. AVAB hjälper er att bedöma ljudtäckning, zoner och lämpligt nästa steg.
   primaryLabel: Kontakta AVAB
   primaryHref: /kontakt/
   secondaryLabel: Se lösningar för restaurang och bar
   secondaryHref: /miljo/restaurang-bar-klubb/
+  points:
+    - Projektering och FFU för restaurangljud
+    - Högtalarplacering, ljudzoner, 100V och lågohm
+    - DSP, styrning, installation och driftsättning
 ---
