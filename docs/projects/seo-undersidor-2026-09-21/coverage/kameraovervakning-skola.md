@@ -7,7 +7,7 @@
 
 ## Source audit input
 
-Primära tillgängliga källor i denna körning:
+Primära tillgängliga källor i canonical repo:
 
 - `src/pages/tjanster/kameraovervakning/index.astro`
 - `src/pages/miljo/skola/index.txt` och `Avab-hub-skola.txt` som historiskt skolunderlag
@@ -15,7 +15,7 @@ Primära tillgängliga källor i denna körning:
 - IMY:s vägledning om kamerabevakning av anställda
 - Befintlig asset `/assets/skola-flyg-vy-hero.webp`
 
-**LOCAL SOURCE CHECK PENDING:** Den lokala mappen `C:\webbprojekt\avab-eu\docs\source-material\` kan inte läsas från GitHub-anslutningen i denna körning. Slutlig jämförelse mot eventuell dedikerad lokal sourcefil måste därför göras innan publicering.
+**SOURCE OF TRUTH CHECK: CLOSED 2026-09-23.** Enligt aktuell projektregel är `AVAB-EU/avab-eu` enda source of truth. Den tidigare blockeraren mot en eventuell lokal mapp `C:\webbprojekt\avab-eu\docs\source-material\` är därför inte längre giltig. Ingen separat dedikerad sourcefil för sidan finns på `main`; granskningen ska baseras på källorna ovan och dokumenterade claims.
 
 ## Juridisk verifiering
 
@@ -46,11 +46,11 @@ Verifierat mot IMY 2026-09-21:
 **MATERIAL SOURCE DEVIATIONS: 0**  
 **UNVERIFIED LEGAL CLAIMS: 0**  
 **MISSING REMOTE ASSETS: 0**  
-**LOCAL SOURCE CHECK: PENDING**
+**SOURCE OF TRUTH CHECK: CLOSED**
 
 ## Publiceringsgate
 
 - `draft: true`
 - `seo.noindex: true`
 
-Sidan ska inte indexeras innan lokal source-kontroll och mänsklig visuell granskning är genomförd.
+Kvar före publiceringsbeslut: mänsklig visuell granskning och separat beslut om att ändra `draft/noindex`.
