@@ -114,9 +114,9 @@ story:
             - Att försöka täcka allt med några få stora högtalare hade varit enkelt. Men inte särskilt bra.
             - När en högtalare måste spela starkt för att nå långt får gästen närmast högtalaren för mycket ljud, samtidigt som ljudnivån längre bort ändå kan bli för låg. Vi arbetar hellre med fler välplacerade ljudpunkter, rätt storlek på högtalaren och zonstyrning. Då kan ljudet ligga närmare gästen, men på lägre nivå. Resultatet blir ett betydligt jämnare ljud över hela restaurangen.
         - type: media
-          columns: 1
+          columns: 2
           ratio: land
-          split: true
+          split: false
           compact: false
           images:
             - src: /assets/pinchos-karlstad-city-zonritning.webp
@@ -125,6 +125,12 @@ story:
               height: 1697
               title: Zonritning
               text: Redan i projekteringen delades lokalen upp efter hur de olika ytorna faktiskt används. Ritningen visar bland annat Lounge, Bar + entré, Höger, Bak samt den framtida utomhuszonen Gata.
+            - src: /assets/pinchos-karlstad-city-hogtalartest-3-5-8-tum.webp
+              alt: 3-, 5- och 8-tumshögtalare på AVAB:s kontor
+              width: 1489
+              height: 1607
+              title: 3", 5" och 8" högtalare på kontoret
+              text: Tre storlekar med olika uppgifter. Vi provlyssnar och arbetar med grund-EQ innan den slutliga injusteringen görs i lokalen.
         - type: columns
           columns:
             - title: Restaurangljud projekterat för kundens kund
@@ -138,18 +144,6 @@ story:
                 - Det gör att vi kan använda en mindre högtalare där avståndet är kort och ljudet ska vara diskret, och större modeller där det behövs mer fyllighet, räckvidd och ljudtryck.
                 - Innan installationen byggde vi upp högtalarna på kontoret och lyssnade igenom de olika storlekarna. Vi arbetade också med grundinställning och EQ innan systemet flyttades till restaurangen.
                 - Det är ett viktigt steg. Specifikationerna berättar mycket om en högtalare. Men de berättar inte exakt hur den upplevs i rummet.
-        - type: media
-          columns: 1
-          ratio: portrait
-          split: true
-          compact: true
-          images:
-            - src: /assets/pinchos-karlstad-city-hogtalartest-3-5-8-tum.webp
-              alt: 3-, 5- och 8-tumshögtalare på AVAB:s kontor
-              width: 1489
-              height: 1607
-              title: 3", 5" och 8" högtalare på kontoret
-              text: Tre storlekar med olika uppgifter. Vi provlyssnar och arbetar med grund-EQ innan den slutliga injusteringen görs i lokalen.
 
     - id: dag-kvall
       navLabel: Dag & kväll
