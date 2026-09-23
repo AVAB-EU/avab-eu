@@ -180,10 +180,10 @@ story:
             - Bakom restaurangens enkla användning finns en Yamaha MTX3 DSP och ljudmatris. Här hanteras signalvägar, EQ, nivåer och zoner.
             - Under april 2026 programmerade vi systemet hos AVAB och byggde upp logiken innan den slutliga installationen och driftsättningen på plats. På så sätt kunde vi kontrollera signalvägarna och bygga systemets struktur redan innan restaurangen var färdig.
         - type: media
-          columns: 1
+          columns: 2
           ratio: pano
-          split: true
-          compact: true
+          split: false
+          compact: false
           images:
             - src: /assets/pinchos-karlstad-city-programmering-yamaha-mtx3.webp
               alt: Programmering av Yamaha-systemet för Pinchos Karlstad City
@@ -191,12 +191,6 @@ story:
               height: 956
               title: Programmering av Yamaha-systemet
               text: Bakom ett enkelt användargränssnitt finns betydligt mer logik. Signalvägar, zoner, nivåer och ljudbearbetning byggs i DSP:n.
-        - type: media
-          columns: 1
-          ratio: pano
-          split: true
-          compact: true
-          images:
             - src: /assets/pinchos-karlstad-city-zonstyrning-app.webp
               alt: Färdig zonstyrning för Pinchos Karlstad City
               width: 2048
