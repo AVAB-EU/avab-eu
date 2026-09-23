@@ -247,6 +247,21 @@ Varje referens ska normalt länka till relevanta tjänster och kan länka till n
 
 Sidan avslutas med gemensam CTA/kontaktsektion. Den ska inte kopieras som unik markup i varje referens.
 
+## Rubrikhierarki och unika rubriker
+
+Synliga rubriker ska ha en tydlig semantisk nivå och samma rubrikfras får inte upprepas på samma sida.
+
+- H1 används en gång per sida.
+- Huvudavsnitt använder H2.
+- Underrubriker inom ett H2-avsnitt använder H3 när en faktisk underrubrik behövs.
+- En hero-underrubrik får inte återanvändas som identisk H2 längre ned på sidan.
+- En H2 eller H3 får inte duplicera en annan synlig rubrik med samma formulering på samma sida.
+- Ankarnavigation, breadcrumbs och kortetiketter räknas inte som innehållsrubriker, men deras texter ska fortfarande vara begripliga och korta.
+- Om källunderlaget upprepar samma rubrik ska innehållet behållas, men nästa förekomst ska antingen sakna egen rubrik eller få en annan källförankrad rubrik som beskriver just det avsnittet.
+- AI får inte skapa en extra rubrik enbart för layoutens skull om texten redan har en tydlig överordnad rubrik.
+
+Regeln gäller alla nya och migrerade referenser. Befintliga referenser ska inte massändras utan separat granskning och regressionstest.
+
 ## Redaktionella krav
 
 Texten ska vara:
