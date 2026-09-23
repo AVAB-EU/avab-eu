@@ -235,7 +235,7 @@ story:
               title: Färdig restaurang
               text: Högtalarna är placerade för jämn täckning samtidigt som installationen följer restaurangens visuella uttryck.
             - src: /assets/pinchos-karlstad-city-hogtalare-pelare.webp
-              objectPosition: 70% 12%
+              objectPosition: 70% 24%
               alt: Högtalare monterad vid pelare på Pinchos Karlstad City
               width: 956
               height: 2048
