@@ -292,7 +292,7 @@ const referenceSchema = z
       .optional(),
     faq: z
       .object({
-        eyebrow: requiredText,
+        eyebrow: requiredText.optional(),
         title: requiredText,
         lead: requiredText.optional(),
         items: z
