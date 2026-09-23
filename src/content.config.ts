@@ -175,6 +175,7 @@ const referenceSchema = z
             z.object({
               id: z.string().regex(/^[a-z0-9-]+$/),
               navLabel: requiredText,
+              anchor: z.boolean().default(true),
               eyebrow: requiredText,
               title: requiredText,
               answer: requiredText.optional(),
