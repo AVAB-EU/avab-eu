@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import ReferencePage from "../../../layouts/ReferencePage.astro";
+import "../../../styles/pinchos-reference-pilot.css";
 
 const reference = (await getCollection("references")).find(
   (entry) => entry.data.slug === "/referenser/pinchos-karlstad-city/",
