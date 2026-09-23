@@ -59,7 +59,6 @@ const ctaSchema = z
         eyebrow: requiredText.optional(),
         title: requiredText,
         text: requiredText.optional(),
-        paragraphs: z.array(requiredText).min(1).optional(),
         primaryLabel: requiredText,
         primaryHref: requiredText,
         secondaryLabel: requiredText.optional(),
@@ -110,7 +109,6 @@ const referenceSchema = z
     heroTitle: requiredText,
     heroSubtitle: requiredText,
     summary: requiredText,
-    heroParagraphs: z.array(requiredText).min(1).optional(),
     publishedDate: z.coerce.date(),
     updatedDate: z.coerce.date(),
     seo: z.object({
@@ -142,7 +140,6 @@ const referenceSchema = z
     }),
     heroImage: imageSchema,
     facts: z.array(z.object({ label: z.string(), value: z.string() })).min(1),
-    factsTitle: requiredText.optional(),
     brief: z.object({
       eyebrow: z.string(),
       title: z.string(),
@@ -164,11 +161,9 @@ const referenceSchema = z
     }),
     story: z
       .object({
-        mode: z.enum(["case-study", "document"]).default("case-study"),
         eyebrow: requiredText,
         title: requiredText,
         lead: requiredText,
-        preamble: z.array(requiredText).optional(),
         chapters: z
           .array(
             z.object({
@@ -188,20 +183,19 @@ const referenceSchema = z
                     images: z
                       .array(
                         imageSchema.extend({
-                          title: requiredText.optional(),
-                          text: requiredText.optional(),
+                          title: requiredText,
+                          text: requiredText,
                           kicker: requiredText.optional(),
                         }),
                       )
                       .min(1),
                   }),
                 )
-                .optional(),
-              afterMediaParagraphs: z.array(requiredText).optional(),
+                .min(1),
             }),
           )
           .min(2)
-          .max(20),
+          .max(5),
       })
       .optional(),
     variants: z
@@ -292,7 +286,7 @@ const referenceSchema = z
       .optional(),
     faq: z
       .object({
-        eyebrow: requiredText.optional(),
+        eyebrow: requiredText,
         title: requiredText,
         lead: requiredText.optional(),
         items: z
