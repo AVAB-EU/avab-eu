@@ -43,9 +43,11 @@ const schemaImages = Array.from(new Set([
   ...(data.gallery?.images.map((image) => absoluteUrl(image.src)) ?? []),
   ...(data.story?.chapters.flatMap((chapter) => [
     ...(chapter.mediaGroups ?? []).flatMap((group) => group.images.map((image) => absoluteUrl(image.src))),
-    ...(chapter.flow ?? []).flatMap((block) =>
-      block.type === "media" ? block.images.map((image) => absoluteUrl(image.src)) : []
-    ),
+    ...(chapter.flow ?? []).flatMap((block) => {
+      if (block.type === "media") return block.images.map((image) => absoluteUrl(image.src));
+      if (block.type === "mediaText") return [absoluteUrl(block.image.src)];
+      return [];
+    }),
   ]) ?? []),
 ]));
 const structuredData = {
@@ -248,6 +250,24 @@ const anchorItems = data.story?.chapters
                               }
                               if (block.type === "columns") {
                                 return <ReferenceBalancedColumns columns={block.columns} />;
+                              }
+                              if (block.type === "mediaText") {
+                                return (
+                                  <div class="reference-pilot-media-text">
+                                    <ReferenceMediaGrid
+                                      items={[block.image]}
+                                      columns={1}
+                                      ratio="portrait"
+                                      split={false}
+                                      compact={false}
+                                      layout="grid"
+                                    />
+                                    <section class="reference-pilot-media-text__copy">
+                                      <h3>{block.title}</h3>
+                                      {block.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+                                    </section>
+                                  </div>
+                                );
                               }
                               return (
                                 <ReferenceMediaGrid
