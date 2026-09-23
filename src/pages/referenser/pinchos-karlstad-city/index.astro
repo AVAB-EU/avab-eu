@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import ReferencePage from "../../../layouts/ReferencePage.astro";
+
+const reference = (await getCollection("references")).find(
+  (entry) => entry.data.slug === "/referenser/pinchos-karlstad-city/",
+);
+
+if (!reference) {
+  throw new Error("Referensen Pinchos Karlstad City saknas i content collection.");
+}
+---
+
+<ReferencePage reference={reference} />
