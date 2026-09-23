@@ -1083,3 +1083,49 @@
   .related-card:hover,
   .related-card:focus-visible { transform: none; }
 }
+
+
+/* Opt-in compact composition for a single image with short supporting copy. */
+.reference-page--balanced-pilot .reference-media-grid--compact {
+  width: min(100%, 880px);
+  justify-self: start;
+}
+
+.reference-page--balanced-pilot
+  .reference-media-grid--compact.reference-media-grid--split
+  .reference-media-card {
+  grid-template-columns: minmax(220px, 0.78fr) minmax(280px, 1fr);
+}
+
+.reference-page--balanced-pilot
+  .reference-media-grid--compact.reference-media-grid--split.reference-media-grid--portrait
+  .reference-media-card {
+  grid-template-columns: minmax(220px, 0.72fr) minmax(280px, 1fr);
+}
+
+.reference-page--balanced-pilot
+  .reference-media-grid--compact.reference-media-grid--split
+  .reference-media-card__media {
+  height: clamp(260px, 30vw, 410px);
+}
+
+.reference-page--balanced-pilot
+  .reference-media-grid--compact.reference-media-grid--split
+  .reference-media-card figcaption {
+  padding: clamp(20px, 3vw, 30px);
+}
+
+@media (max-width: 767px) {
+  .reference-page--balanced-pilot .reference-media-grid--compact {
+    width: 100%;
+  }
+
+  .reference-page--balanced-pilot
+    .reference-media-grid--compact.reference-media-grid--split
+    .reference-media-card,
+  .reference-page--balanced-pilot
+    .reference-media-grid--compact.reference-media-grid--split.reference-media-grid--portrait
+    .reference-media-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
