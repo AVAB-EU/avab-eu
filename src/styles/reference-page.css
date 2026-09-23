@@ -1129,3 +1129,45 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+
+/* Opt-in anchor treatment for the Pinchos reference pilot. */
+.reference-anchor-nav-wrap--centered .reference-anchor-nav {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: clamp(18px, 4vw, 64px);
+}
+
+.reference-anchor-nav-wrap--centered .reference-anchor-nav a {
+  flex: 0 1 auto;
+  min-width: 0;
+  padding-inline: 8px;
+}
+
+.reference-anchor-nav-wrap.is-past-last-anchor {
+  transform: translateY(-110%);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 180ms ease,
+    opacity 140ms ease;
+}
+
+.reference-anchor-nav-wrap:not(.is-past-last-anchor) {
+  transition:
+    transform 180ms ease,
+    opacity 140ms ease;
+}
+
+@media (max-width: 680px) {
+  .reference-anchor-nav-wrap--centered .reference-anchor-nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .reference-anchor-nav-wrap--centered .reference-anchor-nav a {
+    justify-content: flex-start;
+  }
+}
