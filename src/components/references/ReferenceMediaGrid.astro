@@ -3,8 +3,8 @@ export interface ReferenceMediaItem {
   src?: string;
   key?: string;
   alt: string;
-  title: string;
-  text: string;
+  title?: string;
+  text?: string;
   kicker?: string;
   objectPosition?: string;
   width?: number;
@@ -33,7 +33,7 @@ const {
 
 const resolvedItems = items.map((item) => {
   const src = item.src ?? (item.key ? imageMap[item.key] : undefined);
-  if (!src) throw new Error(`ReferenceMediaGrid saknar bildkälla för "${item.title}".`);
+  if (!src) throw new Error(`ReferenceMediaGrid saknar bildkälla för "${item.title ?? item.alt}".`);
   return { ...item, src };
 });
 ---
@@ -61,11 +61,13 @@ const resolvedItems = items.map((item) => {
           decoding="async"
         />
       </div>
-      <figcaption>
-        {item.kicker && <span class="reference-media-card__kicker">{item.kicker}</span>}
-        <h3>{item.title}</h3>
-        <p>{item.text}</p>
-      </figcaption>
+      {(item.kicker || item.title || item.text) && (
+        <figcaption>
+          {item.kicker && <span class="reference-media-card__kicker">{item.kicker}</span>}
+          {item.title && <h3>{item.title}</h3>}
+          {item.text && <p>{item.text}</p>}
+        </figcaption>
+      )}
     </figure>
   ))}
 </div>
