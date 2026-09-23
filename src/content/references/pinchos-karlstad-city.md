@@ -114,7 +114,7 @@ story:
       title: Hur får man jämnt ljud genom en restaurang med flera olika miljöer?
       answer: Genom att utgå från gästens position och hur varje del av restaurangen används. På Pinchos delades lokalen upp i ljudzoner och fick flera välplacerade ljudpunkter i stället för några få högtalare som behöver spela starkt över långa avstånd.
       paragraphs:
-        - Ett bra ljudsystem för restaurang börjar med gästen, lokalen och verksamheten – inte med högtalaren. Ljudnivå, täckning och högtalarstorlek behöver anpassas efter varje del av restaurangen, samtidigt som hela lokalen ska upplevas som en sammanhängande ljudmiljö.
+        - Pinchos Karlstad City ligger på Västra Torggatan 1. Pinchos beskriver sitt koncept som en apprestaurang där bland annat meny, beställning och betalning hanteras digitalt. Ett bra ljudsystem för restaurang börjar samtidigt med gästen, lokalen och verksamheten – inte med högtalaren. Ljudnivå, täckning och högtalarstorlek behöver anpassas efter varje del av restaurangen, samtidigt som hela lokalen ska upplevas som en sammanhängande ljudmiljö.
         - På Pinchos Karlstad City finns flera tydligt olika miljöer. Lounge, bar, entré, sittplatser längre in i restaurangen och mindre utrymmen har olika förutsättningar och används på olika sätt under dagen. Redan i projekteringen delades lokalen därför upp efter hur ytorna faktiskt används. Zonritningen visar bland annat Lounge, Bar + entré, Höger, Bak och den framtida utomhuszonen Gata.
         - Att täcka allt med några få stora högtalare hade varit enklare, men hade skapat större nivåskillnader. När en högtalare måste spela starkt för att nå långt får gästen närmast högtalaren för mycket ljud samtidigt som nivån längre bort ändå kan bli för låg. Med fler ljudpunkter, rätt högtalarstorlek och zonstyrning kan ljudet ligga närmare gästen men på lägre nivå.
         - Projekteringen utgick också från kundens kund. Vi bedömde hur ljudet upplevs vid olika bord, hur en nästan tom restaurang skiljer sig från en full lördagskväll, om gäster kan prata normalt och om musiken upplevs som en del av miljön i stället för att komma från en enskild högtalare.
@@ -212,7 +212,7 @@ story:
         - Personalen behöver inte möta programmeringen bakom systemet. Den dagliga funktionen styrs via en app där användaren får tillgång till relevanta zoner och nivåer utan att gå in i DSP-systemets tekniska inställningar.
         - Den vanliga ljudstyrningen innebär ingen månadsavgift, licens eller abonnemangskostnad. När anläggningen är köpt och installerad kan restaurangen använda den utan en löpande avgift för appstyrningen. Avancerat bakom kulisserna – enkelt framför användaren.
       mediaGroups:
-        - columns: 3
+        - columns: 2
           ratio: pano
           images:
             - src: /assets/pinchos-karlstad-city-programmering-yamaha-mtx3.webp
@@ -227,12 +227,6 @@ story:
               height: 956
               title: Personalen ser bara det som behövs
               text: Den dagliga styrningen begränsas till relevanta ljudområden och nivåer i stället för DSP-systemets tekniska programmering.
-            - src: /assets/pinchos-karlstad-city-bar-ljudzon.webp
-              alt: Barområde på Pinchos Karlstad City som styrs som en del av det zonindelade ljudsystemet
-              width: 2048
-              height: 956
-              title: Styrningen följer restaurangens zoner
-              text: Bar och entré är exempel på en yta där nivån kan hanteras utifrån verksamhetens aktuella behov.
         - columns: 1
           ratio: portrait
           split: true
