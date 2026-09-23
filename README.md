@@ -1,5 +1,12 @@
 ﻿# AVAB Astro-projekt
 
+## Source of truth
+
+- Canonical repository: `AVAB-EU/avab-eu`.
+- All development, pull requests, merges and production deploys must originate from this repository.
+- The former fork `KodAiDeas/avab-eu` has been deleted and must not be recreated or used as a parallel source.
+- Production `avab.eu` is deployed from `main` in this repository.
+
 Det här är den lokala Astro-sidan för AVAB. Målet är att hålla projektet lätt att förstå: sidor i en mapp, gemensam design i en fil och publika bilder på ett ställe.
 
 ## Snabbstart
@@ -46,7 +53,7 @@ npm run preview
     - 🟦 [`restaurang-bar-klubb/index.astro`](src/pages/miljo/restaurang-bar-klubb/index.astro)
     - 🟦 [`simhall/index.astro`](src/pages/miljo/simhall/index.astro)
     - 🟦 [`skola/index.astro`](src/pages/miljo/skola/index.astro)
-    - 🟦 [`sporthall/index.astro`](src/pages/miljo/sporthall/index.astro)
+    - 🟦 [`sporthall-arena/index.astro`](src/pages/miljo/sporthall-arena/index.astro)
     - 🟦 [`utomhusidrott/index.astro`](src/pages/miljo/utomhusidrott/index.astro)
     - 🟦 [`vard/index.astro`](src/pages/miljo/vard/index.astro)
   - 🟦 [`rastsignal/index.astro`](src/pages/rastsignal/index.astro)
@@ -55,7 +62,13 @@ npm run preview
     - 🟦 [`horslinga/index.astro`](src/pages/tjanster/horslinga/index.astro)
     - 🟦 [`kameraovervakning/index.astro`](src/pages/tjanster/kameraovervakning/index.astro)
 - 🟩 [`src/styles/`](src/styles/) - gemensam design
-  - 🟩 [`avab.css`](src/styles/avab.css) - enda aktiva gemensamma stylesheet
+  - 🟩 [`avab.css`](src/styles/avab.css) - global grundstil och delade komponentmönster
+  - 🟩 [`reference-page.css`](src/styles/reference-page.css) - gemensam referenssidestandard
+  - 🟩 [`reference-case-study.css`](src/styles/reference-case-study.css) - utökade referens/case study-mönster
+  - 🟩 [`reference-gallery-layout.css`](src/styles/reference-gallery-layout.css) - referensgallerier
+  - 🟩 [`knowledge-page.css`](src/styles/knowledge-page.css) - kunskapssidor
+  - 🟩 [`services-showcase.css`](src/styles/services-showcase.css) - tjänsteöversikt/showcase
+  - 🟩 [`budgetkalkylator.css`](src/styles/budgetkalkylator.css) - budgetkalkylator
 - 🟨 Sidmaterial och textkällor
   - 🟨 [`src/pages/miljo/**/Avab-hub-*.txt`](src/pages/miljo/) - gamla/externa underlag per miljösida
 - 🟪 [`public/assets/`](public/assets/) - publika bilder som används med `/assets/filnamn.webp`
@@ -66,7 +79,7 @@ npm run preview
 
 ## Viktiga principer
 
-- `src/styles/avab.css` är projektets enda aktiva gemensamma CSS-fil.
+- `src/styles/avab.css` är den globala grundstilen. Sidtypsspecifika gemensamma stylesheets i `src/styles/` används där respektive layout kräver dem; skapa inte nya sidspecifika CSS-filer utan att först kontrollera befintlig standard.
 - Nya sidor ska importera `avab.css` med rätt relativ sökväg, till exempel `import "../../../styles/avab.css";`.
 - Undvik dubbla bildkopior när du kan. För publika bildvägar räcker `public/assets`.
 - Skriv svenska tecken direkt i UTF-8.

@@ -1,6 +1,42 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-09-21._
+_Kanonisk projektlista. Senast uppdaterad 2026-09-22._
+
+## Repo och source of truth
+
+- [x] **Branchstädning:** alla gamla arbetsbrancher är borttagna; endast `main` återstår.
+
+- [x] **Enda aktiva repo:** `AVAB-EU/avab-eu` är enda source of truth för AVAB-webben.
+- [x] **Gamla forken borttagen:** `KodAiDeas/avab-eu` är raderad och ska inte användas för utveckling, PR, merge eller deploy.
+- [x] **Produktionsdeploy:** endast workflow i `AVAB-EU/avab-eu` får deploya `avab.eu`.
+- [x] **Senaste UI-fixar säkrade i rätt repo:** factband-standard samt godkänd hero-copy för Götetorpsskolan och Mullhyttans sporthall finns på `main`.
+
+## Checkpoint 2026-09-22 – SEO väntar på kundbesked
+
+- [x] Sitemap/draft/noindex-hanteringen verifierad; `https://avab.eu/sitemap-index.xml` är accepterad i Search Console.
+- [x] Search Console-baslinje och legacy-indexering är dokumenterad.
+- [ ] **Väntar på kundbesked om tre gamla WordPress-URL:er:**
+  - `/author/andreas-avab/` – gammal författarsida.
+  - `/login/` – gammal inloggningssida; kontrollera om någon kund-/medlemsinloggning fortfarande behövs.
+  - `/sample-page/` – gammal WordPress-testsida.
+- [ ] När kunden svarar: dokumentera beslutet och välj korrekt server-/SEO-hantering per URL innan någon ändring görs.
+
+## Checkpoint 2026-09-22 – paus efter Prioritet 1
+
+> Dagens arbete är avslutat. Repo är städat och canonical source of truth är `AVAB-EU/avab-eu`. Endast `main` används som aktiv bas.
+>
+> **Prioritet 1 är klar:** Konferensteknik är jämförd mot uppladdat kundunderlag, source coverage = 0, publicerad och indexerbar. Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber är också publicerade/indexerbara.
+>
+> **Nästa startpunkt i ny chatt:** Prioritet 2 – publiceringsgranskning av kamera-branschsidorna.
+
+### Prioritet 2 – kamera, exakt nästa arbetsblock
+
+- [ ] Inventera `/kameraovervakning/skola/`, `/kameraovervakning/parkering/`, `/kameraovervakning/industri/` och `/kameraovervakning/galleria/` mot aktuell content, metadata, bilder, internlänkar, schema och visuell struktur.
+- [ ] Klassificera varje sida som: **redo att publicera / behöver åtgärd / behöver kundbeslut**.
+- [ ] Ändra inte `draft/noindex` förrän respektive sida är granskad och eventuella blockerare är lösta.
+- [ ] Kontrollera Kamera Butik mot Go Banana och ta bort eventuell gammal "kommer inom kort"-copy om den finns.
+- [ ] Hantera `/kameraovervakning/gdpr/` separat med juridisk färskhetskontroll nära publicering; publicera inte GDPR-sidan automatiskt.
+- [ ] Efter varje eventuell ändring: kör guardrails/build och håll scope till små, separata PR:er.
 
 ## Nästa fas – publicering, indexering och SEO-optimering
 
@@ -13,7 +49,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-21._
 - [x] **Kvarvarande planerade 404-länkmål hanterade:** kravställning och systemintegration pekar till verifierade befintliga destinationssidor; GDPR-sidan är byggd.
 - [x] **Nya referenser byggda:** Fortnox Arena, STC Kil, Mullhyttan, Stockfallets skola, Skolhagenskolan, Loka Brunn och Götetorpsskolan.
 - [x] **Teknisk SEO-slutkontroll genomförd:** sitemap exkluderar structured draft/noindex, internlänksaudit P0=0/P1=0, guardrails och build passerar.
-- [ ] **Prioritet 1 – publiceringsbeslut för huvudtjänster:** Konferensteknik, Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber. Granska visuellt/content och besluta vilka som ska gå från draft/noindex till indexerbara.
+- [x] **Prioritet 1 – Konferensteknik:** originalfilen `Konferensteknik.docx` är nu jämförd punkt för punkt. Source coverage = 0 saknad information. Sidan är uppdaterad till kundunderlaget och satt till `draft:false` / `seo.noindex:false`; build/guardrails ska verifieras i PR före merge.
+- [x] **Publicerade huvudtjänster:** Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber är nu `draft:false` och `seo.noindex:false`.
 - [ ] **Prioritet 2 – publiceringsbeslut för kameraundersidor:** Skola, Parkering, Industri och Galleria. GDPR kräver separat juridisk färskhetskontroll nära publicering.
 - [ ] **Kamera Butik – uppdatera efter Go Banana-publicering:** ta bort/skriv om eventuell copy om att referensen kommer "inom kort" och lägg en naturlig internlänk till `/referenser/go-banana-bergvik/`.
 - [ ] **Prioritet 3 – referensgodkännande:** publicera endast referenser där text, projektfakta och bilder är verifierade och kunden uttryckligen har godkänt publicering.
@@ -43,7 +80,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-21._
 - [x] Fas A – systemiska internlänks-/ankarfel är genomförd och mergead via PR #42.
 - [x] Fas C – draft/noindex, sitemap och footer är genomförd och mergead via PR #43.
 - [x] Fas B – kvarvarande riktiga 404-destinationer är inventerad och tre säkra länkmål är verifierat rättade i commit `b8794a7`.
-- [ ] **OBS före återstart:** PR #44 (`SEO: fix verified internal 404 links`) är stängd utan merge och remote-branchen `seo/p0-404-beslut` finns inte längre. Innan nytt SEO-arbete fortsätter ska commit `b8794a7` återställas/cherry-pickas till en ny branch, valideras och mergas till `main` om ändringarna fortfarande är önskade.
+- [x] **HISTORISK / SUPERSEDED:** instruktionen att återställa commit `b8794a7` ska inte längre följas. Senare SEO-arbete har ersatt denna checkpoint och aktuell internlänksaudit är P0=0/P1=0.
 - [ ] Vänta på kundens innehåll/underlag för följande sidor:
   - `/tjanster/konferensteknik/`
   - `/kameraovervakning/skola/`

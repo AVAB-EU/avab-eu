@@ -16,7 +16,7 @@ Ingen `draft`, `noindex` eller `customer.publicationApproved` ändras i denna au
 | Grupp | Publicerad/indexerbar | Draft/noindex | Kommentar |
 |---|---:|---:|---|
 | Structured references | 3 | 21 | 2 har publicationApproved=true; Hanza är indexerbar men publicationApproved=null |
-| Structured service pages | 0 | 7 | Alla nya service-landningssidor är fortfarande draft/noindex |
+| Structured service pages | 5 | 2 | Fyra huvudtjänster + Exakt sökning/AI-analys är indexerbara; Konferensteknik och Videomöten/BYOM är fortfarande draft/noindex |
 | Camera industry/guidance pages | 1 | 5 | Butik är befintlig pilot; fem nya sidor är draft/noindex |
 
 ## A. Redan publicerade/indexerbara references
@@ -50,22 +50,24 @@ Ingen `draft`, `noindex` eller `customer.publicationApproved` ändras i denna au
 | `/tjanster/digital-signage/` | **SLUTREVIEW** | Coverage ren, men proof/referens använder Galleria Duvan som fortfarande beskrivs som under uppbyggnad |
 | `/tjanster/konferensteknik/` | **BLOCKERAD** | Coverage har `LOCAL SOURCE CHECK: PENDING` mot lokal `Konferensteknik.docx` |
 
-## B. Nya tjänstesidor – tekniskt byggda, fortfarande draft/noindex
+## B. Structured service pages – aktuell status 2026-09-22
 
-- `/tjanster/konferensteknik/`
+### Indexerbara
 - `/tjanster/skarmar-projektorer/`
 - `/tjanster/digital-signage/`
 - `/tjanster/ljus/`
 - `/tjanster/natverk-switchar-router-fiber/`
-- `/tjanster/videomoten-byod/`
 - `/tjanster/exakt-sokning-ai-analys/`
 
-Gemensam status:
-- `draft: true`
-- `seo.noindex: true`
-- routes byggs korrekt
-- sitemap-filtret håller dem utanför sitemap
-- internlänksaudit har P0=0 och P1=0
+Dessa har:
+- `draft: false`
+- `seo.noindex: false`
+
+### Fortfarande draft/noindex
+- `/tjanster/konferensteknik/`
+- `/tjanster/videomoten-byod/`
+
+Konferensteknik väntar på slutlig source-jämförelse mot kundunderlaget samt visuell review. Videomöten/BYOM tas efter huvudtjänsterna som fördjupningssida.
 
 ### Rekommenderad publiceringsordning
 

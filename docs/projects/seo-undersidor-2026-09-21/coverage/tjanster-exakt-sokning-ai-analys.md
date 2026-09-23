@@ -3,7 +3,7 @@
 **Route:** `/tjanster/exakt-sokning-ai-analys/`  
 **Sidtyp:** Service  
 **Kanoniskt facit:** `/tjanster/horslinga/`  
-**Status:** Draft/noindex
+**Status:** Ready for publication
 
 ## Källor
 
@@ -15,6 +15,10 @@
 
 Den äldre kamera-sidan innehåller starka exempel om realtidsspårning och drastiskt minskad utredningstid. Den nya tjänstesidan återger **inte** dessa formuleringar som generella fakta. Den begränsas till verifierbara funktioner: sökning, filtrering, metadata, person-/fordonsklassificering där plattformen stödjer det samt minskat manuellt granskningsarbete.
 
+## Search Console-signal 2026-09-21
+
+AVAB har redan sökvisningar för bland annat `ai kameraövervakning` och `kameraövervakning ai`, men utan klick och med positioner utanför topp 20. Den här sidan fyller därför en befintlig sökintention utan att konkurrera med en blockerad parent-sida.
+
 ## Gates
 
 **UNSUPPORTED PROJECT CLAIMS: 0**  
@@ -24,5 +28,6 @@ Den äldre kamera-sidan innehåller starka exempel om realtidsspårning och dras
 
 ## Publiceringsgate
 
-- `draft: true`
-- `seo.noindex: true`
+- `draft: false`
+- `seo.noindex: false`
+- separat SEO-bedömning gjord 2026-09-21
