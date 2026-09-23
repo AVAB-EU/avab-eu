@@ -6,7 +6,7 @@ export interface ReferenceFaqItem {
 
 interface Props {
   id: string;
-  eyebrow?: string;
+  eyebrow: string;
   title: string;
   lead?: string;
   items: ReferenceFaqItem[];
@@ -19,7 +19,7 @@ const { id, eyebrow, title, lead, items } = Astro.props;
   <section class="section reference-faq" aria-labelledby={id}>
     <div class="avab-container">
       <div class="faq-heading">
-        {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+        <div class="eyebrow">{eyebrow}</div>
         <h2 id={id}>{title}</h2>
         {lead && <p>{lead}</p>}
       </div>
