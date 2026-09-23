@@ -6,7 +6,7 @@ type ReferenceData = CollectionEntry<"references">["data"];
 interface Props {
   data: Pick<
     ReferenceData,
-    "category" | "environment" | "heroTitle" | "heroSubtitle" | "summary" | "heroParagraphs" | "heroImage"
+    "category" | "environment" | "heroTitle" | "heroSubtitle" | "summary" | "heroImage"
   >;
   variant?: "split" | "immersive";
   kicker?: string;
@@ -44,9 +44,7 @@ const {
         <span class="reference-kicker">{kicker}</span>
         <h1>{data.heroTitle}</h1>
         <p class="reference-hero-subtitle">{data.heroSubtitle}</p>
-        {data.heroParagraphs?.length
-          ? data.heroParagraphs.map((paragraph) => <p class="reference-hero-lead">{paragraph}</p>)
-          : <p class="reference-hero-lead">{data.summary}</p>}
+        <p class="reference-hero-lead">{data.summary}</p>
         <div class="reference-actions">
           <a class="button button-primary" href={primaryHref}>{primaryLabel}</a>
           <a
