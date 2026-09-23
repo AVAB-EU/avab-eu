@@ -155,6 +155,17 @@ export const references: Reference[] = [
     featured: true,
   },
   {
+    title: "Pinchos Karlstad City",
+    slug: "/referenser/pinchos-karlstad-city/",
+    location: "Karlstad",
+    image: "/assets/pinchos-karlstad-city-hero-restaurang.webp",
+    imageAlt: "Restaurangmiljö på Pinchos Karlstad City med zonindelat ljudsystem från AVAB",
+    excerpt:
+      "Zonindelat restaurangljud med Yamaha MTX3, åttakanalsförstärkning, appstyrning samt 3\", 5\" och 8\" högtalare.",
+    environments: ["restaurang-bar-klubb"],
+    technologies: ["ljud", "dsp", "bakgrundsmusik", "projektering", "styrsystem"],
+  },
+  {
     title: "Claessons Konferens & Restaurang",
     slug: "/referenser/claessons-restaurang-konferens/",
     location: "Karlstad",
