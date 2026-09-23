@@ -106,10 +106,12 @@ const renderPageCta = Boolean(
 );
 const renderLegacyCta = Boolean(cta?.enabled && cta.variant === "legacy");
 
-const anchorItems = data.story?.chapters.map((chapter) => ({
-  id: chapter.id,
-  label: chapter.navLabel,
-})) ?? [
+const anchorItems = data.story?.chapters
+  .filter((chapter) => chapter.anchor !== false)
+  .map((chapter) => ({
+    id: chapter.id,
+    label: chapter.navLabel,
+  })) ?? [
   { id: "uppdraget", label: "Uppdraget" },
   { id: "omfattning", label: "Leveransen" },
   ...(data.results ? [{ id: "resultat", label: "Resultatet" }] : []),
@@ -183,9 +185,10 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
           <ReferenceHero
             data={data}
             variant="immersive"
-            kicker={`${data.category} · ${data.title}`}
+            kicker={pilotPresentation ? `Referenser · ${data.location}` : `${data.category} · ${data.title}`}
             primaryLabel="Utforska projektet"
             primaryHref={`#${anchorItems[0]?.id ?? "uppdraget"}`}
+            hideIntro={pilotPresentation}
           />
           <ReferenceFacts facts={data.facts} maxItems={data.presentation?.factBandMax} />
 
@@ -202,7 +205,12 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
               </div>
             )}
 
-            <ReferenceAnchorNav items={anchorItems} />
+            <ReferenceAnchorNav
+              items={anchorItems}
+              showTitle={!pilotPresentation}
+              centered={pilotPresentation}
+              hideAfterLast={pilotPresentation}
+            />
 
             <div class="reference-case-content">
               {hasStory && data.story ? data.story.chapters.map((chapter, chapterIndex) => {
