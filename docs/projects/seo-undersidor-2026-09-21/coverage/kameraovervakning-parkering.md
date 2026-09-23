@@ -10,7 +10,7 @@
 - Befintlig camera-industry-modell och Butik-sidan
 - Befintlig asset `/assets/hallbyggnad-fasad-parkering.webp`
 
-**LOCAL SOURCE CHECK PENDING:** Eventuell dedikerad fil i `C:\webbprojekt\avab-eu\docs\source-material\` kan inte läsas via GitHub-anslutningen.
+**SOURCE OF TRUTH CHECK: CLOSED 2026-09-23.** Enligt aktuell projektregel är `AVAB-EU/avab-eu` enda source of truth. Den tidigare blockeraren mot en eventuell lokal mapp `C:\webbprojekt\avab-eu\docs\source-material\` är därför inte längre giltig. Ingen separat dedikerad sourcefil för sidan finns på `main`.
 
 ## Bildstatus
 
@@ -30,10 +30,12 @@ Sidan använder generella parkerings-/garagebehov och innehåller inga påståen
 **UNSUPPORTED PROJECT CLAIMS: 0**  
 **MATERIAL SOURCE DEVIATIONS: 0**  
 **MISSING REMOTE ASSETS: 0**  
-**HERO IMAGE APPROVAL: PENDING**  
-**LOCAL SOURCE CHECK: PENDING**
+**SOURCE OF TRUTH CHECK: CLOSED**  
+**HERO IMAGE APPROVAL: PENDING**
 
 ## Publiceringsgate
 
 - `draft: true`
 - `seo.noindex: true`
+
+Kvar före publiceringsbeslut: hero-bilden behöver mänskligt godkännande och sidan behöver visuell slutgranskning.
