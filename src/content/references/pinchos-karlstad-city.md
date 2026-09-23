@@ -382,7 +382,7 @@ faq:
     - question: Hur många högtalare behöver en restaurang?
       answer: Det avgörs inte bara av antalet kvadratmeter. Lokalens form, takhöjd, material, möblering, önskad ljudnivå och hur jämn täckningen behöver vara är minst lika viktiga. Fler högtalare på lägre nivå kan ofta ge en behagligare ljudmiljö än några få högtalare som spelar starkt.
     - question: Kan samma ljudsystem fungera som bakgrundsmusik och för högre kvällsnivå?
-      answer: Ja. Systemet behöver då dimensioneras med rätt högtalare, förstärkning och marginal från början. På Pinchos Karlstad City är det just tanken: bakgrundsljud under lugnare delar av dagen och möjlighet till betydligt mer energi på kvällar och helger.
+      answer: 'Ja. Systemet behöver då dimensioneras med rätt högtalare, förstärkning och marginal från början. På Pinchos Karlstad City är det just tanken: bakgrundsljud under lugnare delar av dagen och möjlighet till betydligt mer energi på kvällar och helger.'
     - question: Ska man använda 100V eller lågohm i restaurang?
       answer: Båda kan vara rätt. 100V passar ofta bra för distribuerade system med många högtalare och längre kabelsträckor, medan lågohm kan vara lämpligare för andra högtalare och effektbehov. På Pinchos använder vi båda teknikerna i olika zoner.
     - question: Kan restaurangens ljud styras från telefon eller surfplatta?
