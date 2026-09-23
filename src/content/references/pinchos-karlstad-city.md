@@ -6,17 +6,18 @@ title: Pinchos Karlstad City
 shortTitle: Pinchos Karlstad City
 heroTitle: Ljudsystem för Pinchos Karlstad City
 heroSubtitle: Bakgrund på dagen – energi på kvällen
-summary: AVAB projekterade, programmerade, installerade och driftsatte ett zonindelat ljudsystem för restaurang, bar, lounge och övriga gästytor på Pinchos Karlstad City.
+summary: På Pinchos Karlstad City har AVAB projekterat, programmerat, installerat och driftsatt ett komplett zonindelat ljudsystem för restaurang, bar, lounge och övriga gästytor.
+heroParagraphs:
+  - På Pinchos Karlstad City har AVAB projekterat, programmerat, installerat och driftsatt ett komplett zonindelat ljudsystem för restaurang, bar, lounge och övriga gästytor.
+  - Målet var inte att bygga ett ljudsystem som gästerna lägger märke till.
+  - Målet var att skapa ett jämnt, omslutande restaurangljud som följer gästen genom lokalen – behagligt som bakgrundsmusik under lugnare perioder, men med tillräcklig kapacitet för att höja både nivå och energi när restaurangen fylls på kvällar och helger.
+  - Det är ljud byggt för kundens kund.
 publishedDate: 2026-09-23
 updatedDate: 2026-09-23
 
 seo:
   title: Ljudsystem för restaurang | Pinchos Karlstad City | AVAB
   description: AVAB projekterade och installerade zonindelat restaurangljud på Pinchos Karlstad City med Yamaha DSP, appstyrning samt 3", 5" och 8" högtalare.
-  ogTitle: Ljudsystem för Pinchos Karlstad City – zonindelat restaurangljud
-  ogDescription: Zonindelat restaurangljud med Yamaha DSP, appstyrning, lågohm och 100V samt 3", 5" och 8" högtalare på Pinchos Karlstad City.
-  twitterTitle: Ljudsystem för Pinchos Karlstad City | AVAB
-  twitterDescription: Referens om zonindelat restaurangljud med Yamaha DSP, appstyrning och högtalare anpassade efter restaurangens olika miljöer.
   noindex: true
 
 archive:
@@ -26,7 +27,7 @@ archive:
     alt: Restaurangmiljö på Pinchos Karlstad City med installerat ljudsystem
     width: 2048
     height: 956
-  excerpt: Zonindelat restaurangljud med Yamaha MTX3, åttakanalsförstärkning, appstyrning samt 3", 5" och 8" högtalare.
+  excerpt: AVAB projekterade, programmerade, installerade och driftsatte ett komplett zonindelat ljudsystem för Pinchos Karlstad City.
   environments:
     - restaurang-bar-klubb
   technologies:
@@ -37,7 +38,7 @@ archive:
     - styrsystem
 
 category: Referens
-environment: Restaurang och bar
+environment: Restaurang, bar och lounge
 location: Karlstad
 customer:
   name: Pinchos Karlstad City
@@ -53,105 +54,229 @@ heroImage:
   height: 956
   objectPosition: center
 
+factsTitle: Kort om projektet
 facts:
   - label: Kund
     value: Pinchos Karlstad City
   - label: Plats
-    value: Karlstad
+    value: Västra Torggatan 1, Karlstad
   - label: Miljö
     value: Restaurang, bar och lounge
-  - label: Genomförande
-    value: April–maj 2026
-  - label: "AVAB:s leverans"
-    value: Projektering, programmering, installation och driftsättning
+  - label: Projektperiod
+    value: Projektering/programmering april 2026, installation och driftsättning maj 2026
+  - label: Högtalare
+    value: 3", 5" och 8"
+  - label: Distribution
+    value: Kombination av lågohm och 100V
+  - label: DSP / matris
+    value: Yamaha MTX3
+  - label: Slutsteg
+    value: Yamaha XMV8140, 8 × 140 W
+  - label: Styrning
+    value: Appstyrda ljudzoner utan löpande licensavgift
+  - label: Framtid
+    value: Förberett för ljud på kommande uteservering
 
 brief:
-  eyebrow: Uppdraget på 30 sekunder
-  title: Funktion, ansvar och resultat i korthet
-  need: Restaurangen behövde ett ljudsystem som ger jämn bakgrundsmusik över flera olika gästytor men samtidigt har kapacitet för högre nivå och mer energi under kvällar och helger.
-  responsibility: AVAB projekterade ljudzonerna, valde och provlyssnade högtalare, programmerade Yamaha-systemet samt installerade, injusterade och driftsatte anläggningen.
-  result: Ett zonindelat ljudsystem där olika högtalarstorlekar samt både lågohm och 100V används efter respektive ytas behov. Personalen styr den dagliga funktionen via app och systemet är förberett för en framtida uteservering.
+  eyebrow: Kort om projektet
+  title: Pinchos Karlstad City
+  need: Restaurang, bar och lounge.
+  responsibility: Projektering/programmering april 2026, installation och driftsättning maj 2026.
+  result: Förberett för ljud på kommande uteservering.
 
 scope:
-  eyebrow: Leveransomfattning
-  title: Det här ingick i AVAB:s leverans
-  lead: Från zonritning och provlyssning till DSP-programmering, installation och slutlig injustering byggdes systemet för restaurangens olika miljöer och användningslägen.
+  eyebrow: Kort om projektet
+  title: Pinchos Karlstad City
+  lead: Västra Torggatan 1, Karlstad.
   items:
-    - Projektering av ljudtäckning, högtalarplacering och zoner
-    - Indelning i bland annat Lounge, Bar + entré, Höger, Bak och framtida utomhuszonen Gata
-    - Provlyssning och grund-EQ av 3", 5" och 8" högtalare före installation
-    - Kombination av lågohm och 100V efter respektive zons behov
-    - Yamaha MTX3 DSP och ljudmatris för signalvägar, EQ, nivåer och zoner
-    - Yamaha XMV8140 med åtta separata förstärkarkanaler på 140 W
-    - Appstyrning för personalens dagliga hantering utan löpande licens eller abonnemang
-    - Installation, slutlig injustering och driftsättning i restaurangen
-    - Förberedelse av systemet för framtida ljud på uteserveringen
-    - Ljud även i WC-bås och den gemensamma tvättställsdelen
-  projectFacts:
-    - label: Adress
-      value: Västra Torggatan 1, Karlstad
-    - label: Projektering och programmering
-      value: April 2026
-    - label: Installation och driftsättning
-      value: Maj 2026
-    - label: DSP och matris
-      value: Yamaha MTX3
-    - label: Förstärkning
-      value: Yamaha XMV8140, 8 × 140 W
-    - label: Distribution
-      value: Lågohm och 100V
+    - 3", 5" och 8"
+    - Kombination av lågohm och 100V
+    - Yamaha MTX3
+    - Yamaha XMV8140, 8 × 140 W
+    - Appstyrda ljudzoner utan löpande licensavgift
   serviceLabel: Se lösningar för restaurang och bar
   serviceHref: /miljo/restaurang-bar-klubb/
 
 story:
-  eyebrow: Projektet på djupet
-  title: Från zonritning till färdigt restaurangljud
-  lead: Pinchos Karlstad City visar hur högtalarplacering, zonindelning, effekt, signalbehandling och enkel styrning behöver samspela när samma restaurang ska fungera både under lugna perioder och en full kväll.
+  mode: document
+  eyebrow: Pinchos Karlstad City
+  title: Ljudsystem för Pinchos Karlstad City
+  lead: Bakgrund på dagen – energi på kvällen
+  preamble:
+    - Pinchos Karlstad City ligger på Västra Torggatan 1 och Pinchos beskriver själva sitt koncept som en apprestaurang där bland annat meny, beställning och betalning hanteras digitalt.
   chapters:
-    - id: ljudtackning
-      navLabel: Ljudtäckning
-      eyebrow: Projektering och gästupplevelse
-      title: Hur får man jämnt ljud genom en restaurang med flera olika miljöer?
-      answer: Genom att utgå från gästens position och hur varje del av restaurangen används. På Pinchos delades lokalen upp i ljudzoner och fick flera välplacerade ljudpunkter i stället för några få högtalare som behöver spela starkt över långa avstånd.
+    - id: bra-ljud-restaurang
+      navLabel: Bra ljud
+      eyebrow: Restaurangljud
+      title: Hur bygger man bra ljud i en restaurang?
       paragraphs:
-        - Pinchos Karlstad City ligger på Västra Torggatan 1. Pinchos beskriver sitt koncept som en apprestaurang där bland annat meny, beställning och betalning hanteras digitalt. Ett bra ljudsystem för restaurang börjar samtidigt med gästen, lokalen och verksamheten – inte med högtalaren. Ljudnivå, täckning och högtalarstorlek behöver anpassas efter varje del av restaurangen, samtidigt som hela lokalen ska upplevas som en sammanhängande ljudmiljö.
-        - På Pinchos Karlstad City finns flera tydligt olika miljöer. Lounge, bar, entré, sittplatser längre in i restaurangen och mindre utrymmen har olika förutsättningar och används på olika sätt under dagen. Redan i projekteringen delades lokalen därför upp efter hur ytorna faktiskt används. Zonritningen visar bland annat Lounge, Bar + entré, Höger, Bak och den framtida utomhuszonen Gata.
-        - Att täcka allt med några få stora högtalare hade varit enklare, men hade skapat större nivåskillnader. När en högtalare måste spela starkt för att nå långt får gästen närmast högtalaren för mycket ljud samtidigt som nivån längre bort ändå kan bli för låg. Med fler ljudpunkter, rätt högtalarstorlek och zonstyrning kan ljudet ligga närmare gästen men på lägre nivå.
-        - Projekteringen utgick också från kundens kund. Vi bedömde hur ljudet upplevs vid olika bord, hur en nästan tom restaurang skiljer sig från en full lördagskväll, om gäster kan prata normalt och om musiken upplevs som en del av miljön i stället för att komma från en enskild högtalare.
-        - Pinchos har en karaktärsstark miljö med färger, gardiner, speglar, konst och belysning. Högtalare, kablage och teknik behöver därför samspela med inredningen. Svarta högtalare kan exempelvis nästan försvinna mot mörka undertak medan andra placeringar väljs för att visuellt passa in. När installationen är färdig ska gästen framför allt se Pinchos – inte AVAB.
-        - För bakgrundsmusik är jämn täckning normalt viktigare än maximal ljudnivå. Fler ljudpunkter gör att varje högtalare kan arbeta lugnare och minskar stora hopp i nivå när gästen rör sig genom restaurangen. När kvällen kräver mer energi finns kapaciteten redan där.
+        - Ett bra ljudsystem för restaurang börjar med gästen, lokalen och verksamheten – inte med högtalaren. Ljudnivå, täckning och högtalarstorlek behöver anpassas efter varje del av restaurangen, samtidigt som hela lokalen ska upplevas som en sammanhängande ljudmiljö.
+        - På Pinchos Karlstad City finns flera tydligt olika miljöer. Lounge, bar, entré, sittplatser längre in i restaurangen och mindre utrymmen har olika förutsättningar och används på olika sätt under dagen.
+        - Att försöka täcka allt med några få stora högtalare hade varit enkelt.
+        - Men inte särskilt bra.
+        - När en högtalare måste spela starkt för att nå långt får gästen närmast högtalaren för mycket ljud, samtidigt som ljudnivån längre bort ändå kan bli för låg.
+        - Vi arbetar hellre med fler välplacerade ljudpunkter, rätt storlek på högtalaren och zonstyrning.
+        - Då kan ljudet ligga närmare gästen, men på lägre nivå.
+        - Resultatet blir ett betydligt jämnare ljud över hela restaurangen.
       mediaGroups:
         - columns: 1
           ratio: land
           split: true
           images:
             - src: /assets/pinchos-karlstad-city-zonritning.webp
-              alt: Zonritning för Pinchos Karlstad City med Lounge, Bar och entré, Höger, Bak och framtida zonen Gata
+              alt: Zonritning för Pinchos Karlstad City
               width: 2400
               height: 1697
-              title: Zonindelningen började på ritningen
-              text: Restaurangen delades upp efter hur olika ytor används, inklusive den framtida utomhuszonen Gata.
+              text: Redan i projekteringen delades lokalen upp efter hur de olika ytorna faktiskt används. Ritningen visar bland annat Lounge, Bar + entré, Höger, Bak samt den framtida utomhuszonen Gata.
+
+    - id: kundens-kund
+      navLabel: Kundens kund
+      eyebrow: Restaurangljud
+      title: Restaurangljud projekterat för kundens kund
+      paragraphs:
+        - När vi projekterar ljud för restaurang försöker vi sätta oss på andra sidan bordet.
+        - Hur låter det för gästen som sitter här?
+        - Hur förändras upplevelsen om restaurangen är nästan tom jämfört med en full lördagskväll?
+        - Går det att prata normalt vid bordet?
+        - Blir musiken en del av miljön – eller sitter gästen och hör exakt vilken högtalare den kommer från?
+        - På Pinchos är inredningen dessutom en stor del av upplevelsen. Högtalare, kablage och teknik behöver därför samspela med en redan mycket karaktärsstark miljö.
+        - När installationen är färdig ska gästen framför allt se Pinchos.
+        - Inte AVAB.
+
+    - id: olika-hogtalare
+      navLabel: Högtalare
+      eyebrow: Högtalarval
+      title: 3", 5" och 8" – olika högtalare för olika delar av lokalen
+      paragraphs:
+        - Systemet är uppbyggt med 3-, 5- och 8-tumshögtalare.
+        - Det gör att vi kan använda en mindre högtalare där avståndet är kort och ljudet ska vara diskret, och större modeller där det behövs mer fyllighet, räckvidd och ljudtryck.
+        - Innan installationen byggde vi upp högtalarna på kontoret och lyssnade igenom de olika storlekarna.
+        - Vi arbetade också med grundinställning och EQ innan systemet flyttades till restaurangen.
+        - Det är ett viktigt steg.
+        - Specifikationerna berättar mycket om en högtalare. Men de berättar inte exakt hur den upplevs i rummet.
+      mediaGroups:
+        - columns: 1
+          ratio: portrait
+          split: true
+          images:
+            - src: /assets/pinchos-karlstad-city-hogtalartest-3-5-8-tum.webp
+              alt: 3-, 5- och 8-tumshögtalare på AVAB:s kontor
+              width: 1489
+              height: 1607
+              text: Tre storlekar med olika uppgifter. Vi provlyssnar och arbetar med grund-EQ innan den slutliga injusteringen görs i lokalen.
+
+    - id: bakgrund-energi
+      navLabel: Dag och kväll
+      eyebrow: Användningsläge
+      title: Bakgrund på dagen – energi på kvällen
+      paragraphs:
+        - Restaurangen behöver inte samma ljudkaraktär hela tiden.
+        - Under lugnare perioder ska systemet ge ett jämnt och behagligt bakgrundsljud. Musiken ska bidra till atmosfären utan att gäster behöver höja rösten för att prata med varandra.
+        - På kvällar och helger förändras lokalen.
+        - Fler gäster innebär högre grundljudnivå, mer aktivitet och en annan energi.
+        - Då ska samma anläggning kunna växla upp.
+        - Därför är systemet inte bara dimensionerat för att höras under lunchen, utan för att ha tillräcklig marginal när restaurangen är full.
+        - Det är fortfarande samma högtalare, samma zoner och samma grundsystem.
+        - Men det finns utrymme att skapa en helt annan känsla.
+
+    - id: lagohm-100v
+      navLabel: Lågohm och 100V
+      eyebrow: Distribution
+      title: Lågohm och 100V i samma restaurang
+      paragraphs:
+        - 100V och lågohm behöver inte vara två konkurrerande sätt att bygga ljud. I rätt system kan båda användas där respektive teknik passar bäst.
+        - På Pinchos Karlstad City använder vi därför både 100V och lågohm, beroende på zon och högtalarlösning.
+        - 100V är effektivt när flera högtalare ska distribueras över ett område och kabelsträckorna blir längre. Lågohm passar bättre i andra delar där högtalartyp, effekt eller önskad ljudkaraktär talar för det.
+        - För gästen spelar det naturligtvis ingen roll.
+        - Och det är lite av poängen.
+        - Teknikvalen ska märkas genom att systemet fungerar – inte genom att kunden behöver förstå dem.
+
+    - id: yamaha-mtx3
+      navLabel: Yamaha MTX3
+      eyebrow: DSP och matris
+      title: Yamaha MTX3 håller ihop ljudzonerna
+      paragraphs:
+        - Bakom restaurangens enkla användning finns en Yamaha MTX3 DSP och ljudmatris.
+        - Här hanteras signalvägar, EQ, nivåer och zoner.
+        - Under april 2026 programmerade vi systemet hos AVAB och byggde upp logiken innan den slutliga installationen och driftsättningen på plats.
+        - På så sätt kunde vi kontrollera signalvägarna och bygga systemets struktur redan innan restaurangen var färdig.
+      mediaGroups:
+        - columns: 2
+          ratio: pano
+          images:
+            - src: /assets/pinchos-karlstad-city-programmering-yamaha-mtx3.webp
+              alt: Programmering av Yamaha-systemet för Pinchos Karlstad City
+              width: 2048
+              height: 956
+              text: Bakom ett enkelt användargränssnitt finns betydligt mer logik. Signalvägar, zoner, nivåer och ljudbearbetning byggs i DSP:n.
+            - src: /assets/pinchos-karlstad-city-zonstyrning-app.webp
+              alt: Färdig zonstyrning för Pinchos Karlstad City
+              width: 2048
+              height: 956
+              text: Personalen behöver inte möta programmeringen bakom systemet. De ser de funktioner och ljudområden som faktiskt behövs i den dagliga driften.
+
+    - id: atta-kanaler
+      navLabel: Åtta kanaler
+      eyebrow: Förstärkning
+      title: Ett slutsteg – åtta separata kanaler
+      paragraphs:
+        - Högtalarsystemet drivs från ett Yamaha XMV8140 på 8 × 140 W.
+        - Det är det enda slutsteget i anläggningen.
+        - Tillsammans med Yamaha MTX3 kan de åtta förstärkarkanalerna användas effektivt för restaurangens olika delar och kombinationen av lågohm och 100V.
+        - Vi gillar den typen av systemuppbyggnad.
+        - Inte ett teknikrack fullt av produkter för sakens skull, utan så mycket hårdvara som behövs för att lösa uppgiften ordentligt.
+      mediaGroups:
+        - columns: 1
+          ratio: portrait
+          split: true
+          images:
+            - src: /assets/pinchos-karlstad-city-yamaha-mtx3-xmv8140.webp
+              alt: Yamaha MTX3 och XMV8140 i Pinchos Karlstad City
+              width: 1536
+              height: 2048
+              text: DSP, matris och åttakanalsförstärkning utgör kärnan bakom ljudzonerna. Ett kompakt system med stor flexibilitet.
+
+    - id: appstyrning
+      navLabel: Appstyrning
+      eyebrow: Styrning
+      title: Appstyrning utan abonnemang
+      paragraphs:
+        - Ett tekniskt avancerat ljudsystem behöver inte vara avancerat att använda.
+        - Personalen styr därför den dagliga funktionen via en app.
+        - De kan hantera de zoner och nivåer som behövs utan att gå in i Yamaha-systemets tekniska programmering.
+        - Och appstyrningen innebär ingen månadsavgift, licens eller abonnemangskostnad.
+        - När anläggningen är köpt och installerad ska restaurangen kunna använda sitt ljud.
+        - Det tycker vi egentligen borde vara ganska självklart.
+        - Avancerat bakom kulisserna. Enkelt framför användaren.
+
+    - id: passa-in
+      navLabel: Passa in
+      eyebrow: Installation
+      title: Högtalarna ska passa in – inte ta över
+      paragraphs:
+        - När tekniken väl var programmerad och förberedd flyttade fokus till restaurangen.
+        - Pinchos Karlstad City har en miljö med starka färger, sammetsgardiner, speglar, konst, lampor och den karakteristiska Pinchos-estetiken.
+        - Där ska tekniken underordna sig lokalen.
+        - Svarta högtalare kan exempelvis nästan försvinna mot mörka undertak och installationer, medan andra placeringar väljs för att visuellt passa in bland inredningen.
+        - Vi försöker inte gömma tekniken till varje pris.
+        - Men den behöver sällan stå i centrum.
+      mediaGroups:
         - columns: 3
           ratio: portrait
           images:
             - src: /assets/pinchos-karlstad-city-hogtalare-vagg-01.webp
-              alt: Väggmonterad högtalare integrerad i restaurangmiljön på Pinchos Karlstad City
+              alt: Väggmonterad högtalare på Pinchos Karlstad City
               width: 956
               height: 2048
-              title: Högtalaren följer miljön
-              text: Placering och utförande valdes så att tekniken fungerar utan att dominera restaurangens visuella uttryck.
+              text: Högtalarna är placerade för jämn täckning samtidigt som installationen följer restaurangens visuella uttryck.
             - src: /assets/pinchos-karlstad-city-hogtalare-pelare.webp
-              alt: Högtalare monterad mot pelare på Pinchos Karlstad City
+              alt: Högtalare monterad vid pelare på Pinchos Karlstad City
               width: 956
               height: 2048
-              title: Flera ljudpunkter ger jämnare täckning
-              text: Högtalare placeras nära de ytor de ska täcka i stället för att några få enheter behöver spela långt och starkt.
             - src: /assets/pinchos-karlstad-city-miljo-detalj-01.webp
-              alt: Inredningsdetalj i restaurangmiljön på Pinchos Karlstad City
+              alt: Restaurangmiljö och inredningsdetalj på Pinchos Karlstad City
               width: 956
               height: 2048
-              title: Tekniken underordnas restaurangen
-              text: Den karaktärsstarka inredningen är utgångspunkt när synliga installationer placeras.
         - columns: 3
           ratio: pano
           images:
@@ -159,211 +284,127 @@ story:
               alt: Färdig restaurangmiljö på Pinchos Karlstad City
               width: 2048
               height: 956
-              title: Ljud genom hela restaurangen
-              text: Den färdiga miljön består av flera ytor som ska upplevas som en sammanhängande ljudmiljö.
             - src: /assets/pinchos-karlstad-city-bar-ljudzon.webp
               alt: Bar och ljudzon på Pinchos Karlstad City
               width: 2048
               height: 956
-              title: Baren är en egen ljudzon
-              text: Zonindelningen gör att nivån kan anpassas efter hur bar- och entréområdet används.
             - src: /assets/pinchos-karlstad-city-restaurangmiljo-02.webp
-              alt: Sittplatser och färdig restaurangmiljö på Pinchos Karlstad City
+              alt: Färdig sittmiljö på Pinchos Karlstad City
               width: 2048
               height: 956
-              title: Gästens plats styr projekteringen
-              text: Ljudet bedöms från de platser där gästerna faktiskt sitter och rör sig.
-
-    - id: dimensionering
-      navLabel: Dimensionering
-      eyebrow: Högtalarval, effekt och distribution
-      title: Hur kan samma anläggning fungera både vid lugn lunch och en full lördagskväll?
-      answer: Systemet är dimensionerat med olika högtalarstorlekar och tillräcklig förstärkarmarginal för att kunna arbeta som behaglig bakgrundsmusik under lugnare perioder och växla upp när grundljudnivån i restaurangen ökar.
-      paragraphs:
-        - Systemet är uppbyggt med 3-, 5- och 8-tumshögtalare. Mindre högtalare används där avstånden är korta och ljudet ska vara diskret, medan större modeller används där det behövs mer fyllighet, räckvidd och ljudtryck.
-        - Före installationen byggde AVAB upp högtalarna på kontoret och provlyssnade de olika storlekarna. Där gjordes också grundinställning och EQ innan systemet flyttades till restaurangen. Specifikationer säger mycket om en högtalare, men inte exakt hur den upplevs i rummet, så den slutliga injusteringen görs i den färdiga lokalen.
-        - Under lugnare perioder ska musiken bidra till atmosfären utan att gäster behöver höja rösten. På kvällar och helger förändras förutsättningarna när fler gäster ger högre grundljudnivå och mer aktivitet. Samma högtalare, zoner och grundsystem ska därför ha marginal att skapa en helt annan energinivå när det behövs.
-        - På Pinchos används både 100V och lågohm beroende på zon och högtalarlösning. 100V är effektivt när flera högtalare ska distribueras över ett område och kabelsträckorna blir längre, medan lågohm passar bättre där högtalartyp, effektbehov eller önskad ljudkaraktär talar för det. Teknikvalen ska märkas genom att systemet fungerar – inte genom att kunden behöver förstå dem.
-      mediaGroups:
-        - columns: 2
-          ratio: portrait
-          images:
-            - src: /assets/pinchos-karlstad-city-hogtalartest-3-5-8-tum.webp
-              alt: Provlyssning av 3-, 5- och 8-tumshögtalare inför installationen på Pinchos Karlstad City
-              width: 1489
-              height: 1607
-              title: Tre storlekar med olika uppgifter
-              text: Högtalarna provlyssnades och fick grund-EQ innan den slutliga injusteringen i restaurangen.
-            - src: /assets/pinchos-karlstad-city-hogtalare-detalj-01.webp
-              alt: Närbild av högtalare i restaurangmiljön på Pinchos Karlstad City
-              width: 956
-              height: 2048
-              title: Storlek och placering följer zonens behov
-              text: Högtalartypen väljs efter avstånd, önskad ljudkaraktär och hur mycket kapacitet den aktuella ytan behöver.
-
-    - id: styrning
-      navLabel: Teknik & styrning
-      eyebrow: DSP, förstärkning och användning
-      title: Hur styrs flera ljudzoner utan att personalen behöver hantera tekniken bakom?
-      answer: Yamaha MTX3 hanterar signalvägar, EQ, nivåer och zoner medan ett Yamaha XMV8140 driver anläggningens åtta förstärkarkanaler. Personalen möter i stället ett avgränsat appgränssnitt för den dagliga hanteringen.
-      paragraphs:
-        - Under april 2026 programmerades systemet hos AVAB och logiken byggdes upp innan den slutliga installationen och driftsättningen på plats. På så sätt kunde signalvägarna kontrolleras och systemets struktur förberedas redan innan restaurangen var färdig.
-        - Högtalarsystemet drivs från ett Yamaha XMV8140 på 8 × 140 W. Det är det enda slutsteget i anläggningen. Tillsammans med Yamaha MTX3 kan de åtta förstärkarkanalerna användas för restaurangens olika delar och kombinationen av lågohm och 100V. Målet är inte ett teknikrack fyllt med produkter, utan den hårdvara som faktiskt behövs för uppgiften.
-        - Personalen behöver inte möta programmeringen bakom systemet. Den dagliga funktionen styrs via en app där användaren får tillgång till relevanta zoner och nivåer utan att gå in i DSP-systemets tekniska inställningar.
-        - Den vanliga ljudstyrningen innebär ingen månadsavgift, licens eller abonnemangskostnad. När anläggningen är köpt och installerad kan restaurangen använda den utan en löpande avgift för appstyrningen. Avancerat bakom kulisserna – enkelt framför användaren.
-      mediaGroups:
-        - columns: 2
-          ratio: pano
-          images:
-            - src: /assets/pinchos-karlstad-city-programmering-yamaha-mtx3.webp
-              alt: Programmering av Yamaha MTX3 för Pinchos Karlstad City
-              width: 2048
-              height: 956
-              title: Logiken byggdes före installation
-              text: Signalvägar, zoner, nivåer och ljudbearbetning programmerades hos AVAB under april 2026.
-            - src: /assets/pinchos-karlstad-city-zonstyrning-app.webp
-              alt: Appgränssnitt för zonstyrning av ljudet på Pinchos Karlstad City
-              width: 2048
-              height: 956
-              title: Personalen ser bara det som behövs
-              text: Den dagliga styrningen begränsas till relevanta ljudområden och nivåer i stället för DSP-systemets tekniska programmering.
         - columns: 1
           ratio: portrait
           split: true
           images:
-            - src: /assets/pinchos-karlstad-city-yamaha-mtx3-xmv8140.webp
-              alt: Yamaha MTX3 DSP och Yamaha XMV8140 förstärkare i ljudsystemet på Pinchos Karlstad City
-              width: 1536
+            - src: /assets/pinchos-karlstad-city-hogtalare-detalj-01.webp
+              alt: Detaljbild av högtalare på Pinchos Karlstad City
+              width: 956
               height: 2048
-              title: DSP, matris och åttakanalsförstärkning
-              text: Yamaha MTX3 och XMV8140 utgör kärnan bakom ljudzonerna och ger ett kompakt system med stor flexibilitet.
 
-    - id: framtid
-      navLabel: Detaljer & framtid
-      eyebrow: Små ytor och framtida komplettering
-      title: Hur byggdes systemet för både små detaljer och framtida förändringar?
-      answer: Ljudet följer restaurangupplevelsen ända in i WC-utrymmena, samtidigt som den framtida uteserveringen redan finns med i zon- och systemtänket så att anläggningen kan byggas vidare utan att börja om.
+    - id: hogt-eller-jamnt
+      navLabel: Jämnt ljud
+      eyebrow: Ljudtäckning
+      title: Vad är viktigast – högt eller jämnt ljud?
       paragraphs:
-        - Utomhushögtalarna för den framtida uteserveringen är inte monterade ännu. Däremot är den kommande utomhusdelen med i projekteringen, vilket gör att zon, signalvägar, förstärkning och styrning kan kompletteras när uteserveringen ska få ljud. Bra projektering löser dagens behov men lämnar plats för morgondagens.
-        - Restaurangupplevelsen slutar inte när gästen går på WC. I båsen används små diskreta högtalare som ger ljud i den lilla ytan, medan den gemensamma tvättställsdelen har en infälld Yamaha-högtalare i taket. Det är små delar av projektet, men detaljerna påverkar om anläggningen känns sammanhängande.
-        - Systemet går också att förändra över tid. Uteserveringen kan kompletteras senare, nivåer och EQ kan justeras och zonernas beteende kan anpassas om verksamheten förändras. Det är skillnaden mellan att montera högtalare och att bygga ett ljudsystem för en verksamhet.
+        - För bakgrundsmusik i en restaurang är jämn täckning normalt viktigare än maximal ljudnivå.
+        - Om några få högtalare behöver spela mycket starkt blir skillnaden mellan olika bord för stor.
+        - Med fler ljudpunkter kan varje högtalare arbeta lugnare.
+        - Det ger en ljudbild som känns mer omslutande och mindre riktad.
+        - På Pinchos innebär det att en gäst kan röra sig mellan olika delar av restaurangen utan stora hopp i ljudnivå.
+        - När kvällen sedan kräver mer energi finns kapaciteten redan där.
+
+    - id: framtida-uteservering
+      navLabel: Uteservering
+      eyebrow: Framtid
+      title: Förberett för framtida uteservering
+      paragraphs:
+        - Bra projektering handlar också om att tänka ett steg längre.
+        - Utomhushögtalarna för den framtida uteserveringen är inte monterade ännu.
+        - Däremot är systemet förberett för dem.
+        - Den kommande utomhusdelen finns med i zon- och systemtänket, så restaurangen inte behöver börja om från början när uteserveringen ska få ljud.
+        - Det gör framtida komplettering både enklare och mer kostnadseffektiv.
+        - Bygg för dagens behov – men lämna plats för morgondagens.
+
+    - id: toalett
+      navLabel: WC
+      eyebrow: Detaljer
+      title: Och ja – vi byggde ljud på toaletten också
+      paragraphs:
+        - En restaurangupplevelse slutar inte när gästen går på WC.
+        - Därför fortsätter musiken även dit.
+        - I WC-båsen används små diskreta högtalare som, trots sin storlek, levererar betydligt mer ljud än man först kan tro.
+        - I den gemensamma tvättställsdelen utanför WC-båsen sitter i stället en infälld Yamaha-högtalare i taket.
+        - Det är en liten del av projektet.
+        - Men just de små detaljerna avgör ofta om en installation känns genomtänkt.
       mediaGroups:
         - columns: 2
           ratio: portrait
           images:
             - src: /assets/pinchos-karlstad-city-wc-hogtalare.webp
-              alt: Kompakt högtalare i WC-bås på Pinchos Karlstad City
+              alt: Högtalare i WC-bås på Pinchos Karlstad City
               width: 956
               height: 2048
-              title: Ljud även i WC-båset
-              text: En liten högtalare ger samma sammanhängande musikupplevelse även i restaurangens mindre utrymmen.
+              text: Liten högtalare, liten yta – samma krav på en fungerande ljudupplevelse.
             - src: /assets/pinchos-karlstad-city-tvattstallsdel-takhogtalare.webp
-              alt: Infälld Yamaha-takhögtalare i tvättställsdelen på Pinchos Karlstad City
+              alt: Infälld takhögtalare i tvättställsdelen på Pinchos Karlstad City
               width: 956
               height: 2048
-              title: Diskret ljud i tvättställsdelen
-              text: I den gemensamma ytan utanför båsen ligger högtalaren infälld i undertaket.
+              text: I tvättställsdelen ligger högtalaren diskret infälld i undertaket.
+      afterMediaParagraphs:
+        - Internt får vi väl erkänna att kategorin ibland går under namnet skitljud.
 
-results:
-  eyebrow: Resultat
-  title: Ett ljudsystem som följer verksamheten
-  lead: Den färdiga anläggningen kombinerar jämn täckning, kapacitet för olika användningslägen och möjlighet att anpassas när restaurangen förändras.
-  items:
-    - label: Verifierad leverans
-      title: Jämnare ljud mellan restaurangens olika ytor
-      text: Flera ljudpunkter, olika högtalarstorlekar och zonindelning används för att minska stora nivåskillnader mellan olika sittplatser och delar av lokalen.
-      evidence:
-        type: delivered
-        source: "Kundunderlag: Referens Pinchos City Karlstad.docx"
-        verifiedAt: 2026-09-23
-    - label: Verifierad leverans
-      title: Ett system för olika tider på dagen
-      text: Anläggningen är dimensionerad för behaglig bakgrundsmusik men har kapacitet att ge högre nivå och mer energi när restaurangen fylls.
-      evidence:
-        type: delivered
-        source: "Kundunderlag: Referens Pinchos City Karlstad.docx"
-        verifiedAt: 2026-09-23
-    - label: Verifierad leverans
-      title: Utbyggbart utan att börja om
-      text: Den framtida uteserveringen finns redan med i systemtänket, samtidigt som nivåer, EQ och zonbeteende kan ändras över tid.
-      evidence:
-        type: delivered
-        source: "Kundunderlag: Referens Pinchos City Karlstad.docx"
-        verifiedAt: 2026-09-23
+    - id: resultatet
+      navLabel: Resultatet
+      eyebrow: Resultat
+      title: Resultatet – ett ljudsystem som följer verksamheten
+      paragraphs:
+        - Den färdiga installationen ska klara två ganska olika uppgifter.
+        - På dagen ska musiken finnas där utan att kräva uppmärksamhet.
+        - På kvällen ska den kunna bidra med mer energi.
+        - Det är därför kombinationen av zonindelning, 3", 5" och 8" högtalare, separat signalbehandling och tillräcklig förstärkarkapacitet är viktig.
+        - Systemet går också att förändra över tid.
+        - Uteserveringen kan kompletteras senare. Nivåer och EQ kan justeras. Zonernas beteende kan anpassas om verksamheten förändras.
+        - Det är skillnaden mellan att montera högtalare och att bygga ett ljudsystem för en verksamhet.
 
-technicalDetails:
-  eyebrow: Teknisk sammanfattning
-  title: Systemet bakom restaurangens ljudzoner
-  lead: Lösningen kombinerar distribuerat restaurangljud med separat signalbehandling och en enkel användaryta för personalen.
-  summaryLabel: Visa teknisk sammanfattning
-  items:
-    - Yamaha MTX3 DSP och ljudmatris
-    - Yamaha XMV8140, 8 × 140 W
-    - 3", 5" och 8" högtalare
-    - Kombination av lågohm och 100V
-    - Zonindelad signalhantering med separat EQ och nivåhantering
-    - Appbaserad användarstyrning
-    - Ingen löpande licens- eller abonnemangsavgift för den vanliga ljudstyrningen
-    - Förberedd utomhuszon för framtida uteservering
-    - Projektering, programmering, installation, injustering och driftsättning
-  relatedCompetence:
-    - label: Tjänst
-      title: Ljudsystem
-      href: /tjanster/ljudsystem/
-    - label: Tjänst
-      title: Bakgrundsmusik
-      href: /tjanster/bakgrundsmusik/
-    - label: Tjänst
-      title: Projektering
-      href: /tjanster/projektering/
-    - label: Tjänst
-      title: Styrsystem och integration
-      href: /tjanster/styrsystem-integration/
-
-relevance:
-  eyebrow: Erfarenhet för liknande projekt
-  title: Vad Pinchos-projektet visar
-  lead: Referensen är relevant för restauranger, barer och andra kommersiella miljöer där ljudet behöver vara jämnt, lätt att styra och möjligt att bygga vidare på.
-  items:
-    - Restauranger med flera rum eller ytor som behöver olika ljudnivåer.
-    - Verksamheter som använder samma anläggning för lugn bakgrundsmusik och högre kvällsnivå.
-    - Projekt där 100V och lågohm behöver kombineras i samma system.
-    - Lokaler där synlig teknik behöver anpassas till en stark inredningsprofil.
-    - Restauranger som vill förbereda framtida ytor innan högtalarna monteras.
-    - Personal som behöver enkel zon- och volymstyrning utan åtkomst till den tekniska programmeringen.
+    - id: kostnad
+      navLabel: Kostnad
+      eyebrow: Budget
+      title: Vad kostar ett ljudsystem för restaurang?
+      paragraphs:
+        - Kostnaden för restaurangljud beror främst på lokalens storlek, antal ljudzoner, önskad ljudnivå, högtalarnas placering, styrning och hur mycket kabel- och installationsarbete som krävs.
+        - En mindre restaurang med ett fåtal högtalare är en helt annan anläggning än en restaurang med bar, flera rum, uteservering och separata ljudnivåer.
+        - Därför börjar vi helst med ritningen.
+        - Utifrån den kan vi bedöma ljudtäckning, antal zoner, förstärkning, kabelvägar och lämplig styrning innan någon behöver gissa på antal produkter.
 
 faq:
-  eyebrow: Vanliga frågor
-  title: Ljudsystem och bakgrundsmusik för restaurang
-  lead: Svar på vanliga frågor om dimensionering, distribution, styrning och kostnad i restaurangmiljö.
+  title: FAQ – ljudsystem och bakgrundsmusik för restaurang
   items:
     - question: Hur många högtalare behöver en restaurang?
       answer: Det avgörs inte bara av antalet kvadratmeter. Lokalens form, takhöjd, material, möblering, önskad ljudnivå och hur jämn täckningen behöver vara är minst lika viktiga. Fler högtalare på lägre nivå kan ofta ge en behagligare ljudmiljö än några få högtalare som spelar starkt.
     - question: Kan samma ljudsystem fungera som bakgrundsmusik och för högre kvällsnivå?
-      answer: Ja. Systemet behöver då dimensioneras med rätt högtalare, förstärkning och marginal från början. På Pinchos Karlstad City är tanken bakgrundsljud under lugnare delar av dagen och möjlighet till betydligt mer energi på kvällar och helger.
+      answer: Ja. Systemet behöver då dimensioneras med rätt högtalare, förstärkning och marginal från början. På Pinchos Karlstad City är det just tanken: bakgrundsljud under lugnare delar av dagen och möjlighet till betydligt mer energi på kvällar och helger.
     - question: Ska man använda 100V eller lågohm i restaurang?
-      answer: Båda kan vara rätt. 100V passar ofta bra för distribuerade system med många högtalare och längre kabelsträckor, medan lågohm kan vara lämpligare för andra högtalare och effektbehov. På Pinchos används båda teknikerna i olika zoner.
+      answer: Båda kan vara rätt. 100V passar ofta bra för distribuerade system med många högtalare och längre kabelsträckor, medan lågohm kan vara lämpligare för andra högtalare och effektbehov. På Pinchos använder vi båda teknikerna i olika zoner.
     - question: Kan restaurangens ljud styras från telefon eller surfplatta?
       answer: Ja. Ett DSP-baserat ljudsystem kan byggas så att personalen bara får tillgång till de funktioner de behöver, exempelvis volym och zoner. På Pinchos sker den dagliga hanteringen via app.
     - question: Måste appstyrning innebära en månadsavgift?
       answer: Nej. Lösningen på Pinchos Karlstad City har ingen löpande licens- eller abonnemangsavgift för den vanliga ljudstyrningen.
     - question: Kan man förbereda ljud för en uteservering innan högtalarna monteras?
       answer: Ja, och det är ofta klokt. Zon, signalvägar, förstärkarkapacitet, kablage och styrning kan förberedas redan i grundsystemet. Då blir det betydligt enklare att komplettera när uteserveringen är klar.
-    - question: Vad kostar ett ljudsystem för restaurang?
-      answer: Kostnaden påverkas bland annat av lokalens storlek, antal ljudzoner, önskad ljudnivå, högtalarplacering, styrning samt kabel- och installationsarbete. Därför börjar AVAB helst med ritningen för att bedöma ljudtäckning, zoner, förstärkning, kabelvägar och styrning innan systemet dimensioneras.
 
 cta:
   enabled: true
   variant: page
-  eyebrow: Ljud för restaurang, bar och hotell
-  title: Projekterar ni en restaurang eller annan kommersiell miljö?
-  text: AVAB hjälper fastighetsägare, restauratörer, byggentreprenörer, elektriker och projektörer från ritning och högtalarplacering till programmering, installation och driftsättning. Vi utgår från Karlstad/Hammarö och arbetar med kommersiella projekt i Värmland och stora delar av Mellansverige.
+  title: Projekterar ni en restaurang, bar eller hotellmiljö?
+  paragraphs:
+    - AVAB hjälper fastighetsägare, restauratörer, byggentreprenörer, elektriker och projektörer med ljudsystem för restaurang från ritning till färdig anläggning.
+    - Vi kan hjälpa till med projektering och FFU, högtalarplacering, ljudzoner, val mellan 100V och lågohm, DSP och styrning, installation, programmering och slutlig driftsättning.
+    - Vi utgår från Karlstad/Hammarö och arbetar med restauranger och kommersiella projekt i Värmland och stora delar av Mellansverige.
+    - Bakgrund på dagen – energi på kvällen.
+    - Tekniken bakom kan vara avancerad.
+    - För gästen ska det bara kännas rätt.
   primaryLabel: Kontakta AVAB
   primaryHref: /kontakt/
   secondaryLabel: Se lösningar för restaurang och bar
   secondaryHref: /miljo/restaurang-bar-klubb/
-  points:
-    - Projektering och FFU för ljudsystem
-    - Högtalarplacering, ljudzoner, 100V och lågohm
-    - DSP, styrning, installation och driftsättning
 ---
