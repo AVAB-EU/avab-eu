@@ -1171,3 +1171,20 @@
     justify-content: flex-start;
   }
 }
+
+
+/* Pinchos pilot: give the hero subtitle clear separation from the CTA row
+   when the longer hero lead is intentionally hidden. */
+.reference-page--balanced-pilot
+  .reference-hero--immersive
+  .reference-hero-subtitle {
+  margin-bottom: clamp(30px, 3vw, 40px);
+}
+
+@media (max-width: 768px) {
+  .reference-page--balanced-pilot
+    .reference-hero--immersive
+    .reference-hero-subtitle {
+    margin-bottom: 26px;
+  }
+}
