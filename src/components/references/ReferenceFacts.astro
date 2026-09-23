@@ -2,17 +2,20 @@
 import type { CollectionEntry } from "astro:content";
 
 type Facts = CollectionEntry<"references">["data"]["facts"];
-interface Props { facts: Facts }
-const { facts } = Astro.props;
+interface Props { facts: Facts; title?: string }
+const { facts, title } = Astro.props;
 ---
 
-<section class="reference-facts" aria-label="Referensen i ett nötskal">
-  <div class="avab-container reference-facts-grid">
-    {facts.map((fact) => (
-      <div class="reference-fact">
-        <span>{fact.label}</span>
-        <strong>{fact.value}</strong>
-      </div>
-    ))}
+<section class="reference-facts" aria-label={title ?? "Referensen i ett nötskal"}>
+  <div class="avab-container">
+    {title && <h2 class="reference-facts__title">{title}</h2>}
+    <div class="reference-facts-grid">
+      {facts.map((fact) => (
+        <div class="reference-fact">
+          <span>{fact.label}</span>
+          <strong>{fact.value}</strong>
+        </div>
+      ))}
+    </div>
   </div>
 </section>
