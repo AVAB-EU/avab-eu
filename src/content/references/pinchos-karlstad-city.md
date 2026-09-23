@@ -99,7 +99,7 @@ scope:
 
 story:
   eyebrow: Projektet på djupet
-  title: Bakgrund på dagen – energi på kvällen
+  title: Ljud byggt för kundens kund
   lead: På Pinchos Karlstad City har AVAB projekterat, programmerat, installerat och driftsatt ett komplett zonindelat ljudsystem för restaurang, bar, lounge och övriga gästytor. Målet var inte att bygga ett ljudsystem som gästerna lägger märke till. Målet var att skapa ett jämnt, omslutande restaurangljud som följer gästen genom lokalen – behagligt som bakgrundsmusik under lugnare perioder, men med tillräcklig kapacitet för att höja både nivå och energi när restaurangen fylls på kvällar och helger. Det är ljud byggt för kundens kund.
   chapters:
     - id: restaurangljud
