@@ -307,7 +307,7 @@ const anchorItems = data.story?.chapters.map((chapter) => ({
           eyebrow={cta.eyebrow}
           title={cta.title!}
           text={cta.text}
-          paragraphs={cta.paragraphs}
+          paragraphs={cta.variant === "page" ? cta.paragraphs : undefined}
           primaryLabel={cta.primaryLabel!}
           primaryHref={cta.primaryHref!}
           secondaryLabel={cta.secondaryLabel}
