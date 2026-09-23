@@ -188,7 +188,8 @@ const anchorItems = data.story?.chapters
             kicker={pilotPresentation ? `Referenser · ${data.location}` : `${data.category} · ${data.title}`}
             primaryLabel="Utforska projektet"
             primaryHref={`#${anchorItems[0]?.id ?? "uppdraget"}`}
-            hideIntro={pilotPresentation}
+            hideIntro={false}
+            hideLead={pilotPresentation}
           />
           <ReferenceFacts facts={data.facts} maxItems={data.presentation?.factBandMax} />
 
