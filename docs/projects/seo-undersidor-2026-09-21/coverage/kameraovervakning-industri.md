@@ -11,7 +11,7 @@
 - Godkänd hero: `/assets/overvakningskamera-fasad-hero.webp`
 - Generella, icke kundspecifika behov för industri/lager/logistik
 
-**LOCAL SOURCE CHECK PENDING:** Eventuell dedikerad fil i `C:\webbprojekt\avab-eu\docs\source-material\` är inte åtkomlig via GitHub-anslutningen.
+**SOURCE OF TRUTH CHECK: CLOSED 2026-09-23.** Enligt aktuell projektregel är `AVAB-EU/avab-eu` enda source of truth. Den tidigare blockeraren mot en eventuell lokal mapp `C:\webbprojekt\avab-eu\docs\source-material\` är därför inte längre giltig. Ingen separat dedikerad sourcefil för sidan finns på `main`.
 
 ## Claims audit
 
@@ -27,9 +27,11 @@ Sidan innehåller inga kundspecifika leveranspåståenden, produktantal, priser 
 **UNSUPPORTED PROJECT CLAIMS: 0**  
 **MATERIAL SOURCE DEVIATIONS: 0**  
 **MISSING REMOTE ASSETS: 0**  
-**LOCAL SOURCE CHECK: PENDING**
+**SOURCE OF TRUTH CHECK: CLOSED**
 
 ## Publiceringsgate
 
 - `draft: true`
 - `seo.noindex: true`
+
+Kvar före publiceringsbeslut: mänsklig visuell granskning och separat beslut om att ändra `draft/noindex`.
