@@ -233,13 +233,15 @@ const anchorItems = data.story?.chapters
                     <div class="avab-container case-section__inner">
                       {chapter.flow?.length ? (
                         <>
-                          <div class="case-copy case-copy--pilot-heading">
-                            <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
-                            <h2>{chapter.title}</h2>
-                            {chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
-                          </div>
+                          {chapter.flow[0]?.type !== "mediaText" && (
+                            <div class="case-copy case-copy--pilot-heading">
+                              <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
+                              <h2>{chapter.title}</h2>
+                              {chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
+                            </div>
+                          )}
                           <div class="reference-pilot-flow">
-                            {chapter.flow.map((block) => {
+                            {chapter.flow.map((block, blockIndex) => {
                               if (block.type === "text") {
                                 return (
                                   <section class="reference-pilot-text">
@@ -259,7 +261,10 @@ const anchorItems = data.story?.chapters
                                       block.imagePosition === "right" && "reference-pilot-media-text--image-right",
                                     ]}
                                   >
-                                    <figure class="reference-pilot-media-text__media">
+                                    <figure
+                                      class="reference-pilot-media-text__media"
+                                      style={`--reference-media-aspect: ${block.image.width} / ${block.image.height};`}
+                                    >
                                       <img
                                         src={block.image.src}
                                         alt={block.image.alt}
@@ -271,6 +276,13 @@ const anchorItems = data.story?.chapters
                                       />
                                     </figure>
                                     <section class="reference-pilot-media-text__copy">
+                                      {blockIndex === 0 && (
+                                        <>
+                                          <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
+                                          <h2>{chapter.title}</h2>
+                                          {chapter.answer && <p class="case-answer"><strong>{chapter.answer}</strong></p>}
+                                        </>
+                                      )}
                                       {block.title && <h3>{block.title}</h3>}
                                       {block.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
                                     </section>
