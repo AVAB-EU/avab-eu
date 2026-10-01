@@ -208,6 +208,7 @@ const referenceSchema = z
                 }),
                 z.object({
                   type: z.literal("columns"),
+                  integrateChapterHeading: z.boolean().default(false),
                   columns: z.array(z.object({
                     title: requiredText.optional(),
                     paragraphs: z.array(requiredText).min(1),
