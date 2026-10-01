@@ -6,11 +6,10 @@ interface Column {
 
 interface Props {
   columns: [Column, Column] | Column[];
-  eyebrow?: string;
   title?: string;
 }
 
-const { columns, eyebrow, title } = Astro.props;
+const { columns, title } = Astro.props;
 const [left, right] = columns;
 
 const weight = (column: Column) =>
@@ -32,7 +31,6 @@ const rightPercent = 100 - leftPercent;
 >
   {columns.map((column, index) => (
     <section class="reference-balanced-column">
-      {index === 0 && eyebrow && <span class="case-kicker">{eyebrow}</span>}
       {index === 0 && title && <h2>{title}</h2>}
       {column.title && <h3>{column.title}</h3>}
       {column.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
