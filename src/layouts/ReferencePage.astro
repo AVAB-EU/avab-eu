@@ -235,7 +235,7 @@ const anchorItems = data.story?.chapters
                         <>
                           {!(
                             chapter.flow[0]?.type === "mediaText" ||
-                            (chapter.flow[0]?.type === "columns" && chapter.flow[0].integrateChapterHeading)
+                            chapter.flow[0]?.type === "columns"
                           ) && (
                             <div class="case-copy case-copy--pilot-heading">
                               <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
@@ -254,7 +254,8 @@ const anchorItems = data.story?.chapters
                                 );
                               }
                               if (block.type === "columns") {
-                                return block.integrateChapterHeading ? (
+                                const integrateHeading = blockIndex === 0;
+                                return integrateHeading ? (
                                   <div class="reference-balanced-block">
                                     <span class="case-kicker">
                                       {String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}
