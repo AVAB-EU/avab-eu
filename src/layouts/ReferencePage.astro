@@ -253,17 +253,25 @@ const anchorItems = data.story?.chapters
                               }
                               if (block.type === "mediaText") {
                                 return (
-                                  <div class="reference-pilot-media-text">
-                                    <ReferenceMediaGrid
-                                      items={[block.image]}
-                                      columns={1}
-                                      ratio="portrait"
-                                      split={false}
-                                      compact={false}
-                                      layout="grid"
-                                    />
+                                  <div
+                                    class:list={[
+                                      "reference-pilot-media-text",
+                                      block.imagePosition === "right" && "reference-pilot-media-text--image-right",
+                                    ]}
+                                  >
+                                    <figure class="reference-pilot-media-text__media">
+                                      <img
+                                        src={block.image.src}
+                                        alt={block.image.alt}
+                                        width={block.image.width}
+                                        height={block.image.height}
+                                        style={block.image.objectPosition ? `object-position: ${block.image.objectPosition}` : undefined}
+                                        loading="lazy"
+                                        decoding="async"
+                                      />
+                                    </figure>
                                     <section class="reference-pilot-media-text__copy">
-                                      <h3>{block.title}</h3>
+                                      {block.title && <h3>{block.title}</h3>}
                                       {block.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
                                     </section>
                                   </div>
