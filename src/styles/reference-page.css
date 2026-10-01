@@ -287,7 +287,11 @@
   border-bottom: 1px solid var(--reference-line);
 }
 .reference-section--soft { background: var(--reference-soft); }
-.reference-section-heading { max-width: 760px; margin-bottom: 42px; }
+.reference-section-heading {
+  width: min(100%, var(--avab-heading-max, 1020px));
+  max-width: var(--avab-heading-max, 1020px);
+  margin-bottom: 42px;
+}
 .reference-section-heading h2,
 .reference-block h2 { overflow-wrap: anywhere; }
 .reference-section-heading h2 {
