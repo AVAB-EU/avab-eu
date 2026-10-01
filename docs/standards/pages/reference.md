@@ -114,9 +114,9 @@ inte löpande artikeltext eller berättande kapitel.
 
 När ett berättande avsnitt delas i två textkolumner ska rubrikhierarkin vara tydlig.
 
-- Om vänsterkolumnen är avsnittets huvudspår får kapitlets eyebrow och H2 integreras i vänsterkolumnen.
+- Om vänsterkolumnen är avsnittets huvudspår placeras kapitlets eyebrow ovanför kolumngridet och H2 i vänsterkolumnen.
 - Högerkolumnen kan då ha en egen H3 när den behandlar en separat men relaterad delfråga.
-- Kolumnernas innehåll ska börja på en tydligt relaterad vertikal nivå; undvik en fristående H2 över båda kolumnerna om högerkolumnen samtidigt fungerar som ett eget delavsnitt.
+- På desktop ska vänster H2 och höger H3 börja på samma visuella rubriklinje. Brödtexten ska därefter börja under respektive rubrik. Undvik att låta högerkolumnens rubrik börja först i höjd med vänster brödtext.
 - På mobil staplas huvudspåret först och stödspåret därefter.
 
 ## Sidstruktur
