@@ -326,6 +326,7 @@ story:
       title: Resultatet – ett ljudsystem som följer verksamheten
       flow:
         - type: columns
+          integrateChapterHeading: true
           columns:
             - paragraphs:
                 - Den färdiga installationen ska klara två ganska olika uppgifter.
