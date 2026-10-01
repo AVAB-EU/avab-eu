@@ -21,7 +21,8 @@ const rightWeight = Math.max(weight(right), 1);
 const total = leftWeight + rightWeight;
 
 const rawLeft = (leftWeight / total) * 100;
-const leftPercent = Math.min(65, Math.max(35, rawLeft));
+const weightedLeftPercent = Math.min(65, Math.max(35, rawLeft));
+const leftPercent = title ? 48 : weightedLeftPercent;
 const rightPercent = 100 - leftPercent;
 ---
 
