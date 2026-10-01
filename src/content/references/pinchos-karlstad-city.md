@@ -222,6 +222,7 @@ story:
             alt: Diskret väggmonterad högtalare i Pinchos Karlstad City, placerad för att smälta in i restaurangens interiör
             width: 956
             height: 2048
+            objectPosition: 50% 8%
           paragraphs:
             - När tekniken väl var programmerad och förberedd flyttade fokus till restaurangen.
             - Pinchos Karlstad City har en miljö med starka färger, sammetsgardiner, speglar, konst, lampor och den karakteristiska Pinchos-estetiken. Där ska tekniken underordna sig lokalen.
