@@ -215,11 +215,9 @@ const referenceSchema = z
                 }),
                 z.object({
                   type: z.literal("mediaText"),
-                  image: imageSchema.extend({
-                    title: requiredText,
-                    text: requiredText,
-                  }),
-                  title: requiredText,
+                  image: imageSchema,
+                  imagePosition: z.enum(["left", "right"]).default("left"),
+                  title: requiredText.optional(),
                   paragraphs: z.array(requiredText).min(1),
                 }),
                 z.object({
