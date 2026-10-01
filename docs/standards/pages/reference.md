@@ -110,6 +110,15 @@ en kolumn på mobil ska höjdsynkroniseringen återställas så att innehållet 
 sitt naturliga flöde utan stora tomrum. Principen gäller jämförbara kortgrids,
 inte löpande artikeltext eller berättande kapitel.
 
+### Två parallella textkolumner
+
+När ett berättande avsnitt delas i två textkolumner ska rubrikhierarkin vara tydlig.
+
+- Om vänsterkolumnen är avsnittets huvudspår får kapitlets eyebrow och H2 integreras i vänsterkolumnen.
+- Högerkolumnen kan då ha en egen H3 när den behandlar en separat men relaterad delfråga.
+- Kolumnernas innehåll ska börja på en tydligt relaterad vertikal nivå; undvik en fristående H2 över båda kolumnerna om högerkolumnen samtidigt fungerar som ett eget delavsnitt.
+- På mobil staplas huvudspåret först och stödspåret därefter.
+
 ## Sidstruktur
 
 ### 1. Breadcrumbs
