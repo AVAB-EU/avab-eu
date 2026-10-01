@@ -233,7 +233,10 @@ const anchorItems = data.story?.chapters
                     <div class="avab-container case-section__inner">
                       {chapter.flow?.length ? (
                         <>
-                          {chapter.flow[0]?.type !== "mediaText" && (
+                          {!(
+                            chapter.flow[0]?.type === "mediaText" ||
+                            (chapter.flow[0]?.type === "columns" && chapter.flow[0].integrateChapterHeading)
+                          ) && (
                             <div class="case-copy case-copy--pilot-heading">
                               <span class="case-kicker">{String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}</span>
                               <h2>{chapter.title}</h2>
@@ -251,7 +254,13 @@ const anchorItems = data.story?.chapters
                                 );
                               }
                               if (block.type === "columns") {
-                                return <ReferenceBalancedColumns columns={block.columns} />;
+                                return (
+                                  <ReferenceBalancedColumns
+                                    columns={block.columns}
+                                    eyebrow={block.integrateChapterHeading ? `${String(chapterIndex + 1).padStart(2, "0")} · ${chapter.eyebrow}` : undefined}
+                                    title={block.integrateChapterHeading ? chapter.title : undefined}
+                                  />
+                                );
                               }
                               if (block.type === "mediaText") {
                                 return (
