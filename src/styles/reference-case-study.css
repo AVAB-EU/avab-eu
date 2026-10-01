@@ -284,6 +284,14 @@
   max-width: none;
 }
 
+.reference-page--balanced-pilot .reference-balanced-column h2 {
+  max-width: 18ch;
+  margin: 0 0 28px;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
 .reference-page--balanced-pilot .reference-pilot-text h3,
 .reference-page--balanced-pilot .reference-balanced-column h3 {
   margin: 0 0 14px;
