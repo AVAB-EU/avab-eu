@@ -254,12 +254,18 @@ const anchorItems = data.story?.chapters
                                 );
                               }
                               if (block.type === "columns") {
-                                return (
-                                  <ReferenceBalancedColumns
-                                    columns={block.columns}
-                                    eyebrow={block.integrateChapterHeading ? `${String(chapterIndex + 1).padStart(2, "0")} · ${chapter.eyebrow}` : undefined}
-                                    title={block.integrateChapterHeading ? chapter.title : undefined}
-                                  />
+                                return block.integrateChapterHeading ? (
+                                  <div class="reference-balanced-block">
+                                    <span class="case-kicker">
+                                      {String(chapterIndex + 1).padStart(2, "0")} · {chapter.eyebrow}
+                                    </span>
+                                    <ReferenceBalancedColumns
+                                      columns={block.columns}
+                                      title={chapter.title}
+                                    />
+                                  </div>
+                                ) : (
+                                  <ReferenceBalancedColumns columns={block.columns} />
                                 );
                               }
                               if (block.type === "mediaText") {
