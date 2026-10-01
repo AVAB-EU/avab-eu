@@ -208,11 +208,13 @@ Bilder ska vara verkliga projektbilder när sådana finns och kan visa helhetsmi
 
 När ett projekt har ett rikt bildmaterial ska bilderna normalt **fördelas över sidans berättande kapitel** i stället för att samlas i ett enda stort galleri. Målet är att varje bild ska förklara den text som ligger närmast och skapa rytm genom hela referensen. Ett separat galleri används främst för kompletterande motiv som inte naturligt hör hemma i ett kapitel.
 
-Använd så många relevanta och publicerbara projektbilder som stärker inköparens förståelse, men undvik nära dubbletter om de inte visar olika placeringar, installationssteg eller funktioner. Varje bild ska ha en egen meningsfull alt-text och förklarande bildtext.
+Använd så många relevanta och publicerbara projektbilder som stärker inköparens förståelse, men undvik nära dubbletter om de inte visar olika placeringar, installationssteg eller funktioner. Varje informativ bild ska ha en egen meningsfull alt-text. Synlig bildtext används bara när den tillför information som inte redan framgår av den närliggande texten.
 
 Bildlayout väljs efter **berättelsens samband**, inte enbart efter hur många bilder som råkar finnas:
 
-- En bild som berättar en egen del av projektet ska normalt visas som en **liggande bild+text-komposition**, med bilden och förklaringen bredvid varandra på desktop.
+- När ett avsnitt har **en enda bild** ska bilden normalt integreras bredvid den relevanta brödtexten på desktop i stället för att visas som ett fristående bildkort med caption. Text och bild får byta sida beroende på berättelsens flöde och motivets form. På mobil staplas texten först och bilden därefter som standard.
+- En ensam bild ska normalt **inte ha synlig bildtext** när brödtexten redan förklarar motivets funktion eller sammanhang. Caption används bara när den tillför separat projektinformation.
+- En bild som berättar en egen del av projektet ska normalt visas som en **bild+text-komposition**, med bilden och förklaringen bredvid varandra på desktop.
 - Bilder som tydligt hör ihop och beskriver samma miljö, fas eller tekniska moment får visas som ett gemensamt kortgrid.
 - Tre sammanhörande bilder visas normalt som **tre jämna kort på samma rad** på bred desktop.
 - Två eller fyra sammanhörande bilder ska balanseras i tvåkolumnsrader.
