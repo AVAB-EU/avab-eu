@@ -325,6 +325,17 @@ Valfria uppgifter ska inte renderas som tomma rubriker eller tomma kort.
 
 ## Bilder
 
+### Tekniken ska synas
+
+När en bild används för att visa en installation, produkt eller teknisk lösning ska den relevanta tekniken vara tydligt synlig i den färdiga layouten. Crop, focal point eller responsiv beskärning får inte kapa bort det som bilden ska förklara.
+
+- En bild på en högtalarinstallation ska visa högtalaren tydligt.
+- En bild på styrning, rack, kamera, skärm eller annan utrustning ska behålla den tekniska huvuddetaljen i bild.
+- Om en standardbeskärning döljer tekniken ska focal point eller objektposition justeras först.
+- Om tekniken fortfarande inte går att visa tydligt ska bildens proportion, placering eller layout ändras. En visuellt snygg beskärning är inte viktigare än bildens informationsvärde.
+- Dekorativa miljöbilder får prioriteras mer fritt, men de ska inte ersätta tekniskt relevanta bilder när texten beskriver en konkret installation.
+- Kontrollera desktop, tablet och mobil eftersom samma focal point kan ge olika beskärning i olika vyer.
+
 - Följ projektets gällande bildstruktur; skapa inte ny parallell bildmapp utan beslut.
 - Filnamn ska vara generiska och beskrivande enligt projektets bildbeslut.
 - Ortsnamn behöver inte pressas in i filnamn; relevant ort kan finnas i alt-text när den hjälper beskrivningen.
