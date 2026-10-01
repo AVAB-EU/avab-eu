@@ -75,6 +75,16 @@ Besökaren ska kunna:
 - kontakta AVAB eller skicka underlag
 - använda eventuellt referensblad/PDF när sådan funktion är etablerad
 
+## Rubrikbredd
+
+Fristående sektionsrubriker (H2) ska använda så mycket av huvudcontainern som är läsvänligt utan att bli onödigt smala.
+
+- På bred desktop är normal maxbredd **1020 px**.
+- Vid mindre tillgänglig bredd får rubriken använda hela containern.
+- **710 px** är riktvärdet för när en fristående H2 börjar upplevas som för smal på desktop; under den bredden styr viewport/container naturligt.
+- Regeln gäller fristående sektionsrubriker som FAQ-, introduktions- och landningsrubriker.
+- H2 i tvåkolumnslayouter följer kolumnens bredd och ska inte tvingas till 710–1020 px.
+
 ## Visuell riktning
 
 Referensen ska kännas som ett professionellt kundcase och tekniskt projektblad, inte som en tung säljsida.
