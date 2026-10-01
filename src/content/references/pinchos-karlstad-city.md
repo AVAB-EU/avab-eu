@@ -194,11 +194,9 @@ story:
         - type: mediaText
           image:
             src: /assets/pinchos-karlstad-city-yamaha-mtx3-xmv8140.webp
-            alt: Yamaha MTX3 och XMV8140
+            alt: Yamaha MTX3 och XMV8140 i ljudsystemet på Pinchos Karlstad City
             width: 1536
             height: 2048
-            title: Yamaha MTX3 och XMV8140
-            text: DSP, matris och åttakanalsförstärkning utgör kärnan bakom ljudzonerna. Ett kompakt system med stor flexibilitet.
           title: Ett slutsteg – åtta separata kanaler
           paragraphs:
             - Högtalarsystemet drivs från ett Yamaha XMV8140 på 8 × 140 W. Det är det enda slutsteget i anläggningen.
@@ -217,7 +215,13 @@ story:
       eyebrow: Visuell integration och framtid
       title: Högtalarna ska passa in – inte ta över
       flow:
-        - type: text
+        - type: mediaText
+          imagePosition: right
+          image:
+            src: /assets/pinchos-karlstad-city-hogtalare-detalj-01.webp
+            alt: Diskret väggmonterad högtalare i Pinchos Karlstad City, placerad för att smälta in i restaurangens interiör
+            width: 956
+            height: 2048
           paragraphs:
             - När tekniken väl var programmerad och förberedd flyttade fokus till restaurangen.
             - Pinchos Karlstad City har en miljö med starka färger, sammetsgardiner, speglar, konst, lampor och den karakteristiska Pinchos-estetiken. Där ska tekniken underordna sig lokalen.
@@ -271,18 +275,6 @@ story:
               alt: Färdig restaurangmiljö på Pinchos Karlstad City
               width: 2048
               height: 956
-              title: Färdig restaurang
-              text: Högtalarna är placerade för jämn täckning samtidigt som installationen följer restaurangens visuella uttryck.
-        - type: media
-          columns: 1
-          ratio: portrait
-          split: true
-          compact: true
-          images:
-            - src: /assets/pinchos-karlstad-city-hogtalare-detalj-01.webp
-              alt: Detaljbild av högtalare på Pinchos Karlstad City
-              width: 956
-              height: 2048
               title: Färdig restaurang
               text: Högtalarna är placerade för jämn täckning samtidigt som installationen följer restaurangens visuella uttryck.
         - type: columns
