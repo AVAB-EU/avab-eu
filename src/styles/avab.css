@@ -53,6 +53,7 @@
 
   /* Layout-system */
   --avab-nav-height: 72px;
+  --avab-sticky-nav-offset: var(--avab-nav-height);
   --avab-section-space: clamp(80px, 7vw, 96px);
   --avab-section-space-mobile: clamp(48px, 13vw, 56px);
   --avab-content-gap: clamp(32px, 4vw, 40px);
@@ -302,8 +303,17 @@ p {
   transform: translateY(-100%);
 }
 
+html[data-header-scroll-hidden="true"] {
+  --avab-sticky-nav-offset: 0px;
+}
+
+.landing-anchor-nav-wrap {
+  transition: top 180ms ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .site-nav {
+  .site-nav,
+  .landing-anchor-nav-wrap {
     transition: none;
   }
 }
@@ -3052,7 +3062,7 @@ h2.snabbt-svar-title::before {
 /* Shared navigation and feature compositions for editorial landing pages. */
 .landing-anchor-nav-wrap {
   position: sticky;
-  top: var(--avab-nav-height);
+  top: var(--avab-sticky-nav-offset, var(--avab-nav-height));
   z-index: 90;
   border-bottom: 1px solid var(--avab-border);
   background: rgba(255,255,255,.96);
