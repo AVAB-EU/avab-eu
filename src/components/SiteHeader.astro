@@ -471,4 +471,127 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
   }
 
   initDesktopDropdowns();
+
+  function initHeaderAutoHide() {
+    const header = document.querySelector<HTMLElement>(".site-nav");
+    if (!header) return;
+
+    const hero = document.querySelector<HTMLElement>(".hero, .reference-hero");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const DOWN_THRESHOLD = 18;
+    const UP_THRESHOLD = 150;
+
+    let activationY = 0;
+    let lastY = Math.max(window.scrollY, 0);
+    let directionStartY = lastY;
+    let direction: "up" | "down" | null = null;
+    let frame = 0;
+
+    const isNavigationLocked = () =>
+      document.body.classList.contains("mobile-menu-locked") ||
+      Boolean(header.querySelector(".nav-dropdown[data-open]")) ||
+      header.matches(":focus-within");
+
+    const showHeader = () => {
+      const wasHidden = header.hasAttribute("data-scroll-hidden");
+      document.documentElement.removeAttribute("data-header-scroll-hidden");
+
+      if (!wasHidden || header.hasAttribute("data-scroll-revealing")) return;
+
+      if (window.matchMedia("(max-width: 900px)").matches && !reducedMotion.matches) {
+        header.setAttribute("data-scroll-revealing", "true");
+        return;
+      }
+
+      header.removeAttribute("data-scroll-hidden");
+    };
+
+    const hideHeader = () => {
+      if (isNavigationLocked()) {
+        showHeader();
+        return;
+      }
+      header.removeAttribute("data-scroll-revealing");
+      header.setAttribute("data-scroll-hidden", "true");
+      document.documentElement.setAttribute("data-header-scroll-hidden", "true");
+    };
+
+    const updateActivationY = () => {
+      const headerHeight = header.getBoundingClientRect().height;
+      if (hero) {
+        const heroRect = hero.getBoundingClientRect();
+        activationY = Math.max(0, heroRect.bottom + window.scrollY - headerHeight);
+      } else {
+        activationY = Math.max(headerHeight * 2, 1);
+      }
+
+      if (window.scrollY <= activationY) showHeader();
+    };
+
+    const update = () => {
+      frame = 0;
+      const currentY = Math.max(window.scrollY, 0);
+
+      if (currentY <= activationY || isNavigationLocked()) {
+        showHeader();
+        lastY = currentY;
+        directionStartY = currentY;
+        direction = null;
+        return;
+      }
+
+      const nextDirection = currentY > lastY ? "down" : currentY < lastY ? "up" : direction;
+
+      if (nextDirection && nextDirection !== direction) {
+        direction = nextDirection;
+        directionStartY = currentY;
+      }
+
+      const travelled = Math.abs(currentY - directionStartY);
+
+      if (direction === "down" && travelled >= DOWN_THRESHOLD) {
+        hideHeader();
+        directionStartY = currentY;
+      } else if (direction === "up" && travelled >= UP_THRESHOLD) {
+        showHeader();
+        directionStartY = currentY;
+      }
+
+      lastY = currentY;
+    };
+
+    const queueUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(update);
+    };
+
+    updateActivationY();
+    showHeader();
+
+    window.addEventListener("scroll", queueUpdate, { passive: true });
+    window.addEventListener("resize", () => {
+      updateActivationY();
+      queueUpdate();
+    }, { passive: true });
+
+    if (hero && "ResizeObserver" in window) {
+      const heroObserver = new ResizeObserver(() => {
+        updateActivationY();
+        queueUpdate();
+      });
+      heroObserver.observe(hero);
+    }
+
+    document.addEventListener("focusin", queueUpdate);
+    document.addEventListener("focusout", queueUpdate);
+    document.addEventListener("click", queueUpdate);
+    header.addEventListener("animationend", (event) => {
+      if (event.animationName !== "site-nav-slide-in") return;
+      header.removeAttribute("data-scroll-hidden");
+      header.removeAttribute("data-scroll-revealing");
+    });
+    reducedMotion.addEventListener?.("change", showHeader);
+  }
+
+  initHeaderAutoHide();
 </script>
