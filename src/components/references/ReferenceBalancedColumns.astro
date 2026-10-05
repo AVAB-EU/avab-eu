@@ -1,0 +1,40 @@
+---
+interface Column {
+  title?: string;
+  paragraphs: string[];
+}
+
+interface Props {
+  columns: [Column, Column] | Column[];
+  title?: string;
+}
+
+const { columns, title } = Astro.props;
+const [left, right] = columns;
+
+const weight = (column: Column) =>
+  (column.title?.length ?? 0) * 1.35 +
+  column.paragraphs.reduce((sum, paragraph) => sum + paragraph.length, 0);
+
+const leftWeight = Math.max(weight(left), 1);
+const rightWeight = Math.max(weight(right), 1);
+const total = leftWeight + rightWeight;
+
+const rawLeft = (leftWeight / total) * 100;
+const weightedLeftPercent = Math.min(65, Math.max(35, rawLeft));
+const leftPercent = title ? 48 : weightedLeftPercent;
+const rightPercent = 100 - leftPercent;
+---
+
+<div
+  class="reference-balanced-columns"
+  style={`--reference-col-left: ${leftPercent.toFixed(2)}%; --reference-col-right: ${rightPercent.toFixed(2)}%;`}
+>
+  {columns.map((column, index) => (
+    <section class="reference-balanced-column">
+      {index === 0 && title && <h2>{title}</h2>}
+      {column.title && <h3>{column.title}</h3>}
+      {column.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </section>
+  ))}
+</div>
