@@ -129,28 +129,16 @@ const itemListElements = sorted.map((ref, i) => ({
     .trust-cell strong { display: block; color: var(--avab-dark); font-size: 1.25rem; line-height: 1.1; margin-bottom: 6px; }
     .trust-cell span { color: var(--avab-dark-muted); font-size: 0.85rem; }
 
-    /* ---- Filterpanel ---- */
-    .filter-panel { margin-top: 8px; }
-    .filter-toggle {
-      display: none;
-      width: 100%;
-      padding: 16px 20px;
-      background: var(--avab-white);
-      border: 1px solid var(--avab-border);
-      border-radius: var(--avab-radius-sm);
-      box-shadow: var(--avab-shadow-sm);
-      font-weight: 800;
-      color: var(--avab-dark);
-      cursor: pointer;
-      align-items: center;
-      justify-content: space-between;
+    /* ---- Kompakta referensfilter ---- */
+    .filter-panel {
+      margin-top: 8px;
+      width: calc((100% - 52px) / 3);
+      min-width: 0;
     }
-    .filter-toggle::after { content: "▾"; color: var(--avab-green); }
-    .filter-body { display: block; }
 
     .filter-search {
       width: 100%;
-      max-width: 460px;
+      max-width: none;
       padding: 13px 18px;
       border: 1px solid var(--avab-border);
       border-radius: var(--avab-radius-sm);
@@ -158,13 +146,129 @@ const itemListElements = sorted.map((ref, i) => ({
       font-family: inherit;
       font-size: 1rem;
       color: var(--avab-dark);
-      margin-bottom: 26px;
+      margin-bottom: 22px;
     }
-    .filter-search:focus { outline: none; border-color: var(--avab-green); box-shadow: 0 0 0 3px rgba(143, 192, 37, 0.18); }
+    .filter-search:focus-visible {
+      outline: 3px solid var(--avab-green);
+      outline-offset: 2px;
+      border-color: var(--avab-green);
+    }
 
-    .filter-group { margin-bottom: 24px; }
-    .filter-group h2 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--avab-dark-muted); margin-bottom: 12px; font-weight: 800; }
-    .chip-row { display: flex; flex-wrap: wrap; gap: 9px; }
+    .filter-accordions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .filter-accordion {
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-white);
+      overflow: clip;
+    }
+
+    .filter-accordion-trigger {
+      width: 100%;
+      min-height: 88px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      grid-template-areas:
+        "icon title meta"
+        "icon help meta";
+      column-gap: 12px;
+      row-gap: 3px;
+      align-items: center;
+      padding: 15px 16px;
+      border: 0;
+      background: transparent;
+      color: var(--avab-dark);
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .filter-accordion-trigger:hover {
+      background: var(--avab-light);
+    }
+
+    .filter-accordion-trigger:focus-visible {
+      outline: 3px solid var(--avab-green);
+      outline-offset: -3px;
+    }
+
+    .filter-accordion-icon {
+      grid-area: icon;
+      display: block;
+      width: 22px !important;
+      min-width: 22px;
+      max-width: 22px;
+      height: 22px !important;
+      min-height: 22px;
+      max-height: 22px;
+      color: var(--avab-green);
+      flex: none;
+    }
+
+    .filter-accordion-copy {
+      min-width: 0;
+      display: contents;
+    }
+
+    .filter-accordion-title {
+      grid-area: title;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .filter-accordion-help {
+      grid-area: help;
+      min-width: 0;
+      color: var(--avab-dark-muted);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    .filter-accordion-meta {
+      grid-area: meta;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      white-space: nowrap;
+      color: var(--avab-dark-muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .filter-accordion-count[hidden] { display: none; }
+
+    .filter-accordion-chevron {
+      width: 9px;
+      height: 9px;
+      border-right: 2px solid var(--avab-green);
+      border-bottom: 2px solid var(--avab-green);
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 180ms ease;
+    }
+
+    .filter-accordion-trigger[aria-expanded="true"] .filter-accordion-chevron {
+      transform: rotate(225deg) translate(-2px, -2px);
+    }
+
+    .filter-options {
+      padding: 4px 18px 18px;
+      border-top: 1px solid var(--avab-border);
+    }
+
+    .filter-options[hidden] { display: none; }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      padding-top: 14px;
+    }
+
     .chip {
       padding: 8px 15px;
       background: var(--avab-white);
@@ -174,17 +278,25 @@ const itemListElements = sorted.map((ref, i) => ({
       font-weight: 600;
       color: var(--avab-dark-muted);
       cursor: pointer;
-      transition: var(--transition-smooth);
+      transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
       user-select: none;
     }
     .chip:hover { border-color: var(--avab-green); color: var(--avab-dark); }
+    .chip:focus-visible { outline: 3px solid var(--avab-green); outline-offset: 2px; }
     .chip[aria-pressed="true"] {
       background: var(--avab-green);
       border-color: var(--avab-green);
       color: var(--avab-dark);
     }
 
-    .filter-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 4px; }
+    .filter-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
     .result-count { font-weight: 800; color: var(--avab-dark); }
     .result-count span { color: var(--avab-green); }
     .clear-filters {
@@ -196,9 +308,11 @@ const itemListElements = sorted.map((ref, i) => ({
       font-weight: 700;
       cursor: pointer;
       text-decoration: underline;
-      padding: 0;
+      text-underline-offset: 3px;
+      padding: 8px 0;
     }
     .clear-filters:hover { color: var(--avab-green); }
+    .clear-filters:focus-visible { outline: 3px solid var(--avab-green); outline-offset: 3px; }
 
     /* ---- Referensgrid ---- */
     .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 34px; }
@@ -232,6 +346,7 @@ const itemListElements = sorted.map((ref, i) => ({
     .no-results strong { display: block; color: var(--avab-dark); font-size: 1.15rem; margin-bottom: 8px; }
 
     @media (max-width: 1024px) {
+      .filter-panel { width: calc((100% - 26px) / 2); }
       .trust-grid { grid-template-columns: repeat(3, 1fr); }
       .trust-cell:nth-child(4) { border-left: none; }
       .ref-grid { grid-template-columns: repeat(2, 1fr); }
@@ -240,9 +355,10 @@ const itemListElements = sorted.map((ref, i) => ({
       .trust-grid { grid-template-columns: repeat(2, 1fr); }
       .trust-cell:nth-child(odd) { border-left: none; }
       .ref-grid { grid-template-columns: 1fr; }
-      .filter-toggle { display: flex; }
-      .filter-body { display: none; margin-top: 16px; }
-      .filter-body.open { display: block; }
+      .filter-panel { width: 100%; }
+      .filter-accordion-trigger { min-height: 84px; }
+      .filter-accordion-help { font-size: 0.88rem; }
+      .filter-options { padding: 4px 16px 16px; }
     }
   </style>
 </head>
@@ -286,42 +402,78 @@ const itemListElements = sorted.map((ref, i) => ({
     <section class="section">
       <div class="avab-container">
 
-        <button class="filter-toggle" id="filterToggle" aria-expanded="false" aria-controls="filterBody">
-          Filtrera referenser
-        </button>
-
         <div class="filter-panel">
-          <div class="filter-body" id="filterBody">
-            <input
-              type="search"
-              class="filter-search"
-              id="refSearch"
-              placeholder="Sök på projekt, ort eller teknik…"
-              aria-label="Sök bland referenser"
-            />
+          <input
+            type="search"
+            class="filter-search"
+            id="refSearch"
+            placeholder="Sök på projekt, ort eller teknik…"
+            aria-label="Sök bland referenser"
+          />
 
-            <div class="filter-group">
-              <h2>Miljö</h2>
-              <div class="chip-row" id="envChips">
-                {environments.map((env) => (
-                  <button type="button" class="chip" data-filter-type="env" data-filter-id={env.id} aria-pressed="false">{env.label}</button>
-                ))}
+          <div class="filter-accordions">
+            <div class="filter-accordion">
+              <button
+                type="button"
+                class="filter-accordion-trigger"
+                id="envFilterTrigger"
+                aria-expanded="false"
+                aria-controls="envFilterPanel"
+              >
+                <svg class="filter-accordion-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M4 5h16l-6.4 7.2v5.2l-3.2 1.6v-6.8L4 5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+                <span class="filter-accordion-copy">
+                  <span class="filter-accordion-title">Miljö</span>
+                  <span class="filter-accordion-help">Filtrera efter vilken miljö du vill se.</span>
+                </span>
+                <span class="filter-accordion-meta">
+                  <span class="filter-accordion-count" id="envFilterCount" hidden></span>
+                  <span class="filter-accordion-chevron" aria-hidden="true"></span>
+                </span>
+              </button>
+              <div class="filter-options" id="envFilterPanel" hidden>
+                <div class="chip-row" id="envChips">
+                  {environments.map((env) => (
+                    <button type="button" class="chip" data-filter-type="env" data-filter-id={env.id} aria-pressed="false">{env.label}</button>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div class="filter-group">
-              <h2>Teknik</h2>
-              <div class="chip-row" id="techChips">
-                {technologies.map((tech) => (
-                  <button type="button" class="chip" data-filter-type="tech" data-filter-id={tech.id} aria-pressed="false">{tech.label}</button>
-                ))}
+            <div class="filter-accordion">
+              <button
+                type="button"
+                class="filter-accordion-trigger"
+                id="techFilterTrigger"
+                aria-expanded="false"
+                aria-controls="techFilterPanel"
+              >
+                <svg class="filter-accordion-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M4 5h16l-6.4 7.2v5.2l-3.2 1.6v-6.8L4 5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+                <span class="filter-accordion-copy">
+                  <span class="filter-accordion-title">Teknik</span>
+                  <span class="filter-accordion-help">Filtrera efter teknik eller lösning.</span>
+                </span>
+                <span class="filter-accordion-meta">
+                  <span class="filter-accordion-count" id="techFilterCount" hidden></span>
+                  <span class="filter-accordion-chevron" aria-hidden="true"></span>
+                </span>
+              </button>
+              <div class="filter-options" id="techFilterPanel" hidden>
+                <div class="chip-row" id="techChips">
+                  {technologies.map((tech) => (
+                    <button type="button" class="chip" data-filter-type="tech" data-filter-id={tech.id} aria-pressed="false">{tech.label}</button>
+                  ))}
+                </div>
               </div>
             </div>
+          </div>
 
-            <div class="filter-actions">
-              <span class="result-count" id="resultCount">Visar <span>{total}</span> av {total} referenser</span>
-              <button type="button" class="clear-filters" id="clearFilters" hidden>Rensa filter</button>
-            </div>
+          <div class="filter-actions">
+            <span class="result-count" id="resultCount">Visar <span>{total}</span> av {total} referenser</span>
+            <button type="button" class="clear-filters" id="clearFilters" hidden>Rensa allt</button>
           </div>
         </div>
 
@@ -366,6 +518,8 @@ const itemListElements = sorted.map((ref, i) => ({
       const resultCount = document.getElementById("resultCount");
       const clearBtn = document.getElementById("clearFilters");
       const noResults = document.getElementById("noResults");
+      const envFilterCount = document.getElementById("envFilterCount");
+      const techFilterCount = document.getElementById("techFilterCount");
       const total = cards.length;
 
       const state = { env: new Set(), tech: new Set(), q: "" };
@@ -415,6 +569,12 @@ const itemListElements = sorted.map((ref, i) => ({
         noResults.style.display = shown === 0 ? "block" : "none";
         const active = state.env.size || state.tech.size || state.q;
         clearBtn.hidden = !active;
+
+        envFilterCount.textContent = state.env.size ? state.env.size + " val" : "";
+        envFilterCount.hidden = state.env.size === 0;
+        techFilterCount.textContent = state.tech.size ? state.tech.size + " val" : "";
+        techFilterCount.hidden = state.tech.size === 0;
+
         writeUrl();
       }
 
@@ -445,11 +605,19 @@ const itemListElements = sorted.map((ref, i) => ({
         apply();
       });
 
-      const toggle = document.getElementById("filterToggle");
-      const body = document.getElementById("filterBody");
-      toggle.addEventListener("click", () => {
-        const open = body.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      const filterTriggers = Array.from(document.querySelectorAll(".filter-accordion-trigger"));
+
+      function setFilterOpen(trigger, open) {
+        const panel = document.getElementById(trigger.getAttribute("aria-controls"));
+        trigger.setAttribute("aria-expanded", open ? "true" : "false");
+        panel.hidden = !open;
+      }
+
+      filterTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const nextOpen = trigger.getAttribute("aria-expanded") !== "true";
+          filterTriggers.forEach((other) => setFilterOpen(other, other === trigger && nextOpen));
+        });
       });
 
       readUrl();
