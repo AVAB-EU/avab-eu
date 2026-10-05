@@ -293,6 +293,19 @@ p {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--avab-border);
+  transform: translateY(0);
+  transition: transform 180ms ease;
+  will-change: transform;
+}
+
+.site-nav[data-scroll-hidden="true"] {
+  transform: translateY(-100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav {
+    transition: none;
+  }
 }
 .site-nav .avab-container {
   display: flex;
