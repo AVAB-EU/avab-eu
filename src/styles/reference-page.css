@@ -287,7 +287,11 @@
   border-bottom: 1px solid var(--reference-line);
 }
 .reference-section--soft { background: var(--reference-soft); }
-.reference-section-heading { max-width: 760px; margin-bottom: 42px; }
+.reference-section-heading {
+  width: min(100%, var(--avab-heading-max, 1020px));
+  max-width: var(--avab-heading-max, 1020px);
+  margin-bottom: 42px;
+}
 .reference-section-heading h2,
 .reference-block h2 { overflow-wrap: anywhere; }
 .reference-section-heading h2 {
@@ -1082,4 +1086,109 @@
   .gallery-image:hover img,
   .related-card:hover,
   .related-card:focus-visible { transform: none; }
+}
+
+
+/* Opt-in compact composition for a single image with short supporting copy. */
+.reference-page--balanced-pilot .reference-media-grid--compact {
+  width: min(100%, 880px);
+  justify-self: start;
+}
+
+.reference-page--balanced-pilot
+  .reference-media-grid--compact.reference-media-grid--split
+  .reference-media-card {
+  grid-template-columns: minmax(220px, 0.78fr) minmax(280px, 1fr);
+}
+
+.reference-page--balanced-pilot
+  .reference-media-grid--compact.reference-media-grid--split.reference-media-grid--portrait
+  .reference-media-card {
+  grid-template-columns: minmax(220px, 0.72fr) minmax(280px, 1fr);
+}
+
+.reference-page--balanced-pilot
+  .reference-media-grid--compact.reference-media-grid--split
+  .reference-media-card__media {
+  height: clamp(260px, 30vw, 410px);
+}
+
+.reference-page--balanced-pilot
+  .reference-media-grid--compact.reference-media-grid--split
+  .reference-media-card figcaption {
+  padding: clamp(20px, 3vw, 30px);
+}
+
+@media (max-width: 767px) {
+  .reference-page--balanced-pilot .reference-media-grid--compact {
+    width: 100%;
+  }
+
+  .reference-page--balanced-pilot
+    .reference-media-grid--compact.reference-media-grid--split
+    .reference-media-card,
+  .reference-page--balanced-pilot
+    .reference-media-grid--compact.reference-media-grid--split.reference-media-grid--portrait
+    .reference-media-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+/* Opt-in anchor treatment for the Pinchos reference pilot. */
+.reference-anchor-nav-wrap--centered .reference-anchor-nav {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: clamp(18px, 4vw, 64px);
+}
+
+.reference-anchor-nav-wrap--centered .reference-anchor-nav a {
+  flex: 0 1 auto;
+  min-width: 0;
+  padding-inline: 8px;
+}
+
+.reference-anchor-nav-wrap.is-past-last-anchor {
+  transform: translateY(-110%);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 180ms ease,
+    opacity 140ms ease;
+}
+
+.reference-anchor-nav-wrap:not(.is-past-last-anchor) {
+  transition:
+    transform 180ms ease,
+    opacity 140ms ease;
+}
+
+@media (max-width: 680px) {
+  .reference-anchor-nav-wrap--centered .reference-anchor-nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .reference-anchor-nav-wrap--centered .reference-anchor-nav a {
+    justify-content: flex-start;
+  }
+}
+
+
+/* Pinchos pilot: give the hero subtitle clear separation from the CTA row
+   when the longer hero lead is intentionally hidden. */
+.reference-page--balanced-pilot
+  .reference-hero--immersive
+  .reference-hero-subtitle {
+  margin-bottom: clamp(30px, 3vw, 40px);
+}
+
+@media (max-width: 768px) {
+  .reference-page--balanced-pilot
+    .reference-hero--immersive
+    .reference-hero-subtitle {
+    margin-bottom: 26px;
+  }
 }

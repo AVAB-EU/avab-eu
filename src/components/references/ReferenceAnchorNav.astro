@@ -8,20 +8,33 @@ interface Props {
   items: ReferenceAnchorItem[];
   title?: string;
   ariaLabel?: string;
+  showTitle?: boolean;
+  centered?: boolean;
+  hideAfterLast?: boolean;
 }
 
 const {
   items,
   title = "I projektet",
   ariaLabel = "Innehåll i projektet",
+  showTitle = true,
+  centered = false,
+  hideAfterLast = false,
 } = Astro.props;
 ---
 
 {items.length > 0 && (
-  <div class="reference-anchor-nav-wrap" data-reference-anchor-nav>
+  <div
+    class:list={[
+      "reference-anchor-nav-wrap",
+      centered && "reference-anchor-nav-wrap--centered",
+    ]}
+    data-reference-anchor-nav
+    data-hide-after-last={hideAfterLast ? "true" : undefined}
+  >
     <div class="avab-container">
       <nav class="reference-anchor-nav" aria-label={ariaLabel}>
-        <span class="reference-anchor-nav__title">{title}</span>
+        {showTitle && <span class="reference-anchor-nav__title">{title}</span>}
         {items.map((item) => (
           <a href={`#${item.id}`} data-reference-anchor-link={item.id}>{item.label}</a>
         ))}
@@ -44,6 +57,7 @@ const {
       })
       .filter((section): section is HTMLElement => Boolean(section));
     let observer: IntersectionObserver | undefined;
+    let scrollFrame = 0;
 
     const setActiveLink = (active?: string) => {
       links.forEach((link) => {
@@ -54,15 +68,34 @@ const {
       });
     };
 
-    const observeSections = () => {
-      observer?.disconnect();
+    const getMarker = () => {
       const headerOffset = Number.parseFloat(
         getComputedStyle(document.documentElement).getPropertyValue("--avab-nav-height"),
       ) || 72;
       const navOffset = window.matchMedia("(min-width: 681px)").matches
         ? navWrap.getBoundingClientRect().height
         : 0;
-      const marker = Math.ceil(headerOffset + navOffset + 24);
+      return Math.ceil(headerOffset + navOffset + 24);
+    };
+
+    const updateVisibility = () => {
+      if (navWrap.dataset.hideAfterLast !== "true" || sections.length === 0) return;
+      const lastSection = sections[sections.length - 1];
+      const shouldHide = lastSection.getBoundingClientRect().bottom <= getMarker();
+      navWrap.classList.toggle("is-past-last-anchor", shouldHide);
+    };
+
+    const queueVisibilityUpdate = () => {
+      if (scrollFrame) return;
+      scrollFrame = window.requestAnimationFrame(() => {
+        scrollFrame = 0;
+        updateVisibility();
+      });
+    };
+
+    const observeSections = () => {
+      observer?.disconnect();
+      const marker = getMarker();
 
       observer = new IntersectionObserver(() => {
         const active = sections.find((section) => {
@@ -70,12 +103,14 @@ const {
           return box.top <= marker && box.bottom > marker;
         });
         if (active) setActiveLink(active.id);
+        updateVisibility();
       }, {
         rootMargin: `-${marker}px 0px -${Math.max(0, window.innerHeight - marker - 1)}px 0px`,
         threshold: 0,
       });
 
       sections.forEach((section) => observer?.observe(section));
+      updateVisibility();
     };
 
     setActiveLink(sections[0]?.id);
@@ -104,6 +139,9 @@ const {
     });
 
     window.addEventListener("resize", observeSections, { passive: true });
+    if (navWrap.dataset.hideAfterLast === "true") {
+      window.addEventListener("scroll", queueVisibilityUpdate, { passive: true });
+    }
   };
 
   document.querySelectorAll<HTMLElement>("[data-reference-anchor-nav]")

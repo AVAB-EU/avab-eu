@@ -139,6 +139,12 @@ const referenceSchema = z
       referenceAvailableOnRequest: z.boolean().default(false),
     }),
     heroImage: imageSchema,
+    presentation: z.object({
+      pilot: z.literal("balanced-v1"),
+      factBandMax: z.number().int().min(1).max(6).default(6),
+      hideStoryIntro: z.boolean().default(false),
+      hideScope: z.boolean().default(false),
+    }).optional(),
     facts: z.array(z.object({ label: z.string(), value: z.string() })).min(1),
     brief: z.object({
       eyebrow: z.string(),
@@ -169,10 +175,11 @@ const referenceSchema = z
             z.object({
               id: z.string().regex(/^[a-z0-9-]+$/),
               navLabel: requiredText,
+              anchor: z.boolean().default(true),
               eyebrow: requiredText,
               title: requiredText,
               answer: requiredText.optional(),
-              paragraphs: z.array(requiredText).min(1),
+              paragraphs: z.array(requiredText).min(1).optional(),
               mediaGroups: z
                 .array(
                   z.object({
@@ -191,7 +198,50 @@ const referenceSchema = z
                       .min(1),
                   }),
                 )
-                .min(1),
+                .min(1)
+                .optional(),
+              flow: z.array(z.discriminatedUnion("type", [
+                z.object({
+                  type: z.literal("text"),
+                  title: requiredText.optional(),
+                  paragraphs: z.array(requiredText).min(1),
+                }),
+                z.object({
+                  type: z.literal("columns"),
+                  integrateChapterHeading: z.boolean().default(false),
+                  columns: z.array(z.object({
+                    title: requiredText.optional(),
+                    paragraphs: z.array(requiredText).min(1),
+                  })).length(2),
+                }),
+                z.object({
+                  type: z.literal("mediaText"),
+                  image: imageSchema,
+                  imagePosition: z.enum(["left", "right"]).default("left"),
+                  title: requiredText.optional(),
+                  paragraphs: z.array(requiredText).min(1),
+                }),
+                z.object({
+                  type: z.literal("media"),
+                  columns: z.number().int().min(1).max(3).default(1),
+                  ratio: z.enum(["land", "pano", "portrait", "tall", "slim"]).default("land"),
+                  split: z.boolean().default(false),
+                  compact: z.boolean().default(false),
+                  layout: z.enum(["grid", "mixed-pair", "sidebar"]).default("grid"),
+                  images: z.array(imageSchema.extend({
+                    title: requiredText,
+                    text: requiredText,
+                    kicker: requiredText.optional(),
+                  })).min(1),
+                }),
+              ])).min(1).optional(),
+            }).superRefine((chapter, context) => {
+              if (!chapter.flow && (!chapter.paragraphs || !chapter.mediaGroups)) {
+                context.addIssue({
+                  code: "custom",
+                  message: "Ett standardkapitel kräver paragraphs och mediaGroups, alternativt ett opt-in flow.",
+                });
+              }
             }),
           )
           .min(2)
