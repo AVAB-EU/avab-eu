@@ -202,6 +202,7 @@ story:
             - Högtalarsystemet drivs från ett Yamaha XMV8140 på 8 × 140 W. Det är det enda slutsteget i anläggningen.
             - Tillsammans med Yamaha MTX3 kan de åtta förstärkarkanalerna användas effektivt för restaurangens olika delar och kombinationen av lågohm och 100V.
             - Vi gillar den typen av systemuppbyggnad. Inte ett teknikrack fullt av produkter för sakens skull, utan så mycket hårdvara som behövs för att lösa uppgiften ordentligt.
+            - DSP, matris och åttakanalsförstärkning utgör kärnan bakom ljudzonerna. Ett kompakt system med stor flexibilitet.
         - type: text
           title: Appstyrning utan abonnemang
           paragraphs:
