@@ -493,8 +493,16 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
       header.matches(":focus-within");
 
     const showHeader = () => {
+      const wasHidden = header.hasAttribute("data-scroll-hidden");
       header.removeAttribute("data-scroll-hidden");
       document.documentElement.removeAttribute("data-header-scroll-hidden");
+
+      if (wasHidden) {
+        header.removeAttribute("data-scroll-revealing");
+        requestAnimationFrame(() => {
+          header.setAttribute("data-scroll-revealing", "true");
+        });
+      }
     };
 
     const hideHeader = () => {
@@ -502,6 +510,7 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
         showHeader();
         return;
       }
+      header.removeAttribute("data-scroll-revealing");
       header.setAttribute("data-scroll-hidden", "true");
       document.documentElement.setAttribute("data-header-scroll-hidden", "true");
     };
@@ -575,6 +584,9 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
     document.addEventListener("focusin", queueUpdate);
     document.addEventListener("focusout", queueUpdate);
     document.addEventListener("click", queueUpdate);
+    header.addEventListener("animationend", () => {
+      header.removeAttribute("data-scroll-revealing");
+    });
     reducedMotion.addEventListener?.("change", showHeader);
   }
 
