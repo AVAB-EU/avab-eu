@@ -197,8 +197,13 @@ const itemListElements = sorted.map((ref, i) => ({
 
     .filter-accordion-icon {
       grid-area: icon;
-      width: 22px;
-      height: 22px;
+      display: block;
+      width: 22px !important;
+      min-width: 22px;
+      max-width: 22px;
+      height: 22px !important;
+      min-height: 22px;
+      max-height: 22px;
       color: var(--avab-green);
       flex: none;
     }
@@ -415,8 +420,8 @@ const itemListElements = sorted.map((ref, i) => ({
                 aria-expanded="false"
                 aria-controls="envFilterPanel"
               >
-                <svg class="filter-accordion-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 6h16M7 12h10M10 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <svg class="filter-accordion-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M4 5h16l-6.4 7.2v5.2l-3.2 1.6v-6.8L4 5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
                 </svg>
                 <span class="filter-accordion-copy">
                   <span class="filter-accordion-title">Miljö</span>
@@ -444,8 +449,8 @@ const itemListElements = sorted.map((ref, i) => ({
                 aria-expanded="false"
                 aria-controls="techFilterPanel"
               >
-                <svg class="filter-accordion-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 6h16M7 12h10M10 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <svg class="filter-accordion-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M4 5h16l-6.4 7.2v5.2l-3.2 1.6v-6.8L4 5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
                 </svg>
                 <span class="filter-accordion-copy">
                   <span class="filter-accordion-title">Teknik</span>
