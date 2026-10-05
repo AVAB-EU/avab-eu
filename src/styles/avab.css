@@ -312,9 +312,18 @@ html[data-header-scroll-hidden="true"] {
 }
 
 @media (max-width: 900px) {
-  .site-nav[data-scroll-revealing="true"] {
-    transition-duration: 560ms;
-    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  .site-nav[data-scroll-hidden="true"][data-scroll-revealing="true"] {
+    animation: site-nav-slide-in 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes site-nav-slide-in {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
   }
 }
 
@@ -322,6 +331,10 @@ html[data-header-scroll-hidden="true"] {
   .site-nav,
   .landing-anchor-nav-wrap {
     transition: none;
+  }
+
+  .site-nav[data-scroll-hidden="true"][data-scroll-revealing="true"] {
+    animation: none;
   }
 }
 .site-nav .avab-container {
