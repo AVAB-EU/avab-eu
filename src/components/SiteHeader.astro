@@ -494,6 +494,7 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
 
     const showHeader = () => {
       header.removeAttribute("data-scroll-hidden");
+      document.documentElement.removeAttribute("data-header-scroll-hidden");
     };
 
     const hideHeader = () => {
@@ -502,6 +503,7 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
         return;
       }
       header.setAttribute("data-scroll-hidden", "true");
+      document.documentElement.setAttribute("data-header-scroll-hidden", "true");
     };
 
     const updateActivationY = () => {
