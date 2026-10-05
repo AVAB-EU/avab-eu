@@ -75,6 +75,16 @@ Besökaren ska kunna:
 - kontakta AVAB eller skicka underlag
 - använda eventuellt referensblad/PDF när sådan funktion är etablerad
 
+## Rubrikbredd
+
+Fristående sektionsrubriker (H2) ska använda så mycket av huvudcontainern som är läsvänligt utan att bli onödigt smala.
+
+- På bred desktop är normal maxbredd **1020 px**.
+- Vid mindre tillgänglig bredd får rubriken använda hela containern.
+- **710 px** är riktvärdet för när en fristående H2 börjar upplevas som för smal på desktop; under den bredden styr viewport/container naturligt.
+- Regeln gäller fristående sektionsrubriker som FAQ-, introduktions- och landningsrubriker.
+- H2 i tvåkolumnslayouter följer kolumnens bredd och ska inte tvingas till 710–1020 px.
+
 ## Visuell riktning
 
 Referensen ska kännas som ett professionellt kundcase och tekniskt projektblad, inte som en tung säljsida.
@@ -109,6 +119,16 @@ eller `subgrid`, inte med godtyckliga fasta pixelhöjder. När komponenten går 
 en kolumn på mobil ska höjdsynkroniseringen återställas så att innehållet följer
 sitt naturliga flöde utan stora tomrum. Principen gäller jämförbara kortgrids,
 inte löpande artikeltext eller berättande kapitel.
+
+### Två parallella textkolumner
+
+När ett berättande avsnitt delas i två textkolumner ska rubrikhierarkin vara tydlig.
+
+- När ett berättande kapitel börjar med ett tvåkolumnsblock placeras kapitlets eyebrow ovanför hela kolumngridet och H2 i vänsterkolumnen.
+- Högerkolumnen kan ha en egen H3 när den behandlar en separat men relaterad delfråga.
+- På desktop ska vänster H2 och höger H3 börja på samma övre rubriklinje. Höger rubrik får inte skjutas ned för att linjera mot vänster brödtext.
+- Brödtexten börjar under respektive rubrik och följer sin naturliga höjd.
+- På mobil staplas huvudspåret först och stödspåret därefter.
 
 ## Sidstruktur
 
@@ -208,11 +228,13 @@ Bilder ska vara verkliga projektbilder när sådana finns och kan visa helhetsmi
 
 När ett projekt har ett rikt bildmaterial ska bilderna normalt **fördelas över sidans berättande kapitel** i stället för att samlas i ett enda stort galleri. Målet är att varje bild ska förklara den text som ligger närmast och skapa rytm genom hela referensen. Ett separat galleri används främst för kompletterande motiv som inte naturligt hör hemma i ett kapitel.
 
-Använd så många relevanta och publicerbara projektbilder som stärker inköparens förståelse, men undvik nära dubbletter om de inte visar olika placeringar, installationssteg eller funktioner. Varje bild ska ha en egen meningsfull alt-text och förklarande bildtext.
+Använd så många relevanta och publicerbara projektbilder som stärker inköparens förståelse, men undvik nära dubbletter om de inte visar olika placeringar, installationssteg eller funktioner. Varje informativ bild ska ha en egen meningsfull alt-text. Synlig bildtext används bara när den tillför information som inte redan framgår av den närliggande texten.
 
 Bildlayout väljs efter **berättelsens samband**, inte enbart efter hur många bilder som råkar finnas:
 
-- En bild som berättar en egen del av projektet ska normalt visas som en **liggande bild+text-komposition**, med bilden och förklaringen bredvid varandra på desktop.
+- När ett avsnitt har **en enda bild** ska bilden normalt integreras bredvid den relevanta brödtexten på desktop i stället för att visas som ett fristående bildkort med caption. Text och bild får byta sida beroende på berättelsens flöde och motivets form. På mobil staplas texten först och bilden därefter som standard.
+- En ensam bild ska normalt **inte ha synlig bildtext** när brödtexten redan förklarar motivets funktion eller sammanhang. Caption används bara när den tillför separat projektinformation.
+- En bild som berättar en egen del av projektet ska normalt visas som en **bild+text-komposition**, med bilden och förklaringen bredvid varandra på desktop.
 - Bilder som tydligt hör ihop och beskriver samma miljö, fas eller tekniska moment får visas som ett gemensamt kortgrid.
 - Tre sammanhörande bilder visas normalt som **tre jämna kort på samma rad** på bred desktop.
 - Två eller fyra sammanhörande bilder ska balanseras i tvåkolumnsrader.
@@ -246,6 +268,21 @@ Varje referens ska normalt länka till relevanta tjänster och kan länka till n
 ### 12. CTA/kontakt
 
 Sidan avslutas med gemensam CTA/kontaktsektion. Den ska inte kopieras som unik markup i varje referens.
+
+## Rubrikhierarki och unika rubriker
+
+Synliga rubriker ska ha en tydlig semantisk nivå och samma rubrikfras får inte upprepas på samma sida.
+
+- H1 används en gång per sida.
+- Huvudavsnitt använder H2.
+- Underrubriker inom ett H2-avsnitt använder H3 när en faktisk underrubrik behövs.
+- En hero-underrubrik får inte återanvändas som identisk H2 längre ned på sidan.
+- En H2 eller H3 får inte duplicera en annan synlig rubrik med samma formulering på samma sida.
+- Ankarnavigation, breadcrumbs och kortetiketter räknas inte som innehållsrubriker, men deras texter ska fortfarande vara begripliga och korta.
+- Om källunderlaget upprepar samma rubrik ska innehållet behållas, men nästa förekomst ska antingen sakna egen rubrik eller få en annan källförankrad rubrik som beskriver just det avsnittet.
+- AI får inte skapa en extra rubrik enbart för layoutens skull om texten redan har en tydlig överordnad rubrik.
+
+Regeln gäller alla nya och migrerade referenser. Befintliga referenser ska inte massändras utan separat granskning och regressionstest.
 
 ## Redaktionella krav
 
@@ -307,6 +344,17 @@ Valfria uppgifter ska inte renderas som tomma rubriker eller tomma kort.
 - Metadata ska inte kräva handkopierade URL-varianter i varje ny referens.
 
 ## Bilder
+
+### Tekniken ska synas
+
+När en bild används för att visa en installation, produkt eller teknisk lösning ska den relevanta tekniken vara tydligt synlig i den färdiga layouten. Crop, focal point eller responsiv beskärning får inte kapa bort det som bilden ska förklara.
+
+- En bild på en högtalarinstallation ska visa högtalaren tydligt.
+- En bild på styrning, rack, kamera, skärm eller annan utrustning ska behålla den tekniska huvuddetaljen i bild.
+- Om en standardbeskärning döljer tekniken ska focal point eller objektposition justeras först.
+- Om tekniken fortfarande inte går att visa tydligt ska bildens proportion, placering eller layout ändras. En visuellt snygg beskärning är inte viktigare än bildens informationsvärde.
+- Dekorativa miljöbilder får prioriteras mer fritt, men de ska inte ersätta tekniskt relevanta bilder när texten beskriver en konkret installation.
+- Kontrollera desktop, tablet och mobil eftersom samma focal point kan ge olika beskärning i olika vyer.
 
 - Följ projektets gällande bildstruktur; skapa inte ny parallell bildmapp utan beslut.
 - Filnamn ska vara generiska och beskrivande enligt projektets bildbeslut.
