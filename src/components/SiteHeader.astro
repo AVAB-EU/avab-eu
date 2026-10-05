@@ -496,12 +496,14 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
       const wasHidden = header.hasAttribute("data-scroll-hidden");
       document.documentElement.removeAttribute("data-header-scroll-hidden");
 
-      if (!wasHidden) return;
+      if (!wasHidden || header.hasAttribute("data-scroll-revealing")) return;
 
-      header.setAttribute("data-scroll-revealing", "true");
-      requestAnimationFrame(() => {
-        header.removeAttribute("data-scroll-hidden");
-      });
+      if (window.matchMedia("(max-width: 900px)").matches && !reducedMotion.matches) {
+        header.setAttribute("data-scroll-revealing", "true");
+        return;
+      }
+
+      header.removeAttribute("data-scroll-hidden");
     };
 
     const hideHeader = () => {
@@ -583,10 +585,10 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
     document.addEventListener("focusin", queueUpdate);
     document.addEventListener("focusout", queueUpdate);
     document.addEventListener("click", queueUpdate);
-    header.addEventListener("transitionend", (event) => {
-      if (event.propertyName === "transform") {
-        header.removeAttribute("data-scroll-revealing");
-      }
+    header.addEventListener("animationend", (event) => {
+      if (event.animationName !== "site-nav-slide-in") return;
+      header.removeAttribute("data-scroll-hidden");
+      header.removeAttribute("data-scroll-revealing");
     });
     reducedMotion.addEventListener?.("change", showHeader);
   }
