@@ -23,6 +23,8 @@
 
 /* ---- 1. Designtokens ------------------------------------- */
 :root {
+  --avab-heading-min: 710px;
+  --avab-heading-max: 1020px;
   /* Färg */
   --avab-green: #8FC025;
   --avab-green-hover: #9ed229;
@@ -2923,10 +2925,23 @@ h2.snabbt-svar-title::before {
     .calculator-band .button:hover { background: var(--avab-dark); color: #fff; }
 
     /* ---- FAQ: vänsterställd rubrik + tvåkolumnslayout ---- */
-    .faq-heading { max-width: 760px; margin: 0 0 30px; text-align: left; }
+    .faq-heading {
+      width: min(100%, var(--avab-heading-max));
+      max-width: var(--avab-heading-max);
+      margin: 0 0 30px;
+      text-align: left;
+    }
     .faq-heading .eyebrow { margin-left: 0; margin-right: 0; }
-    .faq-heading h2 { margin-bottom: 12px; max-width: 680px; }
-    .faq-heading p { color: var(--avab-dark-muted); margin-bottom: 20px; max-width: 760px; }
+    .faq-heading h2 {
+      width: min(100%, var(--avab-heading-max));
+      max-width: var(--avab-heading-max);
+      margin-bottom: 12px;
+    }
+    .faq-heading p {
+      max-width: min(100%, 760px);
+      margin-bottom: 20px;
+      color: var(--avab-dark-muted);
+    }
 
     .compact-faq {
       display: grid;
@@ -3011,7 +3026,11 @@ h2.snabbt-svar-title::before {
 .content-section--green .button-secondary:hover { background: var(--avab-dark); color: var(--avab-white); }
 .content-section--green :focus-visible { outline-color: var(--avab-dark); }
 
-.landing-heading { max-width: 760px; margin-bottom: clamp(32px, 5vw, 56px); }
+.landing-heading {
+  width: min(100%, var(--avab-heading-max));
+  max-width: var(--avab-heading-max);
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
 .landing-heading h2 { margin-bottom: 16px; }
 .landing-heading p { margin: 0; font-size: clamp(1.05rem, 1.5vw, 1.2rem); }
 
