@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/pinchos-karlstad-city/
 layout: extended
 title: Pinchos Karlstad City
@@ -13,7 +13,7 @@ updatedDate: 2026-09-23
 seo:
   title: Ljudsystem för restaurang | Pinchos Karlstad City | AVAB
   description: AVAB projekterade och installerade zonindelat restaurangljud på Pinchos Karlstad City med Yamaha DSP, appstyrning samt 3", 5" och 8" högtalare.
-  noindex: true
+  noindex: false
 
 archive:
   title: Pinchos Karlstad City
@@ -39,7 +39,7 @@ customer:
   name: Pinchos Karlstad City
   publicDisplay: Pinchos Karlstad City
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 
 heroImage:
