@@ -16,6 +16,7 @@ interface Props {
   columns?: number;
   ratio?: string;
   split?: boolean;
+  compact?: boolean;
   layout?: string;
   imageMap?: Readonly<Record<string, string>>;
   class?: string;
@@ -26,6 +27,7 @@ const {
   columns = Math.min(Math.max(items.length, 1), 3),
   ratio = "land",
   split = items.length === 1,
+  compact = false,
   layout = "grid",
   imageMap = {},
   class: className,
@@ -44,6 +46,7 @@ const resolvedItems = items.map((item) => {
     `reference-media-grid--cols-${Math.min(Math.max(columns, 1), 3)}`,
     `reference-media-grid--${ratio}`,
     split && "reference-media-grid--split",
+    compact && "reference-media-grid--compact",
     layout !== "grid" && `reference-media-grid--${layout}`,
     className,
   ]}
