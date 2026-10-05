@@ -295,7 +295,7 @@ p {
   backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--avab-border);
   transform: translateY(0);
-  transition: transform 180ms ease;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
 }
 
