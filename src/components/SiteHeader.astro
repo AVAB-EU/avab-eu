@@ -479,7 +479,7 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
     const hero = document.querySelector<HTMLElement>(".hero, .reference-hero");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const DOWN_THRESHOLD = 18;
-    const UP_THRESHOLD = 48;
+    const UP_THRESHOLD = 150;
 
     let activationY = 0;
     let lastY = Math.max(window.scrollY, 0);
