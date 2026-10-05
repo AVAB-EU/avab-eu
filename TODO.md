@@ -116,8 +116,6 @@ _Kanonisk projektlista. Senast uppdaterad 2026-09-22._
 - [ ] Lägg till unik preview per PR så kunden kan visuellt godkänna brancher från mobil/chat utan lokal VS Code.
 
 ## Navigation / Header
-- [ ] **Implementera hero-baserad auto-hide för den gemensamma headern.** Headern ska vara synlig genom hero-sektionen, döljas vid tydlig scroll ned efter hero och visas vid scroll upp. Lås headern synlig när dropdown/mobilmeny är öppen, respektera `prefers-reduced-motion` och påverka inte breadcrumb/referensankarmeny av misstag. Underlag: `docs/workflows/TEMP-header-scroll-behavior.md`.
-- [ ] **Städa efter godkänd header-scroll-implementation.** Radera TEMP-underlaget och tillfälliga TODO-punkter när implementationen är godkänd och mergead.
 
 ## Referensmigrering – Fas 7
 - [x] Inventera referensroutes och etablera structured content + återanvändbara referenskomponenter.
