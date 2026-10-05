@@ -674,7 +674,7 @@
    approved Minnebergsskolan pilot. Page-specific storytelling remains local. */
 .reference-anchor-nav-wrap {
   position: sticky;
-  top: var(--avab-nav-height, 72px);
+  top: var(--avab-sticky-nav-offset, var(--avab-nav-height, 72px));
   z-index: 20;
   padding: 0;
   border-top: 1px solid var(--avab-border);
@@ -682,6 +682,7 @@
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 8px 24px rgba(40, 46, 42, 0.08);
   backdrop-filter: blur(10px);
+  transition: top 180ms ease;
 }
 
 .reference-anchor-nav {
@@ -1190,5 +1191,12 @@
     .reference-hero--immersive
     .reference-hero-subtitle {
     margin-bottom: 26px;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .reference-anchor-nav-wrap {
+    transition: none;
   }
 }
