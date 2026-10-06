@@ -1,278 +1,69 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-09-22._
+_Kanonisk projektlista. Senast uppdaterad 2026-10-06._
 
-## Repo och source of truth
+## Aktuellt läge
 
-- [x] **Branchstädning:** alla gamla arbetsbrancher är borttagna; endast `main` återstår.
+- `AVAB-EU/avab-eu` är projektets enda source of truth. Produktionsdeploy ska utgå från `main`.
+- Teknisk SEO-baslinje är genomförd: sitemap, draft/noindex, internlänkar, guardrails och build har verifierats. Se `docs/audits/publicering-indexering-2026-09-21.md`.
+- Referensfiltreringen är genomförd i sak: sökning, Miljö/Teknik/Ort-plats-filter, antal, rensning och URL-state finns. Desktop/tablet-regressionen efter merge behöver dock fixas och verifieras innan filterbranchen kan städas bort.
+- Kamera Butik är länkad till Go Banana-referensen och den tillfälliga publiceringscopyn är åtgärdad.
+- PR #106 är mergead, men dess två öppna P2-reviewfynd finns kvar under Aktiva uppföljningar.
+- Öppna brancher får bedömas mot aktuell `main` före radering. `feature/header-scroll-auto-hide` och `feature/referenser-kompakta-filter` ska behållas tills respektive uppföljning är verifierad.
 
-- [x] **Enda aktiva repo:** `AVAB-EU/avab-eu` är enda source of truth för AVAB-webben.
-- [x] **Gamla forken borttagen:** `KodAiDeas/avab-eu` är raderad och ska inte användas för utveckling, PR, merge eller deploy.
-- [x] **Produktionsdeploy:** endast workflow i `AVAB-EU/avab-eu` får deploya `avab.eu`.
-- [x] **Senaste UI-fixar säkrade i rätt repo:** factband-standard samt godkänd hero-copy för Götetorpsskolan och Mullhyttans sporthall finns på `main`.
+## Nästa arbetsblock
 
-## Checkpoint 2026-09-22 – SEO väntar på kundbesked
+### Kamera Prioritet 2 – publiceringsgranskning
 
-- [x] Sitemap/draft/noindex-hanteringen verifierad; `https://avab.eu/sitemap-index.xml` är accepterad i Search Console.
-- [x] Search Console-baslinje och legacy-indexering är dokumenterad.
-- [ ] **Väntar på kundbesked om tre gamla WordPress-URL:er:**
-  - `/author/andreas-avab/` – gammal författarsida.
-  - `/login/` – gammal inloggningssida; kontrollera om någon kund-/medlemsinloggning fortfarande behövs.
-  - `/sample-page/` – gammal WordPress-testsida.
-- [ ] När kunden svarar: dokumentera beslutet och välj korrekt server-/SEO-hantering per URL innan någon ändring görs.
+- [ ] Granska `/kameraovervakning/skola/`, `/kameraovervakning/parkering/`, `/kameraovervakning/industri/` och `/kameraovervakning/galleria/` mot content, metadata, bilder, internlänkar, schema och visuell struktur.
+- [ ] Klassificera varje sida: redo att publicera, behöver åtgärd eller behöver kundbeslut. Ändra inte `draft`/`noindex` före granskningen och blockerarlösning.
+- [ ] Hantera `/kameraovervakning/gdpr/` separat med juridisk färskhetskontroll nära eventuell publicering.
+- [ ] Kör guardrails/build för eventuella ändringar och håll dem i små, separata PR:er.
 
-## Checkpoint 2026-09-22 – paus efter Prioritet 1
+## Aktiva uppföljningar
 
-> Dagens arbete är avslutat. Repo är städat och canonical source of truth är `AVAB-EU/avab-eu`. Endast `main` används som aktiv bas.
->
-> **Prioritet 1 är klar:** Konferensteknik är jämförd mot uppladdat kundunderlag, source coverage = 0, publicerad och indexerbar. Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber är också publicerade/indexerbara.
->
-> **Nästa startpunkt i ny chatt:** Prioritet 2 – publiceringsgranskning av kamera-branschsidorna.
+- [ ] **Referensfilter – desktop/tablet-regression:** återställ fullbreddsfilterlayouten (tre filterkort, fullbredds öppnade alternativ och tre checkboxkolumner på desktop/tablet). Verifiera, committa, pusha och mergea fixen; verifiera sedan på `main` innan `feature/referenser-kompakta-filter` raderas.
+- [ ] **PR #106 P2 – hero-detektering:** lägg till hero-detektering för `/kunskap/` (`.knowledge-hero`) och `/budgetkalkylator-av-teknik/` (`.budget-hero`), så headerns scrollbeteende får rätt sidkontext.
+- [ ] **PR #106 P2 – första scroll-deltat:** räkna in första scroll-deltat i tröskeln i stället för att börja mätningen från det redan uppdaterade `currentY`-värdet. Granska och verifiera fixen innan headerbranchen städas bort.
+- [ ] Slutför gemensam referenskortsstandard stegvis. Grundkomponenter och gemensamma stilar finns, men flera lokala referenskortvarianter återstår på startsida, tjänste- och miljösidor.
 
-### Prioritet 2 – kamera, exakt nästa arbetsblock
+## Väntar på kundbeslut
 
-- [ ] Inventera `/kameraovervakning/skola/`, `/kameraovervakning/parkering/`, `/kameraovervakning/industri/` och `/kameraovervakning/galleria/` mot aktuell content, metadata, bilder, internlänkar, schema och visuell struktur.
-- [ ] Klassificera varje sida som: **redo att publicera / behöver åtgärd / behöver kundbeslut**.
-- [ ] Ändra inte `draft/noindex` förrän respektive sida är granskad och eventuella blockerare är lösta.
-- [ ] Kontrollera Kamera Butik mot Go Banana och ta bort eventuell gammal "kommer inom kort"-copy om den finns.
-- [ ] Hantera `/kameraovervakning/gdpr/` separat med juridisk färskhetskontroll nära publicering; publicera inte GDPR-sidan automatiskt.
-- [ ] Efter varje eventuell ändring: kör guardrails/build och håll scope till små, separata PR:er.
+- [ ] `/author/andreas-avab/` – invänta besked om gammal WordPress-författarsida.
+- [ ] `/login/` – invänta besked om kund-/medlemsinloggning fortfarande behövs.
+- [ ] `/sample-page/` – invänta besked om gammal WordPress-testsida.
+- [ ] När besked kommer: dokumentera beslut och välj korrekt server-/SEO-hantering per URL innan ändring.
 
-## Nästa fas – publicering, indexering och SEO-optimering
+## Senare prioriteringar
 
-> **Aktuell status 2026-09-21:** den stora tekniska SEO-/undersidesfasen är genomförd. Build, guardrails och internlänksaudit är gröna med **P0 = 0** och **P1 = 0**. Se `docs/audits/publicering-indexering-2026-09-21.md`.
->
-> Äldre checkpoints längre ned i dokumentet är historik. De ska inte användas som aktuell startpunkt om de motsägs av denna status.
+- [ ] Standardisera FAQ på hela sajten: två kolumner och direkt före avslutande CTA, med gemensam implementation och lämplig guardrail.
+- [ ] Koppla offertformuläret till ett säkert mailflöde till `info@avab.eu` och bekräftelse till kunden; hantera spam, fel och personuppgiftsminimerad loggning.
+- [ ] Genomför separat mobil innehålls- och gränssnittsanpassning på riktiga mobilbredder och tablet.
+- [ ] Ta bort dekorativ glow bakom knappar/CTA utan att försvaga `:focus-visible`.
+- [ ] Inventera och förbättra metadata och sök-/delningspresentation sidvis; jämför med verkliga sökresultat och Search Console där möjligt.
+- [ ] Rätta korten på `/om-oss/#vad-vi-gor/`: relevanta destinationslänkar, helklickbarhet och konsekvent rubrik-/brödtextlinjering.
+- [ ] Genomför sitewide metadata-audit för title, description, canonical, robots, H1, Open Graph/Twitter och schema; prioritera viktiga sidor.
+- [ ] Följ upp Search Console efter publicering: indexering, queries, impressions, CTR, snippets och crawlstatus.
+- [ ] Fortsätt referensarbete när materialpausen kan hävas: verifiera publiceringsgodkännande, lägg till verifierat färdigställandeår, hantera Lesjöfors-bildretusch och planera Lundsberg-ombyggnad. AI får byta till befintliga assets; crop, focal point och retusch görs av kundteamet.
+- [ ] Bild-SEO: granska de 17 tidigare flaggade alt-texterna, spåra saknade original, avgör om `kopcentrum-fasad-kvall-bred.webp` ska användas, kontrollera publika bild-URL:er/hash-länkar, verifiera footerns logotypsökväg och besluta namnkonvention för `images`/`image/partners/`.
+- [ ] Skapa unik preview per PR så visuellt godkännande fungerar från mobil/chat.
+- [ ] Försona AI-dokumentationen med kundrepots aktuella `compact`/`standard`/`extended`-referensimplementation och befintliga `Reference*`-komponenter.
+- [ ] Förbättra PDF-underlagets design i budgetkalkylatorn och verifiera AVAB-logotypen i utskrift/PDF.
+- [ ] Kundönskemål återstår enligt `docs/projects/kundonskemal-2026-08-20/`: invänta beslut/material för headerkontakt, restaurangmiljöns kanoniska namn, skillnaden mellan ”Hur vi jobbar” och ”Vår leverans”, erbjudandepris och bildmappningar. Följ avtalat bildansvar.
+- [ ] Tjänstesidor: dokumentera gemensam standard; prioritera Ljus, Bild/skärm, Kamera, Talat utrymningslarm, Mikrofoner, Ljudsystem, Hörslinga, Taluppfattbarhet, Styrsystem och Bakgrundsmusik enligt sidvisa behov i projektunderlaget.
+- [ ] Miljösidor: dokumentera gemensam standard och hantera sidvisa bild-, länk-, innehålls- och referensbehov för Sporthall/arena, Simhall, Ishall, Kontor/konferens, Hotell, Restaurang/bar/klubb, Butik/retail, Köpcentrum/galleria, Skola, Vård/sjukhus, Industri och Parkering/garage.
+- [ ] Startsida: kontrollera hero-pillernas globala standard, låt kundteamet justera beskärningen av högtalarbilden, uppdatera erbjudandet först med verifierat pris och lös saknade destinationsrutter med innehållsbeslut före länkändringar.
+- [ ] Slutför full sitewide-QA vid behov: interna länkar, navigation/footer/FAQ/grids, assets, bildprestanda, alt-texter, canonical, referensår och schema samt build och visuell granskning.
 
-- [x] **Kameraövervakningens branschsidor byggda:** Skola, Parkering, Industri och Galleria använder gemensam content/layout-arkitektur.
-- [x] **Nya tjänsteundersidor byggda:** Konferensteknik, Videomöten/BYOD, Skärmar & projektorer, Digital signage, Exakt sökning/AI-analys, Ljus samt Nätverk/switchar/fiber.
-- [x] **Kvarvarande planerade 404-länkmål hanterade:** kravställning och systemintegration pekar till verifierade befintliga destinationssidor; GDPR-sidan är byggd.
-- [x] **Nya referenser byggda:** Fortnox Arena, STC Kil, Mullhyttan, Stockfallets skola, Skolhagenskolan, Loka Brunn och Götetorpsskolan.
-- [x] **Teknisk SEO-slutkontroll genomförd:** sitemap exkluderar structured draft/noindex, internlänksaudit P0=0/P1=0, guardrails och build passerar.
-- [x] **Prioritet 1 – Konferensteknik:** originalfilen `Konferensteknik.docx` är nu jämförd punkt för punkt. Source coverage = 0 saknad information. Sidan är uppdaterad till kundunderlaget och satt till `draft:false` / `seo.noindex:false`; build/guardrails ska verifieras i PR före merge.
-- [x] **Publicerade huvudtjänster:** Skärmar & projektorer, Digital signage, Ljus samt Nätverk/switchar/fiber är nu `draft:false` och `seo.noindex:false`.
-- [ ] **Prioritet 2 – publiceringsbeslut för kameraundersidor:** Skola, Parkering, Industri och Galleria. GDPR kräver separat juridisk färskhetskontroll nära publicering.
-- [ ] **Kamera Butik – uppdatera efter Go Banana-publicering:** ta bort/skriv om eventuell copy om att referensen kommer "inom kort" och lägg en naturlig internlänk till `/referenser/go-banana-bergvik/`.
-- [ ] **Prioritet 3 – referensgodkännande:** publicera endast referenser där text, projektfakta och bilder är verifierade och kunden uttryckligen har godkänt publicering.
-- [ ] **Prioritet 4 – sitewide metadata-audit:** title, meta description, canonical, robots, H1/title, Open Graph/Twitter och structured data.
-- [ ] **Prioritet 5 – Search Console efter publicering:** indexering, queries, impressions, CTR, Google-omskrivna snippets och crawlstatus.
-- [ ] **Gamla stashes ska inte appliceras utan separat granskning** — särskilt stashen med äldre startsida/factband-arbete, som tidigare återinfört gammal/felaktig layout.
+## Historik / avslutade checkpoints
 
-## Nya notiser 2026-09-14
-- [x] **Byt organisationsnummer på hela webbplatsen till `559600-9661`.** Inventerat hela repot; fyra förekomster ersatta och verifierat att det gamla numret inte finns kvar.
-- [x] **Uppdatera footerns copyright-rad till `© 2026 AVAB Sverige AB. Alla rättigheter förbehållna.`** Implementerad och verifierad i footerimplementationerna.
-- [ ] **Standardisera FAQ på hela avab.eu.** Inventera samtliga sidor som innehåller FAQ/Vanliga frågor och rätta avvikelser så att FAQ **alltid ligger direkt före sidans avslutande CTA/PageCTA** och **alltid visas i två kolumner**. Ingen sida får använda en enkolumns-FAQ. Återanvänd en gemensam global FAQ-standard i stället för sidspecifika varianter och säkerställ att ordning, markup, schema och visuell presentation är konsekventa på tjänste-, miljö-, kamera-, kunskaps- och referenssidor. Lägg gärna till guardrail/regressionstest så nya sidor inte kan återinföra fel ordning eller enkolumnslayout.
-- [ ] **Sätt upp fungerande mailflöde för det befintliga dynamiska offertformuläret.** Formuläret finns redan; koppla det till en säker server-/mailtjänst så att varje inskickad offertförfrågan skickas till `info@avab.eu` och en kopia/bekräftelse skickas till den e-postadress kunden angivit i formuläret. Säkerställ att avsändaradress/reply-to är korrekt, att mailen inte bygger på klienthemligheter i frontend och att spam-/missbruksskydd finns. Testa hela flödet i produktion, inklusive lyckad leverans till AVAB, kundkopia, felmeddelande vid misslyckad sändning och rimlig loggning utan känsliga personuppgifter.
-- [ ] **Genomför en separat mobil innehålls- och gränssnittsanpassning för hela webbplatsen.** Börja med en sidvis inventering i riktiga mobilbredder och prioritera användarens viktigaste uppgift på varje sida. Korta eller skriv om text där desktopversionen blir onödigt tung på mobil, men skapa inte två olika informationsversioner som riskerar att komma ur synk. Dölj eller flytta sekundära visuella fält endast när informationen inte behövs för beslut, SEO, tillgänglighet eller konvertering. Använd i första hand progressiv visning, expanderbara detaljer och bättre informationsordning framför att permanent ta bort relevant innehåll. Granska särskilt hero, kort/grid, faktaband, tabeller, formulär, CTA, referenser, navigation och footer. Säkerställ tillräckliga tryckytor, läsbar typografi, rimliga radlängder, fokus/tangentbord, `prefers-reduced-motion`, bildbeskärning och prestanda. Testa minst liten mobil, normal mobil och tablet samt verifiera att dolt innehåll inte skapar SEO-, schema- eller tillgänglighetsproblem.
-- [ ] **Bygg om filtreringen på referensöversikten till en kompakt webbshop-liknande filterlösning.** Behåll sökfältet synligt och ersätt de permanent synliga pillgrupperna med två fullbredds, stängda filterrader ovanför referenserna: **Miljö** och **Teknik**. Varje rad ska ha kort hjälpttext, kunna expandera till sina val och visa antal/aktiva val kompakt när filter används. Endast en filterpanel behöver vara öppen åt gången. Behåll befintlig snabb filtrering, tangentbordsstöd, tydligt antal träffar, `Rensa filter` och URL-state. Samma modell ska fungera på desktop och mobil utan en extra överordnad filterdrawer. Målet är framför allt mindre visuellt brus och snabbare väg till referenskorten.
-- [ ] **Ta bort dekorativ glow-effekt bakom samtliga knappar och CTA:er på webbplatsen.** Inventera den globala knappstandarden, gemensamma CTA-komponenter, hover/active-states och eventuell sidspecifik CSS så att ingen knapp lämnas med yttre glow eller kraftig box-shadow. Behåll däremot tydliga `:focus-visible`-markeringar för tangentbordsanvändare; fokusindikatorer får inte tas bort tillsammans med dekorativa skuggor. Om djup eller hoverfeedback behövs, använd hellre kontrast, border, färgskifte eller en mycket subtil neutral skugga som inte upplevs som glow. Verifiera särskilt den första gröna CTA-varianten som idag använder glow.
-- [ ] **Inventera och optimera metadata samt hur AVAB:s sidor faktiskt presenteras i Google och andra delnings-/sökytor.** Gör en sidvis inventering av title, meta description, canonical, robots/indexering, H1 kontra title, Open Graph/Twitter-metadata och relevant strukturerad data. Identifiera saknade, duplicerade, för långa, för korta eller innehållsmässigt svaga texter och prioritera viktiga landningssidor, tjänster, miljöer, referenser och kunskapssidor. Jämför dessutom metadata mot verkliga Google-sökresultat och Search Console där det är möjligt, eftersom Google kan skriva om title/snippet. Dokumentera vilka sökfraser och sidor som bör förbättras, vilka snippets som visas i dag samt föreslagna nya title/meta-texter innan bred ändring. Kontrollera även att canonical pekar mot `https://avab.eu/`, att index/noindex är korrekt och att schema inte motsäger synligt innehåll.
-- [ ] **Rätta boxarna i `/om-oss/#vad-vi-gor/`: länka varje box till rätt specifik sida och standardisera textlinjeringen.** Varje box ska vara helklickbar och peka till den mest relevanta destinationssidan; verifiera att det inte används generiska Kontakt-fallbacks där en specifik sida finns. Bygg kortlayouten så att alla rubriker börjar på samma vertikala linje och all brödtext börjar på samma vertikala linje även när vissa rubriker bara består av en rad och andra bryts över två rader. Lös detta strukturellt i gemensam grid/kort-CSS, exempelvis genom reserverad rubrikhöjd eller grid-rader, inte med manuella radbrytningar eller sidspecifika pixeljusteringar. Kontrollera desktop, tablet och mobil samt hover/focus och tillgänglig länksemantik.
-- [ ] **Bestäm och implementera en gemensam standard för referenskort på hela webbplatsen.** Utgå strukturellt från korten under `/tjanster/` som nuvarande designriktning för layout, bildförhållande, hierarki, spacing, klickyta och responsivt beteende, men kopiera **inte** färgpaletten därifrån. Referenskorten ska använda samma globala färger, typografi, borders, hover/focus-states och övriga designtokens som resten av AVAB via `avab.css`. Inventera först alla varianter av referenskort som används på startsida, tjänstesidor, miljösidor, referensöversikt och andra sektioner; ta därefter fram en återanvändbar komponent/standard och ersätt avvikande lokala varianter stegvis. Säkerställ konsekvent bildyta, rubrikplacering, eventuell metadata, CTA/indikator, helklickbarhet och textlinjering. Gör gärna en visuell pilot på 1–2 representativa sidor innan standarden rullas ut brett.
-
-## Checkpoint – internlänksarbete pausat 2026-09-04
-
-> **HISTORISK CHECKPOINT:** ersatt av statusen 2026-09-21 högst upp i TODO.md. Behålls som spårbar projektlogg men ska inte användas som aktuell arbetsinstruktion.
->
-> Ursprunglig status: arbetet pausades här i väntan på kundens svar.
-
-- [x] Fas A – systemiska internlänks-/ankarfel är genomförd och mergead via PR #42.
-- [x] Fas C – draft/noindex, sitemap och footer är genomförd och mergead via PR #43.
-- [x] Fas B – kvarvarande riktiga 404-destinationer är inventerad och tre säkra länkmål är verifierat rättade i commit `b8794a7`.
-- [x] **HISTORISK / SUPERSEDED:** instruktionen att återställa commit `b8794a7` ska inte längre följas. Senare SEO-arbete har ersatt denna checkpoint och aktuell internlänksaudit är P0=0/P1=0.
-- [ ] Vänta på kundens innehåll/underlag för följande sidor:
-  - `/tjanster/konferensteknik/`
-  - `/kameraovervakning/skola/`
-  - `/kameraovervakning/butik/`
-  - `/kameraovervakning/parkering/`
-  - `/kameraovervakning/industri/`
-  - `/kameraovervakning/galleria/`
-  - `/referenser/fortnox-arena-vaxjo/`
-  - `/referenser/stc-kil-gym/`
-  - `/referenser/mullhyttans-sporthall/`
-  - `/referenser/loka-brunn/`
-  - `/referenser/gotetorpsskolan-hammaro/`
-  - `/referenser/stockfallets-skola-karlstad/`
-  - `/referenser/skolhagen-stockholm/`
-- [ ] REVIEW – kräver separat mänskligt beslut innan bygg/fix: `/tjanster/ljus/`, `/tjanster/natverk-switchar-router-fiber/`, `/kravstallning/`, `/projektering/systemintegration/`, `/kameraovervakning/gdpr/`, `/kontakt/#ladda-upp-underlag`.
-- [ ] När kunden svarar: jämför nytt material mot listan ovan och skapa små separata BUILD PAGE-faser, inte en stor batch.
-- [ ] Kör internlänksauditen igen efter varje byggfas: `npm run build` → `node scripts/audit-internal-links.mjs` → `npm run validate` → `git diff --check`.
-
-**Skriv detta nästa gång arbetet återupptas:**
-
-> `Återuppta AVAB från checkpointen 2026-09-04 i TODO.md. Kontrollera först status för commit b8794a7 / PR #44 och kundens nya underlag. Föreslå sedan nästa minsta säkra fas innan någon kod ändras.`
-
-## Go-live / deployment
-- [x] GO-LIVE/deploy-verifieringen mot `avab.eu` är genomförd; produktions-FTP, webbroot, GitHub Actions-secrets och den tillfälliga deploy-markören har verifierats.
-- [x] Inventera och exkludera gamla backup-/preview-routes (bland annat `index-gammal` och `preview-miljo-*`) från produktionsbuild och sitemap i ett separat, verifierat scope. **Verifierat 2026-09-01: 24 arbetsroutes borttagna; build och sitemap rena.**
-
-## AI Content System
-- [x] Samla AI-regler, workflows, standarder och fasdokument i `docs/`.
-- [x] Flytta AI Content-arbetet till gemensamt repo `AVAB-EU/avab-eu`.
-- [x] Skapa `agent/ai-content-system` ovanpå kundens aktuella `main` utan att skriva över kundens nyare kod.
-- [ ] Försona AI-dokumentationen med kundrepots aktuella referensimplementation (`compact` / `standard` / `extended` och befintliga `Reference*`-komponenter).
-- [x] Säkerställ att guardrails/CI validerar den faktiska content-modellen i kundrepot innan bred migrering.
-- [ ] Lägg till unik preview per PR så kunden kan visuellt godkänna brancher från mobil/chat utan lokal VS Code.
-
-## Navigation / Header
-
-## Referensmigrering – Fas 7
-- [x] Inventera referensroutes och etablera structured content + återanvändbara referenskomponenter.
-- [x] Frysa Minnebergsskolan som visuell designpilot.
-- [x] Godkänd designbaseline: `https://test2.avab.eu/referenser/minnebergsskolan-arvika/`.
-- [x] Försona Minneberg med structured-content-arkitekturen.
-- [x] Verifiera Minneberg desktop/mobil.
-- [x] Migrera Säffle simhall som första migrationspilot.
-- [x] Validera Säffle responsivt samt SEO/schema/länkar/bilder/build.
-- [x] Valideringsstopp: Säffle och Minneberg använder samma schema, routeprincip och gemensamma komponenter.
-- [x] Välj Sörby sportcenter som generaliseringstest.
-- [x] Migrera Sörby sportcenter som generaliseringstest.
-- [ ] Kontrollera ankarmenyn på samtliga referenssidor, inklusive Hanza.
-- [ ] Implementera godkänd referensstandard på återstående referenssidor i små batcher.
-  - [ ] **Pausad på beställarens begäran 2026-08-18.** Starta inga migrationsbatcher förrän återstående referenser har komplett text och bildmaterial.
-- [ ] Kör slut-QA för index, internlänkar, alt-texter, canonical, drafts, responsivitet och build.
-- [ ] Behåll go-live-beslutet från 2026-08-19: draft-referenser är reachable-men-noindex, inte hårt gatade.
-- [ ] Besluta framtida process för `customer.publicationApproved` och verkligt skydd av draft-referenser.
-
-## Bild-SEO
-
-> **KORRIGERAD BILDREGEL:** AI får göra kompletta bildbyten och lägga in nya befintliga bilder från `assets`. Andreas/kundteamet gör crop/beskärning, focal point, retuschering och annan bearbetning av själva bildinnehållet. När en bildmappning finns ska AI följa den exakt.
-
-- [ ] Granska alt-texter; börja med de 17 tidigare flaggade.
-- [ ] Pusha `bildstruktur-seo` och skapa PR först när separat arbetsfas återupptas och visuell kontroll är klar.
-- [ ] Besluta om `kopcentrum-fasad-kvall-bred.webp`: radera eller ta i bruk.
-- [ ] Verifiera kvarvarande trasiga internlänkar från tidigare inventering.
-- [ ] Spåra saknade originalbilder; AI får koppla in rätt befintlig asset när ersättningen är tydlig.
-- [ ] Kontrollera publika bild-URL:er och hash-länkar.
-- [ ] Verifiera `SiteFooter.astro` efter ändrad sökväg för logotyp.
-- [ ] Välj namnkonvention för `images` respektive `image/partners/`.
-
-## Budgetkalkylator
-- [ ] Förbättra PDF-underlagets design och säkerställ att AVAB-logotypen visas korrekt i utskrift/PDF.
-
-## Kundönskemål 2026-08-20
-
-Detaljerad analys och fullständig sidlista finns i `docs/projects/kundonskemal-2026-08-20/`.
-
-> **OBLIGATORISK ANSVARSFÖRDELNING FÖR BILDER:**
-> - AI: kompletta bildbyten, nya befintliga bilder från `assets`, uppdatering av bildreferenser och val av relevant asset när uppgiften är entydig.
-> - Andreas/kundteamet: crop, focal point, retuschering, korrigering och annan bearbetning av själva bildinnehållet.
-> - Föredragen metod: ange före körning `sida/sektion -> asset-fil` så AI använder exakt rätt bild.
-
-### Fas 0 – Beslut, material och inventering
-- [ ] Besluta om headern ska visa endast `Kontakt` eller även telefonnummer.
-- [ ] Välj kanoniskt namn för restaurangmiljön.
-- [ ] Definiera skillnaden mellan `Hur vi jobbar` och `Vår leverans`.
-- [ ] Få verifierat nytt pris för startsidans aktuella erbjudande.
-- [ ] Skapa om möjligt bildmappning för alla större bildbyten.
-- [ ] Förtydliga `Lagom hantera dokument (Andreas)` och exakt WOT-fetmarkering.
-- [ ] Inventera referensmaterial och färdigställandeår innan referenspausen hävs.
-
-### Fas 1 – Globala komponenter och designregler
-- [x] Gör footern till en sammanhållen global footer. **Fas 1A: kodimplementerad och manuellt verifierad på desktop, tablet, mobil och låg viewporthöjd 2026-08-23.**
-- [x] Fixa responsiva dropdown-menyer så alla underrubriker går att nå och menyn själv kan scrolla. **Fas 1A: kodimplementerad och manuellt verifierad på desktop, tablet, mobil och låg viewporthöjd 2026-08-23.**
-- [ ] Implementera beslutad förenkling av header/kontakt.
-- [ ] Standardisera hero-pillers kontrast/opacitet.
-- [ ] Ändra synlig rubrik `FAQ` till `Vanliga frågor` på samtliga sidor.
-- [ ] Ta bort `Tjänst:` på samtliga tjänstesidor via gemensam implementation.
-- [ ] Standardisera spacing, textlinjering, sifferpiller och kortgrid (3+3, 3+2 m.fl.).
-- [x] Standardisera hela klickbara kort/CTA-fält med korrekt hover/focus. **Fas 1A: kod-, semantik- och browser-verifierad 2026-08-23.**
-
-### Fas 1B – Färgstandard och visuellt liv
-
-Underlag: `docs/projects/kundonskemal-2026-08-20/design-farg-och-landningssidor.md`.
-
-- [x] Inventera befintliga globala färgvariabler, sektionskomponenter, knappvarianter, pills och kort innan ny färgimplementation. **Genomfört i PR #29.**
-- [x] Definiera en återanvändbar global grön sektionsvariant i stället för sidspecifik CSS. **Genomfört i PR #29 med bland annat `--avab-green-dark` och `ContentSection`.**
-- [x] Säkerställ kontrast, text/länk/button/pill/focus-states samt responsiv spacing på grön bakgrund. **Tekniskt verifierat i PR #29.**
-- [x] Välj pilot för den gröna varianten och visuellt godkänn designriktningen före fortsatt arbete. **Miljölandningen godkänd av Andreas 2026-08-29; kundjusteringar hanteras efter merge.**
-- [x] Använd gröna sektioner selektivt som säljande/accentuerande ytor; undvik flera tunga gröna sektioner direkt efter varandra och långa tekniska textblock på mörk/grön yta. **Princip implementerad i PR #29.**
-- [ ] Inventera vilka ytterligare befintliga sidor som faktiskt vinner på en grön sektionsvariant innan eventuell bredare utrullning. **Separat framtida scope; inte blockerande för Fas 1B.**
-
-### Fas 1C – Landningssidor för Miljöer och Tjänster
-
-Underlag: `docs/projects/kundonskemal-2026-08-20/design-farg-och-landningssidor.md`.
-
-**Status: genomförd och mergead via PR #29 den 2026-08-29. Eventuella kundjusteringar görs som nya avgränsade ändringar.**
-
-> **Riktningen ersatt av kundbeslut 2026-09-01 efter PR #29.** Det tidigare arbetet genomfördes enligt dåvarande beslut. Nu ska `/miljo/` avvecklas som landningssida medan miljöundersidorna behålls och `Miljöer` blir navigationskategori. `/tjanster/` behålls som en kompakt tjänsteöversikt. Generellt användbara komponenter och designprinciper från fasen ska behållas.
-
-- [x] Implementera kundbeslutet 2026-09-01 i avgränsad branch: ta bort `/miljo/` som route, justera navigationen och bygg om `/tjanster/` till kompakt översikt.
-- [ ] Efter driftsättning: kontrollera trafik, externa länkar och indexering för tidigare `/miljo/`; besluta därefter om verifierad 410-hantering ska införas på servernivå. Ingen redirect till startsidan ska införas utan ny motsvarande destination.
-
-- [x] Verifiera befintlig kanonisk route för Tjänster och nuvarande beteende för `/miljo/`; skapa inga parallella URL:er utan beslut.
-- [x] Inventera samtliga miljö- och tjänsteundersidor som ska exponeras från respektive landningssida.
-- [x] Gör huvudnavigationens `Miljöer` och `Tjänster` till riktiga destinationslänkar samtidigt som undermenyerna fortfarande är tillgängliga.
-- [x] Definiera separat och tillgängligt touch/mobilbeteende för att öppna undermeny respektive följa huvudlänken.
-- [x] Bygg `/miljo/` som säljande landningssida med hero, värdeerbjudande, kreativ miljööversikt, behov/problem, referenser, grön säljsektion och avslutande CTA.
-- [x] Visuellt granska Miljölandningen på desktop och mobil och godkänn återanvändbara mönster. **Godkänd av Andreas 2026-08-29; kundfeedback hanteras efter merge vid behov.**
-- [x] Bygg `/tjanster/` med samma designsystem men egen berättelse och visuell tjänsteresa med ankarmeny, logiska tjänstegrupper, varierade feature-layouter, referenser och CTA.
-- [x] Säkerställ att landningssidorna är inspirerande/säljande medan undersidorna förblir informativa och ämnesspecifika.
-- [x] Undvik duplicerad text mellan landnings- och undersidor; landningssidorna täcker bred sökintention och vägledning, undersidorna specifik fördjupning.
-- [x] Säkerställ unik H1/title/meta description, canonical, breadcrumb, sitemap och relevant schema för båda landningssidorna.
-- [x] Verifiera crawlbara länkar från landningssidorna till relevanta undersidor och referenser.
-- [x] Regressionstesta navigation, tangentbord/focus, touch, desktop/mobil och build/CI före merge. **Build, validate och diff-check godkända före PR #29 merge.**
-
-### Fas 2 – Tjänstesidor
-- [ ] Dokumentera och implementera gemensam tjänstesidestandard innan bred sidfix.
-- [ ] Bygg Ljus.
-- [ ] Bygg Bild/skärm och koppla Skärmar/projektorer samt Visuell kommunikation korrekt.
-- [ ] Kamera: hero-piller, blixtgrafik, expanderande kort, boxlänkning och Vanliga frågor.
-- [ ] Talat utrymningslarm: bildprestanda, eventuell hero-asset och full ombyggnad enligt standard.
-- [ ] Mikrofoner: hero-asset, Claessons, WOT, Mikrofonguiden, 3+3, Radiolänken, vit ruta, miljölinjering och Ekhagsskolan.
-- [ ] Ljudsystem: hero-asset, kabellänk, 3+3, Claessons-bild och internlänkning.
-- [ ] Hörslinga: texter, budgetkalkylator, miljöer, NTI, `Tekniken bakom`-bild, hyrljud.nu, Auracast-bild och Vanliga frågor.
-- [ ] Taluppfattbarhet: referenser och miljöer.
-- [ ] Styrsystem: blixtgrafik, 3+2, klickbar hotell/restaurang-ruta och rätt service/support-länk.
-- [ ] Bakgrundsmusik: hero-asset och referenser.
-
-### Fas 3 – Miljösidor
-- [ ] Dokumentera och implementera gemensam miljösidestandard innan bred sidfix.
-- [ ] Sporthall & arena: budgetkalkylator, helklickbar grön CTA och hero-rubrik.
-- [ ] Simhall: byt hero-asset; rätta Spa/relax/ljus, Infoskärmar, Årjäng och Sälen.
-- [ ] Ishall: budgetkalkylator, `Det här får du`-linjering och spacing i `Hur vi jobbar`.
-- [ ] Kontor & Konferens: lösningssektion, skärmlänk, BYOD och rätt bildlänk.
-- [ ] Hotell: högupplöst hero-asset och referenser.
-- [ ] Restaurang/bar/klubb: kanoniskt namn, hero-asset, Capri/Terrassen/Teburu/Pinchos, Tempel, textlinjering och Vanliga frågor.
-- [ ] Butik & Retail: hero/GB-assets, piller och övriga bildbyten.
-- [ ] Köpcentrum & Galleria: full ombyggnad enligt miljöstandard, assets, boxar, grönt streck, arbetssätt och referenser.
-- [ ] Skola: rätta lösnings-/informationsskärmslänkar/bilder och lägg till referenser.
-- [ ] Vård & Sjukhus: hero-asset, rätt bildplacering och nytt upplägg för `Hur vi jobbar`/`Vår leverans`.
-- [ ] Industri: hero-bedömning/asset, teknikbilder, Bilparken/Hanza/Lesjöfors och `Hur vi jobbar`.
-- [ ] Parkering & garage: hero-asset samt teknikbilder/länkar.
-
-### Fas 4 – Startsida
-- [ ] Justera hero-piller enligt global standard.
-- [ ] **MANUELL BILDBEARBETNING – Andreas:** flytta/cropa hero-bilden så högtalaren syns bättre.
-- [ ] Uppdatera aktuellt erbjudande med kundverifierat pris.
-- [ ] Besluta och rätta startsidans åtta verifierat saknade destinationsroutes: `/ljus/`, `/visuell-kommunikation/`, `/nedladdningar/checklista-av-sakerhet/` och fem ämnesroutes under `/kunskap/`. Ändra inte korten till Kontakt-fallback utan ett innehållsbeslut.
-
-### Fas 5 – Referenser
-- [ ] Lägg till strukturerat fält för färdigställandeår och visa endast verifierade år.
-- [ ] Verifiera att materialpausen kan hävas innan nya migrationsbatcher startas.
-- [ ] Bygg/migrera Mullhyttan, Fortnox arena, STC Kil och STC Hammarö när materialet är komplett.
-- [ ] **MANUELL BILDBEARBETNING – Andreas:** Lesjöfors, retuschera/”dammsug” golvet. AI får därefter använda den färdiga asseten.
-- [ ] Standardisera avstånd mellan `Hur vi jobbar`-piller och rubrik.
-- [ ] Bygg om Lundsberg; kompletta bildbyten får AI göra, crop/retusch gör Andreas.
-
-### Fas 6 – Full QA
-- [ ] Kör full internlänkskontroll på hela sajten, inklusive felaktiga Kontakt-fallbacks.
-- [ ] Regressionstesta navigation, footer, Vanliga frågor och grids på desktop/tablet/mobil.
-- [ ] Kontrollera att bildbyten använder avsedda assets.
-- [ ] Kontrollera bildprestanda, dimensioner, lazy loading och LCP.
-- [ ] Flagga crop/focal-point/retuschproblem till Andreas.
-- [ ] Kontrollera alt-texter, canonical, referensår och relevanta schemas.
-- [ ] Kör build/CI och visuell kundgranskning före merge/publicering.
-
-### Beslut som ska bevaras
-- `AVAB-EU/avab-eu` är gemensam GitHub source of truth.
-- Nytt AI-/content-arbete ska inte fortsätta parallellt i `KodAiDeas/avab-eu`.
-- `main` ändras inte direkt av AI Content-arbetet; branch + PR används.
-- Minnebergsskolan är designpilot; Säffle simhall är första migrationspilot.
-- Kundrepots aktuella kod är implementationens source of truth vid konflikt.
-- Inga undermappar i `public/assets/`; bilder ligger platt och endast omdöpta.
-- Generiska motivnamn används i filnamn, ortsnamn i alt-text.
-- Visuellt lika men icke-identiska bilder hålls isär.
-- De två tidigare raderade gymfilerna förblir raderade; `gym_hero_hammaro_stc.webp` behålls som framtida gym-hero.
-- Val av gym-hero är ett separat innehållsbeslut.
-- **Bildansvar:** AI får göra kompletta bildbyten och lägga in nya befintliga assets; Andreas/kundteamet gör crop, focal point, retuschering och annan bildbearbetning.
+- **2026-10-06 – referensfilter:** filtreringen är färdig i sak och ska betraktas som klar när den verifierade desktop/tablet-regressionen är mergead och verifierad på `main`. Filtreringen har Miljö, Teknik och Ort/plats samt sökning, träffantal, rensning och URL-state.
+- **2026-10-06 – Kamera Butik / Go Banana:** internlänk till `/referenser/go-banana-bergvik/` finns och tillfällig ”kommer inom kort”-copy är åtgärdad.
+- **2026-10-06 – PR #107:** header-scroll-städningen är mergead på `main`; den tillfälliga beteendedokumentationen är borttagen.
+- **2026-09-22 – SEO:** sitemap/draft/noindex-hantering verifierad och sitemap-index accepterat i Search Console. SEO-baslinjen dokumenteras i `docs/audits/publicering-indexering-2026-09-21.md`.
+- **2026-09-21 – teknisk publiceringsfas:** byggda kamera- och tjänsteundersidor, nya referenser samt teknisk SEO-/internlänkskontroll dokumenterades; P0=0 och P1=0 vid den kontrollen.
+- **2026-09-04 – internlänksarbete:** äldre checkpoint ersatt av 2026-09-21-status. Instruktionen att återställa `b8794a7` och gamla listor över väntande sidunderlag gäller inte utan ny verifiering.
+- **2026-09-01 – miljönavigation:** kundbeslut ersatte `/miljo/`-landningen med `Miljöer` som navigationskategori och en kompakt `/tjanster/`-översikt. Kontrollera trafik/externa länkar före eventuell serverbaserad 410; ingen startsideredirect utan motsvarande destination.
+- **2026-08-29 – Fas 1B/1C och PR #29:** grön sektionsstandard och landningssidornas dåvarande designpilot genomfördes. Senare kundbeslut ändrade `/miljo/`-riktningen; generella komponenter/principer består.
+- **2026-08-23 – Fas 1A:** global footer, responsiva dropdown-menyer och helklickbara kort verifierades. Gamla faschecklistor är avslutade och ersatta av prioriteringarna ovan.
+- **Projektbeslut att bevara:** `AVAB-EU/avab-eu` är enda source of truth; använd inte `KodAiDeas/avab-eu`. Kundrepots faktiska kod är implementationens källa. Bilder hålls platt i `public/assets/`; AI får göra entydiga kompletta assetbyten, medan crop, focal point och retusch hanteras av kundteamet.
