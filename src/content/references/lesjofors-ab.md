@@ -43,9 +43,15 @@ archive:
     - dante
     - mikrofoner
     - konferens
+  cardTechnologies:
+    - konferens
+    - ljud
+    - bild
+    - mikrofoner
 category: Referens
 environment: Kontor och konferens
 location: Lesjöfors
+filterLocation: Lesjöfors
 customer:
   name: Lesjöfors AB
   publicDisplay: Lesjöfors AB

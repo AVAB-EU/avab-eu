@@ -33,11 +33,16 @@ archive:
     - styrsystem
     - crestron
     - ljus
+  cardTechnologies:
+    - styrsystem
+    - ljus
+    - crestron
   featured: false
 
 category: Referens
 environment: Kontor och konferens
 location: Solna
+filterLocation: Solna
 customer:
   name: Nobel Forum
   publicDisplay: Nobel Forum

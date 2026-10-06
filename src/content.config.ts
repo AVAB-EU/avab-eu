@@ -126,11 +126,22 @@ const referenceSchema = z
       excerpt: z.string(),
       environments: z.array(z.string()).min(1),
       technologies: z.array(z.string()).min(1),
+      cardTechnologies: z.array(z.string()).min(1).max(4).optional(),
       featured: z.boolean().optional(),
+    }).superRefine((archive, context) => {
+      archive.cardTechnologies?.forEach((technology) => {
+        if (!archive.technologies.includes(technology)) {
+          context.addIssue({
+            code: "custom",
+            message: "archive.cardTechnologies måste använda ID:n från archive.technologies.",
+          });
+        }
+      });
     }),
     category: z.string(),
     environment: z.string(),
     location: z.string(),
+    filterLocation: z.string().min(1),
     customer: z.object({
       name: requiredText,
       publicDisplay: requiredText,

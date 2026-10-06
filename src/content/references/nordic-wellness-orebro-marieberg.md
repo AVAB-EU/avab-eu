@@ -30,9 +30,13 @@ archive:
   technologies:
     - ljus
     - styrsystem
+  cardTechnologies:
+    - ljus
+    - styrsystem
 category: Referens
 environment: Gym
 location: Örebro
+filterLocation: Örebro
 customer:
   name: Nordic Wellness Marieberg
   publicDisplay: Nordic Wellness Marieberg

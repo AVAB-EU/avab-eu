@@ -36,10 +36,16 @@ archive:
     - crestron
     - mikrofoner
     - konferens
+  cardTechnologies:
+    - konferens
+    - bild
+    - mikrofoner
+    - styrsystem
 
 category: Referens
 environment: Kontor och konferens
 location: Töcksfors
+filterLocation: Töcksfors
 customer:
   name: Hanza Mechanics
   publicDisplay: Hanza Mechanics

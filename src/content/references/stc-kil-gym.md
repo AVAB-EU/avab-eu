@@ -35,11 +35,17 @@ archive:
     - mikrofoner
     - bakgrundsmusik
     - projektering
+  cardTechnologies:
+    - ljud
+    - bakgrundsmusik
+    - mikrofoner
+    - styrsystem
   featured: false
 
 category: Referens
 environment: Gym och gruppträning
 location: Kil, Värmland
+filterLocation: Kil
 customer:
   name: STC Kil
   publicDisplay: STC Kil

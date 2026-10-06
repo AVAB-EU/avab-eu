@@ -41,9 +41,13 @@ archive:
   technologies:
     - ljud
     - mikrofoner
+  cardTechnologies:
+    - ljud
+    - mikrofoner
 category: Referens
 environment: Utomhusidrott
 location: Karlstad
+filterLocation: Karlstad
 customer:
   name: Kroppkärrs IP
   publicDisplay: Kroppkärrs IP

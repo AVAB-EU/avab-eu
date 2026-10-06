@@ -46,10 +46,16 @@ archive:
     - bakgrundsmusik
     - konferens
     - service
+  cardTechnologies:
+    - konferens
+    - ljud
+    - bild
+    - bakgrundsmusik
   featured: true
 category: Referens
 environment: Konferens och restaurang
 location: Karlstad
+filterLocation: Karlstad
 customer:
   name: Claessons Konferens & Restaurang
   publicDisplay: Claessons Konferens & Restaurang

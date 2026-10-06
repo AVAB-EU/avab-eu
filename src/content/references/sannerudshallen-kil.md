@@ -43,9 +43,15 @@ archive:
     - dsp
     - taluppfattbarhet
     - projektering
+  cardTechnologies:
+    - ljud
+    - taluppfattbarhet
+    - projektering
+    - dsp
 category: Referens
 environment: Ishall
 location: Kil
+filterLocation: Kil
 customer:
   name: Sannerudshallen
   publicDisplay: Sannerudshallen
