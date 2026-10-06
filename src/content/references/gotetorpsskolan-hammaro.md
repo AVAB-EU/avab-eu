@@ -32,11 +32,15 @@ archive:
   technologies:
     - ljud
     - styrsystem
+  cardTechnologies:
+    - ljud
+    - styrsystem
   featured: false
 
 category: Referens
 environment: Skola
 location: Hammarö, Värmland
+filterLocation: Hammarö
 customer:
   name: Götetorpsskolan
   publicDisplay: Götetorpsskolan

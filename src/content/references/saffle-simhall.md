@@ -36,11 +36,17 @@ archive:
     - ljus
     - horslinga
     - mikrofoner
+  cardTechnologies:
+    - ljud
+    - styrsystem
+    - horslinga
+    - ljus
   featured: true
 
 category: Referens
 environment: Simhall
 location: Säffle
+filterLocation: Säffle
 customer:
   name: Assemblin El AB
   publicDisplay: Assemblin El AB

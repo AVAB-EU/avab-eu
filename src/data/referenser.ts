@@ -13,11 +13,13 @@ export interface Reference {
   title: string;
   slug: string;
   location: string;
+  filterLocation: string;
   image: string;
   imageAlt: string;
   excerpt: string;
   environments: string[];
   technologies: string[];
+  cardTechnologies?: string[];
   featured?: boolean;
 }
 
@@ -66,170 +68,200 @@ export const references: Reference[] = [
     title: "Säffle simhall",
     slug: "/referenser/saffle-simhall/",
     location: "Säffle",
+    filterLocation: "Säffle",
     image: "/assets/tegelbyggnad-glasfasad-entre.webp",
     imageAlt: "Säffle simhall med zonindelat ljud och Crestronstyrning från AVAB",
     excerpt:
       "Överordnat Crestronsystem, zonindelat ljud, ingjutna hörslingor, projektor och RGB-styrd miljöbelysning.",
     environments: ["simhall"],
     technologies: ["ljud", "styrsystem", "crestron", "ljus", "horslinga", "mikrofoner", "bild", "projektering"],
+    cardTechnologies: ["ljud", "styrsystem", "horslinga", "bild"],
     featured: true,
   },
   {
     title: "Årjängs simhall",
     slug: "/referenser/arjangs-simhall/",
     location: "Årjäng",
+    filterLocation: "Årjäng",
     image: "/assets/simhall-bassang-glasfasad.webp",
     imageAlt: "Bassängmiljö med väggmonterade högtalare",
     excerpt:
       "Bose ControlSpace EX-1280, sex ljudzoner, 100V med tio års garanti, projektor och diskslinga i en krävande klor- och fuktmiljö.",
     environments: ["simhall"],
     technologies: ["ljud", "dsp", "horslinga", "bild", "projektering"],
+    cardTechnologies: ["ljud", "bild", "horslinga", "projektering"],
   },
   {
     title: "Sannerudshallen, Kil",
     slug: "/referenser/sannerudshallen-kil/",
     location: "Kil",
+    filterLocation: "Kil",
     image: "/assets/hero-kils-ishall-interior.webp",
     imageAlt: "Interiör i Kils ishall med upphängda högtalare",
     excerpt:
       "Omprojekterat ishallsljud med riktade 12-tums passiva Electro-Voice-högtalare, dbx DriveRack, nytt slutsteg och skyddad rackplacering.",
     environments: ["ishall", "sporthall"],
     technologies: ["ljud", "dsp", "taluppfattbarhet", "projektering"],
+    cardTechnologies: ["ljud", "taluppfattbarhet", "projektering", "dsp"],
   },
   {
     title: "Kroppkärrs IP",
     slug: "/referenser/kroppkarrs-ip-fotboll/",
     location: "Karlstad",
+    filterLocation: "Karlstad",
     image: "/assets/utomhushogtalare-pa-mast.webp",
     imageAlt: "Utomhushögtalare monterade i mast vid fotbollsplan",
     excerpt:
       "Tvåzons utomhusljud med AtlasIED-högtalare, 100V, Denon-mixer, trådlösa mikrofoner och skyddad Bluetooth-pairing över två fotbollsplaner.",
     environments: ["utomhusidrott", "sporthall"],
     technologies: ["ljud", "mikrofoner"],
+    cardTechnologies: ["ljud", "mikrofoner"],
   },
   {
     title: "Minnebergsskolan, Arvika",
     slug: "/referenser/minnebergsskolan-arvika/",
     location: "Arvika",
+    filterLocation: "Arvika",
     image: "/assets/modern-trafasad-innergard.webp",
     imageAlt: "Minnebergsskolan i Arvika med aula, hörsalar och Crestron från AVAB",
     excerpt:
       "Skola för 900 elever: klassrum, 20 hörsalar, 18 infoskärmar och en aula med Crestron, DMX och Dante.",
     environments: ["skola"],
     technologies: ["ljud", "bild", "ljus", "styrsystem", "crestron", "dante", "mikrofoner", "horslinga"],
+    cardTechnologies: ["ljud", "bild", "styrsystem", "horslinga"],
     featured: true,
   },
   {
     title: "Lesjöfors AB",
     slug: "/referenser/lesjofors-ab/",
     location: "Lesjöfors",
+    filterLocation: "Lesjöfors",
     image: "/assets/lesjofors-ab.webp",
     imageAlt: "Konferensrum hos Lesjöfors AB med långbord och stor display",
     excerpt:
       "Konferensrum med Q-SYS, AEC, Dante, Audio-Technica beamforming-takmikrofon, Huddly-kamera och USB-C-videomöte.",
     environments: ["industri", "kontor-konferens"],
     technologies: ["ljud", "bild", "dsp", "dante", "mikrofoner", "konferens"],
+    cardTechnologies: ["konferens", "ljud", "bild", "mikrofoner"],
   },
   {
     title: "Hundfjällshotellet & Hundfjällscenter",
     slug: "/referenser/hundfjallshotellet-hundfjallscenter-salen/",
     location: "Sälen",
+    filterLocation: "Sälen",
     image: "/assets/fjallanlaggning-vinterkvall.webp",
     imageAlt: "Hög entré i Hundfjällshotellet i Sälen med pendlade högtalare från AVAB",
     excerpt:
       "494 högtalare i 28 appstyrda ljudzoner, EASE-projektering, fem konferensrum med SLS-hörslinga och Dante mellan husen.",
     environments: ["hotell", "kontor-konferens", "restaurang-bar-klubb", "gym"],
     technologies: ["ljud", "dante", "horslinga", "konferens", "bakgrundsmusik", "projektering", "mikrofoner"],
+    cardTechnologies: ["ljud", "konferens", "horslinga", "bakgrundsmusik"],
     featured: true,
   },
   {
     title: "Friskis&Svettis Karlstad",
     slug: "/referenser/friskis-solstadens-sportcenter/",
     location: "Karlstad",
+    filterLocation: "Karlstad",
     image: "/assets/friskis-svettis-gym.webp",
     imageAlt: "Träningslokal med gymutrustning och takhögtalare",
     excerpt:
       "Service, utbyte och komplettering av en tio år gammal anläggning: 24 ljudzoner, 32 ingångar, sju salar, Crestron och ClearOne.",
     environments: ["gym"],
     technologies: ["ljud", "styrsystem", "crestron", "dsp", "mikrofoner", "konferens", "service"],
+    cardTechnologies: ["ljud", "styrsystem", "mikrofoner", "service"],
     featured: true,
   },
   {
     title: "Pinchos Karlstad City",
     slug: "/referenser/pinchos-karlstad-city/",
     location: "Karlstad",
+    filterLocation: "Karlstad",
     image: "/assets/pinchos-karlstad-city-hero-restaurang.webp",
     imageAlt: "Restaurangmiljö på Pinchos Karlstad City med zonindelat ljudsystem från AVAB",
     excerpt:
       "Zonindelat restaurangljud med Yamaha MTX3, åttakanalsförstärkning, appstyrning samt 3\", 5\" och 8\" högtalare.",
     environments: ["restaurang-bar-klubb"],
     technologies: ["ljud", "dsp", "bakgrundsmusik", "projektering", "styrsystem"],
+    cardTechnologies: ["ljud", "bakgrundsmusik", "styrsystem", "projektering"],
   },
   {
     title: "Claessons Konferens & Restaurang",
     slug: "/referenser/claessons-restaurang-konferens/",
     location: "Karlstad",
+    filterLocation: "Karlstad",
     image: "/assets/claessons-konferens-albatrossen.webp",
     imageAlt: "Albatrossen hos Claessons med projektorduk och sittplatser",
     excerpt:
       "Åtta konferensrum för 6 till 200 personer, Biamp-styrning, HDBaseT, trådlösa mikrofoner, restaurangljud och Pioneer XPRS-festanläggning.",
     environments: ["kontor-konferens", "restaurang-bar-klubb"],
     technologies: ["ljud", "bild", "styrsystem", "mikrofoner", "bakgrundsmusik", "konferens", "service"],
+    cardTechnologies: ["konferens", "ljud", "bild", "bakgrundsmusik"],
     featured: true,
   },
   {
     title: "Nordic Wellness Marieberg",
     slug: "/referenser/nordic-wellness-orebro-marieberg/",
     location: "Örebro",
+    filterLocation: "Örebro",
     image: "/assets/gym-interior-bla-ledbelysning.webp",
     imageAlt: "Gymmiljö med blå linjär LED-belysning",
     excerpt:
       "180 meter fjärrstyrd LED-belysning pendlad helt parallellt från ett snett tak i en ombyggd padelhall. Precisionsmontage på höjd.",
     environments: ["gym"],
     technologies: ["ljus", "styrsystem"],
+    cardTechnologies: ["ljus", "styrsystem"],
   },
   {
     title: "Sörby idrottshall, Kumla",
     slug: "/referenser/sorby-sporthall-kumla/",
     location: "Kumla",
+    filterLocation: "Kumla",
     image: "/assets/sporthall-interior-linjer.webp",
     imageAlt: "Sörby idrottshall i Kumla med Crestron, Dante och LED-vägg från AVAB",
     excerpt:
       "Delbar hall med Crestron, Bose ControlSpace EX-1280, Dante-anslutna Bluetooth-mottagare, trådlösa mikrofoner och LED-vägg.",
     environments: ["sporthall", "skola"],
     technologies: ["ljud", "bild", "styrsystem", "crestron", "dsp", "dante", "mikrofoner", "ledvagg", "taluppfattbarhet"],
+    cardTechnologies: ["ljud", "ledvagg", "styrsystem", "mikrofoner"],
   },
   {
     title: "Ekhagsskolan, Dals Långed",
     slug: "/referenser/ekhagsskolan-dals-langed/",
     location: "Dals Långed",
+    filterLocation: "Dals Långed",
     image: "/assets/takhogtalare-rad-takinstallation.webp",
     imageAlt: "Delbar idrottshall med spelplan och läktare",
     excerpt:
       "Zonstyrt ljud i en delbar skolidrottshall med Bose EX-880, CC-16-paneler, JBL EON, Sennheiser-mikrofoner, AUX och Bluetooth.",
     environments: ["skola", "sporthall"],
     technologies: ["ljud", "styrsystem", "dsp", "mikrofoner", "taluppfattbarhet", "projektering"],
+    cardTechnologies: ["ljud", "styrsystem", "mikrofoner", "taluppfattbarhet"],
   },
   {
     title: "Lundsbergs skola",
     slug: "/referenser/lundsbergs-skola-gym/",
     location: "Storfors",
+    filterLocation: "Storfors",
     image: "/assets/gym-interior-traningsutrustning.webp",
     imageAlt: "Gymmiljö med träningsutrustning och integrerade högtalare",
     excerpt:
       "Appstyrd ljudanläggning i åtta zoner för gym, spinning- och roddsal, entré och omklädningsrum, med infällda högtalare och basar.",
     environments: ["skola", "gym"],
     technologies: ["ljud", "bild", "bakgrundsmusik", "projektering"],
+    cardTechnologies: ["ljud", "bakgrundsmusik", "bild", "projektering"],
   },
   {
     title: "Galleria Duvan, Karlstad",
     slug: "/referenser/galleria-duvan/",
     location: "Karlstad",
+    filterLocation: "Karlstad",
     image: "/assets/kopcentrum-fasad-kvall.webp",
     imageAlt: "Galleria Duvan i Karlstad kvällstid",
     excerpt:
       "Under uppbyggnad – digital signage i Galleria Duvan i Karlstad med två fristående totemskärmar på 55 tum och 700 nits för publik information.",
     environments: ["kopcentrum-galleria", "butik-retail"],
     technologies: ["bild"],
+    cardTechnologies: ["bild"],
   },
 ];

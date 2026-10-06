@@ -32,16 +32,22 @@ archive:
     - skola
   technologies:
     - ljud
-    - hörslinga
-    - Dante
+    - horslinga
+    - dante
     - styrsystem
     - mikrofoner
     - projektering
+  cardTechnologies:
+    - ljud
+    - horslinga
+    - dante
+    - styrsystem
   featured: false
 
 category: Referens
 environment: Sporthall, skola och föreningsverksamhet
 location: Mullhyttan, Lekebergs kommun
+filterLocation: Mullhyttan
 customer:
   name: Björkholms El, Örebro
   publicDisplay: Björkholms El, Örebro

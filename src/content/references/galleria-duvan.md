@@ -32,11 +32,14 @@ archive:
     - butik-retail
   technologies:
     - bild
+  cardTechnologies:
+    - bild
   featured: false
 
 category: Referens
 environment: Köpcentrum och galleria
 location: Karlstad
+filterLocation: Karlstad
 customer:
   name: Galleria Duvan
   publicDisplay: Galleria Duvan, Karlstad

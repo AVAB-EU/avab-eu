@@ -37,9 +37,15 @@ archive:
     - mikrofoner
     - ledvagg
     - taluppfattbarhet
+  cardTechnologies:
+    - ljud
+    - ledvagg
+    - styrsystem
+    - mikrofoner
 category: Referens
 environment: Sporthall
 location: Kumla
+filterLocation: Kumla
 customer:
   name: Sörby sportcenter
   publicDisplay: Sörby sportcenter

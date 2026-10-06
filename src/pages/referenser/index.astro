@@ -18,11 +18,13 @@ const contentReferences: Reference[] = (await getCollection("references"))
     title: entry.data.archive.title,
     slug: entry.data.slug,
     location: entry.data.location,
+    filterLocation: entry.data.filterLocation,
     image: entry.data.archive.image.src,
     imageAlt: entry.data.archive.image.alt,
     excerpt: entry.data.archive.excerpt,
     environments: entry.data.archive.environments,
     technologies: entry.data.archive.technologies,
+    cardTechnologies: entry.data.archive.cardTechnologies,
     featured: entry.data.archive.featured,
   }));
 
@@ -31,6 +33,11 @@ const references = [
   ...legacyReferences.filter((reference) => !migratedSlugs.has(reference.slug)),
   ...contentReferences,
 ];
+const locations = [...new Map(
+  references.map((reference) => [reference.filterLocation.toLocaleLowerCase("sv"), reference.filterLocation]),
+).entries()]
+  .map(([id, label]) => ({ id, label }))
+  .sort((a, b) => a.label.localeCompare(b.label, "sv"));
 
 // Utvalda projekt till förtroendebandet (fasta siffror som säljer).
 const trustItems = [
@@ -262,31 +269,36 @@ const itemListElements = sorted.map((ref, i) => ({
 
     .filter-options[hidden] { display: none; }
 
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      padding-top: 14px;
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2px;
     }
 
-    .chip {
-      padding: 8px 15px;
-      background: var(--avab-white);
-      border: 1px solid var(--avab-border);
-      border-radius: 999px;
+    .filter-checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 7px 8px;
+      border-radius: var(--avab-radius-sm);
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--avab-dark-muted);
       cursor: pointer;
-      transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
-      user-select: none;
-    }
-    .chip:hover { border-color: var(--avab-green); color: var(--avab-dark); }
-    .chip:focus-visible { outline: 3px solid var(--avab-green); outline-offset: 2px; }
-    .chip[aria-pressed="true"] {
-      background: var(--avab-green);
-      border-color: var(--avab-green);
       color: var(--avab-dark);
+      transition: background 180ms ease;
+    }
+    .filter-checkbox-label:hover { background: var(--avab-light); }
+    .filter-checkbox-label input {
+      width: 19px;
+      height: 19px;
+      margin: 0;
+      accent-color: var(--avab-green);
+      flex: 0 0 auto;
+    }
+    .filter-checkbox-label input:focus-visible {
+      outline: 3px solid var(--avab-green);
+      outline-offset: 3px;
     }
 
     .filter-actions {
@@ -318,21 +330,9 @@ const itemListElements = sorted.map((ref, i) => ({
     .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 34px; }
 
     .ref-meta { display: block; margin-bottom: 8px; color: var(--avab-green); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; }
-    .ref-pills { display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0 0; padding: 0; list-style: none; }
-    .ref-pills li {
-      padding: 5px 11px;
-      background: var(--avab-light);
-      border: 1px solid var(--avab-border);
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--avab-dark-muted);
-    }
-    .ref-pills .ref-pill-more { background: transparent; border-style: dashed; }
-    .ref-cta { margin-top: 18px; font-weight: 800; color: var(--avab-dark); }
-    .ref-filter-card:hover .ref-cta { color: var(--avab-green); }
-    .ref-cta::after { content: " →"; color: var(--avab-green); }
-
+    .ref-tech-list { margin: 16px 0 0; padding-left: 1.2rem; color: var(--avab-dark-muted); }
+    .ref-tech-list li { margin: 3px 0; font-size: 0.88rem; font-weight: 600; }
+    .ref-tech-list li::marker { color: var(--avab-green); }
     .no-results {
       display: none;
       margin-top: 34px;
@@ -355,7 +355,14 @@ const itemListElements = sorted.map((ref, i) => ({
       .trust-grid { grid-template-columns: repeat(2, 1fr); }
       .trust-cell:nth-child(odd) { border-left: none; }
       .ref-grid { grid-template-columns: 1fr; }
+      .filter-accordions {
+        display: block;
+      }
+      .filter-accordion + .filter-accordion { margin-top: 10px; }
       .filter-panel { width: 100%; }
+      #envFilterTrigger, #techFilterTrigger, #placeFilterTrigger { display: grid; width: 100%; }
+      .filter-options { width: 100%; padding: 4px 16px 16px; }
+      .checkbox-grid { grid-template-columns: minmax(0, 1fr); gap: 2px; }
       .filter-accordion-trigger { min-height: 84px; }
       .filter-accordion-help { font-size: 0.88rem; }
       .filter-options { padding: 4px 16px 16px; }
@@ -418,7 +425,7 @@ const itemListElements = sorted.map((ref, i) => ({
                 class="filter-accordion-trigger"
                 id="envFilterTrigger"
                 aria-expanded="false"
-                aria-controls="envFilterPanel"
+                aria-controls="envFilterOptions"
               >
                 <svg class="filter-accordion-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path d="M4 5h16l-6.4 7.2v5.2l-3.2 1.6v-6.8L4 5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
@@ -432,10 +439,13 @@ const itemListElements = sorted.map((ref, i) => ({
                   <span class="filter-accordion-chevron" aria-hidden="true"></span>
                 </span>
               </button>
-              <div class="filter-options" id="envFilterPanel" hidden>
-                <div class="chip-row" id="envChips">
+              <div class="filter-options" id="envFilterOptions" hidden>
+                <div class="checkbox-grid">
                   {environments.map((env) => (
-                    <button type="button" class="chip" data-filter-type="env" data-filter-id={env.id} aria-pressed="false">{env.label}</button>
+                    <label class="filter-checkbox-label">
+                      <input type="checkbox" data-filter-type="env" value={env.id} />
+                      <span>{env.label}</span>
+                    </label>
                   ))}
                 </div>
               </div>
@@ -447,7 +457,7 @@ const itemListElements = sorted.map((ref, i) => ({
                 class="filter-accordion-trigger"
                 id="techFilterTrigger"
                 aria-expanded="false"
-                aria-controls="techFilterPanel"
+                aria-controls="techFilterOptions"
               >
                 <svg class="filter-accordion-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path d="M4 5h16l-6.4 7.2v5.2l-3.2 1.6v-6.8L4 5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
@@ -461,10 +471,45 @@ const itemListElements = sorted.map((ref, i) => ({
                   <span class="filter-accordion-chevron" aria-hidden="true"></span>
                 </span>
               </button>
-              <div class="filter-options" id="techFilterPanel" hidden>
-                <div class="chip-row" id="techChips">
+              <div class="filter-options" id="techFilterOptions" hidden>
+                <div class="checkbox-grid">
                   {technologies.map((tech) => (
-                    <button type="button" class="chip" data-filter-type="tech" data-filter-id={tech.id} aria-pressed="false">{tech.label}</button>
+                    <label class="filter-checkbox-label">
+                      <input type="checkbox" data-filter-type="tech" value={tech.id} />
+                      <span>{tech.label}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-accordion">
+              <button
+                type="button"
+                class="filter-accordion-trigger"
+                id="placeFilterTrigger"
+                aria-expanded="false"
+                aria-controls="placeFilterOptions"
+              >
+                <svg class="filter-accordion-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M4 5h16l-6.4 7.2v5.2l-3.2 1.6v-6.8L4 5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+                <span class="filter-accordion-copy">
+                  <span class="filter-accordion-title">Ort / plats</span>
+                  <span class="filter-accordion-help">Filtrera efter ort eller plats.</span>
+                </span>
+                <span class="filter-accordion-meta">
+                  <span class="filter-accordion-count" id="placeFilterCount" hidden></span>
+                  <span class="filter-accordion-chevron" aria-hidden="true"></span>
+                </span>
+              </button>
+              <div class="filter-options" id="placeFilterOptions" hidden>
+                <div class="checkbox-grid">
+                  {locations.map((location) => (
+                    <label class="filter-checkbox-label">
+                      <input type="checkbox" data-filter-type="place" value={location.id} />
+                      <span>{location.label}</span>
+                    </label>
                   ))}
                 </div>
               </div>
@@ -513,21 +558,26 @@ const itemListElements = sorted.map((ref, i) => ({
     (function () {
       const grid = document.getElementById("refGrid");
       const cards = Array.from(grid.querySelectorAll(".ref-filter-card"));
-      const chips = Array.from(document.querySelectorAll(".chip"));
+      const checkboxes = Array.from(document.querySelectorAll(".filter-checkbox-label input[type='checkbox']"));
       const search = document.getElementById("refSearch");
       const resultCount = document.getElementById("resultCount");
       const clearBtn = document.getElementById("clearFilters");
       const noResults = document.getElementById("noResults");
       const envFilterCount = document.getElementById("envFilterCount");
       const techFilterCount = document.getElementById("techFilterCount");
+      const placeFilterCount = document.getElementById("placeFilterCount");
       const total = cards.length;
 
-      const state = { env: new Set(), tech: new Set(), q: "" };
+      const state = { env: new Set(), tech: new Set(), place: new Set(), q: "" };
 
       function readUrl() {
         const params = new URLSearchParams(window.location.search);
+        state.env.clear();
+        state.tech.clear();
+        state.place.clear();
         (params.get("miljo") || "").split(",").filter(Boolean).forEach((id) => state.env.add(id));
         (params.get("teknik") || "").split(",").filter(Boolean).forEach((id) => state.tech.add(id));
+        params.getAll("ort").forEach((location) => state.place.add(location.toLocaleLowerCase("sv")));
         state.q = (params.get("q") || "").toLowerCase();
       }
 
@@ -535,6 +585,7 @@ const itemListElements = sorted.map((ref, i) => ({
         const params = new URLSearchParams();
         if (state.env.size) params.set("miljo", Array.from(state.env).join(","));
         if (state.tech.size) params.set("teknik", Array.from(state.tech).join(","));
+        state.place.forEach((location) => params.append("ort", location));
         if (state.q) params.set("q", state.q);
         const qs = params.toString();
         const url = qs ? window.location.pathname + "?" + qs : window.location.pathname;
@@ -544,11 +595,13 @@ const itemListElements = sorted.map((ref, i) => ({
       function matches(card) {
         const envs = (card.dataset.environments || "").split(" ").filter(Boolean);
         const techs = (card.dataset.technologies || "").split(" ").filter(Boolean);
+        const place = card.dataset.filterLocation || "";
 
         // Miljö: matcha NÅGON vald miljö. Teknik: matcha NÅGON vald teknik.
         // Miljö + teknik samtidigt: båda grupperna måste matcha.
         if (state.env.size && !envs.some((e) => state.env.has(e))) return false;
         if (state.tech.size && !techs.some((t) => state.tech.has(t))) return false;
+        if (state.place.size && !state.place.has(place)) return false;
 
         if (state.q) {
           const hay = [card.dataset.title, card.dataset.location, card.dataset.excerpt,
@@ -567,31 +620,33 @@ const itemListElements = sorted.map((ref, i) => ({
         });
         resultCount.innerHTML = "Visar <span>" + shown + "</span> av " + total + " referenser";
         noResults.style.display = shown === 0 ? "block" : "none";
-        const active = state.env.size || state.tech.size || state.q;
+        const active = state.env.size || state.tech.size || state.place.size || state.q;
         clearBtn.hidden = !active;
 
         envFilterCount.textContent = state.env.size ? state.env.size + " val" : "";
         envFilterCount.hidden = state.env.size === 0;
         techFilterCount.textContent = state.tech.size ? state.tech.size + " val" : "";
         techFilterCount.hidden = state.tech.size === 0;
+        placeFilterCount.textContent = state.place.size ? state.place.size + " val" : "";
+        placeFilterCount.hidden = state.place.size === 0;
 
         writeUrl();
       }
 
-      function syncChips() {
-        chips.forEach((chip) => {
-          const set = chip.dataset.filterType === "env" ? state.env : state.tech;
-          chip.setAttribute("aria-pressed", set.has(chip.dataset.filterId) ? "true" : "false");
+      function syncCheckboxes() {
+        checkboxes.forEach((checkbox) => {
+          const set = state[checkbox.dataset.filterType];
+          checkbox.checked = set.has(checkbox.value);
         });
         if (state.q) search.value = state.q;
+        else search.value = "";
       }
 
-      chips.forEach((chip) => {
-        chip.addEventListener("click", () => {
-          const set = chip.dataset.filterType === "env" ? state.env : state.tech;
-          const id = chip.dataset.filterId;
-          if (set.has(id)) { set.delete(id); chip.setAttribute("aria-pressed", "false"); }
-          else { set.add(id); chip.setAttribute("aria-pressed", "true"); }
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", () => {
+          const set = state[checkbox.dataset.filterType];
+          if (checkbox.checked) set.add(checkbox.value);
+          else set.delete(checkbox.value);
           apply();
         });
       });
@@ -599,9 +654,9 @@ const itemListElements = sorted.map((ref, i) => ({
       search.addEventListener("input", () => { state.q = search.value.trim().toLowerCase(); apply(); });
 
       clearBtn.addEventListener("click", () => {
-        state.env.clear(); state.tech.clear(); state.q = "";
+        state.env.clear(); state.tech.clear(); state.place.clear(); state.q = "";
         search.value = "";
-        chips.forEach((c) => c.setAttribute("aria-pressed", "false"));
+        checkboxes.forEach((checkbox) => { checkbox.checked = false; });
         apply();
       });
 
@@ -620,8 +675,14 @@ const itemListElements = sorted.map((ref, i) => ({
         });
       });
 
+      window.addEventListener("popstate", () => {
+        readUrl();
+        syncCheckboxes();
+        apply();
+      });
+
       readUrl();
-      syncChips();
+      syncCheckboxes();
       apply();
     })();
   </script>

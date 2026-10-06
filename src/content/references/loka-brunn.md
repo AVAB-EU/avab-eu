@@ -35,11 +35,17 @@ archive:
     - ljud
     - bild
     - styrsystem
+  cardTechnologies:
+    - konferens
+    - ljud
+    - bild
+    - styrsystem
   featured: false
 
 category: Referens
 environment: Konferens
 location: Loka Brunn
+filterLocation: Loka Brunn
 customer:
   name: Ej angivet i underlaget
   publicDisplay: Ej angivet i underlaget

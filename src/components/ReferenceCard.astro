@@ -15,13 +15,11 @@ const envLabels = reference.environments
   .map((id) => environments.find((e) => e.id === id)?.label)
   .filter(Boolean) as string[];
 
-const techLabels = reference.technologies
+const techLabels = (reference.cardTechnologies ?? reference.technologies.slice(0, 4))
   .map((id) => technologies.find((t) => t.id === id)?.label)
   .filter(Boolean) as string[];
 
-// Visa som mest fyra teknikpiller på kortet, resten sammanfattas.
 const shownTech = techLabels.slice(0, 4);
-const extraTech = techLabels.length - shownTech.length;
 ---
 
 <a
@@ -31,6 +29,7 @@ const extraTech = techLabels.length - shownTech.length;
   data-technologies={reference.technologies.join(" ")}
   data-title={reference.title.toLowerCase()}
   data-location={reference.location.toLowerCase()}
+  data-filter-location={reference.filterLocation.toLocaleLowerCase("sv")}
   data-excerpt={reference.excerpt.toLowerCase()}
   data-featured={reference.featured ? "true" : "false"}
 >
@@ -47,11 +46,33 @@ const extraTech = techLabels.length - shownTech.length;
     <h3>{reference.title}</h3>
     <p>{reference.excerpt}</p>
     {shownTech.length > 0 && (
-      <ul class="ref-pills" aria-label="Teknik i projektet">
+      <ul class="ref-tech-list" aria-label="Teknik i projektet">
         {shownTech.map((label) => <li>{label}</li>)}
-        {extraTech > 0 && <li class="ref-pill-more">+{extraTech}</li>}
       </ul>
     )}
     <span class="ref-cta">Läs referensen</span>
   </div>
 </a>
+
+<style>
+  .ref-cta {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--avab-green);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  .ref-card:hover .ref-cta,
+  .ref-card:focus-visible .ref-cta {
+    color: var(--avab-green);
+    font-weight: 800;
+  }
+
+  .ref-cta::after {
+    content: " →";
+    color: var(--avab-green);
+  }
+</style>

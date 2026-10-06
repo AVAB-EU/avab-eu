@@ -39,11 +39,17 @@ archive:
     - bakgrundsmusik
     - projektering
     - mikrofoner
+  cardTechnologies:
+    - ljud
+    - konferens
+    - horslinga
+    - bakgrundsmusik
   featured: true
 
 category: Referens
 environment: Hotell och resort
 location: Hundfjället, Sälen
+filterLocation: Sälen
 customer:
   name: Hundfjällshotellet & Hundfjällscenter
   publicDisplay: Hundfjällshotellet & Hundfjällscenter

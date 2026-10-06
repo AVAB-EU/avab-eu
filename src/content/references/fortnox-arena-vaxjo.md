@@ -34,11 +34,17 @@ archive:
     - mikrofoner
     - styrsystem
     - taluppfattbarhet
+  cardTechnologies:
+    - ljud
+    - mikrofoner
+    - styrsystem
+    - taluppfattbarhet
   featured: false
 
 category: Referens
 environment: Arena / sporthall / innebandyarena
 location: Växjö
+filterLocation: Växjö
 customer:
   name: Fortnox Arena
   publicDisplay: Fortnox Arena

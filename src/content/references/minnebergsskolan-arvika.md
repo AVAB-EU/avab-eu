@@ -36,10 +36,16 @@ archive:
     - dante
     - mikrofoner
     - horslinga
+  cardTechnologies:
+    - ljud
+    - bild
+    - styrsystem
+    - horslinga
   featured: true
 category: Referens
 environment: Skola
 location: Arvika
+filterLocation: Arvika
 customer:
   name: Minnebergsskolan
   publicDisplay: Minnebergsskolan

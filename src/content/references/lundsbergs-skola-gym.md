@@ -43,9 +43,15 @@ archive:
     - bild
     - bakgrundsmusik
     - projektering
+  cardTechnologies:
+    - ljud
+    - bakgrundsmusik
+    - bild
+    - projektering
 category: Referens
 environment: Skola och gym
 location: Storfors
+filterLocation: Storfors
 customer:
   name: Lundsbergs skola
   publicDisplay: Lundsbergs skola

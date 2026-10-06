@@ -31,10 +31,16 @@ archive:
     - bakgrundsmusik
     - projektering
     - styrsystem
+  cardTechnologies:
+    - ljud
+    - bakgrundsmusik
+    - styrsystem
+    - projektering
 
 category: Referens
 environment: Restaurang, bar och lounge
 location: Karlstad
+filterLocation: Karlstad
 customer:
   name: Pinchos Karlstad City
   publicDisplay: Pinchos Karlstad City

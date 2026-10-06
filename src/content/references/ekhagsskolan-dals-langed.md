@@ -43,9 +43,15 @@ archive:
     - mikrofoner
     - taluppfattbarhet
     - projektering
+  cardTechnologies:
+    - ljud
+    - styrsystem
+    - mikrofoner
+    - taluppfattbarhet
 category: Referens
 environment: Skola och idrottshall
 location: Dals Långed
+filterLocation: Dals Långed
 customer:
   name: Ekhagsskolan
   publicDisplay: Ekhagsskolan

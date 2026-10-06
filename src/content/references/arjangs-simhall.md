@@ -43,9 +43,15 @@ archive:
     - horslinga
     - bild
     - projektering
+  cardTechnologies:
+    - ljud
+    - bild
+    - horslinga
+    - projektering
 category: Referens
 environment: Simhall
 location: Årjäng
+filterLocation: Årjäng
 customer:
   name: Årjängs Elmontage
   publicDisplay: Årjängs Elmontage

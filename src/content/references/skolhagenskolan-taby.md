@@ -33,11 +33,16 @@ archive:
     - ljud
     - styrsystem
     - projektering
+  cardTechnologies:
+    - ljud
+    - styrsystem
+    - projektering
   featured: false
 
 category: Referens
 environment: Högstadieskola
 location: Täby kyrkby, Täby kommun
+filterLocation: Täby kyrkby
 customer:
   name: Skolhagenskolan
   publicDisplay: Skolhagenskolan

@@ -36,11 +36,17 @@ archive:
     - mikrofoner
     - taluppfattbarhet
     - projektering
+  cardTechnologies:
+    - ljud
+    - styrsystem
+    - mikrofoner
+    - taluppfattbarhet
   featured: false
 
 category: Referens
 environment: Skola och fullstor sporthall
 location: Karlstad, Värmland
+filterLocation: Karlstad
 customer:
   name: SP-Gruppen AB
   publicDisplay: SP-Gruppen AB

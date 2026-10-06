@@ -37,10 +37,16 @@ archive:
     - mikrofoner
     - konferens
     - service
+  cardTechnologies:
+    - ljud
+    - styrsystem
+    - mikrofoner
+    - service
   featured: true
 category: Referens
 environment: Gym och träning
 location: Karlstad
+filterLocation: Karlstad
 customer:
   name: Friskis&Svettis Karlstad
   publicDisplay: Friskis&Svettis Karlstad

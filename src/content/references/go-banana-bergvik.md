@@ -32,11 +32,15 @@ archive:
   technologies:
     - bakgrundsmusik
     - projektering
+  cardTechnologies:
+    - bakgrundsmusik
+    - projektering
   featured: false
 
 category: Referens
 environment: Butik
 location: Bergvik
+filterLocation: Bergvik
 customer:
   name: Go Banana
   publicDisplay: Go Banana
