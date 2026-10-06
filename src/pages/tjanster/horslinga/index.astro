@@ -1,6 +1,7 @@
 ﻿---
 import { AVAB_PHONE } from "../../../config/site";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
 import PageCTA from "../../../components/PageCTA.astro";
 import FaqSection from "../../../components/FaqSection.astro";
 import "../../../styles/avab.css";
@@ -819,49 +820,6 @@ const hearingFaqItems = [
 
   </main>
 
-  <footer class="site-footer">
-    <div class="avab-container">
-      <div class="footer-grid">
-        <div>
-          <a class="brand" href="/" aria-label="AVAB – till startsidan">
-            <span class="brand-dot" aria-hidden="true"></span>
-            AVAB
-          </a>
-          <p>Tillgängligt ljud för skolor, kyrkor, sporthallar, vård, konferens och publika miljöer – hörslinga, PLS, SLS, diskslinga och Auracast. Projektering, installation, mätning och certifiering över hela Sverige.</p>
-        </div>
-
-        <nav aria-label="Sidlänkar">
-          <h2>Genvägar</h2>
-          <ul class="footer-links">
-            <li><a href="#funktion">Så fungerar det</a></li>
-            <li><a href="#slingtyper">Slingtyper</a></li>
-            <li><a href="#auracast">Auracast</a></li>
-            <li><a href="#krav">Krav &amp; upphandling</a></li>
-            <li><a href="#referenser">Referenser</a></li>
-            <li><a href="#faq">Vanliga frågor</a></li>
-          </ul>
-        </nav>
-
-        <div>
-          <h2>Kontakt</h2>
-          <address class="footer-contact" style="font-style: normal;">
-            <a href={AVAB_PHONE.main.href}>{AVAB_PHONE.main.display}</a>
-            <a href="mailto:info@avab.eu">info@avab.eu</a>
-            <span>Skraggevägen 4<br>663 41 Hammarö, Värmland</span>
-          </address>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© <span id="year">2026</span> AVAB Sverige AB. Alla rättigheter förbehållna.</span>
-        <span>Org.nr 559600-9661 · <a href="/integritetspolicy/" style="color: inherit; text-decoration: underline;">Integritetspolicy</a></span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const year = document.getElementById('year');
-    if (year) year.textContent = String(new Date().getFullYear());
-  </script>
+  <SiteFooter />
 </body>
 </html>
