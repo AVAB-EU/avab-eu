@@ -50,7 +50,7 @@ customer:
   name: Hanza Mechanics
   publicDisplay: Hanza Mechanics
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 
 heroImage:
