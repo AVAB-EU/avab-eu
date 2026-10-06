@@ -27,6 +27,7 @@ Om två gällande dokument motsäger varandra ska AI inte välja tyst. Konflikte
 ### Sidstandarder
 - [`standards/pages/canonical-page-exemplars.md`](standards/pages/canonical-page-exemplars.md) – kanoniska sidfacit: Säffle simhall för Referens, Simhall för Miljö och Hörslinga för Tjänst.
 - [`standards/pages/reference.md`](standards/pages/reference.md) – canonical innehållsstandard för alla referenser under `/referenser/`; presentationen ska följa Säffle simhall enligt sidfacit.
+- [`standards/pages/service.md`](standards/pages/service.md) – gemensam sidram, innehållsmoduler, FAQ-standard och regression för tjänstesidor.
 
 ### AI-workflows
 - [`workflows/local-development-and-deploy.md`](workflows/local-development-and-deploy.md) – lokalt Git/VS Code-flöde från uppdaterad `main` till PR, automatisk deploy och produktionsverifiering.

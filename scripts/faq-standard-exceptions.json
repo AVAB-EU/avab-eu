@@ -1,0 +1,149 @@
+{
+    "note":  "Explicit baseline exceptions for FAQ-bearing pages not migrated in the shared FAQ rollout. New variants are rejected by validate-site.mjs.",
+    "exceptions":  [
+                       {
+                           "file":  "src/pages/budgetkalkylator-av-teknik/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/driftsattning/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/vard/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/visuell-kommunikation/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/installation/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/utomhusidrott/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/sporthall-arena/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/taluppfattbarhet/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/skola/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/simhall/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/garanti-och-service/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/certifiering/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/restaurang-bar-klubb/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/parkering-garage/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/modernisering-avab-ljusstyrning/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/ljudsystem/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/mikrofoner/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/projektering/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/ishall/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/hotell/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/bakgrundsmusik/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/overlamning/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/kontor-konferens/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/styrsystem-integration/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/gym/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/industri/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/kunskap/kablar-kontakter/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/integritetspolicy/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/kontakt/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/butik-retail/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/tjanster/talat-utrymningslarm/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/om-oss/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/rastsignal/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/kyrka/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       },
+                       {
+                           "file":  "src/pages/miljo/kopcentrum-galleria/index.astro",
+                           "reason":  "Existing page-specific FAQ implementation retained outside this PR scope; convert when this page is migrated to FaqSection."
+                       }
+                   ]
+}

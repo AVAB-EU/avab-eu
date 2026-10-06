@@ -133,6 +133,117 @@ function getAddedSourceLines() {
 const diff = getAddedSourceLines();
 let currentFile = null;
 
+const faqExceptionPath = path.join(root, "scripts", "faq-standard-exceptions.json");
+let faqExceptions = [];
+try {
+  const manifest = JSON.parse(fs.readFileSync(faqExceptionPath, "utf8"));
+  faqExceptions = manifest.exceptions;
+  if (!Array.isArray(faqExceptions)) throw new Error("exceptions must be an array");
+} catch (error) {
+  fail(`Could not read FAQ exception manifest: ${error.message}`);
+}
+
+const faqExceptionMap = new Map();
+for (const exception of faqExceptions) {
+  const file = normalizeSlashes(exception.file ?? "");
+  if (!file.startsWith("src/pages/") || !exception.reason?.trim()) {
+    fail(`FAQ exception requires a src/pages file and a reason: ${JSON.stringify(exception)}`);
+    continue;
+  }
+  if (faqExceptionMap.has(file)) fail(`Duplicate FAQ exception: ${file}`);
+  faqExceptionMap.set(file, exception.reason);
+}
+
+const faqMarker = /FAQPage|FaqSection|ReferenceFaq|compact-faq|faq-list|faq-item|faq-card|Vanliga frå[gG]or/i;
+const activePageFiles = walk(path.join(root, "src", "pages"))
+  .filter((file) => file.endsWith(".astro"))
+  .filter((file) => !path.basename(file).startsWith("_"));
+const activePageFaqFiles = new Set();
+
+for (const file of activePageFiles) {
+  const rel = normalizeSlashes(path.relative(root, file));
+  const source = fs.readFileSync(file, "utf8");
+  const usesSharedLayout = /<(?:ServiceLandingPage|ReferencePage|CameraIndustryPage)\b/.test(source);
+  if (!faqMarker.test(source) && !usesSharedLayout) continue;
+  activePageFaqFiles.add(rel);
+
+  if (usesSharedLayout) continue;
+
+  if (source.includes("<FaqSection")) {
+    const faqIndex = source.indexOf("<FaqSection");
+    const ctaIndex = Math.max(
+      source.lastIndexOf("<PageCTA"),
+      source.lastIndexOf("<ReferenceLegacyCta"),
+    );
+    if (ctaIndex < 0 || faqIndex > ctaIndex) {
+      fail(`${rel}: FaqSection must appear before the final CTA.`);
+    }
+    continue;
+  }
+
+  if (!faqExceptionMap.has(rel)) {
+    fail(`${rel}: FAQ page must use FaqSection/shared layout or have a documented migration exception.`);
+  }
+}
+
+for (const [file, reason] of faqExceptionMap) {
+  const absolute = path.join(root, file);
+  if (!fs.existsSync(absolute)) {
+    fail(`FAQ exception points to a missing page: ${file}`);
+    continue;
+  }
+  if (!faqMarker.test(fs.readFileSync(absolute, "utf8"))) {
+    fail(`Remove stale FAQ exception after migration: ${file}`);
+  }
+  if (!reason.trim()) fail(`FAQ exception must have a reason: ${file}`);
+}
+
+for (const rel of [
+  "src/layouts/ServiceLandingPage.astro",
+  "src/layouts/ReferencePage.astro",
+  "src/layouts/CameraIndustryPage.astro",
+]) {
+  const absolute = path.join(root, rel);
+  if (!fs.existsSync(absolute)) {
+    fail(`Missing shared FAQ layout: ${rel}`);
+    continue;
+  }
+  const source = fs.readFileSync(absolute, "utf8");
+  const faqIndex = source.indexOf("<FaqSection");
+  const ctaIndex = Math.max(
+    source.lastIndexOf("<PageCTA"),
+    source.lastIndexOf("<ReferenceLegacyCta"),
+  );
+  if (faqIndex < 0 || ctaIndex < 0 || faqIndex > ctaIndex) {
+    fail(`${rel}: shared FAQ must use FaqSection before the final CTA.`);
+  }
+}
+
+const faqComponentPath = path.join(root, "src", "components", "FaqSection.astro");
+if (!fs.existsSync(faqComponentPath)) {
+  fail("Missing shared FAQ source component: src/components/FaqSection.astro");
+} else {
+  const faqComponent = fs.readFileSync(faqComponentPath, "utf8");
+  const schemaMap = /mainEntity:\s*items\.map\(/.test(faqComponent);
+  const visibleMap = /\{items\.map\(/.test(faqComponent);
+  const mobileStart = faqComponent.indexOf("@media (max-width: 768px)");
+  const mobileStyles = mobileStart >= 0 ? faqComponent.slice(mobileStart) : "";
+  if (!faqComponent.includes("Vanliga frågor")) fail("FaqSection must own the standard 'Vanliga frågor' eyebrow.");
+  if (!faqComponent.includes("<details") || !faqComponent.includes("<summary>")) {
+    fail("FaqSection must render the shared details/summary FAQ markup.");
+  }
+  if (!schemaMap || !visibleMap) fail("FaqSection must render visible FAQ and FAQPage schema from the same items array.");
+  if (!/grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/.test(faqComponent)) {
+    fail("FaqSection must use two FAQ columns by default.");
+  }
+  if (!/grid-template-columns:\s*minmax\(0,\s*1fr\)/.test(mobileStyles)) {
+    fail("FaqSection must use one FAQ column at the mobile breakpoint.");
+  }
+  if (!faqComponent.includes("summary:focus-visible")) fail("FaqSection must retain a visible keyboard focus style.");
+}
+
+const localFaqVariantAddition = /(?:\.compact-faq\b|\.faq-list\b|\.faq-card\b|details\.faq-item|<details\b[^>]*class=["'][^"']*faq|<(?:div|section)\b[^>]*class=["'][^"']*(?:compact-faq|faq-list|faq-card)|@type["']?\s*:\s*["']FAQPage|class=["'][^"']*eyebrow["'][^>]*>\s*(?:FAQ|Vanliga frågor))/i;
+
 for (const line of diff.split("\n")) {
   if (line.startsWith("+++ b/")) {
     currentFile = line.slice(6);
@@ -141,6 +252,14 @@ for (const line of diff.split("\n")) {
 
   if (!currentFile || !line.startsWith("+") || line.startsWith("+++")) continue;
   const added = line.slice(1);
+
+  if (
+    currentFile !== "src/components/FaqSection.astro" &&
+    currentFile.startsWith("src/") &&
+    localFaqVariantAddition.test(added)
+  ) {
+    fail(`${currentFile}: add FAQ markup and styling through FaqSection, not as a page-local variant.`);
+  }
 
   if (added.includes("https://www.avab.eu")) {
     fail(`${currentFile}: new source code must use https://avab.eu/ instead of the www alias`);
@@ -164,3 +283,4 @@ if (errors.length) {
 }
 
 console.log(`Guardrail validation passed for ${referenceFiles.length} reference content entries.`);
+console.log(`FAQ guardrail checked ${activePageFaqFiles.size} active FAQ page sources and ${faqExceptionMap.size} documented legacy exceptions.`);
