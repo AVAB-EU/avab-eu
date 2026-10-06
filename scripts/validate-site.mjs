@@ -157,7 +157,62 @@ for (const exception of faqExceptions) {
 const faqMarker = /FAQPage|FaqSection|ReferenceFaq|compact-faq|faq-list|faq-item|faq-card|Vanliga frå[gG]or/i;
 const activePageFiles = walk(path.join(root, "src", "pages"))
   .filter((file) => file.endsWith(".astro"))
-  .filter((file) => !path.basename(file).startsWith("_"));
+  .filter((file) => !path.basename(file).startsWith("_"))
+  .filter((file) => !/^index2\.astro$/i.test(path.basename(file)));
+
+const approvedFooterLayouts = new Map([
+  ["ReferencePage", "src/layouts/ReferencePage.astro"],
+  ["ServiceLandingPage", "src/layouts/ServiceLandingPage.astro"],
+  ["CameraIndustryPage", "src/layouts/CameraIndustryPage.astro"],
+]);
+const importsGlobalFooter = /import\s+SiteFooter\s+from\s+["'][^"']*\/components\/SiteFooter\.astro["']/;
+const rendersGlobalFooter = /<SiteFooter\s*\/>/;
+
+for (const [layoutName, rel] of approvedFooterLayouts) {
+  const absolute = path.join(root, rel);
+  if (!fs.existsSync(absolute)) {
+    fail(`Missing approved footer layout: ${rel}`);
+    continue;
+  }
+
+  const source = fs.readFileSync(absolute, "utf8");
+  if (!importsGlobalFooter.test(source) || !rendersGlobalFooter.test(source)) {
+    fail(`${rel}: approved layout ${layoutName} must import and render the canonical SiteFooter.`);
+  }
+}
+
+for (const file of activePageFiles) {
+  const rel = normalizeSlashes(path.relative(root, file));
+  const source = fs.readFileSync(file, "utf8");
+  const localFooterMarkup = /<footer\b/i.test(source);
+  const localFooterClasses = /\b(?:site-footer|footer(?:-[a-z0-9_-]+)?)\b/i.test(source);
+  const importsLegacyFooter = /import\s+[^;\r\n]+?\s+from\s+["'][^"'\r\n]*SiteFooter1(?:\.astro)?["']/i.test(source);
+
+  if (localFooterMarkup || localFooterClasses) {
+    fail(`${rel}: active page routes must not define local footer markup or footer classes; use SiteFooter.`);
+  }
+  const componentImports = [...source.matchAll(/import\s+([A-Za-z_$][\w$]*)\s+from\s+["']([^"']+)["']/g)];
+  const importsNonCanonicalFooter = componentImports.some(([, localName, specifier]) =>
+    (/footer/i.test(localName) || /footer/i.test(specifier)) &&
+    !(localName === "SiteFooter" && /(?:^|\/)components\/SiteFooter\.astro$/.test(specifier)),
+  ) || [...source.matchAll(/from\s+["']([^"']+)["']/g)].some(([, specifier]) =>
+    /footer/i.test(specifier) && !/(?:^|\/)components\/SiteFooter\.astro$/.test(specifier),
+  );
+  if (importsLegacyFooter || importsNonCanonicalFooter || /\bSiteFooter1\b/.test(source)) {
+    fail(`${rel}: active page routes must not import SiteFooter1 or another local footer component.`);
+  }
+
+  const rendersDirectly = importsGlobalFooter.test(source) && rendersGlobalFooter.test(source);
+  const usesApprovedLayout = [...approvedFooterLayouts.keys()].some((layoutName) =>
+    new RegExp(`<${layoutName}\\b`).test(source) && componentImports.some(
+      ([, localName, specifier]) => localName === layoutName && new RegExp(`(?:^|/)layouts/${layoutName}\\.astro$`).test(specifier),
+    ),
+  );
+  if (!rendersDirectly && !usesApprovedLayout) {
+    fail(`${rel}: active page routes must render SiteFooter or use an approved shared footer layout.`);
+  }
+}
+
 const activePageFaqFiles = new Set();
 
 for (const file of activePageFiles) {
