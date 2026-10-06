@@ -1,0 +1,103 @@
+---
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  id?: string;
+  title: string;
+  lead?: string;
+  items: FaqItem[];
+  includeSchema?: boolean;
+  openFirst?: boolean;
+}
+
+const {
+  id = "faq",
+  title,
+  lead,
+  items,
+  includeSchema = false,
+  openFirst = false,
+} = Astro.props;
+
+const headingId = `${id}-heading`;
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: items.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
+const faqSchemaJson = JSON.stringify(faqSchema).replaceAll("<", "\\u003c");
+---
+
+{items.length > 0 && (
+  <section class="section faq-section" id={id} aria-labelledby={headingId}>
+    <div class="avab-container">
+      <div class="faq-heading">
+        <div class="eyebrow">Vanliga frågor</div>
+        <h2 id={headingId}>{title}</h2>
+        {lead && <p>{lead}</p>}
+      </div>
+      <div class="faq-section__items">
+        {items.map((item, index) => (
+          <details class="faq-item" open={openFirst && index === 0}>
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+{includeSchema && items.length > 0 && (
+  <script type="application/ld+json" set:html={faqSchemaJson} />
+)}
+
+<style>
+  .faq-section__items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 0;
+  }
+
+  .faq-section__items .faq-item {
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  .faq-section__items .faq-item:nth-child(-n + 2) {
+    border-top: 1px solid var(--avab-border);
+  }
+
+  .faq-section__items summary {
+    font-size: 1.05rem;
+  }
+
+  .faq-section__items .faq-item p {
+    padding-right: 0;
+    font-size: 0.98rem;
+  }
+
+  .faq-section__items summary:focus-visible {
+    outline: 3px solid var(--avab-green);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .faq-section__items {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .faq-section__items .faq-item:nth-child(2) {
+      border-top: 0;
+    }
+  }
+</style>

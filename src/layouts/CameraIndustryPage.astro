@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import FaqSection from "../components/FaqSection.astro";
 import PageCTA from "../components/PageCTA.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
@@ -63,15 +64,6 @@ const breadcrumbSchema = {
   })),
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: data.faq.items.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: { "@type": "Answer", text: item.answer },
-  })),
-};
 ---
 
 <!doctype html>
@@ -117,7 +109,6 @@ const faqSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </head>
   <body>
     <SiteHeader />
@@ -336,22 +327,12 @@ const faqSchema = {
         </section>
       )}
 
-      <section class="section" id="faq">
-        <div class="avab-container">
-          <div class="faq-heading">
-            <div class="eyebrow">Vanliga frågor</div>
-            <h2>{data.faq.title}</h2>
-          </div>
-          <div class="compact-faq">
-            {data.faq.items.map((item, index) => (
-              <details class="faq-item" open={index === 0}>
-                <summary>{item.question}</summary>
-                <p>{item.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FaqSection
+        title={data.faq.title}
+        items={data.faq.items}
+        includeSchema
+        openFirst
+      />
 
       <PageCTA
         eyebrow={data.cta.eyebrow}

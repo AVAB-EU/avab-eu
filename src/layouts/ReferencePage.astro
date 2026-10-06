@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import FaqSection from "../components/FaqSection.astro";
 import PageCTA from "../components/PageCTA.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
@@ -7,7 +8,6 @@ import ReferenceAnchorNav from "../components/references/ReferenceAnchorNav.astr
 import ReferenceBalancedColumns from "../components/references/ReferenceBalancedColumns.astro";
 import ReferenceBrief from "../components/references/ReferenceBrief.astro";
 import ReferenceFacts from "../components/references/ReferenceFacts.astro";
-import ReferenceFaq from "../components/references/ReferenceFaq.astro";
 import ReferenceGallery from "../components/references/ReferenceGallery.astro";
 import ReferenceHero from "../components/references/ReferenceHero.astro";
 import ReferenceRelevance from "../components/references/ReferenceRelevance.astro";
@@ -86,15 +86,6 @@ const structuredData = {
         { "@type": "ListItem", position: 3, name: data.title, item: canonicalUrl },
       ],
     },
-    ...(data.faq ? [{
-      "@type": "FAQPage",
-      "@id": `${canonicalUrl}#faq`,
-      mainEntity: data.faq.items.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-      })),
-    }] : []),
   ],
 };
 
@@ -383,16 +374,16 @@ const anchorItems = data.story?.chapters
           {data.quote && <ReferenceQuote quote={data.quote} />}
           {data.technicalDetails && <ReferenceTechnicalDetails details={data.technicalDetails} />}
           {data.relevance && <ReferenceRelevance relevance={data.relevance} />}
+          {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
           {data.faq && (
-            <ReferenceFaq
+            <FaqSection
               id="reference-faq-title"
-              eyebrow={data.faq.eyebrow}
               title={data.faq.title}
               lead={data.faq.lead}
               items={data.faq.items}
+              includeSchema
             />
           )}
-          {data.relatedReferences && <RelatedReferences related={data.relatedReferences} />}
           </section>
         </>
 

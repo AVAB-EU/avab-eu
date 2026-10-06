@@ -7,9 +7,10 @@ interface Props {
   imageAlt?: string;
   eyebrow?: string;
   featured?: boolean;
+  ctaLabel?: string;
 }
 
-const { href, title, text, image, imageAlt = "", eyebrow, featured = false } = Astro.props;
+const { href, title, text, image, imageAlt = "", eyebrow, featured = false, ctaLabel = "Utforska miljön" } = Astro.props;
 ---
 
 <a class:list={["landing-link-card", { "landing-link-card--featured": featured }]} href={href}>
@@ -22,6 +23,6 @@ const { href, title, text, image, imageAlt = "", eyebrow, featured = false } = A
     {eyebrow && <span class="landing-link-card__eyebrow">{eyebrow}</span>}
     <h3>{title}</h3>
     <p>{text}</p>
-    <span class="landing-link-card__cta" aria-hidden="true">Utforska miljön <span>→</span></span>
+    <span class="landing-link-card__cta" aria-hidden="true">{ctaLabel} <span>→</span></span>
   </div>
 </a>

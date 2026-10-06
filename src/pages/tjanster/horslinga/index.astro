@@ -2,7 +2,75 @@
 import { AVAB_PHONE } from "../../../config/site";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import PageCTA from "../../../components/PageCTA.astro";
+import FaqSection from "../../../components/FaqSection.astro";
 import "../../../styles/avab.css";
+
+const hearingFaqItems = [
+  {
+    "question": "Vad är en hörslinga?",
+    "answer": "En hörslinga är ett system som skickar ljud trådlöst till hörapparater och cochleaimplantat med telespole. Ljudet överförs via ett magnetfält från en kabel eller folie som installeras i lokalen."
+  },
+  {
+    "question": "Vad är skillnaden mellan hörslinga och teleslinga?",
+    "answer": "Hörslinga, teleslinga, induktionsslinga och induktiv hörslinga är vanliga ord för samma grundteknik: ljud skickas via magnetfält till en mottagares telespole eller T-läge."
+  },
+  {
+    "question": "Måste alla publika lokaler ha hörslinga?",
+    "answer": "Vid nybyggnation och större renovering ska tillgänglig ljudöverföring hanteras i publika lokaler och samlingslokaler. Exakt krav och teknisk lösning beror på lokalen, användningen och projektets regelverk."
+  },
+  {
+    "question": "Vad är skillnaden mellan PLS och SLS?",
+    "answer": "PLS är en enklare perimeterslinga som ofta passar mindre rum. SLS är en mer avancerad lösning för större eller mer krävande lokaler där man behöver jämnare täckning och bättre kontroll på läckage."
+  },
+  {
+    "question": "Läcker en hörslinga utanför rummet?",
+    "answer": "Ja, magnetfältet från en hörslinga kan sprida sig utanför rummet. Med SLS och rätt projektering kan läckaget begränsas betydligt bättre än med en enkel perimeterslinga."
+  },
+  {
+    "question": "Vad är Auracast?",
+    "answer": "Auracast är en Bluetooth LE Audio-baserad teknik som kan sända ljud trådlöst till många kompatibla mottagare samtidigt, till exempel vissa moderna hörapparater, hörlurar och andra enheter."
+  },
+  {
+    "question": "Ersätter Auracast hörslinga?",
+    "answer": "Inte alltid. Auracast är ett intressant komplement, men alla användare har inte kompatibla mottagare. Hörslinga är fortfarande en robust lösning för många hörapparater och cochleaimplantat med telespole."
+  },
+  {
+    "question": "Varför är SLS bättre än Auracast i en sporthall?",
+    "answer": "I en sporthall rör sig användarna ofta mycket. Då är en fast installerad SLS-lösning normalt bättre än en lösning där användaren behöver bära mottagare och halsslinga under aktivitet."
+  },
+  {
+    "question": "Vad behöver vara klart innan SLS installeras på betonggolv?",
+    "answer": "Betonggolvet behöver vara väl rengjort så att tejp, slingfolie och skyddstejp fäster ordentligt. Bäst är att golvet inte används innan det täcks med flytspackel, matta, trägolv eller annat ytskikt."
+  },
+  {
+    "question": "Vad är en diskslinga?",
+    "answer": "En diskslinga är en mindre och avgränsad hörslinga för reception, kassa, informationsdisk eller biljettlucka som skickar samtalet direkt till besökarens telespole."
+  },
+  {
+    "question": "När passar en portabel hörslinga?",
+    "answer": "En portabel hörslinga passar tillfälliga möten, konferenser, utbildningar och event där en fast installation saknas."
+  },
+  {
+    "question": "Kan en elektriker installera hörslingan?",
+    "answer": "Ja. AVAB kan projektera slingan, leverera ritningar och materialunderlag och stötta den lokala elektrikern. Systemval, injustering, mätning och certifiering bör utföras av en aktör med erfarenhet av hörslingor."
+  },
+  {
+    "question": "När behöver AVAB komma in i projektet?",
+    "answer": "Helst innan golv, kabelvägar, rackplats och upphandlingskrav är låsta. En golvförlagd slinga behöver projekteras och samordnas tidigt."
+  },
+  {
+    "question": "Behöver en hörslinga märkas med skylt?",
+    "answer": "Ja. Publika lokaler med hörslinga bör märkas med den internationella hörslingesymbolen så att besökare ser att de kan använda T-läge på sin hörapparat eller sitt cochleaimplantat."
+  },
+  {
+    "question": "Behöver en hörslinga mätas?",
+    "answer": "Ja. En hörslinga bör mätas och justeras så att fältstyrka, jämnhet, frekvensåtergivning och störnivåer fungerar i den verkliga lokalen."
+  },
+  {
+    "question": "Vilka standarder och koder är relevanta vid upphandling?",
+    "answer": "Hörslingor mäts mot SS-EN IEC 60118-4. I tekniska beskrivningar förekommer AMA EL-koderna 64.ECB/3 och 64.ECB/31, och i offentlig upphandling CPV-koderna 51313000 och 32342410. Kontrollera alltid mot aktuell AMA-version och projektets handlingar."
+  }
+];
 ---
 
 <!DOCTYPE html>
@@ -102,95 +170,7 @@ import "../../../styles/avab.css";
     "description": "AVAB projekterar, installerar, mäter och certifierar hörslingor, teleslingor, induktiva hörslingor, diskslingor, PLS, SLS och Auracast-lösningar för skolor, kyrkor, sporthallar, vård, konferens och publika lokaler i hela Sverige."
   })} />
 
-  <!-- JSON-LD 2: FAQPage (svaren matchar den synliga FAQ:n ord för ord) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Vad är en hörslinga?",
-        "acceptedAnswer": { "@type": "Answer", "text": "En hörslinga är ett system som skickar ljud trådlöst till hörapparater och cochleaimplantat med telespole. Ljudet överförs via ett magnetfält från en kabel eller folie som installeras i lokalen." }
-      },
-      {
-        "@type": "Question",
-        "name": "Vad är skillnaden mellan hörslinga och teleslinga?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Hörslinga, teleslinga, induktionsslinga och induktiv hörslinga är vanliga ord för samma grundteknik: ljud skickas via magnetfält till en mottagares telespole eller T-läge." }
-      },
-      {
-        "@type": "Question",
-        "name": "Måste alla publika lokaler ha hörslinga?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Vid nybyggnation och större renovering ska tillgänglig ljudöverföring hanteras i publika lokaler och samlingslokaler. Exakt krav och teknisk lösning beror på lokalen, användningen och projektets regelverk." }
-      },
-      {
-        "@type": "Question",
-        "name": "Vad är skillnaden mellan PLS och SLS?",
-        "acceptedAnswer": { "@type": "Answer", "text": "PLS är en enklare perimeterslinga som ofta passar mindre rum. SLS är en mer avancerad lösning för större eller mer krävande lokaler där man behöver jämnare täckning och bättre kontroll på läckage." }
-      },
-      {
-        "@type": "Question",
-        "name": "Läcker en hörslinga utanför rummet?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Ja, magnetfältet från en hörslinga kan sprida sig utanför rummet. Med SLS och rätt projektering kan läckaget begränsas betydligt bättre än med en enkel perimeterslinga." }
-      },
-      {
-        "@type": "Question",
-        "name": "Vad är Auracast?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Auracast är en Bluetooth LE Audio-baserad teknik som kan sända ljud trådlöst till många kompatibla mottagare samtidigt, till exempel vissa moderna hörapparater, hörlurar och andra enheter." }
-      },
-      {
-        "@type": "Question",
-        "name": "Ersätter Auracast hörslinga?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Inte alltid. Auracast är ett intressant komplement, men alla användare har inte kompatibla mottagare. Hörslinga är fortfarande en robust lösning för många hörapparater och cochleaimplantat med telespole." }
-      },
-      {
-        "@type": "Question",
-        "name": "Varför är SLS bättre än Auracast i en sporthall?",
-        "acceptedAnswer": { "@type": "Answer", "text": "I en sporthall rör sig användarna ofta mycket. Då är en fast installerad SLS-lösning normalt bättre än en lösning där användaren behöver bära mottagare och halsslinga under aktivitet." }
-      },
-      {
-        "@type": "Question",
-        "name": "Vad behöver vara klart innan SLS installeras på betonggolv?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Betonggolvet behöver vara väl rengjort så att tejp, slingfolie och skyddstejp fäster ordentligt. Bäst är att golvet inte används innan det täcks med flytspackel, matta, trägolv eller annat ytskikt." }
-      },
-      {
-        "@type": "Question",
-        "name": "Vad är en diskslinga?",
-        "acceptedAnswer": { "@type": "Answer", "text": "En diskslinga är en mindre och avgränsad hörslinga för reception, kassa, informationsdisk eller biljettlucka som skickar samtalet direkt till besökarens telespole." }
-      },
-      {
-        "@type": "Question",
-        "name": "När passar en portabel hörslinga?",
-        "acceptedAnswer": { "@type": "Answer", "text": "En portabel hörslinga passar tillfälliga möten, konferenser, utbildningar och event där en fast installation saknas." }
-      },
-      {
-        "@type": "Question",
-        "name": "Kan en elektriker installera hörslingan?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Ja. AVAB kan projektera slingan, leverera ritningar och materialunderlag och stötta den lokala elektrikern. Systemval, injustering, mätning och certifiering bör utföras av en aktör med erfarenhet av hörslingor." }
-      },
-      {
-        "@type": "Question",
-        "name": "När behöver AVAB komma in i projektet?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Helst innan golv, kabelvägar, rackplats och upphandlingskrav är låsta. En golvförlagd slinga behöver projekteras och samordnas tidigt." }
-      },
-      {
-        "@type": "Question",
-        "name": "Behöver en hörslinga märkas med skylt?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Ja. Publika lokaler med hörslinga bör märkas med den internationella hörslingesymbolen så att besökare ser att de kan använda T-läge på sin hörapparat eller sitt cochleaimplantat." }
-      },
-      {
-        "@type": "Question",
-        "name": "Behöver en hörslinga mätas?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Ja. En hörslinga bör mätas och justeras så att fältstyrka, jämnhet, frekvensåtergivning och störnivåer fungerar i den verkliga lokalen." }
-      },
-      {
-        "@type": "Question",
-        "name": "Vilka standarder och koder är relevanta vid upphandling?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Hörslingor mäts mot SS-EN IEC 60118-4. I tekniska beskrivningar förekommer AMA EL-koderna 64.ECB/3 och 64.ECB/31, och i offentlig upphandling CPV-koderna 51313000 och 32342410. Kontrollera alltid mot aktuell AMA-version och projektets handlingar." }
-      }
-    ]
-  }
-  </script>
+
 
   <!-- JSON-LD 3: BreadcrumbList -->
   <script type="application/ld+json">
@@ -802,80 +782,8 @@ import "../../../styles/avab.css";
       </div>
     </section>
 
-    <!-- 12. FAQ + slut-CTA -->
-    <section class="section" id="faq">
-      <div class="avab-container two-col" style="align-items: start;">
-        <div>
-          <div class="eyebrow">Vanliga frågor</div>
-          <h2>Frågor om hörslinga, SLS och Auracast</h2>
-          <div class="faq-list">
-            <details class="faq-item" open>
-              <summary>Vad är en hörslinga?</summary>
-              <p>En hörslinga är ett system som skickar ljud trådlöst till hörapparater och cochleaimplantat med telespole. Ljudet överförs via ett magnetfält från en kabel eller folie som installeras i lokalen.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Vad är skillnaden mellan hörslinga och teleslinga?</summary>
-              <p>Hörslinga, teleslinga, induktionsslinga och induktiv hörslinga är vanliga ord för samma grundteknik: ljud skickas via magnetfält till en mottagares telespole eller T-läge.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Måste alla publika lokaler ha hörslinga?</summary>
-              <p>Vid nybyggnation och större renovering ska tillgänglig ljudöverföring hanteras i publika lokaler och samlingslokaler. Exakt krav och teknisk lösning beror på lokalen, användningen och projektets regelverk.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Vad är skillnaden mellan PLS och SLS?</summary>
-              <p>PLS är en enklare perimeterslinga som ofta passar mindre rum. SLS är en mer avancerad lösning för större eller mer krävande lokaler där man behöver jämnare täckning och bättre kontroll på läckage.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Läcker en hörslinga utanför rummet?</summary>
-              <p>Ja, magnetfältet från en hörslinga kan sprida sig utanför rummet. Med SLS och rätt projektering kan läckaget begränsas betydligt bättre än med en enkel perimeterslinga.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Vad är Auracast?</summary>
-              <p>Auracast är en Bluetooth LE Audio-baserad teknik som kan sända ljud trådlöst till många kompatibla mottagare samtidigt, till exempel vissa moderna hörapparater, hörlurar och andra enheter.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Ersätter Auracast hörslinga?</summary>
-              <p>Inte alltid. Auracast är ett intressant komplement, men alla användare har inte kompatibla mottagare. Hörslinga är fortfarande en robust lösning för många hörapparater och cochleaimplantat med telespole.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Varför är SLS bättre än Auracast i en sporthall?</summary>
-              <p>I en sporthall rör sig användarna ofta mycket. Då är en fast installerad SLS-lösning normalt bättre än en lösning där användaren behöver bära mottagare och halsslinga under aktivitet.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Vad behöver vara klart innan SLS installeras på betonggolv?</summary>
-              <p>Betonggolvet behöver vara väl rengjort så att tejp, slingfolie och skyddstejp fäster ordentligt. Bäst är att golvet inte används innan det täcks med flytspackel, matta, trägolv eller annat ytskikt.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Vad är en diskslinga?</summary>
-              <p>En diskslinga är en mindre och avgränsad hörslinga för reception, kassa, informationsdisk eller biljettlucka som skickar samtalet direkt till besökarens telespole.</p>
-            </details>
-            <details class="faq-item">
-              <summary>När passar en portabel hörslinga?</summary>
-              <p>En portabel hörslinga passar tillfälliga möten, konferenser, utbildningar och event där en fast installation saknas.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Kan en elektriker installera hörslingan?</summary>
-              <p>Ja. AVAB kan projektera slingan, leverera ritningar och materialunderlag och stötta den lokala elektrikern. Systemval, injustering, mätning och certifiering bör utföras av en aktör med erfarenhet av hörslingor.</p>
-            </details>
-            <details class="faq-item">
-              <summary>När behöver AVAB komma in i projektet?</summary>
-              <p>Helst innan golv, kabelvägar, rackplats och upphandlingskrav är låsta. En golvförlagd slinga behöver projekteras och samordnas tidigt.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Behöver en hörslinga märkas med skylt?</summary>
-              <p>Ja. Publika lokaler med hörslinga bör märkas med den internationella hörslingesymbolen så att besökare ser att de kan använda T-läge på sin hörapparat eller sitt cochleaimplantat.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Behöver en hörslinga mätas?</summary>
-              <p>Ja. En hörslinga bör mätas och justeras så att fältstyrka, jämnhet, frekvensåtergivning och störnivåer fungerar i den verkliga lokalen.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Vilka standarder och koder är relevanta vid upphandling?</summary>
-              <p>Hörslingor mäts mot SS-EN IEC 60118-4. I tekniska beskrivningar förekommer AMA EL-koderna 64.ECB/3 och 64.ECB/31, och i offentlig upphandling CPV-koderna 51313000 och 32342410. Kontrollera alltid mot aktuell AMA-version och projektets handlingar.</p>
-            </details>
-          </div>
-        </div>
-
+    <section class="section" id="snabba-svar">
+      <div class="avab-container">
         <aside class="animate-in">
           <div class="eyebrow">Snabba svar</div>
           <h2>Korta svar inför projektering</h2>
@@ -884,8 +792,14 @@ import "../../../styles/avab.css";
           <div class="snippet-box accent-rail"><strong>Hörslinga eller Auracast?</strong><p>Det beror på lokalen. Auracast är starkt där man inte kan påverka byggnaden, medan SLS är bättre i stora aktiva ytor som sporthallar.</p></div>
         </aside>
       </div>
-
     </section>
+
+    <FaqSection
+      id="faq"
+      title="Frågor om hörslinga, SLS och Auracast"
+      items={hearingFaqItems}
+      includeSchema
+    />
 
     <PageCTA
       eyebrow="Teknik som fungerar i verkligheten"

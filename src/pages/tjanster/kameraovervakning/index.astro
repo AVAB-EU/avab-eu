@@ -1,6 +1,7 @@
 ﻿---
 import SiteFooter from "../../../components/SiteFooter.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
+import FaqSection from "../../../components/FaqSection.astro";
 import PageCTA from "../../../components/PageCTA.astro";
 import ExpandableCardGrid, { type ExpandableCardGroup } from "../../../components/ExpandableCardGrid.astro";
 import "../../../styles/avab.css";
@@ -49,15 +50,55 @@ const cameraEnvironmentGroups: ExpandableCardGroup[] = [
         image: "/assets/kopcentrum-galleria-kameraövervakning-hero.webp",
         imageAlt: "Kameraövervakning i publik köpcentrummiljö",
       },
-      {
-        title: "Boka rådgivning",
-        group: "Nästa steg",
-        expandedText: "Beskriv er miljö och vad ni behöver hjälp med, så hjälper AVAB er vidare med projektering och offert.",
-        href: "/kontakt/",
-        ctaLabel: "Kontakta oss",
-      },
     ],
   },
+];
+
+const cameraSolutionCards = [
+  {
+    title: "DORI, bildkvalitet och projektering – där nyttan avgörs",
+    text: "Ett system är värdelöst om bilderna inte går att använda och om täckningen inte matchar verkligheten. Vi projekterar för rätt pixeltäthet, kameraplacering och täckning från start.",
+    points: [
+      "Garanterar identifiering enligt DORI-standarden.",
+      "Undviker blinda zoner och felaktig täckning.",
+      "IP/IK-klassade kameror som tål utomhusmiljö.",
+    ],
+    href: "/tjanster/projektering/",
+    ctaLabel: "Läs mer om vår projektering",
+  },
+  {
+    title: "Integration – när kameraövervakning blir riktigt stark",
+    text: "Ett kamerasystem blir starkast när det samverkar med andra delar. Kameraövervakning kan integreras med ljud, utrymningslarm, bildskärmar och styrsystem.",
+    points: [
+      "Kameror som triggar förinspelade utrop (Ljudsystem).",
+      "AI som aktiverar talat utrymningslarm.",
+      "Styr allt från en central och användarvänlig panel.",
+    ],
+    href: "/tjanster/styrsystem-integration/",
+    ctaLabel: "Läs mer om systemintegration",
+  },
+  {
+    title: "Lagring, NVR och app – kontroll utan onödigt krångel",
+    text: "Behåll 100% kontroll över ert material. Vi bygger lokala nätverk (NVR) för säker lagring med smidig åtkomst – helt utan onödigt krångel eller molnabonnemang där det passar bäst.",
+    points: [
+      "Inga tvingande månadskostnader för molnlagring.",
+      "Säker fjärrhantering och mobil åtkomst.",
+      "Tydlig kontroll över vem som ser materialet.",
+    ],
+    href: "/kontakt/",
+    ctaLabel: "Prata lagring med oss",
+  },
+];
+
+const cameraFaqItems = [
+  { question: "Vad är kameraövervakning?", answer: "Kameraövervakning är ett system av kameror, lagring och analysverktyg som används för att skapa trygghet, överblick och snabbare förståelse av händelser." },
+  { question: "Vad är skillnaden mellan kamera och system?", answer: "En kamera spelar in. Ett modernt system kombinerar video med sökbarhet, analys, integration och användbar drift så att rätt information går att hitta snabbt." },
+  { question: "Är kameraövervakning tillåten?", answer: "Ja, om den följer GDPR och kamerabevakningslagen och används med tydligt syfte, korrekt information och rätt hantering." },
+  { question: "Vad är exakt sökning?", answer: "Exakt sökning gör det möjligt att snabbt hitta rätt person eller händelse i inspelat material i stället för att manuellt gå igenom stora mängder video." },
+  { question: "Hur fungerar AI i moderna kamerasystem?", answer: "AI hjälper systemet att filtrera bort irrelevant material, förbättra sökningar, lyfta fram viktiga händelser och minska manuellt arbete." },
+  { question: "Behöver vi moln eller räcker lokal lagring?", answer: "Det beror på behov och lösning, men många verksamheter klarar sig mycket bra med lokal lagring och tydlig kontroll över materialet." },
+  { question: "Kan kameraövervakning integreras med ljud och larm?", answer: "Ja. Integration med ljud, larm, informationsytor och styrning är ofta det som gör lösningen verkligt stark i praktiken." },
+  { question: "Vad kostar ett professionellt kamerasystem?", answer: "Det beror på ytor, analysnivå, integration, lagring och användningskrav." },
 ];
 ---
 
@@ -168,85 +209,12 @@ const cameraEnvironmentGroups: ExpandableCardGroup[] = [
 
 <script type="application/ld+json">
 {
-	"@context": "https://schema.org",
-	"@graph": [
-		{
-			"@type": "WebPage",
-			"name": "Kameraövervakning och CCTV – modern övervakning med snabb sökning, tydlig kontroll och smart integration",
-			"url": "https://avab.eu/tjanster/kameraovervakning/",
-			"description": "Modern kameraövervakning med AI, exakt sökning, integration och tydlig projektering. AVAB hjälper skolor, butiker, hotell, industri och publika miljöer att få kontroll på riktigt.",
-			"inLanguage": "sv-SE"
-		},
-		{
-			"@type": "FAQPage",
-			"mainEntity": [
-				{
-					"@type": "Question",
-					"name": "Vad är kameraövervakning?",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "Kameraövervakning är ett system av kameror, lagring och analysverktyg som används för att skapa trygghet, överblick och snabbare förståelse av händelser."
-					}
-				},
-				{
-					"@type": "Question",
-					"name": "Vad är skillnaden mellan kamera och system?",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "En kamera spelar in. Ett modernt system kombinerar video med sökbarhet, analys, integration och användbar drift så att rätt information går att hitta snabbt."
-					}
-				},
-				{
-					"@type": "Question",
-					"name": "Är kameraövervakning tillåten?",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "Ja, om den följer GDPR och kamerabevakningslagen och används med tydligt syfte, korrekt information och rätt hantering."
-					}
-				},
-				{
-					"@type": "Question",
-					"name": "Vad är exakt sökning?",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "Exakt sökning gör det möjligt att snabbt hitta rätt person eller händelse i inspelat material i stället för att manuellt gå igenom stora mängder video."
-					}
-				},
-				{
-					"@type": "Question",
-					"name": "Hur fungerar AI i moderna kamerasystem?",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "AI hjälper systemet att filtrera bort irrelevant material, förbättra sökningar, lyfta fram viktiga händelser och minska manuellt arbete."
-					}
-				},
-				{
-					"@type": "Question",
-					"name": "Behöver vi moln eller räcker lokal lagring?",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "Det beror på behov och lösning, men många verksamheter klarar sig mycket bra med lokal lagring och tydlig kontroll över materialet."
-					}
-				},
-				{
-					"@type": "Question",
-					"name": "Kan kameraövervakning integreras med ljud och larm?",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "Ja. Integration med ljud, larm, informationsytor och styrning är ofta det som gör lösningen verkligt stark i praktiken."
-					}
-				},
-				{
-					"@type": "Question",
-					"name": "Vad kostar ett professionellt kamerasystem?",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "Det beror på ytor, analysnivå, integration, lagring och användningskrav."
-					}
-				}
-			]
-		}
-	]
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Kamera?vervakning och CCTV ? modern ?vervakning med snabb s?kning, tydlig kontroll och smart integration",
+  "url": "https://avab.eu/tjanster/kameraovervakning/",
+  "description": "Modern kamera?vervakning med AI, exakt s?kning, integration och tydlig projektering. AVAB hj?lper skolor, butiker, hotell, industri och publika milj?er att f? kontroll p? riktigt.",
+  "inLanguage": "sv-SE"
 }
 </script>
 </head>
@@ -469,60 +437,17 @@ const cameraEnvironmentGroups: ExpandableCardGroup[] = [
       <p class="lead-dark">Vi bygger kamerasystem som fungerar perfekt var för sig, men som är oslagbara när de knyts samman. Här är tekniken som formar helheten i våra installationer.</p>
     </div>
     
-    <div class="solutions-grid">
-      <article class="solution-card clickable-card">
-        <div class="solution-content">
-          <div class="solution-top"><h2>DORI, bildkvalitet och projektering – där nyttan avgörs</h2></div>
-          <p>Ett system är värdelöst om bilderna inte går att använda och om täckningen inte matchar verkligheten. Vi projekterar för rätt pixeltäthet, kameraplacering och täckning från start.</p>
-          <div class="hover-indicator">Läs mer ↓</div>
-          <div class="solution-expandable">
-            <div class="solution-expand-inner">
-              <ul class="bullet-list">
-                <li>Garanterar identifiering enligt DORI-standarden.</li>
-                <li>Undviker blinda zoner och felaktig täckning.</li>
-                <li>IP/IK-klassade kameror som tål utomhusmiljö.</li>
-              </ul>
-              <a class="solution-link card-primary-link" href="/tjanster/projektering/">Läs mer om vår projektering →</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="solution-card clickable-card">
-        <div class="solution-content">
-          <div class="solution-top"><h2>Integration – när kameraövervakning blir riktigt stark</h2></div>
-          <p>Ett kamerasystem blir starkast när det samverkar med andra delar. Kameraövervakning kan integreras med ljud, utrymningslarm, bildskärmar och styrsystem.</p>
-          <div class="hover-indicator">Läs mer ↓</div>
-          <div class="solution-expandable">
-            <div class="solution-expand-inner">
-              <ul class="bullet-list">
-                <li>Kameror som triggar förinspelade utrop (Ljudsystem).</li>
-                <li>AI som aktiverar talat utrymningslarm.</li>
-                <li>Styr allt från en central och användarvänlig panel.</li>
-              </ul>
-              <a class="solution-link card-primary-link" href="/tjanster/styrsystem-integration/">Läs mer om systemintegration →</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="solution-card clickable-card">
-        <div class="solution-content">
-          <div class="solution-top"><h2>Lagring, NVR och app – kontroll utan onödigt krångel</h2></div>
-          <p>Behåll 100% kontroll över ert material. Vi bygger lokala nätverk (NVR) för säker lagring med smidig åtkomst – helt utan onödigt krångel eller molnabonnemang där det passar bäst.</p>
-          <div class="hover-indicator">Läs mer ↓</div>
-          <div class="solution-expandable">
-            <div class="solution-expand-inner">
-              <ul class="bullet-list">
-                <li>Inga tvingande månadskostnader för molnlagring.</li>
-                <li>Säker fjärrhantering och mobil åtkomst.</li>
-                <li>Tydlig kontroll över vem som ser materialet.</li>
-              </ul>
-              <a class="solution-link card-primary-link" href="/kontakt/">Prata lagring med oss →</a>
-            </div>
-          </div>
-        </div>
-      </article>
+    <div class="landing-card-grid">
+      {cameraSolutionCards.map((card) => (
+        <article class="card">
+          <h3>{card.title}</h3>
+          <p>{card.text}</p>
+          <ul class="bullet-list">
+            {card.points.map((point) => <li>{point}</li>)}
+          </ul>
+          <a class="solution-link" href={card.href}>{card.ctaLabel} →</a>
+        </article>
+      ))}
     </div>
   </div>
 </section>
@@ -626,114 +551,13 @@ const cameraEnvironmentGroups: ExpandableCardGroup[] = [
   </div>
 </section>
 
-<section class="section" id="faq" style="background: var(--avab-white); border-top: 1px solid var(--avab-border);">
-  <div class="container two-col" style="align-items: start;">
-    <div>
-      <div class="eyebrow">FAQ</div>
-      <h2>Vanliga frågor om kameraövervakning</h2>
-      <p style="margin-bottom: 32px;">Oavsett om ni ska bygga nytt, uppgradera ett äldre system eller förstå vilken nivå som faktiskt passar er verksamhet hjälper vi er gärna vidare.</p>
-      
-      <div class="faq-list">
-        <details class="faq-card">
-          <summary class="faq-top">
-            <h3>Vad är kameraövervakning?</h3>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </summary>
-          <div class="faq-expandable">
-            <div class="faq-expand-inner">
-              <p>Kameraövervakning är ett system av kameror, lagring och analysverktyg som används för att skapa trygghet, överblick och snabbare förståelse av händelser.</p>
-            </div>
-          </div>
-        </details>
-
-        <details class="faq-card">
-          <summary class="faq-top">
-            <h3>Vad är skillnaden mellan kamera och system?</h3>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </summary>
-          <div class="faq-expandable">
-            <div class="faq-expand-inner">
-              <p>En kamera spelar in. Ett modernt system kombinerar video med sökbarhet, analys, integration och användbar drift så att rätt information går att hitta snabbt.</p>
-            </div>
-          </div>
-        </details>
-
-        <details class="faq-card">
-          <summary class="faq-top">
-            <h3>Är kameraövervakning tillåten?</h3>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </summary>
-          <div class="faq-expandable">
-            <div class="faq-expand-inner">
-              <p>Ja, om den följer GDPR och kamerabevakningslagen och används med tydligt syfte, korrekt information och rätt hantering.</p>
-            </div>
-          </div>
-        </details>
-
-        <details class="faq-card">
-          <summary class="faq-top">
-            <h3>Vad är exakt sökning?</h3>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </summary>
-          <div class="faq-expandable">
-            <div class="faq-expand-inner">
-              <p>Exakt sökning gör det möjligt att snabbt hitta rätt person eller händelse i inspelat material i stället för att manuellt gå igenom stora mängder video.</p>
-            </div>
-          </div>
-        </details>
-
-        <details class="faq-card">
-          <summary class="faq-top">
-            <h3>Hur fungerar AI i moderna kamerasystem?</h3>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </summary>
-          <div class="faq-expandable">
-            <div class="faq-expand-inner">
-              <p>AI hjälper systemet att filtrera bort irrelevant material, förbättra sökningar, lyfta fram viktiga händelser och minska manuellt arbete.</p>
-            </div>
-          </div>
-        </details>
-
-        <details class="faq-card">
-          <summary class="faq-top">
-            <h3>Behöver vi moln eller räcker lokal lagring?</h3>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </summary>
-          <div class="faq-expandable">
-            <div class="faq-expand-inner">
-              <p>Det beror på behov och lösning, men många verksamheter klarar sig mycket bra med lokal lagring och tydlig kontroll över materialet.</p>
-            </div>
-          </div>
-        </details>
-
-        <details class="faq-card">
-          <summary class="faq-top">
-            <h3>Kan kameraövervakning integreras med ljud och larm?</h3>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </summary>
-          <div class="faq-expandable">
-            <div class="faq-expand-inner">
-              <p>Ja. Integration med ljud, larm, informationsytor och styrning är ofta det som gör lösningen verkligt stark i praktiken.</p>
-            </div>
-          </div>
-        </details>
-
-        <details class="faq-card">
-          <summary class="faq-top">
-            <h3>Vad kostar ett professionellt kamerasystem?</h3>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </summary>
-          <div class="faq-expandable">
-            <div class="faq-expand-inner">
-              <p>Det beror på ytor, analysnivå, integration, lagring och användningskrav.</p>
-            </div>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    </div>
-</section>
+<FaqSection
+  id="faq"
+  title="Vanliga frågor om kameraövervakning"
+  lead="Oavsett om ni ska bygga nytt, uppgradera ett äldre system eller förstå vilken nivå som faktiskt passar er verksamhet hjälper vi er gärna vidare."
+  items={cameraFaqItems}
+  includeSchema
+/>
 
 <PageCTA
   eyebrow="Slipp onödigt krångel"
