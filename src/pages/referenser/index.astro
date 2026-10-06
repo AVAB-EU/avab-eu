@@ -139,7 +139,7 @@ const itemListElements = sorted.map((ref, i) => ({
     /* ---- Kompakta referensfilter ---- */
     .filter-panel {
       margin-top: 8px;
-      width: calc((100% - 52px) / 3);
+      width: 100%;
       min-width: 0;
     }
 
@@ -163,10 +163,15 @@ const itemListElements = sorted.map((ref, i) => ({
 
     .filter-accordions {
       display: grid;
-      gap: 10px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-areas:
+        "env tech place"
+        "options options options";
+      gap: 26px;
     }
 
     .filter-accordion {
+      display: contents;
       border: 1px solid var(--avab-border);
       border-radius: var(--avab-radius-sm);
       background: var(--avab-white);
@@ -192,6 +197,10 @@ const itemListElements = sorted.map((ref, i) => ({
       text-align: left;
       cursor: pointer;
     }
+
+    #envFilterTrigger { grid-area: env; }
+    #techFilterTrigger { grid-area: tech; }
+    #placeFilterTrigger { grid-area: place; }
 
     .filter-accordion-trigger:hover {
       background: var(--avab-light);
@@ -263,16 +272,20 @@ const itemListElements = sorted.map((ref, i) => ({
     }
 
     .filter-options {
-      padding: 4px 18px 18px;
-      border-top: 1px solid var(--avab-border);
+      grid-area: options;
+      min-width: 0;
+      padding: 18px;
+      border: 1px solid var(--avab-border);
+      border-radius: var(--avab-radius-sm);
+      background: var(--avab-white);
     }
 
     .filter-options[hidden] { display: none; }
 
     .checkbox-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 2px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4px 20px;
     }
 
     .filter-checkbox-label {
@@ -346,7 +359,6 @@ const itemListElements = sorted.map((ref, i) => ({
     .no-results strong { display: block; color: var(--avab-dark); font-size: 1.15rem; margin-bottom: 8px; }
 
     @media (max-width: 1024px) {
-      .filter-panel { width: calc((100% - 26px) / 2); }
       .trust-grid { grid-template-columns: repeat(3, 1fr); }
       .trust-cell:nth-child(4) { border-left: none; }
       .ref-grid { grid-template-columns: repeat(2, 1fr); }
@@ -358,10 +370,11 @@ const itemListElements = sorted.map((ref, i) => ({
       .filter-accordions {
         display: block;
       }
+      .filter-accordion { display: block; }
       .filter-accordion + .filter-accordion { margin-top: 10px; }
       .filter-panel { width: 100%; }
-      #envFilterTrigger, #techFilterTrigger, #placeFilterTrigger { display: grid; width: 100%; }
-      .filter-options { width: 100%; padding: 4px 16px 16px; }
+      #envFilterTrigger, #techFilterTrigger, #placeFilterTrigger { display: grid; grid-area: auto; width: 100%; }
+      .filter-options { grid-area: auto; width: 100%; padding: 4px 16px 16px; }
       .checkbox-grid { grid-template-columns: minmax(0, 1fr); gap: 2px; }
       .filter-accordion-trigger { min-height: 84px; }
       .filter-accordion-help { font-size: 0.88rem; }
