@@ -28,15 +28,15 @@ facts:
   - label: Miljö
     value: Entréer, gångstråk, gemensamma ytor och servicezoner
   - label: Fokus
-    value: Överblick och snabb händelseuppföljning
+    value: Överblick och uppföljning av relevanta händelser
   - label: Drift
     value: Många kameror med tydlig struktur
-  - label: Integration
-    value: Kamera, larm och övriga säkerhetssystem
+  - label: Samordning
+    value: Kamera och andra säkerhetssystem där stöd finns
 
 principle:
-  title: Kombinera bred överblick med riktad detalj
-  text: I en större handelsmiljö behöver vissa kameror visa flödet genom en hel yta medan andra behöver ge tydligare bild vid entréer, passager eller andra definierade riskzoner. AVAB projekterar därför kamerorna efter funktion, inte efter ett generellt antal per kvadratmeter.
+  title: Anpassa kameravyn efter platsen och händelsen
+  text: En översiktsbild av ett gångstråk har en annan uppgift än en kameravy vid en entré eller lastzon. Börja med vilken händelse som behöver kunna följas upp och välj därefter placering, siktlinje och detaljnivå. Antalet kameror kan inte avgöras enbart av golvytan.
   image:
     src: /assets/kopcentrum-galleria-kameraövervakning-hero.webp
     alt: Köpcentrummiljö med stora gemensamma ytor och många rörelsestråk
@@ -45,47 +45,53 @@ principle:
 
 sections:
   - id: varfor
-    eyebrow: Varför kameraövervakning?
-    title: Många människor och många ytor kräver struktur
+    eyebrow: Publika miljöer
+    title: Många passager kräver genomtänkta kameravyer
     paragraphs:
-      - I en galleria rör sig besökare, butikspersonal, leveranser och servicepersonal genom samma fastighet under stora delar av dygnet. När en incident inträffar behöver rätt kamerabild gå att hitta snabbt.
-      - Ett användbart system kombinerar därför översikt, riktade kameror och en tydlig driftstruktur som gör det möjligt att följa ett förlopp mellan flera zoner.
+      - I en galleria möts besökare, butiksanställda, leveranser och servicepersonal. Entréer, gemensamma gångstråk och lastzoner har olika risker och behöver olika kameravyer.
+      - När en incident inträffar behöver det vara tydligt vilken kamera som täcker respektive plats och när händelsen inträffade. Kamerasystemets utformning ska stödja en avgränsad uppföljning, inte generell kartläggning av besökare.
     bullets:
       - Entréer och utgångar
-      - Gångstråk och gemensamma ytor
-      - Torgytor och samlingspunkter
-      - Lastzoner och servicekorridorer
-      - Avgränsade riskzoner där högre detaljnivå behövs
+      - Gemensamma gångstråk och torgytor
+      - Hissar, trapphus och övergångar mellan våningsplan
+      - Servicekorridorer och lastzoner
 
   - id: zoner-oversikt
     eyebrow: Zon för zon
-    title: Varje del av köpcentrumet har sin uppgift
+    title: Samma händelse kan beröra flera delar av fastigheten
     paragraphs:
-      - En entré behöver ofta ge tydlig bild av in- och utpassage. En stor gemensam yta behöver framför allt överblick. En servicekorridor eller lastzon har andra flöden och andra ljusförhållanden.
+      - En incident kan börja vid en entré och fortsätta genom ett gångstråk eller mellan två våningsplan. För att följa upp förloppet behöver kameror ha tydliga namn och en logisk placering. Det innebär inte att ett system automatiskt kan spåra personer mellan kameror.
     bullets:
-      - "Entré – tydlig bild av flödet in och ut ur byggnaden."
-      - "Gångstråk – överblick och möjlighet att följa ett förlopp mellan zoner."
-      - "Gemensamma ytor – bred bild av större publika områden."
-      - "Service och lastzon – dokumentation av händelser utanför de publika kundytorna."
+      - "Entréer – vyer utformade för passager in och ut ur fastigheten."
+      - "Gångstråk – överblick över gemensamma rörelseytor."
+      - "Hissar och trapphus – relevanta övergångar mellan våningsplan, efter behovs- och integritetsbedömning."
+      - "Service och lastzon – uppföljning av händelser utanför de publika kundytorna."
+
+  - id: ansvar-och-avgransning
+    eyebrow: Ansvar & integritet
+    title: Skilj gemensamma ytor från butikernas egna lokaler
+    paragraphs:
+      - Fastighetsägare, centrumledning och enskilda butiker kan ha olika behov och roller. Bevakning av gemensamma ytor ska inte automatiskt likställas med kameror inne hos en butikshyresgäst. Ändamål, tillgång till material och ansvar behöver klarläggas för varje bevakning.
+      - Publika miljöer kräver också hänsyn till besökarnas integritet. Varje kameravy och lagringstid behöver bedömas utifrån sitt syfte, och verksamheten behöver avgöra vilka som får se och använda materialet.
 
   - id: sokning
     eyebrow: Sökning & överblick
-    title: Många kameror gör sökbarheten viktigare
+    title: Gör det enklare att hitta rätt kameravy och tidpunkt
     paragraphs:
-      - I ett större kamerasystem är inspelning bara början. När en händelse ska utredas behöver användaren kunna gå från tid, plats eller ett känt motiv till rätt sekvens utan att manuellt kontrollera varje kamera.
-      - Tydlig kameranamnssättning, logisk gruppering och moderna sökfunktioner gör därför stor skillnad i den dagliga driften.
+      - När en händelse rapporteras kan tydliga kameranamn, zonindelning och en gemensam tidslinje hjälpa användaren att hitta relevant material från exempelvis entré, gångstråk och trapphus.
+      - Mer avancerad filtrering och AI-stödd sökning kan finnas i vissa system, men beror på videoplattform, licenser och den aktuella installationen. Sådana funktioner ska inte förutsättas eller utlovas utan verifiering.
     bullets:
-      - Kameror grupperade efter zon
-      - Tydliga namn och kartläggning
-      - Snabb åtkomst till relevanta tidsintervall
-      - Analysfunktioner som minskar mängden material att granska
+      - Kameror ordnade efter byggnad och våningsplan
+      - Tydliga namn för passager och zoner
+      - Åtkomst till relevanta tidpunkter och kameravyer
+      - Analysfilter endast där systemet har verifierat stöd
 
   - id: drift-och-samverkan
-    eyebrow: Drift & integration
-    title: Kameraövervakningen ska fungera tillsammans med resten av säkerhetsmiljön
+    eyebrow: Drift & samordning
+    title: En tydlig arbetsgång när något händer
     paragraphs:
-      - Gallerior har ofta flera tekniska system som används parallellt. Kameraövervakningen bör därför planeras så att driftpersonalen får en tydlig arbetsgång och inte behöver hantera varje system som en isolerad ö.
-      - När integration är relevant kan kamerahändelser kopplas samman med andra säkerhetsfunktioner för att göra verifiering och uppföljning snabbare.
+      - I större handelsfastigheter behöver drift- och säkerhetspersonal veta vem som ansvarar för kameror, behörigheter och uppföljning av fel. En genomtänkt operatörsmiljö kan göra det lättare att hitta rätt vy när en incident ska utredas.
+      - Kamera kan i vissa installationer samordnas med larm och andra säkerhetssystem. Vilka händelser som kan kopplas ihop beror på de faktiska gränssnitten och måste kontrolleras för den valda lösningen.
     image:
       src: /assets/Kameraovervakning-dahua-hero.webp
       alt: Videohanteringssystem för kameraövervakning med flera kamerakanaler
@@ -96,17 +102,19 @@ faq:
   title: Vanliga frågor om kameraövervakning i galleria
   items:
     - question: Hur många kameror behövs i en galleria?
-      answer: Det går inte att avgöra enbart utifrån yta. Antalet beror på entréer, siktlinjer, riskzoner, byggnadens geometri och vilken detaljnivå som krävs i varje zon.
+      answer: Antalet beror på entréer, passager, siktlinjer, risker och vilken bild som behöver kunna användas vid en viss händelse. Golvytan ensam räcker inte som underlag.
     - question: Behöver alla kameror samma bildkvalitet?
-      answer: Nej. En översiktskamera och en kamera som ska ge tydligare bild vid en entré löser olika uppgifter och bör projekteras därefter.
-    - question: Hur följer man en händelse genom flera delar av köpcentrumet?
-      answer: Ett välstrukturerat system grupperar kameror logiskt och använder tidslinje och sökfunktioner så att användaren snabbare kan byta mellan relevanta zoner.
-    - question: Kan systemet hantera många kameror utan att bli svårt att använda?
-      answer: Ja, om kamerorna namnges, grupperas och presenteras efter hur fastigheten faktiskt används. Driftstrukturen är lika viktig som själva kamerorna.
-    - question: Kan kameraövervakningen integreras med andra säkerhetssystem?
-      answer: Ja. Beroende på teknisk plattform kan kameraövervakning samverka med exempelvis larm och andra system för att göra en händelse enklare att verifiera.
-    - question: Hur länge ska inspelat material sparas?
-      answer: Lagringstiden ska bestämmas utifrån syftet med bevakningen och inte vara längre än vad som är nödvändigt för det ändamålet.
+      answer: Nej. En översiktsvy över ett gångstråk och en avgränsad vy vid en entré har olika uppgifter. Detaljnivå och placering avgörs utifrån syftet.
+    - question: Hur följer man upp en händelse mellan våningsplan?
+      answer: Kameror kan grupperas per våningsplan och zon, med tydliga namn och tidpunkter. Användaren kan då granska relevanta vyer i ordning. Automatisk spårning mellan kameror ska inte förutsättas.
+    - question: Vem ansvarar för kameror i gemensamma ytor och inne i butiker?
+      answer: Roller och personuppgiftsansvar behöver klarläggas för den aktuella bevakningen. Gemensamma ytor och enskilda butikslokaler kan ha olika ansvariga och olika ändamål.
+    - question: Kan kameror samordnas med larm?
+      answer: Det kan vara möjligt när de aktuella systemen har stöd för det. Integration och åtkomst behöver verifieras vid projekteringen.
+    - question: Finns det funktioner för att söka i många kameror?
+      answer: Tydliga kameranamn och tidslinjer hjälper vid uppföljning. Avancerade analys- och sökfunktioner varierar med plattform och licenser.
+    - question: Hur länge får inspelat material sparas?
+      answer: Lagringstiden ska utgå från ändamålet med bevakningen och inte vara längre än nödvändigt. Den ansvariga verksamheten behöver göra sin egen bedömning.
 
 cta:
   eyebrow: Slipp onödigt krångel
