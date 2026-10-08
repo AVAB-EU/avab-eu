@@ -98,6 +98,14 @@ sections:
       width: 2032
       height: 770
 
+relatedLinks:
+  - label: Köpcentrum och galleria
+    href: /miljo/kopcentrum-galleria/
+    description: Läs om AVAB:s övriga lösningar för större handelsfastigheter.
+  - label: Exakt sökning och AI-analys
+    href: /tjanster/exakt-sokning-ai-analys/
+    description: Se vilka möjligheter som finns att söka i videomaterial när systemet har stöd för det.
+
 faq:
   title: Vanliga frågor om kameraövervakning i galleria
   items:
