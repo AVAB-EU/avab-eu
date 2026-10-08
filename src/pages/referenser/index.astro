@@ -18,7 +18,7 @@ const contentReferences: Reference[] = (await getCollection("references"))
     title: entry.data.archive.title,
     slug: entry.data.slug,
     location: entry.data.location,
-    filterLocation: entry.data.filterLocation,
+    filterLocation: entry.data.filterLocation || entry.data.location,
     image: entry.data.archive.image.src,
     imageAlt: entry.data.archive.image.alt,
     excerpt: entry.data.archive.excerpt,
@@ -34,7 +34,10 @@ const references = [
   ...contentReferences,
 ];
 const locations = [...new Map(
-  references.map((reference) => [reference.filterLocation.toLocaleLowerCase("sv"), reference.filterLocation]),
+  references.map((reference) => {
+    const place = reference.filterLocation || reference.location;
+    return [place.toLocaleLowerCase("sv"), place];
+  }),
 ).entries()]
   .map(([id, label]) => ({ id, label }))
   .sort((a, b) => a.label.localeCompare(b.label, "sv"));

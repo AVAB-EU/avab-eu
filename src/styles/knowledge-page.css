@@ -50,6 +50,14 @@
     background: currentColor;
   }
 
+  .knowledge-hero .knowledge-kicker {
+    color: #fff;
+  }
+
+  .knowledge-hero .knowledge-kicker::before {
+    background: var(--avab-green);
+  }
+
   .knowledge-kicker--dark {
     color: var(--avab-green-dark);
   }
