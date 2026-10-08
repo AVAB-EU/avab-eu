@@ -8,11 +8,12 @@ seo:
   description: Kameraövervakning för gallerior och köpcentrum. AVAB projekterar kamerasystem för entréer, gemensamma ytor, flöden, lastzoner och serviceytor.
   noindex: true
 
-h1: "Kamera­övervakning för galleria – överblick i en komplex publik miljö"
+h1: "Kameraövervakning för galleria"
 
 hero:
   eyebrow: Kameraövervakning för galleria
-  lead: En galleria har många entréer, stora gemensamma ytor och flera samtidiga flöden. Kamerasystemet behöver ge både överblick och tillräcklig detaljnivå där händelser faktiskt ska kunna följas upp.
+  subtitle: Överblick över entréer, gångstråk och gemensamma ytor
+  lead: I en galleria rör sig besökare, personal och leveranser mellan flera delar av fastigheten. Kamerabevakningen behöver anpassas efter varje ytas funktion så att relevanta händelser kan följas upp.
   image:
     src: /assets/kopcentrum-galleria-kameraövervakning-hero.webp
     alt: Publik köpcentrummiljö där kameraövervakning kan ge överblick över entréer och gemensamma ytor
