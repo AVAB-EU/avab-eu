@@ -1,13 +1,14 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-10-06._
+_Kanonisk projektlista. Senast uppdaterad 2026-10-08._
 
 ## Aktuellt läge
 
 - `AVAB-EU/avab-eu` är projektets enda source of truth. Produktionsdeploy ska utgå från `main`.
 - Teknisk SEO-baslinje är genomförd: sitemap, draft/noindex, internlänkar, guardrails och build har verifierats. Se `docs/audits/publicering-indexering-2026-09-21.md`.
-- Referensfiltreringen är genomförd i sak: sökning, Miljö/Teknik/Ort-plats-filter, antal, rensning och URL-state finns. Desktop/tablet-regressionen efter merge behöver dock fixas och verifieras innan filterbranchen kan städas bort.
+- Referensfiltreringen är mergead på `main`, inklusive desktop/tablet-fixen i PR #110. Sökning, Miljö/Teknik/Ort-plats-filter, antal, rensning och URL-state finns. Eventuell kvarvarande visuell verifiering och branchstädning hanteras separat.
 - Kamera Butik är länkad till Go Banana-referensen och den tillfälliga publiceringscopyn är åtgärdad.
+- PR #111 har etablerat tjänstesidestandard och delad FAQ-komponent; fler sidors migrering återstår. PR #112 har standardiserat global footer, inklusive Hörslinga och guardrail.
 - PR #106 är mergead, men dess två öppna P2-reviewfynd finns kvar under Aktiva uppföljningar.
 - Öppna brancher får bedömas mot aktuell `main` före radering. `feature/header-scroll-auto-hide` och `feature/referenser-kompakta-filter` ska behållas tills respektive uppföljning är verifierad.
 
@@ -22,7 +23,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-06._
 
 ## Aktiva uppföljningar
 
-- [ ] **Referensfilter – desktop/tablet-regression:** återställ fullbreddsfilterlayouten (tre filterkort, fullbredds öppnade alternativ och tre checkboxkolumner på desktop/tablet). Verifiera, committa, pusha och mergea fixen; verifiera sedan på `main` innan `feature/referenser-kompakta-filter` raderas.
+- [ ] **Referensfilter – slutkontroll och branchstädning:** gör visuell desktop/tablet-kontroll på `main` efter mergeade PR #110, och bedöm därefter om `feature/referenser-kompakta-filter` kan raderas. Själva layoutfixen är redan mergead.
 - [ ] **PR #106 P2 – hero-detektering:** lägg till hero-detektering för `/kunskap/` (`.knowledge-hero`) och `/budgetkalkylator-av-teknik/` (`.budget-hero`), så headerns scrollbeteende får rätt sidkontext.
 - [ ] **PR #106 P2 – första scroll-deltat:** räkna in första scroll-deltat i tröskeln i stället för att börja mätningen från det redan uppdaterade `currentY`-värdet. Granska och verifiera fixen innan headerbranchen städas bort.
 - [ ] Slutför gemensam referenskortsstandard stegvis. Grundkomponenter och gemensamma stilar finns, men flera lokala referenskortvarianter återstår på startsida, tjänste- och miljösidor.
@@ -36,7 +37,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-06._
 
 ## Senare prioriteringar
 
-- [ ] Standardisera FAQ på hela sajten: två kolumner och direkt före avslutande CTA, med gemensam implementation och lämplig guardrail.
+- [ ] Rulla ut den gemensamma FAQ-komponenten och ordningen FAQ → CTA till återstående relevanta sidor. PR #111 har redan infört tjänstesidestandard, FAQ-komponent och guardrail för nya avvikelser; befintliga undantag och andra sidtyper återstår att bedöma.
 - [ ] Koppla offertformuläret till ett säkert mailflöde till `info@avab.eu` och bekräftelse till kunden; hantera spam, fel och personuppgiftsminimerad loggning.
 - [ ] Genomför separat mobil innehålls- och gränssnittsanpassning på riktiga mobilbredder och tablet.
 - [ ] Ta bort dekorativ glow bakom knappar/CTA utan att försvaga `:focus-visible`.
@@ -50,14 +51,17 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-06._
 - [ ] Försona AI-dokumentationen med kundrepots aktuella `compact`/`standard`/`extended`-referensimplementation och befintliga `Reference*`-komponenter.
 - [ ] Förbättra PDF-underlagets design i budgetkalkylatorn och verifiera AVAB-logotypen i utskrift/PDF.
 - [ ] Kundönskemål återstår enligt `docs/projects/kundonskemal-2026-08-20/`: invänta beslut/material för headerkontakt, restaurangmiljöns kanoniska namn, skillnaden mellan ”Hur vi jobbar” och ”Vår leverans”, erbjudandepris och bildmappningar. Följ avtalat bildansvar.
-- [ ] Tjänstesidor: dokumentera gemensam standard; prioritera Ljus, Bild/skärm, Kamera, Talat utrymningslarm, Mikrofoner, Ljudsystem, Hörslinga, Taluppfattbarhet, Styrsystem och Bakgrundsmusik enligt sidvisa behov i projektunderlaget.
+- [ ] Tjänstesidor: gemensam standard är dokumenterad i `docs/standards/pages/service.md` genom PR #111. Granska och migrera återstående sidor stegvis: Ljus, Bild/skärm, Kamera, Talat utrymningslarm, Mikrofoner, Ljudsystem, Taluppfattbarhet, Styrsystem och Bakgrundsmusik samt eventuella kvarstående Hörslinga-avvikelser.
 - [ ] Miljösidor: dokumentera gemensam standard och hantera sidvisa bild-, länk-, innehålls- och referensbehov för Sporthall/arena, Simhall, Ishall, Kontor/konferens, Hotell, Restaurang/bar/klubb, Butik/retail, Köpcentrum/galleria, Skola, Vård/sjukhus, Industri och Parkering/garage.
 - [ ] Startsida: kontrollera hero-pillernas globala standard, låt kundteamet justera beskärningen av högtalarbilden, uppdatera erbjudandet först med verifierat pris och lös saknade destinationsrutter med innehållsbeslut före länkändringar.
 - [ ] Slutför full sitewide-QA vid behov: interna länkar, navigation/footer/FAQ/grids, assets, bildprestanda, alt-texter, canonical, referensår och schema samt build och visuell granskning.
 
 ## Historik / avslutade checkpoints
 
-- **2026-10-06 – referensfilter:** filtreringen är färdig i sak och ska betraktas som klar när den verifierade desktop/tablet-regressionen är mergead och verifierad på `main`. Filtreringen har Miljö, Teknik och Ort/plats samt sökning, träffantal, rensning och URL-state.
+- **2026-10-06 – PR #112:** Hörslinga använder gemensam `SiteFooter`, verifierat oanvänd footer-CSS borttaget och footer-guardrail tillagd. Mergead på `main`.
+- **2026-10-06 – PR #111:** gemensam tjänstesidestandard dokumenterad, `FaqSection` införd och FAQ → CTA etablerad med guardrail. Mergead på `main`; fler sidor återstår att migrera.
+
+- **2026-10-06 – referensfilter, PR #110:** desktop/tablet-regressionen är fixad och mergead på `main`. Filtreringen har Miljö, Teknik och Ort/plats samt sökning, träffantal, rensning och URL-state. Visuell slutkontroll på `main` och eventuell branchradering kvarstår.
 - **2026-10-06 – Kamera Butik / Go Banana:** internlänk till `/referenser/go-banana-bergvik/` finns och tillfällig ”kommer inom kort”-copy är åtgärdad.
 - **2026-10-06 – PR #107:** header-scroll-städningen är mergead på `main`; den tillfälliga beteendedokumentationen är borttagen.
 - **2026-09-22 – SEO:** sitemap/draft/noindex-hantering verifierad och sitemap-index accepterat i Search Console. SEO-baslinjen dokumenteras i `docs/audits/publicering-indexering-2026-09-21.md`.
