@@ -14,12 +14,14 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-08._
 
 ## Nästa arbetsblock
 
-### Kamera Prioritet 2 – publiceringsgranskning
+### Kamera Prioritet 2 – nästa steg: Skola
 
-- [ ] Granska `/kameraovervakning/skola/`, `/kameraovervakning/parkering/`, `/kameraovervakning/industri/` och `/kameraovervakning/galleria/` mot content, metadata, bilder, internlänkar, schema och visuell struktur.
-- [ ] Klassificera varje sida: redo att publicera, behöver åtgärd eller behöver kundbeslut. Ändra inte `draft`/`noindex` före granskningen och blockerarlösning.
-- [ ] Hantera `/kameraovervakning/gdpr/` separat med juridisk färskhetskontroll nära eventuell publicering.
-- [ ] Kör guardrails/build för eventuella ändringar och håll dem i små, separata PR:er.
+- [ ] **Skola:** börja med read-only kontroll av aktuell sida och Word-underlaget, granska H1/hero och prioritera verifierbara innehållsändringar. Håll `draft` och `noindex` tills uttryckligt publiceringsgodkännande ges.
+- [ ] **Galleria:** PR #122 (internlänkar + coverage) är öppen och GitHub-validerad; invänta visuell slutkontroll av länkarna innan merge. PR #120 (hero) och #121 (innehåll) är mergeade. Hela sidans visuella slutkontroll och bildbeslut kvarstår.
+- [ ] **Industri:** PR #116–#119 är mergeade. Hero, innehåll och internlänkar har granskats. Bilder och återstående teknisk/juridisk slutkontroll väntar före publicering.
+- [ ] **Parkering:** pausa bildändringar i väntan på kundens besked om bildval. Innehållsomfattning (bl.a. ANPR) och eventuell fortsatt publiceringsgranskning återstår.
+- [ ] **Kamera GDPR:** hantera `/kameraovervakning/gdpr/` separat med juridisk färskhetskontroll nära eventuell publicering.
+- [ ] Kör guardrails/build och internlänkskontroll för eventuella ändringar. Arbeta i små PR:er utan att ändra publiceringsflaggor i förtid.
 
 ## Aktiva uppföljningar
 
@@ -27,6 +29,10 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-08._
 - [ ] Slutför gemensam referenskortsstandard stegvis. Grundkomponenter och gemensamma stilar finns, men flera lokala referenskortvarianter återstår på startsida, tjänste- och miljösidor.
 
 ## Väntar på kundbeslut
+
+- [ ] **Kamera Parkering – bilder:** kunden har fått bildfrågor per mejl; invänta svar och eventuella nya bilder/alt-texter.
+- [ ] **Kamera Industri – bilder:** kunden har fått bildfrågor per mejl; invänta svar och eventuella nya bilder/alt-texter.
+- [ ] **Kamera Galleria – bilder:** mejlutkast för separat bildgranskning är framtaget; kontrollera att det faktiskt skickats. Bilderna är inte kundgodkända. Duvan används inte som kamerareferens utan verifiering.
 
 - [ ] `/author/andreas-avab/` – invänta besked om gammal WordPress-författarsida.
 - [ ] `/login/` – invänta besked om kund-/medlemsinloggning fortfarande behövs.
@@ -55,6 +61,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-08._
 - [ ] Slutför full sitewide-QA vid behov: interna länkar, navigation/footer/FAQ/grids, assets, bildprestanda, alt-texter, canonical, referensår och schema samt build och visuell granskning.
 
 ## Historik / avslutade checkpoints
+
+- **2026-10-08 – Kamerasidor:** Gallerias hero PR #120 och innehåll PR #121 mergeade; PR #122 (internlänkning och coverage) öppen, grön men väntar på visuell länkgranskning. Industrisidan genomförd i PR #116–#119 och väntar på kundens bildval. Parkering väntar på kundens bildval. Nästa aktivt arbete är Skola. Samtliga ännu ej publiceringsgodkända kameraundersidor behåller draft/noindex.
 
 - **2026-10-08 – PR #114:** båda P2-fynden från PR #106 (hero-detektering och första scroll-deltat) åtgärdade och visuellt godkända. Även Kunskapsbankens hero-etikett och referenssidans saknade `filterLocation` hanterades. PR #114 mergead på `main`.
 
