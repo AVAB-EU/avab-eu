@@ -8,11 +8,12 @@ seo:
   description: Kameraövervakning för industri, lager och produktionsmiljöer. AVAB projekterar kamerasystem för perimeter, infarter, lastzoner, lager och kritiska ytor.
   noindex: true
 
-h1: "Kamera­övervakning för industri – kontroll över perimeter, flöden och kritiska ytor"
+h1: "Kameraövervakning för industri"
 
 hero:
   eyebrow: Kameraövervakning för industri
-  lead: Industrimiljöer kräver mer än en generell kamerabild. Perimeter, infarter, lastzoner, lager och produktion behöver olika kameravinklar, bildnivåer och driftupplägg.
+  subtitle: Kontroll över områdesgränser, flöden och kritiska ytor
+  lead: Industrimiljöer ställer olika krav på kamerabevakning. Infarter, lastzoner, lager och produktionsytor behöver genomtänkt kameraplacering och rätt bildkvalitet.
   image:
     src: /assets/overvakningskamera-fasad-hero.webp
     alt: Övervakningskamera monterad på industrifasad

@@ -16,6 +16,10 @@ const data = page.data;
 
 const canonicalUrl = absoluteUrl(data.slug);
 const heroImageUrl = absoluteUrl(data.hero.image.src);
+// Fallback for the Industry page if the content collection omits the optional subtitle.
+const heroSubtitle = data.hero.subtitle || (data.slug === "/kameraovervakning/industri/"
+  ? "Kontroll över områdesgränser, flöden och kritiska ytor"
+  : undefined);
 const robots = data.draft || data.seo.noindex
   ? "noindex, nofollow"
   : "index, follow, max-image-preview:large";
@@ -132,6 +136,7 @@ const breadcrumbSchema = {
         <div class="hero-inner animate-in">
           <div class="eyebrow">{data.hero.eyebrow}</div>
           <h1>{data.h1}</h1>
+          {heroSubtitle && <p class="hero-subtitle">{heroSubtitle}</p>}
           <p class="lead">{data.hero.lead}</p>
           <div class="hero-bottom">
             <div class="hero-actions">
