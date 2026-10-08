@@ -95,6 +95,14 @@ legalOrientation:
   linkLabel: Läs IMY:s vägledning om kamerabevakning av anställda
   linkHref: https://www.imy.se/verksamhet/kamerabevakning/personuppgiftsansvar-och-kamerabevakades-rattigheter/kamerabevakning-av-anstallda/
 
+relatedLinks:
+  - label: Industri och logistik
+    href: /miljo/industri/
+    description: Läs om AVAB:s övriga lösningar för industri- och logistikmiljöer.
+  - label: Exakt sökning och AI-analys
+    href: /tjanster/exakt-sokning-ai-analys/
+    description: Se hur sökning och analys kan underlätta när tekniken har stöd för funktionerna.
+
 faq:
   title: Vanliga frågor om kameraövervakning för industri
   items:

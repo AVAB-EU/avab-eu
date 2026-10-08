@@ -332,6 +332,22 @@ const breadcrumbSchema = {
         </section>
       )}
 
+      {data.relatedLinks && data.relatedLinks.length > 0 && (
+        <section class="section section--light" aria-label="Läs vidare">
+          <div class="avab-container">
+            <h2>Läs vidare om lösningar för industri</h2>
+            <ul>
+              {data.relatedLinks.map((link) => (
+                <li>
+                  <a class="text-link" href={link.href}>{link.label} →</a>
+                  <p>{link.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       <FaqSection
         title={data.faq.title}
         items={data.faq.items}
