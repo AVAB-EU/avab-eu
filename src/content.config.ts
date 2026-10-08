@@ -413,6 +413,7 @@ const cameraIndustryPageSchema = z.object({
   h1: requiredText,
   hero: z.object({
     eyebrow: requiredText,
+    subtitle: requiredText.optional(),
     lead: requiredText,
     image: imageSchema,
     primaryLabel: requiredText,
