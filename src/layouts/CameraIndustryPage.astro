@@ -132,6 +132,7 @@ const breadcrumbSchema = {
         <div class="hero-inner animate-in">
           <div class="eyebrow">{data.hero.eyebrow}</div>
           <h1>{data.h1}</h1>
+          {data.hero.subtitle && <p class="lead"><strong>{data.hero.subtitle}</strong></p>}
           <p class="lead">{data.hero.lead}</p>
           <div class="hero-bottom">
             <div class="hero-actions">
