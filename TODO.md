@@ -9,8 +9,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-08._
 - Referensfiltreringen är mergead på `main`, inklusive desktop/tablet-fixen i PR #110. Sökning, Miljö/Teknik/Ort-plats-filter, antal, rensning och URL-state finns. Eventuell kvarvarande visuell verifiering och branchstädning hanteras separat.
 - Kamera Butik är länkad till Go Banana-referensen och den tillfälliga publiceringscopyn är åtgärdad.
 - PR #111 har etablerat tjänstesidestandard och delad FAQ-komponent; fler sidors migrering återstår. PR #112 har standardiserat global footer, inklusive Hörslinga och guardrail.
-- PR #106 är mergead, men dess två öppna P2-reviewfynd finns kvar under Aktiva uppföljningar.
-- Öppna brancher får bedömas mot aktuell `main` före radering. `feature/header-scroll-auto-hide` och `feature/referenser-kompakta-filter` ska behållas tills respektive uppföljning är verifierad.
+- PR #106:s två P2-reviewfynd är åtgärdade i PR #114 och visuellt godkända. Även Kunskapsbankens hero-etikett och en krasch i referensfiltreringen rättades i samma PR.
+- Öppna brancher får bedömas mot aktuell `main` före radering. Äldre `feature/header-scroll-auto-hide` kan bedömas för radering efter mergeade PR #114; `feature/referenser-kompakta-filter` behålls till dess den separata visuella slutkontrollen är klar.
 
 ## Nästa arbetsblock
 
@@ -24,8 +24,6 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-08._
 ## Aktiva uppföljningar
 
 - [ ] **Referensfilter – slutkontroll och branchstädning:** gör visuell desktop/tablet-kontroll på `main` efter mergeade PR #110, och bedöm därefter om `feature/referenser-kompakta-filter` kan raderas. Själva layoutfixen är redan mergead.
-- [ ] **PR #106 P2 – hero-detektering:** lägg till hero-detektering för `/kunskap/` (`.knowledge-hero`) och `/budgetkalkylator-av-teknik/` (`.budget-hero`), så headerns scrollbeteende får rätt sidkontext.
-- [ ] **PR #106 P2 – första scroll-deltat:** räkna in första scroll-deltat i tröskeln i stället för att börja mätningen från det redan uppdaterade `currentY`-värdet. Granska och verifiera fixen innan headerbranchen städas bort.
 - [ ] Slutför gemensam referenskortsstandard stegvis. Grundkomponenter och gemensamma stilar finns, men flera lokala referenskortvarianter återstår på startsida, tjänste- och miljösidor.
 
 ## Väntar på kundbeslut
@@ -57,6 +55,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-08._
 - [ ] Slutför full sitewide-QA vid behov: interna länkar, navigation/footer/FAQ/grids, assets, bildprestanda, alt-texter, canonical, referensår och schema samt build och visuell granskning.
 
 ## Historik / avslutade checkpoints
+
+- **2026-10-08 – PR #114:** båda P2-fynden från PR #106 (hero-detektering och första scroll-deltat) åtgärdade och visuellt godkända. Även Kunskapsbankens hero-etikett och referenssidans saknade `filterLocation` hanterades. PR #114 mergead på `main`.
 
 - **2026-10-06 – PR #112:** Hörslinga använder gemensam `SiteFooter`, verifierat oanvänd footer-CSS borttaget och footer-guardrail tillagd. Mergead på `main`.
 - **2026-10-06 – PR #111:** gemensam tjänstesidestandard dokumenterad, `FaqSection` införd och FAQ → CTA etablerad med guardrail. Mergead på `main`; fler sidor återstår att migrera.
