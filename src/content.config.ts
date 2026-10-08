@@ -471,6 +471,11 @@ const cameraIndustryPageSchema = z.object({
       linkHref: z.string().optional(),
     })
     .optional(),
+  relatedLinks: z.array(z.object({
+    label: requiredText,
+    href: z.string().startsWith("/"),
+    description: requiredText,
+  })).optional(),
   faq: z.object({
     title: requiredText,
     items: z.array(z.object({ question: requiredText, answer: requiredText })).min(1),
