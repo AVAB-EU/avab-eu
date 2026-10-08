@@ -476,7 +476,7 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
     const header = document.querySelector<HTMLElement>(".site-nav");
     if (!header) return;
 
-    const hero = document.querySelector<HTMLElement>(".hero, .reference-hero");
+    const hero = document.querySelector<HTMLElement>(".hero, .reference-hero, .knowledge-hero, .budget-hero");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const DOWN_THRESHOLD = 18;
     const UP_THRESHOLD = 150;
@@ -544,7 +544,8 @@ const isServicesActive = isSectionActive("/tjanster/") && !isDeliveryActive;
 
       if (nextDirection && nextDirection !== direction) {
         direction = nextDirection;
-        directionStartY = currentY;
+        // Count the first scroll delta after a direction change, not just subsequent events.
+        directionStartY = direction === "down" ? Math.max(lastY, activationY) : lastY;
       }
 
       const travelled = Math.abs(currentY - directionStartY);
