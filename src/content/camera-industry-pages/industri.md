@@ -26,17 +26,17 @@ hero:
 
 facts:
   - label: Ytor
-    value: Perimeter, infart, lastzon, lager och produktion
+    value: Områdesgränser, infarter, lastzoner och lager
   - label: Fokus
-    value: Överblick, spårbarhet och snabb sökning
+    value: Överblick och uppföljning av relevanta händelser
   - label: Drift
     value: Anpassad efter verksamhetens flöden
-  - label: Integration
-    value: Kamera, larm och övriga säkerhetssystem
+  - label: Samordning
+    value: Kamera, larm och passage där systemen stödjer det
 
 principle:
-  title: Projektera efter riskzon och arbetsflöde
-  text: En kamera vid en infart ska lösa ett annat problem än en kamera över ett lager eller en lastzon. AVAB börjar därför med vad verksamheten behöver kunna se och följa upp, och projekterar därefter placering, bildnivå, lagring och sökfunktion.
+  title: Börja med händelsen som behöver upptäckas eller följas upp
+  text: En kamera vid en infart ska lösa ett annat problem än en kamera över ett lager eller en lastzon. Börja därför med vad verksamheten behöver kunna se vid exempelvis ett intrång, en leverans eller en avvikelse. Därefter går det att bedöma kameravinkel, detaljnivå, ljus och hur materialet ska användas.
   image:
     src: /assets/overvakningskamera-fasad-hero.webp
     alt: Kamera på fasad i industriell miljö
@@ -44,69 +44,74 @@ principle:
     height: 774
 
 sections:
-  - id: varfor
-    eyebrow: Varför kameraövervakning?
-    title: Industriområden har flera riskbilder samtidigt
+  - id: omradesgranser
+    eyebrow: Områdesgränser & infarter
+    title: Rätt kameravy vid staket, grindar och entréer
     paragraphs:
-      - En industri- eller lageranläggning kan behöva hantera obehörigt intrång, stölder, skadegörelse, godsflöden och händelser vid lastning eller produktion.
-      - Ett användbart kamerasystem behöver därför göra mer än att spela in. Materialet ska gå att söka fram snabbt och kamerorna ska vara placerade så att de faktiskt visar den händelse som behöver följas upp.
+      - Ett staket, en fordonsinfart och en personentré behöver inte samma kameravy. Vid områdesgränsen kan en översiktsbild ge sammanhang medan en mer avgränsad bild vid grinden kan göra det lättare att följa upp en konkret händelse.
+      - Avstånd, motljus, mörker och montage avgör om bilden blir användbar. Kamerans placering behöver därför utgå från platsens faktiska förhållanden, inte bara från upplösningen.
     bullets:
-      - Perimeter och stängsel
-      - Infarter och grindar
-      - Lastzoner och varumottagning
-      - Lager och interna logistikytor
-      - Utvalda kritiska produktionsytor
+      - Översikt längs staket och områdesgränser
+      - Händelser vid grindar och fordonsinfarter
+      - Personentréer och avgränsade materialgårdar
 
-  - id: zoner-oversikt
-    eyebrow: Zon för zon
-    title: Samma anläggning behöver flera typer av kamerabild
+  - id: godsfloden-och-lager
+    eyebrow: Lastning & lager
+    title: Följ upp händelser vid portar, lastzoner och lager
     paragraphs:
-      - En bred översikt över ett industriområde, en riktad bild vid en grind och dokumentation av ett godsflöde är tre olika uppgifter. Kameraval och placering ska spegla skillnaden.
+      - Vid in- och utlastning kan en kameravy hjälpa verksamheten att undersöka vad som hände vid en viss port eller lastzon. Tydlig placering gör det lättare att sätta en skada, incident eller avvikelse i sitt sammanhang.
+      - I lager behöver kamerabevakningen avgränsas till de passager och godsytor där det finns ett konkret behov. Syftet är att dokumentera relevanta händelser, inte att löpande följa enskilda medarbetares arbetsprestationer.
     bullets:
-      - "Perimeter – tidig överblick över rörelser kring området."
-      - "Infart – tydligare bild av fordon och händelser vid grind eller bom."
-      - "Lastzon – dokumentation av gods och aktivitet vid in- och utlastning."
-      - "Lager – överblick och riktade kameror där gods eller flöden behöver följas."
+      - Händelser när fordon anländer till en lastzon
+      - Lastning och lossning vid utvalda portar
+      - Avgränsade lagerpassager och särskilt utsatta godsytor
 
-  - id: utomhusmiljo
-    eyebrow: Utomhusmiljö
-    title: Ljus, väder och avstånd påverkar mer än megapixel
+  - id: sakerhet-och-process
+    eyebrow: Olika användningsområden
+    title: Säkerhetsbevakning och processövervakning har olika syften
     paragraphs:
-      - Industrikameror sitter ofta i miljöer med stora avstånd, motljus, mörker, väder och varierande belysning. Därför behöver kamerans placering och optik projekteras tillsammans med miljön.
-      - En kamera med hög upplösning ger inte automatiskt användbar bild om motivet är för långt bort, vinkeln är fel eller ljusförhållandena inte hanteras.
-    bullets:
-      - Placering utifrån verkliga avstånd
-      - Bildvinkel anpassad efter zonens syfte
-      - Hänsyn till motljus och mörka perioder
-      - Robust montage för den aktuella miljön
+      - Säkerhetsbevakning kan användas för att förebygga eller följa upp intrång, stöld och skadegörelse vid till exempel grindar eller utsatta lagerområden. Kamerans vy ska då vara kopplad till den konkreta risken.
+      - Processövervakning kan i vissa situationer ge operatören överblick över en maskin eller ett riskfyllt arbetsmoment. Det är ett annat syfte som måste bedömas separat. Ingen av användningarna ger generellt stöd för att bevaka hela produktionslokaler eller kontrollera personalens prestationer.
 
   - id: sokning-och-drift
     eyebrow: Sökning & drift
-    title: Värdet märks när rätt händelse går att hitta snabbt
+    title: Gör det lättare att hitta rätt händelse
     paragraphs:
-      - I större anläggningar kan många kameror generera stora mängder material. Då blir sökfunktion, tidslinje och tydlig kameranamnssättning centrala delar av driften.
-      - Systemet ska hjälpa användaren att gå från en rapporterad händelse till relevant videosekvens utan att behöva manuellt gå igenom timmar av material.
+      - I större anläggningar kan tydliga kameranamn, zonindelning och tidslinjer underlätta när inspelat material behöver granskas. Avancerad sökning eller analysfilter är beroende av vilken videoplattform och vilka funktioner som faktiskt ingår.
+      - Ansvar för kamerastatus, åtkomst, lagring och felhantering behöver vara tydligt. Samordning med larm eller passagesystem kan vara möjlig, men stöd och funktion måste verifieras för den aktuella lösningen.
     image:
       src: /assets/Kameraovervakning-dahua-hero.webp
-      alt: Gränssnitt för professionell kameraövervakning och videohantering
+      alt: Övervakningskamera monterad utomhus
       width: 2032
       height: 770
+
+legalOrientation:
+  eyebrow: Integritet på arbetsplatsen
+  title: Kamerabevakning kräver ett tydligt syfte
+  paragraphs:
+    - Verksamheten behöver bedöma varför kamerabevakning behövs, vilka ytor och tider den omfattar och om mindre ingripande åtgärder kan räcka. Behovet och den rättsliga bedömningen är platsberoende.
+    - Kameror får inte användas för rutinmässig kontroll av anställdas prestationer. Personalnära utrymmen är särskilt integritetskänsliga och bevakningen måste begränsas till vad det konkreta syftet motiverar.
+    - Processövervakning kan i vissa situationer motiveras vid särskilda riskmoment, men innebär inte att en hel produktionslokal automatiskt får bevakas. Den personuppgiftsansvariga verksamheten ansvarar för den rättsliga bedömningen.
+  linkLabel: Läs IMY:s vägledning om kamerabevakning av anställda
+  linkHref: https://www.imy.se/verksamhet/kamerabevakning/personuppgiftsansvar-och-kamerabevakades-rattigheter/kamerabevakning-av-anstallda/
 
 faq:
   title: Vanliga frågor om kameraövervakning för industri
   items:
-    - question: Vilka delar av ett industriområde brukar kameraövervakas?
-      answer: Det beror på riskbilden, men vanliga zoner är perimeter, infarter, lastzoner, lager och särskilt kritiska ytor. Varje zon bör ha ett tydligt syfte.
-    - question: Kan kameror användas för att följa godsflöden?
-      answer: Ja, kamerabevakning kan användas för att dokumentera händelser kring in- och utlastning och göra det lättare att följa upp avvikelser i efterhand.
-    - question: Hur hanterar man stora avstånd utomhus?
-      answer: Kamerans optik, placering och bildnivå behöver projekteras efter avståndet och vad bilden ska användas till. Hög upplösning kan inte kompensera för fel vinkel eller fel placering.
-    - question: Kan kameraövervakning integreras med larm?
-      answer: Ja. I många anläggningar kan kamera, larm och andra säkerhetssystem samverka så att en händelse blir lättare att verifiera och följa upp.
-    - question: Hur hittar man rätt sekvens när man har många kameror?
-      answer: Ett välstrukturerat system använder tydliga kameranamn, tidslinje och sökfunktioner som gör det snabbare att gå från en rapporterad händelse till relevant material.
-    - question: Hur länge ska material sparas?
-      answer: Lagringstiden ska anpassas efter det dokumenterade syftet och verksamhetens rättsliga förutsättningar. Den bör inte vara längre än vad som är nödvändigt.
+    - question: Vilka delar av ett industriområde kan vara aktuella för kamerabevakning?
+      answer: Det kan till exempel vara områdesgränser, grindar, lastzoner och avgränsade lagerpassager. Varje kameravy behöver kopplas till ett konkret behov och bedömas utifrån platsens förutsättningar.
+    - question: Vad skiljer säkerhetsbevakning från processövervakning?
+      answer: Säkerhetsbevakning kan handla om intrång eller stöld medan processövervakning kan ge överblick över särskilda maskiner och riskmoment. Syftet styr var kameran placeras och hur materialet får användas.
+    - question: Kan kameror användas för att följa upp godsflöden?
+      answer: Kameror kan dokumentera händelser vid utvalda portar, lastzoner och lagerpassager. Bevakningen ska avgränsas till ändamålet och inte användas för rutinmässig prestationskontroll av personal.
+    - question: Får arbetsgivaren kamerabevaka anställdas arbetsprestationer?
+      answer: Kamerabevakning får inte användas för att rutinmässigt kontrollera hur anställda presterar. All bevakning på arbetsplatsen behöver ett tydligt syfte och en bedömning av integritetsintrånget.
+    - question: Kan kamera samordnas med larm eller passagesystem?
+      answer: Det kan vara möjligt beroende på systemens gränssnitt och hur lösningen projekteras. Funktion och kompatibilitet behöver verifieras i varje enskilt projekt.
+    - question: Hur hittar man rätt sekvens bland många kameror?
+      answer: Tydliga kameranamn, zoner och tidpunkter hjälper användaren att hitta rätt material. Vissa system har även analysfilter, men möjligheterna varierar mellan plattformar.
+    - question: Hur länge får inspelat material sparas?
+      answer: Material får inte sparas längre än vad som är nödvändigt för det angivna ändamålet. Verksamheten behöver bedöma och dokumentera lagringstiden.
 
 cta:
   eyebrow: Slipp onödigt krångel
