@@ -31,8 +31,8 @@ Källor som har granskats:
 | Samordnad säkerhet | Kamera, tillträde, larm och beredskap | PR #125, mergead. Integrationsstöd anges inte utan verifiering. |
 | Juridiskt ansvar och DPIA | Huvudmannens ansvar, laglig grund, konsekvensbedömning, integritet | PR #126, mergead. AVAB:s tekniska roll skiljs från verksamhetens juridiska ansvar. |
 | FAQ | Tillstånd, mobbning, lagring, behörighet m.m. | PR #126, mergead. FAQ utökad till 12 frågor. |
-| Miljölänkar | Skolmiljö samt fördjupning om Exakt sökning | Föreslaget i PR #128 (öppen, visuell kontroll och merge väntar). |
-| Relaterade länkar – gemensam rubrik | Internlänkning utan fel sidtypsrubrik | PR #127 (öppen), ändrar hårdkodad industrirubrik till `Läs vidare`. |
+| Miljölänkar | Skolmiljö samt fördjupning om Exakt sökning | PR #128, mergead 2026-10-10. Länkarna till Skolmiljön och Exakt sökning är inlagda. |
+| Relaterade länkar – gemensam rubrik | Internlänkning utan fel sidtypsrubrik | PR #127, mergead 2026-10-10. Gemensam rubrik är `Läs vidare`. |
 
 ## Redaktionella avgränsningar och ej införda uppgifter
 
@@ -61,7 +61,7 @@ Projektets tidigare IMY-kontroll daterades 2026-09-21. Under arbetet med PR #126
 - `/assets/skola-flyg-vy-hero.webp`, 2032 × 770, används i hero, principsektionen och avsnittet om natt/fasad.
 - Upprepat motiv behöver granskas visuellt. Ingen crop, focal point, alt-text eller bildfil har ändrats under PR #124–#128.
 - Verifiera att varje befintlig alt-text beskriver den faktiska bilden och inte påstår en verifierad kamerainstallation som inte syns.
-- Vänta på kundens bildbeslut och verifierad koppling mellan bild, plats och leverans före bildbyte.
+- Separat bildmejl för Kamera Skola har skickats till kunden 2026-10-10. Vänta på kundens bildbeslut och verifierad koppling mellan bild, plats och leverans före bildbyte.
 
 ## Gates och blockerare
 
@@ -69,8 +69,8 @@ Projektets tidigare IMY-kontroll daterades 2026-09-21. Under arbetet med PR #126
 - **PROJEKTSPECIFIKA PÅSTÅENDEN:** Ej införda utan separat verifiering.
 - **PUBLIKA BILDVAL / PROJEKTBILDER:** PENDING kundgodkännande och visuell bildgranskning.
 - **JURIDISK SLUTKONTROLL:** PENDING nära publicering.
-- **INTERNLÄNKAR:** PENDING PR #127/#128, CI och gemensam visuell kontroll.
-- **VISUELL SLUTKONTROLL:** PENDING för helsidan efter alla godkända innehållsändringar.
+- **INTERNLÄNKAR:** PR #127/#128 mergeade efter godkänd CI och visuell granskning.
+- **VISUELL SLUTKONTROLL:** Länkändringarna godkända. Slutlig helsideskontroll behövs fortfarande inför publicering och efter eventuellt bildbyte.
 - **REFERENSER:** Stjerneskolan och Galleria Duvan blockeras av otillräckligt verifierad projektspecifik information.
 
 ## Publiceringsgate
