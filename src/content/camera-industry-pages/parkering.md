@@ -8,11 +8,12 @@ seo:
   description: Kameraövervakning för parkering, garage och infarter. AVAB projekterar kamerasystem för överblick, in- och utfart, gångvägar och händelseuppföljning.
   noindex: true
 
-h1: "Kamera­övervakning för parkering"
+h1: "Kameraövervakning för parkering"
 
 hero:
   eyebrow: Kameraövervakning för parkering
-  lead: Parkeringsytor och garage kombinerar fordon, fotgängare, infarter och stora ljusvariationer. Kamerorna behöver placeras så att rätt händelse går att förstå i efterhand – inte bara så att hela ytan råkar vara med i bild.
+  subtitle: Rätt kameravy vid infarter, gångpassager och garage
+  lead: Parkerade fordon kan skymma sikten, och strålkastare eller kraftiga ljusskillnader kan göra viktiga detaljer svåra att se. AVAB projekterar kameror utifrån vad verksamheten behöver kunna följa upp vid en incident, med rätt bildvinkel och detaljnivå för varje plats.
   image:
     src: /assets/hallbyggnad-fasad-parkering.webp
     alt: Parkeringsyta framför större byggnad
