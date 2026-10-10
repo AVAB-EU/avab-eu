@@ -8,11 +8,12 @@ seo:
   description: Kameraövervakning för skolor med fokus på trygghet, incidenter och integritet. AVAB projekterar kamerabevakning för entréer, fasader, skolgård och särskilt utsatta zoner.
   noindex: true
 
-h1: "Kamera­övervakning för skola – trygghet med hög hänsyn till integritet"
+h1: "Kameraövervakning för skola"
 
 hero:
   eyebrow: Kameraövervakning för skola
-  lead: I skolmiljö räcker det inte att kameran tekniskt kan se en yta. Bevakningen måste vara motiverad, proportionerlig och utformad med särskild hänsyn till barn, elever och personal.
+  subtitle: Kamerabevakning utifrån skolans faktiska behov
+  lead: När en skola har problem med exempelvis skadegörelse eller intrång behöver det vara tydligt vad kamerorna ska hjälpa till att dokumentera. AVAB hjälper er att planera kamerornas placering och bildnivå utifrån platsens förutsättningar, med särskild hänsyn till elevernas och personalens integritet.
   image:
     src: /assets/skola-flyg-vy-hero.webp
     alt: Skolbyggnad och skolgård där kameraövervakning kan behöva projekteras med hänsyn till integritet och trygghet
