@@ -15,25 +15,32 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 
 ## Nästa arbetsblock
 
-### Kamera Prioritet 2 – nästa aktiva sida: Parkering
+### Referensfilter – visuell slutkontroll och branchstädning
 
-- [ ] **Parkering:** genomför read-only innehållsgranskning mot kundens `Kameraövervakning parkering.docx` när underlaget är tillgängligt. Granska behov, H1/hero-text, rättsliga/tekniska påståenden, metadata och internlänkar. Behåll bilderna och `draft/noindex` under arbetet.
+- [ ] **Read-only kontroll på aktuell `main`:** granska referenssidans sökning, Miljö/Teknik/Ort-plats-filter, gemensam filterpanel och `Rensa allt` på desktop och tablet. Jämför mot godkänd layout efter PR #110 utan att ändra något innan avvikelser har bekräftats.
+- [ ] **Branchstädning efter kontroll:** jämför `feature/referenser-kompakta-filter` och `feature/header-scroll-auto-hide` mot `main`. Radera inte brancher om de innehåller unikt, ej mergeat arbete; be om godkännande före eventuella ändringar.
+- [ ] **Fortsättning:** när referensfiltret är avslutat, välj nästa självständiga TODO-arbete, exempelvis stegvis gemensam referenskortsstandard, utan att kräva fler kundbilder.
+
+### Kamera Prioritet 2 – PAUSAD, väntar på kundens bilder och kommentarer
+
+- [x] **Parkering:** genomgång mot kundens 14-sidiga `Kameraövervakning parkering.docx` utförd. PR #130 (hero), #131 (översikt/ANPR/sökning), #132 (juridik/FAQ), #133 (internlänkar), #134 (coverage) och #135 (SEO-metadata) är mergeade. Kvar: bildgodkännande, referensverifiering (Bilparken/Duvan), juridisk färskhetskontroll och slutlig helsides-QA.
 - [x] **Skola:** PR #124 (hero), #125 (innehåll), #126 (juridik/FAQ), #128 (internlänkar) och #129 (source coverage) mergeade. Kundens 21-sidiga Word-underlag har jämförts; originalfilen var uppladdad i arbetschatten och är inte versionerad i repot. Slutligt bildbeslut och juridisk publiceringskontroll återstår.
 - [x] **Galleria:** PR #120 (hero), #121 (innehåll) och #122 (internlänkar + coverage) mergeade. Visuella ändringar granskade. Kundbildbesked och verifiering av eventuella kamera-referenspåståenden återstår.
 - [x] **Industri:** PR #116–#119 mergeade och text, hero, internlänkar granskade. Bildbesked samt sista juridiska/faktamässiga publiceringskontroll återstår.
 - [x] **Gemensamma kamerarelaterade länkar:** PR #127 mergead; rubriken i `CameraIndustryPage` är nu neutrala `Läs vidare`.
-- [ ] **Samtliga fyra kameraundersidor:** gör slutlig metadata-, internlänks-, bild- och juridisk QA när kundens bildbeslut kommit. Håll `draft: true` och `seo.noindex: true` tills uttryckligt publiceringsgodkännande. Kunden granskar via `avab.eu`, inte localhost.
-- [ ] **Kamera GDPR:** hantera `/kameraovervakning/gdpr/` separat med juridisk färskhetskontroll nära eventuell publicering.
-- [ ] Kör guardrails/build för nya ändringar och behåll små separata PR:er. Bekräfta deployment och verklig sidvisning efter merge.
+- [x] **Kamera – innehållsarbete avslutat för detta arbetspass:** Skola, Parkering, Industri och Galleria är genomarbetade och ligger på `main`. Inga fler kamera-SEO-/metadata-/innehållsgranskningar startas nu. Återuppta endast efter kundens bilder eller kommentarer, eller ett nytt uttryckligt uppdrag.
+- [ ] **Samtliga fyra kameraundersidor:** gör slutlig metadata-, internlänks-, bild- och juridisk QA inför publicering när kundens bildbeslut kommit. Håll `draft: true` och `seo.noindex: true` tills uttryckligt publiceringsgodkännande. Kunden granskar via `avab.eu`, inte localhost.
+- [ ] **Kamera GDPR:** egen juridisk färskhetskontroll nära eventuell publicering; ingår inte i nästa arbetsblock och startas inte under kameraprojektets paus.
+- [ ] **Vid återstart av kamera:** kör guardrails/build, internlänkskontroll och sidvisuell QA efter bildbesked och inför eventuella godkända publiceringsändringar.
 
 ## Aktiva uppföljningar
 
-- [ ] **Referensfilter – slutkontroll och branchstädning:** gör visuell desktop/tablet-kontroll på `main` efter mergeade PR #110, och bedöm därefter om `feature/referenser-kompakta-filter` kan raderas. Själva layoutfixen är redan mergead.
+- [ ] **Referensfilter:** prioriterat ovan som nästa arbetsblock. Själva desktop/tablet-layoutfixen är redan mergead i PR #110; kvar är read-only slutkontroll och säker branchbedömning.
 - [ ] Slutför gemensam referenskortsstandard stegvis. Grundkomponenter och gemensamma stilar finns, men flera lokala referenskortvarianter återstår på startsida, tjänste- och miljösidor.
 
 ## Väntar på kundbeslut
 
-- [ ] **Kamera Parkering – bilder:** separat mejl skickat 2026-10-08. Invänta svar om hero- och övriga bildval samt eventuella bildbeskrivningar.
+- [ ] **Kamera Parkering – bilder och Bilparken:** separat bildmejl skickat 2026-10-08 och uppföljning i samma tråd skickad 2026-10-10. Invänta besked om Sörby-bilden (hero och upprepning), bild till Exakt sökning samt eventuella publicerbara bilder/situationsplan och referensgodkännande för Bilparken i Karlstad. Sökavsnittets nuvarande alt-text beskriver felaktigt ett videohanteringssystem trots bild på fysisk kamera; rätta efter godkänt bildval.
 - [ ] **Kamera Industri – bilder:** separat mejl skickat 2026-10-08. Invänta svar om hero, upprepad fasadbild och bild i sök-/driftsektionen.
 - [ ] **Kamera Galleria – bilder:** separat mejl skickat 2026-10-08. Invänta bildbeslut; använd inte Galleria Duvan som kamerareferens utan verifierat underlag.
 - [ ] **Kamera Skola – bilder:** separat mejl skickat 2026-10-10. Invänta bildbeslut om upprepad skolbild och bildmaterial från Stjerneskolan; verifiera plats, leveransomfattning och rätt att använda bilder.
@@ -66,6 +73,10 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 - [ ] Slutför full sitewide-QA vid behov: interna länkar, navigation/footer/FAQ/grids, assets, bildprestanda, alt-texter, canonical, referensår och schema samt build och visuell granskning.
 
 ## Historik / avslutade checkpoints
+
+- **2026-10-10 – Kamerablocket pausat enligt projektbeslut:** Alla fyra kamera-branschsidor är genomarbetade på `main`, fortsatt `draft/noindex`, och kunden granskar via `avab.eu`. Invänta separata bildbeslut och eventuella kommentarer. Ingen ny kameragranskning planeras under pausen; nästa fristående TODO-block är referensfiltrets visuella slutkontroll och branchstädning. PR #130–#135 färdiga för Parkering, med dokumentation i PR #136.
+
+- **2026-10-10 – Kamera Parkering innehåll och metadata:** PR #130–#135 mergeade till `main`. H1/hero, kameratäckning, ANPR, Exakt sökning, juridik och 15 FAQ-frågor, två internlänkar, source coverage och SEO-title/description genomförda. Bilder och referensgodkännande väntar; `draft/noindex` kvar. Uppföljningsmejl skickat om Sörby-bilden, rätt sökbild och Bilparken.
 
 - **2026-10-10 – Kameraundersidor och PR-städning:** Skola PR #124–#126 och #128–#129 genomförda; Galleria PR #122 mergead; gemensam rubrikfix PR #127 mergead. Visuellt godkännande lämnat; samtliga fyra kameraundersidor kan nås via direktlänk på produktionsdomänen men är fortsatt draft/noindex. Bildmejl skickade för Parkering, Industri, Galleria och Skola. Nästa aktiva innehållsarbete är Parkering; bildfrågorna väntar på kund.
 
