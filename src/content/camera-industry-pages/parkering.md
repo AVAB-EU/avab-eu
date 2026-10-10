@@ -68,6 +68,26 @@ sections:
       - "Parkeringsyta – bredare bild över rörelser mellan parkerade fordon."
       - "Gångstråk – kompletterande bild där människor rör sig mellan parkering och entré."
 
+  - id: oversikt-och-detalj
+    eyebrow: Översikt & detalj
+    title: Översiktsbild och detaljbild löser olika uppgifter
+    paragraphs:
+      - En kamera som visar en stor parkeringsyta kan ge sammanhang i ett händelseförlopp, men ändå ha för låg detaljnivå vid en infart, utfart eller gångpassage. Riktade kameror vid de kritiska punkterna behöver därför komplettera översiktsbilden.
+      - Parkerade bilar, pelare och skyltar kan skymma personer och fordon. Kamerahöjd, vinkel och avstånd behöver planeras utifrån de verkliga siktlinjerna. En bred kamerabild innebär inte automatiskt att alla viktiga händelser går att följa upp.
+    bullets:
+      - Översikt över körstråk, parkeringsrader och rörelser på området
+      - Riktade kameravyer vid infarter, utfarter, entréer och gångpassager
+      - Kontroll av skymda ytor och döda vinklar mellan parkerade fordon
+      - Bildnivå anpassad efter vad verksamheten behöver kunna bedöma
+
+  - id: anpr
+    eyebrow: ANPR & registreringsläsning
+    title: Registreringsnummer kräver en annan kameravy än överblick
+    paragraphs:
+      - ANPR (Automatic Number Plate Recognition), även kallat LPR, används för automatisk avläsning av registreringsskyltar vid en bestämd passage. Att en skylt ibland går att läsa i en pausad översiktsbild betyder inte att samma kamera klarar tillförlitlig automatisk avläsning.
+      - Om verksamheten har ett verifierat behov av ANPR behöver kameran och det aktuella körfältet projekteras tillsammans. Hastighet, avstånd, kameravinkel, slutartid och ljusförhållanden påverkar resultatet. Vid garageinfarter tillkommer snabba växlingar mellan dagsljus och mörker samt reflexer och strålkastare.
+      - Vilka sök- och registreringsfunktioner som sedan är möjliga beror på den valda kameran, videoplattformen och dess licenser. Stöd för exempelvis koppling mellan registreringsnummer, tidpunkt och fordonsbild måste kontrolleras för varje lösning.
+
   - id: ljus-och-vader
     eyebrow: Ljus & miljö
     title: Mörker, strålkastare och väder ställer krav på kamerabilden
@@ -82,10 +102,11 @@ sections:
 
   - id: sokning
     eyebrow: Sökning & uppföljning
-    title: Ett bra system gör incidenten snabb att hitta
+    title: Hitta rätt fordon och händelse i inspelat material
     paragraphs:
-      - När en händelse rapporteras ska användaren kunna gå till rätt zon och rätt tidsintervall utan att behöva kontrollera alla kameror manuellt.
-      - Därför är tydliga kameranamn, logisk gruppering och en enkel tidslinje lika viktiga som själva inspelningen.
+      - När en incident rapporteras är tidpunkt och plats ofta utgångspunkten. Tydliga kameranamn, zoner och en användbar tidslinje hjälper operatören att hitta rätt sekvens utan att gå igenom alla kameror manuellt.
+      - Exakt sökning och videoanalys kan, när kameror och videoplattform har stöd för det, filtrera inspelat material efter exempelvis fordonskategori, färg, rörelseriktning eller tidpunkt. Sökning på registreringsnummer förutsätter att relevant ANPR-funktion är installerad och tillgänglig.
+      - Flera kameravyer kan tillsammans hjälpa till att förstå hur ett fordon eller en person rörde sig mellan parkering, gångpassage och entré. Systemet ersätter inte operatörens egen bedömning, och automatisk spårning mellan kameror är ingen generell funktion som kan utlovas.
     image:
       src: /assets/Kameraovervakning-dahua-hero.webp
       alt: Videohanteringssystem för kameraövervakning med flera kameravyer
