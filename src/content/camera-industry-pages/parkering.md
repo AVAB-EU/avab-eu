@@ -124,7 +124,6 @@ legalOrientation:
   linkLabel: Läs IMY:s vägledning om kamerabevakning på parkeringar
   linkHref: https://www.imy.se/verksamhet/kamerabevakning/sa-gor-ni-intresseavvagningen-pa-olika-platser/parkeringar/
 
-
 faq:
   title: Vanliga frågor om kameraövervakning på parkering
   items:
@@ -149,7 +148,7 @@ faq:
     - question: Vad är ANPR?
       answer: ANPR, även kallat LPR, är automatisk avläsning av registreringsskyltar. Tekniken kräver en lämpligt projekterad kamera och ett system som har stöd för den aktuella funktionen.
     - question: Är registreringsnummer personuppgifter?
-      answer: Ja, ett registreringsnummer kan vara en personuppgift när det går att koppla till en fysisk person, till exempel ägaren till en privat bil. ANPR-behandling behöver då omfattas av verksamhetens dataskyddsbedömning.
+      answer: Det kan vara det. Om registreringsnumret går att koppla till en fysisk person, till exempel ägaren till en privat bil, är det en personuppgift. ANPR-behandling behöver då omfattas av verksamhetens dataskyddsbedömning.
     - question: Får kamerorna spela in dygnet runt?
       answer: Inte automatiskt. Verksamheten behöver kunna motivera vilka tider och ytor som ska bevakas. Behoven och integritetsintresset kan skilja sig mellan dag och natt.
     - question: Hur länge får inspelat material sparas?
