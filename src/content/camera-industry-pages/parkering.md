@@ -4,8 +4,8 @@ slug: /kameraovervakning/parkering/
 industry: Parkering
 
 seo:
-  title: Kameraövervakning för parkering | Garage & parkeringsyta | AVAB
-  description: Kameraövervakning för parkering, garage och infarter. AVAB projekterar kamerasystem för överblick, in- och utfart, gångvägar och händelseuppföljning.
+  title: Kameraövervakning för parkering & garage | ANPR | AVAB
+  description: AVAB projekterar kameraövervakning för parkering, garage och parkeringshus. Rätt kameratäckning, ANPR vid behov och Exakt sökning där tekniken stödjer det.
   noindex: true
 
 h1: "Kameraövervakning för parkering"
