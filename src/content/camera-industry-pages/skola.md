@@ -46,10 +46,10 @@ principle:
 sections:
   - id: varfor
     eyebrow: Varför kameraövervakning?
-    title: När trygghetsbehovet är konkret behöver lösningen vara precis
+    title: Kameraövervakning börjar med ett konkret behov
     paragraphs:
-      - Kameraövervakning i skola kan vara relevant när det finns återkommande problem med skadegörelse, intrång, hot, våld eller andra incidenter som behöver förebyggas eller kunna utredas.
-      - Men skolmiljöer har ett högt integritetsintresse. Därför behöver bevakningen avgränsas till de platser och tider där behovet faktiskt kan motiveras.
+      - En skola kan ha återkommande problem med skadegörelse, obehöriga personer eller allvarliga incidenter vid särskilt utsatta platser. Innan kameror installeras behöver verksamheten kartlägga vad som har inträffat, var problemen finns och om andra säkerhetsåtgärder är tillräckliga.
+      - När behovet är klarlagt hjälper AVAB till att projektera kamerornas placering och bildkvalitet. En kamera vid en entré kan behöva visa andra detaljer än en kamera längs en fasad. Varje kameravy ska därför utformas för ett tydligt ändamål och begränsas till det område som behöver bevakas.
     bullets:
       - Entréer och passager där händelser behöver kunna följas upp
       - Fasader och utsatta områden vid skadegörelse eller intrång
@@ -71,13 +71,13 @@ sections:
     eyebrow: Bildkvalitet & användning
     title: Rätt detaljnivå är viktigare än flest megapixel
     paragraphs:
-      - En översiktsbild kan räcka för att förstå ett förlopp på en större yta, medan en kamera vid en viss passage kan behöva högre detaljnivå. Placering, vinkel, ljus och avstånd är därför viktigare än att bara välja högsta möjliga upplösning.
-      - Målet är att varje kamera ska lösa ett tydligt definierat problem utan att samla in mer bildinformation än vad syftet kräver.
+      - En kamera kan ge överblick över en stor yta men ändå visa för lite detaljer när en viss händelse behöver följas upp. Objektiv, avstånd, monteringshöjd och ljus måste därför bedömas tillsammans med kamerans placering.
+      - AVAB projekterar vad bilden behöver kunna visa innan kamera och bildutsnitt bestäms. Samtidigt ska onödiga bildytor undvikas så att bevakningen inte omfattar mer än vad ändamålet motiverar.
     bullets:
-      - Bildnivå anpassad efter syftet
-      - Vinkel och placering som minskar blinda zoner
-      - Ljussättning och motljus beaktas i projekteringen
-      - Inspelning och sökning dimensioneras efter verksamhetens behov
+      - Syfte och detaljnivå för varje kameravy
+      - Avstånd, objektiv och monteringshöjd
+      - Motljus, mörker och områden utanför önskat bildutsnitt
+      - Kameraplan som stöd för installation och dokumentation
 
   - id: natt-och-fasad
     eyebrow: Tid & avgränsning
@@ -90,6 +90,24 @@ sections:
       alt: Skolområde där tid på dygnet påverkar hur kamerabevakning bör bedömas
       width: 2032
       height: 770
+
+  - id: sokning-och-uppfoljning
+    eyebrow: Sökning & uppföljning
+    title: Hitta rätt inspelning när en händelse behöver följas upp
+    paragraphs:
+      - När en incident rapporteras behöver behörig personal kunna hitta rätt tidpunkt och kameravy utan att gå igenom långa inspelningar från hela skolan. Tydliga kameranamn och en struktur efter byggnad och zon gör materialet lättare att hantera.
+      - I vissa kamerasystem kan videoanalys hjälpa användaren att filtrera inspelat material efter relevanta händelser eller visuella egenskaper. Vilka sökfunktioner som finns beror på videoplattform, kameror och licenser och måste verifieras för den aktuella installationen. Automatisk identifiering av personer ska inte förutsättas.
+    bullets:
+      - Tydliga kameranamn för entréer och avgränsade passager
+      - Sökning efter relevant tidpunkt och kameravy
+      - Analysbaserad filtrering endast där systemet har verifierat stöd
+
+  - id: samordnat-sakerhetsarbete
+    eyebrow: Skolans säkerhetsarbete
+    title: Kameror är ett stöd, inte skolans enda skydd
+    paragraphs:
+      - Kamerabevakning kan bidra till att dokumentera intrång och ge underlag för uppföljning av en allvarlig händelse. Den ersätter däremot inte rutiner för tillträde, larm, inrymning eller personalens arbete med säkerhet.
+      - När det finns ett konkret behov kan AVAB i projekteringen undersöka om kameravyer kan samordnas med exempelvis larm eller passersystem. Möjliga integrationer beror på vilka system som finns och hur de är konfigurerade; funktion och behörighet måste därför fastställas för varje anläggning.
 
 legalOrientation:
   eyebrow: Juridik & GDPR
