@@ -1,6 +1,6 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-10-08._
+_Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 
 ## Aktuellt läge
 
@@ -11,17 +11,20 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-08._
 - PR #111 har etablerat tjänstesidestandard och delad FAQ-komponent; fler sidors migrering återstår. PR #112 har standardiserat global footer, inklusive Hörslinga och guardrail.
 - PR #106:s två P2-reviewfynd är åtgärdade i PR #114 och visuellt godkända. Även Kunskapsbankens hero-etikett och en krasch i referensfiltreringen rättades i samma PR.
 - Öppna brancher får bedömas mot aktuell `main` före radering. Äldre `feature/header-scroll-auto-hide` kan bedömas för radering efter mergeade PR #114; `feature/referenser-kompakta-filter` behålls till dess den separata visuella slutkontrollen är klar.
+- Kameraundersidorna Skola, Parkering, Industri och Galleria ligger på `main` och går att öppna via direktlänk på `avab.eu` (bekräftat av användaren). De har fortfarande `draft: true` och `seo.noindex: true`, vilket inte är ett slutligt publiceringsgodkännande.
 
 ## Nästa arbetsblock
 
-### Kamera Prioritet 2 – nästa steg: Skola
+### Kamera Prioritet 2 – nästa aktiva sida: Parkering
 
-- [ ] **Skola:** börja med read-only kontroll av aktuell sida och Word-underlaget, granska H1/hero och prioritera verifierbara innehållsändringar. Håll `draft` och `noindex` tills uttryckligt publiceringsgodkännande ges.
-- [ ] **Galleria:** PR #122 (internlänkar + coverage) är öppen och GitHub-validerad; invänta visuell slutkontroll av länkarna innan merge. PR #120 (hero) och #121 (innehåll) är mergeade. Hela sidans visuella slutkontroll och bildbeslut kvarstår.
-- [ ] **Industri:** PR #116–#119 är mergeade. Hero, innehåll och internlänkar har granskats. Bilder och återstående teknisk/juridisk slutkontroll väntar före publicering.
-- [ ] **Parkering:** pausa bildändringar i väntan på kundens besked om bildval. Innehållsomfattning (bl.a. ANPR) och eventuell fortsatt publiceringsgranskning återstår.
+- [ ] **Parkering:** genomför read-only innehållsgranskning mot kundens `Kameraövervakning parkering.docx` när underlaget är tillgängligt. Granska behov, H1/hero-text, rättsliga/tekniska påståenden, metadata och internlänkar. Behåll bilderna och `draft/noindex` under arbetet.
+- [x] **Skola:** PR #124 (hero), #125 (innehåll), #126 (juridik/FAQ), #128 (internlänkar) och #129 (source coverage) mergeade. Kundens 21-sidiga Word-underlag har jämförts; originalfilen var uppladdad i arbetschatten och är inte versionerad i repot. Slutligt bildbeslut och juridisk publiceringskontroll återstår.
+- [x] **Galleria:** PR #120 (hero), #121 (innehåll) och #122 (internlänkar + coverage) mergeade. Visuella ändringar granskade. Kundbildbesked och verifiering av eventuella kamera-referenspåståenden återstår.
+- [x] **Industri:** PR #116–#119 mergeade och text, hero, internlänkar granskade. Bildbesked samt sista juridiska/faktamässiga publiceringskontroll återstår.
+- [x] **Gemensamma kamerarelaterade länkar:** PR #127 mergead; rubriken i `CameraIndustryPage` är nu neutrala `Läs vidare`.
+- [ ] **Samtliga fyra kameraundersidor:** gör slutlig metadata-, internlänks-, bild- och juridisk QA när kundens bildbeslut kommit. Håll `draft: true` och `seo.noindex: true` tills uttryckligt publiceringsgodkännande. Kunden granskar via `avab.eu`, inte localhost.
 - [ ] **Kamera GDPR:** hantera `/kameraovervakning/gdpr/` separat med juridisk färskhetskontroll nära eventuell publicering.
-- [ ] Kör guardrails/build och internlänkskontroll för eventuella ändringar. Arbeta i små PR:er utan att ändra publiceringsflaggor i förtid.
+- [ ] Kör guardrails/build för nya ändringar och behåll små separata PR:er. Bekräfta deployment och verklig sidvisning efter merge.
 
 ## Aktiva uppföljningar
 
@@ -30,9 +33,11 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-08._
 
 ## Väntar på kundbeslut
 
-- [ ] **Kamera Parkering – bilder:** kunden har fått bildfrågor per mejl; invänta svar och eventuella nya bilder/alt-texter.
-- [ ] **Kamera Industri – bilder:** kunden har fått bildfrågor per mejl; invänta svar och eventuella nya bilder/alt-texter.
-- [ ] **Kamera Galleria – bilder:** mejlutkast för separat bildgranskning är framtaget; kontrollera att det faktiskt skickats. Bilderna är inte kundgodkända. Duvan används inte som kamerareferens utan verifiering.
+- [ ] **Kamera Parkering – bilder:** separat mejl skickat 2026-10-08. Invänta svar om hero- och övriga bildval samt eventuella bildbeskrivningar.
+- [ ] **Kamera Industri – bilder:** separat mejl skickat 2026-10-08. Invänta svar om hero, upprepad fasadbild och bild i sök-/driftsektionen.
+- [ ] **Kamera Galleria – bilder:** separat mejl skickat 2026-10-08. Invänta bildbeslut; använd inte Galleria Duvan som kamerareferens utan verifierat underlag.
+- [ ] **Kamera Skola – bilder:** separat mejl skickat 2026-10-10. Invänta bildbeslut om upprepad skolbild och bildmaterial från Stjerneskolan; verifiera plats, leveransomfattning och rätt att använda bilder.
+- [ ] Inga bildbyten, crop/focal point, motivändringar eller bildtexter som förutsätter nytt projektunderlag utan kundbeslut. Kameraundersidorna ligger kvar på `draft/noindex` under väntetiden.
 
 - [ ] `/author/andreas-avab/` – invänta besked om gammal WordPress-författarsida.
 - [ ] `/login/` – invänta besked om kund-/medlemsinloggning fortfarande behövs.
@@ -62,7 +67,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-08._
 
 ## Historik / avslutade checkpoints
 
-- **2026-10-08 – Kamerasidor:** Gallerias hero PR #120 och innehåll PR #121 mergeade; PR #122 (internlänkning och coverage) öppen, grön men väntar på visuell länkgranskning. Industrisidan genomförd i PR #116–#119 och väntar på kundens bildval. Parkering väntar på kundens bildval. Nästa aktivt arbete är Skola. Samtliga ännu ej publiceringsgodkända kameraundersidor behåller draft/noindex.
+- **2026-10-10 – Kameraundersidor och PR-städning:** Skola PR #124–#126 och #128–#129 genomförda; Galleria PR #122 mergead; gemensam rubrikfix PR #127 mergead. Visuellt godkännande lämnat; samtliga fyra kameraundersidor kan nås via direktlänk på produktionsdomänen men är fortsatt draft/noindex. Bildmejl skickade för Parkering, Industri, Galleria och Skola. Nästa aktiva innehållsarbete är Parkering; bildfrågorna väntar på kund.
 
 - **2026-10-08 – PR #114:** båda P2-fynden från PR #106 (hero-detektering och första scroll-deltat) åtgärdade och visuellt godkända. Även Kunskapsbankens hero-etikett och referenssidans saknade `filterLocation` hanterades. PR #114 mergead på `main`.
 
