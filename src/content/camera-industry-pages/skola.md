@@ -119,6 +119,14 @@ legalOrientation:
   linkLabel: Läs IMY:s vägledning för skolor och förskolor
   linkHref: https://www.imy.se/verksamhet/kamerabevakning/sa-gor-ni-intresseavvagningen-pa-olika-platser/skolor-och-forskolor/
 
+relatedLinks:
+  - label: Skola och utbildning
+    href: /miljo/skola/
+    description: Läs om AVAB:s lösningar för undervisningsrum, aula, rastsignal och andra behov i skolmiljö.
+  - label: Exakt sökning och AI-analys
+    href: /tjanster/exakt-sokning-ai-analys/
+    description: Läs hur videosökning och analys kan underlätta incidentsökning när det valda systemet har stöd för funktionerna.
+
 faq:
   title: Vanliga frågor om kameraövervakning i skola
   items:
