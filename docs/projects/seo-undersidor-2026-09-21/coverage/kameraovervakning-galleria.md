@@ -3,7 +3,7 @@
 **Route:** `/kameraovervakning/galleria/`  
 **Jämförelsesida:** `/kameraovervakning/butik/`  
 **Status:** Draft/noindex – inte publiceringsgodkänd  
-**Uppföljd:** 2026-10-08
+**Uppföljd:** 2026-10-10
 
 ## Källor och genomförda ändringar
 
@@ -11,7 +11,7 @@
 - Miljösida `/miljo/kopcentrum-galleria/` och fördjupning `/tjanster/exakt-sokning-ai-analys/`.
 - `docs/source-material/Kameraövervakning galleria.docx` genomgicks i tidigare lokal Codex-inventering. Word-källan har inte öppnats via GitHub-anslutningen i denna uppföljning.
 - PR #120: kortare H1, underrubrik och ingress. Hero visuellt godkänd.
-- PR #121: innehåll om entréer, övergångar mellan våningsplan, ansvarsfördelning samt villkorad sökning/integration. GitHub-validering grön; separat visuell slutkontroll av innehållet återstår.
+- PR #121: innehåll om entréer, övergångar mellan våningsplan, ansvarsfördelning samt villkorad sökning/integration. GitHub-validering grön; ändringarna har visuellt godkänts inför merge.
 - Internlänkning till handelsmiljön och Exakt sökning läggs i samma PR som denna dokumentuppdatering. Befintlig CTA-länk till kameratjänsten kvarstår.
 
 ## Medvetet utelämnat och ej verifierat
@@ -21,15 +21,15 @@
 - Inga kundspecifika produktantal, mätvärden eller kamerareferenser är tillagda.
 - Juridik och ansvar mellan fastighetsägare, centrumledning och butikshyresgäster beskrivs orienterande, inte som generell rättslig bedömning.
 
-## Bilder – väntar på granskning
+## Bilder – väntar på kundbesked
 
 - `/assets/kopcentrum-galleria-kameraövervakning-hero.webp` används i hero och principsektionen.
 - `/assets/Kameraovervakning-dahua-hero.webp` används vid driftavsnittet. Alt-texten beskriver ett videogränssnitt trots att bilden enligt tidigare granskning visar en fysisk kamera.
-- Bildval, upprepning, motivanknytning och alt-texter behöver granskas. Inga bilder eller alt-texter ändras i denna PR.
+- Bildmejl skickades till kunden 2026-10-08. Besked om bildval, upprepning, motivanknytning och alt-texter inväntas. Inga bilder eller alt-texter ändras i denna PR.
 
 ## Kvar före publicering
 
-- [ ] Andreas granskar nytt innehåll och internlänkar visuellt, inklusive mobil.
+- [x] Visuell granskning av ändringarna godkänd 2026-10-10.
 - [ ] Kundteamet godkänner eller ändrar bildval, upprepade motiv och bildbeskrivningar.
 - [ ] Kontrollera att nya påståenden stämmer med verifierad AVAB-leveransomfattning och aktuell integritetsvägledning.
 - [ ] Kör slutlig internlänkskontroll, guardrails/build och visuell QA.
