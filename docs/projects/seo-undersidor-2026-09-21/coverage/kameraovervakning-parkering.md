@@ -35,7 +35,7 @@ Källor som har använts eller jämförts:
 ## Medvetna avgränsningar och ej införda påståenden
 
 - Kundens underlag föreslår `/tjanster/kameraovervakning/parkering/`, men den etablerade URL:en är `/kameraovervakning/parkering/`. URL ska inte ändras utan separat beslut och redirectanalys.
-- Kundens SEO-förslag fokuserar tydligare på ANPR i title och meta description. Nuvarande metadata har **inte** ändrats i PR #130–#133. Metadata och sociala delningsfält behöver slutgranskas separat, men inga särskilda funktioner ska antydas som standardleverans utan verifiering.
+- Kundens SEO-förslag lyfter ANPR, parkering och garage. **PR #135 mergead 2026-10-10:** title och description har uppdaterats till `Kameraövervakning för parkering & garage | ANPR | AVAB` och en beskrivning som villkorar ANPR och Exakt sökning. OG/Twitter använder samma SEO-fält via gemensam layout. Slutlig metadata- och renderingskontroll kvarstår inför publicering.
 - Word-dokumentet utvecklar 180°-kameror, PTZ, WDR, samordning med belysning, förprojektering av synfält samt återanvändning av befintliga kameror. Allt har inte kopierats över. Överväg komplettering bara om det ger tydligt mervärde utan att göra sidan onödigt lång.
 - Den mer omfattande delen om bomstyrning, intercom och fordonsflöden hör hemma på `/miljo/parkering-garage/`. Tekniska ANPR- och analysfunktioner är inte generellt verifierade för alla system.
 - Underlaget nämner **Bilparken i Karlstad** som genomfört kameraövervakningsprojekt med projektering före montage. Någon verifierad projektspecifik kameraleverans, referenstext, bildkoppling eller publiceringsrätt finns ännu inte dokumenterad i denna granskning. Skriv inte in ett färdigt case utan separat kundverifiering.
@@ -45,7 +45,7 @@ Källor som har använts eller jämförts:
 
 ## Bildstatus – väntar på kunden
 
-Kunden fick ett separat bildgranskningsmejl för Parkering **2026-10-08**. Befintliga bildval lämnas orörda i detta arbetsblock:
+Kunden fick ett separat bildgranskningsmejl för Parkering **2026-10-08** och ett kompletterande svar i samma mejltråd skickades **2026-10-10** med frågor om Bilparkens projektbilder, publicerbar situationsplan och bättre sökbild. Befintliga bildval lämnas orörda i detta arbetsblock:
 
 - `/assets/hallbyggnad-fasad-parkering.webp` (1200 × 900) används både i hero och principsektionen. Kunden behöver ta ställning till motivvalet och upprepningen.
 - `/assets/Kameraovervakning-dahua-hero.webp` (2032 × 770) används i sökavsnittet. Nuvarande alt-text beskriver ett videohanteringssystem; kontrollera att den verkligen motsvarar bildens faktiska motiv innan eventuellt alt-byte.
@@ -61,7 +61,8 @@ Kunden fick ett separat bildgranskningsmejl för Parkering **2026-10-08**. Befin
 - **BILDVAL: PENDING** kundbesked och kontroll av motiv/alt-text.
 - **BILPARKEN / DUVAN: PENDING** verifierad leverans- och referensinformation.
 - **INTERNLÄNKAR: GENOMFÖRDA** i PR #133, mergead efter godkänd visuell granskning och CI.
-- **METADATA OCH HELSIDES-QA: PENDING** efter godkända PR:er, inklusive internlänkskontroll, build och desktop/mobil.
+- **METADATA: IMPLEMENTERAD** i PR #135 (titel och beskrivning), men slutlig kontroll av rendrerad metadata och sidans sökpresentation återstår före eventuell publicering.
+- **HELSIDES-QA: PENDING** efter bildgodkännande, inklusive internlänkskontroll, build och desktop/mobil.
 - **DOCX-KÄLLA:** jämförd via uppladdat Word-dokument; originalet inte tillgängligt i repot.
 
 `draft: true` och `seo.noindex: true` ska behållas. Kunden kan granska `https://avab.eu/kameraovervakning/parkering/` via direktlänk när ändringarna har deployats, men detta är **inte** slutligt indexerings- eller publiceringsgodkännande. Ändra inte flaggorna utan uttryckligt beslut.
