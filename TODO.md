@@ -18,7 +18,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 ### Nästa arbetsblock – gemensam referenskortsstandard
 
 - [ ] Gör en **read-only inventering** av hur referenskort renderas på referensöversikt, startsida, miljösidor och tjänstesidor. Jämför med befintliga `Reference*`-komponenter och beslutad sidstandard; anta inte att olika kortvarianter ska slås ihop utan att först verifiera skillnader och användning.
-- [ ] Välj en avgränsad och representativ kortvariant för första förändringen. Behåll befintliga bildval, layoutbeslut och länkar, och kräva visuellt godkännande före merge.
+- [ ] Välj en avgränsad och representativ kortvariant för första förändringen. Behåll befintliga bildval, layoutbeslut och länkar, och kräv visuellt godkännande före merge.
 - [x] **Referensfilter klart:** sidan och filtreringen är visuellt och funktionellt godkända av användaren 2026-10-10. Inga fler ändringar av filterlayouten planeras.
 - [ ] **Gammal branchstädning separat:** `feature/referenser-kompakta-filter` är bakom `main` utan egna commits. `feature/header-scroll-auto-hide` divergerar med 14 egna commits och ska inte raderas/mergas slentrianmässigt. Be om uttryckligt godkännande före radering.
 
