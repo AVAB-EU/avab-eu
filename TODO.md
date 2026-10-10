@@ -6,20 +6,25 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 
 - `AVAB-EU/avab-eu` är projektets enda source of truth. Produktionsdeploy ska utgå från `main`.
 - Teknisk SEO-baslinje är genomförd: sitemap, draft/noindex, internlänkar, guardrails och build har verifierats. Se `docs/audits/publicering-indexering-2026-09-21.md`.
-- Referensfiltreringen är mergead på `main`, inklusive desktop/tablet-fixen i PR #110. Sökning, Miljö/Teknik/Ort-plats-filter, antal, rensning och URL-state finns. Eventuell kvarvarande visuell verifiering och branchstädning hanteras separat.
+- **Referenssidan är funktionellt och visuellt godkänd av användaren 2026-10-10.** Sökning, Miljö/Teknik/Ort-plats-filter, antal, `Rensa allt`, URL-state och desktop/tablet-layouten är mergeade på `main` (bl.a. PR #110). Inga fler filterändringar behövs utan ny uttrycklig beställning.
 - Kamera Butik är länkad till Go Banana-referensen och den tillfälliga publiceringscopyn är åtgärdad.
 - PR #111 har etablerat tjänstesidestandard och delad FAQ-komponent; fler sidors migrering återstår. PR #112 har standardiserat global footer, inklusive Hörslinga och guardrail.
 - PR #106:s två P2-reviewfynd är åtgärdade i PR #114 och visuellt godkända. Även Kunskapsbankens hero-etikett och en krasch i referensfiltreringen rättades i samma PR.
-- Öppna brancher får bedömas mot aktuell `main` före radering. Äldre `feature/header-scroll-auto-hide` kan bedömas för radering efter mergeade PR #114; `feature/referenser-kompakta-filter` behålls till dess den separata visuella slutkontrollen är klar.
+- Äldre referensfilter-branch är helt överspelad av `main`. Header-branchen med 14 unika commits finns bevarad både under sitt ursprungliga namn och i `archive/header-scroll-auto-hide-2026-10-10`; ingen gammal branch har råkat mergeas in i godkänd kod.
 - Kameraundersidorna Skola, Parkering, Industri och Galleria ligger på `main` och går att öppna via direktlänk på `avab.eu` (bekräftat av användaren). De har fortfarande `draft: true` och `seo.noindex: true`, vilket inte är ett slutligt publiceringsgodkännande.
 
 ## Nästa arbetsblock
 
-### Referensfilter – visuell slutkontroll och branchstädning
+### Nästa arbetsblock – tjänstesidornas gemensamma standard
 
-- [ ] **Read-only kontroll på aktuell `main`:** granska referenssidans sökning, Miljö/Teknik/Ort-plats-filter, gemensam filterpanel och `Rensa allt` på desktop och tablet. Jämför mot godkänd layout efter PR #110 utan att ändra något innan avvikelser har bekräftats.
-- [ ] **Branchstädning efter kontroll:** jämför `feature/referenser-kompakta-filter` och `feature/header-scroll-auto-hide` mot `main`. Radera inte brancher om de innehåller unikt, ej mergeat arbete; be om godkännande före eventuella ändringar.
-- [ ] **Fortsättning:** när referensfiltret är avslutat, välj nästa självständiga TODO-arbete, exempelvis stegvis gemensam referenskortsstandard, utan att kräva fler kundbilder.
+- [ ] **Read-only inventering:** identifiera kvarvarande tjänstesidor som inte följer beslutad gemensam tjänstesidestandard och FAQ → CTA-ordning i `docs/standards/pages/service.md`. Starta med en sida utan beroende av nya kundbilder.
+- [ ] **Föreslå ett litet första steg:** kontrollera aktuell `main`, dokumentera konkreta avvikelser och begär godkännande innan eventuell kodändring. Lämna kamera-, referens- och bildarbetet utanför.
+
+### Referenser – STÄNGT enligt användarbeslut 2026-10-10
+
+- [x] **`/referenser/` färdig:** hela referenssidan inklusive sökning, filter och utseende godkänd. Ingen ytterligare granskning eller ändring planeras.
+- [x] **Referenskortsstandard och andra framtida referensförbättringar avförda ur aktiv TODO:** dessa har *inte* implementerats eller godkänts som en ny gemensam standard. Tidigare idéer och underlag bevaras i dokumentationen men återupptas enbart efter nytt uttryckligt uppdrag.
+- [x] **Gamla brancher inventerade:** `feature/referenser-kompakta-filter` ligger helt bakom `main` (0 unika commits). `feature/header-scroll-auto-hide` hade 14 unika commits och har säkerhetskopierats till `archive/header-scroll-auto-hide-2026-10-10` utan att dess historiska ändringar mergats till `main`. Radering av de gamla remote-brancherna återstår som en separat teknisk städåtgärd eftersom GitHub-anslutningen saknar funktion för branchradering.
 
 ### Kamera Prioritet 2 – PAUSAD, väntar på kundens bilder och kommentarer
 
@@ -35,8 +40,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 
 ## Aktiva uppföljningar
 
-- [ ] **Referensfilter:** prioriterat ovan som nästa arbetsblock. Själva desktop/tablet-layoutfixen är redan mergead i PR #110; kvar är read-only slutkontroll och säker branchbedömning.
-- [ ] Slutför gemensam referenskortsstandard stegvis. Grundkomponenter och gemensamma stilar finns, men flera lokala referenskortvarianter återstår på startsida, tjänste- och miljösidor.
+- [x] **Referenssidan – avslutad:** funktion, filtrering, layout och korten på `/referenser/` lämnas oförändrade. Kundbeslutet är dokumenterat ovan.
+- [x] **Referenskortsstandard – avförd från aktiv arbetslista:** framtida harmonisering är inte levererad och ska inte tas upp igen utan ny beställning.
 
 ## Väntar på kundbeslut
 
@@ -61,18 +66,20 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 - [ ] Rätta korten på `/om-oss/#vad-vi-gor/`: relevanta destinationslänkar, helklickbarhet och konsekvent rubrik-/brödtextlinjering.
 - [ ] Genomför sitewide metadata-audit för title, description, canonical, robots, H1, Open Graph/Twitter och schema; prioritera viktiga sidor.
 - [ ] Följ upp Search Console efter publicering: indexering, queries, impressions, CTR, snippets och crawlstatus.
-- [ ] Fortsätt referensarbete när materialpausen kan hävas: verifiera publiceringsgodkännande, lägg till verifierat färdigställandeår, hantera Lesjöfors-bildretusch och planera Lundsberg-ombyggnad. AI får byta till befintliga assets; crop, focal point och retusch görs av kundteamet.
+- [x] **Framtida referensjobb avförda ur aktiv plan enligt användarbeslut:** färdigställandeår, Lesjöfors-bildretusch och Lundsberg-ombyggnad är inte genomförda; de kan återupptas endast efter ny beställning och eventuellt kundunderlag. Ingen crop, fokalpunktsändring eller retusch har utförts.
 - [ ] Bild-SEO: granska de 17 tidigare flaggade alt-texterna, spåra saknade original, avgör om `kopcentrum-fasad-kvall-bred.webp` ska användas, kontrollera publika bild-URL:er/hash-länkar, verifiera footerns logotypsökväg och besluta namnkonvention för `images`/`image/partners/`.
 - [ ] Skapa unik preview per PR så visuellt godkännande fungerar från mobil/chat.
-- [ ] Försona AI-dokumentationen med kundrepots aktuella `compact`/`standard`/`extended`-referensimplementation och befintliga `Reference*`-komponenter.
+- [x] **Referensrelaterad AI-dokumentationsharmonisering avförd ur aktiv plan:** inte utförd; bevarad som historiskt förslag och kräver ett nytt uppdrag.
 - [ ] Förbättra PDF-underlagets design i budgetkalkylatorn och verifiera AVAB-logotypen i utskrift/PDF.
 - [ ] Kundönskemål återstår enligt `docs/projects/kundonskemal-2026-08-20/`: invänta beslut/material för headerkontakt, restaurangmiljöns kanoniska namn, skillnaden mellan ”Hur vi jobbar” och ”Vår leverans”, erbjudandepris och bildmappningar. Följ avtalat bildansvar.
 - [ ] Tjänstesidor: gemensam standard är dokumenterad i `docs/standards/pages/service.md` genom PR #111. Granska och migrera återstående sidor stegvis: Ljus, Bild/skärm, Kamera, Talat utrymningslarm, Mikrofoner, Ljudsystem, Taluppfattbarhet, Styrsystem och Bakgrundsmusik samt eventuella kvarstående Hörslinga-avvikelser.
-- [ ] Miljösidor: dokumentera gemensam standard och hantera sidvisa bild-, länk-, innehålls- och referensbehov för Sporthall/arena, Simhall, Ishall, Kontor/konferens, Hotell, Restaurang/bar/klubb, Butik/retail, Köpcentrum/galleria, Skola, Vård/sjukhus, Industri och Parkering/garage.
+- [ ] Miljösidor: dokumentera gemensam standard och hantera sidvisa bild-, länk- och innehållsbehov för Sporthall/arena, Simhall, Ishall, Kontor/konferens, Hotell, Restaurang/bar/klubb, Butik/retail, Köpcentrum/galleria, Skola, Vård/sjukhus, Industri och Parkering/garage. Referensrelaterade förbättringar ingår inte utan nytt uppdrag.
 - [ ] Startsida: kontrollera hero-pillernas globala standard, låt kundteamet justera beskärningen av högtalarbilden, uppdatera erbjudandet först med verifierat pris och lös saknade destinationsrutter med innehållsbeslut före länkändringar.
-- [ ] Slutför full sitewide-QA vid behov: interna länkar, navigation/footer/FAQ/grids, assets, bildprestanda, alt-texter, canonical, referensår och schema samt build och visuell granskning.
+- [ ] Slutför full sitewide-QA vid behov: interna länkar, navigation/footer/FAQ/grids, assets, bildprestanda, alt-texter, canonical och schema samt build och visuell granskning. Ändra inte `/referenser/` som del av detta utan ny uttrycklig begäran.
 
 ## Historik / avslutade checkpoints
+
+- **2026-10-10 – Referensarbetet avslutat enligt uttryckligt beslut:** användaren godkänner hela `/referenser/` och vill stänga alla öppna referenspunkter. Ingen kodändring görs i den färdiga sidans filter eller kort. Gamla förbättringsidéer om kortstandard, referensår, Lesjöfors, Lundsberg och AI-modeller avförs ur aktiv TODO utan påstående om att de är implementerade. `feature/referenser-kompakta-filter` saknar unika commits; `feature/header-scroll-auto-hide` har unikt historiskt arbete arkiverat under `archive/header-scroll-auto-hide-2026-10-10`. De två gamla remote-brancherna ska raderas med separat Git-kommandon eftersom tillgänglig anslutning inte stödjer radering.
 
 - **2026-10-10 – Kamerablocket pausat enligt projektbeslut:** Alla fyra kamera-branschsidor är genomarbetade på `main`, fortsatt `draft/noindex`, och kunden granskar via `avab.eu`. Invänta separata bildbeslut och eventuella kommentarer. Ingen ny kameragranskning planeras under pausen; nästa fristående TODO-block är referensfiltrets visuella slutkontroll och branchstädning. PR #130–#135 färdiga för Parkering, med dokumentation i PR #136.
 
@@ -85,7 +92,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 - **2026-10-06 – PR #112:** Hörslinga använder gemensam `SiteFooter`, verifierat oanvänd footer-CSS borttaget och footer-guardrail tillagd. Mergead på `main`.
 - **2026-10-06 – PR #111:** gemensam tjänstesidestandard dokumenterad, `FaqSection` införd och FAQ → CTA etablerad med guardrail. Mergead på `main`; fler sidor återstår att migrera.
 
-- **2026-10-06 – referensfilter, PR #110:** desktop/tablet-regressionen är fixad och mergead på `main`. Filtreringen har Miljö, Teknik och Ort/plats samt sökning, träffantal, rensning och URL-state. Visuell slutkontroll på `main` och eventuell branchradering kvarstår.
+- **2026-10-06 – referensfilter, PR #110:** desktop/tablet-regressionen är fixad och mergead på `main`. Filtreringen har Miljö, Teknik och Ort/plats samt sökning, träffantal, rensning och URL-state. Visuell/funktionell slutkontroll godkänd 2026-10-10; eventuell radering av äldre remote-brancher hanteras separat enligt senare checkpoint.
 - **2026-10-06 – Kamera Butik / Go Banana:** internlänk till `/referenser/go-banana-bergvik/` finns och tillfällig ”kommer inom kort”-copy är åtgärdad.
 - **2026-10-06 – PR #107:** header-scroll-städningen är mergead på `main`; den tillfälliga beteendedokumentationen är borttagen.
 - **2026-09-22 – SEO:** sitemap/draft/noindex-hantering verifierad och sitemap-index accepterat i Search Console. SEO-baslinjen dokumenteras i `docs/audits/publicering-indexering-2026-09-21.md`.
