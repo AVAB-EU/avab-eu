@@ -124,6 +124,14 @@ legalOrientation:
   linkLabel: Läs IMY:s vägledning om kamerabevakning på parkeringar
   linkHref: https://www.imy.se/verksamhet/kamerabevakning/sa-gor-ni-intresseavvagningen-pa-olika-platser/parkeringar/
 
+relatedLinks:
+  - label: Parkering och garage
+    href: /miljo/parkering-garage/
+    description: Läs om AVAB:s övriga teknik för parkeringsmiljöer, bland annat infarter, intercom och vägvisning.
+  - label: Exakt sökning och AI-analys
+    href: /tjanster/exakt-sokning-ai-analys/
+    description: Läs hur inspelat videomaterial kan filtreras vid incidentuppföljning när kameror och system har stöd för funktionerna.
+
 faq:
   title: Vanliga frågor om kameraövervakning på parkering
   items:
