@@ -6,20 +6,21 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 
 - `AVAB-EU/avab-eu` är projektets enda source of truth. Produktionsdeploy ska utgå från `main`.
 - Teknisk SEO-baslinje är genomförd: sitemap, draft/noindex, internlänkar, guardrails och build har verifierats. Se `docs/audits/publicering-indexering-2026-09-21.md`.
-- Referensfiltreringen är mergead på `main`, inklusive desktop/tablet-fixen i PR #110. Sökning, Miljö/Teknik/Ort-plats-filter, antal, rensning och URL-state finns. Eventuell kvarvarande visuell verifiering och branchstädning hanteras separat.
+- **Referenssidan är funktionellt och visuellt godkänd av användaren 2026-10-10.** Sökning, Miljö/Teknik/Ort-plats-filter, antal, `Rensa allt`, URL-state och desktop/tablet-layouten är mergeade på `main` (bl.a. PR #110). Inga fler filterändringar behövs utan ny uttrycklig beställning.
 - Kamera Butik är länkad till Go Banana-referensen och den tillfälliga publiceringscopyn är åtgärdad.
 - PR #111 har etablerat tjänstesidestandard och delad FAQ-komponent; fler sidors migrering återstår. PR #112 har standardiserat global footer, inklusive Hörslinga och guardrail.
 - PR #106:s två P2-reviewfynd är åtgärdade i PR #114 och visuellt godkända. Även Kunskapsbankens hero-etikett och en krasch i referensfiltreringen rättades i samma PR.
-- Öppna brancher får bedömas mot aktuell `main` före radering. Äldre `feature/header-scroll-auto-hide` kan bedömas för radering efter mergeade PR #114; `feature/referenser-kompakta-filter` behålls till dess den separata visuella slutkontrollen är klar.
+- Äldre brancher har jämförts read-only med `main`: `feature/referenser-kompakta-filter` har inga egna commits framför `main` (47 bakom), medan `feature/header-scroll-auto-hide` har 14 egna commits och 58 bakom. Radera ingen branch utan särskilt godkännande och kontroll av unika ändringar.
 - Kameraundersidorna Skola, Parkering, Industri och Galleria ligger på `main` och går att öppna via direktlänk på `avab.eu` (bekräftat av användaren). De har fortfarande `draft: true` och `seo.noindex: true`, vilket inte är ett slutligt publiceringsgodkännande.
 
 ## Nästa arbetsblock
 
-### Referensfilter – visuell slutkontroll och branchstädning
+### Nästa arbetsblock – gemensam referenskortsstandard
 
-- [ ] **Read-only kontroll på aktuell `main`:** granska referenssidans sökning, Miljö/Teknik/Ort-plats-filter, gemensam filterpanel och `Rensa allt` på desktop och tablet. Jämför mot godkänd layout efter PR #110 utan att ändra något innan avvikelser har bekräftats.
-- [ ] **Branchstädning efter kontroll:** jämför `feature/referenser-kompakta-filter` och `feature/header-scroll-auto-hide` mot `main`. Radera inte brancher om de innehåller unikt, ej mergeat arbete; be om godkännande före eventuella ändringar.
-- [ ] **Fortsättning:** när referensfiltret är avslutat, välj nästa självständiga TODO-arbete, exempelvis stegvis gemensam referenskortsstandard, utan att kräva fler kundbilder.
+- [ ] Gör en **read-only inventering** av hur referenskort renderas på referensöversikt, startsida, miljösidor och tjänstesidor. Jämför med befintliga `Reference*`-komponenter och beslutad sidstandard; anta inte att olika kortvarianter ska slås ihop utan att först verifiera skillnader och användning.
+- [ ] Välj en avgränsad och representativ kortvariant för första förändringen. Behåll befintliga bildval, layoutbeslut och länkar, och kräva visuellt godkännande före merge.
+- [x] **Referensfilter klart:** sidan och filtreringen är visuellt och funktionellt godkända av användaren 2026-10-10. Inga fler ändringar av filterlayouten planeras.
+- [ ] **Gammal branchstädning separat:** `feature/referenser-kompakta-filter` är bakom `main` utan egna commits. `feature/header-scroll-auto-hide` divergerar med 14 egna commits och ska inte raderas/mergas slentrianmässigt. Be om uttryckligt godkännande före radering.
 
 ### Kamera Prioritet 2 – PAUSAD, väntar på kundens bilder och kommentarer
 
@@ -35,8 +36,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 
 ## Aktiva uppföljningar
 
-- [ ] **Referensfilter:** prioriterat ovan som nästa arbetsblock. Själva desktop/tablet-layoutfixen är redan mergead i PR #110; kvar är read-only slutkontroll och säker branchbedömning.
-- [ ] Slutför gemensam referenskortsstandard stegvis. Grundkomponenter och gemensamma stilar finns, men flera lokala referenskortvarianter återstår på startsida, tjänste- och miljösidor.
+- [x] **Referensfilter:** färdigt och godkänt på `main` av användaren 2026-10-10. Ingen fortsatt layout- eller funktionsgranskning planerad.
+- [ ] **Referenskortsstandard:** nästa aktiva uppgift ovan; inventera först och föreslå minsta säkra gemensamma förbättring. Grundkomponenter finns, men flera lokala varianter återstår.
 
 ## Väntar på kundbeslut
 
@@ -73,6 +74,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 - [ ] Slutför full sitewide-QA vid behov: interna länkar, navigation/footer/FAQ/grids, assets, bildprestanda, alt-texter, canonical, referensår och schema samt build och visuell granskning.
 
 ## Historik / avslutade checkpoints
+
+- **2026-10-10 – Referenssidan godkänd:** användaren har bekräftat att referenssidan inklusive filtrering fungerar som önskat. Den befintliga desktop/tablet-layouten på `main` behålls. Brancherna `feature/referenser-kompakta-filter` (ingen egen commit framför `main`) och `feature/header-scroll-auto-hide` (14 unika commits) har endast inventerats och inte raderats. Nästa arbetsblock är read-only inventering av referenskortsvarianter.
 
 - **2026-10-10 – Kamerablocket pausat enligt projektbeslut:** Alla fyra kamera-branschsidor är genomarbetade på `main`, fortsatt `draft/noindex`, och kunden granskar via `avab.eu`. Invänta separata bildbeslut och eventuella kommentarer. Ingen ny kameragranskning planeras under pausen; nästa fristående TODO-block är referensfiltrets visuella slutkontroll och branchstädning. PR #130–#135 färdiga för Parkering, med dokumentation i PR #136.
 
