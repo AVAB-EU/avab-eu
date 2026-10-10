@@ -30,7 +30,7 @@ Källor som har använts eller jämförts:
 | Parkeringsgarage, mörker, motljus och belysning (s. 7) | Befintligt `ljus-och-vader` behandlar ljusskillnader och montage. Kundunderlagets tekniska resonemang om WDR och samordnad belysning är avsiktligt förenklade. |
 | Rättslig grund, skillnad mellan markparkering och parkeringshus, personuppgifter och lagring (s. 8–10) | **PR #132 mergead:** `legalOrientation` med IMY-länk. Tre dygn presenteras som tumregel, inte som ovillkorlig lagringsgräns. |
 | Frågor om placering, ANPR, kameratillstånd och integritet (s. 11–13) | **PR #132 mergead:** FAQ utökad från 6 till 15 frågor. |
-| Relaterade fördjupningar och miljösida (s. 3, 10, 13) | **PR #133 öppen:** två `relatedLinks` till Parkeringsmiljön och Exakt sökning. Visuell granskning och merge återstår. |
+| Relaterade fördjupningar och miljösida (s. 3, 10, 13) | **PR #133 mergead 2026-10-10:** två `relatedLinks` till Parkeringsmiljön och Exakt sökning. Visuellt godkända och CI grön. |
 
 ## Medvetna avgränsningar och ej införda påståenden
 
@@ -60,7 +60,7 @@ Kunden fick ett separat bildgranskningsmejl för Parkering **2026-10-08**. Befin
 - **JURIDISK SLUTKONTROLL: PENDING.** Kontrollera IMY-vägledningens aktualitet och formuleringarna om dokumentationsundantag, registreringsnummer, informationsplikt och lagring nära slutligt publiceringsbeslut.
 - **BILDVAL: PENDING** kundbesked och kontroll av motiv/alt-text.
 - **BILPARKEN / DUVAN: PENDING** verifierad leverans- och referensinformation.
-- **INTERNLÄNKAR: PENDING** granskning och merge av PR #133.
+- **INTERNLÄNKAR: GENOMFÖRDA** i PR #133, mergead efter godkänd visuell granskning och CI.
 - **METADATA OCH HELSIDES-QA: PENDING** efter godkända PR:er, inklusive internlänkskontroll, build och desktop/mobil.
 - **DOCX-KÄLLA:** jämförd via uppladdat Word-dokument; originalet inte tillgängligt i repot.
 
