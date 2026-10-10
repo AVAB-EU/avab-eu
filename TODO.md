@@ -74,7 +74,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 
 ## Historik / avslutade checkpoints
 
-- **2026-10-10 – Kamerablocket pausat enligt projektbeslut:** Alla fyra kamera-branschsidor är genomarbetade på `main`, fortsatt `draft/noindex`, och kunden granskar via `avab.eu`. Invänta separata bildbeslut och eventuella kommentarer. Ingen ny kameragranskning planeras under pausen; nästa fristående TODO-block är referensfiltrets visuellkontroll och branchstädning. PR #130–#135 färdiga för Parkering, med dokumentation i PR #136.
+- **2026-10-10 – Kamerablocket pausat enligt projektbeslut:** Alla fyra kamera-branschsidor är genomarbetade på `main`, fortsatt `draft/noindex`, och kunden granskar via `avab.eu`. Invänta separata bildbeslut och eventuella kommentarer. Ingen ny kameragranskning planeras under pausen; nästa fristående TODO-block är referensfiltrets visuella slutkontroll och branchstädning. PR #130–#135 färdiga för Parkering, med dokumentation i PR #136.
 
 - **2026-10-10 – Kamera Parkering innehåll och metadata:** PR #130–#135 mergeade till `main`. H1/hero, kameratäckning, ANPR, Exakt sökning, juridik och 15 FAQ-frågor, två internlänkar, source coverage och SEO-title/description genomförda. Bilder och referensgodkännande väntar; `draft/noindex` kvar. Uppföljningsmejl skickat om Sörby-bilden, rätt sökbild och Bilparken.
 
