@@ -113,9 +113,9 @@ legalOrientation:
   eyebrow: Juridik & GDPR
   title: Kamerabevakning i skola kräver särskilt stark motivering
   paragraphs:
-    - IMY anger att integritetsintresset i skolor generellt väger tungt eftersom barn och unga vistas där och deras personuppgifter är särskilt skyddsvärda. Det krävs därför i regel mycket starka skäl för kamerabevakning i skola eller förskola.
-    - Skolan är också en arbetsplats. Elever och personal ska inte bevakas mer än vad som är nödvändigt, och kameror får inte användas för prestationskontroll av anställda.
-    - Innan bevakning införs behöver den personuppgiftsansvariga göra och dokumentera en intresseavvägning där behovet av bevakning vägs mot integritetsintresset på den aktuella platsen.
+    - IMY anger att integritetsintresset i skolor och förskolor generellt väger tungt eftersom barn och unga vistas där. Det krävs därför i regel mycket starka skäl för kamerabevakning. Sedan den 1 april 2025 krävs inget tillstånd från IMY, men kraven på en laglig och dokumenterad bedömning kvarstår.
+    - Skolan är också en arbetsplats. Kameror får inte användas för att kontrollera anställdas prestationer, och bevakning av elever och personal får inte vara mer omfattande än vad det dokumenterade ändamålet motiverar. Tillgången till bildmaterialet behöver dessutom begränsas till behöriga.
+    - Den personuppgiftsansvariga verksamheten, till exempel ansvarig kommunal nämnd eller en fristående skolas huvudman, ska fastställa rättslig grund och dokumentera bedömningen av behovet i förhållande till integritetsintrånget. Verksamheten behöver också bedöma om en konsekvensbedömning enligt GDPR (DPIA) krävs, särskilt vid systematisk övervakning av barn eller intelligent videoanalys. AVAB kan bidra med tekniskt underlag om kameratäckning, lagring och behörigheter men ansvarar inte för verksamhetens rättsliga beslut.
   linkLabel: Läs IMY:s vägledning för skolor och förskolor
   linkHref: https://www.imy.se/verksamhet/kamerabevakning/sa-gor-ni-intresseavvagningen-pa-olika-platser/skolor-och-forskolor/
 
@@ -123,17 +123,29 @@ faq:
   title: Vanliga frågor om kameraövervakning i skola
   items:
     - question: Är kameraövervakning tillåten i skolor?
-      answer: Ja, men integritetsintresset väger generellt tungt i skolmiljöer. Bevakningen behöver ha ett tydligt syfte, vara nödvändig och proportionerlig och bygga på en dokumenterad bedömning.
+      answer: Ja, men det krävs i regel mycket starka skäl. Bevakningen behöver ha ett tydligt och lagligt syfte, vara nödvändig och proportionerlig samt bygga på en dokumenterad bedömning av platsen och tiderna.
+    - question: Måste en skola söka kamerabevakningstillstånd hos IMY?
+      answer: Nej. Tillståndsplikten upphörde den 1 april 2025. Den personuppgiftsansvariga verksamheten måste ändå se till att bevakningen uppfyller GDPR och kamerabevakningslagen och dokumentera den bedömning som krävs.
+    - question: Vem ansvarar för att skolans kamerabevakning är tillåten?
+      answer: Det gör den personuppgiftsansvariga verksamheten, normalt ansvarig kommunal nämnd för en kommunal skola eller huvudmannen för en fristående skola. AVAB kan bistå med tekniskt underlag men tar inte över det juridiska ansvaret.
+    - question: Behöver skolan göra en konsekvensbedömning enligt GDPR?
+      answer: Behovet av en konsekvensbedömning (DPIA) ska bedömas före bevakningen. Den kan vara obligatorisk, bland annat när systematisk övervakning omfattar barn eller kombineras med intelligent videoanalys.
     - question: Kan man kameraövervaka inne i skolan under skoltid?
       answer: Det är särskilt integritetskänsligt. IMY har bedömt att integritetsintresset generellt väger mycket tungt inomhus under verksamhetstid, vilket innebär att det krävs mycket starka skäl och tydlig avgränsning.
     - question: Är nattbevakning enklare att motivera?
       answer: För låsta lokaler där ingen normal verksamhet pågår kan integritetsintresset vara betydligt lägre än under skoltid. Bedömningen måste ändå göras för den konkreta platsen och situationen.
     - question: Kan kameror användas för att kontrollera personal?
-      answer: Nej, kameraövervakning får inte användas för att kontrollera hur anställda presterar. Bevakning av personal måste dessutom begränsas till vad som är nödvändigt för ett berättigat syfte.
+      answer: Nej, kamerabevakning får inte användas för att kontrollera hur anställda presterar. Även bevakning med andra ändamål måste begränsas till vad som är nödvändigt.
+    - question: Kan kameror användas för att motverka mobbning?
+      answer: Generell bevakning för att förebygga eller följa upp kränkande behandling är normalt inte en proportionerlig lösning. Vid dokumenterade brott eller allvarliga incidenter på en viss plats kan kamerabevakning behöva bedömas utifrån det konkreta ändamålet.
     - question: Var är det oftast mest rimligt att börja?
       answer: Börja med den konkreta riskbilden och de platser där incidenter faktiskt inträffar, till exempel en utsatt entré, fasad eller avgränsad passage. Undvik generell bevakning av stora ytor utan tydligt behov.
     - question: Hur ska kamerorna placeras?
       answer: Placering och vinkel ska anpassas efter syftet med varje kamera. Målet är rätt bild av den relevanta zonen utan att fånga större områden eller fler personer än nödvändigt.
+    - question: Hur länge får skolan spara kameramaterial?
+      answer: Inspelningar får inte sparas längre än vad ändamålet kräver. IMY anger tre dygn som en generell tumregel, inte en fast maxgräns. Längre lagring kräver ett konkret behov som kan motiveras.
+    - question: Vem får se skolans inspelade kameramaterial?
+      answer: Tillgången ska begränsas till behöriga personer utifrån deras arbetsuppgifter och det beslutade ändamålet. Huvudmannen behöver bestämma behörigheter och rutiner för åtkomst, granskning och eventuell utlämning.
 
 cta:
   eyebrow: Slipp onödigt krångel
