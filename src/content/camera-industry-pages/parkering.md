@@ -113,6 +113,17 @@ sections:
       width: 2032
       height: 770
 
+legalOrientation:
+  eyebrow: Juridik & GDPR
+  title: Kamerabevakning på parkering behöver ett tydligt ändamål
+  paragraphs:
+    - Kamerabevakning av en parkering kan vara tillåten när verksamheten har ett konkret behov och en rättslig grund. IMY beskriver integritetsintresset på parkeringsplatser som ofta relativt lätt eftersom människor vanligtvis vistas där kortvarigt, men närhet till bostäder, bevakade gångstråk och bevakningens omfattning kan ändra bedömningen. Dokumenterade incidenter, platsens användning och tiderna då problem uppstår är viktiga underlag.
+    - Sedan den 1 april 2025 krävs inget kamerabevakningstillstånd från IMY. Däremot behöver den personuppgiftsansvariga verksamheten följa GDPR och tillämpliga regler i kamerabevakningslagen. För viss bevakning inne i parkeringshus i syfte att förebygga, förhindra eller upptäcka brottslig verksamhet eller utreda eller lagföra brott finns särskilda undantag från kamerabevakningslagens krav på intresseavvägning, dokumentation och förteckning. Undantagen innebär inte att all bevakning i garage är tillåten och gäller inte automatiskt på öppna markparkeringar.
+    - Registreringsnummer kan vara personuppgifter när de kan kopplas till en fysisk person. Om ANPR används måste verksamheten därför även bedöma hur nummer och eventuella tillhörande fordonsbilder behandlas. Syfte, åtkomst, behörigheter, information till dem som bevakas och rutiner för gallring behöver vara tydliga.
+    - Inspelat material får inte sparas längre än nödvändigt för ändamålet. IMY beskriver tre dygn som en tumregel, inte som en ovillkorlig maxgräns; längre lagring behöver kunna motiveras. AVAB kan ge tekniskt underlag om synfält, lagring och behörigheter, medan verksamheten ansvarar för den rättsliga bedömningen.
+  linkLabel: Läs IMY:s vägledning om kamerabevakning på parkeringar
+  linkHref: https://www.imy.se/verksamhet/kamerabevakning/sa-gor-ni-intresseavvagningen-pa-olika-platser/parkeringar/
+
 faq:
   title: Vanliga frågor om kameraövervakning på parkering
   items:
@@ -128,6 +139,24 @@ faq:
       answer: Ett välstrukturerat system använder tydliga kameranamn, zonindelning och tidslinje så att användaren snabbt kan gå till rätt plats och tid.
     - question: Kan systemet byggas ut senare?
       answer: Ja, om nätverk, lagring och systemstruktur dimensioneras med framtida utbyggnad i åtanke.
+    - question: Får man kameraövervaka en parkeringsplats?
+      answer: Ja, kamerabevakning kan vara tillåten om det finns en rättslig grund och ett tydligt behov som motiverar integritetsintrånget. Plats, tider, dokumenterade incidenter och vad kamerorna fångar måste bedömas i det enskilda fallet.
+    - question: Behöver man tillstånd från IMY?
+      answer: Nej. Sedan den 1 april 2025 krävs inget kamerabevakningstillstånd från IMY. Verksamheten måste ändå uppfylla GDPR och de krav i kamerabevakningslagen som gäller för den aktuella bevakningen.
+    - question: Är reglerna annorlunda i ett parkeringshus än på en markparkering?
+      answer: Ja, delvis. Viss brottsförebyggande eller brottsutredande bevakning inne i parkeringshus omfattas av undantag från kamerabevakningslagens särskilda krav på intresseavvägning, dokumentation och förteckning. Undantaget gäller inte generellt för öppna markparkeringar och tar inte bort kraven enligt GDPR.
+    - question: Vad är ANPR?
+      answer: ANPR, även kallat LPR, är automatisk avläsning av registreringsskyltar. Tekniken kräver en lämpligt projekterad kamera och ett system som har stöd för den aktuella funktionen.
+    - question: Är registreringsnummer personuppgifter?
+      answer: Det kan vara det. Om registreringsnumret går att koppla till en fysisk person, till exempel ägaren till en privat bil, är det en personuppgift. ANPR-behandling behöver då omfattas av verksamhetens dataskyddsbedömning.
+    - question: Får kamerorna spela in dygnet runt?
+      answer: Inte automatiskt. Verksamheten behöver kunna motivera vilka tider och ytor som ska bevakas. Behoven och integritetsintresset kan skilja sig mellan dag och natt.
+    - question: Hur länge får inspelat material sparas?
+      answer: Inte längre än det behövs för det angivna ändamålet. IMY anger tre dygn som en tumregel, men lagringstiden ska bestämmas och motiveras utifrån den faktiska verksamheten och gallringsrutinerna.
+    - question: Måste besökare informeras om kamerabevakningen?
+      answer: Ja. De som bevakas ska få tydlig och lättillgänglig information, normalt genom skyltning och kompletterande information om bland annat syftet, vem som är personuppgiftsansvarig och hur länge material sparas.
+    - question: Vem ansvarar för att bevakningen är laglig?
+      answer: Den personuppgiftsansvariga verksamheten ansvarar för rättslig grund, bedömning av bevakningsbehovet, information och hantering av uppgifterna. AVAB kan bidra med teknisk projektering och underlag, men fattar inte verksamhetens juridiska beslut.
 
 cta:
   eyebrow: Slipp onödigt krångel
