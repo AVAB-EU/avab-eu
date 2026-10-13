@@ -20,8 +20,10 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-13._
 
 - [x] **Read-only kodinventering 2026-10-13:** prioriterade tjänstesidor kontrollerade för konkreta problem med bl.a. länkar, FAQ och hero. Ingen webbläsarsession fanns i inventeringen; visuella problem på olika skärmstorlekar har inte generellt verifierats. Undvik ändringar enbart för att få äldre FAQ-kod att följa ny komponentstandard.
 - [x] **Styrsystem & integration – Konferensrum-kortet:** rättad klickkonflikt mellan kortets miljölänk och brödtextlänken till Konferensteknik. PR #138 mergead efter grön CI och användarens manuella godkännande av mus/touch, tangentbord och utseende. Endast sidans Astro-markup ändrades, ingen global CSS.
-- [ ] **Nästa avgränsade åtgärd – Mikrofoner:** preload i `src/pages/tjanster/mikrofoner/index.astro` pekar på `/assets/hallbyggnad-fasad-parkering.webp`, medan befintlig hero visar `/assets/mikrofoner-hero.webp`. Byt endast preload-referenserna till befintlig hero-bild; ändra inte bildval, crop eller alt-text. Gör egen liten PR från aktuell `main`, verifiera preload, bygg/CI och invänta godkännande.
+- [x] **Mikrofoner – hero-preload rättad:** PR #140 är squash-mergead 2026-10-13 efter grön CI. Preload (`href` och `imagesrcset`) pekar nu på befintlig hero-bild `/assets/mikrofoner-hero.webp`. Inga visuella bilder eller bildbeskärningar ändrades.
+- [ ] **Nästa beslut – tjänstesidor:** välj nästa arbetsblock utifrån ett verifierat problem för besökaren. Ingen ny FAQ-migrering utan konkret behov.
 - [ ] **Fortsatt tjänstegranskning:** prioritera belagda problem för besökare framför generell refaktorering. Låt kamera- och referensarbetet vara stängt.
+- [ ] **Mikrofoner – delningsbild (senare bild-/metadata-QA):** granska om `/assets/hallbyggnad-fasad-parkering.webp`, som alltjämt anges i Open Graph, Twitter och strukturerad data, är relevant och korrekt beskriven för Mikrofoner. Ändra inte bilden eller metadata utan verifierat underlag och eventuellt kundgodkännande. Det var inte del av PR #140.
 
 ### Referenser – STÄNGT enligt användarbeslut 2026-10-10
 
@@ -81,6 +83,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-13._
 - [ ] Slutför full sitewide-QA vid behov: interna länkar, navigation/footer/FAQ/grids, assets, bildprestanda, alt-texter, canonical och schema samt build och visuell granskning. Ändra inte `/referenser/` som del av detta utan ny uttrycklig begäran.
 
 ## Historik / avslutade checkpoints
+
+- **2026-10-13 – PR #140 Mikrofoner:** Felaktig bild-preload bytt till den befintliga hero-bilden utan ändrat sidutseende. Grön CI och squash-merge till `main` (`ac387046`). Delningsbildens relevans är en separat framtida kontrollpunkt.
 
 - **2026-10-13 – PR #138 Styrsystem & integration:** Konferensrum-kortets sekundärlänk återfick separat klickyta med befintliga `clickable-card`/`card-primary-link`. Grön CI, manuell visuell/funktionell verifiering och squash-merge till `main` (`a312b34`). Nästa tekniska fynd är Mikrofoners felaktiga hero-preload.
 
