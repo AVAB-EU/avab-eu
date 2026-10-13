@@ -1,6 +1,6 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-10-10._
+_Kanonisk projektlista. Senast uppdaterad 2026-10-13._
 
 ## Aktuellt läge
 
@@ -9,16 +9,19 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 - **Referenssidan är funktionellt och visuellt godkänd av användaren 2026-10-10.** Sökning, Miljö/Teknik/Ort-plats-filter, antal, `Rensa allt`, URL-state och desktop/tablet-layouten är mergeade på `main` (bl.a. PR #110). Inga fler filterändringar behövs utan ny uttrycklig beställning.
 - Kamera Butik är länkad till Go Banana-referensen och den tillfälliga publiceringscopyn är åtgärdad.
 - PR #111 har etablerat tjänstesidestandard och delad FAQ-komponent; fler sidors migrering återstår. PR #112 har standardiserat global footer, inklusive Hörslinga och guardrail.
+- **Tjänstesidor 2026-10-13:** Read-only kodinventering genomförd. PR #138 har rättat Konferensrum-kortets klickkonflikt på `/tjanster/styrsystem-integration/`; CI grön och klick, tangentbord samt utseende manuellt godkända före merge. Nästa avgränsade fel är felaktig hero-preload på Mikrofoner.
 - PR #106:s två P2-reviewfynd är åtgärdade i PR #114 och visuellt godkända. Även Kunskapsbankens hero-etikett och en krasch i referensfiltreringen rättades i samma PR.
 - Äldre referensfilter-branch är helt överspelad av `main`. Header-branchen med 14 unika commits finns bevarad både under sitt ursprungliga namn och i `archive/header-scroll-auto-hide-2026-10-10`; ingen gammal branch har råkat mergeas in i godkänd kod.
 - Kameraundersidorna Skola, Parkering, Industri och Galleria ligger på `main` och går att öppna via direktlänk på `avab.eu` (bekräftat av användaren). De har fortfarande `draft: true` och `seo.noindex: true`, vilket inte är ett slutligt publiceringsgodkännande.
 
 ## Nästa arbetsblock
 
-### Nästa arbetsblock – tjänstesidornas gemensamma standard
+### Nästa arbetsblock – tjänstesidor: verifierade användarproblem
 
-- [ ] **Read-only inventering:** identifiera kvarvarande tjänstesidor som inte följer beslutad gemensam tjänstesidestandard och FAQ → CTA-ordning i `docs/standards/pages/service.md`. Starta med en sida utan beroende av nya kundbilder.
-- [ ] **Föreslå ett litet första steg:** kontrollera aktuell `main`, dokumentera konkreta avvikelser och begär godkännande innan eventuell kodändring. Lämna kamera-, referens- och bildarbetet utanför.
+- [x] **Read-only kodinventering 2026-10-13:** prioriterade tjänstesidor kontrollerade för konkreta problem med bl.a. länkar, FAQ och hero. Ingen webbläsarsession fanns i inventeringen; visuella problem på olika skärmstorlekar har inte generellt verifierats. Undvik ändringar enbart för att få äldre FAQ-kod att följa ny komponentstandard.
+- [x] **Styrsystem & integration – Konferensrum-kortet:** rättad klickkonflikt mellan kortets miljölänk och brödtextlänken till Konferensteknik. PR #138 mergead efter grön CI och användarens manuella godkännande av mus/touch, tangentbord och utseende. Endast sidans Astro-markup ändrades, ingen global CSS.
+- [ ] **Nästa avgränsade åtgärd – Mikrofoner:** preload i `src/pages/tjanster/mikrofoner/index.astro` pekar på `/assets/hallbyggnad-fasad-parkering.webp`, medan befintlig hero visar `/assets/mikrofoner-hero.webp`. Byt endast preload-referenserna till befintlig hero-bild; ändra inte bildval, crop eller alt-text. Gör egen liten PR från aktuell `main`, verifiera preload, bygg/CI och invänta godkännande.
+- [ ] **Fortsatt tjänstegranskning:** prioritera belagda problem för besökare framför generell refaktorering. Låt kamera- och referensarbetet vara stängt.
 
 ### Referenser – STÄNGT enligt användarbeslut 2026-10-10
 
@@ -58,7 +61,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 
 ## Senare prioriteringar
 
-- [ ] Rulla ut den gemensamma FAQ-komponenten och ordningen FAQ → CTA till återstående relevanta sidor. PR #111 har redan infört tjänstesidestandard, FAQ-komponent och guardrail för nya avvikelser; befintliga undantag och andra sidtyper återstår att bedöma.
+- [ ] **FAQ-teknikskuld (senare):** PR #111 införde gemensam `FaqSection`, FAQ → CTA och guardrail. Bedöm befintliga undantag när respektive sida ändå behöver ändras; migrera inte en fungerande FAQ enbart för kodstandardens skull.
 - [ ] Koppla offertformuläret till ett säkert mailflöde till `info@avab.eu` och bekräftelse till kunden; hantera spam, fel och personuppgiftsminimerad loggning.
 - [ ] Genomför separat mobil innehålls- och gränssnittsanpassning på riktiga mobilbredder och tablet.
 - [ ] Ta bort dekorativ glow bakom knappar/CTA utan att försvaga `:focus-visible`.
@@ -72,12 +75,14 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-10._
 - [x] **Referensrelaterad AI-dokumentationsharmonisering avförd ur aktiv plan:** inte utförd; bevarad som historiskt förslag och kräver ett nytt uppdrag.
 - [ ] Förbättra PDF-underlagets design i budgetkalkylatorn och verifiera AVAB-logotypen i utskrift/PDF.
 - [ ] Kundönskemål återstår enligt `docs/projects/kundonskemal-2026-08-20/`: invänta beslut/material för headerkontakt, restaurangmiljöns kanoniska namn, skillnaden mellan ”Hur vi jobbar” och ”Vår leverans”, erbjudandepris och bildmappningar. Följ avtalat bildansvar.
-- [ ] Tjänstesidor: gemensam standard är dokumenterad i `docs/standards/pages/service.md` genom PR #111. Granska och migrera återstående sidor stegvis: Ljus, Bild/skärm, Kamera, Talat utrymningslarm, Mikrofoner, Ljudsystem, Taluppfattbarhet, Styrsystem och Bakgrundsmusik samt eventuella kvarstående Hörslinga-avvikelser.
+- [ ] Tjänstesidor: gemensam standard dokumenterad i `docs/standards/pages/service.md` genom PR #111. Vid behovsstyrda ändringar: jämför relevanta sidor mot standarden och återanvänd gemensamma komponenter där det ger faktisk nytta. Befintliga sidundantag är inte i sig skäl för ombyggnad. Kamera och referenser återöppnas inte utan nytt uppdrag.
 - [ ] Miljösidor: dokumentera gemensam standard och hantera sidvisa bild-, länk- och innehållsbehov för Sporthall/arena, Simhall, Ishall, Kontor/konferens, Hotell, Restaurang/bar/klubb, Butik/retail, Köpcentrum/galleria, Skola, Vård/sjukhus, Industri och Parkering/garage. Referensrelaterade förbättringar ingår inte utan nytt uppdrag.
 - [ ] Startsida: kontrollera hero-pillernas globala standard, låt kundteamet justera beskärningen av högtalarbilden, uppdatera erbjudandet först med verifierat pris och lös saknade destinationsrutter med innehållsbeslut före länkändringar.
 - [ ] Slutför full sitewide-QA vid behov: interna länkar, navigation/footer/FAQ/grids, assets, bildprestanda, alt-texter, canonical och schema samt build och visuell granskning. Ändra inte `/referenser/` som del av detta utan ny uttrycklig begäran.
 
 ## Historik / avslutade checkpoints
+
+- **2026-10-13 – PR #138 Styrsystem & integration:** Konferensrum-kortets sekundärlänk återfick separat klickyta med befintliga `clickable-card`/`card-primary-link`. Grön CI, manuell visuell/funktionell verifiering och squash-merge till `main` (`a312b34`). Nästa tekniska fynd är Mikrofoners felaktiga hero-preload.
 
 - **2026-10-10 – Referensarbetet avslutat enligt uttryckligt beslut:** användaren godkänner hela `/referenser/` och vill stänga alla öppna referenspunkter. Ingen kodändring görs i den färdiga sidans filter eller kort. Gamla förbättringsidéer om kortstandard, referensår, Lesjöfors, Lundsberg och AI-modeller avförs ur aktiv TODO utan påstående om att de är implementerade. `feature/referenser-kompakta-filter` saknar unika commits; `feature/header-scroll-auto-hide` har unikt historiskt arbete arkiverat under `archive/header-scroll-auto-hide-2026-10-10`. De två gamla remote-brancherna ska raderas med separat Git-kommandon eftersom tillgänglig anslutning inte stödjer radering.
 
