@@ -9,7 +9,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-13._
 - **Referenssidan är funktionellt och visuellt godkänd av användaren 2026-10-10.** Sökning, Miljö/Teknik/Ort-plats-filter, antal, `Rensa allt`, URL-state och desktop/tablet-layouten är mergeade på `main` (bl.a. PR #110). Inga fler filterändringar behövs utan ny uttrycklig beställning.
 - Kamera Butik är länkad till Go Banana-referensen och den tillfälliga publiceringscopyn är åtgärdad.
 - PR #111 har etablerat tjänstesidestandard och delad FAQ-komponent; fler sidors migrering återstår. PR #112 har standardiserat global footer, inklusive Hörslinga och guardrail.
-- **Tjänstesidor 2026-10-13:** Read-only kodinventering genomförd. PR #138 har rättat Konferensrum-kortets klickkonflikt på `/tjanster/styrsystem-integration/`; CI grön och klick, tangentbord samt utseende manuellt godkända före merge. Nästa avgränsade fel är felaktig hero-preload på Mikrofoner.
+- **Tjänstesidor 2026-10-13:** PR #138 rättade Konferensrum-kortets klickkonflikt, PR #140 rättade Mikrofoners hero-preload och PR #142 rättade Talat utrymningslarms hero-preload. Alla tre är mergeade efter grön CI. Nästa prioritet är den webbläsarverifierade horisontella scrollen vid 320 px på Talat utrymningslarm.
 - PR #106:s två P2-reviewfynd är åtgärdade i PR #114 och visuellt godkända. Även Kunskapsbankens hero-etikett och en krasch i referensfiltreringen rättades i samma PR.
 - Äldre referensfilter-branch är helt överspelad av `main`. Header-branchen med 14 unika commits finns bevarad både under sitt ursprungliga namn och i `archive/header-scroll-auto-hide-2026-10-10`; ingen gammal branch har råkat mergeas in i godkänd kod.
 - Kameraundersidorna Skola, Parkering, Industri och Galleria ligger på `main` och går att öppna via direktlänk på `avab.eu` (bekräftat av användaren). De har fortfarande `draft: true` och `seo.noindex: true`, vilket inte är ett slutligt publiceringsgodkännande.
@@ -21,7 +21,9 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-13._
 - [x] **Read-only kodinventering 2026-10-13:** prioriterade tjänstesidor kontrollerade för konkreta problem med bl.a. länkar, FAQ och hero. Ingen webbläsarsession fanns i inventeringen; visuella problem på olika skärmstorlekar har inte generellt verifierats. Undvik ändringar enbart för att få äldre FAQ-kod att följa ny komponentstandard.
 - [x] **Styrsystem & integration – Konferensrum-kortet:** rättad klickkonflikt mellan kortets miljölänk och brödtextlänken till Konferensteknik. PR #138 mergead efter grön CI och användarens manuella godkännande av mus/touch, tangentbord och utseende. Endast sidans Astro-markup ändrades, ingen global CSS.
 - [x] **Mikrofoner – hero-preload rättad:** PR #140 är squash-mergead 2026-10-13 efter grön CI. Preload (`href` och `imagesrcset`) pekar nu på befintlig hero-bild `/assets/mikrofoner-hero.webp`. Inga visuella bilder eller bildbeskärningar ändrades.
-- [ ] **Nästa beslut – tjänstesidor:** välj nästa arbetsblock utifrån ett verifierat problem för besökaren. Ingen ny FAQ-migrering utan konkret behov.
+- [x] **Talat utrymningslarm – hero-preload:** PR #142 är squash-mergead 2026-10-13 (`451a3c02`) efter grön CI. `imagesrcset` matchar nu `href` och befintlig CSS-hero; felaktig förladdning av simhallsbilden är borttagen. Inga layout- eller bildbyten gjordes.
+- [ ] **Nästa åtgärd – Talat utrymningslarm, `#prioritet`:** Codex verifierade 40 px horisontell scroll vid 320 px med Playwright. Test med diskretionär avstavning `Säkerhets&shy;funktionen` i rubriken eliminerade scrollen i testet. Åtgärda i en separat liten PR från aktuell `main`, verifiera 320/360/390/430/768/1440 px och tangentbordsanvändning. Ingen global CSS-ändring utan särskilt motiverat behov. Visuellt godkännande före merge.
+- [ ] **Därefter – Talat utrymningslarm, mobilhero:** Codex noterade 7–8 H1-rader och cirka 956–1102 px herohöjd vid 320–430 px. Ta fram kortare H1/ingress enligt AVAB:s hero-princip med jämförbara skärmbilder före/efter vid mobil och desktop. Inget innehåll eller layout ändras utan användarens visuella godkännande; fastställ inte ny global hero-standard i detta arbetsblock.
 - [ ] **Fortsatt tjänstegranskning:** prioritera belagda problem för besökare framför generell refaktorering. Låt kamera- och referensarbetet vara stängt.
 - [ ] **Mikrofoner – delningsbild (senare bild-/metadata-QA):** granska om `/assets/hallbyggnad-fasad-parkering.webp`, som alltjämt anges i Open Graph, Twitter och strukturerad data, är relevant och korrekt beskriven för Mikrofoner. Ändra inte bilden eller metadata utan verifierat underlag och eventuellt kundgodkännande. Det var inte del av PR #140.
 
@@ -83,6 +85,8 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-13._
 - [ ] Slutför full sitewide-QA vid behov: interna länkar, navigation/footer/FAQ/grids, assets, bildprestanda, alt-texter, canonical och schema samt build och visuell granskning. Ändra inte `/referenser/` som del av detta utan ny uttrycklig begäran.
 
 ## Historik / avslutade checkpoints
+
+- **2026-10-13 – PR #142 Talat utrymningslarm:** Felaktig `imagesrcset` för hero-preload rättad till befintlig herobild. Playwright-kontroll rapporterad av Codex och grön CI. Squash-merge till `main` (`451a3c02`). Horisontell mobilscroll och lång mobilhero är separata återstående förbättringar.
 
 - **2026-10-13 – PR #140 Mikrofoner:** Felaktig bild-preload bytt till den befintliga hero-bilden utan ändrat sidutseende. Grön CI och squash-merge till `main` (`ac387046`). Delningsbildens relevans är en separat framtida kontrollpunkt.
 
