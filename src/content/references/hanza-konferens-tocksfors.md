@@ -228,12 +228,37 @@ story:
         - columns: 2
           ratio: land
           images:
-            - src: /assets/konferensteknik-hanza-tocksfors-skarm-videobar.webp
-              alt: Konferensrummet Stora Lee med 85-tums display och Sennheiser-videobar hos Hanza Mechanics
+            - src: /assets/konferensrum-stor-skarm-bord.webp
+              alt: Konferensrummet Stora Lee hos Hanza Mechanics med 85-tums display, Crestron AirMedia och Sennheiser-videobar
+              width: 1200
+              height: 900
+              title: Stora Lee
+              text: Det stora rummet har en Sennheiser-videobar med kamera, mikrofon och högtalare under skärmen och AirMedia för trådlös presentation.
+            - src: /assets/konferensteknik-hanza-tocksfors-konferensrum.webp
+              alt: Det lilla konferensrummet hos Hanza Mechanics med 85-tums display, kamera och Crestron-bordskonsol
               width: 2048
               height: 956
-              title: Stora Lee
-              text: Det stora rummet har en Sennheiser-videobar med kamera, mikrofon och högtalare under skärmen.
+              title: Lilla rummet
+              text: Det lilla rummet är ett Microsoft Teams Rooms-rum med kamera ovanför skärmen och bordskonsol för att starta möten.
+        - columns: 1
+          ratio: portrait
+          split: true
+          images:
+            - src: /assets/hanza-mechanics-lilla-konferensrummet-staende.webp
+              alt: Det lilla konferensrummet hos Hanza Mechanics med takbelysning, 85-tums display och bordskonsol
+              width: 956
+              height: 2048
+              title: Färdigt för möten
+              text: Bordskonsolen och AirMedia-donglarna står på bordet, nära den som leder mötet.
+        - columns: 2
+          ratio: land
+          images:
+            - src: /assets/hanza-mechanics-bordspanel.webp
+              alt: Crestron-bordskonsol och laddställ med AirMedia-donglar på konferensbordet hos Hanza Mechanics
+              width: 1280
+              height: 720
+              title: Bordskonsol och donglar
+              text: Mötet startas från bordskonsolen, och skärmen delas trådlöst med en AirMedia-dongel.
             - src: /assets/hanza-mechanics-rumsbokningspanel-crestron.webp
               alt: Crestron rumsbokningspanel vid dörren till ett konferensrum hos Hanza Mechanics
               width: 2048
