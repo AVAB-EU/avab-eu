@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/sorby-sporthall-kumla/
 layout: extended
 title: Sörby sportcenter, Kumla
@@ -16,7 +16,7 @@ seo:
   ogDescription: Ett flexibelt sporthallssystem där plan, publik, mikrofoner och ljudkällor hanteras i ett tydligt Crestron-gränssnitt.
   twitterTitle: Sörby sportcenter i Kumla | AVAB
   twitterDescription: Ljud, styrning, Dante och trådlösa mikrofoner för en flexibel kommunal sporthall.
-  noindex: true
+  noindex: false
 archive:
   title: Sörby sportcenter, Kumla
   image:
@@ -50,7 +50,7 @@ customer:
   name: Sörby sportcenter
   publicDisplay: Sörby sportcenter
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 heroImage:
   src: /assets/sorby-sporthall-idrottshall-oversikt.webp
