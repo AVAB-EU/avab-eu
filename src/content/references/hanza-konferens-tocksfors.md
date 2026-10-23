@@ -182,7 +182,7 @@ story:
               text: Displayen är monterad och innertaket öppet för kabeldragning till skärmväggen.
         - columns: 1
           ratio: portrait
-          split: true
+          layout: sidebar
           images:
             - src: /assets/konferensteknik-hanza-tocksfors-skarm-kabeldragning.webp
               alt: Kabeldragning i innertaket ovanför konferensrummets display hos Hanza Mechanics
@@ -242,7 +242,7 @@ story:
               text: Det lilla rummet är ett Microsoft Teams Rooms-rum med kamera ovanför skärmen och bordskonsol för att starta möten.
         - columns: 1
           ratio: portrait
-          split: true
+          layout: sidebar
           images:
             - src: /assets/hanza-mechanics-lilla-konferensrummet-staende.webp
               alt: Det lilla konferensrummet hos Hanza Mechanics med takbelysning, 85-tums display och bordskonsol
