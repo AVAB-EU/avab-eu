@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/claessons-restaurang-konferens/
 layout: extended
 title: Claessons Konferens & Restaurang
@@ -24,7 +24,7 @@ seo:
   twitterDescription: >-
     AVAB har utvecklat och servat ljud-, bild- och styrsystem för Claessons konferensrum, restaurang och festvåning
     under ett långvarigt samarbete.
-  noindex: true
+  noindex: false
 archive:
   title: Claessons Konferens & Restaurang
   image:
@@ -60,7 +60,7 @@ customer:
   name: Claessons Konferens & Restaurang
   publicDisplay: Claessons Konferens & Restaurang
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 heroImage:
   src: /assets/claessons-albatrossen-horsal-200-platser.webp
@@ -359,7 +359,7 @@ story:
               width: 2048
               height: 1536
               title: Extra mikrofoner inför konferens
-              text: Extra trådlösa mikrofoner och mottagare förberedda inför en konferens i Albatrossen.
+              text: Hyrda trådlösa mikrofoner och mottagare från hyrljud.nu, förberedda inför en konferens i Albatrossen.
 
 technicalDetails:
   eyebrow: Teknisk fördjupning
