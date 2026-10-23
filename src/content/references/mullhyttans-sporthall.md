@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/mullhyttans-sporthall/
 layout: extended
 title: Mullhyttans sporthall
@@ -17,7 +17,7 @@ seo:
   ogDescription: Zonstyrt sporthallsljud, Dante, trådlösa mikrofoner och tvåzons SLS-hörslinga som automatiskt följer ridåväggen.
   twitterTitle: Mullhyttans sporthall | Referens | AVAB
   twitterDescription: Referens om projekterat sporthallsljud, Dante, automatisk hallindelning och SLS-hörslinga i Mullhyttan.
-  noindex: true
+  noindex: false
 
 archive:
   title: Mullhyttans sporthall
@@ -52,7 +52,7 @@ customer:
   name: Björkholms El, Örebro
   publicDisplay: Björkholms El, Örebro
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 
 heroImage:

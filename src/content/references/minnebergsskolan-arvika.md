@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/minnebergsskolan-arvika/
 layout: extended
 title: Minnebergsskolan, Arvika
@@ -16,7 +16,7 @@ seo:
   ogDescription: AVAB levererade AV-teknik för klassrum, hörsalar, informationsskärmar och aula på Minnebergsskolan i Arvika.
   twitterTitle: Minnebergsskolan, Arvika | AVAB
   twitterDescription: AVAB levererade AV-teknik för klassrum, hörsalar, informationsskärmar och aula på Minnebergsskolan i Arvika.
-  noindex: true
+  noindex: false
 archive:
   title: Minnebergsskolan, Arvika
   image:
@@ -50,7 +50,7 @@ customer:
   name: Minnebergsskolan
   publicDisplay: Minnebergsskolan
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 heroImage:
   src: /assets/modern-trafasad-innergard.webp

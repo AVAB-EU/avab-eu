@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/saffle-simhall/
 layout: extended
 title: Säffle simhall
@@ -17,7 +17,7 @@ seo:
   ogDescription: Crestronstyrning, ljudsystem i hela anläggningen, trådlösa mikrofoner, hörslingor och RGB-belysning i Säffle simhall.
   twitterTitle: Säffle simhall – Crestron, ljud och hörslinga | AVAB
   twitterDescription: Referens om central styrning, ljud, mikrofoner, hörslingor och belysning i en publik simhall.
-  noindex: true
+  noindex: false
 
 archive:
   title: Säffle simhall
@@ -51,7 +51,7 @@ customer:
   name: Assemblin El AB
   publicDisplay: Assemblin El AB
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 
 heroImage:

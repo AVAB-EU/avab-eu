@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/fortnox-arena-vaxjo/
 layout: extended
 title: Fortnox Arena Växjö
@@ -17,7 +17,7 @@ seo:
   ogDescription: Fast arenaljud, trådlösa mikrofoner, inkopplingspaneler och enkel vardagsstyrning i Fortnox Arena i Växjö.
   twitterTitle: Fortnox Arena Växjö | Referens | AVAB
   twitterDescription: Referens om AVAB:s första riktigt stora fasta installation – arenaljud för vardag, match och större arrangemang.
-  noindex: true
+  noindex: false
 
 archive:
   title: Fortnox Arena Växjö
@@ -49,7 +49,7 @@ customer:
   name: Fortnox Arena
   publicDisplay: Fortnox Arena
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 
 heroImage:

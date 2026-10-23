@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/stc-kil-gym/
 layout: extended
 title: STC Kil
@@ -17,7 +17,7 @@ seo:
   ogDescription: Fyra ljudzoner, takintegrerat ljud, kraftfullt gruppträningsljud, trådlösa mikrofoner, lokal styrning och utrop i samma system.
   twitterTitle: STC Kil | Referens | AVAB
   twitterDescription: Referens om zonstyrt ljud för gym, gruppträning, virtuella pass, mikrofoner och lokal styrning på STC Kil.
-  noindex: true
+  noindex: false
 
 archive:
   title: STC Kil
@@ -50,7 +50,7 @@ customer:
   name: STC Kil
   publicDisplay: STC Kil
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 
 heroImage:

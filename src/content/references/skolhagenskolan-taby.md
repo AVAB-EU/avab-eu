@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/skolhagenskolan-taby/
 layout: extended
 title: Skolhagenskolan Täby
@@ -17,7 +17,7 @@ seo:
   ogDescription: Schema, egna ljudklipp, lovläge, zoner, snabbknappar och liveutrop i ett modernt rastsignalsystem för skola.
   twitterTitle: Skolhagenskolan Täby | Referens | AVAB
   twitterDescription: Referens om SchoolBell, 100 V-ljud, zoner, touchstyrning och liveutrop på Skolhagenskolan i Täby.
-  noindex: true
+  noindex: false
 
 archive:
   title: Skolhagenskolan Täby
@@ -47,7 +47,7 @@ customer:
   name: Skolhagenskolan
   publicDisplay: Skolhagenskolan
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 
 heroImage:

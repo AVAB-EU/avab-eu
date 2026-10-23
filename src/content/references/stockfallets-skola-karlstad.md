@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/stockfallets-skola-karlstad/
 layout: extended
 title: Stockfallets skola
@@ -17,7 +17,7 @@ seo:
   ogDescription: Rastsignalsystem utomhus och ett separat tvåzons ljudsystem i en fullstor, delbar sporthall på Stockfallets skola i Karlstad.
   twitterTitle: Stockfallets skola Karlstad | Referens | AVAB
   twitterDescription: Referens om rastsignal, utomhusljud, Bose DSP, två ljudzoner, Bluetooth och trådlös mikrofon på Stockfallets skola.
-  noindex: true
+  noindex: false
 
 archive:
   title: Stockfallets skola
@@ -51,7 +51,7 @@ customer:
   name: SP-Gruppen AB
   publicDisplay: SP-Gruppen AB
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 
 heroImage:

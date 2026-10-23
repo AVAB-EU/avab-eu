@@ -1,6 +1,6 @@
 # TODO
 
-_Kanonisk projektlista. Senast uppdaterad 2026-10-13._
+_Kanonisk projektlista. Senast uppdaterad 2026-10-23._
 
 ## Aktuellt läge
 
@@ -32,6 +32,9 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-13._
 
 - [x] **`/referenser/` färdig:** hela referenssidan inklusive sökning, filter och utseende godkänd. Ingen ytterligare granskning eller ändring planeras.
 - [x] **Referenskortsstandard och andra framtida referensförbättringar avförda ur aktiv TODO:** dessa har *inte* implementerats eller godkänts som en ny gemensam standard. Tidigare idéer och underlag bevaras i dokumentationen men återupptas enbart efter nytt uttryckligt uppdrag.
+- [x] **Publicering av klara referenser 2026-10-23:** enligt användarbeslut sätts `draft: false`, `seo.noindex: false` och `customer.publicationApproved: true` för Säffle simhall, Sörby sporthall Kumla, Minnebergsskolan Arvika, Fortnox Arena Växjö, Mullhyttans sporthall, Skolhagenskolan Täby, STC Kil och Stockfallets skola. Sidorna var redan nåbara via `/referenser/` men stängda för indexering; flaggan hade förbisetts.
+- [ ] **Ofärdiga referenser – bygg vidare inom kort (användarbeslut 2026-10-23):** Claessons, Friskis&Svettis, Hundfjällscenter, Årjängs simhall, Ekhagsskolan, Galleria Duvan, Götetorpsskolan, Hanza Mechanics, Kroppkärrs IP, Lesjöfors, Loka Brunn, Lundsbergs skola, Nordic Wellness och Sannerudshallen. Hanza ligger kvar publicerad; där saknas bilder och beskrivning av leveransen. Övriga behåller `draft/noindex` tills de är klara.
+- [ ] **Lesjöfors – byt namn till Lesjöfors Fjädrar:** användaren godkänner namnbytet om allt relaterat byts (titel, texter, slug/URL, filnamn, interna länkar) och gamla URL:en redirectas till den nya.
 - [x] **Gamla brancher inventerade:** `feature/referenser-kompakta-filter` ligger helt bakom `main` (0 unika commits). `feature/header-scroll-auto-hide` hade 14 unika commits och har säkerhetskopierats till `archive/header-scroll-auto-hide-2026-10-10` utan att dess historiska ändringar mergats till `main`. Radering av de gamla remote-brancherna återstår som en separat teknisk städåtgärd eftersom GitHub-anslutningen saknar funktion för branchradering.
 
 ### Kamera Prioritet 2 – PAUSAD, väntar på kundens bilder och kommentarer
