@@ -6,9 +6,9 @@ title: Hanza Mechanics, Töcksfors
 shortTitle: Hanza Mechanics
 heroTitle: Hanza Mechanics
 heroSubtitle: Konferensrum som är lätta att boka, starta och koppla upp
-summary: AVAB levererade mötesteknik till två nya konferensrum och kompletterade totalt fyra rum med paneler som visar bokningsstatus vid dörren.
+summary: AVAB levererade mötesteknik till två nya konferensrum i Hanza Mechanics nybyggda hus i Töcksfors och satte upp rumsbokningspaneler kopplade till Microsoft Teams-kalendern utanför totalt fyra konferensrum.
 publishedDate: 2026-07-08
-updatedDate: 2026-08-04
+updatedDate: 2026-10-23
 
 seo:
   title: Hanza Mechanics, Töcksfors – konferensteknik och rumsbokning | Referens | AVAB
@@ -23,7 +23,7 @@ archive:
   title: Hanza Mechanics, Töcksfors
   image:
     src: /assets/konferensrum-stor-skarm-bord.webp
-    alt: Konferensrum hos Hanza Mechanics i Töcksfors med videobar och rumsbokning från AVAB
+    alt: Konferensrummet Stora Lee hos Hanza Mechanics med 85-tums display, Crestron AirMedia och Sennheiser-videobar
     width: 1200
     height: 900
   excerpt: Två nya konferensrum med 85-tums Samsung PRO, Crestron AirMedia, Teams/BYOD, Sennheiser-videobar och rumsbokningspaneler utanför fyra rum.
@@ -55,7 +55,7 @@ customer:
 
 heroImage:
   src: /assets/konferensrum-stor-skarm-bord.webp
-  alt: Konferensrum hos Hanza Mechanics med stor display, bordspanel och headset
+  alt: Konferensrummet Stora Lee hos Hanza Mechanics med 85-tums display, Crestron AirMedia och Sennheiser-videobar
   width: 1200
   height: 900
   objectPosition: 58% center
@@ -71,6 +71,8 @@ facts:
     value: Paneler utanför 4 rum
   - label: "AVAB:s leverans"
     value: Mötesteknik och rumsbokning
+  - label: Klart
+    value: Maj 2025
 
 brief:
   eyebrow: Uppdraget på 30 sekunder
@@ -84,13 +86,14 @@ scope:
   title: Det här ingick i AVAB:s leverans
   lead: Leveransen kombinerar samma grund för bild och presentation med mötesteknik anpassad efter respektive rums storlek och arbetssätt.
   items:
-    - Två 85-tums Samsung PRO-displayer med UHD/4K och formatet 16:9
+    - Två 85-tums Samsung PRO-displayer med UHD/4K och formatet 16:9 på Chief-väggfästen
     - Crestron AirMedia 3 för trådlös presentation i båda rummen
     - Två USB-C-donglar per rum för anslutning av användarens dator
-    - Crestron Flex MTR-system med BYOD i det lilla rummet
+    - Crestron Flex MTR-system (UC-MX50-T, Microsoft Teams Rooms) med BYOD i det lilla rummet
     - HDBaseT och touchpanel på bordet i det lilla rummet
     - Sennheiser TeamConnect Videobar Medium i det stora rummet
-    - Crestron rumsbokningspaneler utanför totalt fyra konferensrum
+    - Crestron rumsbokningspaneler kopplade till Microsoft Teams-kalendern utanför totalt fyra konferensrum
+    - Installation, driftsättning samt nätverks- och MTR-konfiguration
   projectFacts:
     - label: Miljö
       value: Kontor och konferens
@@ -129,6 +132,115 @@ variants:
         - Crestron AirMedia 3
         - 85-tums Samsung PRO-display
 
+story:
+  eyebrow: Projektet på djupet
+  title: Från tomt rum till konferensrum som är lätta att boka och starta
+  lead: Hanza Mechanics byggde ett nytt hus i Töcksfors med två nya konferensrum. AVAB levererade mötestekniken i båda rummen och samtidigt rumsbokning för husets nya rum och två befintliga rum i en annan byggnad.
+  chapters:
+    - id: uppdraget
+      navLabel: Uppdraget
+      eyebrow: Behov och förutsättningar
+      title: Vad behövde Hanza Mechanics i sina nya konferensrum?
+      answer: Två nya rum av olika storlek skulle klara videomöten, snabb presentation från egna datorer och tydlig bokningsstatus, med samma grund för bild och anslutning i båda rummen.
+      paragraphs:
+        - Rummen i det nybyggda huset skulle användas av både personal och besökare, med olika datorer och mötestjänster. Därför behövdes en gemensam grund med stor bildyta och trådlös presentation, kompletterad med mötesteknik anpassad efter respektive rums storlek.
+        - Utöver de två nya rummen ville Hanza få en överblick över alla konferensrum. Rumsbokningen omfattade därför även två befintliga rum i en annan byggnad, som fick bokningspaneler utan att rummen i övrigt byggdes om.
+      mediaGroups:
+        - columns: 2
+          ratio: land
+          images:
+            - src: /assets/hanza-mechanics-tocksfors-exterior.webp
+              alt: Hanza-flagga utanför Hanza Mechanics anläggning i Töcksfors
+              width: 1600
+              height: 900
+              title: Nytt hus i Töcksfors
+              text: Leveransen gjordes i Hanza Mechanics nybyggda hus, där två nya konferensrum skulle utrustas från grunden.
+            - src: /assets/hanza-mechanics-konferensrum-fore-montage.webp
+              alt: Tomt konferensrum hos Hanza Mechanics med Samsung-displayen i kartong före montage
+              width: 1920
+              height: 1080
+              title: Före montage
+              text: Rummet före installation, med 85-tums Samsung PRO-displayen levererad och klar att monteras.
+
+    - id: montage
+      navLabel: Montage
+      eyebrow: Installation
+      title: Hur monterades tekniken i rummen?
+      answer: Displayerna monterades på Chief-väggfästen och kablaget drogs via innertaket, så att tekniken sitter fast och utan synliga kablar i rummet.
+      paragraphs:
+        - Varje rum fick en 85-tums Samsung PRO-display på väggfäste från Chief. Kablaget drogs ovan undertaket till skärmväggen, vilket ger ett rent intryck och gör anläggningen lätt att serva.
+        - I det lilla rummet placerades kameran ovanför skärmen, medan det stora rummet fick en Sennheiser-videobar under skärmen med kamera, mikrofon och högtalare i en enhet.
+      mediaGroups:
+        - columns: 1
+          ratio: land
+          images:
+            - src: /assets/hanza-mechanics-montage-skarm-innertak.webp
+              alt: Monterad 85-tums display med öppet innertak för kabeldragning hos Hanza Mechanics
+              width: 2048
+              height: 956
+              title: Skärm på plats, taket öppet
+              text: Displayen är monterad och innertaket öppet för kabeldragning till skärmväggen.
+        - columns: 1
+          ratio: portrait
+          split: true
+          images:
+            - src: /assets/konferensteknik-hanza-tocksfors-skarm-kabeldragning.webp
+              alt: Kabeldragning i innertaket ovanför konferensrummets display hos Hanza Mechanics
+              width: 956
+              height: 2048
+              title: Kablage via undertaket
+              text: Kablaget dras ovan undertaket, så att inga kablar syns i det färdiga rummet.
+
+    - id: driftsattning
+      navLabel: Driftsättning
+      eyebrow: Driftsättning och konfiguration
+      title: Hur blev rummen klara att använda?
+      answer: AVAB konfigurerade Crestron AirMedia, Teams-rummet och nätverket, så att användarna kan presentera trådlöst och starta möten utan teknisk förkunskap.
+      paragraphs:
+        - Under driftsättningen ställdes signalvägarna in i Crestron AirMedia, så att både HDMI och trådlös presentation fungerar. I det lilla rummet sattes Crestron Flex-systemet upp som ett Microsoft Teams Rooms-rum med bordskonsol, inklusive nätverks- och MTR-konfiguration.
+        - Båda rummen fick två USB-C-donglar för AirMedia. Användaren ansluter donglen till datorn och delar skärmen direkt, oavsett om mötet körs i Teams-rummet eller från egen dator.
+      mediaGroups:
+        - columns: 2
+          ratio: land
+          images:
+            - src: /assets/hanza-mechanics-driftsattning-airmedia.webp
+              alt: AVAB-tekniker konfigurerar routing i Crestron AirMedia i konferensrummet hos Hanza Mechanics
+              width: 2048
+              height: 956
+              title: Signalvägar ställs in
+              text: Routingen för HDMI och trådlös presentation konfigureras i Crestron AirMedia under driftsättningen.
+            - src: /assets/hanza-mechanics-donglar-fjarrkontroller.webp
+              alt: Två Crestron AirMedia USB-C-donglar i laddställ bredvid fjärrkontroller
+              width: 1600
+              height: 900
+              title: Två donglar per rum
+              text: USB-C-donglarna gör att användaren kan dela sin skärm trådlöst utan att installera något.
+
+    - id: rummen
+      navLabel: Rummen
+      eyebrow: Färdig lösning
+      title: Hur ser de färdiga rummen och rumsbokningen ut?
+      answer: Det lilla rummet är ett Teams-rum med bordskonsol och det stora rummet, Stora Lee, har en Sennheiser-videobar. Utanför fyra konferensrum visar Crestron-paneler bokningsstatus från Teams-kalendern.
+      paragraphs:
+        - Båda rummen har samma grund med 85-tums bild och AirMedia, vilket ger en konsekvent upplevelse oavsett vilket rum man bokar. Den övriga tekniken skiljer sig efter rummens storlek och hur de används.
+        - Rumsbokningspanelerna är kopplade till Microsoft Teams-kalendern. De sitter vid dörren till de två nya rummen och till två befintliga rum i en annan byggnad, så att alla kan se om ett rum är ledigt innan de går in.
+      mediaGroups:
+        - columns: 2
+          ratio: land
+          images:
+            - src: /assets/konferensteknik-hanza-tocksfors-skarm-videobar.webp
+              alt: Konferensrummet Stora Lee med 85-tums display och Sennheiser-videobar hos Hanza Mechanics
+              width: 2048
+              height: 956
+              title: Stora Lee
+              text: Det stora rummet har en Sennheiser-videobar med kamera, mikrofon och högtalare under skärmen.
+            - src: /assets/hanza-mechanics-rumsbokningspanel-crestron.webp
+              alt: Crestron rumsbokningspanel vid dörren till ett konferensrum hos Hanza Mechanics
+              width: 2048
+              height: 956
+              title: Bokningsstatus vid dörren
+              text: Panelerna hämtar bokningar från Microsoft Teams-kalendern och visar om rummet är ledigt eller bokat.
+
 results:
   eyebrow: Resultat
   title: Verifierade funktioner i den färdiga lösningen
@@ -147,7 +259,7 @@ results:
         source: Befintlig Hanza-referens
     - label: Verifierat
       title: Status vid dörren
-      text: Crestron-paneler utanför fyra konferensrum visar om respektive rum är ledigt eller bokat.
+      text: Crestron-paneler kopplade till Microsoft Teams-kalendern visar utanför fyra konferensrum om respektive rum är ledigt eller bokat.
       evidence:
         type: delivered
         source: Befintlig Hanza-referens
@@ -155,16 +267,21 @@ results:
 gallery:
   eyebrow: Bildberättelse
   title: Mötesteknik i de färdiga rummen
-  lead: Bilderna visar den gemensamma bildytan och hur styrning respektive videobar placerats i mötesmiljön.
+  lead: Bilderna visar den gemensamma bildytan och hur bordskonsol, videobar och donglar placerats i mötesmiljön.
   images:
+    - src: /assets/hanza-mechanics-lilla-konferensrummet-staende.webp
+      alt: Det lilla konferensrummet hos Hanza Mechanics med 85-tums display, kamera och Crestron-bordskonsol
+      caption: Det lilla rummet är ett Teams-rum med bordskonsol, kamera ovanför skärmen och AirMedia-donglar på bordet.
+      width: 956
+      height: 2048
     - src: /assets/hanza-mechanics-bordspanel.webp
-      alt: Bordspanel och headset på konferensbordet hos Hanza Mechanics
-      caption: Bordspanelen och headsetet är placerade nära användaren för enkel styrning och tydliga möten.
+      alt: Crestron-bordskonsol och laddställ med AirMedia-donglar på konferensbordet hos Hanza Mechanics
+      caption: Bordskonsolen och AirMedia-donglarna är placerade nära användaren för enkel styrning och presentation.
       width: 1280
       height: 720
     - src: /assets/konferensrum-stor-skarm-bord.webp
-      alt: Konferensrum hos Hanza Mechanics med stor display, bordspanel och headset
-      caption: Det färdiga rummet samlar bild, styrning och mötesljud i en lättanvänd lösning med en gemensam 85-tums bildyta.
+      alt: Konferensrummet Stora Lee hos Hanza Mechanics med 85-tums display, Crestron AirMedia och Sennheiser-videobar
+      caption: Stora Lee samlar bild, trådlös presentation och videomöte i en lättanvänd lösning med en gemensam 85-tums bildyta.
       width: 1200
       height: 900
 
@@ -175,14 +292,15 @@ technicalDetails:
   summaryLabel: Visa teknisk sammanfattning
   items:
     - Samsung PRO-display, 85 tum, UHD/4K, 16:9
+    - Chief väggfäste
     - Crestron AirMedia 3
     - Två USB-C-donglar per rum
-    - Crestron Flex MTR-system
+    - Crestron Flex MTR-system UC-MX50-T (Microsoft Teams Rooms)
     - BYOD
     - HDBaseT i lilla rummet
     - Touchpanel på bordet
     - Sennheiser TeamConnect Videobar Medium
-    - Crestron rumsbokningspaneler
+    - Crestron rumsbokningspaneler, 7 tum, kopplade till Microsoft Teams-kalendern
   relatedCompetence:
     - label: Miljö
       title: Kontor och konferens
