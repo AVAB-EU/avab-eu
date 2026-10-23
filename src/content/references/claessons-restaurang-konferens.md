@@ -203,7 +203,7 @@ story:
             - src: /assets/claessons-albatrossen-scen-avab-tekniker.webp
               alt: AVAB-tekniker vid rackskåpet bredvid scenen och den stora duken i Albatrossen
               width: 2048
-              height: 956
+              height: 1494
               title: Service på plats
               text: AVAB sköter service och vidareutveckling av anläggningen.
             - src: /assets/claessons-albatrossen-duk-bose-pelare.webp
@@ -219,7 +219,7 @@ story:
       title: Vad har de mellanstora konferensrummen?
       answer: Ejdern 1 och Ejdern 2 har laserprojektor, motoriserad duk, infällda takhögtalare och HDBaseT, med en enkel knappsats för på, källa och volym.
       paragraphs:
-        - Rummen används för utbildning och möten i grupp. Panasonic-laserprojektorer i taket ger en stabil bild utan lampbyten, och duken fälls ned motoriskt när projektorn startar.
+        - Rummen används för utbildning och möten i grupp. Panasonic-laserprojektorer i taket ger en stabil bild utan lampbyten, och den motoriserade duken åker ner automatiskt när projektorn startas.
         - Takhögtalarna är infällda i undertaket, så att ljudet fördelas jämnt i rummet utan synliga lådor. Styrningen sker från en knappsats vid dörren, och bilden går via HDBaseT från anslutningen vid väggen.
       mediaGroups:
         - columns: 2
@@ -337,11 +337,11 @@ story:
           ratio: land
           images:
             - src: /assets/claessons-lunchrestaurang-takhogtalare.webp
-              alt: Lunchrestaurangen hos Claessons med långbord, soffor och takhögtalare
+              alt: Lilla matsalen i Claessons lunchrestaurang med långbord, soffor och takhögtalare
               width: 2048
               height: 956
-              title: Lunchrestaurangen
-              text: Även lunchdelen har eget bakgrundsljud i taket.
+              title: Lilla matsalen
+              text: Lilla matsalen är en egen ljudzon i lunchrestaurangen, med bakgrundsljud från taket.
 
     - id: tillfallig-teknik
       navLabel: Tillfällig teknik
