@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/hundfjallshotellet-hundfjallscenter-salen/
 layout: extended
 title: Hundfjällscenter & SkiStar Lodge Hundfjället
@@ -16,7 +16,7 @@ seo:
   ogDescription: Spa, restaurang Mondo, fem konferensrum, SkiStar Lodge och Dante mellan byggnaderna. Följ projektet från ritning till service.
   twitterTitle: Hundfjället – från en hörslinga till 494 högtalare | AVAB
   twitterDescription: Spa, restaurang, konferens med SLS-hörslinga, hotell och Dante mellan husen i Sälen.
-  noindex: true
+  noindex: false
 archive:
   title: Hundfjällscenter & SkiStar Lodge Hundfjället
   image:
@@ -51,7 +51,7 @@ customer:
   name: Hundfjällscenter & SkiStar Lodge Hundfjället
   publicDisplay: Hundfjällscenter & SkiStar Lodge Hundfjället
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 heroImage:
   src: /assets/hundfjallscenter-spa-pool-fardig.webp
