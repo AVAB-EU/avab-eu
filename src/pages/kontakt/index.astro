@@ -823,6 +823,33 @@ const canonicalUrl = "https://avab.eu/kontakt/";
         font-weight: 700;
       }
 
+      .hp-field {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .form-success {
+        padding: 28px;
+        border-radius: var(--avab-radius);
+        background: var(--avab-light);
+        border-left: 4px solid var(--avab-green, #8dc63f);
+      }
+
+      .form-success h3 {
+        margin: 0 0 8px;
+      }
+
+      .form-success p {
+        margin: 0;
+      }
+
+      .form-success:focus {
+        outline: none;
+      }
+
       .contact-sidebar {
         min-width: 0;
         display: grid;
@@ -1316,6 +1343,10 @@ const canonicalUrl = "https://avab.eu/kontakt/";
               </div>
 
               <form class="multistep-form" id="contact-form" novalidate>
+                <div class="hp-field" aria-hidden="true">
+                  <label for="website">Lämna detta fält tomt</label>
+                  <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+                </div>
                 <section class="form-panel" data-step="1" aria-labelledby="step-1-title">
                   <div class="panel-heading">
                     <span class="panel-kicker">Steg 1</span>
@@ -1587,14 +1618,14 @@ const canonicalUrl = "https://avab.eu/kontakt/";
                   <div class="panel-heading">
                     <span class="panel-kicker">Steg 4</span>
                     <h3 id="step-4-title">Kontrollera innan ni går vidare</h3>
-                    <p>Sammanfattningen används för att skapa ett tydligt mejl till AVAB.</p>
+                    <p>Förfrågan skickas direkt till AVAB när ni klickar på Skicka.</p>
                   </div>
 
                   <dl class="review-list" id="review-list"></dl>
 
                   <div class="send-note">
                     <p>
-                      <strong>Nuvarande tekniska lösning:</strong> eftersom webbplatsen saknar formulär-backend öppnas ett färdigskrivet mejl i ert e-postprogram. Där kan ni lägga till ritningar, bilder och andra bilagor innan mejlet skickas.
+                      <strong>Ritningar eller bilder?</strong> Har ni angett e-post får ni en bekräftelse som ni kan svara på med bilagor. Ni kan också mejla underlaget till <a class="text-link" href="mailto:info@avab.eu">info@avab.eu</a>.
                     </p>
                   </div>
 
@@ -1602,7 +1633,7 @@ const canonicalUrl = "https://avab.eu/kontakt/";
                     <button class="button-link" type="button" data-prev>← Ändra uppgifter</button>
                     <div class="panel-actions-group">
                       <button class="button button-outline" type="button" id="copy-summary">Kopiera sammanfattning</button>
-                      <button class="button button-primary" type="submit">Öppna färdigt mejl</button>
+                      <button class="button button-primary" type="submit" id="send-request">Skicka förfrågan</button>
                     </div>
                   </div>
                   <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
@@ -1773,6 +1804,7 @@ const canonicalUrl = "https://avab.eu/kontakt/";
       const replyError = document.querySelector("#reply-error");
       const reviewList = document.querySelector("#review-list");
       const formStatus = document.querySelector("#form-status");
+      const formStartedAt = Date.now();
       const copyButton = document.querySelector("#copy-summary");
       const intentLinks = document.querySelectorAll("[data-contact-intent]");
 
@@ -2165,6 +2197,67 @@ const canonicalUrl = "https://avab.eu/kontakt/";
           }
 
           const data = getFormSummary();
+          const sendButton = document.querySelector("#send-request");
+          const honeypot = document.querySelector("#website");
+
+          if (sendButton instanceof HTMLButtonElement) {
+            sendButton.disabled = true;
+            sendButton.textContent = "Skickar …";
+          }
+          if (formStatus instanceof HTMLElement) formStatus.textContent = "Skickar förfrågan …";
+
+          try {
+            const response = await fetch("/api/kontakt.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                ...data,
+                website: honeypot instanceof HTMLInputElement ? honeypot.value : "",
+                startedAt: formStartedAt
+              })
+            });
+            const result = await response.json().catch(() => ({}));
+
+            if (response.ok && result.ok) {
+              const panel = form.querySelector('[data-step="4"]');
+              if (panel instanceof HTMLElement) {
+                const thanks = document.createElement("div");
+                thanks.className = "form-success";
+                thanks.setAttribute("role", "status");
+                thanks.setAttribute("tabindex", "-1");
+                const heading = document.createElement("h3");
+                heading.textContent = "Tack! Vi har tagit emot er förfrågan.";
+                const text = document.createElement("p");
+                text.textContent = data.email
+                  ? "En bekräftelse är på väg till " + data.email + ". Vi återkommer så snart vi kan, normalt inom en arbetsdag."
+                  : "Vi återkommer så snart vi kan, normalt inom en arbetsdag.";
+                thanks.append(heading, text);
+                panel.replaceChildren(thanks);
+                thanks.focus();
+              }
+              return;
+            }
+
+            if (response.status === 422 && formStatus instanceof HTMLElement) {
+              formStatus.textContent = result.error === "email"
+                ? "E-postadressen verkar inte stämma. Gå tillbaka och kontrollera den."
+                : "Några obligatoriska uppgifter saknas. Gå tillbaka och kontrollera formuläret.";
+              if (sendButton instanceof HTMLButtonElement) {
+                sendButton.disabled = false;
+                sendButton.textContent = "Skicka förfrågan";
+              }
+              return;
+            }
+          } catch {
+            // Nätverksfel: gå vidare till reservlösningen nedan.
+          }
+
+          if (sendButton instanceof HTMLButtonElement) {
+            sendButton.disabled = false;
+            sendButton.textContent = "Skicka förfrågan";
+          }
+
+          // Reserv: öppna ett färdigt mejl i besökarens e-postprogram.
           const body = createMailBody(data);
           const subjectBits = [data.intentLabel];
           if (data.company) subjectBits.push(data.company);
@@ -2183,7 +2276,7 @@ const canonicalUrl = "https://avab.eu/kontakt/";
               formStatus.textContent = "Sammanfattningen är för lång för vissa e-postprogram och har därför kopierats. Klistra in den i mejlet som öppnas och lägg till eventuella bilagor.";
             } else {
               formStatus.textContent = copied
-                ? "Ett färdigt mejl öppnas nu. Texten har också kopierats som reserv."
+                ? "Det gick inte att skicka direkt just nu. Ett färdigt mejl öppnas i stället, och texten har också kopierats som reserv."
                 : "Ett färdigt mejl öppnas nu. Kontrollera innehållet och lägg till eventuella bilagor innan ni skickar.";
             }
           }
