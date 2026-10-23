@@ -343,6 +343,24 @@ story:
               title: Lunchrestaurangen
               text: Även lunchdelen har eget bakgrundsljud i taket.
 
+    - id: tillfallig-teknik
+      navLabel: Tillfällig teknik
+      eyebrow: Hyrteknik och tekniker
+      title: Behöver ditt konferensrum tillfällig teknik?
+      answer: Vid större konferenser och event kompletteras den fasta anläggningen med extra mikrofoner, ljud och tekniker från vårt systerbolag hyrljud.nu.
+      paragraphs:
+        - Den fasta tekniken täcker det vardagliga. När ett arrangemang kräver fler mikrofoner, paneldebatt, extra högtalare eller en tekniker som sköter ljudet under dagen, hjälper hyrljud.nu till med både utrustning och personal, så att samma lokal klarar betydligt mer än vanligt.
+      mediaGroups:
+        - columns: 1
+          ratio: land
+          images:
+            - src: /assets/konferensteknik-claessons-sennheiser-tradlosa-mikrofoner.webp
+              alt: Trådlösa Sennheiser-mikrofoner och mottagare uppställda på ett bord framför sittplatserna i Albatrossen
+              width: 2048
+              height: 1536
+              title: Extra mikrofoner inför konferens
+              text: Extra trådlösa mikrofoner och mottagare förberedda inför en konferens i Albatrossen.
+
 technicalDetails:
   eyebrow: Teknisk fördjupning
   title: Systemets viktigaste delar
@@ -382,8 +400,8 @@ cta:
   text: AVAB hjälper restauranger, konferensanläggningar, hotell och fastighetsägare med ljud, bild, projektorer, mikrofoner, styrning, tillgänglighet och långsiktig drift. Vi kan inventera nuläget, föreslå rätt nivå och bygga en lösning som personalen faktiskt kan använda.
   primaryLabel: Boka kostnadsfri rådgivning
   primaryHref: /kontakt/#kontaktformular
-  secondaryLabel: Se konferensmiljöer
-  secondaryHref: /miljo/kontor-konferens/
+  secondaryLabel: Hyr teknik och tekniker hos hyrljud.nu
+  secondaryHref: https://hyrljud.nu/
   points:
     - Åtta konferensrum för cirka 6–200 personer
     - Fyra ljudzoner i restaurangen
