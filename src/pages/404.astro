@@ -24,25 +24,87 @@ import "../styles/avab.css";
 
   <style>
     .not-found {
-      min-height: 50vh;
-      display: flex;
+      padding: clamp(48px, 8vw, 104px) 0;
+    }
+    .not-found__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: clamp(32px, 6vw, 80px);
       align-items: center;
     }
-    .not-found .avab-container {
-      max-width: 640px;
-      text-align: center;
-      margin: 0 auto;
-      padding: 96px 24px;
-    }
     .not-found .code {
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--avab-muted, #6b7280);
+      margin: 0;
     }
     .not-found h1 {
-      margin: 16px 0;
+      margin: 12px 0 20px;
+      font-size: clamp(2rem, 4.4vw, 3.4rem);
+      line-height: 1.08;
+    }
+    .not-found__lead {
+      font-size: 1.15rem;
+      max-width: 52ch;
+    }
+    .not-found__story {
+      max-width: 52ch;
+      color: var(--avab-muted, #4b5563);
+    }
+    .not-found__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .not-found__media {
+      position: relative;
+      margin: 0;
+      justify-self: center;
+      width: min(100%, 380px);
+    }
+    .not-found__room {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center 55%;
+      border-radius: var(--avab-radius, 16px);
+      box-shadow: var(--avab-shadow-sm, 0 8px 24px rgba(0, 0, 0, 0.12));
+    }
+    .not-found__sign {
+      position: absolute;
+      left: -28px;
+      bottom: -28px;
+      width: 38%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center 42%;
+      border-radius: 12px;
+      border: 4px solid #fff;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+      transform: rotate(-4deg);
+    }
+    .not-found__caption {
+      margin-top: 44px;
+      font-size: 0.85rem;
+      color: var(--avab-muted, #6b7280);
+      text-align: center;
+    }
+    @media (max-width: 767px) {
+      .not-found__grid {
+        grid-template-columns: 1fr;
+      }
+      .not-found__media {
+        width: min(100%, 300px);
+        order: -1;
+      }
+      .not-found__sign {
+        left: -16px;
+        bottom: -16px;
+      }
     }
   </style>
 </head>
@@ -51,11 +113,37 @@ import "../styles/avab.css";
 
   <main id="main">
     <section class="not-found">
-      <div class="avab-container">
-        <p class="code">404</p>
-        <h1>Sidan hittades inte</h1>
-        <p>Länken du följde stämmer inte längre, eller så har sidan flyttat.</p>
-        <p><a class="button button-primary" href="/">Till startsidan</a></p>
+      <div class="avab-container not-found__grid">
+        <div>
+          <p class="code">404 · Rum hittat, sida saknas</p>
+          <h1>Du hittade rum 404. Men inte sidan du letade efter.</h1>
+          <p class="not-found__lead">Länken du följde stämmer inte längre, eller så har sidan flyttat.</p>
+          <p class="not-found__story">Rummet däremot finns på riktigt. Vi bodde i det under ett servicebesök på SkiStar Lodge Hundfjället, där vi byggt ljudet i hela huset.</p>
+          <div class="not-found__actions">
+            <a class="button button-primary" href="/">Till startsidan</a>
+            <a class="button button-secondary" href="/referenser/hundfjallshotellet-hundfjallscenter-salen/">Se Hundfjällsprojektet</a>
+          </div>
+        </div>
+
+        <figure class="not-found__media">
+          <img
+            class="not-found__room"
+            src="/assets/hundfjall-hotell-rum.webp"
+            alt="Hotellrum 404 på SkiStar Lodge Hundfjället med dubbelsäng och fåtöljer vid fönstret"
+            width="654"
+            height="1400"
+            decoding="async"
+          />
+          <img
+            class="not-found__sign"
+            src="/assets/hundfjall-hotell-rum-404.webp"
+            alt="Rumsskylt med nummer 404 och texten SkiStar Lodge"
+            width="956"
+            height="2048"
+            decoding="async"
+          />
+          <figcaption class="not-found__caption">Rum 404, SkiStar Lodge Hundfjället</figcaption>
+        </figure>
       </div>
     </section>
   </main>
