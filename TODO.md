@@ -70,6 +70,7 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-23._
 
 ## Senare prioriteringar
 
+- [ ] **Cache-headers på produktion (prioriterat, användarbeslut 2026-10-23):** servern skickar varken `Cache-Control` eller `Expires` för HTML, så webbläsare cachar sidor heuristiskt och visar gamla versioner efter deploy (upptäckt när Hundfjällsreferensen uppdaterades). Mål: HTML `Cache-Control: no-cache` (alltid revalidera), `/_astro/*` (hashade filer) `max-age=31536000, immutable`, `/assets/*` lång cache. Kontrollera först befintlig `.htaccess` i produktionsroten och relationen till `docs/architecture/wordpress-redirects.md` – en `public/.htaccess` i repot skulle skrivas över serverns fil vid FTP-deploy. Verifiera headers med curl efter deploy.
 - [ ] **FAQ-teknikskuld (senare):** PR #111 införde gemensam `FaqSection`, FAQ → CTA och guardrail. Bedöm befintliga undantag när respektive sida ändå behöver ändras; migrera inte en fungerande FAQ enbart för kodstandardens skull.
 - [ ] Koppla offertformuläret till ett säkert mailflöde till `info@avab.eu` och bekräftelse till kunden; hantera spam, fel och personuppgiftsminimerad loggning.
 - [ ] Genomför separat mobil innehålls- och gränssnittsanpassning på riktiga mobilbredder och tablet.
