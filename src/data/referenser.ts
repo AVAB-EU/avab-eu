@@ -132,16 +132,16 @@ export const references: Reference[] = [
     featured: true,
   },
   {
-    title: "Lesjöfors AB",
+    title: "Lesjöfors Fjädrar AB",
     slug: "/referenser/lesjofors-ab/",
     location: "Lesjöfors",
     filterLocation: "Lesjöfors",
     image: "/assets/lesjofors-ab.webp",
-    imageAlt: "Konferensrum hos Lesjöfors AB med långbord och stor display",
+    imageAlt: "Konferensrum hos Lesjöfors Fjädrar AB med långbord och 86-tums skärm",
     excerpt:
-      "Konferensrum med Q-SYS, AEC, Dante, Audio-Technica beamforming-takmikrofon, Huddly-kamera och USB-C-videomöte.",
+      "Konferensrum med Q-SYS, 86-tums 4K-skärm, beamforming-takmikrofon, 4K-kamera, USB-C och trådlös delning.",
     environments: ["industri", "kontor-konferens"],
-    technologies: ["ljud", "bild", "dsp", "dante", "mikrofoner", "konferens"],
+    technologies: ["ljud", "bild", "dsp", "mikrofoner", "konferens"],
     cardTechnologies: ["konferens", "ljud", "bild", "mikrofoner"],
   },
   {
