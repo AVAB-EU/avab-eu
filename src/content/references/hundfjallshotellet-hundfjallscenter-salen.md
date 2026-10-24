@@ -425,6 +425,9 @@ technicalDetails:
     - Trådlösa mikrofoner i det stora konferensrummet
     - SLS-hörslinga i det stora konferensrummet
   relatedCompetence:
+    - label: Koncept
+      title: AVAB Klorsäkert ljud
+      href: /miljo/simhall/klorsakert-ljud/
     - label: Tjänst
       title: Ljudsystem
       href: /tjanster/ljudsystem/
@@ -443,6 +446,7 @@ relevance:
   lead: Projektet visar hur flera verksamheter kan dela infrastruktur utan att förlora lokal kontroll över ljudmiljön.
   items:
     - Hotell och resorter med restaurang, spa, konferens och stora gemensamma ytor.
+    - Spa och poolmiljö byggda enligt AVAB Klorsäkert ljud, med teknik för fukt och klor.
     - Anläggningar som behöver många separat styrbara ljudzoner.
     - Verksamheter där musikens nivå och karaktär förändras under dagen.
     - Projekt där ljudspridningen behöver beräknas innan installationen börjar.
