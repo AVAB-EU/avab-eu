@@ -72,6 +72,9 @@ _Kanonisk projektlista. Senast uppdaterad 2026-10-23._
 
 ## Senare prioriteringar
 
+- [ ] **Konceptsida för sporthall (användarbeslut 2026-10-24):** motsvarighet till AVAB Klorsäkert ljud för sporthallar, med fabrikatsneutrala funktionskrav som PDF och länk högt upp på /miljo/sporthall-arena/. Namn ej beslutat.
+- [ ] **Dokument-/nedladdningssida:** samla PDF:er (funktionskrav m.m.) när det finns flera dokument.
+
 - [ ] **Cache-headers på produktion (prioriterat, användarbeslut 2026-10-23):** servern skickar varken `Cache-Control` eller `Expires` för HTML, så webbläsare cachar sidor heuristiskt och visar gamla versioner efter deploy (upptäckt när Hundfjällsreferensen uppdaterades). Mål: HTML `Cache-Control: no-cache` (alltid revalidera), `/_astro/*` (hashade filer) `max-age=31536000, immutable`, `/assets/*` lång cache. Kontrollera först befintlig `.htaccess` i produktionsroten och relationen till `docs/architecture/wordpress-redirects.md` – en `public/.htaccess` i repot skulle skrivas över serverns fil vid FTP-deploy. Verifiera headers med curl efter deploy.
 - [ ] **FAQ-teknikskuld (senare):** PR #111 införde gemensam `FaqSection`, FAQ → CTA och guardrail. Bedöm befintliga undantag när respektive sida ändå behöver ändras; migrera inte en fungerande FAQ enbart för kodstandardens skull.
 - [x] **Offertformuläret – klart och verifierat 2026-10-23 (PR #158):** `/api/kontakt.php` (PHP mail() från webbservern, IP finns i SPF) skickar till `info@avab.eu` med Reply-To till kunden och fast bekräftelsetext till kunden. Honeypot, minsta ifyllnadstid, Origin-kontroll och hastighetsbegränsning per hashad IP; inga personuppgifter loggas. Mailto-flödet finns kvar som reserv. Testförfrågan kom fram till både info@avab.eu och användaren (bekräftelse). Överväg DKIM för avab.eu om leveransproblem dyker upp.
