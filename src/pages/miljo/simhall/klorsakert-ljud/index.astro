@@ -125,7 +125,7 @@ const schema = {
   <link rel="canonical" href={pageUrl} />
   <meta property="og:title" content="AVAB Klorsäkert ljud för simhallar" />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content="https://avab.eu/assets/arjangs-simhall-stora-bassangen-hopptorn.webp" />
+  <meta property="og:image" content="https://avab.eu/assets/hundfjallscenter-spa-pool-fardig.webp" />
   <meta property="og:url" content={pageUrl} />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="sv_SE" />
@@ -134,6 +134,10 @@ const schema = {
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" fetchpriority="high" href="/assets/hundfjallscenter-spa-pool-fardig.webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 </head>
 <body>
@@ -149,7 +153,7 @@ const schema = {
     </div>
   </nav>
 
-  <section class="hero" style="--hero-image:url('/assets/Saffle-simhall-50m-bassang.webp');">
+  <section class="hero" style="--hero-image:url('/assets/hundfjallscenter-spa-pool-fardig.webp');">
     <div class="avab-container">
       <div class="hero-inner animate-in">
         <div class="eyebrow">AVAB Klorsäkert ljud</div>
@@ -188,21 +192,34 @@ const schema = {
           <p>Klorhaltig luft angriper metall, membran och elektronik. Vanliga högtalare och fästen rostar, ljudet försämras och anläggningen behöver bytas långt innan den borde.</p>
           <p>Samtidigt ska en simhall klara simskola, motionssim, vattengympa, relax, gym och utrop, ofta samtidigt. Det kräver zoner, enkel styrning och tal som går fram i en miljö med kakel, glas och vatten.</p>
         </div>
-        <aside class="card solution-card accent-rail">
-          <h3>Så fungerar AVAB Klorsäkert ljud</h3>
-          <ul class="bullet-list">
-            <li>Högtalare och fästen som är avsedda för klormiljö, matade via 100V.</li>
-            <li>DSP, slutsteg och källor torrt i teknikrummet, inte vid bassängen.</li>
-            <li>En zon per verksamhetsyta med egen volym och källval.</li>
-            <li>Väggpaneler för mikrofon, AUX och Bluetooth i varje zon.</li>
-            <li>Brandlarmsprioritet, hörslinga och dokumenterad taluppfattbarhet.</li>
-            <li>Projektering från ritningsstadiet till service efter invigning.</li>
-          </ul>
-        </aside>
+        <figure class="concept-figure">
+          <img src="/assets/hundfjallscenter-spa-utanpaliggande-hogtalare.webp" alt="AVAB-tekniker monterar en högtalare i taket ovanför den upplysta poolen i Hundfjällscenter" width="2200" height="1650" loading="lazy" decoding="async" />
+          <figcaption>Montage av högtalare ovanför poolen i Hundfjällscenter, Sälen.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="section section--light" id="funktionskrav">
+    <section class="section section--light" id="sa-fungerar-det">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Lösningen</div>
+            <h2>Så fungerar AVAB Klorsäkert ljud</h2>
+            <p class="lead-dark">Sex byggstenar som tillsammans gör att tekniken håller, låter bra och är enkel för personalen att använda.</p>
+          </div>
+        </div>
+        <div class="value-grid">
+          <article class="value-card"><h3>Klorsäkra högtalare</h3><p>Högtalare och fästen avsedda för klormiljö, matade via 100V.</p></article>
+          <article class="value-card"><h3>Torr elektronik</h3><p>DSP, slutsteg och källor i teknikrummet, inte vid bassängen.</p></article>
+          <article class="value-card"><h3>En zon per yta</h3><p>Egen volym och källval för bassäng, träning, relax och reception.</p></article>
+          <article class="value-card"><h3>Väggpaneler</h3><p>Mikrofon, AUX och Bluetooth i varje zon för simlärare och instruktörer.</p></article>
+          <article class="value-card"><h3>Tal och tillgänglighet</h3><p>Brandlarmsprioritet, hörslinga och dokumenterad taluppfattbarhet.</p></article>
+          <article class="value-card"><h3>Hela vägen</h3><p>Från projektering på ritningsstadiet till service efter invigning.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="funktionskrav">
       <div class="avab-container">
         <div class="section-heading">
           <div>
@@ -229,7 +246,7 @@ const schema = {
       </div>
     </section>
 
-    <section class="section" id="referenser">
+    <section class="section section--light" id="referenser">
       <div class="avab-container">
         <div class="section-heading">
           <div>
