@@ -15,3 +15,7 @@
 .ref-card p { margin: 0; }
 @media (max-width: 900px) { .ref-grid { grid-template-columns: 1fr; } }
 @media (max-width: 767px) { .req-list { grid-template-columns: 1fr; } .download-band { padding: 22px; } }
+
+.concept-figure { margin: 0; align-self: start; }
+.concept-figure img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--avab-radius, 16px); box-shadow: var(--avab-shadow-sm, 0 8px 24px rgba(0,0,0,.12)); }
+.concept-figure figcaption { margin-top: 10px; font-size: .9rem; color: var(--avab-muted, #6b7280); }
