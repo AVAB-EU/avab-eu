@@ -1,0 +1,17 @@
+/* Konceptsidor (t.ex. /miljo/simhall/klorsakert-ljud/): kravlista, nedladdning och referenskort. */
+.req-list { counter-reset: req; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 32px; margin: 32px 0 0; padding: 0; list-style: none; }
+.req-list li { counter-increment: req; position: relative; padding-left: 44px; }
+.req-list li::before { content: counter(req); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--avab-green, #8dc63f); color: #1b1f1c; font-weight: 700; display: grid; place-items: center; font-size: .9rem; }
+.req-list h3 { margin: 2px 0 6px; font-size: 1.05rem; }
+.req-list p { margin: 0; }
+.download-band { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between; padding: 28px; border-radius: var(--avab-radius, 16px); background: var(--avab-surface, #f4f5f3); }
+.download-band h3 { margin: 0 0 6px; }
+.download-band p { margin: 0; max-width: 60ch; }
+.ref-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+.ref-card { display: flex; flex-direction: column; border-radius: var(--avab-radius, 16px); overflow: hidden; background: #fff; box-shadow: var(--avab-shadow-sm, 0 8px 24px rgba(0,0,0,.08)); text-decoration: none; color: inherit; }
+.ref-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.ref-card div { padding: 20px; }
+.ref-card h3 { margin: 0 0 8px; }
+.ref-card p { margin: 0; }
+@media (max-width: 900px) { .ref-grid { grid-template-columns: 1fr; } }
+@media (max-width: 767px) { .req-list { grid-template-columns: 1fr; } .download-band { padding: 22px; } }
