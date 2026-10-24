@@ -215,11 +215,11 @@ story:
           ratio: land
           images:
             - src: /assets/loka-brunn-victoriasalen-scen-hogtalare-projektor.webp
-              alt: Scenen i Victoriasalen med högtalare på väggarna och projektor i taket
+              alt: Scenen i Victoriasalen med högtalare på väggarna och en äldre Barco-projektor på saxlift i taket
               width: 2048
               height: 956
               title: Scen och högtalare
-              text: Högtalare och projektor sitter högt över scenöppningen.
+              text: Högtalarna sitter högt över scenöppningen. Barco-projektorn med tre bildrör på motoriserad saxlift är ett minne från förr och används inte längre.
             - src: /assets/loka-brunn-victoriasalen-sidogang-balkong.webp
               alt: Sidogång under balkongen i Victoriasalen med projektor i taket
               width: 2048
