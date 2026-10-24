@@ -85,6 +85,7 @@ Vid problem med navigation eller komponentövergång ska även befintliga brytpu
 - Kort får inte ha `min-width` större än mobilbredden.
 - Normal kortpadding på mobil bör vara cirka **20–28 px**.
 - Samma korttyp ska ha konsekvent padding och typografi.
+- **Löptext på samma linje:** i kortrader ska brödtexten börja på samma höjd i alla kort, även när en rubrik bryts till två rader. Använd befintlig modifierare (t.ex. `value-grid--service-answers`, som ger rubriken `min-block-size: 2.6em`) i stället för ny CSS. Beslut av Andreas 2026-10-24.
 - Hover får aldrig vara enda sättet att visa viktig information.
 - Dold mobilinformation ska kunna motiveras.
 - För standardiserade innehållskort är **en kolumn på mobil default**; två kolumner får användas endast när innehållet fortfarande är läsbart och touchvänligt.
