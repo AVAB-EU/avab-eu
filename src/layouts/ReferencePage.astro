@@ -65,7 +65,20 @@ const structuredData = {
       author: { "@type": "Organization", name: "AVAB", url: `${SITE_URL}/` },
       publisher: { "@type": "Organization", name: "AVAB", url: `${SITE_URL}/` },
       mainEntityOfPage: { "@id": `${canonicalUrl}#webpage` },
-      about: data.archive.technologies.map((name) => ({ "@type": "Thing", name })),
+      about: [
+        ...data.archive.technologies.map((name) => ({ "@type": "Thing", name })),
+        ...(data.technicalDetails?.relatedCompetence ?? [])
+          .filter((item) => item.href.startsWith("/tjanster/"))
+          .map((item) => ({ "@type": "Service", name: item.title, url: absoluteUrl(item.href), provider: { "@type": "Organization", name: "AVAB", url: `${SITE_URL}/` } })),
+      ],
+      contentLocation: {
+        "@type": "Place",
+        name: data.location,
+        address: { "@type": "PostalAddress", addressLocality: data.location, addressCountry: "SE" },
+      },
+      ...(data.customer.showName && data.customer.publicationApproved
+        ? { mentions: [{ "@type": "Organization", name: data.customer.publicDisplay }] }
+        : {}),
     },
     {
       "@type": "WebPage",
