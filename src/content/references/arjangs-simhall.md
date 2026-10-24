@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: /referenser/arjangs-simhall/
 layout: extended
 title: Årjängs simhall
@@ -24,7 +24,7 @@ seo:
   twitterDescription: >-
     AVAB projekterade, installerade och dokumenterade ett gemensamt ljudsystem för bassäng, träning, relax, reception
     och multipool i Årjängs simhall.
-  noindex: true
+  noindex: false
 archive:
   title: Årjängs simhall
   image:
@@ -56,7 +56,7 @@ customer:
   name: Årjängs Elmontage
   publicDisplay: Årjängs Elmontage
   showName: true
-  publicationApproved: null
+  publicationApproved: true
   referenceAvailableOnRequest: false
 heroImage:
   src: /assets/arjangs-simhall-stora-bassangen-hopptorn.webp
