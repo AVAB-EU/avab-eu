@@ -94,14 +94,15 @@ scope:
     AVAB projekterade, installerade och dokumenterade ljudanläggningen samt integrerade projektor, AVoIP, mikrofoner och
     diskslinga.
   items:
-    - Bose ControlSpace EX-1280 som centralt ljudnav
+    - Bose ControlSpace EX-1280 som centralt ljudnav med Audac PMQ480-slutsteg
     - Sex separat hanterade ljudzoner
     - 12 Tannoy AMS 8DC i stora bassängen och 4 Tannoy DVS 6T i multibassängen, 100V
     - Aktiva 12-tums högtalare i gym och gruppträning, Audac-takhögtalare i lounge
     - Trådlösa Sennheiser-mikrofoner och väggpaneler med Bluetooth, AUX och mikrofon
     - Projektor i skyddskåpa och Key Digital AVoIP i multibassängen
     - Högtalarplacering, uttags- och kabellista till elentreprenören
-    - Infällda högtalare och diskslinga i receptionen
+    - Univox överdiskslinga i receptionen
+    - Audac-svanhalsmikrofon för utrop
     - Dokumentation och service efter invigning
   serviceLabel: Lösningar för simhall
   serviceHref: /miljo/simhall/
@@ -179,7 +180,7 @@ story:
       answer: Bose ControlSpace EX-1280 är hjärtat i systemet. Tannoy-högtalare för krävande miljöer monterades i bassängrummen, och AVAB programmerade zoner, nivåer och styrning på plats.
       paragraphs:
         - I stora bassängrummet sitter tolv Tannoy AMS 8DC och i multibassängen fyra Tannoy DVS 6T, alla väggmonterade och matade via 100V. Högtalarna är byggda för fuktiga och klorhaltiga miljöer.
-        - Racket placerades i elrummet tillsammans med nätverk och AVoIP. Där programmerades Bose-systemet, och personalen fick en enkel fjärrstyrning med ett volymreglage per zon.
+        - Racket placerades i elrummet tillsammans med nätverk och AVoIP. Bose-processorn driver ett Audac PMQ480-slutsteg på 4 x 480 W, och en Audac-svanhalsmikrofon används för utrop. Personalen fick en enkel fjärrstyrning med ett volymreglage per zon.
       mediaGroups:
         - columns: 1
           ratio: portrait
@@ -258,7 +259,7 @@ story:
       answer: Gym och gruppträning har egna zoner med aktiva 12-tums högtalare och väggpaneler, så att instruktörer kan köra egen musik och mikrofon. Lounge och relax har infällda takhögtalare med lugnare nivå.
       paragraphs:
         - Varje träningsrum har en väggpanel för Bluetooth, AUX och mikrofon. Musiken i gymmet kan alltså gå parallellt med ett pass i gruppträningssalen utan att zonerna stör varandra.
-        - I lounge och korridorer sitter infällda Audac-takhögtalare, och receptionen har en diskslinga för besökare med hörapparat.
+        - Lounge och minilounge har 14 infällda Audac CIRA-takhögtalare, och receptionen har en Univox överdiskslinga med mikrofon för besökare med hörapparat.
       mediaGroups:
         - columns: 2
           ratio: land
@@ -297,7 +298,8 @@ technicalDetails:
     - Aktiva 12-tums högtalare
     - Trådlösa Sennheiser-headset
     - Projektor och Key Digital AVoIP
-    - Diskslinga i reception
+    - Audac PMQ480 slutsteg, 4 x 480 W
+    - Univox överdiskslinga i reception
   relatedCompetence:
     - label: Miljö
       title: Lösningar för simhall
