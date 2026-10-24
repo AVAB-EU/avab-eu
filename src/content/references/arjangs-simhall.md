@@ -60,7 +60,7 @@ customer:
   referenceAvailableOnRequest: false
 heroImage:
   src: /assets/arjangs-simhall-stora-bassangen-hopptorn.webp
-  alt: Stora bassängen i Årjängs simhall med hopptorn och Tannoy-högtalare längs fönsterväggen
+  alt: Stora bassängen i Årjängs simhall med hopptorn och högtalare längs fönsterväggen
   width: 2048
   height: 956
   objectPosition: center
@@ -96,10 +96,11 @@ scope:
   items:
     - Bose ControlSpace EX-1280 som centralt ljudnav med Audac PMQ480-slutsteg
     - Sex separat hanterade ljudzoner
-    - 12 Tannoy AMS 8DC (8 tum) i stora bassänghallen och 4 Tannoy DVS 6T (6 tum) i multibassängen, 100V
+    - 12 st 8-tums och 4 st 6-tums högtalare för klormiljö i bassänghallarna, 100V
     - Aktiva 12-tums högtalare i gym och gruppträning, Audac-takhögtalare i lounge
     - Trådlösa Sennheiser-mikrofoner och väggpaneler med Bluetooth, AUX och mikrofon
-    - Projektor i skyddskåpa och Key Digital AVoIP i multibassängen
+    - Panasonic laserprojektor WUXGA, 8 000 lumen, i skyddskåpa med 5 års garanti
+    - Key Digital 4K AV över IP, HDMI-inkopplingsbox och KVM med trådlöst tangentbord
     - Högtalarplacering, uttags- och kabellista till elentreprenören
     - Univox överdiskslinga i receptionen
     - Audac-svanhalsmikrofon för utrop
@@ -177,36 +178,11 @@ story:
       navLabel: Montage
       eyebrow: Installation och driftsättning
       title: Hur installerades och programmerades systemet?
-      answer: Bose ControlSpace EX-1280 är hjärtat i systemet. Tannoy-högtalare för krävande miljöer monterades i bassängrummen, och AVAB programmerade zoner, nivåer och styrning på plats.
+      answer: Bose ControlSpace EX-1280 är hjärtat i systemet. Högtalare som AVAB valt ut för klormiljö monterades i bassängrummen, och AVAB programmerade zoner, nivåer och styrning på plats.
       paragraphs:
-        - I stora bassänghallen sitter tolv 8-tums Tannoy AMS 8DC och i multibassängen fyra 6-tums Tannoy DVS 6T, alla väggmonterade och matade via 100V. Högtalarna är byggda för fuktiga och klorhaltiga miljöer.
+        - I stora bassänghallen sitter tolv 8-tumshögtalare och i multibassängen fyra 6-tumshögtalare, alla väggmonterade och matade via 100V. Lösningen har AVAB tagit fram för fuktiga och klorhaltiga miljöer, där vanliga högtalare snabbt tar skada.
         - Racket placerades i elrummet tillsammans med nätverk och AVoIP. Bose-processorn driver ett Audac PMQ480-slutsteg på 4 x 480 W, och en Audac-svanhalsmikrofon används för utrop. Personalen fick en enkel fjärrstyrning med ett volymreglage per zon.
       mediaGroups:
-        - columns: 1
-          ratio: portrait
-          layout: sidebar
-          images:
-            - src: /assets/arjangs-simhall-montage-tannoy-ams8dc.webp
-              alt: AVAB-montör bakom kartonger med Tannoy AMS 8DC-högtalare i Årjängs simhall
-              width: 956
-              height: 2048
-              title: Tannoy på plats
-              text: Högtalarna till stora bassängrummet levererade och klara för montage.
-        - columns: 2
-          ratio: land
-          images:
-            - src: /assets/arjangs-simhall-tannoy-hogtalare-bassangvagg.webp
-              alt: Vit Tannoy-högtalare monterad på träribbväggen ovanför bassängen
-              width: 2048
-              height: 956
-              title: Monterad över bassängen
-              text: Högtalarna sitter högt på väggen och riktas ned mot bassängen.
-            - src: /assets/arjangs-simhall-bose-controlspace-programmering.webp
-              alt: Programmering av Bose ControlSpace på laptop i Årjängs simhall
-              width: 2048
-              height: 956
-              title: Programmering på plats
-              text: Zoner, nivåer och signalvägar ställs in i Bose ControlSpace Designer.
         - columns: 1
           ratio: portrait
           layout: sidebar
@@ -218,13 +194,28 @@ story:
               title: Driftsättning i elrummet
               text: Rack, nätverk och AVoIP samlades i elrummet.
 
+        - columns: 2
+          ratio: land
+          images:
+            - src: /assets/arjangs-simhall-hogtalare-bassangvagg.webp
+              alt: Vit högtalare monterad på träribbväggen ovanför bassängen
+              width: 2048
+              height: 956
+              title: Monterad över bassängen
+              text: Högtalarna sitter högt på väggen och riktas ned mot bassängen.
+            - src: /assets/arjangs-simhall-bose-controlspace-programmering.webp
+              alt: Programmering av Bose ControlSpace på laptop i Årjängs simhall
+              width: 2048
+              height: 956
+              title: Programmering på plats
+              text: Zoner, nivåer och signalvägar ställs in i Bose ControlSpace Designer.
     - id: bassanger
       navLabel: Bassänger
       eyebrow: Bassäng och multipool
       title: Hur fungerar ljud och bild vid bassängerna?
-      answer: Stora bassängen och multibassängen är egna zoner. I multibassängen visar en projektor bild över AVoIP från Key Digital, och ljudet bryts ut till rätt zon.
+      answer: Stora bassängen och multibassängen är egna zoner. I multibassängen visar en Panasonic-laserprojektor på 8 000 lumen bild över AV över IP från Key Digital, och ljudet bryts ut till rätt zon.
       paragraphs:
-        - Projektorn sitter i en skyddskåpa på väggen mittemot duken, eftersom luften i simhallen är fuktig och klorhaltig. Bilden skickas över nätverket med Key Digital, så att källan kan sitta på säker plats i racket.
+        - Projektorn sitter i en skyddskåpa på väggen mittemot duken, eftersom luften i simhallen är fuktig och klorhaltig. Bilden skickas i 4K över nätverket med Key Digital, så att datorn kan stå torrt i racket. Personalen kopplar in via en HDMI-box eller styr datorn med trådlöst tangentbord via KVM, och projektorn har fem års förlängd garanti.
         - Vid bassängerna finns väggpaneler med anslutning för mikrofon, AUX och Bluetooth, och trådlösa Sennheiser-mikrofoner för simlärare och badvärdar.
       mediaGroups:
         - columns: 1
@@ -245,8 +236,8 @@ story:
               height: 956
               title: Projektor i skyddskåpa
               text: Kåpan skyddar projektorn mot fukt i simhallsmiljön.
-            - src: /assets/arjangs-simhall-25m-bassang-tannoy.webp
-              alt: 25-metersbassängen i Årjängs simhall med Tannoy-högtalare längs fönsterväggen
+            - src: /assets/arjangs-simhall-25m-bassang-hogtalare.webp
+              alt: 25-metersbassängen i Årjängs simhall med högtalare längs fönsterväggen
               width: 2048
               height: 956
               title: 25-metersbassängen
@@ -294,10 +285,11 @@ technicalDetails:
   items:
     - Bose ControlSpace EX-1280
     - 100V-system i bassängmiljö
-    - Tannoy AMS 8DC och DVS 6T
+    - 100V-högtalare för klormiljö
     - Aktiva 12-tums högtalare
     - Trådlösa Sennheiser-headset
-    - Projektor och Key Digital AVoIP
+    - Panasonic laserprojektor, 8 000 lumen
+    - Key Digital 4K AV över IP med KVM
     - Audac PMQ480 slutsteg, 4 x 480 W
     - Univox överdiskslinga i reception
   relatedCompetence:
@@ -319,6 +311,21 @@ relevance:
     - Poolmiljöer där fukt, klor och hårda ytor påverkar teknikvalet
     - Anläggningar som behöver kombinera ljud, bild och tillgänglighet
     - Projekt där kablage och teknik behöver samordnas tidigt
+faq:
+  eyebrow: Vanliga frågor
+  title: Frågor och svar om ljud och bild i Årjängs simhall
+  lead: Korta svar om hur ljudet är uppdelat, hur tekniken klarar klormiljön och hur bilden fungerar i multibassängen.
+  items:
+    - question: Vilka ljudzoner finns i Årjängs simhall?
+      answer: Stora bassänghallen, multibassängen, gym, gruppträning, lounge och minilounge är egna zoner. Receptionen har dessutom en överdiskslinga för besökare med hörapparat.
+    - question: Hur klarar högtalarna fukt och klor?
+      answer: AVAB har tagit fram en högtalarlösning för klormiljö som monteras högt på väggen och matas via 100V. Projektorn sitter i en skyddskåpa och datorn står torrt i racket.
+    - question: Hur styr personalen ljudet?
+      answer: Varje zon har en egen volym i en enkel fjärrstyrning från Bose ControlSpace. Väggpaneler i bassänger och träningsrum tar emot mikrofon, AUX och Bluetooth.
+    - question: Hur fungerar projektorn i multibassängen?
+      answer: En Panasonic-laserprojektor på 8 000 lumen får bild i 4K över nätverket via Key Digital AV över IP, från en HDMI-box eller en dator som styrs med trådlöst tangentbord.
+    - question: När kom AVAB in i projektet?
+      answer: Redan 2021, när huset fortfarande var på ritningsstadiet. AVAB tog fram högtalarplacering och kabellista till elentreprenören Årjängs Elmontage, levererade tekniken inför invigningen 2024 och servar anläggningen fortfarande.
 cta:
   enabled: true
   variant: page
