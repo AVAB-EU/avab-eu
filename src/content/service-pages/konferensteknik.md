@@ -268,7 +268,7 @@ sections:
     paragraphs:
       - "Hundfjällscenter i Sälen: AVAB har installerat konferensteknik med bild, ljud och styrning i större konferensmiljöer."
       - "Hotell Gustaf Fröding – Värmlandssalen: nytt ljud med fronthögtalare, basar och delayhögtalare, Bose EX-1280C, kamera längst bak i lokalen och Crestronstyrning för bland annat ljud och mikrofonfunktioner."
-      - "Lesjöfors AB: 86-tums skärm, kamera, takmonterad mikrofon, trådlös videokonferens och infällda högtalare i en integrerad konferenslösning."
+      - "Lesjöfors Fjädrar AB: 86-tums skärm, kamera, takmonterad mikrofon, trådlös videokonferens och infällda högtalare i en integrerad konferenslösning."
       - "HANZA, Töcksfors: skärm, kamera, trådlös anslutning och styrning integrerade i ett gemensamt system med Crestron-panel."
       - "Loka Brunn: cirka sex meter bred projektorduk, projektor, ljudsystem, delayhögtalare under balkongen, Bose EX-1280, Crestron HDBaseT, CP4 och 7-tums touchpanel."
       - "WermCon: kompakt videokonferenslösning med skärm, kamera och Konftel-lösning med mikrofon och högtalare för konferensbordet."
@@ -277,14 +277,14 @@ sections:
 
 proof:
   eyebrow: Referens
-  title: Lesjöfors AB – integrerad konferensteknik för videomöten
-  text: "Hos Lesjöfors AB har AVAB installerat en konferenslösning med 86-tums skärm, kamera, takmonterad mikrofon, trådlös videokonferens och infällda högtalare. Den bakomliggande lösningen kopplar samman mikrofon, kamera, ljud och videomöte till ett integrerat system."
+  title: Lesjöfors Fjädrar AB – integrerad konferensteknik för videomöten
+  text: "Hos Lesjöfors Fjädrar AB har AVAB installerat en konferenslösning med 86-tums skärm, kamera, takmonterad mikrofon, trådlös videokonferens och infällda högtalare. Den bakomliggande lösningen kopplar samman mikrofon, kamera, ljud och videomöte till ett integrerat system."
   image:
     src: /assets/lesjofors-ab.webp
-    alt: Lesjöfors AB konferensrum med integrerad AV-teknik
+    alt: Lesjöfors Fjädrar AB konferensrum med integrerad AV-teknik
     width: 1200
     height: 900
-  linkLabel: Se referensen Lesjöfors AB
+  linkLabel: Se referensen Lesjöfors Fjädrar AB
   linkHref: /referenser/lesjofors-ab/
 
 faq:
