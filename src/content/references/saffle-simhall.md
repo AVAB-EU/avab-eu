@@ -410,6 +410,9 @@ technicalDetails:
     - RGB-belysning
     - DMX-styrda, vattenkylda lampor i relaxavdelningen
   relatedCompetence:
+    - label: Koncept
+      title: AVAB Klorsäkert ljud
+      href: /miljo/simhall/klorsakert-ljud/
     - label: Tjänst
       title: Ljudsystem
       href: /tjanster/ljudsystem/
@@ -428,6 +431,7 @@ relevance:
   title: Delar som behöver fungera tillsammans
   lead: Säffle simhall visar hur ljud, mikrofoner, hörslingor, belysning och styrning kan samordnas när en badanläggning rymmer flera verksamheter.
   items:
+    - Ljudtekniken följer AVAB Klorsäkert ljud, med högtalare och fästen för fukt och klor.
     - Gemensam Crestronstyrning för ljud, belysning och hörslingor.
     - Ljudsystem för tävlingsbassäng, multibassäng, barnpool, relax och café.
     - Högtalarplacering och mikrofonantenner anpassade för den stora 50-metersbassängen.

@@ -178,9 +178,9 @@ story:
       navLabel: Montage
       eyebrow: Installation och driftsättning
       title: Hur installerades och programmerades systemet?
-      answer: Bose ControlSpace EX-1280 är hjärtat i systemet. Högtalare som AVAB valt ut för klormiljö monterades i bassängrummen, och AVAB programmerade zoner, nivåer och styrning på plats.
+      answer: Bose ControlSpace EX-1280 är hjärtat i systemet. Bassängrummen byggdes enligt AVAB Klorsäkert ljud, med högtalare och fästen för klormiljö, och AVAB programmerade zoner, nivåer och styrning på plats.
       paragraphs:
-        - I stora bassänghallen sitter tolv 8-tumshögtalare och i multibassängen fyra 6-tumshögtalare, alla väggmonterade och matade via 100V. Lösningen har AVAB tagit fram för fuktiga och klorhaltiga miljöer, där vanliga högtalare snabbt tar skada.
+        - I stora bassänghallen sitter tolv 8-tumshögtalare och i multibassängen fyra 6-tumshögtalare, alla väggmonterade och matade via 100V. Lösningen är AVAB Klorsäkert ljud, som AVAB tagit fram för fuktiga och klorhaltiga miljöer där vanliga högtalare snabbt tar skada.
         - Racket placerades i elrummet tillsammans med nätverk och AVoIP. Bose-processorn driver ett Audac PMQ480-slutsteg på 4 x 480 W, och en Audac-svanhalsmikrofon används för utrop. Personalen fick en enkel fjärrstyrning med ett volymreglage per zon.
       mediaGroups:
         - columns: 1
@@ -293,6 +293,9 @@ technicalDetails:
     - Audac PMQ480 slutsteg, 4 x 480 W
     - Univox överdiskslinga i reception
   relatedCompetence:
+    - label: Koncept
+      title: AVAB Klorsäkert ljud
+      href: /miljo/simhall/klorsakert-ljud/
     - label: Miljö
       title: Lösningar för simhall
       href: /miljo/simhall/
@@ -308,7 +311,7 @@ relevance:
   lead: Projektet visar lösningar och arbetssätt som kan överföras till andra verksamheter med motsvarande krav.
   items:
     - Simhallar med flera samtidiga verksamhetsytor
-    - Poolmiljöer där fukt, klor och hårda ytor påverkar teknikvalet
+    - Poolmiljöer där fukt, klor och hårda ytor påverkar teknikvalet, med AVAB Klorsäkert ljud som grund
     - Anläggningar som behöver kombinera ljud, bild och tillgänglighet
     - Projekt där kablage och teknik behöver samordnas tidigt
 faq:

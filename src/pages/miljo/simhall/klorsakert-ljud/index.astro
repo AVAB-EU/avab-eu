@@ -1,0 +1,288 @@
+---
+import { AVAB_PHONE } from "../../../../config/site";
+import SiteFooter from "../../../../components/SiteFooter.astro";
+import SiteHeader from "../../../../components/SiteHeader.astro";
+import PageCTA from "../../../../components/PageCTA.astro";
+import FaqSection from "../../../../components/FaqSection.astro";
+import "../../../../styles/avab.css";
+
+const requirements = [
+  {
+    "title": "Högtalare i bassängmiljö",
+    "text": "Högtalare i bassänghall och multibassäng ska enligt tillverkarens dokumentation vara avsedda för inomhuspool med fukt och klor. Galler, fästen och skruv ska vara korrosionsbeständiga (rostfritt A4 eller likvärdigt). Systemet ska vara ett 100V-system med väggmontage utom räckhåll för badgäster."
+  },
+  {
+    "title": "Elektronik på torr plats",
+    "text": "DSP, slutsteg, nätverk och källor placeras i torrt, tempererat teknikrum. I våtzon får endast högtalare, väggpaneler och vid behov projektor i skyddskåpa förekomma."
+  },
+  {
+    "title": "Zonindelning",
+    "text": "Varje verksamhetsyta (till exempel stora bassängen, multibassäng, barnpool, relax, gym, gruppträning, lounge och reception) ska vara en egen zon med individuell volym och källval. Personalen ska kunna styra zonerna från en enkel fjärrstyrning eller panel."
+  },
+  {
+    "title": "Prioritet och larm",
+    "text": "Ljudanläggningen ska tystas eller prioriteras vid brandlarm via styrsignal från brandlarmscentral. Utrop från personal ska kunna gå före musik i valda zoner."
+  },
+  {
+    "title": "Anslutning i varje zon",
+    "text": "Varje zon ska ha väggpanel för mikrofon, linjeingång (3,5 mm) och Bluetooth, så att simlärare och instruktörer kan koppla in egen musik."
+  },
+  {
+    "title": "Mikrofoner",
+    "text": "Trådlösa mikrofoner med headset eller handmikrofon för simundervisning och instruktörer, med laddning för batterier. Headset ska vara anpassade för fuktig miljö."
+  },
+  {
+    "title": "Hörslinga",
+    "text": "Receptionen ska ha överdiskslinga. Samlingsytor ska vid behov ha hörslinga enligt SS-EN IEC 60118-4, med mätprotokoll vid överlämning."
+  },
+  {
+    "title": "Bild i bassängmiljö",
+    "text": "Projektor i bassängmiljö placeras i skyddskåpa. Bildkällan står torrt och signalen överförs via AV över IP eller likvärdigt. Inkoppling ska kunna ske via HDMI och styrning av dator via KVM eller likvärdigt."
+  },
+  {
+    "title": "Taluppfattbarhet",
+    "text": "Talöverföringen i bassänghallen ska mätas (STI) och dokumenteras vid överlämning. Målvärde anges av beställaren."
+  },
+  {
+    "title": "Projekteringsunderlag",
+    "text": "Leverantören tar fram högtalarplacering på planritning samt uttags- och kabellista som elentreprenören drar kablage efter under byggtiden."
+  },
+  {
+    "title": "Överlämning och drift",
+    "text": "Leverantören levererar relationshandlingar, inställningar, enkel användarinstruktion och utbildning för personal, samt erbjuder serviceavtal."
+  }
+];
+
+const faqItems = [
+  {
+    "question": "Vad är AVAB Klorsäkert ljud?",
+    "answer": "Ett beprövat koncept för ljud och bild i simhallar: högtalare och fästen för fukt och klor, elektroniken torrt i teknikrummet, en zon per verksamhetsyta, prioritet vid brandlarm, väggpaneler, mikrofoner och hörslinga. AVAB projekterar, levererar, driftsätter och servar."
+  },
+  {
+    "question": "Varför går vanliga högtalare sönder i simhallar?",
+    "answer": "Klorhaltig och fuktig luft angriper metall, membran och elektronik. Utan rätt produkter och korrosionsbeständiga fästen blir resultatet rost, kortare livslängd och sämre ljud efter några år."
+  },
+  {
+    "question": "Kan vi skriva in konceptet i en upphandling?",
+    "answer": "Ja, genom funktionskrav. Ladda ner vår fabrikatsneutrala kravtext och anpassa den i ert förfrågningsunderlag. Då beskriver ni egenskaperna ni behöver, utan att låsa er till ett visst märke."
+  },
+  {
+    "question": "När ska ljudet in i projektet?",
+    "answer": "Helst på ritningsstadiet. Då kan högtalarplacering och kabellista tas fram innan ytskikten är klara, och elentreprenören drar rätt kablage från början. I Årjäng kom AVAB in redan 2021, tre år före invigningen."
+  },
+  {
+    "question": "Var finns konceptet i drift?",
+    "answer": "I Årjängs simhall, Säffle simhall och Hundfjällscenter i Sälen. Se referenserna på sidan."
+  }
+];
+
+const references = [
+  { title: "Årjängs simhall", href: "/referenser/arjangs-simhall/", image: "/assets/arjangs-simhall-stora-bassangen-hopptorn.webp", text: "Sex zoner, 100V-högtalare för klormiljö, projektor i skyddskåpa och AV över IP i multibassängen. Projekterat från 2021, invigt 2024." },
+  { title: "Säffle simhall", href: "/referenser/saffle-simhall/", image: "/assets/Saffle-simhall-50m-bassang.webp", text: "50-metersbassäng, multihall och barnpool med zonindelat ljud och teknik anpassad för fukt och klor." },
+  { title: "Hundfjällscenter, Sälen", href: "/referenser/hundfjallshotellet-hundfjallscenter-salen/", image: "/assets/hundfjallscenter-spa-pool-fardig.webp", text: "Spa och pool i en anläggning med 494 högtalare i 28 zoner, från konferens till hotell." },
+];
+
+const pageUrl = "https://avab.eu/miljo/simhall/klorsakert-ljud/";
+const title = "AVAB Klorsäkert ljud | Ljud för simhall och badhus | AVAB";
+const description = "AVAB Klorsäkert ljud är ett beprövat koncept för simhallar: högtalare för fukt och klor, zoner, hörslinga och bild. Ladda ner fabrikatsneutrala funktionskrav till ert FFU.";
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      name: "AVAB Klorsäkert ljud",
+      alternateName: "Klorsäkert ljud för simhall",
+      serviceType: "Ljudanläggning för simhall och badhus",
+      description,
+      url: pageUrl,
+      areaServed: { "@type": "Country", name: "Sverige" },
+      provider: { "@type": "Organization", name: "AVAB", url: "https://avab.eu/", telephone: AVAB_PHONE.main.e164, email: "info@avab.eu" },
+      subjectOf: { "@type": "DigitalDocument", name: "Funktionskrav: klorsäkert ljud i simhall", url: "https://avab.eu/dokument/avab-funktionskrav-klorsakert-ljud-simhall.pdf", encodingFormat: "application/pdf" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Start", item: "https://avab.eu/" },
+        { "@type": "ListItem", position: 2, name: "Simhall & badhus", item: "https://avab.eu/miljo/simhall/" },
+        { "@type": "ListItem", position: 3, name: "AVAB Klorsäkert ljud", item: pageUrl },
+      ],
+    },
+  ],
+};
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#282E29" />
+  <link rel="canonical" href={pageUrl} />
+  <meta property="og:title" content="AVAB Klorsäkert ljud för simhallar" />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="https://avab.eu/assets/arjangs-simhall-stora-bassangen-hopptorn.webp" />
+  <meta property="og:url" content={pageUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:site_name" content="AVAB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <style>
+    .req-list { counter-reset: req; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 32px; margin: 32px 0 0; padding: 0; list-style: none; }
+    .req-list li { counter-increment: req; position: relative; padding-left: 44px; }
+    .req-list li::before { content: counter(req); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--avab-green, #8dc63f); color: #1b1f1c; font-weight: 700; display: grid; place-items: center; font-size: .9rem; }
+    .req-list h3 { margin: 2px 0 6px; font-size: 1.05rem; }
+    .req-list p { margin: 0; }
+    .download-band { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between; padding: 28px; border-radius: var(--avab-radius, 16px); background: var(--avab-surface, #f4f5f3); }
+    .download-band h3 { margin: 0 0 6px; }
+    .download-band p { margin: 0; max-width: 60ch; }
+    .ref-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+    .ref-card { display: flex; flex-direction: column; border-radius: var(--avab-radius, 16px); overflow: hidden; background: #fff; box-shadow: var(--avab-shadow-sm, 0 8px 24px rgba(0,0,0,.08)); text-decoration: none; color: inherit; }
+    .ref-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+    .ref-card div { padding: 20px; }
+    .ref-card h3 { margin: 0 0 8px; }
+    .ref-card p { margin: 0; }
+    @media (max-width: 900px) { .ref-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 767px) { .req-list { grid-template-columns: 1fr; } .download-band { padding: 22px; } }
+  </style>
+</head>
+<body>
+  <SiteHeader />
+
+  <nav class="breadcrumbs" aria-label="Brödsmulor">
+    <div class="avab-container">
+      <ol>
+        <li><a href="/">Start</a></li>
+        <li><a href="/miljo/simhall/">Simhall &amp; badhus</a></li>
+        <li><span aria-current="page">AVAB Klorsäkert ljud</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero" style="--hero-image:url('/assets/Saffle-simhall-50m-bassang.webp');">
+    <div class="avab-container">
+      <div class="hero-inner animate-in">
+        <div class="eyebrow">AVAB Klorsäkert ljud</div>
+        <h1>Ljud som håller i klor och fukt</h1>
+        <p class="lead">
+          Ett beprövat koncept för simhallar och badhus: högtalare för klormiljö, elektroniken på torr plats, en zon per verksamhetsyta och tydligt tal för simskola, utrop och träning. I drift i Årjäng, Säffle och Sälen.
+        </p>
+        <div class="hero-bottom">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/dokument/avab-funktionskrav-klorsakert-ljud-simhall.pdf">Ladda ner funktionskrav (PDF)</a>
+            <a class="button button-secondary" href="/kontakt/#kontaktformular">Skicka ritningar</a>
+            <a class="button button-quiet" href="#referenser">Se anläggningarna</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fact-band mobile-secondary" aria-label="Snabbfakta om AVAB Klorsäkert ljud">
+    <div class="fact-grid">
+      <div class="fact"><span>Miljö</span><strong>Simhall och badhus</strong></div>
+      <div class="fact"><span>Högtalare</span><strong>100V för klormiljö</strong></div>
+      <div class="fact"><span>Elektronik</span><strong>Torrt i teknikrum</strong></div>
+      <div class="fact"><span>Zoner</span><strong>En per verksamhetsyta</strong></div>
+      <div class="fact"><span>Tillgänglighet</span><strong>Hörslinga och STI</strong></div>
+      <div class="fact"><span>I drift</span><strong>Årjäng, Säffle, Sälen</strong></div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section" id="problemet">
+      <div class="avab-container two-col">
+        <div>
+          <div class="eyebrow">Problemet</div>
+          <h2>Klor och fukt äter upp vanlig ljudteknik</h2>
+          <p>Klorhaltig luft angriper metall, membran och elektronik. Vanliga högtalare och fästen rostar, ljudet försämras och anläggningen behöver bytas långt innan den borde.</p>
+          <p>Samtidigt ska en simhall klara simskola, motionssim, vattengympa, relax, gym och utrop, ofta samtidigt. Det kräver zoner, enkel styrning och tal som går fram i en miljö med kakel, glas och vatten.</p>
+        </div>
+        <aside class="card solution-card accent-rail">
+          <h3>Så fungerar AVAB Klorsäkert ljud</h3>
+          <ul class="bullet-list">
+            <li>Högtalare och fästen som är avsedda för klormiljö, matade via 100V.</li>
+            <li>DSP, slutsteg och källor torrt i teknikrummet, inte vid bassängen.</li>
+            <li>En zon per verksamhetsyta med egen volym och källval.</li>
+            <li>Väggpaneler för mikrofon, AUX och Bluetooth i varje zon.</li>
+            <li>Brandlarmsprioritet, hörslinga och dokumenterad taluppfattbarhet.</li>
+            <li>Projektering från ritningsstadiet till service efter invigning.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--light" id="funktionskrav">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">För upphandlare och konsulter</div>
+            <h2>Funktionskrav att använda i ert förfrågningsunderlag</h2>
+            <p class="lead-dark">Kraven är fabrikatsneutrala och beskriver egenskaperna som gör att tekniken håller i simhallsmiljö. Kopiera dem rakt in i ert FFU och anpassa efter anläggningen.</p>
+          </div>
+        </div>
+        <ol class="req-list">
+          {requirements.map((req) => (
+            <li>
+              <h3>{req.title}</h3>
+              <p>{req.text}</p>
+            </li>
+          ))}
+        </ol>
+        <div class="download-band">
+          <div>
+            <h3>Ladda ner kraven som PDF</h3>
+            <p>Samma kravtext i ett dokument som går att bifoga eller klistra in. Fri att använda och anpassa.</p>
+          </div>
+          <a class="button button-primary" href="/dokument/avab-funktionskrav-klorsakert-ljud-simhall.pdf" download>Ladda ner funktionskrav</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="referenser">
+      <div class="avab-container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">I drift</div>
+            <h2>Anläggningar med AVAB Klorsäkert ljud</h2>
+            <p class="lead-dark">Konceptet är framtaget och prövat i riktiga simhallar, där personalen använder tekniken varje dag.</p>
+          </div>
+        </div>
+        <div class="ref-grid">
+          {references.map((ref) => (
+            <a class="ref-card" href={ref.href}>
+              <img src={ref.image} alt={`${ref.title}, referens för AVAB Klorsäkert ljud`} loading="lazy" decoding="async" width="1200" height="750" />
+              <div>
+                <h3>{ref.title}</h3>
+                <p>{ref.text}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <FaqSection id="faq" title="Vanliga frågor om AVAB Klorsäkert ljud" items={faqItems} includeSchema />
+
+    <PageCTA
+      eyebrow="Planerar ni simhall eller badhus?"
+      title="Ta in ljudet innan ytskikten låser lösningen"
+      text="Skicka ritningar eller funktionskrav så tar vi fram högtalarplacering, zoner och budgetnivå tidigt i projektet."
+      primaryLabel="Skicka ritningar"
+      primaryHref="/kontakt/#kontaktformular"
+      secondaryLabel="Allt om AV i simhall"
+      secondaryHref="/miljo/simhall/"
+      points={["Fabrikatsneutrala funktionskrav", "Projektering från ritningsstadiet", "Service efter invigning"]}
+    />
+  </main>
+
+  <SiteFooter />
+</body>
+</html>
