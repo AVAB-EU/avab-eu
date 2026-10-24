@@ -96,7 +96,7 @@ scope:
   items:
     - Bose ControlSpace EX-1280 som centralt ljudnav med Audac PMQ480-slutsteg
     - Sex separat hanterade ljudzoner
-    - 12 Tannoy AMS 8DC och 6-tums Tannoy DVS 6T i bassänghallen, 4 Tannoy DVS 6T i multibassängen, 100V
+    - 12 Tannoy AMS 8DC (8 tum) i stora bassänghallen och 4 Tannoy DVS 6T (6 tum) i multibassängen, 100V
     - Aktiva 12-tums högtalare i gym och gruppträning, Audac-takhögtalare i lounge
     - Trådlösa Sennheiser-mikrofoner och väggpaneler med Bluetooth, AUX och mikrofon
     - Projektor i skyddskåpa och Key Digital AVoIP i multibassängen
@@ -179,7 +179,7 @@ story:
       title: Hur installerades och programmerades systemet?
       answer: Bose ControlSpace EX-1280 är hjärtat i systemet. Tannoy-högtalare för krävande miljöer monterades i bassängrummen, och AVAB programmerade zoner, nivåer och styrning på plats.
       paragraphs:
-        - I bassänghallen sitter tolv Tannoy AMS 8DC, kompletterade med 6-tums Tannoy DVS 6T, och i multibassängen fyra Tannoy DVS 6T, alla väggmonterade och matade via 100V. Högtalarna är byggda för fuktiga och klorhaltiga miljöer.
+        - I stora bassänghallen sitter tolv 8-tums Tannoy AMS 8DC och i multibassängen fyra 6-tums Tannoy DVS 6T, alla väggmonterade och matade via 100V. Högtalarna är byggda för fuktiga och klorhaltiga miljöer.
         - Racket placerades i elrummet tillsammans med nätverk och AVoIP. Bose-processorn driver ett Audac PMQ480-slutsteg på 4 x 480 W, och en Audac-svanhalsmikrofon används för utrop. Personalen fick en enkel fjärrstyrning med ett volymreglage per zon.
       mediaGroups:
         - columns: 1
