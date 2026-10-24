@@ -200,10 +200,10 @@ story:
         - columns: 2
           ratio: land
           images:
-            - src: /assets/claessons-albatrossen-scen-avab-tekniker.webp
+            - src: /assets/claessons-albatrossen-avab-tekniker-rack-scen.webp
               alt: AVAB-tekniker vid rackskåpet bredvid scenen och den stora duken i Albatrossen
               width: 2048
-              height: 1494
+              height: 1536
               title: Service på plats
               text: AVAB sköter service och vidareutveckling av anläggningen.
             - src: /assets/claessons-albatrossen-duk-bose-pelare.webp
